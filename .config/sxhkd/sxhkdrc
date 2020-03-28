@@ -2,21 +2,33 @@
 # wm independent hotkeys
 #
 
-# firefox
-ctrl + shift + f
-    firefox
-
 # terminal emulator
 super + Return
-	termite
+	kitty
 
 # program launcher
 super + @space
-	rofi -show drun 
+	rofi -show drun -show-icons -icon-theme Papirus
+
+# nautilus
+super + e
+	nautilus
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+# auto switch monitors
+super + alt + m
+	exec ~/.scripts/monitors.sh && bspc wm -r
+
+# volume keys
+XF86AudioRaiseVolume
+    amixer -D pulse sset Master 5%+ &>/dev/null
+XF86AudioLowerVolume
+    amixer -D pulse sset Master 5%- &>/dev/null
+XF86AudioMute
+    amixer set Master toggle &>/dev/null
 
 #
 # bspwm hotkeys
@@ -24,7 +36,7 @@ super + Escape
 
 # quit/restart bspwm
 super + alt + {q,r}
-	bspc {quit,wm -r}
+	bspc {quit,wm -r} && pulseaudio --kill
 
 # close and kill
 super + {_,shift + }w
@@ -125,16 +137,3 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 
-#Volume Control
-XF86AudioLowerVolume
-	amixer set Master 5%-
-XF86AudioRaiseVolume
-	amixer set Master 5%+
-XF86AudioMute
-        amixer set Master toggle
-
-#Brightness control
-XF86MonBrightnessDown
-	light -U 10
-XF86MonBrightnessUp
-    light -A 10
