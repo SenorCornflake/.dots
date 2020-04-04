@@ -2,7 +2,7 @@
 These are my configuration files, it's as simple as that
 
 # How to install
-Simply install a package called "stow", go to your home directory (optional) then clone this repo, cd into and execute the command `stow *`
+Simply install a package called "stow", go to your home directory (optional) then clone this repo, cd into and execute the command `stow * -t ~`
 This should create symlinks in your `.config` folder which points to the dotfiles repo.
 
 # NOTES
