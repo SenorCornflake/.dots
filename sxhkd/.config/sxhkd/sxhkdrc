@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show drun -show-icons -icon-theme Papirus
+	rofi -modi drun -show drun -show-icons -icon-theme Papirus
 
 # nautilus
 super + e
@@ -36,7 +36,7 @@ XF86AudioMute
 
 # quit/restart bspwm
 super + alt + {q,r}
-	bspc {quit,wm -r} && pulseaudio --kill
+	bspc {quit,wm -r}
 
 # close and kill
 super + {_,shift + }w
