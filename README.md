@@ -9,3 +9,9 @@ if you move it you'll mave to execute `stow * -t ~` inside of it again to update
 
 ## Extra
 I learned about stow from Wolfgang on this video `stow`, [https://www.youtube.com/watch?v=MJBVA4LeJKA](https://www.youtube.com/watch?v=MJBVA4LeJKA)
+
+# Notes for myself
+## Install php lang server for neovim
+`composer global require felixfbecker/language-server`
+
+`composer run-script --working-dir=~/.config/composer/vendor/felixfbecker/language-server parse-stubs`
