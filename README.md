@@ -8,4 +8,4 @@ This should create symlinks in your `.config` folder which points to correspondi
 if you move it you'll mave to execute `stow * -t ~` inside of it again to update it's location.
 
 ## NOTES
-Watch Wolfgangs video on `stow`, [https://www.youtube.com/watch?v=MJBVA4LeJKA](https://www.youtube.com/watch?v=MJBVA4LeJKA)
+I learned about stow from Wolfgang on this video `stow`, [https://www.youtube.com/watch?v=MJBVA4LeJKA](https://www.youtube.com/watch?v=MJBVA4LeJKA)
