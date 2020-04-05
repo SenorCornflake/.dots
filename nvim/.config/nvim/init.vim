@@ -5,7 +5,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
     Plug 'joshdick/onedark.vim'
     Plug 'Shougo/echodoc.vim'
-    Plug 'jistr/vim-nerdtree-tabs'
+    Plug 'dylanaraps/wal.vim'
     Plug 'dense-analysis/ale'
 call plug#end()
 
