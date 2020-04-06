@@ -7,10 +7,11 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'Shougo/echodoc.vim'
     Plug 'dylanaraps/wal.vim'
     Plug 'dense-analysis/ale'
+    Plug 'cocopon/iceberg.vim'
 call plug#end()
 
 " COLORS
-color onedark
+color iceberg
 
 " MISIL
 filetype plugin indent on

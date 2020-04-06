@@ -41,6 +41,9 @@ super + {h,j,k,l}
 super + shift + {h,j,k,l}
     bspc node --swap {west,south,north,east}
 
+super + {t,shift + f,f,b}
+    bspc node -t {tiled,fullscreen,floating}
+
 # FOcues desktiop
 super + {1-9,0}
     bspc desktop --focus {1-9,10}
@@ -54,11 +57,11 @@ super + shift + {1-9,0}
 
 # Resize node increasing
 super + alt + {h,j,k,l}
-    bspc node --resize {left -20,bottom 0 20,top 0 -20,right 20 0}
+    bspc node --resize {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # Resize node deccrease
 super + alt + shift + {h,j,k,l}
-	bspc node -resize {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+	bspc node --resize {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
