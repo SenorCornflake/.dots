@@ -6,11 +6,11 @@ bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10
 ~/.scripts/monitors.sh
 
 pidof dunst && killall dunst 
-pidof pulseadio && killall pulseaudio
+#pidof pulseadio && killall pulseaudio
 
 wal -i ~/.config/bspwm/wallpapers/mountain-road-car-lights.jpg -n
 dunst &
-pulseaudio &
+#pulseaudio &
 .config/polybar/launch.sh
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 feh --bg-scale ~/.config/bspwm/wallpapers/mountain-road-car-lights.jpg
