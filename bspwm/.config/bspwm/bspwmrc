@@ -3,17 +3,19 @@
 sxhkd &
 
 bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10
+
+# This script will move all desktops on eDP-1 to VGA-1 if available and vice-versa
 ~/.scripts/monitors.sh
 
 pidof dunst && killall dunst 
 #pidof pulseadio && killall pulseaudio
 
-wal -i ~/.config/bspwm/wallpapers/mountain-road-car-lights.jpg -n
+wal -i ~/.config/bspwm/wallpapers/BlueBlurredStreetLight.png -n
 dunst &
 #pulseaudio &
-.config/polybar/launch.sh
+.config/polybar/launch.sh &
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-feh --bg-scale ~/.config/bspwm/wallpapers/mountain-road-car-lights.jpg
+feh --bg-scale ~/.config/bspwm/wallpapers/BlueBlurredStreetLight.png &
 picom --respect-prop-shadow &
 
 
