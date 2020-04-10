@@ -20,6 +20,12 @@ XF86AudioMicMute
 XF86Audio{Raise,Lower}Volume
     pulseaudio-ctl {up,down} 5
 
+
+# Screen brightness
+super + XF86Audio{Raise,Lower}Volume
+    brightnessctl s {10%+,10%-}    
+
+
 # reload sxhkd
 super + Escape
     pkill -USR1 -x sxhkd
