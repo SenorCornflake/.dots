@@ -1,7 +1,7 @@
 These are my configuration files, it's as simple as that
 
 # Screenshot
-![image](./scrot.jpg)
+![image](scrot.jpg)
 
 # How to install
 Simply install a package called "stow", clone this repo, remove README file and execute the command `stow * -t ~` inside of it
