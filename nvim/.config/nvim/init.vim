@@ -6,6 +6,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'joshdick/onedark.vim'
     Plug 'Shougo/echodoc.vim'
     Plug 'dylanaraps/wal.vim'
+    "Plug 'https://gitlab.com/bloodflame/wal.vim'
     "Plug 'dense-analysis/ale'
     Plug 'cocopon/iceberg.vim'
     Plug 'vim-syntastic/syntastic'
@@ -29,7 +30,7 @@ let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:coc_global_extensions = ['coc-phpls', 'coc-tsserver']
 
 " COLORS
-color iceberg
+color wal
 
 " AUTOCLOSE TAGS
 let g:closetag_filetypes = 'html,xhtml,phtml,php'
@@ -42,7 +43,7 @@ filetype plugin indent on
 
 " SET
 set number relativenumber
-set termguicolors
+set notermguicolors
 set splitbelow
 set splitright
 set tabstop=4
