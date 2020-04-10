@@ -1,5 +1,8 @@
 These are my configuration files, it's as simple as that
 
+# Screenshot
+![image](./scrot.jpg)
+
 # How to install
 Simply install a package called "stow", clone this repo, remove README file and execute the command `stow * -t ~` inside of it
 This should create symlinks in your `.config` folder which points to corresponding folders in the dotfiles repo.
