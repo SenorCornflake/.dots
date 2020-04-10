@@ -21,6 +21,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
     Plug 'airblade/vim-gitgutter'
     Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'mhinz/vim-startify'
 call plug#end()
 
 " CTRLP
