@@ -31,7 +31,7 @@ let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:coc_global_extensions = ['coc-phpls', 'coc-tsserver']
 
 " COLORS
-color wal
+"color iceberg
 
 " AUTOCLOSE TAGS
 let g:closetag_filetypes = 'html,xhtml,phtml,php'
@@ -44,7 +44,7 @@ filetype plugin indent on
 
 " SET
 set number relativenumber
-set notermguicolors
+"set termguicolors
 set splitbelow
 set splitright
 set tabstop=4
@@ -57,6 +57,7 @@ set ignorecase
 set smartcase
 set incsearch
 set hidden 
+"set t_Co=16
 
 " DEOPLETE
 let g:deoplete#enable_at_startup = 1
@@ -78,8 +79,11 @@ let g:syntastic_vim_checkers = ['vint']
 " AIRLINE
 let g:airline_powerline_fonts = 1
 "let g:airline#extensions#ale#enabled = 1
+let g:airline_theme = "base16_grayscale"
 
-" ECHODOC
+
+
+"" ECHODOC
 let g:echodoc#enable_at_startup = 1
 let g:echodoc#type = 'echo'
 
