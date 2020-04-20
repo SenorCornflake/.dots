@@ -9,7 +9,7 @@ call plug#begin('~/.config/nvim/plugged')
     "Plug 'https://gitlab.com/bloodflame/wal.vim'
     "Plug 'dense-analysis/ale'
     Plug 'cocopon/iceberg.vim'
-    Plug 'vim-syntastic/syntastic'
+    "Plug 'vim-syntastic/syntastic'
     Plug 'kristijanhusak/deoplete-phpactor'
     "Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
     "Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
@@ -31,7 +31,7 @@ let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:coc_global_extensions = ['coc-phpls', 'coc-tsserver']
 
 " COLORS
-"color iceberg
+ color default
 
 " AUTOCLOSE TAGS
 let g:closetag_filetypes = 'html,xhtml,phtml,php'
@@ -79,7 +79,7 @@ let g:syntastic_vim_checkers = ['vint']
 " AIRLINE
 let g:airline_powerline_fonts = 1
 "let g:airline#extensions#ale#enabled = 1
-let g:airline_theme = "base16_grayscale"
+let g:airline_theme = "wal"
 
 
 
@@ -94,13 +94,13 @@ func! DeleteCurBufferNotCloseWindow() abort
         echom 'E89: no write since last change'
         echohl None
     elseif winnr('$') == 1
-        bd
+        bd!
     else  " multiple window
         let oldbuf = bufnr('%')
         let oldwin = winnr()
         while 1   " all windows that display oldbuf will remain open
             if buflisted(bufnr('#'))
-                b#
+                b#!
             else
                 bn
                 let curbuf = bufnr('%')
@@ -116,7 +116,7 @@ func! DeleteCurBufferNotCloseWindow() abort
             endif
         endwhile
         " delete oldbuf and restore window to oldwin
-        exec oldbuf 'bd'
+        exec oldbuf 'bd!'
         exec oldwin 'wincmd w'
     endif
 endfunc
