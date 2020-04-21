@@ -22,6 +22,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'airblade/vim-gitgutter'
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'mhinz/vim-startify'
+    Plug 'tomasiser/vim-code-dark'
+    Plug 'dunstontc/vim-vscode-theme'
 call plug#end()
 
 " CTRLP
@@ -31,7 +33,7 @@ let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:coc_global_extensions = ['coc-phpls', 'coc-tsserver']
 
 " COLORS
- color default
+ color codedark
 
 " AUTOCLOSE TAGS
 let g:closetag_filetypes = 'html,xhtml,phtml,php'
@@ -44,7 +46,7 @@ filetype plugin indent on
 
 " SET
 set number relativenumber
-"set termguicolors
+set termguicolors
 set splitbelow
 set splitright
 set tabstop=4
@@ -79,7 +81,7 @@ let g:syntastic_vim_checkers = ['vint']
 " AIRLINE
 let g:airline_powerline_fonts = 1
 "let g:airline#extensions#ale#enabled = 1
-let g:airline_theme = "wal"
+"let g:airline_theme = "wal"
 
 
 
