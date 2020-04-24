@@ -24,13 +24,14 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'mhinz/vim-startify'
     Plug 'tomasiser/vim-code-dark'
     Plug 'dunstontc/vim-vscode-theme'
+    Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
 " CTRLP
 let g:ctrlp_cmd = 'CtrlPBuffer'
 
 " COC
-let g:coc_global_extensions = ['coc-phpls', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-phpls', 'coc-tsserver', 'coc-python']
 
 " COLORS
  color codedark
