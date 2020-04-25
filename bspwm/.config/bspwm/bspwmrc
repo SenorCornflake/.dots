@@ -16,7 +16,7 @@ dunst &
 #pulseaudio
 .config/polybar/launch.sh
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-feh --bg-scale ~/.config/bspwm/wallpapers/mountain-with-clouds.jpg
+feh --bg-scale ~/.config/bspwm/wallpapers/blackandwhiteshapes.jpg
 picom --respect-prop-shadow &
 
 
@@ -43,4 +43,4 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-notify-send "Hey dude!"
+notify-send "Archie" "Hey dude! How's it going? \nLet's get the show on the road!"
