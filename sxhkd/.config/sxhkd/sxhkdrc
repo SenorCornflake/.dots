@@ -5,7 +5,7 @@ super + Return
 
 # App launcher
 super + space
-    rofi -modi drun -show drun -show-icons -icon-theme Papirus
+    rofi -modi drun -show drun
 
 
 # Toggle mute
@@ -23,7 +23,7 @@ XF86Audio{Raise,Lower}Volume
 
 # Screen brightness
 super + XF86Audio{Raise,Lower}Volume
-    brightnessctl s {10%+,10%-}    
+    brightnessctl s {1%+,1%-}
 
 
 # reload sxhkd
