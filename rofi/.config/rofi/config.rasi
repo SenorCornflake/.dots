@@ -1,5 +1,5 @@
 configuration {
 	theme: "blurry_full.rasi";
     show-icons: true;
-    icon-theme: "Adwaita";
+    icon-theme: "Papirus";
 }
