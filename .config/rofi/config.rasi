@@ -1,0 +1,5 @@
+configuration {
+	theme: "custom.rasi";
+    show-icons: true;
+    icon-theme: "Papirus";
+}
