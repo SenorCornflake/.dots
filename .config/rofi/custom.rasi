@@ -23,15 +23,14 @@ configuration {
 
 
 * {
-    background:                     #2e3440;
-    background-alt:                 #000000ff;
-    foreground:                     #eceff4;
-    border:               			#4c566a;
-    border-window:                  #8fbcbb;
-    selected:               		#8fbcbb;
-    selected-foreground:            #2e3440;
-    urgent:                         #DA4453FF;
-    active-window:                  #3b4252;
+    background:                     #2D3142;
+    foreground:                     #FFFFFF;
+    border-input:               	#4F5D75;
+    border-window:                  #EF8354;
+    selected:               		#EF8354;
+    selected-foreground:            #2D3142;
+    urgent:                         #EF8354;
+    active-window:                  #4F5D75;
 }
 
 window {
@@ -63,7 +62,7 @@ inputbar {
     expand:                         false;
     border:                  		0px 0px 2px 0px;
     border-radius:                  0px;
-    border-color:                  	@border;
+    border-color:                  	@border-input;
     margin:                         0px 0px 0px 0px;
     padding:                        3px 3px 3px 3px;
     vertical-align:                 0.5;
@@ -143,7 +142,7 @@ element selected {
     text-color:                     @selected-foreground;
     border:                  		0px;
     border-radius:                  0px;
-    border-color:                  	@border;
+    border-color:                  	@border-input;
 }
 
 element selected.urgent {

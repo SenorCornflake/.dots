@@ -1,0 +1,34 @@
+#define bg #2D3142
+#define fg #FFFFFF
+#define bgalt #4F5D75
+#define fgalt #BFC0C0
+#define fcsed #EF8354
+#define fcsedalt #a64232
+#define urgnt #EF8354
+
+BSPWM.border_normal: bgalt
+BSPWM.border_focused: fcsed
+BSPWM.border_active: fcsedalt
+
+POLYBAR.foreground: fg
+POLYBAR.background: bg
+POLYBAR.marker_focused: fcsed
+POLYBAR.marker_dimmed_focused: fcsedalt
+POLYBAR.marker_urgent: urgnt
+POLYBAR.primary: bgalt
+POLYBAR.border: bgalt
+
+ROFI.border_window: fcsed
+ROFI.border_input: bgalt
+ROFI.selected: fcsed
+ROFI.urgent: urgnt
+ROFI.background: bg
+ROFI.foreground: fg
+ROFI.active_window: bgalt
+
+DUNST.frame: fcsed
+DUNST.urgent_frame: urgnt
+DUNST.background: bg
+DUNST.foreground: fg
+
+ 

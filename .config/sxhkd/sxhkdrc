@@ -1,7 +1,7 @@
 
 # Open Terminal
 super + Return
-    kitty
+    termite -e 'zsh -c "neofetch && zsh"' --hold
 
 # App launcher
 super + space

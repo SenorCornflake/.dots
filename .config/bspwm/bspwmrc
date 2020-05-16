@@ -1,11 +1,17 @@
-#! /bin/sh
+#!/usr/bin/env zsh
 
 sxhkd &
+xrdb -load ~/.config/X11/Xresources
 
 # This script will split workspaces amount between all monitors evenly, if there is a remainding desktop
 # (eg: (10 / 3) = 9 leaving 1) it will give it to the primary monitor. NOTE, if you change desktop amount
 # while bspwm running, you'll have to quit bspwm entirely otherwise workspaces will break (because I was lazy)
 python ~/.config/scripts/auto_monitors.py 10
+
+# Generate dunstrc file based on xresources
+python .config/scripts/dunst_xresources.py
+#same with rofi
+python .config/scripts/rofi_xresources.py
 
 # Kill programs before starting them (if they were open)
 pidof picom && killall picom
@@ -18,21 +24,20 @@ dunst &
 # Polkit
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Wallpaper
-feh --bg-fill ~/.config/bspwm/wallpapers/archlogo-nord.png &
+feh --no-fehbg --bg-fill ~/.config/bspwm/wallpapers/blackscreen1.jpg &
 # Compositor
-picom --respect-prop-shadow --experimental-backends &
+picom --experimental-backends &
 
 bspc config border_width         2
-bspc config window_gap           15
+bspc config window_gap           25
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc config normal_border_color "#434c5e"
-bspc config focused_border_color "#8fbcbb"
-bspc config active_border_color "#ebcb8b"
-bspc config urgent_border_color "#bf616a"
+bspc config normal_border_color "$(xrdb -query | grep bspwm -i | grep border_normal -i -w | grep -E -o '#[0-9a-zA-Z]+')"
+bspc config focused_border_color "$(xrdb -query | grep bspwm -i | grep border_focused -i -w | grep -E -o '#[0-9a-zA-Z]+')"
+bspc config active_border_color "$(xrdb -query | grep bspwm -i | grep border_active -i -w | grep -E -o '#[0-9a-zA-Z]+')"
 
 bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
@@ -45,4 +50,4 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-notify-send "Archie" "Hey dude! How's it going? \nLet's get the show on the road!"
+notify-send "From $(uname -n)" "Hey $(whoami)!\nLet's get the show on the road!"
