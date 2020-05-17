@@ -35,7 +35,7 @@ super + Escape
     pkill -USR1 -x sxhkd
 
 F12
-    import -window root ~/Pictures/`date '+%Y%m%d%M%S%s%N'`.jpg && notify-send "Imagemagick" "Screenshot Taken."
+    flameshot & flameshot screen -p ~/Pictures
 
 # restart or quit bspwm
 super + alt + {r,q}

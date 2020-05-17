@@ -13,6 +13,6 @@ export color_active="#ebcb8b"
 export color_urgent="#bf616a"
 
 export QT_QPA_PLATFORMTHEME="qt5ct" 
+export LESSHISTSIZE=0
 
-alias startx="startx "$XDG_CONFIG_HOME/X11/xinitrc""
-alias xrdbload="xrdb -load ~/.config/X11/Xresources"
+alias startx="startx "$XDG_CONFIG_HOME"/X11/xinitrc"

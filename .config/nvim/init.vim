@@ -20,6 +20,7 @@ call plug#begin('~/.config/nvim/plugged')
     " COLORS
     Plug 'tomasiser/vim-code-dark'
     Plug 'arcticicestudio/nord-vim'
+    Plug 'chriskempson/base16-vim'
 call plug#end()
 
 " DEOPLETE
@@ -28,7 +29,7 @@ let g:deoplete#enable_at_startup = 1
 let g:ctrlp_cmd = 'CtrlPBuffer'
 
 " COLORS
- color nord
+ color base16-default-dark
 
 " MISIL
 filetype on

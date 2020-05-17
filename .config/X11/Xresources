@@ -1,10 +1,10 @@
-#define bg #2D3142
-#define fg #FFFFFF
-#define bgalt #4F5D75
+#define bg #181818
+#define fg #f5f5f5
+#define bgalt #282828
 #define fgalt #BFC0C0
-#define fcsed #EF8354
-#define fcsedalt #a64232
-#define urgnt #EF8354
+#define fcsed #f4bf75
+#define fcsedalt #917144
+#define urgnt #AC4142
 
 BSPWM.border_normal: bgalt
 BSPWM.border_focused: fcsed
