@@ -1,0 +1,9 @@
+! BASE16-GRAYSCALE-DARK
+#define bg #101010
+#define fg #d5d5d5
+#define bgalt #252525
+#define fgalt #646464
+#define fcsed #d9d9d9
+#define fcsedalt #b0b0b0
+#define urgnt #ab4642
+#define theme base16-grayscale-dark

@@ -14,5 +14,8 @@ export color_urgent="#bf616a"
 
 export QT_QPA_PLATFORMTHEME="qt5ct" 
 export LESSHISTSIZE=0
+export EDITOR=nvim
 
 alias startx="startx "$XDG_CONFIG_HOME"/X11/xinitrc"
+
+export PATH=~/.local/bin:$PATH

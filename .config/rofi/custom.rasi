@@ -23,14 +23,14 @@ configuration {
 
 
 * {
-    background:                     #181818;
-    foreground:                     #f5f5f5;
-    border-input:               	#282828;
-    border-window:                  #f4bf75;
-    selected:               		#f4bf75;
-    selected-foreground:            #181818;
-    urgent:                         #AC4142;
-    active-window:                  #282828;
+    background:                     #101010;
+    foreground:                     #d5d5d5;
+    border-input:               	#252525;
+    border-window:                  #d9d9d9;
+    selected:               		#d9d9d9;
+    selected-foreground:            #101010;
+    urgent:                         #ab4642;
+    active-window:                  #252525;
 }
 
 window {

@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/breton/Pictures'
 let g:netrw_dirhist_1='/home/breton/.config/picom'
 let g:netrw_dirhist_0='/home/vesper/Desktop/Important/Python/BouncingBallsAnimation'
 let g:netrw_dirhist_9='/srv/http/test.dv/public_html/assets/css'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_6='/home'
 let g:netrw_dirhist_5='/'
 let g:netrw_dirhist_4='/home/vesper/dotfiles/nvim/.config/nvim/plugged'
 let g:netrw_dirhist_3='/home/vesper/dotfiles/nvim/.config/nvim/plugged/wal.vim/colors'
-let g:netrw_dirhist_2='/home/vesper/dotfiles/nvim/.config/nvim/plugged/wal.vim'

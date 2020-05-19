@@ -1,10 +1,4 @@
-#define bg #181818
-#define fg #f5f5f5
-#define bgalt #282828
-#define fgalt #BFC0C0
-#define fcsed #f4bf75
-#define fcsedalt #917144
-#define urgnt #AC4142
+#include "Xresources.d/base16-grayscale-dark"
 
 BSPWM.border_normal: bgalt
 BSPWM.border_focused: fcsed
@@ -15,6 +9,8 @@ POLYBAR.background: bg
 POLYBAR.marker_focused: fcsed
 POLYBAR.marker_dimmed_focused: fcsedalt
 POLYBAR.marker_urgent: urgnt
+POLYBAR.marker_empty: fgalt
+POLYBAR.marker_occupied: fgalt
 POLYBAR.primary: bgalt
 POLYBAR.border: bgalt
 
@@ -31,4 +27,7 @@ DUNST.urgent_frame: urgnt
 DUNST.background: bg
 DUNST.foreground: fg
 
+TERMITE.color: |theme|
+
+NEOVIM.color: |theme|
  

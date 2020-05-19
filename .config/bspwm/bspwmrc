@@ -12,6 +12,10 @@ python ~/.config/scripts/auto_monitors.py 10
 python .config/scripts/dunst_xresources.py
 #same with rofi
 python .config/scripts/rofi_xresources.py
+# And with termite
+python .config/scripts/termite_auto_theme.py
+#also neovim
+python .config/scripts/neovim_auto_theme.py
 
 # Kill programs before starting them (if they were open)
 pidof picom && killall picom
@@ -24,7 +28,7 @@ dunst &
 # Polkit
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Wallpaper
-feh --no-fehbg --bg-fill ~/.config/bspwm/wallpapers/blackscreen1.jpg &
+feh --no-fehbg --bg-fill ~/.config/bspwm/wallpapers/mountains.jpg &
 # Compositor
 picom --experimental-backends &
 
