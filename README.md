@@ -9,4 +9,4 @@ Run install.sh, it creates symbolic links from the repo to your config file. **H
 # Extra
 I (currentlyy) use the base16 themes which I have installed for neovim, vscode and termite. I also added some Xresources variables for polybar, rofi and dunst for centralized configuration. Now I just go into my Xresources file and include whatever theme I want for the day. Linux is amazing.
 
-For rofi, termite, neovim and dunst I created scripts that changes placeholders to the colors which the xresources file has enabled that runs when bspwm starts or restarts and so far it's been working quite well.
+For rofi, termite, neovim and dunst I created scripts that changes placeholders in the config file to the colors which the xresources file has enabled. I made these scripts in python because I suck at bash scripting. And it works, so who cares?
