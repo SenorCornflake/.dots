@@ -1,4 +1,4 @@
-#include "Xresources.d/base16-grayscale-dark"
+#include "Xresources.d/base16-oceanicnext"
 
 BSPWM.border_normal: bgalt
 BSPWM.border_focused: fcsed
@@ -27,7 +27,7 @@ DUNST.urgent_frame: urgnt
 DUNST.background: bg
 DUNST.foreground: fg
 
-TERMITE.color: |theme|
+TERMITE.color: |term|
 
-NEOVIM.color: |theme|
+NEOVIM.color: |nvim|
  

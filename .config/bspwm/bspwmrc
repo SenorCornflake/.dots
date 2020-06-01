@@ -28,16 +28,18 @@ dunst &
 # Polkit
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Wallpaper
-feh --no-fehbg --bg-fill ~/.config/bspwm/wallpapers/mountains.jpg &
+feh --no-fehbg --bg-fill ~/.config/bspwm/wallpapers/black-mountain-starry-sly.jpg &
 # Compositor
 picom --experimental-backends &
 
 bspc config border_width         2
-bspc config window_gap           25
+bspc config window_gap           20
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+
+bspc config automatic_scheme alternate
 
 bspc config normal_border_color "$(xrdb -query | grep bspwm -i | grep border_normal -i -w | grep -E -o '#[0-9a-zA-Z]+')"
 bspc config focused_border_color "$(xrdb -query | grep bspwm -i | grep border_focused -i -w | grep -E -o '#[0-9a-zA-Z]+')"

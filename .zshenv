@@ -5,17 +5,29 @@ export HISTFILE="$XDG_DATA_HOME"/zsh/history
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 
-# Nord
-export color_normal_w="#4c566a"
-export color_normal="#2e3440"
-export color_focused="#8fbcbb"
-export color_active="#ebcb8b"
-export color_urgent="#bf616a"
-
 export QT_QPA_PLATFORMTHEME="qt5ct" 
-export LESSHISTSIZE=0
-export EDITOR=nvim
-
-alias startx="startx "$XDG_CONFIG_HOME"/X11/xinitrc"
+export LESSHISTFILE=-
 
 export PATH=~/.local/bin:$PATH
+
+# Default applications
+export EDITOR=nvim
+export TERMINAL=xterm-termite
+export BROWSER=firefox
+export VIDEO=vlc
+export WM=bspwm
+
+# Start blinking
+export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
+# Start bold
+export LESS_TERMCAP_md=$(tput bold; tput setaf 2) # green
+# Start stand out
+export LESS_TERMCAP_so=$(tput bold; tput setaf 3) # yellow
+# End standout
+export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
+# Start underline
+export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 1) # red
+# End Underline
+export LESS_TERMCAP_ue=$(tput sgr0)
+# End bold, blinking, standout, underline
+export LESS_TERMCAP_me=$(tput sgr0)

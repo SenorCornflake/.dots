@@ -29,7 +29,7 @@ let g:deoplete#enable_at_startup = 1
 let g:ctrlp_cmd = 'CtrlPBuffer'
 
 " COLORS
- color base16-grayscale-dark
+ color base16-oceanicnext
 
 " MISIL
 filetype on

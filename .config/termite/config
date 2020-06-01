@@ -3,51 +3,51 @@ font = FiraCode 11
 
 
 [colors]
-# Base16 Grayscale Dark
-# Author: Alexandre Gavioli (https://github.com/Alexx2/)
+# Base16 OceanicNext
+# Author: https://github.com/voronianski/oceanic-next-color-scheme
 
-foreground          = #b9b9b9
-foreground_bold     = #b9b9b9
-cursor              = #b9b9b9
-cursor_foreground   = #101010
-background          = #101010
+foreground          = #C0C5CE
+foreground_bold     = #C0C5CE
+cursor              = #C0C5CE
+cursor_foreground   = #1B2B34
+background          = #1B2B34
 
 # 16 color space
 
 # Black, Gray, Silver, White
-color0  = #101010
-color8  = #525252
-color7  = #b9b9b9
-color15 = #f7f7f7
+color0  = #1B2B34
+color8  = #65737E
+color7  = #C0C5CE
+color15 = #D8DEE9
 
 # Red
-color1  = #7c7c7c
-color9  = #7c7c7c
+color1  = #EC5f67
+color9  = #EC5f67
 
 # Green
-color2  = #8e8e8e
-color10 = #8e8e8e
+color2  = #99C794
+color10 = #99C794
 
 # Yellow
-color3  = #a0a0a0
-color11 = #a0a0a0
+color3  = #FAC863
+color11 = #FAC863
 
 # Blue
-color4  = #686868
-color12 = #686868
+color4  = #6699CC
+color12 = #6699CC
 
 # Purple
-color5  = #747474
-color13 = #747474
+color5  = #C594C5
+color13 = #C594C5
 
 # Teal
-color6  = #868686
-color14 = #868686
+color6  = #5FB3B3
+color14 = #5FB3B3
 
 # Extra colors
-color16 = #999999
-color17 = #5e5e5e
-color18 = #252525
-color19 = #464646
-color20 = #ababab
-color21 = #e3e3e3
+color16 = #F99157
+color17 = #AB7967
+color18 = #343D46
+color19 = #4F5B66
+color20 = #A7ADBA
+color21 = #CDD3DE

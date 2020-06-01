@@ -57,8 +57,8 @@ super + shift + {h,j,k,l}
 super + ctrl + {h,j,k,l}
     bspc node --to-node {west,south,north,east}
 
-super + {t,shift + f,f,b}
-    bspc node -t {tiled,fullscreen,floating}
+super + {t,shift + f,f,p}
+    bspc node -t {tiled,fullscreen,floating,pseudo_tiled}
 
 # FOcues desktiop
 super + {1-9,0}
@@ -87,3 +87,7 @@ super + m
 # Cycle through local nodes
 alt + {Tab, shift + Tab}
     bspc node -f {next.local, prev.local}
+
+# Change bspwm gap size
+super + {z,x}
+    python ~/.config/scripts/adjust_gaps.py {inc,dec} 10
