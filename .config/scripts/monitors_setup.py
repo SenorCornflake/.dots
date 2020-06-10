@@ -58,6 +58,8 @@ if c('VGA-1') and c('eDP-1'):
             e('bspc monitor eDP-1 -a {}'.format(desktop))
 
     e('bspc monitor VGA-1 -o {}'.format(" ".join(desktops[:6])))
+    print(" ".join(desktops[:6]))
+    print(" ".join(desktops[6:]))
     e('bspc monitor eDP-1 -o {}'.format(" ".join(desktops[6:])))
     
 
@@ -73,7 +75,7 @@ elif not c('VGA-1') and c('eDP-1'):
             e('bspc monitor eDP-1 -a {}'.format(desktop))
     
     e('bspc monitor eDP-1 -o {}'.format(" ".join(desktops)))
-
+    print(" ".join(desktops))
     e('bspc monitor VGA-1 --remove')
 
 count = 0

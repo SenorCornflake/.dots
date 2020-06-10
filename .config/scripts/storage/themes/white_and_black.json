@@ -1,149 +1,55 @@
 {
+    "name": "White and black",
     "config": {
         "bspwm": {
-            "<>|active_border_color|<>": {
-                "is_file": "false",
-                "value": "#444444"
-            },
-            "<>|border_width|<>": {
-                "is_file": "false",
-                "value": "2"
-            },
-            "<>|borderless_monocle|<>": {
-                "is_file": "false",
-                "value": "false"
-            },
-            "<>|focused_border_color|<>": {
-                "is_file": "false",
-                "value": "#ffffff"
-            },
-            "<>|gapless_monocle|<>": {
-                "is_file": "false",
-                "value": "false"
-            },
-            "<>|normal_border_color|<>": {
-                "is_file": "false",
-                "value": "#000000"
-            },
-            "<>|wallpaper|<>": {
-                "is_file": "false",
-                "value": "~/.config/bspwm/wallpapers/blackandwhitemetalarchitecture.jpg ~/.config/bspwm/wallpapers/blackandwhitemetalarchitecture.jpg"
-            },
-            "<>|window_gap|<>": {
-                "is_file": "false",
-                "value": "10"
-            }
+            "active_border_color": "#444444",
+            "border_width": "2",
+            "borderless_monocle": "false",
+            "focused_border_color": "#f0f0f0",
+            "gapless_monocle": "false",
+            "normal_border_color": "#101010",
+            "wallpaper": "~/.config/bspwm/wallpapers/blackandwhitemetalarchitecture.jpg ~/.config/bspwm/wallpapers/grey-architecture.jpg",
+            "window_gap": "10"
         },
         "dunst": {
-            "<>|background|<>": {
-                "is_file": "false",
-                "value": "#000000"
-            },
-            "<>|foreground|<>": {
-                "is_file": "false",
-                "value": "#ffffff"
-            },
-            "<>|frame|<>": {
-                "is_file": "false",
-                "value": "#ffffff"
-            },
-            "<>|urgent_frame|<>": {
-                "is_file": "false",
-                "value": "#ff0000"
-            },
-            "<>|font|<>": {
-                "is_file": "false",
-                "value": "Terminus (TTF) 11"
-            }
+            "background": "#101010",
+            "foreground": "#f0f0f0",
+            "frame_color": "#f0f0f0",
+            "critical_frame_color": "#ff0000",
+            "font": "Terminus (TTF) 11",
+            "frame_width": "2"
         },
         "neovim": {
-            "<>|color|<>": {
-                "is_file": "false",
-                "value": "base16-grayscale-dark"
-            }
+            "theme": "base16-grayscale-dark"
         },
         "polybar": {
-            "<>|type|<>": {
-                "is_file": "true",
-                "value": "~/.config/polybar/types/alpha/config_template.ini"
-            },
-            "<>|theme|<>": {
-                "is_file": "false",
-                "value": "~/.config/polybar/types/alpha/themes/white_and_black.ini"
-            }
+            "type": "alpha",
+            "theme": "white_and_black"
         },
         "rofi": {
-            "<>|active_window|<>": {
-                "is_file": "false",
-                "value": "#333333"
-            },
-            "<>|background|<>": {
-                "is_file": "false",
-                "value": "#000000"
-            },
-            "<>|border_input|<>": {
-                "is_file": "false",
-                "value": "#333333"
-            },
-            "<>|border_window|<>": {
-                "is_file": "false",
-                "value": "#ffffff"
-            },
-            "<>|font|<>": {
-                "is_file": "false",
-                "value": "Terminus (TTF) 12"
-            },
-            "<>|foreground|<>": {
-                "is_file": "false",
-                "value": "#ffffff"
-            },
-            "<>|icon_theme|<>": {
-                "is_file": "false",
-                "value": "Papirus"
-            },
-            "<>|selected_foreground|<>": {
-                "is_file": "false",
-                "value": "#000000"
-            },
-            "<>|selected|<>": {
-                "is_file": "false",
-                "value": "#ffffff"
-            },
-            "<>|show_icons|<>": {
-                "is_file": "false",
-                "value": "true"
-            },
-            "<>|urgent|<>": {
-                "is_file": "false",
-                "value": "#ff0000"
-            }
+            "active_window": "#333333",
+            "background": "#101010",
+            "border_input": "#333333",
+            "border_window": "#f0f0f0",
+            "font": "Terminus (TTF) 12",
+            "foreground": "#f0f0f0",
+            "icon_theme": "Papirus",
+            "selected_foreground": "#101010",
+            "selected": "#f0f0f0",
+            "show_icons": "true",
+            "urgent": "#ff0000"
         },
         "termite": {
-            "<>|color|<>": {
-                "is_file": "true",
-                "value": "~/.config/termite/colors/base16-grayscale-dark.config"
-            }
+            "theme": "base16-grayscale-dark",
+            "font": "Fira Code 11"
         },
         "vscode": {
-            "<>|theme|<>": {
-                "is_file": "false",
-                "value": "Base16 Dark Grayscale"
-            }
+            "theme": "Base16 Dark Grayscale"
         },
         "alacritty": {
-            "<>|font_family|<>": {
-                "is_file": "false",
-                "value": "Fira Code"
-            },
-            "<>|font_size|<>": {
-                "is_file": "false",
-                "value": "11.0"
-            },
-            "<>|theme|<>": {
-                "is_file": "true",
-                "value": "~/.config/alacritty/colors/base16-grayscale-dark.yml"
-            }
+            "font_family": "Fira Code",
+            "font_size": "11.0",
+            "theme": "base16-grayscale-dark"
         }
-    },
-    "name": "White and black"
+    }
 }

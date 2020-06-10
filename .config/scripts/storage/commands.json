@@ -1,7 +1,7 @@
 [
     {
         "name": "Set theme.",
-        "command": "python ~/.config/scripts/dynamic_themer.py set restart"
+        "command": "python ~/.config/scripts/set_theme.py"
     },
     {
         "name": "Set wallpaper.",
@@ -26,5 +26,10 @@
     {
         "name": "Close all windows.",
         "command": "python ~/.config/scripts/close_all_windows.py"
+    },
+    {
+        "name": "Exit.",
+        "command": "python ~/.config/scripts/shutdown.py"
     }
+    
 ]

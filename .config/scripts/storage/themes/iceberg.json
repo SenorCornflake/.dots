@@ -1,0 +1,55 @@
+{
+    "name": "Iceberg",
+    "config": {
+        "bspwm": {
+            "active_border_color": "#c6c8d1",
+            "border_width": "2",
+            "borderless_monocle": "false",
+            "focused_border_color": "#84a0c6",
+            "gapless_monocle": "false",
+            "normal_border_color": "#161821",
+            "wallpaper": "~/.config/bspwm/wallpapers/iceberg_earth.jpg ~/.config/bspwm/wallpapers/noir-nebula-style-icebergjpg",
+            "window_gap": "10"
+        },
+        "dunst": {
+            "background": "#161821",
+            "foreground": "#c6c8d1",
+            "frame_color": "#84a0c6",
+            "critical_frame_color": "#e27878",
+            "font": "Terminus (TTF) 11",
+            "frame_width": "2"
+        },
+        "neovim": {
+            "theme": "iceberg"
+        },
+        "polybar": {
+            "type": "alpha",
+            "theme": "iceberg"
+        },
+        "rofi": {
+            "active_window": "#161821",
+            "background": "#161821",
+            "border_input": "#262831",
+            "border_window": "#89b8c2",
+            "font": "Terminus (TTF) 12",
+            "foreground": "#ffffff",
+            "icon_theme": "Papirus",
+            "selected_foreground": "#161821",
+            "selected": "#84a0c6",
+            "show_icons": "true",
+            "urgent": "#e27878"
+        },
+        "termite": {
+            "theme": "iceberg",
+            "font": "Fira Code 11"
+        },
+        "vscode": {
+            "theme": "Iceberg"
+        },
+        "alacritty": {
+            "font_family": "Fira Code",
+            "font_size": "11.0",
+            "theme": "iceberg"
+        }
+    }
+}

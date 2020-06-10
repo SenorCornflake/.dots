@@ -27,7 +27,7 @@ for i, _ in enumerate(connected_monitors):
 if len(chosen_wallpapers) > 0:
     chosen_wallpapers = " ".join(chosen_wallpapers)
 
-    themefile['config']['bspwm']['<>|wallpaper|<>']['value'] = chosen_wallpapers
+    themefile['config']['bspwm']['wallpaper'] = chosen_wallpapers
     themefile = json.dumps(themefile, indent=4, sort_keys=False)
     open(os.path.expanduser(theme), 'w').write(themefile)
     e('feh --no-fehbg --bg-fill {}'.format(chosen_wallpapers))

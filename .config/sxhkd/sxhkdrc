@@ -10,10 +10,14 @@ XF86Audio{Lower,Raise}Volume
 XF86AudioMute
     pulseaudio-ctl mute
 
-
+F12
+    pidof flameshot || flameshot && flameshot screen -p ~/Pictures
 ###############
 # SUPER + KEY #
 ###############
+super + x
+    bspc wm -r
+
 # Brightness
 super + XF86Audio{Lower,Raise}Volume
     brightnessctl s 1%{-,+}

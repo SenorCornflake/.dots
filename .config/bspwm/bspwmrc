@@ -14,7 +14,7 @@ dunst &
 # Polkit
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Wallpaper
-feh --no-fehbg --bg-fill ~/.config/bspwm/wallpapers/skyrim-whiterun-farms.jpg ~/.config/bspwm/wallpapers/skyrim-mountains.jpg &
+feh --no-fehbg --bg-fill ~/.config/bspwm/wallpapers/iceberg_earth.jpg ~/.config/bspwm/wallpapers/noir-nebula-style-icebergjpg
 # Compositor
 picom --experimental-backends &
 
@@ -27,9 +27,9 @@ bspc config gapless_monocle      false
 
 bspc config automatic_scheme alternate
 
-bspc config normal_border_color "#1d2021"
-bspc config focused_border_color "#ffd175"
-bspc config active_border_color "#a6813f"
+bspc config normal_border_color "#161821"
+bspc config focused_border_color "#84a0c6"
+bspc config active_border_color "#c6c8d1"
 
 xsetroot -cursor_name left_ptr &
 

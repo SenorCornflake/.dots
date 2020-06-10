@@ -22,6 +22,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'arcticicestudio/nord-vim'
     Plug 'chriskempson/base16-vim'
     Plug 'morhetz/gruvbox'
+    Plug 'cocopon/iceberg.vim/'
 call plug#end()
 
 " DEOPLETE
@@ -30,7 +31,7 @@ let g:deoplete#enable_at_startup = 1
 let g:ctrlp_cmd = 'CtrlPBuffer'
 
 " COLORS
-colorscheme gruvbox
+colorscheme iceberg
 
 " MISIL
 filetype on
@@ -112,8 +113,8 @@ imap ii <Esc>
 
 " COMMANDS
 command! W w
-command! Config e! ~/.config/nvim/init_template.vim
-command! CONFIG e! ~/.config/nvim/init_template.vim
+command! Config e! ~/.config/nvim/init.vim
+command! CONFIG e! ~/.config/nvim/init.vim
 command! Reload source ~/.config/nvim/init.vim 
 
 " NMAPS
