@@ -61,10 +61,10 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 2
+    frame_width = 2 # DYNAMIC THEMER GENERAL
 
     # Defines color of the frame around the notification window.
-    frame_color = "#99c794"
+    frame_color = "#ffd175" # DYNAMIC THEMER GENERAL
 
     # Define a color for the separator.
     # possible values are:
@@ -86,7 +86,7 @@
 
     ### Text ###
 
-    font = FiraCode 10
+    font = Terminus (TTF) 11
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -275,23 +275,23 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#1b2b34"
-    foreground = "#4b6675"
+    background = "#1d2021" # DYNAMIC THEMER LOW
+    foreground = "#dbd5ca" # DYNAMIC THEMER LOW
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /usr/share/icons/Papirus
 
 [urgency_normal]
-    background = "#1b2b34"
-    foreground = "#4b6675"
+    background = "#1d2021" # DYNAMIC THEMER NORMAL
+    foreground = "#dbd5ca" # DYNAMIC THEMER NORMAL
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /usr/share/icons/Papirus
 
 [urgency_critical]
-    background = "#1b2b34"
-    foreground = "#4b6675"
-    frame_color = "#df5f00"
+    background = "#1d2021" # DYNAMIC THEMER CRITICAL
+    foreground = "#dbd5ca" # DYNAMIC THEMER CRITICAL
+    frame_color = "#ffa300" # DYNAMIC THEMER CRITICAL
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /usr/share/icons/Papirus

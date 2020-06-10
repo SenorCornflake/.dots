@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Set theme.",
+        "command": "python ~/.config/scripts/dynamic_themer.py set restart"
+    },
+    {
+        "name": "Set wallpaper.",
+        "command": "python ~/.config/scripts/set_wallpaper.py"
+    },
+    {
+        "name": "Set polybar type.",
+        "command": "python ~/.config/scripts/set_polybar.py"
+    },
+    {
+        "name": "Search Wiki.",
+        "command": "python ~/.config/scripts/arch_wiki.py"
+    },
+    {
+        "name": "Startup",
+        "command": "sh ~/.config/scripts/start_work.sh"
+    },
+    {
+        "name": "Toggle night mode.",
+        "command": "python ~/.config/scripts/night_mode.py"
+    },
+    {
+        "name": "Close all windows.",
+        "command": "python ~/.config/scripts/close_all_windows.py"
+    }
+]

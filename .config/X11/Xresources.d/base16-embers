@@ -1,9 +1,0 @@
-! BASE16-EMBERS
-#define bg #16130f
-#define fg #826d57
-#define bgalt #2c2620
-#define fgalt #826d57
-#define fcsed #57826d
-#define fcsedalt #314a3e
-#define urgnt #6d5782
-#define theme base16-embers

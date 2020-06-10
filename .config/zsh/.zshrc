@@ -88,4 +88,4 @@ autoload -U promptinit; promptinit
 prompt spaceship
 
 alias ls='ls --color=auto'
-alias startx='startx ~/.config/X11/xinitrc'
+neofetch

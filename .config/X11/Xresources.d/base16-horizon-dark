@@ -1,9 +1,0 @@
-! BASE16-HORIZON-DARK
-#define bg #1c1e26
-#define fg #cbced0
-#define bgalt #232530
-#define fgalt #BFC0C0
-#define fcsed #df5273
-#define fcsedalt #8a3246
-#define urgnt #B072D1
-#define theme base16-horizon-dark

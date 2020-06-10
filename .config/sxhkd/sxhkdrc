@@ -1,93 +1,95 @@
+#########
+# MISIL #
+#########
 
-# Open Terminal
-super + Return
-    termite -e 'zsh -c "neofetch && zsh"' --hold
+# Lower/Raise volume
+XF86Audio{Lower,Raise}Volume
+    pulseaudio-ctl {down,up}
 
-# App launcher
-super + space
-    rofi -modi drun,window -show drun
-
-# Rofi Switch to window
-alt + space
-    rofi -modi window,drun -show window
-
-
-# Toggle mute
+# Mute
 XF86AudioMute
     pulseaudio-ctl mute
 
-# Toggle mic mute
-XF86AudioMicMute
-    pulseaudio-ctl mute-input
 
-# Change volume
-XF86Audio{Raise,Lower}Volume
-    pulseaudio-ctl {up,down} 5
+###############
+# SUPER + KEY #
+###############
+# Brightness
+super + XF86Audio{Lower,Raise}Volume
+    brightnessctl s 1%{-,+}
 
+# Terminal
+super + Return
+    alacritty
 
-# Screen brightness
-super + XF86Audio{Raise,Lower}Volume
-    brightnessctl s {1%+,1%-}
+# Close window
+super + w
+    bspc node --close
 
-
-# reload sxhkd
-super + Escape
-    pkill -USR1 -x sxhkd
-
-F12
-    flameshot & flameshot screen -p ~/Pictures
-
-# restart or quit bspwm
-super + alt + {r,q}
-    bspc {wm -r, quit}
-
-# Close node, Close Single Window
-super + {_,shift + } w
-    bspc node {--close, --kill}
-
-# Focus node in given direction
+# Focus in direction
 super + {h,j,k,l}
     bspc node --focus {west,south,north,east}
 
-# Swap node in given direction
-super + shift + {h,j,k,l}
-    bspc node --swap {west,south,north,east}
-
-# Move node to node without swapping
-super + ctrl + {h,j,k,l}
-    bspc node --to-node {west,south,north,east}
-
-super + {t,shift + f,f,p}
-    bspc node -t {tiled,fullscreen,floating,pseudo_tiled}
-
-# FOcues desktiop
+# Focus desktop
 super + {1-9,0}
     bspc desktop --focus {1-9,10}
 
-# Move node to desktop
+# Switch window states
+super {f,s,t,p}
+    bspc node --state {floating,fullscreen,tiled,pseudo_tiled}
+
+# Switch between monocle and tiled
+super + d
+    bspc desktop -l next
+
+# Application launcher
+super + a
+    rofi -modi drun -show drun -columns 6
+
+# List custom commands
+super + c
+    python ~/.config/scripts/command_lister.py
+
+#####################
+# SUPER + ALT + KEY #
+#####################
+
+# Resize by adding
+super + alt + {h,j,k,l}
+    bspc node --resize {left -40 -40, bottom 40 40, top -40 -40, right 40 40}
+
+#######################
+# SUPER + SHIFT + KEY #
+#######################
+
+# Launch shutdown/restart/kill X session script
+super + shift + q
+    python ~/.config/scripts/shutdown.py
+
+# Send to desktop
 super + shift + {1-9,0}
     bspc node --to-desktop {1-9,10}
 
-# Resize node increasing
-super + alt + {h,j,k,l}
-    bspc node --resize {left -40 0,bottom 0 40,top 0 -40,right 40 0}
+# Swap window in direction
+super + shift + {h,j,k,l}
+    bspc node --swap {west,south,north,east}
 
-# Resize node deccrease
-super + alt + shift + {h,j,k,l}
-	bspc node --resize {right -40 0,top 0 40,bottom 0 -40,left 40 0}
+# Kill window
+super + shift + w
+    bspc node --kill
 
-# move a floating window
-super + {Left,Down,Up,Right}
-	bspc node -v {-40 0,0 40,0 -40,40 0}
+#########################
+# SUPER + CONTROL + KEY #
+#########################
 
-# toggle monocle layout
-super + m
-    bspc desktop -l next
+# Move windows
+super + control + {h,j,k,l}
+    bspc node --move {-40 0, 0 40, 0 -40, 40 0}
 
-# Cycle through local nodes
-alt + {Tab, shift + Tab}
-    bspc node -f {next.local, prev.local}
+#############################
+# SUPER + ALT + SHIFT + KEY #
+#############################
 
-# Change bspwm gap size
-super + {z,x}
-    python ~/.config/scripts/adjust_gaps.py {inc,dec} 10
+# Resize by removing
+super + alt + shift {h,j,k,l}
+    bspc node --resize {left 40 40, bottom -40 -40, top 40 40, right -40 -40}

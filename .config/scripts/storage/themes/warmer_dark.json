@@ -1,0 +1,149 @@
+{
+    "config": {
+        "bspwm": {
+            "<>|active_border_color|<>": {
+                "is_file": "false",
+                "value": "#a6813f"
+            },
+            "<>|border_width|<>": {
+                "is_file": "false",
+                "value": "2"
+            },
+            "<>|borderless_monocle|<>": {
+                "is_file": "false",
+                "value": "false"
+            },
+            "<>|focused_border_color|<>": {
+                "is_file": "false",
+                "value": "#ffd175"
+            },
+            "<>|gapless_monocle|<>": {
+                "is_file": "false",
+                "value": "false"
+            },
+            "<>|normal_border_color|<>": {
+                "is_file": "false",
+                "value": "#1d2021"
+            },
+            "<>|wallpaper|<>": {
+                "is_file": "false",
+                "value": "~/.config/bspwm/wallpapers/skyrim-whiterun-farms.jpg ~/.config/bspwm/wallpapers/skyrim-mountains.jpg"
+            },
+            "<>|window_gap|<>": {
+                "is_file": "false",
+                "value": "10"
+            }
+        },
+        "dunst": {
+            "<>|background|<>": {
+                "is_file": "false",
+                "value": "#1d2021"
+            },
+            "<>|foreground|<>": {
+                "is_file": "false",
+                "value": "#dbd5ca"
+            },
+            "<>|frame|<>": {
+                "is_file": "false",
+                "value": "#ffd175"
+            },
+            "<>|urgent_frame|<>": {
+                "is_file": "false",
+                "value": "#ffa300"
+            },
+            "<>|font|<>": {
+                "is_file": "false",
+                "value": "Terminus (TTF) 11"
+            }
+        },
+        "neovim": {
+            "<>|color|<>": {
+                "is_file": "false",
+                "value": "gruvbox"
+            }
+        },
+        "polybar": {
+            "<>|type|<>": {
+                "is_file": "true",
+                "value": "~/.config/polybar/types/alpha/config_template.ini"
+            },
+            "<>|theme|<>": {
+                "is_file": "false",
+                "value": "~/.config/polybar/types/alpha/themes/warmer_dark.ini"
+            }
+        },
+        "rofi": {
+            "<>|active_window|<>": {
+                "is_file": "false",
+                "value": "#484848"
+            },
+            "<>|background|<>": {
+                "is_file": "false",
+                "value": "#1d2021"
+            },
+            "<>|border_input|<>": {
+                "is_file": "false",
+                "value": "#484848"
+            },
+            "<>|border_window|<>": {
+                "is_file": "false",
+                "value": "#ffd175"
+            },
+            "<>|font|<>": {
+                "is_file": "false",
+                "value": "Terminus (TTF) 12"
+            },
+            "<>|foreground|<>": {
+                "is_file": "false",
+                "value": "#dbd5ca"
+            },
+            "<>|icon_theme|<>": {
+                "is_file": "false",
+                "value": "Papirus"
+            },
+            "<>|selected_foreground|<>": {
+                "is_file": "false",
+                "value": "#1d2021"
+            },
+            "<>|selected|<>": {
+                "is_file": "false",
+                "value": "#ffd175"
+            },
+            "<>|show_icons|<>": {
+                "is_file": "false",
+                "value": "true"
+            },
+            "<>|urgent|<>": {
+                "is_file": "false",
+                "value": "#ffa300"
+            }
+        },
+        "termite": {
+            "<>|color|<>": {
+                "is_file": "true",
+                "value": "~/.config/termite/colors/gruvbox-hard.config"
+            }
+        },
+        "vscode": {
+            "<>|theme|<>": {
+                "is_file": "false",
+                "value": "Gruvbox Dark (Hard)"
+            }
+        },
+        "alacritty": {
+            "<>|font_family|<>": {
+                "is_file": "false",
+                "value": "Fira Code"
+            },
+            "<>|font_size|<>": {
+                "is_file": "false",
+                "value": "11.0"
+            },
+            "<>|theme|<>": {
+                "is_file": "true",
+                "value": "~/.config/alacritty/colors/base16-gruvbox-dark-hard.yml"
+            }
+        }
+    },
+    "name": "Warmer dark"
+}

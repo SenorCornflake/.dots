@@ -1,9 +1,0 @@
-! BASE16-DEFAULT-DARK
-#define bg #181818
-#define fg #f5f5f5
-#define bgalt #282828
-#define fgalt #BFC0C0
-#define fcsed #f4bf75
-#define fcsedalt #917144
-#define urgnt #AC4142
-#define theme base16-default-dark

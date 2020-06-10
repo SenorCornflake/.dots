@@ -21,6 +21,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tomasiser/vim-code-dark'
     Plug 'arcticicestudio/nord-vim'
     Plug 'chriskempson/base16-vim'
+    Plug 'morhetz/gruvbox'
 call plug#end()
 
 " DEOPLETE
@@ -29,7 +30,7 @@ let g:deoplete#enable_at_startup = 1
 let g:ctrlp_cmd = 'CtrlPBuffer'
 
 " COLORS
- color base16-oceanicnext
+colorscheme gruvbox
 
 " MISIL
 filetype on
@@ -53,6 +54,7 @@ set incsearch
 set hidden 
 "set t_Co=16
 
+let g:gruvbox_contrast_dark = 'hard'
 
 " NERDTREE
 let g:NERDTreeWinPos = 'right'
@@ -110,8 +112,8 @@ imap ii <Esc>
 
 " COMMANDS
 command! W w
-command! Config e! ~/.config/nvim/init.vim
-command! CONFIG e! ~/.config/nvim/init.vim
+command! Config e! ~/.config/nvim/init_template.vim
+command! CONFIG e! ~/.config/nvim/init_template.vim
 command! Reload source ~/.config/nvim/init.vim 
 
 " NMAPS
