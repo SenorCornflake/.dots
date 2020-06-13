@@ -15,8 +15,13 @@ F12
 ###############
 # SUPER + KEY #
 ###############
+# Restart bspwm
 super + x
     bspc wm -r
+
+# Restart sxhkd
+super + Escape
+    killall sxhkd && sxhkd &
 
 # Brightness
 super + XF86Audio{Lower,Raise}Volume
@@ -97,3 +102,22 @@ super + control + {h,j,k,l}
 # Resize by removing
 super + alt + shift {h,j,k,l}
     bspc node --resize {left 40 40, bottom -40 -40, top 40 40, right -40 -40}
+
+#############
+# ALT + KEY #
+#############
+
+# Cycle through windows forwards
+alt + Tab
+    bspc node next.local -f
+
+alt + space
+    rofi -modi window -show window -columns 1
+
+#####################
+# ALT + SHIFT + KEY #
+#####################
+
+# Cycle through window backwards
+alt + shift + Tab
+    bspc node prev.local -f

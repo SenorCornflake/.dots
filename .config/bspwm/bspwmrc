@@ -2,7 +2,7 @@
 
 sxhkd &
 python ~/.config/scripts/monitors_setup.py
-
+python ~/.config/scripts/night_mode.py no_toggle
 # Kill programs before starting them (if they were open)
 pidof picom && killall picom
 pidof dunst && killall dunst
@@ -33,7 +33,8 @@ bspc config active_border_color "#c6c8d1"
 
 xsetroot -cursor_name left_ptr &
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a gimp desktop='^5' follow=on focus=on
+bspc rule -a Inkscape desktop='^5' follow=on focus=on
 bspc rule -a firefox desktop='^1' follow=on focus=on
 bspc rule -a Org.gnome.Nautilus desktop='^4' follow=on focus=on
 bspc rule -a Code desktop='^2' follow=on focus=on

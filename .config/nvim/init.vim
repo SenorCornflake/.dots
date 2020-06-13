@@ -128,4 +128,6 @@ nnoremap <leader>v :vsp<cr>
 nnoremap <leader>s :sp<cr>
 nnoremap <silent> <leader>q :call DeleteCurBufferNotCloseWindow()<cr>
 
-
+" TITLE OF TERMINAL
+set title
+set titlestring=Nvim 

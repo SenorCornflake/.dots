@@ -3,9 +3,8 @@ export XDG_CONFIG_HOME=~/.config/
 export ZDOTDIR=$HOME/.config/zsh/
 export HISTFILE="$XDG_DATA_HOME"/zsh/history
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
-export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 
-export QT_QPA_PLATFORMTHEME="qt5ct" 
+#export QT_QPA_PLATFORMTHEME="qt5ct" 
 export LESSHISTFILE=-
 
 export PATH=~/.local/bin:$PATH
@@ -15,7 +14,7 @@ export EDITOR=nvim
 export TERMINAL=xterm-termite
 export BROWSER=firefox
 export VIDEO=vlc
-export WM=bspwm
+#export WM=bspwm
 
 # Start blinking
 export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green
