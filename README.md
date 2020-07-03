@@ -11,4 +11,4 @@ Run install.sh, it creates symbolic links from the repo to your config file. **H
 `sudo pacman -S xorg xorg-xinit sxhkd bspwm firefox neovim rofi dunst feh picom polkit-gnome nautilus terminus-font code`
 
 ## AUR
-`yay -S polybar material-design-icons-git siji-git`
+`yay -S polybar material-design-icons-git siji-git cozette-otb cozette-ttf alacritty-git`
