@@ -6,9 +6,4 @@ These are my configuration files, it's as simple as that
 # How to install
 Run install.sh, it creates symbolic links from the repo to your config file. **HOWEVER**, THIS WILL OVERWRITE ANY FILE YOU HAVE WITH THE SAME NAME, so backup.
 
-# Packages to install (Will edit over time)
-## Pacman
-`sudo pacman -S xorg xorg-xinit sxhkd bspwm firefox neovim rofi dunst feh picom polkit-gnome nautilus terminus-font code`
-
-## AUR
-`yay -S polybar material-design-icons-git siji-git alacritty-git`
+`install_sys.sh` is for fresh arch installations, it **should** (no promises) install all required programs for these dotfiles
