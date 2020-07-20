@@ -1,0 +1,8 @@
+{
+    "modes_dir": "~/.config/lemonpotato/modes",
+    "overrides_dir": "~/.config/lemonpotato/overrides",
+    "registry_dir": "~/.config/lemonpotato/registry",
+    "current_mode": "alpha",
+    "current_override": "base16-embers",
+    "already_set": "true"
+}

@@ -1,0 +1,76 @@
+{
+    "name": "bspwm",
+    "file_path": "~/.config/bspwm/bspwmrc",
+    "settings": {
+        "normal_border_color": {
+            "identifier": "bspc config normal_border_color \"[0-9a-zA-Z#]+\"",
+            "replacer": "bspc config normal_border_color \"<|value|>\"",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "active_border_color": {
+            "identifier": "bspc config active_border_color \"[0-9a-zA-Z#]+\"",
+            "replacer": "bspc config active_border_color \"<|value|>\"",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "focused_border_color": {
+            "identifier": "bspc config focused_border_color \"[0-9a-zA-Z#]+\"",
+            "replacer": "bspc config focused_border_color \"<|value|>\"",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "window_gap": {
+            "identifier": "bspc config window_gap [0-9]+",
+            "replacer": "bspc config window_gap <|value|>",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "border_width": {
+            "identifier": "bspc config border_width [0-9]+",
+            "replacer": "bspc config border_width <|value|>",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "borderless_monocle": {
+            "identifier": "bspc config borderless_monocle \\w+",
+            "replacer": "bspc config borderless_monocle <|value|>",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "presel_feedback_color": {
+            "identifier": "bspc config presel_feedback_color \"[0-9a-zA-Z#]+\"",
+            "replacer": "bspc config presel_feedback_color \"<|value|>\"",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "gapless_monocle": {
+            "identifier": "bspc config gapless_monocle \\w+",
+            "replacer": "bspc config gapless_monocle <|value|>",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "wallpaper": {
+            "identifier": "feh --no-fehbg --bg-fill .+",
+            "replacer": "feh --no-fehbg --bg-fill <|value|>",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "pywal": {
+            "identifier": "# pywal",
+            "replacer": "<|value|>",
+            "identifier_type": "line", 
+            "replacer_type": "below",
+            "value_is_file": false
+        }
+    }
+}

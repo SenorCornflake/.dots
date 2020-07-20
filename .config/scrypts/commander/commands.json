@@ -1,0 +1,103 @@
+[
+    {
+        "name": "Mode",
+        "action": [
+            {
+                "name": "Switch",
+                "action": "python ~/.config/scrypts/switch.py mode"
+            },
+            {
+                "name": "Wallpaper",
+                "action": "python ~/.config/scrypts/switch.py wallpaper mode"
+            },
+            {
+                "name": "Bar layout",
+                "action": "python ~/.config/scrypts/switch.py polybar mode"
+            }
+        ]
+    },
+    {
+        "name": "Override",
+        "action": [
+            {
+                "name": "Switch",
+                "action": "python ~/.config/scrypts/switch.py override"
+            },
+            {
+                "name": "Wallpaper",
+                "action": "python ~/.config/scrypts/switch.py wallpaper override"
+            },
+            {
+                "name": "Bar layout",
+                "action": "python ~/.config/scrypts/switch.py polybar override"
+            }
+        ]
+    },
+    {
+        "name": "Initiate",
+        "action": "(pidof firefox || firefox &) && (pidof code || code &)"
+    },
+    {
+        "name": "Pywal picture",
+        "action": "python ~/.config/scrypts/switch.py pywal"
+    },
+    {
+        "name": "Night Mode",
+        "action": "python ~/.config/scrypts/night_mode/main.py"
+    },
+    {
+        "name": "Arch wiki",
+        "action": "python ~/.config/scrypts/arch_wiki.py"
+    },
+    {
+        "name": "Close all windows",
+        "action": "python ~/.config/scrypts/close_all_windows.py"
+    },
+    {
+        "name": "Exit",
+        "action": [
+            {
+                "name": "Logout",
+                "prompt": "Are you sure?",
+                "action": [
+                    {
+                        "name": "Cancel",
+                        "action": ""
+                    },
+                    {
+                        "name": "Continue",
+                        "action": "bspc quit && while pgrep -x bspwm >/dev/null; do sleep 1; done && kill -9 -1"
+                    }
+                ]
+            },
+            {
+                "name": "Reboot",
+                "prompt": "Are you sure?",
+                "action": [
+                    {
+                        "name": "Cancel",
+                        "action": ""
+                    },
+                    {
+                        "name": "Continue",
+                        "action": "shutdown -r now"
+                    }
+                ]
+            },
+            {
+                "name": "Shutdown",
+                "prompt": "Are you sure?",
+                "action": [
+                    {
+                        "name": "Cancel",
+                        "action": ""
+                    },
+                    {
+                        "name": "Continue",
+                        "action": "shutdown now"
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,44 +1,57 @@
 [options]
-font = Fira Code 11
+font = FiraCode Nerd Font 10
+allow_bold = false
+scrollback_lines = -1
 
-# DYNAMIC THEMER FROM HERE
-# Iceberg color scheme.
+# colors
 [colors]
-foreground = #d2d4de
-background = #161821
-foreground_bold = #d2d4de
-cursor = #d2d4de
-cursor_foreground = #161821
-highlight = #6b7089
+# Base16 Embers
+# Author: Jannik Siebert (https://github.com/janniks)
 
-# black
-color0 = #161821
-color8 = #6b7089
+foreground          = #A39A90
+foreground_bold     = #A39A90
+cursor              = #A39A90
+cursor_foreground   = #16130F
+background          = #16130F
 
-# red
-color1 = #e27878
-color9 = #e98989
+# 16 color space
 
-# green
-color2 = #b4be82
-color10 = #c0ca8e
+# Black, Gray, Silver, White
+color0  = #16130F
+color8  = #5A5047
+color7  = #A39A90
+color15 = #DBD6D1
 
-# yellow
-color3 = #e2a478
-color11 = #e9b189
+# Red
+color1  = #826D57
+color9  = #826D57
 
-# blue
-color4 = #84a0c6
-color12 = #91acd1
+# Green
+color2  = #57826D
+color10 = #57826D
 
-# magenta
-color5 = #a093c7
-color13 = #ada0d3
+# Yellow
+color3  = #6D8257
+color11 = #6D8257
 
-# cyan
-color6 = #89b8c2
-color14 = #95c4ce
+# Blue
+color4  = #6D5782
+color12 = #6D5782
 
-# white
-color7 = #c6c8d1
-color15 = #d2d4de
+# Purple
+color5  = #82576D
+color13 = #82576D
+
+# Teal
+color6  = #576D82
+color14 = #576D82
+
+# Extra colors
+color16 = #828257
+color17 = #825757
+color18 = #2C2620
+color19 = #433B32
+color20 = #8A8075
+color21 = #BEB6AE
+
+# /colors

@@ -11,10 +11,8 @@ XF86AudioMute
     pulseaudio-ctl mute
 
 F12
-    pidof flameshot || flameshot && flameshot screen -p ~/Pictures
-###############
-# SUPER + KEY #
-###############
+    scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/Pictures'
+
 # Restart bspwm
 super + x
     bspc wm -r
@@ -25,7 +23,7 @@ super + Escape
 
 # Brightness
 super + XF86Audio{Lower,Raise}Volume
-    brightnessctl s 1%{-,+}
+    brightnessctl s 10%{-,+}
 
 # Terminal
 super + Return
@@ -44,7 +42,7 @@ super + {1-9,0}
     bspc desktop --focus {1-9,10}
 
 # Switch window states
-super {f,s,t,p}
+super {u,i,o,p}
     bspc node --state {floating,fullscreen,tiled,pseudo_tiled}
 
 # Switch between monocle and tiled
@@ -53,27 +51,15 @@ super + d
 
 # Application launcher
 super + a
-    rofi -modi drun -show drun -columns 6
+    rofi -modi drun -show drun -theme-str "prompt \{ enabled: false; \}"
 
 # List custom commands
 super + c
-    python ~/.config/scripts/command_lister.py
+    python ~/.config/scrypts/commander/main.py
 
-#####################
-# SUPER + ALT + KEY #
-#####################
-
-# Resize by adding
-super + alt + {h,j,k,l}
-    bspc node --resize {left -40 -40, bottom 40 40, top -40 -40, right 40 40}
-
-#######################
-# SUPER + SHIFT + KEY #
-#######################
-
-# Launch shutdown/restart/kill X session script
-super + shift + q
-    python ~/.config/scripts/shutdown.py
+# Rotate desktop
+super + r
+    bspc node @/ -R 90
 
 # Send to desktop
 super + shift + {1-9,0}
@@ -87,37 +73,39 @@ super + shift + {h,j,k,l}
 super + shift + w
     bspc node --kill
 
-#########################
-# SUPER + CONTROL + KEY #
-#########################
-
 # Move windows
-super + control + {h,j,k,l}
+alt + shift + {h,j,k,l}
     bspc node --move {-40 0, 0 40, 0 -40, 40 0}
 
-#############################
-# SUPER + ALT + SHIFT + KEY #
-#############################
-
 # Resize by removing
-super + alt + shift {h,j,k,l}
-    bspc node --resize {left 40 40, bottom -40 -40, top 40 40, right -40 -40}
+control + super + {h,j,k,l}
+    bspc node --resize {right -40 -40, top 40 40, bottom -40 -40, left 40 40}
 
-#############
-# ALT + KEY #
-#############
+# Resize by adding
+control + alt + {h,j,k,l}
+    bspc node --resize {left -40 -40, bottom 40 40, top -40 -40, right 40 40}
+
+# Preselection dir
+alt + {h,j,k,l}
+    bspc node --presel-dir {west,south,north,east}
+
+# Preselection size
+alt + {1-9}
+    bspc node --presel-ratio 0.{1-9} 
+
+# Cancel all preselections
+alt + c
+    bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 # Cycle through windows forwards
 alt + Tab
     bspc node next.local -f
 
-alt + space
-    rofi -modi window -show window -columns 1
-
-#####################
-# ALT + SHIFT + KEY #
-#####################
-
 # Cycle through window backwards
 alt + shift + Tab
     bspc node prev.local -f
+
+# Rofi show list of open windows
+alt + space
+    rofi -modi window -show window -columns 1
+

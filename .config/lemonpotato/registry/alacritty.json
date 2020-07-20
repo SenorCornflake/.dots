@@ -1,0 +1,27 @@
+{
+    "name": "alacritty",
+    "file_path": "~/.config/alacritty/alacritty.yml",
+    "settings": {
+        "theme": {
+            "identifier": ["# THEME", "# \\/THEME"],
+            "replacer": "<|value|>",
+            "identifier_type": "region", 
+            "replacer_type": "inline",
+            "value_is_file": true
+        },
+        "font_family": {
+            "identifier": "family: .+",
+            "replacer": "family: <|value|>",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "font_size": {
+            "identifier": "size: [0-9.]+",
+            "replacer": "size: <|value|>",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        }
+    }
+}

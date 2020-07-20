@@ -1,0 +1,77 @@
+{
+    "name": "Pywal",
+    "applications": {
+        "bspwm": {
+            "normal_border_color": "#0C1717",
+            "active_border_color": "#567d80",
+            "focused_border_color": "#A67D62",
+            "presel_feedback_color": "#b9b9b9",
+            "window_gap": "10",
+            "border_width": "2",
+            "gapless_monocle": "true",
+            "borderless_monocle": "true",
+            "wallpaper": "/home/breton/.config/scrypts/wallpapers/black-mountain-starry-sly.jpg",
+            "pywal": "wal -s -n -i /home/breton/.config/scrypts/wallpapers/black-mountain-starry-sly.jpg"
+        },
+        "polybar": {
+            "theme": "pywal",
+            "layout": "bravo"
+        },
+        "neovim": {
+            "colorscheme": "wal",
+            "termguicolors": "set notermguicolors"
+        },
+        "alacritty": {
+            "theme": "~/.config/alacritty/alacritty_pywal.yml",
+            "font_family": "Fira Code",
+            "font_size": "10.5"
+        },
+        "alacritty_pywal": {
+            "background": "0x0C1717",
+            "foreground": "0x7bb3b8",
+            "text": "0x0C1717",
+            "cursor": "0x7bb3b8",
+            "black_normal": "0x0C1717",
+            "red_normal": "0x033A46",
+            "green_normal": "0x044C50",
+            "yellow_normal": "0x195C58",
+            "blue_normal": "0x065964",
+            "magenta_normal": "0x07686F",
+            "cyan_normal": "0xA67D62",
+            "white_normal": "0x7bb3b8",
+            "black_bright": "0x567d80",
+            "red_bright": "0x033A46",
+            "green_bright": "0x044C50",
+            "yellow_bright": "0x195C58",
+            "blue_bright": "0x065964",
+            "magenta_bright": "0x07686F",
+            "cyan_bright": "0xA67D62",
+            "white_bright": "0x7bb3b8"
+        },
+        "vscode": {
+            "color_theme": "Wal",
+            "font_family": "Fira Code",
+            "font_size": "14"
+        },
+        "dunst": {
+            "frame_width": "2",
+            "normal_frame_color": "#A67D62",
+            "urgent_frame_color": "#A67D62",
+            "normal_background": "#0C1717",
+            "urgent_background": "#A67D62",
+            "normal_foreground": "#567d80",
+            "urgent_foreground": "#0C1717",
+            "font": "Fira Code 10",
+            "icon": "Papirus"
+        },
+        "rofi_pywal": {
+            "background": "#0C1717",
+            "foreground": "#567d80",
+            "selected_border": "#07686F",
+            "selected_background": "#A67D62"
+        },
+        "rofi": {
+            "theme": "pywal"
+        }
+    }
+}

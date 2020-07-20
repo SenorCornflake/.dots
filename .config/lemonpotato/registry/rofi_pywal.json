@@ -1,0 +1,34 @@
+{
+    "name": "rofi_pywal",
+    "file_path": "~/.config/rofi/themes/pywal.rasi",
+    "settings": {
+        "background": {
+            "identifier": "background: .*;",
+            "replacer": "background: <|value|>;",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "foreground": {
+            "identifier": "foreground: .*;",
+            "replacer": "foreground: <|value|>;",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "selected_background": {
+            "identifier": "selected-background: .*;",
+            "replacer": "selected-background: <|value|>;",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "selected_border": {
+            "identifier": "selected-border: .*;",
+            "replacer": "selected-border: <|value|>;",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        }
+    }
+}

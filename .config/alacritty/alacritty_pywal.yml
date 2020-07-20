@@ -1,0 +1,25 @@
+colors:
+  primary:
+    background: '0x000001' # background
+    foreground: '0x85cdd6' # foreground
+  cursor:
+    text:       '0x000001' # text
+    cursor:     '0x85cdd6' # cursor
+  normal:
+    black:      '0x85cdd6' # black normal
+    red:        '0xD8920F' # red normal
+    green:      '0xD3AA5F' # green normal
+    yellow:     '0x26459A' # yellow normal
+    blue:       '0x07649B' # blue normal
+    magenta:    '0xAA5C9E' # magenta normal
+    cyan:       '0x0997A1' # cyan normal
+    white:      '0xf5e6c6' # white normal
+  bright:
+    black:      '0x85cdd6' # black bright
+    red:        '0xD8920F' # red bright
+    green:      '0xD3AA5F' # green bright
+    yellow:     '0x26459A' # yellow bright
+    blue:       '0x07649B' # blue bright
+    magenta:    '0xAA5C9E' # magenta bright
+    cyan:       '0x0997A1' # cyan bright
+    white:      '0xf5e6c6' # white bright

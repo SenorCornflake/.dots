@@ -61,10 +61,10 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 2 # DYNAMIC THEMER GENERAL
+    frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#84a0c6" # DYNAMIC THEMER GENERAL
+    frame_color = "#576d82" # NORMAL
 
     # Define a color for the separator.
     # possible values are:
@@ -86,7 +86,7 @@
 
     ### Text ###
 
-    font = Terminus (TTF) 11 # DYNAMIC THEMER GENERAL
+    font = Fira Code 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -275,26 +275,26 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#161821" # DYNAMIC THEMER LOW
-    background = "#161821" # DYNAMIC THEMER LOW
+    background = "#16130f" # NORMAL
+    foreground = "#576d82" # NORMAL
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
-    #icon = /usr/share/icons/Papirus
+    icon = Papirus
 
 [urgency_normal]
-    background = "#161821" # DYNAMIC THEMER NORMAL
-    background = "#161821" # DYNAMIC THEMER NORMAL
+    background = "#16130f" # NORMAL
+    foreground = "#576d82" # NORMAL
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
-    #icon = /usr/share/icons/Papirus
+    icon = Papirus
 
 [urgency_critical]
-    background = "#161821" # DYNAMIC THEMER CRITICAL
-    background = "#161821" # DYNAMIC THEMER CRITICAL
-    frame_color = "#ffa300" # DYNAMIC THEMER CRITICAL
+    background = "#825757" # CRITICAL
+    foreground = "#16130f" # CRITICAL
+    frame_color = "#825757" # CRITICAL
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
-    #icon = /usr/share/icons/Papirus
+    icon = Papirus
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.

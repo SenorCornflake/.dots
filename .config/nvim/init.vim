@@ -23,6 +23,9 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'chriskempson/base16-vim'
     Plug 'morhetz/gruvbox'
     Plug 'cocopon/iceberg.vim/'
+    Plug 'haishanh/night-owl.vim'
+    Plug 'brainfucksec/wal.vim'
+    " Plug 'dylanaraps/wal.vim'
 call plug#end()
 
 " DEOPLETE
@@ -31,7 +34,7 @@ let g:deoplete#enable_at_startup = 1
 let g:ctrlp_cmd = 'CtrlPBuffer'
 
 " COLORS
-colorscheme iceberg
+colorscheme base16-embers
 
 " MISIL
 filetype on
@@ -40,7 +43,9 @@ filetype plugin indent on
 
 " SET
 set number relativenumber
+" termguicolors
 set termguicolors
+" /termguicolors
 set splitbelow
 set splitright
 set tabstop=4
@@ -53,7 +58,7 @@ set ignorecase
 set smartcase
 set incsearch
 set hidden 
-"set t_Co=16
+set t_md=
 
 let g:gruvbox_contrast_dark = 'hard'
 

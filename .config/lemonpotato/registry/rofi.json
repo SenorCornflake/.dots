@@ -1,0 +1,41 @@
+{
+    "name": "rofi",
+    "file_path": "~/.config/rofi/config.rasi",
+    "settings": {
+        "layout": {
+            "identifier": "@import \".*\"",
+            "replacer": "@import \"layouts/<|value|>.rasi\"",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "alpha_bg": {
+            "identifier": "alpha-background: .+;",
+            "replacer": "alpha-background: <|value|>;",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "alpha_fg": {
+            "identifier": "alpha-foreground: .+;",
+            "replacer": "alpha-foreground: <|value|>;",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "alpha_sbg": {
+            "identifier": "alpha-selected-background: .+;",
+            "replacer": "alpha-selected-background: <|value|>;",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "alpha_sb": {
+            "identifier": "alpha-selected-border: .+;",
+            "replacer": "alpha-selected-border: <|value|>;",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        }
+    }
+}

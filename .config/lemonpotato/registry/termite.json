@@ -1,0 +1,20 @@
+{
+    "name": "termite",
+    "file_path": "~/.config/termite/config",
+    "settings": {
+        "font": {
+            "identifier": "font = .+",
+            "replacer": "font = <|value|>",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "theme": {
+            "identifier": ["# colors", "# /colors"],
+            "replacer": "<|value|>",
+            "identifier_type": "region", 
+            "replacer_type": "inline",
+            "value_is_file": true
+        }
+    }
+}

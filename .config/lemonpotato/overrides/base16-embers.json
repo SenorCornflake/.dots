@@ -1,0 +1,77 @@
+{
+    "name": "Base16 Embers",
+    "applications": {
+        "bspwm": {
+            "normal_border_color": "#2c2620",
+            "active_border_color": "#5a5047",
+            "focused_border_color": "#826d57",
+            "presel_feedback_color": "#828257",
+            "wallpaper": "/home/breton/.config/scrypts/wallpapers/skyrim-tomb.jpg /home/breton/.config/scrypts/wallpapers/temple.jpg"
+        },
+        "polybar": {
+            "bravo_bg": "#16130f",
+            "bravo_fg": "#a39a90",
+            "bravo_0": "#6d8257",
+            "bravo_1": "#825757",
+            "bravo_2": "#828257",
+            "bravo_3": "#5a5047",
+            "bravo_4": "#5a5047",
+            "bravo_5": "#433b32",
+            "bravo_6": "#433b32",
+            "charlie_bg": "#16130f",
+            "charlie_bg_1": "#2c2620",
+            "charlie_bg_2": "#2c2620",
+            "charlie_bg_3": "#2c2620",
+            "charlie_bg_4": "#2c2620",
+            "charlie_bg_5": "#2c2620",
+            "charlie_bg_6": "#2c2620",
+            "charlie_fg": "#826d57",
+            "charlie_fg_1": "#57826d",
+            "charlie_fg_2": "#826d57",
+            "charlie_fg_3": "#826d57",
+            "charlie_fg_4": "#826d57",
+            "charlie_fg_5": "#826d57",
+            "charlie_fg_6": "#826d57",
+            "charlie_icons_1": "#828257",
+            "charlie_icons_2": "#828257",
+            "charlie_icons_3": "#828257",
+            "charlie_icons_4": "#828257",
+            "charlie_icons_5": "#825757",
+            "charlie_icons_6": "#828257",
+            "charlie_1": "#825757",
+            "charlie_2": "#6d8257",
+            "charlie_3": "#5a5047",
+            "charlie_4": "#5a5047",
+            "charlie_5": "#433b32",
+            "charlie_border": "#2c2620"
+        },
+        "neovim": {
+            "colorscheme": "base16-embers",
+            "termguicolors": "set termguicolors"
+        },
+        "alacritty": {
+            "theme": "~/.config/alacritty/colors/base16-embers.yml"
+        },
+        "termite": {
+            "theme": "~/.config/termite/colors/base16-embers.config"
+        },
+        "vscode": {
+            "color_theme": "Base16 Dark Embers"
+        },
+        "dunst": {
+            "normal_frame_color": "#576d82",
+            "normal_background": "#16130f",
+            "normal_foreground": "#576d82",
+            "urgent_frame_color": "#825757",
+            "urgent_background": "#825757",
+            "urgent_foreground": "#16130f"
+        },
+        "rofi": {
+            "layout": "alpha",
+            "alpha_bg": "#16130f",
+            "alpha_fg": "#826d57",
+            "alpha_sbg": "#828257",
+            "alpha_sb": "#2c2620"
+        }
+    }
+}

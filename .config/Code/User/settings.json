@@ -1,0 +1,11 @@
+{
+    "workbench.colorTheme": "Base16 Dark Embers",
+    "workbench.sideBar.location": "right",
+    "workbench.editor.showTabs": false,
+    "window.menuBarVisibility": "toggle",
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "FiraCode Nerd Font",
+    "workbench.statusBar.visible": true,
+    "workbench.activityBar.visible": false,
+    "editor.fontSize": 14
+}

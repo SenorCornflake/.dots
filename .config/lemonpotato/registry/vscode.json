@@ -1,0 +1,27 @@
+{
+    "name": "vscode",
+    "file_path": "~/.config/Code/User/settings.json",
+    "settings": {
+        "color_theme": {
+            "identifier": "\"workbench\\.colorTheme\": \".+\"",
+            "replacer": "\"workbench.colorTheme\": \"<|value|>\"",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "font_size": {
+            "identifier": "\"editor\\.fontSize\": [0-9]+",
+            "replacer": "\"editor.fontSize\": <|value|>",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        },
+        "font_family": {
+            "identifier": "\"editor\\.fontFamily\": \".+\"",
+            "replacer": "\"editor.fontFamily\": \"<|value|>\"",
+            "identifier_type": "line", 
+            "replacer_type": "inline",
+            "value_is_file": false
+        }
+    }
+}
