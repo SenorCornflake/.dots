@@ -7,6 +7,7 @@ files = os.listdir(dotfiles_dir)
 
 excluded_files = [
     'install.py',
+    'install_sys.sh',
     'README.md',
     '.git',
     'scrot.png'
@@ -42,13 +43,23 @@ for f in files:
                     command = 'rm -r ~/.config/{}'.format(g)
                     os.system(command)
                     print(command)
+                
+                if os.path.exists(os.path.expanduser('~/.config/{}'.format(g))):
+                    print(os.path.expanduser('~/.config/{}'.format(g)))
 
                 command = 'ln -s {} ~/.config/{}'.format(dotfiles_dir + '/.config/' + g, g)
                 os.system(command)
                 print(command)
 
             print()
-    
+    elif f == '.zshenv':
+        if os.path.exists(os.path.expanduser('~/.zshenv')):
+            command = 'rm -rf ~/.zshenv'
+            print(command)
+            os.system(command)
+        command = 'ln -s {}/.zshenv ~/.zshenv'.format(dotfiles_dir)
+        print(command)
+        os.system(command)
     elif f == '.local':
         if not os.path.exists(os.path.expanduser('~/.local/share/dbus-1/services')):
             command = 'mkdir -p ~/.local/share/dbus-1/services'

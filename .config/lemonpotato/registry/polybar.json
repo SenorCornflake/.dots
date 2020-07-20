@@ -3,8 +3,8 @@
     "file_path": "~/.config/polybar/config.ini",
     "settings": {
         "layout": {
-            "identifier": "include-file = \\/home\\/breton\\/\\.config\\/polybar\\/layouts\\/.+",
-            "replacer": "include-file = /home/breton/.config/polybar/layouts/<|value|>.ini",
+            "identifier": "include-file = ~/.config\\/polybar\\/layouts\\/.+",
+            "replacer": "include-file = ~/.config/polybar/layouts/<|value|>.ini",
             "identifier_type": "line", 
             "replacer_type": "inline",
             "value_is_file": false

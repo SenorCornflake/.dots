@@ -25,7 +25,7 @@ python .config/polybar/launch.py
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # wallpaper
-feh --no-fehbg --bg-fill /home/breton/.config/scrypts/wallpapers/skyrim-tomb.jpg /home/breton/.config/scrypts/wallpapers/temple.jpg
+feh --no-fehbg --bg-fill /home/baker/.config/scrypts/wallpapers/skyrim-tomb.jpg /home/baker/.config/scrypts/wallpapers/temple.jpg
 
 # Compositor
 picom --experimental-backends &

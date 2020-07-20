@@ -98,6 +98,7 @@ def go():
                                     application_setting_value = open(application_setting_value, 'r').read()
 
                             replacer = replacer.replace('<|value|>', application_setting_value)
+                            replacer = replacer.replace('<|home|>', os.path.expanduser('~'))
 
                             if identifier_type == 'line':
                                 if type(identifier) == list:
