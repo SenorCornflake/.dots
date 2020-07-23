@@ -10,7 +10,7 @@
             "border_width": "2",
             "gapless_monocle": "true",
             "borderless_monocle": "true",
-            "wallpaper": "/home/baker/.config/scrypts/wallpapers/blackandwhitemess.jpg",
+            "wallpaper": "/home/breton/.config/scrypts/wallpapers/blackandwhitemess.jpg",
             "pywal": ""
         },
         "polybar": {

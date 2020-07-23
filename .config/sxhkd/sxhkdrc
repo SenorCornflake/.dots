@@ -27,7 +27,7 @@ super + XF86Audio{Lower,Raise}Volume
 
 # Terminal
 super + Return
-    alacritty
+    WINIT_X11_SCALE_FACTOR=1 alacritty
 
 # Close window
 super + w

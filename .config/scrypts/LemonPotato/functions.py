@@ -7,6 +7,8 @@ import config
 def e(command):
     return os.popen(command)[:-1]
 
+
+
 def notify(title, message, urgency="normal"):
     # Escape double quotes
     title = title.replace('"', '\\"')

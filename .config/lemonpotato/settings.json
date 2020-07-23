@@ -3,6 +3,6 @@
     "overrides_dir": "~/.config/lemonpotato/overrides",
     "registry_dir": "~/.config/lemonpotato/registry",
     "current_mode": "alpha",
-    "current_override": "base16-embers",
+    "current_override": "iceberg",
     "already_set": "true"
 }

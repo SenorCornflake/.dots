@@ -6,7 +6,7 @@
             "active_border_color": "#5a5047",
             "focused_border_color": "#826d57",
             "presel_feedback_color": "#828257",
-            "wallpaper": "/home/baker/.config/scrypts/wallpapers/skyrim-tomb.jpg /home/baker/.config/scrypts/wallpapers/temple.jpg"
+            "wallpaper": "/home/breton/.config/scrypts/wallpapers/temple.jpg"
         },
         "polybar": {
             "bravo_bg": "#16130f",

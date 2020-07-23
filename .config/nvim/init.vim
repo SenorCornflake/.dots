@@ -34,7 +34,7 @@ let g:deoplete#enable_at_startup = 1
 let g:ctrlp_cmd = 'CtrlPBuffer'
 
 " COLORS
-colorscheme base16-embers
+colorscheme iceberg
 
 " MISIL
 filetype on
