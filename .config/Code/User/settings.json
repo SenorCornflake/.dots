@@ -5,7 +5,9 @@
     "editor.fontLigatures": true,
     "editor.fontFamily": "FiraCode Nerd Font",
     "workbench.statusBar.visible": true,
-    "workbench.activityBar.visible": false,
+    "workbench.activityBar.visible": true,
     "editor.fontSize": 14,
-    "workbench.colorTheme": "Iceberg"
+    "workbench.colorTheme": "One Dark Pro",
+    "window.zoomLevel": 0,
+    "editor.minimap.enabled": false
 }

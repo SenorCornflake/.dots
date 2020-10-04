@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "800x10-30-60"
+    geometry = "800x10-30+60"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -64,7 +64,7 @@
     frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#161821" # NORMAL
+    frame_color = "#A04FA4" # NORMAL
 
     # Define a color for the separator.
     # possible values are:
@@ -275,23 +275,23 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#161821" # NORMAL
-    foreground = "#6b7089" # NORMAL
+    background = "#0c060d" # LOW
+    foreground = "#7d8193" # LOW
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     icon = Papirus
 
 [urgency_normal]
-    background = "#161821" # NORMAL
-    foreground = "#6b7089" # NORMAL
+    background = "#0c060d" # NORMAL
+    foreground = "#7d8193" # NORMAL
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     icon = Papirus
 
 [urgency_critical]
-    background = "#e27878" # CRITICAL
-    foreground = "#161821" # CRITICAL
-    frame_color = "#161821" # CRITICAL
+    background = "#A04FA4" # CRITICAL
+    foreground = "#0c060d" # CRITICAL
+    frame_color = "#A04FA4" # CRITICAL
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     icon = Papirus

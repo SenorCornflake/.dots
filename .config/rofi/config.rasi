@@ -1,8 +1,9 @@
-@import "layouts/alpha.rasi"
+@import "layouts/center.rasi"
 
 * {
-    alpha-background: #161821;
-    alpha-foreground: #6b7089;
-    alpha-selected-background: #84a9c6;
-    alpha-selected-border: #89b8c2;
+    foreground: #7d8193;
+    background: #0c060d; // BACKGROUND
+    background-alt: #0c060d60;
+    selected-background: #b3b9d2;
+    selected-border: #A04FA4;
 }

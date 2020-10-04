@@ -1,0 +1,183 @@
+{
+  "name": "Pywal",
+  "programs": [
+    {
+      "name": "bspwm",
+      "settings": [
+        {
+          "name": "wallpaper",
+          "value": "/home/breton/Pictures/wallpapers/purplecity.jpg"
+        },
+        {
+          "name": "normal_border_color",
+          "value": "#0c060d"
+        },
+        {
+          "name": "urgent_border_color",
+          "value": "#E82791"
+        },
+        {
+          "name": "focused_border_color",
+          "value": "#A04FA4"
+        },
+        {
+          "name": "active_border_color",
+          "value": "#7d8193"
+        },
+        {
+          "name": "border_width",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "name": "polybar",
+      "settings": [
+        {
+          "name": "bar",
+          "value": "alpha"
+        },
+        {
+          "name": "alpha_background",
+          "value": "#0c060d"
+        },
+        {
+          "name": "alpha_foreground",
+          "value": "#7d8193"
+        },
+        {
+          "name": "alpha_label",
+          "value": "#6B3389"
+        },
+        {
+          "name": "alpha_text",
+          "value": "#E7155D"
+        },
+        {
+          "name": "alpha_urgent",
+          "value": "#E82791"
+        }
+      ]
+    },
+    {
+      "name": "alacritty",
+      "settings": [
+        {
+          "name": "theme",
+          "value": "~/.config/alacritty/colors/pywal.yml"
+        },
+        {
+          "name": "bold_font",
+          "value": "Fira Code"
+        },
+        {
+          "name": "normal_font",
+          "value": "Fira Code"
+        },
+        {
+          "name": "italic_font",
+          "value": "Fira Code"
+        },
+        {
+          "name": "bold_italic_font",
+          "value": "Fira Code"
+        },
+        {
+          "name": "font_size",
+          "value": "10"
+        },
+        {
+          "name": "y_offset",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "name": "neovim",
+      "settings": [
+        {
+          "name": "colorscheme",
+          "value": "wal"
+        },
+        {
+          "name": "termguicolors",
+          "value": "set notermguicolors"
+        },
+        {
+          "name": "cursorline",
+          "value": "set nocursorline"
+        }
+      ]
+    },
+    {
+      "name": "dunst",
+      "settings": [
+        {
+          "name": "font",
+          "value": "Fira Code 10"
+        },
+        {
+          "name": "normal_frame_color",
+          "value": "#A04FA4"
+        },
+        {
+          "name": "critical_frame_color",
+          "value": "#A04FA4"
+        },
+        {
+          "name": "critical_background_color",
+          "value": "#A04FA4"
+        },
+        {
+          "name": "normal_background_color",
+          "value": "#0c060d"
+        },
+        {
+          "name": "low_background_color",
+          "value": "#0c060d"
+        },
+        {
+          "name": "critical_foreground_color",
+          "value": "#0c060d"
+        },
+        {
+          "name": "normal_foreground_color",
+          "value": "#7d8193"
+        },
+        {
+          "name": "low_foreground_color",
+          "value": "#7d8193"
+        }
+      ]
+    },
+    {
+      "name": "rofi",
+      "settings": [
+        {
+          "name": "layout",
+          "value": "center"
+        },
+        {
+          "name": "background",
+          "value": "#0c060d"
+        },
+        {
+          "name": "background_alt",
+          "value": "#0c060d60"
+        },
+        {
+          "name": "foreground",
+          "value": "#7d8193"
+        },
+        {
+          "name": "selected_border",
+          "value": "#A04FA4"
+        },
+        {
+          "name": "selected_background",
+          "value": "#b3b9d2"
+        }
+      ]
+    }
+  ]
+}

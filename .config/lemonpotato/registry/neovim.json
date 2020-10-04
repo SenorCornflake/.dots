@@ -8,13 +8,6 @@
             "identifier_type": "line", 
             "replacer_type": "inline",
             "value_is_file": false
-        },
-        "termguicolors": {
-            "identifier": ["\" termguicolors", "\" /termguicolors"],
-            "replacer": "<|value|>",
-            "identifier_type": "region", 
-            "replacer_type": "inline",
-            "value_is_file": false
         }
     }
 }

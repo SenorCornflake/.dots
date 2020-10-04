@@ -1,6 +1,6 @@
 [options]
-font = FiraCode Nerd Font 10
-allow_bold = false
+font = xos4 Terminus 10
+allow_bold = true
 scrollback_lines = -1
 
 # colors

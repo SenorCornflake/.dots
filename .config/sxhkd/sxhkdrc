@@ -1,7 +1,3 @@
-#########
-# MISIL #
-#########
-
 # Lower/Raise volume
 XF86Audio{Lower,Raise}Volume
     pulseaudio-ctl {down,up}
@@ -10,6 +6,7 @@ XF86Audio{Lower,Raise}Volume
 XF86AudioMute
     pulseaudio-ctl mute
 
+# Take screenshot
 F12
     scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/Pictures'
 
@@ -77,6 +74,10 @@ super + shift + w
 alt + shift + {h,j,k,l}
     bspc node --move {-40 0, 0 40, 0 -40, 40 0}
 
+# Move node to node
+super + alt + {h,j,k,l}
+    bspc node --to-node {west,south,north,east}
+
 # Resize by removing
 control + super + {h,j,k,l}
     bspc node --resize {right -40 -40, top 40 40, bottom -40 -40, left 40 40}
@@ -99,11 +100,16 @@ alt + c
 
 # Cycle through windows forwards
 alt + Tab
-    bspc node next.local -f
+    bspc node -f next.local
 
 # Cycle through window backwards
 alt + shift + Tab
-    bspc node prev.local -f
+    bspc node -f prev.local
+
+# Change window gap
+super + {Up,Down}
+    bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 10 ))
+
 
 # Rofi show list of open windows
 alt + space

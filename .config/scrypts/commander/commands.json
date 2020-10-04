@@ -1,49 +1,19 @@
 [
     {
-        "name": "Mode",
-        "action": [
-            {
-                "name": "Switch",
-                "action": "python ~/.config/scrypts/switch.py mode"
-            },
-            {
-                "name": "Wallpaper",
-                "action": "python ~/.config/scrypts/switch.py wallpaper mode"
-            },
-            {
-                "name": "Bar layout",
-                "action": "python ~/.config/scrypts/switch.py polybar mode"
-            }
-        ]
+        "name": "Change modifier",
+        "action": "python ~/.config/scrypts/change_modifier.py"
     },
     {
-        "name": "Override",
-        "action": [
-            {
-                "name": "Switch",
-                "action": "python ~/.config/scrypts/switch.py override"
-            },
-            {
-                "name": "Wallpaper",
-                "action": "python ~/.config/scrypts/switch.py wallpaper override"
-            },
-            {
-                "name": "Bar layout",
-                "action": "python ~/.config/scrypts/switch.py polybar override"
-            }
-        ]
-    },
-    {
-        "name": "Initiate",
-        "action": "(pidof firefox || firefox &) && (pidof code || code &)"
-    },
-    {
-        "name": "Pywal picture",
-        "action": "python ~/.config/scrypts/switch.py pywal"
+        "name": "Change Pywal",
+        "action": "python ~/.config/scrypts/change_pywal.py"
     },
     {
         "name": "Night Mode",
         "action": "python ~/.config/scrypts/night_mode/main.py"
+    },
+    {
+        "name": "Keybindings",
+        "action": "python ~/.config/scrypts/list_keybindings.py"
     },
     {
         "name": "Arch wiki",
@@ -52,6 +22,10 @@
     {
         "name": "Close all windows",
         "action": "python ~/.config/scrypts/close_all_windows.py"
+    },
+    {
+        "name": "Run Audot",
+        "action": "audot start"
     },
     {
         "name": "Exit",

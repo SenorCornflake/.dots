@@ -42,3 +42,4 @@ def menu(commands, prompt = 'Command: '):
     print(command_prompts)
 
 menu(commands)
+

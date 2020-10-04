@@ -1,0 +1,65 @@
+configuration {
+    font: "Fira Code 10";
+    show-icons: true;
+    drun-display-format: "{name}";
+}
+
+window {
+    transparency: "real";
+    height: 100%;
+    width: 100%;
+    background-color: @background-alt;
+    text-color: @foreground;
+    location: northwest;
+    anchor: northwest;
+    x-offset:                       0;
+    y-offset:                       0;
+}
+
+mainbox {
+    children: [inputbar, listview];
+    margin: 20%;
+    background-color: @background;
+    text-color: @foreground;
+}
+
+inputbar {
+    children: [prompt, entry];
+    padding: 20px 20px 0px 20px;
+    background-color: @background;
+    text-color: @foreground;
+}
+
+prompt {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+entry {
+    background-color: @background;
+    text-color: @foreground;
+}
+
+listview {
+    padding: 20px;
+    background-color: @background;
+    text-color: @foreground;
+    columns: 4;
+}
+
+element {
+    padding: 10px;
+    background-color: @background;
+    text-color: @foreground;
+}
+
+element-icon {
+	size: 20px;
+}
+
+element.selected {
+    border: 0px 0px 0px 2px;
+    border-color: @selected-border;
+    background-color: @selected-background;
+    text-color: @background;
+}
