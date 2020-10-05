@@ -1,0 +1,191 @@
+{
+    "name": "Base16 Monokai",
+    "programs": [
+        {
+            "name": "bspwm",
+            "settings": [
+                {
+                    "name": "wallpaper",
+                    "value": "~/Pictures/wallpapers/empry-road.jpg"
+                },
+                {
+                    "name": "normal_border_color",
+                    "value": "#383830"
+                },
+                {
+                    "name": "urgent_border_color",
+                    "value": "#f92672"
+                },
+                {
+                    "name": "focused_border_color",
+                    "value": "#fd971f"
+                },
+                {
+                    "name": "presel_feedback_color",
+                    "value": "#fd971f"
+                },
+                {
+                    "name": "active_border_color",
+                    "value": "#a59f85"
+                },
+                {
+                    "name": "border_width",
+                    "value": "2"
+                },
+                {
+                    "name": "window_gap",
+                    "value": "25"
+                }
+            ]
+        },
+        {
+            "name": "polybar",
+            "settings": [
+                {
+                    "name": "bar",
+                    "value": "alpha"
+                },
+                {
+                    "name": "alpha_background",
+                    "value": "#272822"
+                },
+                {
+                    "name": "alpha_foreground",
+                    "value": "#f5f4f1"
+                },
+                {
+                    "name": "alpha_label",
+                    "value": "#a6e22e"
+                },
+                {
+                    "name": "alpha_text",
+                    "value": "#a59f85"
+                },
+                {
+                    "name": "alpha_urgent",
+                    "value": "#f92672"
+                }
+            ]
+        },
+        {
+            "name": "alacritty",
+            "settings": [
+                {
+                    "name": "theme",
+                    "value": "~/.config/alacritty/colors/base16-monokai.yml"
+                },
+                {
+                    "name": "bold_font",
+                    "value": "Dina"
+                },
+                {
+                    "name": "normal_font",
+                    "value": "Dina"
+                },
+                {
+                    "name": "italic_font",
+                    "value": "Dina"
+                },
+                {
+                    "name": "bold_italic_font",
+                    "value": "Dina"
+                },
+                {
+                    "name": "font_size",
+                    "value": "10"
+                },
+                {
+                    "name": "y_offset",
+                    "value": "0"
+                }
+            ]
+        },
+        {
+            "name": "neovim",
+            "settings": [
+                {
+                    "name": "colorscheme",
+                    "value": "base16-monokai"
+                },
+                {
+                    "name": "termguicolors",
+                    "value": "set termguicolors"
+                },
+                {
+                    "name": "cursorline",
+                    "value": "set cursorline"
+                }
+            ]
+        },
+        {
+            "name": "dunst",
+            "settings": [
+                {
+                    "name": "font",
+                    "value": "Fira Code 10"
+                },
+                {
+                    "name": "normal_frame_color",
+                    "value": "#fd971f"
+                },
+                {
+                    "name": "critical_frame_color",
+                    "value": "#f92672"
+                },
+                {
+                    "name": "critical_background_color",
+                    "value": "#f92672"
+                },
+                {
+                    "name": "normal_background_color",
+                    "value": "#272822"
+                },
+                {
+                    "name": "low_background_color",
+                    "value": "#272822"
+                },
+                {
+                    "name": "critical_foreground_color",
+                    "value": "#272822"
+                },
+                {
+                    "name": "normal_foreground_color",
+                    "value": "#a59f85"
+                },
+                {
+                    "name": "low_foreground_color",
+                    "value": "#a59f85"
+                }
+            ]
+        },
+        {
+            "name": "rofi",
+            "settings": [
+                {
+                    "name": "layout",
+                    "value": "center"
+                },
+                {
+                    "name": "background",
+                    "value": "#272822"
+                },
+                {
+                    "name": "background_alt",
+                    "value": "#27282270"
+                },
+                {
+                    "name": "foreground",
+                    "value": "#a59f85"
+                },
+                {
+                    "name": "selected_background",
+                    "value": "#fd971f"
+                },
+                {
+                    "name": "selected_border",
+                    "value": "#f4bf75"
+                }
+            ]
+        }
+    ]
+}

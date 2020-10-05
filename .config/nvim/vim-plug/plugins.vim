@@ -23,8 +23,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'preservim/nerdcommenter'
 	Plug 'Shougo/echodoc'
 	Plug 'chriskempson/base16-vim'
-	Plug 'brainfucksec/wal.vim'
 	Plug 'tpope/vim-surround'
+	" Plug 'brainfucksec/wal.vim'
+	Plug 'richtan/pywal.vim'
+	Plug 'dylanaraps/wal.vim'
 call plug#end()
 
 

@@ -2,21 +2,21 @@
 
 font:
   normal:
-    family: Fira Code # normal
+    family: Dina # normal
     style: Regular
   bold:
-    family: Fira Code # bolds
+    family: Dina # bolds
     style: Bold
   italic:
-    family: Fira Code # italic
+    family: Dina # italic
     style: Italic
   bold_italic:
-    family: Fira Code # bold_italic
+    family: Dina # bold_italic
     style: Bold Italic
   size: 10
   offset:
     x: 0
-    y: 2 # offset
+    y: 0 # offset
   glyph_offset:
     x: 0
     y: 0
@@ -24,30 +24,41 @@ font:
 
 
 # THEME
+# Base16 Black Metal (Mayhem) - alacritty color config
+# metalelf0 (https://github.com/metalelf0)
 colors:
-  bright:
-    black: '0x7d8193'
-    blue: '0x575C94'
-    cyan: '0xA04FA4'
-    green: '0xE7155D'
-    magenta: '0xE82791'
-    red: '0x9F215C'
-    white: '0xb3b9d2'
-    yellow: '0x6B3389'
-  cursor:
-    cursor: '0xb3b9d2'
-    text: '0x0c060d'
-  normal:
-    black: '0x0c060d'
-    blue: '0x575C94'
-    cyan: '0xA04FA4'
-    green: '0xE7155D'
-    magenta: '0xE82791'
-    red: '0x9F215C'
-    white: '0xb3b9d2'
-    yellow: '0x6B3389'
+  # Default colors
   primary:
-    background: '0x0c060d'
-    foreground: '0xb3b9d2'
+    background: '0x000000'
+    foreground: '0xc1c1c1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0xc1c1c1'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0x5f8787'
+    green:   '0xf3ecd4'
+    yellow:  '0xeecc6c'
+    blue:    '0x888888'
+    magenta: '0x999999'
+    cyan:    '0xaaaaaa'
+    white:   '0xc1c1c1'
+
+  # Bright colors
+  bright:
+    black:   '0x333333'
+    red:     '0xaaaaaa'
+    green:   '0x121212'
+    yellow:  '0x222222'
+    blue:    '0x999999'
+    magenta: '0x999999'
+    cyan:    '0x444444'
+    white:   '0xc1c1c1'
+
+draw_bold_text_with_bright_colors: false
 
 # /THEME

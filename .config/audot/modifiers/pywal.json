@@ -6,23 +6,23 @@
       "settings": [
         {
           "name": "wallpaper",
-          "value": "/home/breton/Pictures/wallpapers/purplecity.jpg"
+          "value": "/home/breton/Pictures/wallpapers/blue-themed-moon-or-is-it-jupiter-over-city.png"
         },
         {
           "name": "normal_border_color",
-          "value": "#0c060d"
+          "value": "#010815"
         },
         {
           "name": "urgent_border_color",
-          "value": "#E82791"
+          "value": "#00B2CA"
         },
         {
           "name": "focused_border_color",
-          "value": "#A04FA4"
+          "value": "#01E0E7"
         },
         {
           "name": "active_border_color",
-          "value": "#7d8193"
+          "value": "#709a9b"
         },
         {
           "name": "border_width",
@@ -39,23 +39,23 @@
         },
         {
           "name": "alpha_background",
-          "value": "#0c060d"
+          "value": "#010815"
         },
         {
           "name": "alpha_foreground",
-          "value": "#7d8193"
+          "value": "#709a9b"
         },
         {
           "name": "alpha_label",
-          "value": "#6B3389"
+          "value": "#055CAC"
         },
         {
           "name": "alpha_text",
-          "value": "#E7155D"
+          "value": "#006D96"
         },
         {
           "name": "alpha_urgent",
-          "value": "#E82791"
+          "value": "#00B2CA"
         }
       ]
     },
@@ -68,19 +68,19 @@
         },
         {
           "name": "bold_font",
-          "value": "Fira Code"
+          "value": "Dina"
         },
         {
           "name": "normal_font",
-          "value": "Fira Code"
+          "value": "Dina"
         },
         {
           "name": "italic_font",
-          "value": "Fira Code"
+          "value": "Dina"
         },
         {
           "name": "bold_italic_font",
-          "value": "Fira Code"
+          "value": "Dina"
         },
         {
           "name": "font_size",
@@ -88,7 +88,7 @@
         },
         {
           "name": "y_offset",
-          "value": "2"
+          "value": "0"
         }
       ]
     },
@@ -97,7 +97,7 @@
       "settings": [
         {
           "name": "colorscheme",
-          "value": "wal"
+          "value": "pywal"
         },
         {
           "name": "termguicolors",
@@ -118,35 +118,35 @@
         },
         {
           "name": "normal_frame_color",
-          "value": "#A04FA4"
+          "value": "#01E0E7"
         },
         {
           "name": "critical_frame_color",
-          "value": "#A04FA4"
+          "value": "#01E0E7"
         },
         {
           "name": "critical_background_color",
-          "value": "#A04FA4"
+          "value": "#01E0E7"
         },
         {
           "name": "normal_background_color",
-          "value": "#0c060d"
+          "value": "#010815"
         },
         {
           "name": "low_background_color",
-          "value": "#0c060d"
+          "value": "#010815"
         },
         {
           "name": "critical_foreground_color",
-          "value": "#0c060d"
+          "value": "#010815"
         },
         {
           "name": "normal_foreground_color",
-          "value": "#7d8193"
+          "value": "#709a9b"
         },
         {
           "name": "low_foreground_color",
-          "value": "#7d8193"
+          "value": "#709a9b"
         }
       ]
     },
@@ -159,23 +159,23 @@
         },
         {
           "name": "background",
-          "value": "#0c060d"
+          "value": "#010815"
         },
         {
           "name": "background_alt",
-          "value": "#0c060d60"
+          "value": "#01081560"
         },
         {
           "name": "foreground",
-          "value": "#7d8193"
+          "value": "#709a9b"
         },
         {
           "name": "selected_border",
-          "value": "#A04FA4"
+          "value": "#01E0E7"
         },
         {
           "name": "selected_background",
-          "value": "#b3b9d2"
+          "value": "#a1ddde"
         }
       ]
     }

@@ -1,12 +1,12 @@
 {
-    "name": "Base16 CLassic Dark",
+    "name": "Base16 Classic Dark",
     "programs": [
         {
             "name": "bspwm",
             "settings": [
                 {
                     "name": "wallpaper",
-                    "value": "~/Pictures/wallpapers/skyrim-whiterun-farms.jpg"
+                    "value": "~/Pictures/wallpapers/empry-road.jpg"
                 },
                 {
                     "name": "normal_border_color",
@@ -21,8 +21,12 @@
                     "value": "#d28445"
                 },
                 {
+                    "name": "presel_feedback_color",
+                    "value": "#d28445"
+                },
+                {
                     "name": "active_border_color",
-                    "value": "#505050"
+                    "value": "#b0b0b0"
                 },
                 {
                     "name": "border_width",
@@ -51,7 +55,7 @@
                 },
                 {
                     "name": "alpha_label",
-                    "value": "#908959"
+                    "value": "#90a959"
                 },
                 {
                     "name": "alpha_text",
@@ -72,19 +76,19 @@
                 },
                 {
                     "name": "bold_font",
-                    "value": "Fira Code"
+                    "value": "Dina"
                 },
                 {
                     "name": "normal_font",
-                    "value": "Fira Code"
+                    "value": "Dina"
                 },
                 {
                     "name": "italic_font",
-                    "value": "Fira Code"
+                    "value": "Dina"
                 },
                 {
                     "name": "bold_italic_font",
-                    "value": "Fira Code"
+                    "value": "Dina"
                 },
                 {
                     "name": "font_size",
@@ -92,7 +96,7 @@
                 },
                 {
                     "name": "y_offset",
-                    "value": "2"
+                    "value": "0"
                 }
             ]
         },

@@ -16,8 +16,17 @@ modifier = e('echo "{}" | rofi -dmenu -format i -i -p "Modifier: " -theme-str \'
 
 if modifier != '':
     modifier = int(modifier)
+    name = modifier_names[modifier]
+
     modifier = modifier_paths[modifier]
+    
+    # Remove enabled text from the current modifier
+    current_modifier = e('audot query config modifier')
+    current_modifier_new_name = e('audot query modifier {} name'.format(current_modifier)).replace(' (Enabled)', '')
+    e('audot edit modifier {} name "{}"'.format(current_modifier, current_modifier_new_name))
+
     e('audot edit config modifier "{}"'.format(modifiers_root + '/' + modifier))
+    e('audot edit modifier {} name "{}"'.format(modifiers_root + '/' + modifier, name + ' (Enabled)'))
     os.system('audot start')
     os.system('bspc wm -r')
 

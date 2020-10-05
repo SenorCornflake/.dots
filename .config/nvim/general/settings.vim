@@ -9,7 +9,7 @@ set timeoutlen=300                      " Time required to register key mapping
 set cmdheight=2                         " 
 set noshowmode
 " CURSORLINE
-set nocursorline
+set cursorline
 set nobackup                            " Coc recommendation, Some servers have issues with backup files, see #649.
 set nowritebackup                       " Coc recommendation, Some servers have issues with backup files, see #649.
 set updatetime=4000                      " Setting shorter updatetime for better experience, recommended by Coc
@@ -17,7 +17,7 @@ set shortmess+=c                        " Prevents sending messages to ins-compl
 set signcolumn=yes                      " Show sign columns
 set laststatus=2                        " Always show status line
 " TERMGUICOLORS
-set notermguicolors
+set termguicolors
 
 
 " Triger `autoread` when files changes on disk

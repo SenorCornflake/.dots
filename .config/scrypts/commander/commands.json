@@ -4,8 +4,16 @@
         "action": "python ~/.config/scrypts/change_modifier.py"
     },
     {
-        "name": "Change Pywal",
-        "action": "python ~/.config/scrypts/change_pywal.py"
+        "name": "Change Wallpaper",
+        "action": "python ~/.config/scrypts/change_wallpaper.py"
+    },
+    {
+        "name": "Change Pywal (Dark)",
+        "action": "python ~/.config/scrypts/change_pywal.py dark"
+    },
+    {
+        "name": "Change Pywal (Light)",
+        "action": "python ~/.config/scrypts/change_pywal.py light"
     },
     {
         "name": "Night Mode",

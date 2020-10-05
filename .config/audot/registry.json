@@ -47,6 +47,14 @@
                             "value_is_file": false
                         },
                         {
+                            "name": "presel_feedback_color",
+                            "search": "bspc config presel_feedback_color .+",
+                            "search_type": "line",
+                            "repl": "bspc config presel_feedback_color \"<|value|>\"",
+                            "repl_location": "matched",
+                            "value_is_file": false
+                        },
+                        {
                             "name": "border_width",
                             "search": "bspc config border_width .+",
                             "search_type": "line",

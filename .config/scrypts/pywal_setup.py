@@ -6,12 +6,20 @@ import yaml
 def e(command):
     return os.popen(command).read()[:-1]
 
-if len(sys.argv) < 2:
-    print("need a wallpaper")
+if len(sys.argv) < 3:
+    print("need a wallpaper and theme type")
 elif os.path.exists(os.path.expanduser('~/.cache/wal/colors')):
     print("Starting...")
     wallpaper = sys.argv[1]
-    os.system("wal -nstei {}".format(wallpaper))
+
+    theme_type = sys.argv[2]
+
+    if theme_type == 'light':
+        theme_type = 'l'
+    else:
+        theme_type = ''
+
+    os.system("wal -nste{}i {}".format(theme_type, wallpaper))
 
     colors = open(os.path.expanduser('~/.cache/wal/colors'), 'r').read().split('\n')
 
@@ -61,7 +69,11 @@ elif os.path.exists(os.path.expanduser('~/.cache/wal/colors')):
     pywal_modifier = "~/.config/audot/modifiers/pywal.json"
 
     # Change modifier
+    current_modifier = e('audot query config modifier')
+    e('audot edit modifier {} name {}'.format(current_modifier, current_modifier.replace(' (Enabled)', '')))
     os.system('audot edit config modifier "{}"'.format(pywal_modifier))
+
+    e('audot edit modifier {} name "{}"'.format(pywal_modifier, 'Pywal (Enabled)'))
 
     # Change bspwm colors
     os.system('audot edit modifier {} programs/bspwm/settings/normal_border_color/value "{}"'.format(pywal_modifier, colors[0]))
