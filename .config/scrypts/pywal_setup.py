@@ -61,16 +61,19 @@ elif os.path.exists(os.path.expanduser('~/.cache/wal/colors')):
 
     alacritty_colors = yaml.dump(alacritty_colors)
 
-    open(os.path.expanduser("~/.config/alacritty/colors/pywal.yml"), "w").write(alacritty_colors)
+    open(os.path.expanduser("~/.config/scrypts/themes/alacritty/pywal.yml"), "w").write(alacritty_colors)
 
     for i, color in enumerate(colors):
         colors[i] = color.replace('0x', '#')
 
     pywal_modifier = "~/.config/audot/modifiers/pywal.json"
 
-    # Change modifier
+    # Remove enabled text from the current modifier
     current_modifier = e('audot query config modifier')
-    e('audot edit modifier {} name {}'.format(current_modifier, current_modifier.replace(' (Enabled)', '')))
+    current_modifier_new_name = e('audot query modifier {} name'.format(current_modifier)).replace(' (Enabled)', '')
+    e('audot edit modifier {} name "{}"'.format(current_modifier, current_modifier_new_name))
+    
+    # Change modifier
     os.system('audot edit config modifier "{}"'.format(pywal_modifier))
 
     e('audot edit modifier {} name "{}"'.format(pywal_modifier, 'Pywal (Enabled)'))

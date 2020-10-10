@@ -7,10 +7,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +8 /srv/http/wordpress.devel/public_html/wp-content/plugins/BKR-hook-snippets/BKR-hook-snippets.php
+badd +10 wp-content/plugins/BKR-hook-snippets/BKR-hook-snippets.php
+badd +2 wp-content/plugins/BKR-contact-links/index.php
+badd +95 wp-content/plugins/BKR-contact-links/BKR-contact-links.php
+badd +6 wp-content/plugins/BKR-contact-links/partials/settings-page.php
 argglobal
 %argdel
-edit /srv/http/wordpress.devel/public_html/wp-content/plugins/BKR-hook-snippets/BKR-hook-snippets.php
+edit wp-content/plugins/BKR-contact-links/BKR-contact-links.php
 set splitbelow splitright
 wincmd t
 set winminheight=0
@@ -18,7 +21,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-setlocal fdm=manual
+setlocal fdm=syntax
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
@@ -26,19 +29,18 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-silent! normal! zE
-let s:l = 8 - ((7 * winheight(0) + 32) / 64)
+let s:l = 29 - ((28 * winheight(0) + 32) / 64)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-8
-normal! 0
+29
+normal! 041|
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
-set winheight=1 winwidth=20 winminheight=1 winminwidth=1 shortmess=filnxtToOFcI
+set winheight=1 winwidth=20 winminheight=1 winminwidth=1 shortmess=filnxtToOFIc
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)

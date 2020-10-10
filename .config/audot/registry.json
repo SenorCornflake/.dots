@@ -127,6 +127,14 @@
                             "repl": "alpha_text = <|value|>",
                             "repl_location": "matched",
                             "value_is_file": false
+                        },
+                        {
+                            "name": "alpha_font",
+                            "search": "alpha_font = .+",
+                            "search_type": "line",
+                            "repl": "alpha_font = <|value|>",
+                            "repl_location": "matched",
+                            "value_is_file": false
                         }
                     ]
                 }

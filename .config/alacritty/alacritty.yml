@@ -1,5 +1,4 @@
 
-
 font:
   normal:
     family: Dina # normal
@@ -13,7 +12,7 @@ font:
   bold_italic:
     family: Dina # bold_italic
     style: Bold Italic
-  size: 10
+  size: 9
   offset:
     x: 0
     y: 0 # offset
@@ -24,40 +23,40 @@ font:
 
 
 # THEME
-# Base16 Black Metal (Mayhem) - alacritty color config
-# metalelf0 (https://github.com/metalelf0)
+# Base16 Material Palenight - alacritty color config
+# Nate Peterson
 colors:
   # Default colors
   primary:
-    background: '0x000000'
-    foreground: '0xc1c1c1'
+    background: '0x292d3e'
+    foreground: '0x959dcb'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x000000'
-    cursor: '0xc1c1c1'
+    text: '0x292d3e'
+    cursor: '0x959dcb'
 
   # Normal colors
   normal:
-    black:   '0x000000'
-    red:     '0x5f8787'
-    green:   '0xf3ecd4'
-    yellow:  '0xeecc6c'
-    blue:    '0x888888'
-    magenta: '0x999999'
-    cyan:    '0xaaaaaa'
-    white:   '0xc1c1c1'
+    black:   '0x292d3e'
+    red:     '0xf07178'
+    green:   '0xc3e88d'
+    yellow:  '0xffcb6b'
+    blue:    '0x82aaff'
+    magenta: '0xc792ea'
+    cyan:    '0x89ddff'
+    white:   '0x959dcb'
 
   # Bright colors
   bright:
-    black:   '0x333333'
-    red:     '0xaaaaaa'
-    green:   '0x121212'
-    yellow:  '0x222222'
-    blue:    '0x999999'
-    magenta: '0x999999'
-    cyan:    '0x444444'
-    white:   '0xc1c1c1'
+    black:   '0x676e95'
+    red:     '0xf78c6c'
+    green:   '0x444267'
+    yellow:  '0x32374d'
+    blue:    '0x8796b0'
+    magenta: '0x959dcb'
+    cyan:    '0xff5370'
+    white:   '0xffffff'
 
 draw_bold_text_with_bright_colors: false
 

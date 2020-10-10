@@ -1,5 +1,5 @@
 {
-  "name": "/home/breton/.config/audot/modifiers/base16-icy.json",
+  "name": "Base16 Icy",
   "programs": [
     {
       "name": "bspwm",
@@ -92,7 +92,7 @@
         },
         {
           "name": "font_size",
-          "value": "10"
+          "value": "9"
         },
         {
           "name": "y_offset",

@@ -6,7 +6,6 @@ def e(command):
 
 pictures_root = "~/Pictures/wallpapers"
 picture_paths = os.listdir(os.path.expanduser(pictures_root))
-picture_paths.remove('.git')
 
 modifier_path = e('audot query config modifier')
 

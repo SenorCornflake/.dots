@@ -1,5 +1,5 @@
 configuration {
-    font: "Fira Code 10";
+    font: "Iosevka 10";
     show-icons: true;
     drun-display-format: "{name}";
 }

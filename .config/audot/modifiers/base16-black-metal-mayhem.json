@@ -1,5 +1,5 @@
 {
-  "name": "Base16 Black Metal Mayhem (Enabled)",
+  "name": "Base16 Black Metal Mayhem",
   "programs": [
     {
       "name": "bspwm",
@@ -92,7 +92,7 @@
         },
         {
           "name": "font_size",
-          "value": "10"
+          "value": "9"
         },
         {
           "name": "y_offset",

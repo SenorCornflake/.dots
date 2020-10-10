@@ -27,8 +27,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	" Plug 'brainfucksec/wal.vim'
 	Plug 'richtan/pywal.vim'
 	Plug 'dylanaraps/wal.vim'
+	Plug 'easymotion/vim-easymotion'
+	Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+	Plug 'tpope/vim-fugitive'
+	Plug 'mhinz/vim-signify'
+	Plug 'tpope/vim-rhubarb'
 call plug#end()
-
 
 " Automatically install missing plugins on startup
 autocmd VimEnter *

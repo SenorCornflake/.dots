@@ -4,7 +4,7 @@ import yaml
 import json
 import os
 
-colors_dir = "~/.config/alacritty/colors"
+colors_dir = "~/.config/scrypts/themes/alacritty"
 modifiers_dir = '~/.config/audot/modifiers'
 
 colors = os.listdir(os.path.expanduser(colors_dir))
@@ -82,7 +82,7 @@ for color in colors:
         elif program['name'] == 'alacritty':
             for b, setting in enumerate(program['settings']):
                 if setting['name'] == 'theme':
-                    setting['value'] = '~/.config/alacritty/colors/' + color['name'] + '.yml'
+                    setting['value'] = '~/.config/scrypts/themes/alacritty/' + color['name'] + '.yml'
                 program['settings'][b] = setting
         elif program['name'] == 'neovim':
             for b, setting in enumerate(program['settings']):

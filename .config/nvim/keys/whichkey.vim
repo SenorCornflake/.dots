@@ -14,6 +14,7 @@ let g:which_key_map['q'] = [':q', 'Quit']
 let g:which_key_map['z'] = [':Goyo 60%x100%', 'Zen Mode']
 let g:which_key_map['r'] = [':Rooter', 'Vim Rooter']
 let g:which_key_map['e'] = [':CocCommand explorer --position right', 'File Explorer']
+let g:which_key_map['k'] = ['<Plug>(easymotion-s)', 'Jump to char']
 
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
@@ -41,6 +42,16 @@ let g:which_key_map.s = {
       \ 'z' : [':FZF'                   , 'FZF'],
       \ }
 
+let g:which_key_map.j = {
+      \ 'name' : '+easymotion',
+      \ 's' : ['<Plug>(easymotion-s)', 'jump to char'],
+      \ 'S' : ['<Plug>(easymotion-s2)', 'jump to multi char'],
+      \ 'w' : ['<Plug>(easymotion-bd-w)', 'jump to start of word'],
+      \ 'e' : ['<Plug>(easymotion-bd-e)', 'jump to end of word'],
+      \ 'l' : ['<Plug>(easymotion-lineanywhere)', 'jump to word in line'],
+      \ 'a' : ['<Plug>(easymotion-jumptoanywhere)', 'jump to anywhere'],
+      \ 'L' : ['<Plug>(easymotion-bd-jk)', 'jump to line'],
+      \ }
 
 let g:which_key_map.S = {
       \ 'name' : '+session' ,
