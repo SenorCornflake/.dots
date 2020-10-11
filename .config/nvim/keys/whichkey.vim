@@ -94,7 +94,9 @@ let which_key_map.l = {
                   \ 'name' : '+lsp',
                   \ '.' : [':CocConfig', 'Config'],
                   \ 'i' : [':CocList diagnostics', 'Diagnostics'],
-                  \ 'd' : ["<Plug>(coc-definition)", "Definition"]
+                  \ 'd' : ["<Plug>(coc-definition)", "Definition"],
+                  \ 'D' : [":call Coc_show_documentation()<CR>", "Documentation"],
+                  \ 'f' : [":CocAction format", "Format Document"],
                   \ }
 call which_key#register(' ', "g:which_key_map")
 

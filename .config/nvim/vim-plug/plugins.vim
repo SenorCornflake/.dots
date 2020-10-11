@@ -24,9 +24,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'Shougo/echodoc'
 	Plug 'chriskempson/base16-vim'
 	Plug 'tpope/vim-surround'
-	" Plug 'brainfucksec/wal.vim'
+	Plug 'brainfucksec/wal.vim'
 	Plug 'richtan/pywal.vim'
-	Plug 'dylanaraps/wal.vim'
+	" Plug 'dylanaraps/wal.vim'
 	Plug 'easymotion/vim-easymotion'
 	Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 	Plug 'tpope/vim-fugitive'

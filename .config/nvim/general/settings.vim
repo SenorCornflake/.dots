@@ -16,15 +16,16 @@ set shortmess+=c                        " Prevents sending messages to ins-compl
 set signcolumn=yes                      " Show sign columns
 set laststatus=2                        " Always show status line
 set foldmethod=syntax                   " Set method used to fold blocks
+set linebreak 							" Make it easier to understand line wrapping 
 
 let g:php_folding = 1                   " Enable folding php functions etc
 
 
 " The comments below are used as identifiers by audot
 " CURSORLINE
-set nocursorline
+set cursorline
 " TERMGUICOLORS
-set notermguicolors
+set termguicolors
 
 
 " Triger `autoread` when files changes on disk
