@@ -20,33 +20,33 @@ font:
     x: 0
     y: 0
   
-
+background_opacity: 0.9
 
 # THEME
 colors:
   bright:
-    black: '0x7292a5'
-    blue: '0x0563AD'
-    cyan: '0x0498E1'
-    green: '0xCA0D54'
-    magenta: '0x0D71BF'
-    red: '0x05427A'
-    white: '0xa4d1ec'
-    yellow: '0x034F90'
+    black: '0x777d85'
+    blue: '0x444B5B'
+    cyan: '0x5C6370'
+    green: '0x384556'
+    magenta: '0x4B5566'
+    red: '0x2B3649'
+    white: '0xabb3bf'
+    yellow: '0x384E68'
   cursor:
-    cursor: '0xa4d1ec'
-    text: '0x0F0812'
+    cursor: '0xabb3bf'
+    text: '0x0a0809'
   normal:
-    black: '0x0F0812'
-    blue: '0x0563AD'
-    cyan: '0x0498E1'
-    green: '0xCA0D54'
-    magenta: '0x0D71BF'
-    red: '0x05427A'
-    white: '0xa4d1ec'
-    yellow: '0x034F90'
+    black: '0x0a0809'
+    blue: '0x444B5B'
+    cyan: '0x5C6370'
+    green: '0x384556'
+    magenta: '0x4B5566'
+    red: '0x2B3649'
+    white: '0xabb3bf'
+    yellow: '0x384E68'
   primary:
-    background: '0x0F0812'
-    foreground: '0xa4d1ec'
+    background: '0x0a0809'
+    foreground: '0xabb3bf'
 
 # /THEME

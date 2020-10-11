@@ -73,7 +73,7 @@ elif os.path.exists(os.path.expanduser('~/.cache/wal/colors')):
     current_modifier = e('audot query config modifier')
     current_modifier_new_name = e('audot query modifier {} name'.format(current_modifier)).replace(' (Enabled)', '')
     e('audot edit modifier {} name "{}"'.format(current_modifier, current_modifier_new_name))
-    
+
     # Change modifier
     os.system('audot edit config modifier "{}"'.format(pywal_modifier))
 
@@ -107,7 +107,7 @@ elif os.path.exists(os.path.expanduser('~/.cache/wal/colors')):
 
     # Change rofi colors
     os.system('audot edit modifier {} programs/rofi/settings/background/value "{}"'.format(pywal_modifier, colors[0]))
-    os.system('audot edit modifier {} programs/rofi/settings/background_alt/value "{}"'.format(pywal_modifier, colors[0] + '60'))
+    os.system('audot edit modifier {} programs/rofi/settings/background_alt/value "{}"'.format(pywal_modifier, colors[0] + '90'))
     os.system('audot edit modifier {} programs/rofi/settings/foreground/value "{}"'.format(pywal_modifier, colors[8]))
     os.system('audot edit modifier {} programs/rofi/settings/selected_background/value "{}"'.format(pywal_modifier, colors[7]))
     os.system('audot edit modifier {} programs/rofi/settings/selected_border/value "{}"'.format(pywal_modifier, colors[6]))
