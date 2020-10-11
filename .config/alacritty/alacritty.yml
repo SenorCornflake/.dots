@@ -23,41 +23,30 @@ font:
 
 
 # THEME
-# Base16 Material Palenight - alacritty color config
-# Nate Peterson
 colors:
-  # Default colors
-  primary:
-    background: '0x292d3e'
-    foreground: '0x959dcb'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0x292d3e'
-    cursor: '0x959dcb'
-
-  # Normal colors
-  normal:
-    black:   '0x292d3e'
-    red:     '0xf07178'
-    green:   '0xc3e88d'
-    yellow:  '0xffcb6b'
-    blue:    '0x82aaff'
-    magenta: '0xc792ea'
-    cyan:    '0x89ddff'
-    white:   '0x959dcb'
-
-  # Bright colors
   bright:
-    black:   '0x676e95'
-    red:     '0xf78c6c'
-    green:   '0x444267'
-    yellow:  '0x32374d'
-    blue:    '0x8796b0'
-    magenta: '0x959dcb'
-    cyan:    '0xff5370'
-    white:   '0xffffff'
-
-draw_bold_text_with_bright_colors: false
+    black: '0x7292a5'
+    blue: '0x0563AD'
+    cyan: '0x0498E1'
+    green: '0xCA0D54'
+    magenta: '0x0D71BF'
+    red: '0x05427A'
+    white: '0xa4d1ec'
+    yellow: '0x034F90'
+  cursor:
+    cursor: '0xa4d1ec'
+    text: '0x0F0812'
+  normal:
+    black: '0x0F0812'
+    blue: '0x0563AD'
+    cyan: '0x0498E1'
+    green: '0xCA0D54'
+    magenta: '0x0D71BF'
+    red: '0x05427A'
+    white: '0xa4d1ec'
+    yellow: '0x034F90'
+  primary:
+    background: '0x0F0812'
+    foreground: '0xa4d1ec'
 
 # /THEME

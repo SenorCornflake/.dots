@@ -22,9 +22,9 @@ let g:php_folding = 1                   " Enable folding php functions etc
 
 " The comments below are used as identifiers by audot
 " CURSORLINE
-set cursorline
+set nocursorline
 " TERMGUICOLORS
-set termguicolors
+set notermguicolors
 
 
 " Triger `autoread` when files changes on disk

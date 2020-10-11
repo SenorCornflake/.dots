@@ -60,6 +60,7 @@ elif os.path.exists(os.path.expanduser('~/.cache/wal/colors')):
     }
 
     alacritty_colors = yaml.dump(alacritty_colors)
+    print(alacritty_colors)
 
     open(os.path.expanduser("~/.config/scrypts/themes/alacritty/pywal.yml"), "w").write(alacritty_colors)
 

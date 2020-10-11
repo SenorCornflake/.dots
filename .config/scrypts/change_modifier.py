@@ -19,7 +19,7 @@ if modifier != '':
     name = modifier_names[modifier]
 
     modifier = modifier_paths[modifier]
-    
+
     # Remove enabled text from the current modifier
     current_modifier = e('audot query config modifier')
     current_modifier_new_name = e('audot query modifier {} name'.format(current_modifier)).replace(' (Enabled)', '')
