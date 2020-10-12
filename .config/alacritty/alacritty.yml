@@ -22,6 +22,17 @@ font:
   
 background_opacity: 0.9
 
+window:
+  dimensions:
+    columns: 0
+    lines: 0
+
+  padding:
+    x: 0
+    y: 0
+
+  decorations: none
+
 # THEME
 # Base16 IR Black - alacritty color config
 # Timothée Poisot (http://timotheepoisot.fr)

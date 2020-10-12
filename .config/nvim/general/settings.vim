@@ -15,6 +15,7 @@ set updatetime=4000                     " Setting shorter updatetime for better 
 set shortmess+=c                        " Prevents sending messages to ins-complete-menu, whatever that means. Recommended by Coc
 set signcolumn=yes                      " Show sign columns
 set laststatus=2                        " Always show status line
+set nofoldenable
 set foldmethod=syntax                   " Set method used to fold blocks
 set linebreak 							" Make it easier to understand line wrapping 
 
