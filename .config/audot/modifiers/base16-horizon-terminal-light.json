@@ -1,5 +1,5 @@
 {
-  "name": "Base16 Horizon Terminal Light",
+  "name": "Base16 Horizon Light",
   "programs": [
     {
       "name": "bspwm",
@@ -10,23 +10,23 @@
         },
         {
           "name": "normal_border_color",
-          "value": "#fadad1"
+          "value": "#FADAD1"
         },
         {
           "name": "urgent_border_color",
-          "value": "#e95678"
+          "value": "#E95678"
         },
         {
           "name": "focused_border_color",
-          "value": "#f9cec3"
+          "value": "#F9CEC3"
         },
         {
           "name": "presel_feedback_color",
-          "value": "#f9cec3"
+          "value": "#F9CEC3"
         },
         {
           "name": "active_border_color",
-          "value": "#948c8a"
+          "value": "#948C8A"
         },
         {
           "name": "border_width",
@@ -47,7 +47,7 @@
         },
         {
           "name": "alpha_background",
-          "value": "#fdf0ed"
+          "value": "#FDF0ED"
         },
         {
           "name": "alpha_foreground",
@@ -55,15 +55,15 @@
         },
         {
           "name": "alpha_label",
-          "value": "#29d398"
+          "value": "#29D398"
         },
         {
           "name": "alpha_text",
-          "value": "#948c8a"
+          "value": "#948C8A"
         },
         {
           "name": "alpha_urgent",
-          "value": "#e95678"
+          "value": "#E95678"
         }
       ]
     },
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-horizon-terminal-light.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-horizon-terminal-light.yml"
         },
         {
           "name": "bold_font",
@@ -126,35 +126,35 @@
         },
         {
           "name": "normal_frame_color",
-          "value": "#f9cec3"
+          "value": "#F9CEC3"
         },
         {
           "name": "critical_frame_color",
-          "value": "#e95678"
+          "value": "#E95678"
         },
         {
           "name": "critical_background_color",
-          "value": "#e95678"
+          "value": "#E95678"
         },
         {
           "name": "normal_background_color",
-          "value": "#fdf0ed"
+          "value": "#FDF0ED"
         },
         {
           "name": "low_background_color",
-          "value": "#fdf0ed"
+          "value": "#FDF0ED"
         },
         {
           "name": "critical_foreground_color",
-          "value": "#fdf0ed"
+          "value": "#FDF0ED"
         },
         {
           "name": "normal_foreground_color",
-          "value": "#948c8a"
+          "value": "#948C8A"
         },
         {
           "name": "low_foreground_color",
-          "value": "#948c8a"
+          "value": "#948C8A"
         }
       ]
     },
@@ -167,23 +167,23 @@
         },
         {
           "name": "background",
-          "value": "#fdf0ed"
+          "value": "#FDF0ED"
         },
         {
           "name": "background_alt",
-          "value": "#fdf0ed90"
+          "value": "#FDF0ED90"
         },
         {
           "name": "foreground",
-          "value": "#948c8a"
+          "value": "#948C8A"
         },
         {
           "name": "selected_background",
-          "value": "#f9cec3"
+          "value": "#F9CEC3"
         },
         {
           "name": "selected_border",
-          "value": "#fadad1"
+          "value": "#FADAD1"
         }
       ]
     }

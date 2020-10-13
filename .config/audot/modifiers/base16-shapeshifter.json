@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-shapeshifter.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-shapeshifter.yml"
         },
         {
           "name": "bold_font",

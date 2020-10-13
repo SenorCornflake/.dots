@@ -10,23 +10,23 @@
         },
         {
           "name": "normal_border_color",
-          "value": "#2e3c43"
+          "value": "#2E3C43"
         },
         {
           "name": "urgent_border_color",
-          "value": "#f07178"
+          "value": "#F07178"
         },
         {
           "name": "focused_border_color",
-          "value": "#f78c6c"
+          "value": "#F78C6C"
         },
         {
           "name": "presel_feedback_color",
-          "value": "#f78c6c"
+          "value": "#F78C6C"
         },
         {
           "name": "active_border_color",
-          "value": "#b2ccd6"
+          "value": "#B2CCD6"
         },
         {
           "name": "border_width",
@@ -55,15 +55,15 @@
         },
         {
           "name": "alpha_label",
-          "value": "#c3e88d"
+          "value": "#C3E88D"
         },
         {
           "name": "alpha_text",
-          "value": "#b2ccd6"
+          "value": "#B2CCD6"
         },
         {
           "name": "alpha_urgent",
-          "value": "#f07178"
+          "value": "#F07178"
         }
       ]
     },
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-material.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-material.yml"
         },
         {
           "name": "bold_font",
@@ -126,15 +126,15 @@
         },
         {
           "name": "normal_frame_color",
-          "value": "#f78c6c"
+          "value": "#F78C6C"
         },
         {
           "name": "critical_frame_color",
-          "value": "#f07178"
+          "value": "#F07178"
         },
         {
           "name": "critical_background_color",
-          "value": "#f07178"
+          "value": "#F07178"
         },
         {
           "name": "normal_background_color",
@@ -150,11 +150,11 @@
         },
         {
           "name": "normal_foreground_color",
-          "value": "#b2ccd6"
+          "value": "#B2CCD6"
         },
         {
           "name": "low_foreground_color",
-          "value": "#b2ccd6"
+          "value": "#B2CCD6"
         }
       ]
     },
@@ -175,15 +175,15 @@
         },
         {
           "name": "foreground",
-          "value": "#b2ccd6"
+          "value": "#B2CCD6"
         },
         {
           "name": "selected_background",
-          "value": "#f78c6c"
+          "value": "#F78C6C"
         },
         {
           "name": "selected_border",
-          "value": "#ffcb6b"
+          "value": "#FFCB6B"
         }
       ]
     }

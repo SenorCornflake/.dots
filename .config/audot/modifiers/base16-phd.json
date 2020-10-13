@@ -1,5 +1,5 @@
 {
-  "name": "Base16 Phd",
+  "name": "Base16 PhD",
   "programs": [
     {
       "name": "bspwm",
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-phd.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-phd.yml"
         },
         {
           "name": "bold_font",

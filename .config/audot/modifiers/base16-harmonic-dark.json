@@ -1,5 +1,5 @@
 {
-  "name": "Base16 Harmonic Dark",
+  "name": "Base16 Harmonic16 Dark",
   "programs": [
     {
       "name": "bspwm",
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-harmonic-dark.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-harmonic-dark.yml"
         },
         {
           "name": "bold_font",

@@ -1,3 +1,4 @@
+
 # Base16 Atlas - alacritty color config
 # Alex Lende (https://ajlende.com)
 colors:
@@ -24,10 +25,10 @@ colors:
 
   # Bright colors
   bright:
-    black:   '0x6c8b91'
+    black:   '0x6C8B91'
     red:     '0xf08e48'
     green:   '0x00384d'
-    yellow:  '0x517f8d'
+    yellow:  '0x517F8D'
     blue:    '0x869696'
     magenta: '0xe6e6dc'
     cyan:    '0xc43060'

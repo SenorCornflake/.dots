@@ -14,19 +14,19 @@
         },
         {
           "name": "urgent_border_color",
-          "value": "#ff0086"
+          "value": "#FF0086"
         },
         {
           "name": "focused_border_color",
-          "value": "#fd8900"
+          "value": "#FD8900"
         },
         {
           "name": "presel_feedback_color",
-          "value": "#fd8900"
+          "value": "#FD8900"
         },
         {
           "name": "active_border_color",
-          "value": "#b0b0b0"
+          "value": "#B0B0B0"
         },
         {
           "name": "border_width",
@@ -55,15 +55,15 @@
         },
         {
           "name": "alpha_label",
-          "value": "#00c918"
+          "value": "#00C918"
         },
         {
           "name": "alpha_text",
-          "value": "#b0b0b0"
+          "value": "#B0B0B0"
         },
         {
           "name": "alpha_urgent",
-          "value": "#ff0086"
+          "value": "#FF0086"
         }
       ]
     },
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-summerfruit-dark.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-summerfruit-dark.yml"
         },
         {
           "name": "bold_font",
@@ -126,15 +126,15 @@
         },
         {
           "name": "normal_frame_color",
-          "value": "#fd8900"
+          "value": "#FD8900"
         },
         {
           "name": "critical_frame_color",
-          "value": "#ff0086"
+          "value": "#FF0086"
         },
         {
           "name": "critical_background_color",
-          "value": "#ff0086"
+          "value": "#FF0086"
         },
         {
           "name": "normal_background_color",
@@ -150,11 +150,11 @@
         },
         {
           "name": "normal_foreground_color",
-          "value": "#b0b0b0"
+          "value": "#B0B0B0"
         },
         {
           "name": "low_foreground_color",
-          "value": "#b0b0b0"
+          "value": "#B0B0B0"
         }
       ]
     },
@@ -175,15 +175,15 @@
         },
         {
           "name": "foreground",
-          "value": "#b0b0b0"
+          "value": "#B0B0B0"
         },
         {
           "name": "selected_background",
-          "value": "#fd8900"
+          "value": "#FD8900"
         },
         {
           "name": "selected_border",
-          "value": "#aba800"
+          "value": "#ABA800"
         }
       ]
     }

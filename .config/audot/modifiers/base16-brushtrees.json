@@ -1,5 +1,5 @@
 {
-  "name": "Base16 Brushtrees",
+  "name": "Base16 Brush Trees",
   "programs": [
     {
       "name": "bspwm",
@@ -10,7 +10,7 @@
         },
         {
           "name": "normal_border_color",
-          "value": "#c9dbdc"
+          "value": "#C9DBDC"
         },
         {
           "name": "urgent_border_color",
@@ -26,7 +26,7 @@
         },
         {
           "name": "active_border_color",
-          "value": "#8299a1"
+          "value": "#8299A1"
         },
         {
           "name": "border_width",
@@ -47,7 +47,7 @@
         },
         {
           "name": "alpha_background",
-          "value": "#e3efef"
+          "value": "#E3EFEF"
         },
         {
           "name": "alpha_foreground",
@@ -59,7 +59,7 @@
         },
         {
           "name": "alpha_text",
-          "value": "#8299a1"
+          "value": "#8299A1"
         },
         {
           "name": "alpha_urgent",
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-brushtrees.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-brushtrees.yml"
         },
         {
           "name": "bold_font",
@@ -138,23 +138,23 @@
         },
         {
           "name": "normal_background_color",
-          "value": "#e3efef"
+          "value": "#E3EFEF"
         },
         {
           "name": "low_background_color",
-          "value": "#e3efef"
+          "value": "#E3EFEF"
         },
         {
           "name": "critical_foreground_color",
-          "value": "#e3efef"
+          "value": "#E3EFEF"
         },
         {
           "name": "normal_foreground_color",
-          "value": "#8299a1"
+          "value": "#8299A1"
         },
         {
           "name": "low_foreground_color",
-          "value": "#8299a1"
+          "value": "#8299A1"
         }
       ]
     },
@@ -167,15 +167,15 @@
         },
         {
           "name": "background",
-          "value": "#e3efef"
+          "value": "#E3EFEF"
         },
         {
           "name": "background_alt",
-          "value": "#e3efef90"
+          "value": "#E3EFEF90"
         },
         {
           "name": "foreground",
-          "value": "#8299a1"
+          "value": "#8299A1"
         },
         {
           "name": "selected_background",

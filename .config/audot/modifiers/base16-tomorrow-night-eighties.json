@@ -1,5 +1,5 @@
 {
-  "name": "Base16 Tomorrow Night Eighties",
+  "name": "Base16 Tomorrow Night",
   "programs": [
     {
       "name": "bspwm",
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-tomorrow-night-eighties.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-tomorrow-night-eighties.yml"
         },
         {
           "name": "bold_font",

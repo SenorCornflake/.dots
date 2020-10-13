@@ -6,7 +6,7 @@
       "settings": [
         {
           "name": "wallpaper",
-          "value": "~/Pictures/wallpapers/trees.jpg"
+          "value": "~/Pictures/wallpapers/satellite-dish.jpg"
         },
         {
           "name": "normal_border_color",
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-grayscale-dark.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-grayscale-dark.yml"
         },
         {
           "name": "bold_font",

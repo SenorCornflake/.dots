@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-chalk.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-chalk.yml"
         },
         {
           "name": "bold_font",

@@ -1,5 +1,5 @@
 {
-  "name": "Base16 Gruvbox Light Medium",
+  "name": "Base16 Gruvbox light, medium",
   "programs": [
     {
       "name": "bspwm",
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-gruvbox-light-medium.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-gruvbox-light-medium.yml"
         },
         {
           "name": "bold_font",

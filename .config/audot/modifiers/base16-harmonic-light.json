@@ -1,5 +1,5 @@
 {
-  "name": "Base16 Harmonic Light",
+  "name": "Base16 Harmonic16 Light",
   "programs": [
     {
       "name": "bspwm",
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-harmonic-light.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-harmonic-light.yml"
         },
         {
           "name": "bold_font",

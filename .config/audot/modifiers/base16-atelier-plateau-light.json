@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-atelier-plateau-light.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-atelier-plateau-light.yml"
         },
         {
           "name": "bold_font",

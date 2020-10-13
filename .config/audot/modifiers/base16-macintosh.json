@@ -6,7 +6,7 @@
       "settings": [
         {
           "name": "wallpaper",
-          "value": "~/Pictures/wallpapers/empry-road.jpg"
+          "value": "~/Pictures/wallpapers/trees.jpg"
         },
         {
           "name": "normal_border_color",
@@ -51,7 +51,7 @@
         },
         {
           "name": "alpha_foreground",
-          "value": "#c0c0c0"
+          "value": "#e3e3e3"
         },
         {
           "name": "alpha_label",
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-macintosh.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-macintosh.yml"
         },
         {
           "name": "bold_font",

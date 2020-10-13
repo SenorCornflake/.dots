@@ -1,5 +1,5 @@
 {
-  "name": "Base16 Greenscreen",
+  "name": "Base16 Green Screen",
   "programs": [
     {
       "name": "bspwm",
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-greenscreen.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-greenscreen.yml"
         },
         {
           "name": "bold_font",

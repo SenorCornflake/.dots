@@ -6,7 +6,7 @@
       "settings": [
         {
           "name": "wallpaper",
-          "value": "~/Pictures/wallpapers/beach.jpg"
+          "value": "~/Pictures/wallpapers/generated.png"
         },
         {
           "name": "normal_border_color",
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-solarized-dark.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-solarized-dark.yml"
         },
         {
           "name": "bold_font",

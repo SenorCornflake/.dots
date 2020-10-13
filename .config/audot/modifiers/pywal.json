@@ -6,23 +6,23 @@
       "settings": [
         {
           "name": "wallpaper",
-          "value": "/home/breton/Pictures/wallpapers/sattelite-over-eartch.jpg"
+          "value": "/home/breton/Pictures/wallpapers/satellite-dish.jpg"
         },
         {
           "name": "normal_border_color",
-          "value": "#090F15"
+          "value": "#020202"
         },
         {
           "name": "urgent_border_color",
-          "value": "#9F8A76"
+          "value": "#B8B8B8"
         },
         {
           "name": "focused_border_color",
-          "value": "#728685"
+          "value": "#C5C5C5"
         },
         {
           "name": "active_border_color",
-          "value": "#908982"
+          "value": "#9d9d9d"
         },
         {
           "name": "border_width",
@@ -39,23 +39,23 @@
         },
         {
           "name": "alpha_background",
-          "value": "#090F15"
+          "value": "#020202"
         },
         {
           "name": "alpha_foreground",
-          "value": "#908982"
+          "value": "#9d9d9d"
         },
         {
           "name": "alpha_label",
-          "value": "#8A7765"
+          "value": "#949494"
         },
         {
           "name": "alpha_text",
-          "value": "#837B2F"
+          "value": "#717171"
         },
         {
           "name": "alpha_urgent",
-          "value": "#9F8A76"
+          "value": "#B8B8B8"
         }
       ]
     },
@@ -118,35 +118,35 @@
         },
         {
           "name": "normal_frame_color",
-          "value": "#728685"
+          "value": "#C5C5C5"
         },
         {
           "name": "critical_frame_color",
-          "value": "#728685"
+          "value": "#C5C5C5"
         },
         {
           "name": "critical_background_color",
-          "value": "#728685"
+          "value": "#C5C5C5"
         },
         {
           "name": "normal_background_color",
-          "value": "#090F15"
+          "value": "#020202"
         },
         {
           "name": "low_background_color",
-          "value": "#090F15"
+          "value": "#020202"
         },
         {
           "name": "critical_foreground_color",
-          "value": "#090F15"
+          "value": "#020202"
         },
         {
           "name": "normal_foreground_color",
-          "value": "#908982"
+          "value": "#9d9d9d"
         },
         {
           "name": "low_foreground_color",
-          "value": "#908982"
+          "value": "#9d9d9d"
         }
       ]
     },
@@ -159,23 +159,23 @@
         },
         {
           "name": "background",
-          "value": "#090F15"
+          "value": "#020202"
         },
         {
           "name": "background_alt",
-          "value": "#090F1590"
+          "value": "#02020290"
         },
         {
           "name": "foreground",
-          "value": "#908982"
+          "value": "#9d9d9d"
         },
         {
           "name": "selected_border",
-          "value": "#728685"
+          "value": "#C5C5C5"
         },
         {
           "name": "selected_background",
-          "value": "#cfc5bb"
+          "value": "#e1e1e1"
         }
       ]
     }

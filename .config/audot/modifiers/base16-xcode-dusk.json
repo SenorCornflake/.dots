@@ -1,5 +1,5 @@
 {
-  "name": "Base16 Xcode Dusk",
+  "name": "Base16 XCode Dusk",
   "programs": [
     {
       "name": "bspwm",
@@ -10,23 +10,23 @@
         },
         {
           "name": "normal_border_color",
-          "value": "#3d4048"
+          "value": "#3D4048"
         },
         {
           "name": "urgent_border_color",
-          "value": "#b21889"
+          "value": "#B21889"
         },
         {
           "name": "focused_border_color",
-          "value": "#786dc5"
+          "value": "#786DC5"
         },
         {
           "name": "presel_feedback_color",
-          "value": "#786dc5"
+          "value": "#786DC5"
         },
         {
           "name": "active_border_color",
-          "value": "#7e8086"
+          "value": "#7E8086"
         },
         {
           "name": "border_width",
@@ -47,7 +47,7 @@
         },
         {
           "name": "alpha_background",
-          "value": "#282b35"
+          "value": "#282B35"
         },
         {
           "name": "alpha_foreground",
@@ -55,15 +55,15 @@
         },
         {
           "name": "alpha_label",
-          "value": "#df0002"
+          "value": "#DF0002"
         },
         {
           "name": "alpha_text",
-          "value": "#7e8086"
+          "value": "#7E8086"
         },
         {
           "name": "alpha_urgent",
-          "value": "#b21889"
+          "value": "#B21889"
         }
       ]
     },
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-xcode-dusk.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-xcode-dusk.yml"
         },
         {
           "name": "bold_font",
@@ -126,35 +126,35 @@
         },
         {
           "name": "normal_frame_color",
-          "value": "#786dc5"
+          "value": "#786DC5"
         },
         {
           "name": "critical_frame_color",
-          "value": "#b21889"
+          "value": "#B21889"
         },
         {
           "name": "critical_background_color",
-          "value": "#b21889"
+          "value": "#B21889"
         },
         {
           "name": "normal_background_color",
-          "value": "#282b35"
+          "value": "#282B35"
         },
         {
           "name": "low_background_color",
-          "value": "#282b35"
+          "value": "#282B35"
         },
         {
           "name": "critical_foreground_color",
-          "value": "#282b35"
+          "value": "#282B35"
         },
         {
           "name": "normal_foreground_color",
-          "value": "#7e8086"
+          "value": "#7E8086"
         },
         {
           "name": "low_foreground_color",
-          "value": "#7e8086"
+          "value": "#7E8086"
         }
       ]
     },
@@ -167,19 +167,19 @@
         },
         {
           "name": "background",
-          "value": "#282b35"
+          "value": "#282B35"
         },
         {
           "name": "background_alt",
-          "value": "#282b3590"
+          "value": "#282B3590"
         },
         {
           "name": "foreground",
-          "value": "#7e8086"
+          "value": "#7E8086"
         },
         {
           "name": "selected_background",
-          "value": "#786dc5"
+          "value": "#786DC5"
         },
         {
           "name": "selected_border",

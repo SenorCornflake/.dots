@@ -6,27 +6,27 @@
       "settings": [
         {
           "name": "wallpaper",
-          "value": "~/Pictures/wallpapers/neon-diamon-path.jpg"
+          "value": "~/Pictures/wallpapers/cartoon-room.png"
         },
         {
           "name": "normal_border_color",
-          "value": "#20204a"
+          "value": "#20204A"
         },
         {
           "name": "urgent_border_color",
-          "value": "#ff4242"
+          "value": "#FF4242"
         },
         {
           "name": "focused_border_color",
-          "value": "#fc8d28"
+          "value": "#FC8D28"
         },
         {
           "name": "presel_feedback_color",
-          "value": "#fc8d28"
+          "value": "#FC8D28"
         },
         {
           "name": "active_border_color",
-          "value": "#b0b0da"
+          "value": "#B0B0DA"
         },
         {
           "name": "border_width",
@@ -47,7 +47,7 @@
         },
         {
           "name": "alpha_background",
-          "value": "#00002a"
+          "value": "#00002A"
         },
         {
           "name": "alpha_foreground",
@@ -55,15 +55,15 @@
         },
         {
           "name": "alpha_label",
-          "value": "#59f176"
+          "value": "#59F176"
         },
         {
           "name": "alpha_text",
-          "value": "#b0b0da"
+          "value": "#B0B0DA"
         },
         {
           "name": "alpha_urgent",
-          "value": "#ff4242"
+          "value": "#FF4242"
         }
       ]
     },
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-outrun-dark.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-outrun-dark.yml"
         },
         {
           "name": "bold_font",
@@ -126,35 +126,35 @@
         },
         {
           "name": "normal_frame_color",
-          "value": "#fc8d28"
+          "value": "#FC8D28"
         },
         {
           "name": "critical_frame_color",
-          "value": "#ff4242"
+          "value": "#FF4242"
         },
         {
           "name": "critical_background_color",
-          "value": "#ff4242"
+          "value": "#FF4242"
         },
         {
           "name": "normal_background_color",
-          "value": "#00002a"
+          "value": "#00002A"
         },
         {
           "name": "low_background_color",
-          "value": "#00002a"
+          "value": "#00002A"
         },
         {
           "name": "critical_foreground_color",
-          "value": "#00002a"
+          "value": "#00002A"
         },
         {
           "name": "normal_foreground_color",
-          "value": "#b0b0da"
+          "value": "#B0B0DA"
         },
         {
           "name": "low_foreground_color",
-          "value": "#b0b0da"
+          "value": "#B0B0DA"
         }
       ]
     },
@@ -167,23 +167,23 @@
         },
         {
           "name": "background",
-          "value": "#00002a"
+          "value": "#00002A"
         },
         {
           "name": "background_alt",
-          "value": "#00002a90"
+          "value": "#00002A90"
         },
         {
           "name": "foreground",
-          "value": "#b0b0da"
+          "value": "#B0B0DA"
         },
         {
           "name": "selected_background",
-          "value": "#fc8d28"
+          "value": "#FC8D28"
         },
         {
           "name": "selected_border",
-          "value": "#f3e877"
+          "value": "#F3E877"
         }
       ]
     }

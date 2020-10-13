@@ -1,16 +1,16 @@
 {
-  "name": "Base16 Synth Midnight Dark",
+  "name": "Base16 Synth Midnight Terminal Dark",
   "programs": [
     {
       "name": "bspwm",
       "settings": [
         {
           "name": "wallpaper",
-          "value": "~/Pictures/wallpapers/black.png"
+          "value": "~/Pictures/wallpapers/trees.jpg"
         },
         {
           "name": "normal_border_color",
-          "value": "#141414"
+          "value": "#1a1b1c"
         },
         {
           "name": "urgent_border_color",
@@ -18,15 +18,15 @@
         },
         {
           "name": "focused_border_color",
-          "value": "#e4600e"
+          "value": "#ea770d"
         },
         {
           "name": "presel_feedback_color",
-          "value": "#e4600e"
+          "value": "#ea770d"
         },
         {
           "name": "active_border_color",
-          "value": "#bfbbbf"
+          "value": "#a3a5a6"
         },
         {
           "name": "border_width",
@@ -47,11 +47,11 @@
         },
         {
           "name": "alpha_background",
-          "value": "#040404"
+          "value": "#050608"
         },
         {
           "name": "alpha_foreground",
-          "value": "#efebef"
+          "value": "#e3e3e3"
         },
         {
           "name": "alpha_label",
@@ -59,7 +59,7 @@
         },
         {
           "name": "alpha_text",
-          "value": "#bfbbbf"
+          "value": "#a3a5a6"
         },
         {
           "name": "alpha_urgent",
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-synth-midnight-dark.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-synth-midnight-dark.yml"
         },
         {
           "name": "bold_font",
@@ -126,7 +126,7 @@
         },
         {
           "name": "normal_frame_color",
-          "value": "#e4600e"
+          "value": "#ea770d"
         },
         {
           "name": "critical_frame_color",
@@ -138,23 +138,23 @@
         },
         {
           "name": "normal_background_color",
-          "value": "#040404"
+          "value": "#050608"
         },
         {
           "name": "low_background_color",
-          "value": "#040404"
+          "value": "#050608"
         },
         {
           "name": "critical_foreground_color",
-          "value": "#040404"
+          "value": "#050608"
         },
         {
           "name": "normal_foreground_color",
-          "value": "#bfbbbf"
+          "value": "#a3a5a6"
         },
         {
           "name": "low_foreground_color",
-          "value": "#bfbbbf"
+          "value": "#a3a5a6"
         }
       ]
     },
@@ -167,23 +167,23 @@
         },
         {
           "name": "background",
-          "value": "#040404"
+          "value": "#050608"
         },
         {
           "name": "background_alt",
-          "value": "#04040490"
+          "value": "#05060890"
         },
         {
           "name": "foreground",
-          "value": "#bfbbbf"
+          "value": "#a3a5a6"
         },
         {
           "name": "selected_background",
-          "value": "#e4600e"
+          "value": "#ea770d"
         },
         {
           "name": "selected_border",
-          "value": "#dae84d"
+          "value": "#c9d364"
         }
       ]
     }

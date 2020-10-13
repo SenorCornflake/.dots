@@ -14,15 +14,15 @@
         },
         {
           "name": "urgent_border_color",
-          "value": "#d57e85"
+          "value": "#D57E85"
         },
         {
           "name": "focused_border_color",
-          "value": "#ebb790"
+          "value": "#EBB790"
         },
         {
           "name": "presel_feedback_color",
-          "value": "#ebb790"
+          "value": "#EBB790"
         },
         {
           "name": "active_border_color",
@@ -55,7 +55,7 @@
         },
         {
           "name": "alpha_label",
-          "value": "#a3b367"
+          "value": "#A3B367"
         },
         {
           "name": "alpha_text",
@@ -63,7 +63,7 @@
         },
         {
           "name": "alpha_urgent",
-          "value": "#d57e85"
+          "value": "#D57E85"
         }
       ]
     },
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-cupcake.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-cupcake.yml"
         },
         {
           "name": "bold_font",
@@ -126,15 +126,15 @@
         },
         {
           "name": "normal_frame_color",
-          "value": "#ebb790"
+          "value": "#EBB790"
         },
         {
           "name": "critical_frame_color",
-          "value": "#d57e85"
+          "value": "#D57E85"
         },
         {
           "name": "critical_background_color",
-          "value": "#d57e85"
+          "value": "#D57E85"
         },
         {
           "name": "normal_background_color",
@@ -179,11 +179,11 @@
         },
         {
           "name": "selected_background",
-          "value": "#ebb790"
+          "value": "#EBB790"
         },
         {
           "name": "selected_border",
-          "value": "#dcb16c"
+          "value": "#DCB16C"
         }
       ]
     }

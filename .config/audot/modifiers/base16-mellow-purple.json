@@ -10,7 +10,7 @@
         },
         {
           "name": "normal_border_color",
-          "value": "#1a092d"
+          "value": "#1A092D"
         },
         {
           "name": "urgent_border_color",
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-mellow-purple.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-mellow-purple.yml"
         },
         {
           "name": "bold_font",

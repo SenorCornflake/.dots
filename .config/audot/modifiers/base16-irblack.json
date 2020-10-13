@@ -1,5 +1,5 @@
 {
-  "name": "Base16 Irblack (Enabled)",
+  "name": "Base16 IR Black",
   "programs": [
     {
       "name": "bspwm",
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-irblack.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-irblack.yml"
         },
         {
           "name": "bold_font",

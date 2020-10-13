@@ -47,7 +47,7 @@
         },
         {
           "name": "alpha_background",
-          "value": "#3b3228"
+          "value": "#3B3228"
         },
         {
           "name": "alpha_foreground",
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-mocha.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-mocha.yml"
         },
         {
           "name": "bold_font",
@@ -138,15 +138,15 @@
         },
         {
           "name": "normal_background_color",
-          "value": "#3b3228"
+          "value": "#3B3228"
         },
         {
           "name": "low_background_color",
-          "value": "#3b3228"
+          "value": "#3B3228"
         },
         {
           "name": "critical_foreground_color",
-          "value": "#3b3228"
+          "value": "#3B3228"
         },
         {
           "name": "normal_foreground_color",
@@ -167,11 +167,11 @@
         },
         {
           "name": "background",
-          "value": "#3b3228"
+          "value": "#3B3228"
         },
         {
           "name": "background_alt",
-          "value": "#3b322890"
+          "value": "#3B322890"
         },
         {
           "name": "foreground",

@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-snazzy.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-snazzy.yml"
         },
         {
           "name": "bold_font",

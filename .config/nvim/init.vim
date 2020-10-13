@@ -8,7 +8,7 @@ source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/keys/whichkey.vim
 
 " Color theme
-colorscheme base16-irblack
+colorscheme base16-sandcastle
 
 " Plugin Configs
 source $HOME/.config/nvim/plugin_configs/airline.vim

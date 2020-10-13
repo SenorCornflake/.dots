@@ -1,3 +1,4 @@
+
 # Base16 Mellow Purple - alacritty color config
 # gidsi
 colors:
@@ -26,7 +27,7 @@ colors:
   bright:
     black:   '0x320f55'
     red:     '0xaa00a3'
-    green:   '0x1a092d'
+    green:   '0x1A092D'
     yellow:  '0x331354'
     blue:    '0x873582'
     magenta: '0xffeeff'

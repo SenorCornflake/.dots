@@ -32,6 +32,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'tpope/vim-fugitive'
 	Plug 'mhinz/vim-signify'
 	Plug 'tpope/vim-rhubarb'
+	Plug 'mattn/emmet-vim'
+	Plug 'SenorCornflake/vim-base16-colorschemes'
 call plug#end()
 
 " Automatically install missing plugins on startup

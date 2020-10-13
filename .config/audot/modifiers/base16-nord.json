@@ -6,27 +6,27 @@
       "settings": [
         {
           "name": "wallpaper",
-          "value": "~/Pictures/wallpapers/empry-road.jpg"
+          "value": "~/Pictures/wallpapers/generated.png"
         },
         {
           "name": "normal_border_color",
-          "value": "#3b4252"
+          "value": "#3B4252"
         },
         {
           "name": "urgent_border_color",
-          "value": "#88c0d0"
+          "value": "#BF616A"
         },
         {
           "name": "focused_border_color",
-          "value": "#81a1c1"
+          "value": "#D08770"
         },
         {
           "name": "presel_feedback_color",
-          "value": "#81a1c1"
+          "value": "#D08770"
         },
         {
           "name": "active_border_color",
-          "value": "#d8dee9"
+          "value": "#D8DEE9"
         },
         {
           "name": "border_width",
@@ -47,7 +47,7 @@
         },
         {
           "name": "alpha_background",
-          "value": "#2e3440"
+          "value": "#2E3440"
         },
         {
           "name": "alpha_foreground",
@@ -55,15 +55,15 @@
         },
         {
           "name": "alpha_label",
-          "value": "#bf616a"
+          "value": "#A3BE8C"
         },
         {
           "name": "alpha_text",
-          "value": "#d8dee9"
+          "value": "#D8DEE9"
         },
         {
           "name": "alpha_urgent",
-          "value": "#88c0d0"
+          "value": "#BF616A"
         }
       ]
     },
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-nord.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-nord.yml"
         },
         {
           "name": "bold_font",
@@ -126,35 +126,35 @@
         },
         {
           "name": "normal_frame_color",
-          "value": "#81a1c1"
+          "value": "#D08770"
         },
         {
           "name": "critical_frame_color",
-          "value": "#88c0d0"
+          "value": "#BF616A"
         },
         {
           "name": "critical_background_color",
-          "value": "#88c0d0"
+          "value": "#BF616A"
         },
         {
           "name": "normal_background_color",
-          "value": "#2e3440"
+          "value": "#2E3440"
         },
         {
           "name": "low_background_color",
-          "value": "#2e3440"
+          "value": "#2E3440"
         },
         {
           "name": "critical_foreground_color",
-          "value": "#2e3440"
+          "value": "#2E3440"
         },
         {
           "name": "normal_foreground_color",
-          "value": "#d8dee9"
+          "value": "#D8DEE9"
         },
         {
           "name": "low_foreground_color",
-          "value": "#d8dee9"
+          "value": "#D8DEE9"
         }
       ]
     },
@@ -167,23 +167,23 @@
         },
         {
           "name": "background",
-          "value": "#2e3440"
+          "value": "#2E3440"
         },
         {
           "name": "background_alt",
-          "value": "#2e344090"
+          "value": "#2E344090"
         },
         {
           "name": "foreground",
-          "value": "#d8dee9"
+          "value": "#D8DEE9"
         },
         {
           "name": "selected_background",
-          "value": "#81a1c1"
+          "value": "#D08770"
         },
         {
           "name": "selected_border",
-          "value": "#5e81ac"
+          "value": "#EBCB8B"
         }
       ]
     }

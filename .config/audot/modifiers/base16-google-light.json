@@ -14,15 +14,15 @@
         },
         {
           "name": "urgent_border_color",
-          "value": "#cc342b"
+          "value": "#CC342B"
         },
         {
           "name": "focused_border_color",
-          "value": "#f96a38"
+          "value": "#F96A38"
         },
         {
           "name": "presel_feedback_color",
-          "value": "#f96a38"
+          "value": "#F96A38"
         },
         {
           "name": "active_border_color",
@@ -63,7 +63,7 @@
         },
         {
           "name": "alpha_urgent",
-          "value": "#cc342b"
+          "value": "#CC342B"
         }
       ]
     },
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-google-light.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-google-light.yml"
         },
         {
           "name": "bold_font",
@@ -126,15 +126,15 @@
         },
         {
           "name": "normal_frame_color",
-          "value": "#f96a38"
+          "value": "#F96A38"
         },
         {
           "name": "critical_frame_color",
-          "value": "#cc342b"
+          "value": "#CC342B"
         },
         {
           "name": "critical_background_color",
-          "value": "#cc342b"
+          "value": "#CC342B"
         },
         {
           "name": "normal_background_color",
@@ -179,11 +179,11 @@
         },
         {
           "name": "selected_background",
-          "value": "#f96a38"
+          "value": "#F96A38"
         },
         {
           "name": "selected_border",
-          "value": "#fba922"
+          "value": "#FBA922"
         }
       ]
     }

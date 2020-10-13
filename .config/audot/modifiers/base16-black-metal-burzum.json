@@ -1,5 +1,5 @@
 {
-  "name": "Base16 Black Metal Burzum",
+  "name": "Base16 Black Metal (Burzum)",
   "programs": [
     {
       "name": "bspwm",
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-black-metal-burzum.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-black-metal-burzum.yml"
         },
         {
           "name": "bold_font",

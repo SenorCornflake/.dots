@@ -10,23 +10,23 @@
         },
         {
           "name": "normal_border_color",
-          "value": "#34495e"
+          "value": "#34495E"
         },
         {
           "name": "urgent_border_color",
-          "value": "#e74c3c"
+          "value": "#E74C3C"
         },
         {
           "name": "focused_border_color",
-          "value": "#e67e22"
+          "value": "#E67E22"
         },
         {
           "name": "presel_feedback_color",
-          "value": "#e67e22"
+          "value": "#E67E22"
         },
         {
           "name": "active_border_color",
-          "value": "#bdc3c7"
+          "value": "#BDC3C7"
         },
         {
           "name": "border_width",
@@ -47,7 +47,7 @@
         },
         {
           "name": "alpha_background",
-          "value": "#2c3e50"
+          "value": "#2C3E50"
         },
         {
           "name": "alpha_foreground",
@@ -55,15 +55,15 @@
         },
         {
           "name": "alpha_label",
-          "value": "#2ecc71"
+          "value": "#2ECC71"
         },
         {
           "name": "alpha_text",
-          "value": "#bdc3c7"
+          "value": "#BDC3C7"
         },
         {
           "name": "alpha_urgent",
-          "value": "#e74c3c"
+          "value": "#E74C3C"
         }
       ]
     },
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-flat.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-flat.yml"
         },
         {
           "name": "bold_font",
@@ -126,35 +126,35 @@
         },
         {
           "name": "normal_frame_color",
-          "value": "#e67e22"
+          "value": "#E67E22"
         },
         {
           "name": "critical_frame_color",
-          "value": "#e74c3c"
+          "value": "#E74C3C"
         },
         {
           "name": "critical_background_color",
-          "value": "#e74c3c"
+          "value": "#E74C3C"
         },
         {
           "name": "normal_background_color",
-          "value": "#2c3e50"
+          "value": "#2C3E50"
         },
         {
           "name": "low_background_color",
-          "value": "#2c3e50"
+          "value": "#2C3E50"
         },
         {
           "name": "critical_foreground_color",
-          "value": "#2c3e50"
+          "value": "#2C3E50"
         },
         {
           "name": "normal_foreground_color",
-          "value": "#bdc3c7"
+          "value": "#BDC3C7"
         },
         {
           "name": "low_foreground_color",
-          "value": "#bdc3c7"
+          "value": "#BDC3C7"
         }
       ]
     },
@@ -167,23 +167,23 @@
         },
         {
           "name": "background",
-          "value": "#2c3e50"
+          "value": "#2C3E50"
         },
         {
           "name": "background_alt",
-          "value": "#2c3e5090"
+          "value": "#2C3E5090"
         },
         {
           "name": "foreground",
-          "value": "#bdc3c7"
+          "value": "#BDC3C7"
         },
         {
           "name": "selected_background",
-          "value": "#e67e22"
+          "value": "#E67E22"
         },
         {
           "name": "selected_border",
-          "value": "#f1c40f"
+          "value": "#F1C40F"
         }
       ]
     }

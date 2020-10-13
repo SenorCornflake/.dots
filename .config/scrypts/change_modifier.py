@@ -27,6 +27,7 @@ if modifier != '':
 
     e('audot edit config modifier "{}"'.format(modifiers_root + '/' + modifier))
     e('audot edit modifier {} name "{}"'.format(modifiers_root + '/' + modifier, name + ' (Enabled)'))
+    os.system('python ~/.config/scrypts/generate_wallpaper.py')
     os.system('audot start')
     os.system('bspc wm -r')
 

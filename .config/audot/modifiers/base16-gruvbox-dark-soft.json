@@ -1,5 +1,5 @@
 {
-  "name": "Base16 Gruvbox Dark Soft",
+  "name": "Base16 Gruvbox dark, soft",
   "programs": [
     {
       "name": "bspwm",
@@ -72,7 +72,7 @@
       "settings": [
         {
           "name": "theme",
-          "value": "~/.config/alacritty/colors/base16-gruvbox-dark-soft.yml"
+          "value": "~/.config/scrypts/themes/alacritty/base16-gruvbox-dark-soft.yml"
         },
         {
           "name": "bold_font",
