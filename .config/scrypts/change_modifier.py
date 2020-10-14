@@ -1,5 +1,6 @@
 import sys
 import os
+import random
 
 def e(command): 
     return os.popen(command).read()[:-1]
@@ -12,7 +13,11 @@ for path in modifier_paths:
     name = e("audot query modifier {} name".format(modifiers_root + '/' + path))
     modifier_names.append(name)
 
-modifier = e('echo "{}" | rofi -dmenu -format i -i -p "Modifier: " -theme-str \'prompt {{ enabled: false; }} element-icon {{ enabled: false; }} \''.format("\n".join(modifier_names)))
+
+if len(sys.argv) > 1 and sys.argv[1] == 'random':
+    modifier = random.randrange(0, len(modifier_paths) - 1)
+else:
+    modifier = e('echo "{}" | rofi -dmenu -format i -i -p "Modifier: " -theme-str \'prompt {{ enabled: false; }} element-icon {{ enabled: false; }} \''.format("\n".join(modifier_names)))
 
 if modifier != '':
     modifier = int(modifier)

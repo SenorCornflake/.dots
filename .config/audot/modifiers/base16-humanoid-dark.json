@@ -1,5 +1,5 @@
 {
-  "name": "Base16 Humanoid dark",
+  "name": "Base16 Humanoid dark (Enabled)",
   "programs": [
     {
       "name": "bspwm",

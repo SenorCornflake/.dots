@@ -35,40 +35,40 @@ window:
 
 # THEME
 
-# Base16 Sandcastle - alacritty color config
-# George Essig (https://github.com/gessig)
+# Base16 Humanoid dark - alacritty color config
+# Thomas (tasmo) Friese
 colors:
   # Default colors
   primary:
-    background: '0x282c34'
-    foreground: '0xa89984'
+    background: '0x232629'
+    foreground: '0xf8f8f2'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x282c34'
-    cursor: '0xa89984'
+    text: '0x232629'
+    cursor: '0xf8f8f2'
 
   # Normal colors
   normal:
-    black:   '0x282c34'
-    red:     '0x83a598'
-    green:   '0x528b8b'
-    yellow:  '0xa07e3b'
-    blue:    '0x83a598'
-    magenta: '0xd75f5f'
-    cyan:    '0x83a598'
-    white:   '0xa89984'
+    black:   '0x232629'
+    red:     '0xf11235'
+    green:   '0x02d849'
+    yellow:  '0xffb627'
+    blue:    '0x00a6fb'
+    magenta: '0xf15ee3'
+    cyan:    '0x0dd9d6'
+    white:   '0xf8f8f2'
 
   # Bright colors
   bright:
-    black:   '0x665c54'
-    red:     '0xa07e3b'
-    green:   '0x2c323b'
-    yellow:  '0x3e4451'
-    blue:    '0x928374'
-    magenta: '0xd5c4a1'
-    cyan:    '0xa87322'
-    white:   '0xfdf4c1'
+    black:   '0x60615d'
+    red:     '0xff9505'
+    green:   '0x333b3d'
+    yellow:  '0x484e54'
+    blue:    '0xc0c0bd'
+    magenta: '0xfcfcf6'
+    cyan:    '0xb27701'
+    white:   '0xfcfcfc'
 
 draw_bold_text_with_bright_colors: false
 
