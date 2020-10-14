@@ -6,23 +6,27 @@
       "settings": [
         {
           "name": "wallpaper",
-          "value": "/home/breton/Pictures/wallpapers/satellite-dish.jpg"
+          "value": "/home/breton/Pictures/wallpapers/robot-popos.png"
         },
         {
           "name": "normal_border_color",
-          "value": "#020202"
+          "value": "#282528"
         },
         {
           "name": "urgent_border_color",
-          "value": "#B8B8B8"
+          "value": "#ABC487"
         },
         {
           "name": "focused_border_color",
-          "value": "#C5C5C5"
+          "value": "#82C0A1"
+        },
+        {
+          "name": "presel_feedback_color",
+          "value": "#82C0A1"
         },
         {
           "name": "active_border_color",
-          "value": "#9d9d9d"
+          "value": "#a2a18d"
         },
         {
           "name": "border_width",
@@ -39,23 +43,27 @@
         },
         {
           "name": "alpha_background",
-          "value": "#020202"
+          "value": "#282528"
         },
         {
           "name": "alpha_foreground",
-          "value": "#9d9d9d"
+          "value": "#a2a18d"
         },
         {
           "name": "alpha_label",
-          "value": "#949494"
+          "value": "#AAB88B"
         },
         {
           "name": "alpha_text",
-          "value": "#717171"
+          "value": "#4EBAC3"
         },
         {
           "name": "alpha_urgent",
-          "value": "#B8B8B8"
+          "value": "#ABC487"
+        },
+        {
+          "name": "alpha_surround",
+          "value": "#92C297"
         }
       ]
     },
@@ -114,39 +122,39 @@
       "settings": [
         {
           "name": "font",
-          "value": "Fira Code 10"
+          "value": "Iosevka 10"
         },
         {
           "name": "normal_frame_color",
-          "value": "#C5C5C5"
+          "value": "#82C0A1"
         },
         {
           "name": "critical_frame_color",
-          "value": "#C5C5C5"
+          "value": "#82C0A1"
         },
         {
           "name": "critical_background_color",
-          "value": "#C5C5C5"
+          "value": "#82C0A1"
         },
         {
           "name": "normal_background_color",
-          "value": "#020202"
+          "value": "#282528"
         },
         {
           "name": "low_background_color",
-          "value": "#020202"
+          "value": "#282528"
         },
         {
           "name": "critical_foreground_color",
-          "value": "#020202"
+          "value": "#282528"
         },
         {
           "name": "normal_foreground_color",
-          "value": "#9d9d9d"
+          "value": "#a2a18d"
         },
         {
           "name": "low_foreground_color",
-          "value": "#9d9d9d"
+          "value": "#a2a18d"
         }
       ]
     },
@@ -159,23 +167,23 @@
         },
         {
           "name": "background",
-          "value": "#020202"
+          "value": "#282528"
         },
         {
           "name": "background_alt",
-          "value": "#02020290"
+          "value": "#28252890"
         },
         {
           "name": "foreground",
-          "value": "#9d9d9d"
+          "value": "#a2a18d"
         },
         {
           "name": "selected_border",
-          "value": "#C5C5C5"
+          "value": "#82C0A1"
         },
         {
           "name": "selected_background",
-          "value": "#e1e1e1"
+          "value": "#e8e6ca"
         }
       ]
     }

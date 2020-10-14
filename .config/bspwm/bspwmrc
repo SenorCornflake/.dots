@@ -30,7 +30,7 @@ bspc config presel_feedback_color "#a07e3b"
 dunst &
 python .config/polybar/launch.py &
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-feh --no-fehbg --bg-fill ~/Pictures/wallpapers/generated.png &
+feh --no-fehbg --bg-fill ~/Pictures/wallpapers/robot-popos.png &
 picom --experimental-backends &
 
 # Night mode

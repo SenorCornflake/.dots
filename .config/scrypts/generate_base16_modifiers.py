@@ -28,7 +28,7 @@ for theme in base16_themes:
     modifier_name                   = 'Base16 ' + theme['scheme']
     # BSPWM
     bspwm_normal_border_color       =  '#' + theme['base01']
-    bspwm_urgent_border_color       =  '#'+ theme['base08']
+    bspwm_urgent_border_color       =  '#' + theme['base08']
     bspwm_focused_border_color      =  '#' + theme['base09']
     bspwm_presel_feedback_color     =  '#' + theme['base09']
     bspwm_active_border_color       =  '#' + theme['base04']
@@ -38,10 +38,12 @@ for theme in base16_themes:
     polybar_alpha_label             =  '#' + theme['base0B']
     polybar_alpha_text              =  '#' + theme['base04']
     polybar_alpha_urgent            =  '#' + theme['base08']
+    polybar_alpha_surround          =  '#' + theme['base09']
     # ALACRITTY
     alacritty_theme                 =  '~/.config/scrypts/themes/alacritty/' + file_name + '.yml'
     # NEOVIM
     neovim_colorscheme              =  file_name
+    neovim_termguicolors            =  'set termguicolors'
     # DUNST
     dunst_normal_frame_color        =  '#' + theme['base09']
     dunst_normal_background_color   =  '#' + theme['base00']
@@ -69,8 +71,10 @@ for theme in base16_themes:
     os.system('audot edit modifier "{}" programs/polybar/settings/alpha_label/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', polybar_alpha_label))
     os.system('audot edit modifier "{}" programs/polybar/settings/alpha_text/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', polybar_alpha_text))
     os.system('audot edit modifier "{}" programs/polybar/settings/alpha_urgent/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', polybar_alpha_urgent))
+    os.system('audot edit modifier "{}" programs/polybar/settings/alpha_surround/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', polybar_alpha_surround))
     os.system('audot edit modifier "{}" programs/alacritty/settings/theme/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', alacritty_theme))
     os.system('audot edit modifier "{}" programs/neovim/settings/colorscheme/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', neovim_colorscheme))
+    os.system('audot edit modifier "{}" programs/neovim/settings/termguicolors/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', neovim_termguicolors))
     os.system('audot edit modifier "{}" programs/dunst/settings/normal_frame_color/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', dunst_normal_frame_color))
     os.system('audot edit modifier "{}" programs/dunst/settings/critical_frame_color/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', dunst_critical_frame_color))
     os.system('audot edit modifier "{}" programs/dunst/settings/normal_background_color/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', dunst_normal_background_color))

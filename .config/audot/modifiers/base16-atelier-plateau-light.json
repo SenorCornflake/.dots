@@ -6,7 +6,7 @@
       "settings": [
         {
           "name": "wallpaper",
-          "value": "~/Pictures/wallpapers/empry-road.jpg"
+          "value": "~/Pictures/wallpapers/generated.png"
         },
         {
           "name": "normal_border_color",
@@ -31,10 +31,6 @@
         {
           "name": "border_width",
           "value": "2"
-        },
-        {
-          "name": "window_gap",
-          "value": "25"
         }
       ]
     },
@@ -51,7 +47,7 @@
         },
         {
           "name": "alpha_foreground",
-          "value": "#292424"
+          "value": "#9d9d9d"
         },
         {
           "name": "alpha_label",
@@ -64,6 +60,10 @@
         {
           "name": "alpha_urgent",
           "value": "#ca4949"
+        },
+        {
+          "name": "alpha_surround",
+          "value": "#b45a3c"
         }
       ]
     },
@@ -122,7 +122,7 @@
       "settings": [
         {
           "name": "font",
-          "value": "Fira Code 10"
+          "value": "Iosevka 10"
         },
         {
           "name": "normal_frame_color",
@@ -178,12 +178,12 @@
           "value": "#655d5d"
         },
         {
-          "name": "selected_background",
-          "value": "#b45a3c"
-        },
-        {
           "name": "selected_border",
           "value": "#a06e3b"
+        },
+        {
+          "name": "selected_background",
+          "value": "#b45a3c"
         }
       ]
     }

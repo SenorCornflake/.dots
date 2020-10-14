@@ -83,6 +83,7 @@ elif os.path.exists(os.path.expanduser('~/.cache/wal/colors')):
     os.system('audot edit modifier {} programs/bspwm/settings/normal_border_color/value "{}"'.format(pywal_modifier, colors[0]))
     os.system('audot edit modifier {} programs/bspwm/settings/active_border_color/value "{}"'.format(pywal_modifier, colors[8]))
     os.system('audot edit modifier {} programs/bspwm/settings/focused_border_color/value "{}"'.format(pywal_modifier, colors[6]))
+    os.system('audot edit modifier {} programs/bspwm/settings/presel_feedback_color/value "{}"'.format(pywal_modifier, colors[6]))
     os.system('audot edit modifier {} programs/bspwm/settings/urgent_border_color/value "{}"'.format(pywal_modifier, colors[5]))
     os.system('audot edit modifier {} programs/bspwm/settings/wallpaper/value "{}"'.format(pywal_modifier, wallpaper))
 
@@ -104,6 +105,7 @@ elif os.path.exists(os.path.expanduser('~/.cache/wal/colors')):
     os.system('audot edit modifier {} programs/polybar/settings/alpha_label/value "{}"'.format(pywal_modifier, colors[3]))
     os.system('audot edit modifier {} programs/polybar/settings/alpha_text/value "{}"'.format(pywal_modifier, colors[2]))
     os.system('audot edit modifier {} programs/polybar/settings/alpha_urgent/value "{}"'.format(pywal_modifier, colors[5]))
+    os.system('audot edit modifier {} programs/polybar/settings/alpha_surround/value "{}"'.format(pywal_modifier, colors[4]))
 
     # Change rofi colors
     os.system('audot edit modifier {} programs/rofi/settings/background/value "{}"'.format(pywal_modifier, colors[0]))

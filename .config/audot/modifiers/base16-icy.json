@@ -6,7 +6,7 @@
       "settings": [
         {
           "name": "wallpaper",
-          "value": "~/Pictures/wallpapers/blue-themed-moon-or-is-it-jupiter-over-city.png"
+          "value": "~/Pictures/wallpapers/generated.png"
         },
         {
           "name": "normal_border_color",
@@ -31,10 +31,6 @@
         {
           "name": "border_width",
           "value": "2"
-        },
-        {
-          "name": "window_gap",
-          "value": "25"
         }
       ]
     },
@@ -51,7 +47,7 @@
         },
         {
           "name": "alpha_foreground",
-          "value": "#0c7c8c"
+          "value": "#9d9d9d"
         },
         {
           "name": "alpha_label",
@@ -64,6 +60,10 @@
         {
           "name": "alpha_urgent",
           "value": "#16c1d9"
+        },
+        {
+          "name": "alpha_surround",
+          "value": "#b3ebf2"
         }
       ]
     },
@@ -122,7 +122,7 @@
       "settings": [
         {
           "name": "font",
-          "value": "Fira Code 10"
+          "value": "Iosevka 10"
         },
         {
           "name": "normal_frame_color",
@@ -178,12 +178,12 @@
           "value": "#064048"
         },
         {
-          "name": "selected_background",
-          "value": "#b3ebf2"
-        },
-        {
           "name": "selected_border",
           "value": "#80deea"
+        },
+        {
+          "name": "selected_background",
+          "value": "#b3ebf2"
         }
       ]
     }

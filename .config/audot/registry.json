@@ -129,6 +129,14 @@
                             "value_is_file": false
                         },
                         {
+                            "name": "alpha_surround",
+                            "search": "alpha_surround = .+",
+                            "search_type": "line",
+                            "repl": "alpha_surround = <|value|>",
+                            "repl_location": "matched",
+                            "value_is_file": false
+                        },
+                        {
                             "name": "alpha_font",
                             "search": "alpha_font = .+",
                             "search_type": "line",
