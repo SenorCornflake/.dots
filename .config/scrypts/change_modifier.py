@@ -2,7 +2,7 @@ import sys
 import os
 import random
 
-def e(command): 
+def e(command):
     return os.popen(command).read()[:-1]
 
 modifiers_root = "~/.config/audot/modifiers"
@@ -35,5 +35,4 @@ if modifier != '':
     os.system('python ~/.config/scrypts/generate_wallpaper.py')
     os.system('audot start')
     os.system('bspc wm -r')
-
-
+    os.system('python ~/.config/scrypts/reload_neovim_instances.py')

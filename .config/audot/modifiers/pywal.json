@@ -6,31 +6,31 @@
       "settings": [
         {
           "name": "wallpaper",
-          "value": "/home/breton/Pictures/wallpapers/robot-popos.png"
+          "value": "/home/breton/Pictures/wallpapers/cyber-city-calmer.jpg"
         },
         {
           "name": "normal_border_color",
-          "value": "#282528"
+          "value": "#090914"
         },
         {
           "name": "urgent_border_color",
-          "value": "#ABC487"
+          "value": "#3D4EA8"
         },
         {
           "name": "focused_border_color",
-          "value": "#82C0A1"
+          "value": "#505DA6"
         },
         {
           "name": "presel_feedback_color",
-          "value": "#82C0A1"
+          "value": "#505DA6"
         },
         {
           "name": "active_border_color",
-          "value": "#a2a18d"
+          "value": "#79879b"
         },
         {
           "name": "border_width",
-          "value": "2"
+          "value": "3"
         }
       ]
     },
@@ -43,27 +43,27 @@
         },
         {
           "name": "alpha_background",
-          "value": "#282528"
+          "value": "#090914"
         },
         {
           "name": "alpha_foreground",
-          "value": "#a2a18d"
+          "value": "#79879b"
         },
         {
           "name": "alpha_label",
-          "value": "#AAB88B"
+          "value": "#9D686F"
         },
         {
           "name": "alpha_text",
-          "value": "#4EBAC3"
+          "value": "#524263"
         },
         {
           "name": "alpha_urgent",
-          "value": "#ABC487"
+          "value": "#3D4EA8"
         },
         {
           "name": "alpha_surround",
-          "value": "#92C297"
+          "value": "#374A9A"
         }
       ]
     },
@@ -126,35 +126,35 @@
         },
         {
           "name": "normal_frame_color",
-          "value": "#82C0A1"
+          "value": "#505DA6"
         },
         {
           "name": "critical_frame_color",
-          "value": "#82C0A1"
+          "value": "#505DA6"
         },
         {
           "name": "critical_background_color",
-          "value": "#82C0A1"
+          "value": "#505DA6"
         },
         {
           "name": "normal_background_color",
-          "value": "#282528"
+          "value": "#090914"
         },
         {
           "name": "low_background_color",
-          "value": "#282528"
+          "value": "#090914"
         },
         {
           "name": "critical_foreground_color",
-          "value": "#282528"
+          "value": "#090914"
         },
         {
           "name": "normal_foreground_color",
-          "value": "#a2a18d"
+          "value": "#79879b"
         },
         {
           "name": "low_foreground_color",
-          "value": "#a2a18d"
+          "value": "#79879b"
         }
       ]
     },
@@ -167,23 +167,23 @@
         },
         {
           "name": "background",
-          "value": "#282528"
+          "value": "#090914"
         },
         {
           "name": "background_alt",
-          "value": "#28252890"
+          "value": "#09091490"
         },
         {
           "name": "foreground",
-          "value": "#a2a18d"
+          "value": "#79879b"
         },
         {
           "name": "selected_border",
-          "value": "#82C0A1"
+          "value": "#505DA6"
         },
         {
           "name": "selected_background",
-          "value": "#e8e6ca"
+          "value": "#aec1de"
         }
       ]
     }

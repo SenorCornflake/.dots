@@ -1,5 +1,5 @@
 {
-  "name": "Base16 Humanoid dark (Enabled)",
+  "name": "Base16 Humanoid dark",
   "programs": [
     {
       "name": "bspwm",
@@ -30,7 +30,7 @@
         },
         {
           "name": "border_width",
-          "value": "2"
+          "value": "3"
         }
       ]
     },

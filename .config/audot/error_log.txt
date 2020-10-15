@@ -7026,3 +7026,18 @@ normal | The provided key path is invalid
 normal | The provided key path is invalid
 normal | The provided key path is invalid
 normal | The provided key path is invalid
+critical | Error while trying to read "~/.config/audot/modifiers/base16-pico.json"
+critical | Error while trying to read "~/.config/audot/modifiers/base16-pico.json"
+critical | Error while trying to read "~/.config/audot/modifiers/base16-pico.json"
+critical | Error while trying to read ""~/.config/audot/modifiers/base16-pico.json""
+critical | Error while trying to read "~/.config/audot/modifiers/base16-pico.json"
+critical | Error while trying to read "~/.config/audot/modifiers/base16-pico.json"
+critical | Error while trying to read "~/.config/audot/modifiers/base16-pico.json"
+critical | Error while trying to read "~/.config/audot/modifiers/base16-pico.json"
+normal | Setting "modifer" does not exist in the config
+normal | Setting "modifer" does not exist in the config
+normal | Setting "modifer" does not exist in the config
+critical | Error while trying to read "~/.config/audot/modifiers/base16-pico.json"
+critical | Error while trying to read "~/.config/audot/modifiers/base16-pico.json"
+critical | Error while trying to read "~/.config/audot/modifiers/base16-pico.json"
+critical | Error while trying to read "~/.config/audot/modifiers/base16-pico.json"

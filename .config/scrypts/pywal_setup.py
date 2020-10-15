@@ -121,3 +121,4 @@ elif os.path.exists(os.path.expanduser('~/.cache/wal/colors')):
 
     # Restart bspwm
     os.system('bspc wm -r')
+    os.system('python ~/.config/scrypts/reload_neovim_instances.py')

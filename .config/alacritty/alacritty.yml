@@ -20,7 +20,7 @@ font:
     x: 0
     y: 0
   
-background_opacity: 0.95
+background_opacity: 0.99
 
 window:
   dimensions:
@@ -35,40 +35,40 @@ window:
 
 # THEME
 
-# Base16 Humanoid dark - alacritty color config
-# Thomas (tasmo) Friese
+# Base16 Equilibrium Gray Dark - alacritty color config
+# Carlo Abelli
 colors:
   # Default colors
   primary:
-    background: '0x232629'
-    foreground: '0xf8f8f2'
+    background: '0x111111'
+    foreground: '0xababab'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x232629'
-    cursor: '0xf8f8f2'
+    text: '0x111111'
+    cursor: '0xababab'
 
   # Normal colors
   normal:
-    black:   '0x232629'
-    red:     '0xf11235'
-    green:   '0x02d849'
-    yellow:  '0xffb627'
-    blue:    '0x00a6fb'
-    magenta: '0xf15ee3'
-    cyan:    '0x0dd9d6'
-    white:   '0xf8f8f2'
+    black:   '0x111111'
+    red:     '0xf04339'
+    green:   '0x7f8b00'
+    yellow:  '0xbb8801'
+    blue:    '0x008dd1'
+    magenta: '0x6a7fd2'
+    cyan:    '0x00948b'
+    white:   '0xababab'
 
   # Bright colors
   bright:
-    black:   '0x60615d'
-    red:     '0xff9505'
-    green:   '0x333b3d'
-    yellow:  '0x484e54'
-    blue:    '0xc0c0bd'
-    magenta: '0xfcfcf6'
-    cyan:    '0xb27701'
-    white:   '0xfcfcfc'
+    black:   '0x777777'
+    red:     '0xdf5923'
+    green:   '0x1b1b1b'
+    yellow:  '0x262626'
+    blue:    '0x919191'
+    magenta: '0xc6c6c6'
+    cyan:    '0xe3488e'
+    white:   '0xe2e2e2'
 
 draw_bold_text_with_bright_colors: false
 

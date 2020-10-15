@@ -1,5 +1,5 @@
 {
-  "name": "Base16 Equilibrium Gray Dark",
+  "name": "Base16 Equilibrium Gray Dark (Enabled)",
   "programs": [
     {
       "name": "bspwm",
@@ -30,7 +30,7 @@
         },
         {
           "name": "border_width",
-          "value": "2"
+          "value": "3"
         }
       ]
     },

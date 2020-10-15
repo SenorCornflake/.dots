@@ -6,7 +6,7 @@
       "settings": [
         {
           "name": "wallpaper",
-          "value": "~/Pictures/wallpapers/generated.png"
+          "value": "~/Pictures/wallpapers/cyber-city-calmer.jpg"
         },
         {
           "name": "normal_border_color",
@@ -30,7 +30,7 @@
         },
         {
           "name": "border_width",
-          "value": "2"
+          "value": "3"
         }
       ]
     },
