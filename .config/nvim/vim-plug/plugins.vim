@@ -22,7 +22,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'preservim/nerdcommenter'
 	Plug 'Shougo/echodoc'
-	Plug 'chriskempson/base16-vim'
+	" Plug 'chriskempson/base16-vim'
 	Plug 'tpope/vim-surround'
 	Plug 'brainfucksec/wal.vim'
 	Plug 'richtan/pywal.vim'

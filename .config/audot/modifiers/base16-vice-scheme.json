@@ -6,7 +6,7 @@
       "settings": [
         {
           "name": "wallpaper",
-          "value": "~/Pictures/wallpapers/cyber-city-calmer.jpg"
+          "value": "~/Pictures/wallpapers/generated.png"
         },
         {
           "name": "normal_border_color",
@@ -47,7 +47,7 @@
         },
         {
           "name": "alpha_foreground",
-          "value": "#9d9d9d"
+          "value": "#969587"
         },
         {
           "name": "alpha_label",
@@ -96,7 +96,7 @@
         },
         {
           "name": "y_offset",
-          "value": "0"
+          "value": "1"
         }
       ]
     },

@@ -11,7 +11,7 @@ for i, wiki in enumerate(wikis):
         wikis.remove(wiki)
     else:
         wikis[i] = wiki.replace('.html', '')
-        
+
 wikis = sorted(wikis)
 
 

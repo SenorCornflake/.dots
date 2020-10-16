@@ -12,10 +12,6 @@
         "action": "python ~/.config/scrypts/change_wallpaper.py"
     },
     {
-        "name": "Generate Wallpaper",
-        "action": "python ~/.config/scrypts/generate_wallpaper.py"
-    },
-    {
         "name": "Change Pywal (Dark)",
         "action": "python ~/.config/scrypts/change_pywal.py dark"
     },

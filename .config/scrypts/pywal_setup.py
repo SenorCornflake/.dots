@@ -105,7 +105,7 @@ elif os.path.exists(os.path.expanduser('~/.cache/wal/colors')):
     os.system('audot edit modifier {} programs/polybar/settings/alpha_label/value "{}"'.format(pywal_modifier, colors[3]))
     os.system('audot edit modifier {} programs/polybar/settings/alpha_text/value "{}"'.format(pywal_modifier, colors[2]))
     os.system('audot edit modifier {} programs/polybar/settings/alpha_urgent/value "{}"'.format(pywal_modifier, colors[5]))
-    os.system('audot edit modifier {} programs/polybar/settings/alpha_surround/value "{}"'.format(pywal_modifier, colors[4]))
+    os.system('audot edit modifier {} programs/polybar/settings/alpha_surround/value "{}"'.format(pywal_modifier, colors[6]))
 
     # Change rofi colors
     os.system('audot edit modifier {} programs/rofi/settings/background/value "{}"'.format(pywal_modifier, colors[0]))

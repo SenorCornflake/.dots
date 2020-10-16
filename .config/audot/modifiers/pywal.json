@@ -6,27 +6,27 @@
       "settings": [
         {
           "name": "wallpaper",
-          "value": "/home/breton/Pictures/wallpapers/cyber-city-calmer.jpg"
+          "value": "/home/breton/Pictures/wallpapers/fractal-mointains.png"
         },
         {
           "name": "normal_border_color",
-          "value": "#090914"
+          "value": "#1e1e1e"
         },
         {
           "name": "urgent_border_color",
-          "value": "#3D4EA8"
+          "value": "#638470"
         },
         {
           "name": "focused_border_color",
-          "value": "#505DA6"
+          "value": "#4D7C82"
         },
         {
           "name": "presel_feedback_color",
-          "value": "#505DA6"
+          "value": "#4D7C82"
         },
         {
           "name": "active_border_color",
-          "value": "#79879b"
+          "value": "#698184"
         },
         {
           "name": "border_width",
@@ -43,27 +43,27 @@
         },
         {
           "name": "alpha_background",
-          "value": "#090914"
+          "value": "#1e1e1e"
         },
         {
           "name": "alpha_foreground",
-          "value": "#79879b"
+          "value": "#698184"
         },
         {
           "name": "alpha_label",
-          "value": "#9D686F"
+          "value": "#74805F"
         },
         {
           "name": "alpha_text",
-          "value": "#524263"
+          "value": "#667860"
         },
         {
           "name": "alpha_urgent",
-          "value": "#3D4EA8"
+          "value": "#638470"
         },
         {
           "name": "alpha_surround",
-          "value": "#374A9A"
+          "value": "#4D7C82"
         }
       ]
     },
@@ -96,7 +96,7 @@
         },
         {
           "name": "y_offset",
-          "value": "0"
+          "value": "1"
         }
       ]
     },
@@ -126,35 +126,35 @@
         },
         {
           "name": "normal_frame_color",
-          "value": "#505DA6"
+          "value": "#4D7C82"
         },
         {
           "name": "critical_frame_color",
-          "value": "#505DA6"
+          "value": "#4D7C82"
         },
         {
           "name": "critical_background_color",
-          "value": "#505DA6"
+          "value": "#4D7C82"
         },
         {
           "name": "normal_background_color",
-          "value": "#090914"
+          "value": "#1e1e1e"
         },
         {
           "name": "low_background_color",
-          "value": "#090914"
+          "value": "#1e1e1e"
         },
         {
           "name": "critical_foreground_color",
-          "value": "#090914"
+          "value": "#1e1e1e"
         },
         {
           "name": "normal_foreground_color",
-          "value": "#79879b"
+          "value": "#698184"
         },
         {
           "name": "low_foreground_color",
-          "value": "#79879b"
+          "value": "#698184"
         }
       ]
     },
@@ -167,23 +167,23 @@
         },
         {
           "name": "background",
-          "value": "#090914"
+          "value": "#1e1e1e"
         },
         {
           "name": "background_alt",
-          "value": "#09091490"
+          "value": "#1e1e1e90"
         },
         {
           "name": "foreground",
-          "value": "#79879b"
+          "value": "#698184"
         },
         {
           "name": "selected_border",
-          "value": "#505DA6"
+          "value": "#4D7C82"
         },
         {
           "name": "selected_background",
-          "value": "#aec1de"
+          "value": "#96b9bd"
         }
       ]
     }

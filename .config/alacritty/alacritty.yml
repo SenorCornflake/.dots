@@ -15,12 +15,12 @@ font:
   size: 9
   offset:
     x: 0
-    y: 0 # offset
+    y: 1 # offset
   glyph_offset:
     x: 0
     y: 0
   
-background_opacity: 0.99
+background_opacity: 1
 
 window:
   dimensions:
@@ -35,40 +35,40 @@ window:
 
 # THEME
 
-# Base16 Equilibrium Gray Dark - alacritty color config
-# Carlo Abelli
+# Base16 Harmonic16 Dark - alacritty color config
+# Jannik Siebert (https://github.com/janniks)
 colors:
   # Default colors
   primary:
-    background: '0x111111'
-    foreground: '0xababab'
+    background: '0x0b1c2c'
+    foreground: '0xcbd6e2'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x111111'
-    cursor: '0xababab'
+    text: '0x0b1c2c'
+    cursor: '0xcbd6e2'
 
   # Normal colors
   normal:
-    black:   '0x111111'
-    red:     '0xf04339'
-    green:   '0x7f8b00'
-    yellow:  '0xbb8801'
-    blue:    '0x008dd1'
-    magenta: '0x6a7fd2'
-    cyan:    '0x00948b'
-    white:   '0xababab'
+    black:   '0x0b1c2c'
+    red:     '0xbf8b56'
+    green:   '0x56bf8b'
+    yellow:  '0x8bbf56'
+    blue:    '0x8b56bf'
+    magenta: '0xbf568b'
+    cyan:    '0x568bbf'
+    white:   '0xcbd6e2'
 
   # Bright colors
   bright:
-    black:   '0x777777'
-    red:     '0xdf5923'
-    green:   '0x1b1b1b'
-    yellow:  '0x262626'
-    blue:    '0x919191'
-    magenta: '0xc6c6c6'
-    cyan:    '0xe3488e'
-    white:   '0xe2e2e2'
+    black:   '0x627e99'
+    red:     '0xbfbf56'
+    green:   '0x223b54'
+    yellow:  '0x405c79'
+    blue:    '0xaabcce'
+    magenta: '0xe5ebf1'
+    cyan:    '0xbf5656'
+    white:   '0xf7f9fb'
 
 draw_bold_text_with_bright_colors: false
 
