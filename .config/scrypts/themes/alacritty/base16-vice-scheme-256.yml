@@ -1,4 +1,4 @@
-# Base16 vice - alacritty color config
+# Base16 vice 256 - alacritty color config
 # Thomas Leon Highbaugh thighbaugh@zoho.com
 colors:
   # Default colors
@@ -25,12 +25,18 @@ colors:
   # Bright colors
   bright:
     black:   '0x3A3F49'
-    red:     '0x796af5'
-    green:   '0x23262C'
-    yellow:  '0x313040'
-    blue:    '0x525d73'
-    magenta: '0xB2BFD9'
-    cyan:    '0xf850ac'
+    red:     '0xff9cff'
+    green:   '0x6fffff'
+    yellow:  '0xf0ee6e'
+    blue:    '0x00caff'
+    magenta: '0x50B0FF'
+    cyan:    '0x00eaff'
     white:   '0xe9efff'
 
-draw_bold_text_with_bright_colors: false
+  indexed_colors:
+    - { index: 16, color: '0x796af5' }
+    - { index: 17, color: '0xf850ac' }
+    - { index: 18, color: '0x23262C' }
+    - { index: 19, color: '0x313040' }
+    - { index: 20, color: '0x525d73' }
+    - { index: 21, color: '0xB2BFD9' }

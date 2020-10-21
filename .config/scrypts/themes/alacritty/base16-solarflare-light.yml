@@ -1,0 +1,36 @@
+# Base16 Solar Flare - alacritty color config
+# Chuck Harmston (https://chuck.harmston.ch)
+colors:
+  # Default colors
+  primary:
+    background: '0xF5F7FA'
+    foreground: '0x586875'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xF5F7FA'
+    cursor: '0x586875'
+
+  # Normal colors
+  normal:
+    black:   '0xF5F7FA'
+    red:     '0xEF5253'
+    green:   '0x7CC844'
+    yellow:  '0xE4B51C'
+    blue:    '0x33B5E1'
+    magenta: '0xA363D5'
+    cyan:    '0x52CBB0'
+    white:   '0x586875'
+
+  # Bright colors
+  bright:
+    black:   '0x85939E'
+    red:     '0xE66B2B'
+    green:   '0xE8E9ED'
+    yellow:  '0xA6AFB8'
+    blue:    '0x667581'
+    magenta: '0x222E38'
+    cyan:    '0xD73C9A'
+    white:   '0x18262F'
+
+draw_bold_text_with_bright_colors: false

@@ -1,5 +1,5 @@
 {
-  "name": "Base16 Gigavolt",
+  "name": "Base16 Gigavolt (Enabled)",
   "programs": [
     {
       "name": "bspwm",

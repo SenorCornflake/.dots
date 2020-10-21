@@ -5,10 +5,12 @@
 import os
 import yaml
 
-base16_folder = '~/Repositories/base16-themes'
-output_folder = '~/Repositories/vim-base16-colorschemes/colors'
+compare2 = '~/Desktop/templates/vim/colors'
+compare1 = '~/Repositories/vim-base16-colorschemes/colors'
 
-themes = os.listdir(os.path.expanduser(base16_folder))
+compare1 = os.listdir(os.path.expanduser(compare1))
+compare2 = os.listdir(os.path.expanduser(compare2))
 
-for theme in themes:
-    os.system('base16-builder ')
+for theme in compare1:
+    if not theme in compare2:
+        print(theme)

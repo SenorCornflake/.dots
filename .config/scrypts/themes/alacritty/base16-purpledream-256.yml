@@ -1,4 +1,4 @@
-# Base16 Purpledream - alacritty color config
+# Base16 Purpledream 256 - alacritty color config
 # malet
 colors:
   # Default colors
@@ -25,12 +25,18 @@ colors:
   # Bright colors
   bright:
     black:   '0x605060'
-    red:     '0xCCAE14'
-    green:   '0x302030'
-    yellow:  '0x403040'
-    blue:    '0xbbb0bb'
-    magenta: '0xeee0ee'
-    cyan:    '0x6A2A3C'
+    red:     '0xFF1D0D'
+    green:   '0x14CC64'
+    yellow:  '0xF000A0'
+    blue:    '0x00A0F0'
+    magenta: '0xB000D0'
+    cyan:    '0x0075B0'
     white:   '0xfff0ff'
 
-draw_bold_text_with_bright_colors: false
+  indexed_colors:
+    - { index: 16, color: '0xCCAE14' }
+    - { index: 17, color: '0x6A2A3C' }
+    - { index: 18, color: '0x302030' }
+    - { index: 19, color: '0x403040' }
+    - { index: 20, color: '0xbbb0bb' }
+    - { index: 21, color: '0xeee0ee' }

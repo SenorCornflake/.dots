@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/breton/Repositories/base16-builder/src'
+let g:netrw_dirhist_5='/home/breton/Repositories/base16-builder'
 let g:netrw_dirhist_4='/srv/http/khanselfcatering.devel/public_html/wp-content/plugins/baker_taxonomy_featured_image'
 let g:netrw_dirhist_3='/srv/http/khanselfcatering.devel/public_html/wp-content/plugins'
 let g:netrw_dirhist_2='/srv/http/khanselfcatering.devel/public_html/wp-content'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_0='/srv/http/khanselfcatering.devel/public_html/wp-content/p
 let g:netrw_dirhist_9='/srv/http/khanselfcatering.devel/public_html/wp-content/plugins'
 let g:netrw_dirhist_8='/srv/http/khanselfcatering.devel/public_html/wp-content'
 let g:netrw_dirhist_7='/srv/http/khanselfcatering.devel/public_html'
-let g:netrw_dirhist_6='/srv/http/khanselfcatering.devel/public_html/wp-content/plugins/baker_booking_form'
-let g:netrw_dirhist_5='/srv/http/khanselfcatering.devel/public_html/wp-content/plugins'

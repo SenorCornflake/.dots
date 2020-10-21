@@ -6,27 +6,27 @@
       "settings": [
         {
           "name": "wallpaper",
-          "value": "/home/breton/Pictures/wallpapers/fractal-mointains.png"
+          "value": "/home/breton/Pictures/wallpapers/star-lines.jpg"
         },
         {
           "name": "normal_border_color",
-          "value": "#1e1e1e"
+          "value": "#0a0809"
         },
         {
           "name": "urgent_border_color",
-          "value": "#638470"
+          "value": "#4B5566"
         },
         {
           "name": "focused_border_color",
-          "value": "#4D7C82"
+          "value": "#5C6370"
         },
         {
           "name": "presel_feedback_color",
-          "value": "#4D7C82"
+          "value": "#5C6370"
         },
         {
           "name": "active_border_color",
-          "value": "#698184"
+          "value": "#777d85"
         },
         {
           "name": "border_width",
@@ -43,27 +43,27 @@
         },
         {
           "name": "alpha_background",
-          "value": "#1e1e1e"
+          "value": "#0a0809"
         },
         {
           "name": "alpha_foreground",
-          "value": "#698184"
+          "value": "#777d85"
         },
         {
           "name": "alpha_label",
-          "value": "#74805F"
+          "value": "#384E68"
         },
         {
           "name": "alpha_text",
-          "value": "#667860"
+          "value": "#384556"
         },
         {
           "name": "alpha_urgent",
-          "value": "#638470"
+          "value": "#4B5566"
         },
         {
           "name": "alpha_surround",
-          "value": "#4D7C82"
+          "value": "#5C6370"
         }
       ]
     },
@@ -126,35 +126,35 @@
         },
         {
           "name": "normal_frame_color",
-          "value": "#4D7C82"
+          "value": "#5C6370"
         },
         {
           "name": "critical_frame_color",
-          "value": "#4D7C82"
+          "value": "#5C6370"
         },
         {
           "name": "critical_background_color",
-          "value": "#4D7C82"
+          "value": "#5C6370"
         },
         {
           "name": "normal_background_color",
-          "value": "#1e1e1e"
+          "value": "#0a0809"
         },
         {
           "name": "low_background_color",
-          "value": "#1e1e1e"
+          "value": "#0a0809"
         },
         {
           "name": "critical_foreground_color",
-          "value": "#1e1e1e"
+          "value": "#0a0809"
         },
         {
           "name": "normal_foreground_color",
-          "value": "#698184"
+          "value": "#777d85"
         },
         {
           "name": "low_foreground_color",
-          "value": "#698184"
+          "value": "#777d85"
         }
       ]
     },
@@ -167,23 +167,23 @@
         },
         {
           "name": "background",
-          "value": "#1e1e1e"
+          "value": "#0a0809"
         },
         {
           "name": "background_alt",
-          "value": "#1e1e1e90"
+          "value": "#0a080990"
         },
         {
           "name": "foreground",
-          "value": "#698184"
+          "value": "#777d85"
         },
         {
           "name": "selected_border",
-          "value": "#4D7C82"
+          "value": "#5C6370"
         },
         {
           "name": "selected_background",
-          "value": "#96b9bd"
+          "value": "#abb3bf"
         }
       ]
     }

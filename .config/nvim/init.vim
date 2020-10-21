@@ -8,7 +8,7 @@ source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/keys/whichkey.vim
 
 " Color theme
-colorscheme base16-harmonic-dark
+colorscheme base16-gigavolt
 
 " For a Transparent background
 " highlight Normal ctermbg=none guibg=none
