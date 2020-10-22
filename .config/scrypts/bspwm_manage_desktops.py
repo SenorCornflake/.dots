@@ -6,8 +6,8 @@ def e(command):
     return os.popen(command).read()[:-1]
 
 desktops = {
-    "VGA-1": ["1", "2", "3", "4", "5", "6", "7", "8"],
-    "eDP-1": ["9", "10"]
+    "VGA-1": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+    "eDP-1": []
 }
 
 # Get connected monitors
@@ -27,7 +27,7 @@ for disconnected_monitor in orphaned_desktops:
     disconnected_monitor_index = list(desktops.keys()).index(disconnected_monitor)
     nearest_left_monitor = None
     nearest_right_monitor = None
-    
+
     # Find nearest connected monitor on the left side
     for monitor in desktops:
         if monitor in connected_monitors:
@@ -89,9 +89,9 @@ for _ in desktops:
     e("bspc desktop Temp --remove")
     e("bspc desktop Desktop --remove")
 
-# remove disconnected monitors
+# remove disconnected monitors and monitors without desktops
 for monitor in desktops:
-    if not monitor in connected_monitors:
+    if not monitor in connected_monitors or len(desktops[monitor]) == 0:
         e("bspc monitor {} --remove".format(monitor))
 
 # Remove all temp desktops
