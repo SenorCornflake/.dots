@@ -1,5 +1,5 @@
 {
-  "modifier": "~/.config/audot/modifiers/base16-gigavolt.json",
+  "modifier": "~/.config/audot/modifiers/base16-atelier-forest.json",
   "registry": "~/.config/audot/registry.json",
   "error_log": "~/.config/audot/error_log.txt",
   "notify": true

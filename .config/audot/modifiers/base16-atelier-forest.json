@@ -1,12 +1,12 @@
 {
-  "name": "Base16 Atelier Forest",
+  "name": "Base16 Atelier Forest (Enabled)",
   "programs": [
     {
       "name": "bspwm",
       "settings": [
         {
           "name": "wallpaper",
-          "value": "~/Pictures/wallpapers/generated.png"
+          "value": "~/Pictures/wallpapers/cartoong-red-jungle.png"
         },
         {
           "name": "normal_border_color",

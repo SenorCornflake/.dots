@@ -1,9 +1,9 @@
 @import "layouts/center.rasi"
 
 * {
-    foreground: #cad3ff;
-    background: #202126; // BACKGROUND
-    background-alt: #20212690;
-    selected-background: #19f988;
-    selected-border: #ffdc2d;
+    foreground: #9c9491;
+    background: #1b1918; // BACKGROUND
+    background-alt: #1b191890;
+    selected-background: #df5320;
+    selected-border: #c38418;
 }

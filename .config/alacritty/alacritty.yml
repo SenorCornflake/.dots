@@ -34,40 +34,40 @@ window:
   decorations: none
 
 # THEME
-# Base16 Gigavolt - alacritty color config
-# Aidan Swope (http://github.com/Whillikers)
+# Base16 Atelier Forest - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
 colors:
   # Default colors
   primary:
-    background: '0x202126'
-    foreground: '0xe9e7e1'
+    background: '0x1b1918'
+    foreground: '0xa8a19f'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x202126'
-    cursor: '0xe9e7e1'
+    text: '0x1b1918'
+    cursor: '0xa8a19f'
 
   # Normal colors
   normal:
-    black:   '0x202126'
-    red:     '0xff661a'
-    green:   '0xf2e6a9'
-    yellow:  '0xffdc2d'
-    blue:    '0x40bfff'
-    magenta: '0xae94f9'
-    cyan:    '0xfb6acb'
-    white:   '0xe9e7e1'
+    black:   '0x1b1918'
+    red:     '0xf22c40'
+    green:   '0x7b9726'
+    yellow:  '0xc38418'
+    blue:    '0x407ee7'
+    magenta: '0x6666ea'
+    cyan:    '0x3d97b8'
+    white:   '0xa8a19f'
 
   # Bright colors
   bright:
-    black:   '0xa1d2e6'
-    red:     '0x19f988'
-    green:   '0x2d303d'
-    yellow:  '0x5a576e'
-    blue:    '0xcad3ff'
-    magenta: '0xeff0f9'
-    cyan:    '0x6187ff'
-    white:   '0xf2fbff'
+    black:   '0x766e6b'
+    red:     '0xdf5320'
+    green:   '0x2c2421'
+    yellow:  '0x68615e'
+    blue:    '0x9c9491'
+    magenta: '0xe6e2e0'
+    cyan:    '0xc33ff3'
+    white:   '0xf1efee'
 
 draw_bold_text_with_bright_colors: false
 

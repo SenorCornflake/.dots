@@ -13,3 +13,6 @@ nnoremap <C-l> <C-w>l
 
 " Pressing ; in normal mode results in a :
 nnoremap ; :
+
+" Write file with sudo permissions
+command SudoWrite silent w !sudo tee %
