@@ -26,7 +26,7 @@ let g:php_folding = 1                   " Enable folding php functions etc
 " CURSORLINE
 set cursorline
 " TERMGUICOLORS
-set termguicolors
+set notermguicolors
 
 
 " Triger `autoread` when files changes on disk

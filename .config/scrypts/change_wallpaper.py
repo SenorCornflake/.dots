@@ -15,6 +15,6 @@ if picture != '':
     print(picture)
     e('audot edit modifier {} programs/bspwm/settings/wallpaper/value "{}"'.format(modifier_path, pictures_root + '/' + picture))
     os.system('audot start')
-    os.system('feh --no-fehbg --bg-scale {}'.format(pictures_root + '/' + picture))
+    os.system('feh --no-fehbg --bg-fill {}'.format(pictures_root + '/' + picture))
 
     # dfdfsdfl

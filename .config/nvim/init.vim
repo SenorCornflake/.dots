@@ -8,7 +8,7 @@ source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/keys/whichkey.vim
 
 " Color theme
-colorscheme base16-atelier-forest
+colorscheme pywal
 
 " For a Transparent background
 highlight Normal ctermbg=none guibg=none
