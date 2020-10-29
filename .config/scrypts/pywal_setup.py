@@ -20,6 +20,7 @@ elif os.path.exists(os.path.expanduser('~/.cache/wal/colors')):
         theme_type = ''
 
     os.system("wal -nste{}i {}".format(theme_type, wallpaper))
+    os.system('feh --no-fehbg --bg-fill {}'.format(wallpaper))
 
     colors = open(os.path.expanduser('~/.cache/wal/colors'), 'r').read().split('\n')
 

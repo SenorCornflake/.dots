@@ -36,28 +36,28 @@ window:
 # THEME
 colors:
   bright:
-    black: '0x918675'
-    blue: '0x917C60'
-    cyan: '0x87906A'
-    green: '0x906F48'
-    magenta: '0xB28855'
-    red: '0x86643D'
-    white: '0xd0c0a8'
-    yellow: '0xA57C4C'
+    black: '0x9b9992'
+    blue: '0x68ACA8'
+    cyan: '0xD4AFA9'
+    green: '0xBF8D77'
+    magenta: '0xA09A9E'
+    red: '0x956A5E'
+    white: '0xdedbd1'
+    yellow: '0x6C7887'
   cursor:
-    cursor: '0xd0c0a8'
-    text: '0x02283C'
+    cursor: '0xdedbd1'
+    text: '0x0c0d0f'
   normal:
-    black: '0x02283C'
-    blue: '0x917C60'
-    cyan: '0x87906A'
-    green: '0x906F48'
-    magenta: '0xB28855'
-    red: '0x86643D'
-    white: '0xd0c0a8'
-    yellow: '0xA57C4C'
+    black: '0x0c0d0f'
+    blue: '0x68ACA8'
+    cyan: '0xD4AFA9'
+    green: '0xBF8D77'
+    magenta: '0xA09A9E'
+    red: '0x956A5E'
+    white: '0xdedbd1'
+    yellow: '0x6C7887'
   primary:
-    background: '0x02283C'
-    foreground: '0xd0c0a8'
+    background: '0x0c0d0f'
+    foreground: '0xdedbd1'
 
 # /THEME
