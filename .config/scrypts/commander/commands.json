@@ -20,6 +20,14 @@
         "action": "python ~/.config/scrypts/change_pywal.py light"
     },
     {
+        "name": "Random Pywal (Dark)",
+        "action": "python ~/.config/scrypts/change_pywal.py dark random"
+    },
+    {
+        "name": "Random Pywal (Light)",
+        "action": "python ~/.config/scrypts/change_pywal.py light random"
+    },
+    {
         "name": "Night Mode",
         "action": "python ~/.config/scrypts/night_mode/main.py"
     },

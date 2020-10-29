@@ -6,27 +6,27 @@
       "settings": [
         {
           "name": "wallpaper",
-          "value": "/home/breton/Pictures/wallpapers/lake-with-trees.jpg"
+          "value": "/home/breton/Pictures/wallpapers/empry-road.jpg"
         },
         {
           "name": "normal_border_color",
-          "value": "#0c0d0f"
+          "value": "#121612"
         },
         {
           "name": "urgent_border_color",
-          "value": "#A09A9E"
+          "value": "#9D95A2"
         },
         {
           "name": "focused_border_color",
-          "value": "#D4AFA9"
+          "value": "#A49CA9"
         },
         {
           "name": "presel_feedback_color",
-          "value": "#D4AFA9"
+          "value": "#A49CA9"
         },
         {
           "name": "active_border_color",
-          "value": "#9b9992"
+          "value": "#928e93"
         },
         {
           "name": "border_width",
@@ -43,27 +43,27 @@
         },
         {
           "name": "alpha_background",
-          "value": "#0c0d0f"
+          "value": "#121612"
         },
         {
           "name": "alpha_foreground",
-          "value": "#9b9992"
+          "value": "#928e93"
         },
         {
           "name": "alpha_label",
-          "value": "#6C7887"
+          "value": "#827C81"
         },
         {
           "name": "alpha_text",
-          "value": "#BF8D77"
+          "value": "#9C764B"
         },
         {
           "name": "alpha_urgent",
-          "value": "#A09A9E"
+          "value": "#9D95A2"
         },
         {
           "name": "alpha_surround",
-          "value": "#D4AFA9"
+          "value": "#A49CA9"
         }
       ]
     },
@@ -126,35 +126,35 @@
         },
         {
           "name": "normal_frame_color",
-          "value": "#D4AFA9"
+          "value": "#A49CA9"
         },
         {
           "name": "critical_frame_color",
-          "value": "#D4AFA9"
+          "value": "#A49CA9"
         },
         {
           "name": "critical_background_color",
-          "value": "#D4AFA9"
+          "value": "#A49CA9"
         },
         {
           "name": "normal_background_color",
-          "value": "#0c0d0f"
+          "value": "#121612"
         },
         {
           "name": "low_background_color",
-          "value": "#0c0d0f"
+          "value": "#121612"
         },
         {
           "name": "critical_foreground_color",
-          "value": "#0c0d0f"
+          "value": "#121612"
         },
         {
           "name": "normal_foreground_color",
-          "value": "#9b9992"
+          "value": "#928e93"
         },
         {
           "name": "low_foreground_color",
-          "value": "#9b9992"
+          "value": "#928e93"
         }
       ]
     },
@@ -167,23 +167,23 @@
         },
         {
           "name": "background",
-          "value": "#0c0d0f"
+          "value": "#121612"
         },
         {
           "name": "background_alt",
-          "value": "#0c0d0f90"
+          "value": "#12161290"
         },
         {
           "name": "foreground",
-          "value": "#9b9992"
+          "value": "#928e93"
         },
         {
           "name": "selected_border",
-          "value": "#D4AFA9"
+          "value": "#A49CA9"
         },
         {
           "name": "selected_background",
-          "value": "#dedbd1"
+          "value": "#d1ccd2"
         }
       ]
     }
