@@ -20,7 +20,7 @@ elif os.path.exists(os.path.expanduser('~/.cache/wal/colors')):
         theme_type = ''
 
     os.system("wal -nste{}i {}".format(theme_type, wallpaper))
-    os.system('feh --no-fehbg --bg-fill {}'.format(wallpaper))
+    #  os.system('feh --no-fehbg --bg-fill {}'.format(wallpaper))
 
     colors = open(os.path.expanduser('~/.cache/wal/colors'), 'r').read().split('\n')
 
@@ -107,6 +107,14 @@ elif os.path.exists(os.path.expanduser('~/.cache/wal/colors')):
     os.system('audot edit modifier {} programs/polybar/settings/alpha_text/value "{}"'.format(pywal_modifier, colors[2]))
     os.system('audot edit modifier {} programs/polybar/settings/alpha_urgent/value "{}"'.format(pywal_modifier, colors[5]))
     os.system('audot edit modifier {} programs/polybar/settings/alpha_surround/value "{}"'.format(pywal_modifier, colors[6]))
+
+    os.system('audot edit modifier {} programs/polybar/settings/bravo_background/value "{}"'.format(pywal_modifier, colors[0]))
+    os.system('audot edit modifier {} programs/polybar/settings/bravo_foreground/value "{}"'.format(pywal_modifier, colors[8]))
+    os.system('audot edit modifier {} programs/polybar/settings/bravo_icons/value "{}"'.format(pywal_modifier, colors[4]))
+    os.system('audot edit modifier {} programs/polybar/settings/bravo_focused/value "{}"'.format(pywal_modifier, colors[2]))
+    os.system('audot edit modifier {} programs/polybar/settings/bravo_warn/value "{}"'.format(pywal_modifier, colors[5]))
+    os.system('audot edit modifier {} programs/polybar/settings/bravo_border/value "{}"'.format(pywal_modifier, colors[6]))
+
 
     # Change rofi colors
     os.system('audot edit modifier {} programs/rofi/settings/background/value "{}"'.format(pywal_modifier, colors[0]))

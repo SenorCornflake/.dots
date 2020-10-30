@@ -143,6 +143,54 @@
                             "repl": "alpha_font = <|value|>",
                             "repl_location": "matched",
                             "value_is_file": false
+                        },
+                        {
+                            "name": "bravo_background",
+                            "search": "bravo_background = .+",
+                            "search_type": "line",
+                            "repl": "bravo_background = <|value|>",
+                            "repl_location": "matched",
+                            "value_is_file": false
+                        },
+                        {
+                            "name": "bravo_foreground",
+                            "search": "bravo_foreground = .+",
+                            "search_type": "line",
+                            "repl": "bravo_foreground = <|value|>",
+                            "repl_location": "matched",
+                            "value_is_file": false
+                        },
+                        {
+                            "name": "bravo_icons",
+                            "search": "bravo_icons = .+",
+                            "search_type": "line",
+                            "repl": "bravo_icons = <|value|>",
+                            "repl_location": "matched",
+                            "value_is_file": false
+                        },
+                        {
+                            "name": "bravo_border",
+                            "search": "bravo_border = .+",
+                            "search_type": "line",
+                            "repl": "bravo_border = <|value|>",
+                            "repl_location": "matched",
+                            "value_is_file": false
+                        },
+                        {
+                            "name": "bravo_warn",
+                            "search": "bravo_warn = .+",
+                            "search_type": "line",
+                            "repl": "bravo_warn = <|value|>",
+                            "repl_location": "matched",
+                            "value_is_file": false
+                        },
+                        {
+                            "name": "bravo_focused",
+                            "search": "bravo_focused = .+",
+                            "search_type": "line",
+                            "repl": "bravo_focused = <|value|>",
+                            "repl_location": "matched",
+                            "value_is_file": false
                         }
                     ]
                 }

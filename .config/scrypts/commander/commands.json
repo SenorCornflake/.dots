@@ -4,10 +4,6 @@
         "action": "python ~/.config/scrypts/change_modifier.py"
     },
     {
-        "name": "Random modifier",
-        "action": "python ~/.config/scrypts/change_modifier.py random"
-    },
-    {
         "name": "Change Wallpaper",
         "action": "python ~/.config/scrypts/change_wallpaper.py"
     },
@@ -18,14 +14,6 @@
     {
         "name": "Change Pywal (Light)",
         "action": "python ~/.config/scrypts/change_pywal.py light"
-    },
-    {
-        "name": "Random Pywal (Dark)",
-        "action": "python ~/.config/scrypts/change_pywal.py dark random"
-    },
-    {
-        "name": "Random Pywal (Light)",
-        "action": "python ~/.config/scrypts/change_pywal.py light random"
     },
     {
         "name": "Night Mode",

@@ -6,7 +6,7 @@
       "settings": [
         {
           "name": "wallpaper",
-          "value": "~/Pictures/wallpapers/cartoong-green-jungle.png"
+          "value": "/home/breton/Pictures/wallpapers/generated.png"
         },
         {
           "name": "normal_border_color",
@@ -39,7 +39,7 @@
       "settings": [
         {
           "name": "bar",
-          "value": "alpha"
+          "value": "bravo"
         },
         {
           "name": "alpha_background",
@@ -47,7 +47,7 @@
         },
         {
           "name": "alpha_foreground",
-          "value": "#969587"
+          "value": "#ab9bab"
         },
         {
           "name": "alpha_label",
@@ -64,6 +64,30 @@
         {
           "name": "alpha_surround",
           "value": "#a65926"
+        },
+        {
+          "name": "bravo_background",
+          "value": "#1b181b"
+        },
+        {
+          "name": "bravo_foreground",
+          "value": "#ab9bab"
+        },
+        {
+          "name": "bravo_focused",
+          "value": "#918b3b"
+        },
+        {
+          "name": "bravo_warn",
+          "value": "#ca402b"
+        },
+        {
+          "name": "bravo_border",
+          "value": "#a65926"
+        },
+        {
+          "name": "bravo_icons",
+          "value": "#516aec"
         }
       ]
     },

@@ -110,8 +110,14 @@ alt + shift + Tab
 super + {Up,Down}
     bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 10 ))
 
-
 # Rofi show list of open windows
 alt + space
     rofi -modi window -show window -columns 1
 
+# Choose random pywal
+super + {Prior,Next}
+    python ~/.config/scrypts/change_pywal.py {dark, light} random
+
+# Choose random modifier
+super + Home
+    python ~/.config/scrypts/change_modifier.py random

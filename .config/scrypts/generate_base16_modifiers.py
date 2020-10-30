@@ -34,11 +34,18 @@ for theme in base16_themes:
     bspwm_active_border_color       =  '#' + theme['base04']
     # POLYBAR
     polybar_alpha_background        =  '#' + theme['base00']
-    polybar_alpha_foreground        =  '#' + theme['base06']
+    polybar_alpha_foreground        =  '#' + theme['base05']
     polybar_alpha_label             =  '#' + theme['base0B']
     polybar_alpha_text              =  '#' + theme['base04']
     polybar_alpha_urgent            =  '#' + theme['base08']
     polybar_alpha_surround          =  '#' + theme['base09']
+
+    polybar_bravo_background        =  '#' + theme['base00']
+    polybar_bravo_foreground        =  '#' + theme['base05']
+    polybar_bravo_icons             =  '#' + theme['base0D']
+    polybar_bravo_focused           =  '#' + theme['base0B']
+    polybar_bravo_warn              =  '#' + theme['base08']
+    polybar_bravo_border            =  '#' + theme['base09']
     # ALACRITTY
     alacritty_theme                 =  '~/.config/scrypts/themes/alacritty/' + file_name + '.yml'
     # NEOVIM
@@ -68,10 +75,17 @@ for theme in base16_themes:
     os.system('audot edit modifier "{}" programs/bspwm/settings/focused_border_color/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', bspwm_focused_border_color))
     os.system('audot edit modifier "{}" programs/bspwm/settings/presel_feedback_color/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', bspwm_presel_feedback_color))
     os.system('audot edit modifier "{}" programs/polybar/settings/alpha_background/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', polybar_alpha_background))
+    os.system('audot edit modifier "{}" programs/polybar/settings/alpha_foreground/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', polybar_alpha_foreground))
     os.system('audot edit modifier "{}" programs/polybar/settings/alpha_label/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', polybar_alpha_label))
     os.system('audot edit modifier "{}" programs/polybar/settings/alpha_text/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', polybar_alpha_text))
     os.system('audot edit modifier "{}" programs/polybar/settings/alpha_urgent/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', polybar_alpha_urgent))
     os.system('audot edit modifier "{}" programs/polybar/settings/alpha_surround/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', polybar_alpha_surround))
+    os.system('audot edit modifier "{}" programs/polybar/settings/bravo_background/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', polybar_bravo_background))
+    os.system('audot edit modifier "{}" programs/polybar/settings/bravo_foreground/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', polybar_bravo_foreground))
+    os.system('audot edit modifier "{}" programs/polybar/settings/bravo_icons/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', polybar_bravo_icons))
+    os.system('audot edit modifier "{}" programs/polybar/settings/bravo_focused/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', polybar_bravo_focused))
+    os.system('audot edit modifier "{}" programs/polybar/settings/bravo_warn/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', polybar_bravo_warn))
+    os.system('audot edit modifier "{}" programs/polybar/settings/bravo_border/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', polybar_bravo_border))
     os.system('audot edit modifier "{}" programs/alacritty/settings/theme/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', alacritty_theme))
     os.system('audot edit modifier "{}" programs/neovim/settings/colorscheme/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', neovim_colorscheme))
     os.system('audot edit modifier "{}" programs/neovim/settings/termguicolors/value "{}"'.format(modifiers_dir + '/' + file_name + '.json', neovim_termguicolors))

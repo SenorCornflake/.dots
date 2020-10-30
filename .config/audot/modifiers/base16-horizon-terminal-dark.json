@@ -6,7 +6,7 @@
       "settings": [
         {
           "name": "wallpaper",
-          "value": "~/Pictures/wallpapers/generated.png"
+          "value": "/home/breton/Pictures/wallpapers/generated.png"
         },
         {
           "name": "normal_border_color",
@@ -39,7 +39,7 @@
       "settings": [
         {
           "name": "bar",
-          "value": "alpha"
+          "value": "bravo"
         },
         {
           "name": "alpha_background",
@@ -47,7 +47,7 @@
         },
         {
           "name": "alpha_foreground",
-          "value": "#969587"
+          "value": "#CBCED0"
         },
         {
           "name": "alpha_label",
@@ -64,6 +64,30 @@
         {
           "name": "alpha_surround",
           "value": "#FAB795"
+        },
+        {
+          "name": "bravo_background",
+          "value": "#1C1E26"
+        },
+        {
+          "name": "bravo_foreground",
+          "value": "#CBCED0"
+        },
+        {
+          "name": "bravo_focused",
+          "value": "#29D398"
+        },
+        {
+          "name": "bravo_warn",
+          "value": "#E95678"
+        },
+        {
+          "name": "bravo_border",
+          "value": "#FAB795"
+        },
+        {
+          "name": "bravo_icons",
+          "value": "#26BBD9"
         }
       ]
     },
