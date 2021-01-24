@@ -1,0 +1,48 @@
+-- Just a seperate file to contain all my rules
+local beautiful = require("beautiful")
+local awful = require("awful")
+local gears = require("gears")
+
+local util = require("util")
+
+beautiful.init(gears.filesystem.get_configuration_dir() .. "/theme.lua")
+
+local M = {}
+
+M.rules = {
+	{
+		rule = { },
+		properties = {
+			border_width = beautiful.general.border_width,
+			border_color = beautiful.general.border_normal,
+			focus = awful.client.focus.filter,
+			raise = true,
+			keys = _G.bindings.client_keys,
+			buttons = _G.bindings.client_buttons,
+			screen = awful.screen.preferred,
+			placement = awful.placement.no_overlap + awful.placement.no_offscreen,
+		}
+	},
+	{
+		rule_any = {
+			type = {"dialog"}
+		},
+		properties = {
+			ontop = true
+		}
+	},
+	{
+		rule_any = {
+			type = {"normal", "dialog"}
+		},
+		properties = {
+			titlebars_enabled = true,
+		}
+	}
+}
+
+function M.setup()
+	awful.rules.rules = M.rules
+end
+
+return M

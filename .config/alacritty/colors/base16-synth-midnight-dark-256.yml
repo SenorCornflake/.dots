@@ -1,42 +1,42 @@
-# Base16 Synth Midnight Dark 256 - alacritty color config
+# Base16 Synth Midnight Terminal Dark 256 - alacritty color config
 # Michaël Ball (http://github.com/michael-ball/)
 colors:
   # Default colors
   primary:
-    background: '0x040404'
-    foreground: '0xdfdbdf'
+    background: '0x050608'
+    foreground: '0xc1c3c4'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x040404'
-    cursor: '0xdfdbdf'
+    text: '0x050608'
+    cursor: '0xc1c3c4'
 
   # Normal colors
   normal:
-    black:   '0x040404'
+    black:   '0x050608'
     red:     '0xb53b50'
     green:   '0x06ea61'
-    yellow:  '0xdae84d'
+    yellow:  '0xc9d364'
     blue:    '0x03aeff'
     magenta: '0xea5ce2'
-    cyan:    '0x7cede9'
-    white:   '0xdfdbdf'
+    cyan:    '0x42fff9'
+    white:   '0xc1c3c4'
 
   # Bright colors
   bright:
-    black:   '0x61507a'
+    black:   '0x474849'
     red:     '0xb53b50'
     green:   '0x06ea61'
-    yellow:  '0xdae84d'
+    yellow:  '0xc9d364'
     blue:    '0x03aeff'
     magenta: '0xea5ce2'
-    cyan:    '0x7cede9'
-    white:   '0xfffbff'
+    cyan:    '0x42fff9'
+    white:   '0xdddfe0'
 
   indexed_colors:
-    - { index: 16, color: '0xe4600e' }
-    - { index: 17, color: '0x9d4d0e' }
-    - { index: 18, color: '0x141414' }
-    - { index: 19, color: '0x242424' }
-    - { index: 20, color: '0xbfbbbf' }
-    - { index: 21, color: '0xefebef' }
+    - { index: 16, color: '0xea770d' }
+    - { index: 17, color: '0xcd6320' }
+    - { index: 18, color: '0x1a1b1c' }
+    - { index: 19, color: '0x28292a' }
+    - { index: 20, color: '0xa3a5a6' }
+    - { index: 21, color: '0xcfd1d2' }

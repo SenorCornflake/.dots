@@ -1,0 +1,6 @@
+{
+    "registry": "~/.config/exconman/registry.json",
+    "modifier": [
+        "~/.config/exconman/modifier.json"
+    ]
+}

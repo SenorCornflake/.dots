@@ -1,0 +1,42 @@
+# Base16 Generated 256 - alacritty color config
+# Flavours
+colors:
+  # Default colors
+  primary:
+    background: '0x312223'
+    foreground: '0xddd8d0'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x312223'
+    cursor: '0xddd8d0'
+
+  # Normal colors
+  normal:
+    black:   '0x312223'
+    red:     '0x78929c'
+    green:   '0x677a92'
+    yellow:  '0x5a7d91'
+    blue:    '0x6b7896'
+    magenta: '0x71797f'
+    cyan:    '0x717a91'
+    white:   '0xddd8d0'
+
+  # Bright colors
+  bright:
+    black:   '0x988f8b'
+    red:     '0x78929c'
+    green:   '0x677a92'
+    yellow:  '0x5a7d91'
+    blue:    '0x6b7896'
+    magenta: '0x71797f'
+    cyan:    '0x717a91'
+    white:   '0xe7e3de'
+
+  indexed_colors:
+    - { index: 16, color: '0xd2a9ba' }
+    - { index: 17, color: '0x897373' }
+    - { index: 18, color: '0x544746' }
+    - { index: 19, color: '0x766b68' }
+    - { index: 20, color: '0xbbb4ad' }
+    - { index: 21, color: '0xe2ded7' }

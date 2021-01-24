@@ -1,9 +1,9 @@
-@import "layouts/center.rasi"
+@import "layouts/alpha.rasi"
 
 * {
-    foreground: #7d8193;
-    background: #0c060d; // BACKGROUND
-    background-alt: #0c060d90;
-    selected-background: #b3b9d2;
-    selected-border: #A04FA4;
+	alpha-bg: #1e1e1e;
+	alpha-fg: #a7a7a7;
+	alpha-fg-focused: #1e1e1e;
+	alpha-bg-focused: #afc4db;
+	alpha-prompt-fg: #9b703f;
 }

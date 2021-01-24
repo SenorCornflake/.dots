@@ -29,6 +29,9 @@ export TERMINAL=alacritty
 export BROWSER=firefox
 export VIDEO=vlc
 
+# highlight
+export HIGHLIGHT_STYLE=base16
+
 # Man pages highlight
 # Start blinking
 export LESS_TERMCAP_mb=$(tput bold; tput setaf 2) # green

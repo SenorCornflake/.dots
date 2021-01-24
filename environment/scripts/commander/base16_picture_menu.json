@@ -1,0 +1,21 @@
+[
+	{
+		"name": "Flavours",
+		"prompt": "Scheme Type:",
+		"action": [
+			{
+				"name": "Dark",
+				"action": "python ~/environment/scripts/base16_picture_menu.py flavours dark"
+			},
+			{
+				"name": "Light",
+				"action": "python ~/environment/scripts/base16_picture_menu.py flavours light"
+			}
+		]
+	},
+	{
+		"name": "Schemer2",
+		"prompt": "Scheme Type:",
+		"action": "python ~/environment/scripts/base16_picture_menu.py flavours dark"
+	}
+]

@@ -1,0 +1,65 @@
+[
+	{
+		"name": "Change Base16 Theme",
+		"action": "python ~/environment/scripts/base16_theme_menu.py"
+	},
+	{
+		"name": "Change Base16 Picture",
+		"action": "python ~/environment/scripts/commander/main.py ~/environment/scripts/commander/base16_picture_menu.json"
+	},
+	{
+		"name": "Change Wallpaper",
+		"action": "python ~/environment/scripts/change_wallpaper.py"
+	},
+	{
+		"name": "Toggle Nightmode",
+		"action": "python ~/environment/scripts/nightmode.py toggle"
+	},
+    {
+        "name": "Exit",
+        "action": [
+            {
+                "name": "Logout",
+                "prompt": "Are you sure?",
+                "action": [
+                    {
+                        "name": "Cancel",
+                        "action": ""
+                    },
+                    {
+                        "name": "Continue",
+                        "action": "kill -9 -1"
+                    }
+                ]
+            },
+            {
+                "name": "Reboot",
+                "prompt": "Are you sure?",
+                "action": [
+                    {
+                        "name": "Cancel",
+                        "action": ""
+                    },
+                    {
+                        "name": "Continue",
+                        "action": "shutdown -r now"
+                    }
+                ]
+            },
+            {
+                "name": "Shutdown",
+                "prompt": "Are you sure?",
+                "action": [
+                    {
+                        "name": "Cancel",
+                        "action": ""
+                    },
+                    {
+                        "name": "Continue",
+                        "action": "shutdown now"
+                    }
+                ]
+            }
+        ]
+    }
+]

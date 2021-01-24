@@ -1,0 +1,42 @@
+# Base16 Silk Dark 256 - alacritty color config
+# Gabriel Fontes (https://github.com/Misterio77)
+colors:
+  # Default colors
+  primary:
+    background: '0x0e3c46'
+    foreground: '0xC7DBDD'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x0e3c46'
+    cursor: '0xC7DBDD'
+
+  # Normal colors
+  normal:
+    black:   '0x0e3c46'
+    red:     '0xfb6953'
+    green:   '0x73d8ad'
+    yellow:  '0xfce380'
+    blue:    '0x46bddd'
+    magenta: '0x756b8a'
+    cyan:    '0x3fb2b9'
+    white:   '0xC7DBDD'
+
+  # Bright colors
+  bright:
+    black:   '0x587073'
+    red:     '0xfb6953'
+    green:   '0x73d8ad'
+    yellow:  '0xfce380'
+    blue:    '0x46bddd'
+    magenta: '0x756b8a'
+    cyan:    '0x3fb2b9'
+    white:   '0xD2FAFF'
+
+  indexed_colors:
+    - { index: 16, color: '0xfcab74' }
+    - { index: 17, color: '0x9b647b' }
+    - { index: 18, color: '0x1D494E' }
+    - { index: 19, color: '0x2A5054' }
+    - { index: 20, color: '0x9DC8CD' }
+    - { index: 21, color: '0xCBF2F7' }

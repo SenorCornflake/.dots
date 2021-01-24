@@ -3,10 +3,11 @@
     "workbench.editor.showTabs": false,
     "window.menuBarVisibility": "toggle",
     "editor.fontLigatures": true,
-    "editor.fontFamily": "Iosevka",
+    "editor.fontFamily": "DinaRemaster",
     "workbench.statusBar.visible": true,
     "workbench.activityBar.visible": true,
-    "workbench.colorTheme": "Base16 Dark Embers",
+    "workbench.colorTheme": "Base16 Dark Atelier Seaside",
     "window.zoomLevel": 0,
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "editor.fontSize": 15
 }

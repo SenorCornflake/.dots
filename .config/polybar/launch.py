@@ -8,6 +8,7 @@ def e(command):
 
 current_modifier = e('audot query config modifier')
 current_bar = e('audot query modifier {} programs/polybar/settings/bar/value'.format(current_modifier))
+current_bar = "alpha"
 
 print("Current Modifer:", current_modifier)
 print("Current Bar:", current_bar)

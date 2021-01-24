@@ -1,0 +1,274 @@
+{
+	"bspwm_normal_border_color": {
+		"file": "~/.config/bspwm/bspwmrc",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "bspc config normal_border_color .+",
+		"replace_with": "bspc config normal_border_color \"<|VALUE|>\""
+	},
+	"bspwm_focused_border_color": {
+		"file": "~/.config/bspwm/bspwmrc",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "bspc config focused_border_color .+",
+		"replace_with": "bspc config focused_border_color \"<|VALUE|>\""
+	},
+	"bspwm_active_border_color": {
+		"file": "~/.config/bspwm/bspwmrc",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "bspc config active_border_color .+",
+		"replace_with": "bspc config active_border_color \"<|VALUE|>\""
+	},
+	"bspwm_urgent_border_color": {
+		"file": "~/.config/bspwm/bspwmrc",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "bspc config urgent_border_color .+",
+		"replace_with": "bspc config urgent_border_color \"<|VALUE|>\""
+	},
+	"bspwm_presel_feedback_color": {
+		"file": "~/.config/bspwm/bspwmrc",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "bspc config presel_feedback_color .+",
+		"replace_with": "bspc config presel_feedback_color \"<|VALUE|>\""
+	},
+	"bspwm_window_gap": {
+		"file": "~/.config/bspwm/bspwmrc",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "bspc config window_gap .+",
+		"replace_with": "bspc config window_gap <|VALUE|>"
+	},
+	"bspwm_border_width": {
+		"file": "~/.config/bspwm/bspwmrc",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "bspc config border_width .+",
+		"replace_with": "bspc config border_width <|VALUE|>"
+	},
+	"bspwm_wallpaper": {
+		"file": "~/.config/bspwm/bspwmrc",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "feh --no-fehbg --bg-fill .+ &",
+		"replace_with": "feh --no-fehbg --bg-fill \"<|VALUE|>\" &"
+	},
+	"dunst_frame_width": {
+		"file": "~/.config/dunst/dunstrc",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "frame_width = .+",
+		"replace_with": "frame_width = <|VALUE|>"
+	},
+	"dunst_normal_frame_color": {
+		"file": "~/.config/dunst/dunstrc",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "frame_color = .+ # NORMAL",
+		"replace_with": "frame_color = <|VALUE|> # NORMAL"
+	},
+	"dunst_critical_frame_color": {
+		"file": "~/.config/dunst/dunstrc",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "frame_color = .+ # CRITICAL",
+		"replace_with": "frame_color = <|VALUE|> # CRITICAL"
+	},
+	"dunst_normal_background": {
+		"file": "~/.config/dunst/dunstrc",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "background = .+ # NORMAL",
+		"replace_with": "background = <|VALUE|> # NORMAL"
+	},
+	"dunst_critical_background": {
+		"file": "~/.config/dunst/dunstrc",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "background = .+ # CRITICAL",
+		"replace_with": "background = <|VALUE|> # CRITICAL"
+	},
+	"dunst_normal_foreground": {
+		"file": "~/.config/dunst/dunstrc",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "foreground = .+ # NORMAL",
+		"replace_with": "foreground = <|VALUE|> # NORMAL"
+	},
+	"dunst_critical_foreground": {
+		"file": "~/.config/dunst/dunstrc",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "foreground = .+ # CRITICAL",
+		"replace_with": "foreground = <|VALUE|> # CRITICAL"
+	},
+	"polybar_alpha_background": {
+		"file": "~/.config/polybar/config.ini",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "alpha_background = .+",
+		"replace_with": "alpha_background = <|VALUE|>"
+	},
+	"polybar_alpha_foreground": {
+		"file": "~/.config/polybar/config.ini",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "alpha_foreground = .+",
+		"replace_with": "alpha_foreground = <|VALUE|>"
+	},
+	"polybar_alpha_label": {
+		"file": "~/.config/polybar/config.ini",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "alpha_label = .+",
+		"replace_with": "alpha_label = <|VALUE|>"
+	},
+	"polybar_alpha_urgent": {
+		"file": "~/.config/polybar/config.ini",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "alpha_urgent = .+",
+		"replace_with": "alpha_urgent = <|VALUE|>"
+	},
+	"polybar_alpha_surround": {
+		"file": "~/.config/polybar/config.ini",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "alpha_surround = .+",
+		"replace_with": "alpha_surround = <|VALUE|>"
+	},
+	"polybar_alpha_text": {
+		"file": "~/.config/polybar/config.ini",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "alpha_text = .+",
+		"replace_with": "alpha_text = <|VALUE|>"
+	},
+	"polybar_bravo_background": {
+		"file": "~/.config/polybar/config.ini",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "bravo_background = .+",
+		"replace_with": "bravo_background = <|VALUE|>"
+	},
+	"polybar_bravo_foreground": {
+		"file": "~/.config/polybar/config.ini",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "bravo_foreground = .+",
+		"replace_with": "bravo_foreground = <|VALUE|>"
+	},
+	"polybar_bravo_icons": {
+		"file": "~/.config/polybar/config.ini",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "bravo_icons = .+",
+		"replace_with": "bravo_icons = <|VALUE|>"
+	},
+	"polybar_bravo_border": {
+		"file": "~/.config/polybar/config.ini",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "bravo_border = .+",
+		"replace_with": "bravo_border = <|VALUE|>"
+	},
+	"polybar_bravo_warn": {
+		"file": "~/.config/polybar/config.ini",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "bravo_warn = .+",
+		"replace_with": "bravo_warn = <|VALUE|>"
+	},
+	"polybar_bravo_focused": {
+		"file": "~/.config/polybar/config.ini",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "bravo_focused = .+",
+		"replace_with": "bravo_focused = <|VALUE|>"
+	},
+	"polybar_bar": {
+		"file": "~/.config/polybar/config.ini",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "include-file = .+",
+		"replace_with": "include-file = ~/.config/polybar/bars/<|VALUE|>.ini"
+	},
+	"rofi_background": {
+		"file": "~/.config/rofi/config.rasi",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "background: .+",
+		"replace_with": "background: <|VALUE|>"
+	},
+	"rofi_foreground": {
+		"file": "~/.config/rofi/config.rasi",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "foreground: .+",
+		"replace_with": "foreground: <|VALUE|>"
+	},
+	"rofi_background_alt": {
+		"file": "~/.config/rofi/config.rasi",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "background-alt: .+",
+		"replace_with": "background-alt: <|VALUE|>"
+	},
+	"rofi_selected_background": {
+		"file": "~/.config/rofi/config.rasi",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "selected-background: .+",
+		"replace_with": "selected-background: <|VALUE|>"
+	},
+	"rofi_selected_border": {
+		"file": "~/.config/rofi/config.rasi",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "selected-border: .+",
+		"replace_with": "selected-border: <|VALUE|>"
+	},
+	"rofi_layout": {
+		"file": "~/.config/rofi/config.rasi",
+		"value_type": "text",
+		"replace_line": "matched",
+		"match_type": "line",
+		"match_pattern": "@import .+",
+		"replace_with": "@import \"layouts/<|VALUE|>.rasi\""
+	}
+}

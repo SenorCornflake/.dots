@@ -1,0 +1,42 @@
+# Base16 Kimber 256 - alacritty color config
+# Mishka Nguyen (https://github.com/akhsiM)
+colors:
+  # Default colors
+  primary:
+    background: '0x222222'
+    foreground: '0xDEDEE7'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x222222'
+    cursor: '0xDEDEE7'
+
+  # Normal colors
+  normal:
+    black:   '0x222222'
+    red:     '0xC88C8C'
+    green:   '0x99C899'
+    yellow:  '0xD8B56D'
+    blue:    '0x537C9C'
+    magenta: '0x86CACD'
+    cyan:    '0x78B4B4'
+    white:   '0xDEDEE7'
+
+  # Bright colors
+  bright:
+    black:   '0x644646'
+    red:     '0xC88C8C'
+    green:   '0x99C899'
+    yellow:  '0xD8B56D'
+    blue:    '0x537C9C'
+    magenta: '0x86CACD'
+    cyan:    '0x78B4B4'
+    white:   '0xFFFFE6'
+
+  indexed_colors:
+    - { index: 16, color: '0x476C88' }
+    - { index: 17, color: '0x704F4F' }
+    - { index: 18, color: '0x313131' }
+    - { index: 19, color: '0x555D55' }
+    - { index: 20, color: '0x5A5A5A' }
+    - { index: 21, color: '0xC3C3B4' }

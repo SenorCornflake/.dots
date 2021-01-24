@@ -1,3 +1,1 @@
-if [[ "$(tty)" = "/dev/tty1" ]]; then
-	pgrep bspwm || startx ~/.config/X11/xinitrc
-fi
+sh ~/environment/scripts/wm_chooser.sh
