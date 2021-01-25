@@ -1,6 +1,5 @@
 local lspconfig = require('lspconfig')
 
-
 local servers = {
 	sumneko_lua = {
 		cmd = { "lua-language-server", "-E" },
@@ -35,7 +34,22 @@ local servers = {
 	},
 
 	intelephense = {
-		root_dir = lspconfig.util.root_pattern('.root', '.git')
+		root_dir = lspconfig.util.root_pattern('.root', '.git'),
+		settings = {
+			intelephense = {
+				format = {
+					enable = false
+				}
+			}
+		},
+		on_attach = function()
+			-- For some reason PHP files do not have these enabled even though I've set them in opts.lua
+			vim.o.smartindent = true
+			vim.o.autoindent = true
+			vim.bo.smartindent = true
+			vim.bo.autoindent = true
+			print("started intelephense")
+		end
 	},
 
 	tsserver = {
@@ -61,36 +75,12 @@ local servers = {
 }
 
 for server, config in pairs(servers) do
-	config.on_attach = function()
+	config.on_attach = config.on_attach or function()
 		print('started ' .. server)
 	end
 
 	lspconfig[server].setup(config)
 end
-
--- set highlights
-local h = {
-	"LspDiagnosticsDefaultError",
-	"LspDiagnosticsDefaultWarning",
-	"LspDiagnosticsDefaultInformation",
-	"LspDiagnosticsDefaultHint",
-	--"LspDiagnosticsVirtualTextError",
-	--"LspDiagnosticsVirtualTextWarning",
-	--"LspDiagnosticsVirtualTextInformation",
-	--"LspDiagnosticsVirtualTextHint",
-	--"LspDiagnosticsUnderlineError",
-	--"LspDiagnosticsUnderlineWarning",
-	--"LspDiagnosticsUnderlineInformation",
-	--"LspDiagnosticsUnderlineHint",
-	--"LspDiagnosticsFloatingError",
-	--"LspDiagnosticsFloatingWarning",
-	--"LspDiagnosticsFloatingInformation",
-	--"LspDiagnosticsFloatingHint",
-	--"LspDiagnosticsSignError",
-	--"LspDiagnosticsSignWarning",
-	--"LspDiagnosticsSignInformation",
-	--"LspDiagnosticsSignHint",
-}
 
 vim.cmd ":highlight clear LspDiagnosticsDefaultError"
 vim.cmd ":highlight clear LspDiagnosticsDefaultWarning"
@@ -101,12 +91,17 @@ vim.cmd ":highlight link LspDiagnosticsDefaultWarning Tag"
 vim.cmd ":highlight link LspDiagnosticsDefaultInformation Function"
 vim.cmd ":highlight link LspDiagnosticsDefaultHint Special"
 
+vim.cmd "sign define LspDiagnosticsSignError text=E texthl=LspDiagnosticsSignError linehl= numhl="
+vim.cmd "sign define LspDiagnosticsSignWarning text=W texthl=LspDiagnosticsSignWarning linehl= numhl="
+vim.cmd "sign define LspDiagnosticsSignInformation text=I texthl=LspDiagnosticsSignInformation linehl= numhl="
+vim.cmd "sign define LspDiagnosticsSignHint text=H texthl=LspDiagnosticsSignHint linehl= numhl="
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {
 		underline = true,
 		virtual_text = {
 			spacing = 4,
-			prefix = " ! "
+			prefix = "! "
 		}
 	}
 )

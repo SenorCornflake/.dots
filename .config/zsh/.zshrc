@@ -23,6 +23,7 @@ PROMPT=' %F{blue}%~%f > '
 
 alias ls='ls --color=auto'
 alias v='nvim'
+alias vs='sudoedit'
 alias nnn='nnn -dCHeQ'
 alias r='ranger'
 neofetch

@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/srv/http/arsenal.dv/public_html'
 let g:netrw_dirhist_2='/home/breton/dotfiles/.config/nvim/lua/config'
 let g:netrw_dirhist_1='/home/breton/dotfiles/.config/awesome'
 let g:netrw_dirhist_0='/home/breton/.config/awesome'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_7='/home/breton/dotfiles/.config/awesome'
 let g:netrw_dirhist_6='/home/breton/dotfiles'
 let g:netrw_dirhist_5='/srv/http/khanselfcatering.dv/public_html'
 let g:netrw_dirhist_4='/home/breton/dotfiles'
-let g:netrw_dirhist_3='/srv/http/khanselfcatering.dv/public_html'

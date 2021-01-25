@@ -10,7 +10,7 @@ vim.api.nvim_command("packadd packer.nvim")
 return require('packer').startup(function()
 	use { 'wbthomason/packer.nvim', opt = true }
 	use 'neovim/nvim-lspconfig'
-	use 'rstacruz/vim-closer'
+	--use 'rstacruz/vim-closer'
 	use 'nvim-lua/completion-nvim'
 	use 'SenorCornflake/vim-base16-colorschemes'
 	use 'kevinhwang91/rnvimr'

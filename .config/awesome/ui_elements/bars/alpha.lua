@@ -75,7 +75,8 @@ function M.setup()
 
 		local battery = wibox.widget.textbox()
 		battery_helper.textbox(battery, {
-			low_markup = '<span foreground="' .. beautiful.alpha.bar.low_battery_fg .. '">{capacity}</span>',
+			full = 90,
+			low_markup = '<span foreground="' .. beautiful.alpha.bar.low_battery_fg .. '">!! {capacity} !!</span>',
 			middle_markup = '<span foreground="' .. beautiful.alpha.bar.middle_battery_fg .. '">{capacity}</span>',
 			full_markup = '<span foreground="' .. beautiful.alpha.bar.full_battery_fg .. '">{capacity}</span>',
 			interval = 5

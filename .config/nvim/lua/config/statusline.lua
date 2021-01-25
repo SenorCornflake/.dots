@@ -106,7 +106,7 @@ end
 
 M.file = function()
 	local home = os.getenv("HOME")
-	local dir = vim.fn.getcwd():gsub(home, "~")
+	local dir = vim.fn.expand("%:h"):gsub(home, "~")
 	local file = vim.fn.expand("%:t")
 
 	if file:len() > 0 then
@@ -160,7 +160,7 @@ local events = {
 	'VimResized',
 	'TermOpen'
 }
-vim.api.nvim_command('augroup customstatusline')
+vim.api.nvim_command('augroup statusline')
 vim.api.nvim_command('autocmd!')
 
 for _, e in ipairs(events) do

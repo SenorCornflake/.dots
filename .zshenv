@@ -29,7 +29,7 @@ export TERMINAL=alacritty
 export BROWSER=firefox
 export VIDEO=vlc
 
-# highlight
+# highlight (for ranger previews)
 export HIGHLIGHT_STYLE=base16
 
 # Man pages highlight

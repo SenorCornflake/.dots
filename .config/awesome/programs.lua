@@ -14,12 +14,12 @@ function M.browser()
 end
 
 function M.compositor()
-	local pid = util.read_command("pgrep picom")
-
-	-- Only start compositor if it's not already running
-	if #pid == 0 then
-		awful.spawn.with_shell("picom --experimental-backends &")
-	end
+	awful.spawn.easy_async_with_shell("pgrep picom", function(pid)
+		-- Only start compositor if it's not already running
+		if #pid == 0 then
+			awful.spawn.with_shell("picom &")
+		end
+	end)
 end
 
 return M
