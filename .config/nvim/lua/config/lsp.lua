@@ -39,15 +39,22 @@ local servers = {
 			intelephense = {
 				format = {
 					enable = false
-				}
+				},
+				diagnostics = {
+					run = "onType"
+				},
+				maxMemory = 200
 			}
 		},
 		on_attach = function()
-			-- For some reason PHP files do not have these enabled even though I've set them in opts.lua
-			vim.o.smartindent = true
-			vim.o.autoindent = true
-			vim.bo.smartindent = true
-			vim.bo.autoindent = true
+			--Disable indentexpr
+			--vim.o.indentexpr = ""
+			--vim.o.indentexpr = ""
+			---- Renable these two because they disabled by the default php indent plugin
+			--vim.o.smartindent = true
+			--vim.o.autoindent = true
+			--vim.bo.smartindent = true
+			--vim.bo.autoindent = true
 			print("started intelephense")
 		end
 	},
@@ -98,7 +105,6 @@ vim.cmd "sign define LspDiagnosticsSignHint text=H texthl=LspDiagnosticsSignHint
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {
-		underline = true,
 		virtual_text = {
 			spacing = 4,
 			prefix = "! "
@@ -110,9 +116,9 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 vim.cmd('autocmd InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *.rs :lua require("lsp_extensions").inlay_hints{ prefix = " -- ", highlight = "Special", aligned = true, enabled = {"ChainingHint"} }')
 
 -- Show diagnostics on hover
-vim.cmd 'autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()'
+--vim.cmd 'autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()'
 
 -- Completion
-vim.cmd "autocmd BufEnter * lua require'completion'.on_attach()"
+--vim.cmd "autocmd BufEnter * lua require'completion'.on_attach()"
 
-vim.cmd("")
+

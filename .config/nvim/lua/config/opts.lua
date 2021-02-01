@@ -3,7 +3,7 @@ vim.o.hidden = true
 vim.o.termguicolors = true
 vim.o.hlsearch = false
 vim.o.incsearch = true
-vim.o.updatetime = 500
+vim.o.updatetime = 300
 vim.o.completeopt = "menuone,noselect"
 vim.o.showmode = false
 -- Had to repeat these as global for some reason
@@ -33,6 +33,6 @@ vim.wo.wrap = false
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 
-local colorscheme = "base16-irblack"
+local colorscheme = "base16-pico"
 
 vim.api.nvim_command("colorscheme "..colorscheme)

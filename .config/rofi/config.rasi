@@ -2,8 +2,8 @@
 
 * {
 	alpha-bg: #000000;
-	alpha-fg: #b5b3aa;
+	alpha-fg: #5f574f;
 	alpha-fg-focused: #000000;
-	alpha-bg-focused: #c6c5fe;
-	alpha-prompt-fg: #b18a3d;
+	alpha-bg-focused: #29adff;
+	alpha-prompt-fg: #ffccaa;
 }

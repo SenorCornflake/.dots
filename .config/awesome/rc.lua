@@ -30,41 +30,44 @@ do
     end)
 end
 
-
-awful.screen.connect_for_each_screen(function(s)
-	for key, _ in pairs(s.outputs) do
-		util.debug.dump_to_file("dump.txt", key)
-	end
-end)
-
---util.reload_if_using_disabled_screen()
-
+-- Set faster keyboard rate for faster scrolling and cursor movement
 os.execute("xset r rate 250 30")
+-- Enable redshift if it was enabled before
 os.execute("python ~/environment/scripts/nightmode.py")
 
+-- Set the beautiful theme file
 beautiful.init(gears.filesystem.get_configuration_dir() .. "/theme.lua")
 
+-- Set layouts
 awful.layout.layouts = {
 	awful.layout.suit.tile,
 	awful.layout.suit.tile.bottom,
 	awful.layout.suit.floating
 }
 
+-- Setup global keys
 root.keys(_G.bindings.global_keys)
 
+-- Setup rules
 rules.setup()
 
+-- Setup tag configuration
 tags.setup()
 tags.set_gaps()
 
+-- Setup client configuration
 clients.setup_border_colors()
 clients.set_at_slave()
 
+-- Use the bar and titlebar defined in the beautiful theme
 bar.use(beautiful.bar)
 titlebar.use(beautiful.titlebar)
 
+-- Set the wallpaper defined in the beautiful theme
 util.set_wallpaper()
 
+-- Launch the compositor
 programs.compositor()
 
+-- Load any session saved previously
 util.session.load()

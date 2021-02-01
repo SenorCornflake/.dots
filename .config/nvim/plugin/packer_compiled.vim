@@ -20,17 +20,23 @@ lua << END
   end
 
 _G.packer_plugins = {
-  ["completion-nvim"] = {
+  ["emmet-vim"] = {
     loaded = true,
     only_sequence = true,
     only_setup = false,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/completion-nvim"
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/emmet-vim"
   },
   ["lsp_extensions.nvim"] = {
     loaded = true,
     only_sequence = true,
     only_setup = false,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/lsp_extensions.nvim"
+  },
+  ["nvim-compe"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -68,23 +74,35 @@ _G.packer_plugins = {
     only_setup = false,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/rnvimr"
   },
-  ["telescope-packer.nvim"] = {
-    loaded = true,
-    only_sequence = true,
-    only_setup = false,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/telescope-packer.nvim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     only_sequence = true,
     only_setup = false,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
+  ["vim-airline"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-airline"
+  },
+  ["vim-airline-themes"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-airline-themes"
+  },
   ["vim-base16-colorschemes"] = {
     loaded = true,
     only_sequence = true,
     only_setup = false,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-base16-colorschemes"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-fugitive"
   },
   ["vim-rooter"] = {
     loaded = true,
