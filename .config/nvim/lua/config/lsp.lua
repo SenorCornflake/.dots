@@ -45,18 +45,7 @@ local servers = {
 				},
 				maxMemory = 200
 			}
-		},
-		on_attach = function()
-			--Disable indentexpr
-			--vim.o.indentexpr = ""
-			--vim.o.indentexpr = ""
-			---- Renable these two because they disabled by the default php indent plugin
-			--vim.o.smartindent = true
-			--vim.o.autoindent = true
-			--vim.bo.smartindent = true
-			--vim.bo.autoindent = true
-			print("started intelephense")
-		end
+		}
 	},
 
 	tsserver = {

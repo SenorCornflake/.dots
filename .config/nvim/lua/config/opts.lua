@@ -30,9 +30,18 @@ vim.wo.sidescrolloff = 8
 vim.wo.signcolumn = "yes"
 vim.wo.cursorline = true
 vim.wo.wrap = false
-vim.wo.foldmethod = "expr"
-vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+vim.wo.foldmethod = "syntax"
+--vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 
-local colorscheme = "base16-pico"
+vim.g.php_folding = 2
+
+local colorscheme = "base16-gruvbox-dark-hard"
 
 vim.api.nvim_command("colorscheme "..colorscheme)
+
+--vim.cmd(":hi clear LineNr")
+--vim.cmd(":hi clear SignColumn")
+--vim.cmd(":hi link LineNr Comment")
+--vim.cmd(":autocmd VimEnter * hi clear LineNr")
+--vim.cmd(":autocmd VimEnter * hi clear SignColumn")
+--vim.cmd(":autocmd VimEnter * hi link LineNr Comment")

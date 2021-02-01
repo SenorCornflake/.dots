@@ -23,8 +23,8 @@ return require('packer').startup(function()
 	use 'mattn/emmet-vim'
 	use 'psliwka/vim-smoothie'
 	use 'tpope/vim-fugitive'
-	use 'vim-airline/vim-airline'
-	use 'vim-airline/vim-airline-themes'
+	use 'Konfekt/FastFold'
+	use 'glepnir/galaxyline.nvim'
 	-- Remember hyperstyle
 end)
 

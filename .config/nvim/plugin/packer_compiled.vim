@@ -20,11 +20,23 @@ lua << END
   end
 
 _G.packer_plugins = {
+  FastFold = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/FastFold"
+  },
   ["emmet-vim"] = {
     loaded = true,
     only_sequence = true,
     only_setup = false,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/emmet-vim"
+  },
+  ["galaxyline.nvim"] = {
+    loaded = true,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
   ["lsp_extensions.nvim"] = {
     loaded = true,
@@ -79,18 +91,6 @@ _G.packer_plugins = {
     only_sequence = true,
     only_setup = false,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/telescope.nvim"
-  },
-  ["vim-airline"] = {
-    loaded = true,
-    only_sequence = true,
-    only_setup = false,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-airline"
-  },
-  ["vim-airline-themes"] = {
-    loaded = true,
-    only_sequence = true,
-    only_setup = false,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-airline-themes"
   },
   ["vim-base16-colorschemes"] = {
     loaded = true,
