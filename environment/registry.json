@@ -238,5 +238,13 @@
 		"replace_value": "local colorscheme = \"{value}\"",
 		"replace_type": "matched",
 		"value_is_file": false
+	},
+	{
+		"name": "picom.shadow",
+		"file": "~/.config/picom/picom.conf",
+		"pattern": "shadow = .+; # GLOBAL",
+		"replace_value": "shadow = {value}; # GLOBAL",
+		"replace_type": "matched",
+		"value_is_file": false
 	}
 ]

@@ -21,6 +21,10 @@ if len(sys.argv) > 2:
 
     os.system('exconman -r ~/environment/registry.json set awesome.general.wallpaper \"{}\"'.format(picture))
 
+    # Enables shadows
+    os.system('exconman -r ~/environment/registry.json set picom.shadow true')
+
+
     if backend == "flavours":
         os.system('python ~/environment/scripts/setup_base16_theme.py ~/environment/base16/schemes/flavours/flavours.yaml')
     elif backend == "schemer2":

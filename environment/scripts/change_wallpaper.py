@@ -11,4 +11,12 @@ index = os.popen(cmd).read()[:-1]
 if index != "":
     index = int(index)
     os.system('awesome-client "require(\\"util\\").set_wallpaper(\\"{}\\")"'.format(wallpapers_dir + "/" + wallpapers[index]))
+    wallpaper = os.path.splitext(os.path.basename(wallpapers[index]))[0]
+
+    # Disable shadows if the wallpaper is generated (because it's ugly)
+    if wallpaper == "generated":
+        os.system("exconman -r ~/environment/registry.json set picom.shadow false")
+    else:
+        os.system("exconman -r ~/environment/registry.json set picom.shadow true")
+
     os.system('exconman -r ~/environment/registry.json set awesome.general.wallpaper "{}"'.format(wallpapers_dir + "/" + wallpapers[index]))
