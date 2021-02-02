@@ -5,11 +5,11 @@ local M = {}
 
 -- Generic Settings
 M.general = {
-	border_normal = "#ebdbb2",
-	border_focused = "#af3a03",
+	border_normal = "#171717",
+	border_focused = "#a08c50",
 	border_width = xresources.apply_dpi(2),
 	gap_size = xresources.apply_dpi(5),
-	wallpaper = "/home/breton/Pictures/wallpapers/circular-hovering-city-thing.jpg",
+	wallpaper = "/home/breton/Pictures/wallpapers/creepy-dry-grass-dry-tree-shack.png",
 }
 
 -- Alpha Theme Settings
@@ -18,39 +18,39 @@ M.alpha = {
 		-- alpha.bar.font
 		font = "Dina 7",
 		-- alpha.bar.bg
-		bg = "#f9f5d7",
+		bg = "#070700",
 		-- alpha.bar.fg
-		fg = "#504945",
+		fg = "#a08c50",
 		-- alpha.bar.focused_tag_fg
-		focused_tag_fg = "#af3a03",
+		focused_tag_fg = "#a08c50",
 		-- alpha.bar.occupied_tag_fg
-		occupied_tag_fg = "#79740e",
+		occupied_tag_fg = "#909c90",
 		-- alpha.bar.empty_tag_fg
-		empty_tag_fg = "#bdae93",
+		empty_tag_fg = "#585858",
 		-- alpha.bar.label_fg
-		label_fg = "#8f3f71",
+		label_fg = "#a08c50",
 		-- alpha.bar.decoration_fg
-		decoration_fg = "#076678",
+		decoration_fg = "#a08c50",
 		-- alpha.bar.muted_fg
-		muted_fg = "#9d0006",
+		muted_fg = "#909c90",
 		-- alpha.bar.low_battery_fg
-		low_battery_fg = "#9d0006",
+		low_battery_fg = "#909c90",
 		-- alpha.bar.middle_battery_fg
-		middle_battery_fg = "#b57614",
+		middle_battery_fg = "#a08c50",
 		-- alpha.bar.full_battery_fg
-		full_battery_fg = "#79740e",
+		full_battery_fg = "#909c90",
 	},
 	titlebar = {
 		-- alpha.titlebar.font
 		font = "Dina 7",
 		-- alpha.titlebar.bg_normal
-		bg_normal = "#ebdbb2",
+		bg_normal = "#171717",
 		-- alpha.titlebar.fg_normal
-		fg_normal = "#af3a03",
+		fg_normal = "#a08c50",
 		-- alpha.titlebar.bg_focused
-		bg_focused = "#af3a03",
+		bg_focused = "#a08c50",
 		-- alpha.titlebar.fg_focused
-		fg_focused = "#ebdbb2",
+		fg_focused = "#171717",
 	}
 }
 

@@ -16,6 +16,6 @@
 	{
 		"name": "Schemer2",
 		"prompt": "Scheme Type:",
-		"action": "python ~/environment/scripts/base16_picture_menu.py flavours dark"
+		"action": "python ~/environment/scripts/base16_picture_menu.py schemer2 dark"
 	}
 ]

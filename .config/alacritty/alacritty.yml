@@ -34,40 +34,40 @@ window:
   decorations: none
 
 # THEME
-# Base16 Gruvbox light, hard - alacritty color config
-# Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+# Base16 auto-generated - alacritty color config
+# Auto Base16 Theme (https://github.com/makuto/auto-base16-theme/)
 colors:
   # Default colors
   primary:
-    background: '0xf9f5d7'
-    foreground: '0x504945'
+    background: '0x070700'
+    foreground: '0xa08c50'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0xf9f5d7'
-    cursor: '0x504945'
+    text: '0x070700'
+    cursor: '0xa08c50'
 
   # Normal colors
   normal:
-    black:   '0xf9f5d7'
-    red:     '0x9d0006'
-    green:   '0x79740e'
-    yellow:  '0xb57614'
-    blue:    '0x076678'
-    magenta: '0x8f3f71'
-    cyan:    '0x427b58'
-    white:   '0x504945'
+    black:   '0x070700'
+    red:     '0x909c90'
+    green:   '0x909c90'
+    yellow:  '0xa08c50'
+    blue:    '0xa08c50'
+    magenta: '0xa08c50'
+    cyan:    '0x909c90'
+    white:   '0xa08c50'
 
   # Bright colors
   bright:
-    black:   '0xbdae93'
-    red:     '0xaf3a03'
-    green:   '0xebdbb2'
-    yellow:  '0xd5c4a1'
-    blue:    '0x665c54'
-    magenta: '0x3c3836'
-    cyan:    '0xd65d0e'
-    white:   '0x282828'
+    black:   '0x585858'
+    red:     '0xa08c50'
+    green:   '0x171717'
+    yellow:  '0x371700'
+    blue:    '0x887038'
+    magenta: '0x372f1f'
+    cyan:    '0xa08c50'
+    white:   '0x5f470f'
 
 draw_bold_text_with_bright_colors: false
 
