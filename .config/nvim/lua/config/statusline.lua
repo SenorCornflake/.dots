@@ -27,48 +27,49 @@ local gh = function(highlight)
 end
 
 local colors = {
-	normal_mode = gh("Function").guifg,
-	insert      = gh("String").guifg,
-	visual      = gh("Keyword").guifg,
-	other       = gh("Constant").guifg,
-	bg          = gh("CursorLine").guibg,
-	error       = gh("ErrorMsg").guifg,
-	warn        = gh("Tag").guifg,
-	info        = gh("Function").guifg,
-	hint        = gh("Special").guifg,
-	normal      = gh("Normal").guifg
+	normal_mode = {gh("Function"   ).guifg, gh("Function"  ).ctermfg},
+	insert      = {gh("String"     ).guifg, gh("String"    ).ctermfg},
+	visual      = {gh("Keyword"    ).guifg, gh("Keyword"   ).ctermfg},
+	other       = {gh("Constant"   ).guifg, gh("Constant"  ).ctermfg},
+	bg          = {gh("StatusLine" ).guibg, gh("StatusLine").ctermbg},
+	error       = {gh("ErrorMsg"   ).guifg, gh("ErrorMsg"  ).ctermfg},
+	warn        = {gh("Tag"        ).guifg, gh("Tag"       ).ctermfg},
+	info        = {gh("Function"   ).guifg, gh("Function"  ).ctermfg},
+	hint        = {gh("Special"    ).guifg, gh("Special"   ).ctermfg},
+	normal      = {gh("Normal"     ).guifg, gh("Normal"    ).ctermfg}
 }
 
 -- I set the colors for the highlight groups because when I reload neovim with a different colorscheme, it doesn't refresh the statusbar's colors
-vim.cmd(":hi GalaxyFileName guifg="..colors.normal.." guibg="..colors.bg)
-vim.cmd(":hi GalaxyLineColumn guifg="..colors.normal.." guibg="..colors.bg)
-vim.cmd(":hi GalaxyDiagnosticError guifg="..colors.error.." guibg="..colors.bg)
-vim.cmd(":hi GalaxyDiagnosticWarn guifg="..colors.warn.." guibg="..colors.bg)
-vim.cmd(":hi GalaxyDiagnosticInfo guifg="..colors.info.." guibg="..colors.bg)
-vim.cmd(":hi GalaxyDiagnosticHint guifg="..colors.hint.." guibg="..colors.bg)
+vim.cmd(":hi ViModeSeparator       guifg=bg                     guibg="..colors.bg[1].." ctermfg=bg                     ctermbg="..colors.bg[2])
+vim.cmd(":hi GalaxyFileName        guifg="..colors.normal[1].." guibg="..colors.bg[1].." ctermfg="..colors.normal[2].." ctermbg="..colors.bg[2])
+vim.cmd(":hi GalaxyLineColumn      guifg="..colors.normal[1].." guibg="..colors.bg[1].." ctermfg="..colors.normal[2].." ctermbg="..colors.bg[2])
+vim.cmd(":hi GalaxyDiagnosticError guifg="..colors.error [1].." guibg="..colors.bg[1].." ctermfg="..colors.error [2].." ctermbg="..colors.bg[2].." gui=underline cterm=underline")
+vim.cmd(":hi GalaxyDiagnosticWarn  guifg="..colors.warn  [1].." guibg="..colors.bg[1].." ctermfg="..colors.warn  [2].." ctermbg="..colors.bg[2].." gui=underline cterm=underline")
+vim.cmd(":hi GalaxyDiagnosticInfo  guifg="..colors.info  [1].." guibg="..colors.bg[1].." ctermfg="..colors.info  [2].." ctermbg="..colors.bg[2].." gui=underline cterm=underline")
+vim.cmd(":hi GalaxyDiagnosticHint  guifg="..colors.hint  [1].." guibg="..colors.bg[1].." ctermfg="..colors.hint  [2].." ctermbg="..colors.bg[2].." gui=underline cterm=underline")
 
 local mode_color = {
-	['n']  = colors.normal_mode,
-	['no'] = colors.normal_mode,
-	['v']  = colors.visual,
-	['V']  = colors.visual,
-	[''] = colors.visual,
-	['s']  = colors.visual,
-	['S']  = colors.visual,
-	[''] = colors.visual,
-	['i']  = colors.insert,
-	['ic'] = colors.insert,
-	['ix'] = colors.insert,
-	['R']  = colors.other,
-	['Rv'] = colors.other,
-	['c']  = colors.other,
-	['cv'] = colors.other,
-	['ce'] = colors.other,
-	['r']  = colors.other,
-	['rm'] = colors.other,
-	['r?'] = colors.other,
-	['!']  = colors.other,
-    ['t']  = colors.other
+	['n']  = {colors.normal_mode[1], colors.normal_mode[2]},
+	['no'] = {colors.normal_mode[1], colors.normal_mode[2]},
+	['v']  = {colors.visual     [1], colors.visual     [2]},
+	['V']  = {colors.visual     [1], colors.visual     [2]},
+	[''] = {colors.visual     [1], colors.visual     [2]},
+	['s']  = {colors.visual     [1], colors.visual     [2]},
+	['S']  = {colors.visual     [1], colors.visual     [2]},
+	[''] = {colors.visual     [1], colors.visual     [2]},
+	['i']  = {colors.insert     [1], colors.insert     [2]},
+	['ic'] = {colors.insert     [1], colors.insert     [2]},
+	['ix'] = {colors.insert     [1], colors.insert     [2]},
+	['R']  = {colors.other      [1], colors.other      [2]},
+	['Rv'] = {colors.other      [1], colors.other      [2]},
+	['c']  = {colors.other      [1], colors.other      [2]},
+	['cv'] = {colors.other      [1], colors.other      [2]},
+	['ce'] = {colors.other      [1], colors.other      [2]},
+	['r']  = {colors.other      [1], colors.other      [2]},
+	['rm'] = {colors.other      [1], colors.other      [2]},
+	['r?'] = {colors.other      [1], colors.other      [2]},
+	['!']  = {colors.other      [1], colors.other      [2]},
+	['t']  = {colors.other      [1], colors.other      [2]}
 }
 
 local mode_label = {
@@ -107,12 +108,12 @@ gls.left[2] = {
 		provider = function()
 			local mode = vim.fn.mode()
 
-			if gh("GalaxyViMode").guibg ~= mode_color[mode] then
-				vim.cmd(":silent hi GalaxyViMode guifg="..mode_color[mode].." guibg="..colors["bg"])
-			end
+			vim.cmd(":silent hi GalaxyViMode guifg=bg guibg="..mode_color[mode][1].." ctermfg=bg ctermbg="..mode_color[mode][2])
 
 			return mode_label[mode].." "
-		end
+		end,
+		separator = " ",
+		separator_highlight = {"NONE", colors.bg[1]}
 	}
 }
 
@@ -144,14 +145,14 @@ gls.left[3] = {
 			end
 			return file .. ' '
 		end,
-		highlight = {colors.normal, colors.bg}
+		highlight = {colors.normal[1], colors.bg[1]}
 	}
 }
 
 gls.left[4] = {
 	LineColumn = {
 		provider = "LineColumn",
-		highlight = {colors.normal, colors.bg}
+		highlight = {colors.normal[1], colors.bg[1]}
 	}
 }
 
@@ -159,7 +160,7 @@ gls.right[1] = {
   	DiagnosticError = {
     	provider = 'DiagnosticError',
     	icon = ' E ',
-		highlight = {colors.error, colors.bg}
+		highlight = {colors.error[1], colors.bg[1]}
   	}
 }
 
@@ -167,7 +168,7 @@ gls.right[2] = {
   	DiagnosticWarn = {
     	provider = 'DiagnosticWarn',
     	icon = ' W ',
-		highlight = {colors.warn, colors.bg}
+		highlight = {colors.warn[1], colors.bg[1]}
   	}
 }
 
@@ -175,7 +176,7 @@ gls.right[3] = {
   	DiagnosticInfo = {
     	provider = 'DiagnosticInfo',
     	icon = ' I ',
-		highlight = {colors.info, colors.bg}
+		highlight = {colors.info[1], colors.bg[1]}
   	}
 }
 
@@ -183,6 +184,6 @@ gls.right[4] = {
   	DiagnosticHint = {
     	provider = 'DiagnosticHint',
     	icon = ' H ',
-		highlight = {colors.hint, colors.bg}
+		highlight = {colors.hint[1], colors.bg[1]}
   	}
 }
