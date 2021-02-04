@@ -75,7 +75,7 @@ if wallpaper == "generated":
 
 # Reload awesomewm
 os.system('awesome-client "require(\'util\').session.restart()" &')
-# Reload neovim
-os.system("python ~/environment/scripts/reload_neovim_instances.py &")
+# Reload neovim colorscheme
+os.system('python ~/environment/scripts/execute_command_for_all_neovim_instances.py ":luafile ~/.config/nvim/lua/config/opts.lua" &')
 
 sys.exit()

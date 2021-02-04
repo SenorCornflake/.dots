@@ -1,7 +1,12 @@
 import os
+import sys
 
 from pynvim import attach
 
+if len(sys.argv) < 1:
+    sys.exit()
+
+cmd = sys.argv[1]
 
 def get_all_instances():
     instances = []
@@ -22,8 +27,8 @@ def reload(instance):
     # connect over the socket
     nvim = attach('socket', path=instance)
 
-    # execute the reload command
-    nvim.command('luafile ~/.config/nvim/init.lua')
+    # execute the command
+    nvim.command(cmd)
 
 
 # search for neovim instances

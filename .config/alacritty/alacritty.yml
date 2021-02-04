@@ -34,40 +34,40 @@ window:
   decorations: none
 
 # THEME
-# Base16 Grayscale Dark - alacritty color config
-# Alexandre Gavioli (https://github.com/Alexx2/)
+# Base16 auto-generated - alacritty color config
+# Auto Base16 Theme (https://github.com/makuto/auto-base16-theme/)
 colors:
   # Default colors
   primary:
-    background: '0x101010'
-    foreground: '0xb9b9b9'
+    background: '0x000000'
+    foreground: '0x747474'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x101010'
-    cursor: '0xb9b9b9'
+    text: '0x000000'
+    cursor: '0x747474'
 
   # Normal colors
   normal:
-    black:   '0x101010'
-    red:     '0x7c7c7c'
-    green:   '0x8e8e8e'
-    yellow:  '0xa0a0a0'
-    blue:    '0x686868'
-    magenta: '0x747474'
-    cyan:    '0x868686'
-    white:   '0xb9b9b9'
+    black:   '0x000000'
+    red:     '0x8d8d8d'
+    green:   '0x747474'
+    yellow:  '0x747474'
+    blue:    '0x747474'
+    magenta: '0x9e9e9e'
+    cyan:    '0x747474'
+    white:   '0x747474'
 
   # Bright colors
   bright:
-    black:   '0x525252'
-    red:     '0x999999'
-    green:   '0x252525'
-    yellow:  '0x464646'
-    blue:    '0xababab'
-    magenta: '0xe3e3e3'
-    cyan:    '0x5e5e5e'
-    white:   '0xf7f7f7'
+    black:   '0x515151'
+    red:     '0x9e9e9e'
+    green:   '0x101010'
+    yellow:  '0x262626'
+    blue:    '0x636363'
+    magenta: '0x3f3f3f'
+    cyan:    '0x747474'
+    white:   '0x4c4c4c'
 
 draw_bold_text_with_bright_colors: false
 
