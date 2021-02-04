@@ -14,6 +14,7 @@ local rules = require("rules")
 local programs = require("programs")
 local bar = require("ui_elements.bar")
 local titlebar = require("ui_elements.titlebar")
+local notification = require("ui_elements.notification")
 
 
 do
@@ -59,9 +60,11 @@ tags.set_gaps()
 clients.setup_border_colors()
 clients.set_at_slave()
 
--- Use the bar and titlebar defined in the beautiful theme
+-- Use the bar, titlebar and notifications defined in the beautiful theme
 bar.use(beautiful.bar)
 titlebar.use(beautiful.titlebar)
+notification.use(beautiful.notification)
+
 
 -- Set the wallpaper defined in the beautiful theme
 util.set_wallpaper()

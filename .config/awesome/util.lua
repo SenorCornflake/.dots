@@ -140,11 +140,11 @@ function M.scandir(directory)
 	return listing
 end
 
-function M.debug.notify(msg)
+function M.debug.notify(item)
 	naughty.notify({
 		preset = naughty.config.presets.critical,
 		title = "DEBUG NOTIFICATION",
-		text = tostring(msg)
+		text = gears.debug.dump_return(item)
 	})
 end
 

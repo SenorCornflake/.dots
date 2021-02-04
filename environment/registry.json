@@ -176,6 +176,30 @@
 		"value_is_file": false
 	},
 	{
+		"name": "awesome.alpha.notification.bg",
+		"file": "~/.config/awesome/theme.lua",
+		"pattern": "-- alpha.notification.bg",
+		"replace_value": "\t\tbg = \"{value}\",",
+		"replace_type": "below",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.alpha.notification.fg",
+		"file": "~/.config/awesome/theme.lua",
+		"pattern": "-- alpha.notification.fg",
+		"replace_value": "\t\tfg = \"{value}\",",
+		"replace_type": "below",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.alpha.notification.font",
+		"file": "~/.config/awesome/theme.lua",
+		"pattern": "-- alpha.notification.font",
+		"replace_value": "\t\tfont = \"{value}\",",
+		"replace_type": "below",
+		"value_is_file": false
+	},
+	{
 		"name": "rofi.layout",
 		"file": "~/.config/rofi/config.rasi",
 		"pattern": "import .+",

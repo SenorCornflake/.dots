@@ -43,6 +43,10 @@ settings = {
     "awesome.alpha.titlebar.fg_normal"    : "#" + theme["base09"],
     "awesome.alpha.titlebar.bg_focused"   : "#" + theme["base09"],
     "awesome.alpha.titlebar.fg_focused"   : "#" + theme["base01"],
+
+    # ALPHA NOTIFICATION                             
+    "awesome.alpha.notification.bg"    : "#" + theme["base00"],
+    "awesome.alpha.notification.fg"    : "#" + theme["base05"],
                                                  
     # ALPHA ROFI                                 
     "rofi.alpha.bg"                       : "#" + theme["base00"],
