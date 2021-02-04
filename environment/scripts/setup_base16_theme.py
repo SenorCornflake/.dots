@@ -64,14 +64,14 @@ settings = {
 
 for setting in settings.keys():
     value = settings[setting]
-    os.system('exconman -r ~/environment/registry.json set "{}" "{}"'.format(setting, value))
+    os.system('exconman set "{}" "{}"'.format(setting, value))
 
-wallpaper = os.popen("exconman -r ~/environment/registry.json get awesome.general.wallpaper").read()[:-1]
+wallpaper = os.popen("exconman get awesome.general.wallpaper").read()[:-1]
 wallpaper = os.path.splitext(os.path.basename(wallpaper))[0]
 
 # Disable shadows if the wallpaper is generated (because it's ugly)
 if wallpaper == "generated":
-    os.system("exconman -r ~/environment/registry.json set picom.shadow false")
+    os.system("exconman set picom.shadow false")
 
 # Reload awesomewm
 os.system('awesome-client "require(\'util\').session.restart()" &')

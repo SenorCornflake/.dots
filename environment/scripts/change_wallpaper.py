@@ -15,8 +15,8 @@ if index != "":
 
     # Disable shadows if the wallpaper is generated (because it's ugly)
     if wallpaper == "generated":
-        os.system("exconman -r ~/environment/registry.json set picom.shadow false")
+        os.system("exconman set picom.shadow false")
     else:
-        os.system("exconman -r ~/environment/registry.json set picom.shadow true")
+        os.system("exconman set picom.shadow true")
 
-    os.system('exconman -r ~/environment/registry.json set awesome.general.wallpaper "{}"'.format(wallpapers_dir + "/" + wallpapers[index]))
+    os.system('exconman set awesome.general.wallpaper "{}"'.format(wallpapers_dir + "/" + wallpapers[index]))

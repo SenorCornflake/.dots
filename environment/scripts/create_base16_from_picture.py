@@ -19,10 +19,10 @@ if len(sys.argv) > 2:
     os.system('base16-builder build --scheme ~/environment/base16/schemes/flavours/flavours.yaml --template ~/environment/base16/templates/alacritty --output-root ~/environment/themes/alacritty')
     os.system('base16-builder build --scheme ~/environment/base16/schemes/flavours/flavours.yaml --template ~/environment/base16/templates/vim --output-root ~/.local/share/nvim/site/pack/packer/start/vim-base16-colorschemes/colors')
 
-    os.system('exconman -r ~/environment/registry.json set awesome.general.wallpaper \"{}\"'.format(picture))
+    os.system('exconman set awesome.general.wallpaper \"{}\"'.format(picture))
 
     # Enables shadows
-    os.system('exconman -r ~/environment/registry.json set picom.shadow true')
+    os.system('exconman set picom.shadow true')
 
 
     if backend == "flavours":
