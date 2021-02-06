@@ -6,7 +6,9 @@ vim.o.incsearch = true
 vim.o.updatetime = 300
 vim.o.completeopt = "menuone,noselect"
 vim.o.showmode = false
--- Had to repeat these as global for some reason
+vim.o.clipboard = "unnamedplus"
+
+-- Had to repeat these as global
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.undofile = true
@@ -35,13 +37,7 @@ vim.wo.foldmethod = "syntax"
 
 vim.g.php_folding = 2
 
-local colorscheme = "base16-schemer2"
+local colorscheme = "base16-atelier-cave"
 
 vim.api.nvim_command("colorscheme "..colorscheme)
 
---vim.cmd(":hi clear LineNr")
---vim.cmd(":hi clear SignColumn")
---vim.cmd(":hi link LineNr Comment")
---vim.cmd(":autocmd VimEnter * hi clear LineNr")
---vim.cmd(":autocmd VimEnter * hi clear SignColumn")
---vim.cmd(":autocmd VimEnter * hi link LineNr Comment")

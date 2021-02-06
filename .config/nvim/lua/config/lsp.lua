@@ -57,7 +57,8 @@ local servers = {
 	},
 
 	html = {
-		root_dir = lspconfig.util.root_pattern('.root', '.git')
+		root_dir = lspconfig.util.root_pattern('.root', '.git'),
+		filetypes = {"php", "html"}
 	},
 
 	pyright = {
