@@ -3,11 +3,11 @@
     "workbench.editor.showTabs": false,
     "window.menuBarVisibility": "toggle",
     "editor.fontLigatures": true,
-    "editor.fontFamily": "DinaRemaster",
+    "editor.fontFamily": "Monoid",
     "workbench.statusBar.visible": true,
-    "workbench.activityBar.visible": true,
-    "workbench.colorTheme": "Base16 Dark Atelier Seaside",
+    "workbench.activityBar.visible": false,
+    "workbench.colorTheme": "Base16 Default Dark",
     "window.zoomLevel": 0,
     "editor.minimap.enabled": false,
-    "editor.fontSize": 14.5
+    "editor.fontSize": 12
 }

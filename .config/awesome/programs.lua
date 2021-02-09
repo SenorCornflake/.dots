@@ -22,4 +22,12 @@ function M.compositor()
 	end)
 end
 
+function M.disk_automounter()
+	awful.spawn.with_shell("udiskie &")
+end
+
+function M.polkit()
+	awful.spawn.with_shell("exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &")
+end
+
 return M

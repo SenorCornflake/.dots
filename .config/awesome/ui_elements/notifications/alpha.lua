@@ -16,6 +16,7 @@ M.setup = function()
 			border_width = beautiful.general.border_width,
 			border_color = beautiful.general.border_focused,
 			position = "top_right",
+			type = "notification",
 			bg = beautiful.alpha.notification.bg,
 			fg = beautiful.alpha.notification.fg,
 			widget_template = {

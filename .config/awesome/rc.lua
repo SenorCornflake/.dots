@@ -69,8 +69,12 @@ notification.use(beautiful.notification)
 -- Set the wallpaper defined in the beautiful theme
 util.set_wallpaper()
 
--- Launch the compositor
+-- Launch programs
 programs.compositor()
+programs.disk_automounter()
+programs.polkit()
 
 -- Load any session saved previously
 util.session.load()
+
+

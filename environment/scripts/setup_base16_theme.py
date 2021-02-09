@@ -20,6 +20,7 @@ theme = yaml.load(theme, Loader=yaml.FullLoader)
 # Genrate plain color wallpaper
 os.system('convert -size 1920x1080 xc:#{} ~/Pictures/wallpapers/generated.png'.format(theme["base00"]))
 
+
 settings = {
     # GENERAL
     "awesome.general.border_normal"       : "#" + theme["base01"],

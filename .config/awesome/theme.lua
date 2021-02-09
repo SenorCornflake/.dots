@@ -5,11 +5,11 @@ local M = {}
 
 -- Generic Settings
 M.general = {
-	border_normal = "#26232a",
-	border_focused = "#aa573c",
+	border_normal = "#1f1d1c",
+	border_focused = "#c9a470",
 	border_width = xresources.apply_dpi(2),
 	gap_size = xresources.apply_dpi(5),
-	wallpaper = "/home/breton/Pictures/wallpapers/generated.png",
+	wallpaper = "/home/breton/Pictures/wallpapers/clouds-behind-black-forest.jpg",
 }
 
 
@@ -19,45 +19,45 @@ M.alpha = {
 		-- alpha.bar.font
 		font = "Dina 7",
 		-- alpha.bar.bg
-		bg = "#19171c",
+		bg = "#0e0a0a",
 		-- alpha.bar.fg
-		fg = "#8b8792",
+		fg = "#727a7c",
 		-- alpha.bar.focused_tag_fg
-		focused_tag_fg = "#aa573c",
+		focused_tag_fg = "#c9a470",
 		-- alpha.bar.occupied_tag_fg
-		occupied_tag_fg = "#2a9292",
+		occupied_tag_fg = "#e19d5c",
 		-- alpha.bar.empty_tag_fg
-		empty_tag_fg = "#655f6d",
+		empty_tag_fg = "#6c5a5e",
 		-- alpha.bar.label_fg
-		label_fg = "#955ae7",
+		label_fg = "#bd8465",
 		-- alpha.bar.decoration_fg
-		decoration_fg = "#576ddb",
+		decoration_fg = "#bb9386",
 		-- alpha.bar.muted_fg
-		muted_fg = "#be4678",
+		muted_fg = "#8c8a8b",
 		-- alpha.bar.low_battery_fg
-		low_battery_fg = "#be4678",
+		low_battery_fg = "#8c8a8b",
 		-- alpha.bar.middle_battery_fg
-		middle_battery_fg = "#a06e3b",
+		middle_battery_fg = "#9f7d74",
 		-- alpha.bar.full_battery_fg
-		full_battery_fg = "#2a9292",
+		full_battery_fg = "#e19d5c",
 	},
 	titlebar = {
 		-- alpha.titlebar.font
 		font = "Dina 7",
 		-- alpha.titlebar.bg_normal
-		bg_normal = "#26232a",
+		bg_normal = "#1f1d1c",
 		-- alpha.titlebar.fg_normal
-		fg_normal = "#aa573c",
+		fg_normal = "#c9a470",
 		-- alpha.titlebar.bg_focused
-		bg_focused = "#aa573c",
+		bg_focused = "#c9a470",
 		-- alpha.titlebar.fg_focused
-		fg_focused = "#26232a",
+		fg_focused = "#1f1d1c",
 	},
 	notification = {
 		-- alpha.notification.bg
-		bg = "#19171c",
+		bg = "#0e0a0a",
 		-- alpha.notification.fg
-		fg = "#8b8792",
+		fg = "#727a7c",
 		-- alpha.notification.font
 		font = "Dina 7",
 	}

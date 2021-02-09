@@ -88,10 +88,10 @@ vim.cmd ":highlight link LspDiagnosticsDefaultWarning Tag"
 vim.cmd ":highlight link LspDiagnosticsDefaultInformation Function"
 vim.cmd ":highlight link LspDiagnosticsDefaultHint Special"
 
-vim.cmd "sign define LspDiagnosticsSignError text=E texthl=LspDiagnosticsSignError linehl= numhl="
-vim.cmd "sign define LspDiagnosticsSignWarning text=W texthl=LspDiagnosticsSignWarning linehl= numhl="
-vim.cmd "sign define LspDiagnosticsSignInformation text=I texthl=LspDiagnosticsSignInformation linehl= numhl="
-vim.cmd "sign define LspDiagnosticsSignHint text=H texthl=LspDiagnosticsSignHint linehl= numhl="
+vim.cmd "sign define LspDiagnosticsSignError text=E texthl=LspDiagnosticsSignError linehl= numhl=LspDiagnosticsSignError"
+vim.cmd "sign define LspDiagnosticsSignWarning text=W texthl=LspDiagnosticsSignWarning linehl= numhl=LspDiagnosticsSignWarning"
+vim.cmd "sign define LspDiagnosticsSignInformation text=I texthl=LspDiagnosticsSignInformation linehl= numhl=LspDiagnosticsSignInformation"
+vim.cmd "sign define LspDiagnosticsSignHint text=H texthl=LspDiagnosticsSignHint linehl= numhl=LspDiagnosticsSignHint"
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {
