@@ -34,40 +34,40 @@ window:
   decorations: none
 
 # THEME
-# Base16 Generated - alacritty color config
-# Flavours
+# Base16 auto-generated - alacritty color config
+# Auto Base16 Theme (https://github.com/makuto/auto-base16-theme/)
 colors:
   # Default colors
   primary:
-    background: '0xdae1e4'
-    foreground: '0x421c1b'
+    background: '0x0e0a0a'
+    foreground: '0x727a7c'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0xdae1e4'
-    cursor: '0x421c1b'
+    text: '0x0e0a0a'
+    cursor: '0x727a7c'
 
   # Normal colors
   normal:
-    black:   '0xdae1e4'
-    red:     '0x596266'
-    green:   '0x9e4637'
-    yellow:  '0x5d575e'
-    blue:    '0xaf1a17'
-    magenta: '0x904e46'
-    cyan:    '0x805650'
-    white:   '0x421c1b'
+    black:   '0x0e0a0a'
+    red:     '0xe19d5c'
+    green:   '0xc9a470'
+    yellow:  '0x8c8a8b'
+    blue:    '0x9f7d74'
+    magenta: '0xc9a470'
+    cyan:    '0xbb9386'
+    white:   '0x727a7c'
 
   # Bright colors
   bright:
-    black:   '0x7f6b6c'
-    red:     '0x745b53'
-    green:   '0xbcb9bc'
-    yellow:  '0x9d9294'
-    blue:    '0x604344'
-    magenta: '0x381717'
-    cyan:    '0x885349'
-    white:   '0x2e1313'
+    black:   '0x6c5a5e'
+    red:     '0xbd8465'
+    green:   '0x1f1d1c'
+    yellow:  '0x323134'
+    blue:    '0x866a67'
+    magenta: '0x403b43'
+    cyan:    '0x9f7d74'
+    white:   '0x534548'
 
 draw_bold_text_with_bright_colors: false
 

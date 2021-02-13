@@ -7,14 +7,14 @@ if len(sys.argv) < 2:
     print("Provide a base16 theme")
     sys.exit()
 
-theme = os.path.expanduser(sys.argv[1])
-theme_name = os.path.splitext(os.path.basename(theme))[0]
+theme_path = os.path.expanduser(sys.argv[1])
+theme_name = os.path.splitext(os.path.basename(theme_path))[0]
 
-if not os.path.exists(theme):
+if not os.path.exists(theme_path):
     print("Path does not exist")
     sys.exit()
 
-theme = open(theme, 'r').read()
+theme = open(theme_path, 'r').read()
 theme = yaml.load(theme, Loader=yaml.FullLoader)
 
 # Genrate plain color wallpaper
@@ -67,11 +67,11 @@ for setting in settings.keys():
     value = settings[setting]
     os.system('exconman set "{}" "{}"'.format(setting, value))
 
-wallpaper = os.popen("exconman get awesome.general.wallpaper").read()[:-1]
-wallpaper = os.path.splitext(os.path.basename(wallpaper))[0]
+wallpaper_path = os.popen("exconman get awesome.general.wallpaper").read()[:-1]
+wallpaper_name = os.path.splitext(os.path.basename(wallpaper_path))[0]
 
 # Disable shadows if the wallpaper is generated (because it's ugly)
-if wallpaper == "generated":
+if wallpaper_name == "generated":
     os.system("exconman set picom.shadow false")
 
 # Reload awesomewm
@@ -79,4 +79,9 @@ os.system('awesome-client "require(\'util\').session.restart()" &')
 # Reload neovim colorscheme
 os.system('python ~/environment/scripts/execute_command_for_all_neovim_instances.py ":luafile ~/.config/nvim/lua/config/opts.lua" &')
 
-sys.exit()
+# Lastly, because it takes the longest time, create a base16 colored version of the current wallpaper
+os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, wallpaper_path))
+
+if wallpaper_name == "generated_from_picture":
+    print("Re-applying wallpaper...")
+    os.system('awesome-client "require(\\"util\\").set_wallpaper(\\"{}\\")"'.format(os.path.expanduser("~/Pictures/wallpapers/generated_from_picture.jpg")))
