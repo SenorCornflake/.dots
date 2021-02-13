@@ -23,11 +23,21 @@ function M.compositor()
 end
 
 function M.disk_automounter()
-	awful.spawn.with_shell("udiskie &")
+	awful.spawn.easy_async_with_shell("pgrep udiskie", function(pid)
+		-- Only start udiskie if it's not already running
+		if #pid == 0 then
+			awful.spawn.with_shell("udiskie &")
+		end
+	end)
 end
 
 function M.polkit()
-	awful.spawn.with_shell("exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &")
+	awful.spawn.easy_async_with_shell("pgrep polkit-gnome-authentication-agent-1", function(pid)
+		-- Only start polkit if it's not already running
+		if #pid == 0 then
+			awful.spawn.with_shell("exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &")
+		end
+	end)
 end
 
 return M

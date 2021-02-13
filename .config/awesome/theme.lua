@@ -5,8 +5,8 @@ local M = {}
 
 -- Generic Settings
 M.general = {
-	border_normal = "#1f1d1c",
-	border_focused = "#bd8465",
+	border_normal = "#27292c",
+	border_focused = "#ff9800",
 	border_width = xresources.apply_dpi(2),
 	gap_size = xresources.apply_dpi(5),
 	wallpaper = "/home/breton/Pictures/wallpapers/generated_from_picture.jpg",
@@ -19,45 +19,45 @@ M.alpha = {
 		-- alpha.bar.font
 		font = "Dina 7",
 		-- alpha.bar.bg
-		bg = "#0e0a0a",
+		bg = "#202124",
 		-- alpha.bar.fg
-		fg = "#727a7c",
+		fg = "#80868b",
 		-- alpha.bar.focused_tag_fg
-		focused_tag_fg = "#bd8465",
+		focused_tag_fg = "#ff9800",
 		-- alpha.bar.occupied_tag_fg
-		occupied_tag_fg = "#c9a470",
+		occupied_tag_fg = "#00e676",
 		-- alpha.bar.empty_tag_fg
-		empty_tag_fg = "#6c5a5e",
+		empty_tag_fg = "#44464d",
 		-- alpha.bar.label_fg
-		label_fg = "#c9a470",
+		label_fg = "#673ab7",
 		-- alpha.bar.decoration_fg
-		decoration_fg = "#9f7d74",
+		decoration_fg = "#2196f3",
 		-- alpha.bar.muted_fg
-		muted_fg = "#e19d5c",
+		muted_fg = "#f44336",
 		-- alpha.bar.low_battery_fg
-		low_battery_fg = "#e19d5c",
+		low_battery_fg = "#f44336",
 		-- alpha.bar.middle_battery_fg
-		middle_battery_fg = "#8c8a8b",
+		middle_battery_fg = "#ffeb3b",
 		-- alpha.bar.full_battery_fg
-		full_battery_fg = "#c9a470",
+		full_battery_fg = "#00e676",
 	},
 	titlebar = {
 		-- alpha.titlebar.font
 		font = "Dina 7",
 		-- alpha.titlebar.bg_normal
-		bg_normal = "#1f1d1c",
+		bg_normal = "#27292c",
 		-- alpha.titlebar.fg_normal
-		fg_normal = "#bd8465",
+		fg_normal = "#ff9800",
 		-- alpha.titlebar.bg_focused
-		bg_focused = "#bd8465",
+		bg_focused = "#ff9800",
 		-- alpha.titlebar.fg_focused
-		fg_focused = "#1f1d1c",
+		fg_focused = "#27292c",
 	},
 	notification = {
 		-- alpha.notification.bg
-		bg = "#0e0a0a",
+		bg = "#202124",
 		-- alpha.notification.fg
-		fg = "#727a7c",
+		fg = "#80868b",
 		-- alpha.notification.font
 		font = "Dina 7",
 	}

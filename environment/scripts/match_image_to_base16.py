@@ -38,6 +38,7 @@ go_nord.add_color_to_palette("#" + theme["base0D"])
 go_nord.add_color_to_palette("#" + theme["base0E"])
 go_nord.add_color_to_palette("#" + theme["base0F"])
 
+open(os.path.expanduser("~/environment/cache/last_converted_wallpaper.txt"), "w").write(picture_path)
 picture_file_name = os.path.basename(picture_path)
 base16_theme_name = os.path.basename(theme_path).replace(".yml", "").replace(".yaml", "")
 
