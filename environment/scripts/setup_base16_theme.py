@@ -57,7 +57,7 @@ settings = {
     "rofi.alpha.prompt_fg"                : "#" + theme["base0F"],
 
     # ALACRITTY
-    "alacritty.theme"                     : "~/environment/themes/alacritty/base16-" + theme_name + ".yml",
+    "alacritty.theme"                     : "~/environment/themes/alacritty/colors/base16-" + theme_name + ".yml",
 
     # NEOVIM
     "neovim.colorscheme"                  : "base16-" + theme_name
