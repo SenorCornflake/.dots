@@ -4,12 +4,13 @@ for k, _ in pairs(package.loaded) do
 	end
 end
 
+require "config.kommentary"
 require "config.plugins"
 require "config.opts"
 require "config.bindings"
 require "config.lsp"
 require "config.treesitter"
-require "config.completion"
+require "config.nvim_compe"
 require "config.rnvimr"
 require "config.rooter"
 require "config.statusline"

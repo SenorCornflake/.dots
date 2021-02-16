@@ -13,65 +13,67 @@ end
 vim.g.mapleader = " "
 
 -- Easy normal mode
-map_s("i", "kj", "<Esc>")
+vim.api.nvim_set_keymap("i", "kj", "<Esc>", { noremap = true, silent = true })
 
 -- Easy write
-map("n", "<leader>w", ":w<cr>")
+vim.api.nvim_set_keymap("n", "<leader>w", ":w<cr>", { noremap = true, silent = true })
 
 -- Easy quit
-map("n", "<C-q>", ":q<cr>")
-
-
--- Easier file completion
-map_s("i", "<C-f>", "<C-x><C-f>")
+vim.api.nvim_set_keymap("n", "<C-q>", ":q<cr>", { noremap = true, silent = true })
 
 -- Reload neovim
-map_s('n', '<leader>,', ':luafile ~/.config/nvim/init.lua<cr>')
+vim.api.nvim_set_keymap('n', '<leader>,', ':luafile ~/.config/nvim/init.lua<cr>', { noremap = true, silent = true })
 
 -- Better split navigation
-map_s('n', '<C-h>', '<C-w>h')
-map_s('n', '<C-j>', '<C-w>j')
-map_s('n', '<C-k>', '<C-w>k')
-map_s('n', '<C-l>', '<C-w>l')
+vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
 
 -- Delete using the black hole register
-map_s('n', 'x', '"_d')
+vim.api.nvim_set_keymap('n', 'x', '"_d', { noremap = true, silent = true })
 
 --Remove THE ANNOYING command line window and ex mode
-map('n', 'q:', ':echo "CRISIS AVERTED"<cr>')
-map('n', 'Q', ':echo "CRISIS AVERTED"<cr>')
+vim.api.nvim_set_keymap('n', 'q:', ':echo "CRISIS AVERTED"<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'Q', ':echo "CRISIS AVERTED"<cr>',  { noremap = true, silent = true })
 
 -- Use Tab in popup menus
-map_xs('i', '<Tab>', 'pumvisible() ? "<C-n>" : "<Tab>"')
-map_xs('i', '<S-Tab>', 'pumvisible() ? "<C-p>" : "<S-Tab>"')
+vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "<C-n>" : "<Tab>"',     { expr = true, noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "<C-p>" : "<S-Tab>"', { expr = true, noremap = true, silent = true })
 
 -- Toggle Rnvimr
-map_s('n', '<leader>e', ":RnvimrToggle<cr>")
-
+vim.api.nvim_set_keymap('n', '<leader>e', ":RnvimrToggle<cr>", { noremap = true, silent = true })
 
 -- Telescope
-map('n', '<leader>ff', ':lua require("telescope.builtin").find_files()<cr>')
-map('n', '<leader>fg', ':lua require("telescope.builtin").live_grep()<cr>')
-map('n', '<leader>fb', ':lua require("telescope.builtin").buffers()<cr>')
-map('n', '<leader>fs', ':lua require("telescope.builtin").lsp_document_symbols()<cr>')
-map('n', '<leader>fS', ':lua require("telescope.builtin").lsp_workspace_symbols()<cr>')
-map('n', '<leader>fa', ':lua require("telescope.builtin").lsp_code_actions()<cr>')
-map('n', '<leader>fm', ':lua require("telescope.builtin").keymaps()<cr>')
-map('n', '<leader>ft', ':lua require("telescope.builtin").treesitter()<cr>')
-map('n', '<leader>fh', ':lua require("telescope.builtin").highlights()<cr>')
-map('n', '<leader>fp', ':lua require("telescope").extensions.packer.plugins()<cr>')
+vim.api.nvim_set_keymap('n', '<leader>ff', ':lua require("telescope.builtin").find_files()<cr>',            { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fg', ':lua require("telescope.builtin").live_grep()<cr>',             { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fb', ':lua require("telescope.builtin").buffers()<cr>',               { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fs', ':lua require("telescope.builtin").lsp_document_symbols()<cr>',  { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fS', ':lua require("telescope.builtin").lsp_workspace_symbols()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fa', ':lua require("telescope.builtin").lsp_code_actions()<cr>',      { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fm', ':lua require("telescope.builtin").keymaps()<cr>',               { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ft', ':lua require("telescope.builtin").treesitter()<cr>',            { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fh', ':lua require("telescope.builtin").highlights()<cr>',            { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fp', ':lua require("telescope").extensions.packer.plugins()<cr>',     { noremap = true, silent = true })
 
 -- LSP
-map('n', '<leader>ld', ':lua vim.lsp.buf.definition()<cr>')
-map('n', '<leader>lD', ':lua vim.lsp.buf.declaration()<cr>')
-map('n', '<leader>li', ':lua vim.lsp.buf.implementation()<cr>')
-map('n', '<leader>ls', ':lua vim.lsp.buf.signature_help()<cr>')
-map('n', '<leader>lk', ':lua vim.lsp.buf.hover()<cr>')
-map('n', '<leader>lr', ':lua vim.lsp.buf.rename()<cr>')
-map('n', '<leader>lR', ':lua vim.lsp.buf.references()<cr>')
-map('n', '<leader>le', ':lua vim.lsp.diagnostic.show_line_diagnostics()<cr>')
-map('n', '<leader>lH', ':lua require("lsp_extensions").inlay_hints()<cr>')
-
+vim.api.nvim_set_keymap('n', '<leader>ld', ':lua vim.lsp.buf.definition()<cr>',                   { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>lD', ':lua vim.lsp.buf.declaration()<cr>',                  { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>li', ':lua vim.lsp.buf.implementation()<cr>',               { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ls', ':lua vim.lsp.buf.signature_help()<cr>',               { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>lk', ':lua vim.lsp.buf.hover()<cr>',                        { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>lr', ':lua vim.lsp.buf.rename()<cr>',                       { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>lR', ':lua vim.lsp.buf.references()<cr>',                   { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>le', ':lua vim.lsp.diagnostic.show_line_diagnostics()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>lH', ':lua require("lsp_extensions").inlay_hints()<cr>',    { noremap = true, silent = true })
 
 -- Vim Rooter
-map('n', '<leader>.', ':Rooter<cr>')
+vim.api.nvim_set_keymap('n', '<leader>.', ':Rooter<cr>', { noremap = true, silent = true })
+
+-- Kommentary
+vim.api.nvim_set_keymap("n", "<leader>cc", "<Plug>kommentary_line_default",  { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>c", "<Plug>kommentary_motion_default", { silent = true })
+vim.api.nvim_set_keymap("v", "<leader>c", "<Plug>kommentary_visual_default", { silent = true })
+
+-- Glow
+vim.api.nvim_set_keymap("n", "<leader>p", ":Glow<cr>", { noremap = true, silent = true })

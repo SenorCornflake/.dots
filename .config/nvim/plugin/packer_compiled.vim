@@ -23,11 +23,12 @@ if not string.find(package.cpath, install_cpath_pattern, 1, true) then
 end
 
 local function try_loadstring(s, component, name)
-  local success, err = pcall(loadstring(s))
+  local success, result = pcall(loadstring(s))
   if not success then
     print('Error running ' .. component .. ' for ' .. name)
-    error(err)
+    error(result)
   end
+  return result
 end
 
 _G.packer_plugins = {
@@ -43,9 +44,29 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
+  ["glow.nvim"] = {
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/glow.nvim"
+  },
+  kommentary = {
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/kommentary"
+  },
   ["lsp_extensions.nvim"] = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/lsp_extensions.nvim"
+  },
+  ["lspkind-nvim"] = {
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
+  },
+  ["nvim-bqf"] = {
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/nvim-bqf"
+  },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
   ["nvim-compe"] = {
     loaded = true,
@@ -61,6 +82,7 @@ _G.packer_plugins = {
   },
   ["packer.nvim"] = {
     loaded = false,
+    needs_bufread = false,
     path = "/home/breton/.local/share/nvim/site/pack/packer/opt/packer.nvim"
   },
   ["plenary.nvim"] = {

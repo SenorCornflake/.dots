@@ -105,10 +105,36 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 -- Rust Inlay hints
 vim.cmd('autocmd InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *.rs :lua require("lsp_extensions").inlay_hints{ prefix = " -- ", highlight = "Special", aligned = true, enabled = {"ChainingHint"} }')
 
+
 -- Show diagnostics on hover
 --vim.cmd 'autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()'
 
 -- Completion
 --vim.cmd "autocmd BufEnter * lua require'completion'.on_attach()"
 
-
+-- Completion Icons
+require('lspkind').init({
+    -- with_text = true,
+    -- symbol_map = {
+    --   Text = '',
+    --   Method = 'ƒ',
+    --   Function = '',
+    --   Constructor = '',
+    --   Variable = '',
+    --   Class = '',
+    --   Interface = 'ﰮ',
+    --   Module = '',
+    --   Property = '',
+    --   Unit = '',
+    --   Value = '',
+    --   Enum = '了',
+    --   Keyword = '',
+    --   Snippet = '﬌',
+    --   Color = '',
+    --   File = '',
+    --   Folder = '',
+    --   EnumMember = '',
+    --   Constant = '',
+    --   Struct = ''
+    -- },
+})

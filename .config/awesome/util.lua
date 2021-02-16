@@ -37,8 +37,11 @@ function M.session.restart()
 			tags[t.index] = settings
 		end
 
+
 		screens[s.index] = tags
 	end)
+
+	--local clients = {}I
 
 	local settings = {
 		focused_screen = focused_screen,

@@ -73,9 +73,9 @@ os.system('convert -size 1920x1080 xc:#{} ~/Pictures/wallpapers/generated.png'.f
 os.system('notify-send "Generated plain wallpaper"')
 
 # Generate flatcolor base16 theme
-os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-2\" --output-root ~/.themes/FlatColor/gtk-2.0 --output-file colors2".format(theme_path))
-os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-3\" --output-root ~/.themes/FlatColor/gtk-3.0 --output-file colors3".format(theme_path))
-os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-3\" --output-root ~/.themes/FlatColor/gtk-3.20 --output-file colors3".format(theme_path))
+os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-2\" --output-root ~/.themes/FlatColor/gtk-2.0 --output-file colors2 -d".format(theme_path))
+os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-3\" --output-root ~/.themes/FlatColor/gtk-3.0 --output-file colors3 -d".format(theme_path))
+os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-3\" --output-root ~/.themes/FlatColor/gtk-3.20 --output-file colors3 -d".format(theme_path))
 os.system('notify-send "Built gtk-flatcolor schemes"')
 
 # Generate icon theme
@@ -84,7 +84,6 @@ os.system("notify-send \"Generated icons\"")
 
 # Convert current wallpaper to base16 theme
 if wallpaper_name == "generated_from_picture":
-    print("Re-applying wallpaper...")
     last_converted_wallpaper = open(os.path.expanduser("~/environment/cache/last_converted_wallpaper.txt"), "r").read()
     os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, last_converted_wallpaper))
 else:
@@ -102,4 +101,5 @@ os.system('awesome-client "require(\'util\').session.restart()" &')
 # Reload neovim colorscheme
 os.system('python ~/environment/scripts/execute_command_for_all_neovim_instances.py ":luafile ~/.config/nvim/lua/config/opts.lua" &')
 # Reload xsettingsd
-os.system('killall xsettingsd && xsettingsd &')
+os.system('killall xsettingsd')
+os.system('xsettingsd &')
