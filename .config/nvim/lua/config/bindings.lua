@@ -1,15 +1,3 @@
-local map_s = function(mode, left, right)
-	vim.api.nvim_set_keymap(mode, left, right, { noremap = true, silent = true })
-end
-
-local map = function(mode, left, right)
-	vim.api.nvim_set_keymap(mode, left, right, { noremap = true })
-end
-
-local map_xs = function(mode, left, right)
-	vim.api.nvim_set_keymap(mode, left, right, { noremap = true, silent = true, expr = true})
-end
-
 vim.g.mapleader = " "
 
 -- Easy normal mode
