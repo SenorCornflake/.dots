@@ -77,3 +77,11 @@ vim.api.nvim_set_keymap("v", "<leader>c", "<Plug>kommentary_visual_default", { s
 
 -- Glow
 vim.api.nvim_set_keymap("n", "<leader>p", ":Glow<cr>", { noremap = true, silent = true })
+
+-- Git
+vim.api.nvim_set_keymap("n", "<leader>gc", ":Git commit<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>ga", ":Git add ",       { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>gp", ":Git push<cr>",   { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>gP", ":Git pull<cr>",   { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<cr>",  { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>gl", ":Git log<cr>",    { noremap = true })
