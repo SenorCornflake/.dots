@@ -99,10 +99,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/rnvimr"
   },
-  ["suda.vim"] = {
-    loaded = true,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/suda.vim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/telescope.nvim"
@@ -122,10 +118,6 @@ _G.packer_plugins = {
   ["vim-smoothie"] = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-smoothie"
-  },
-  ["vim-surround"] = {
-    loaded = true,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-surround"
   }
 }
 

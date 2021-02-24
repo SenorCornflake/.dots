@@ -34,40 +34,40 @@ window:
   decorations: none
 
 # THEME
-# Base16 Tomorrow Night - alacritty color config
-# Chris Kempson (http://chriskempson.com)
+# Base16 auto-generated - alacritty color config
+# Auto Base16 Theme (https://github.com/makuto/auto-base16-theme/)
 colors:
   # Default colors
   primary:
-    background: '0x1d1f21'
-    foreground: '0xc5c8c6'
+    background: '0x101816'
+    foreground: '0x3887c0'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x1d1f21'
-    cursor: '0xc5c8c6'
+    text: '0x101816'
+    cursor: '0x3887c0'
 
   # Normal colors
   normal:
-    black:   '0x1d1f21'
-    red:     '0xcc6666'
-    green:   '0xb5bd68'
-    yellow:  '0xf0c674'
-    blue:    '0x81a2be'
-    magenta: '0xb294bb'
-    cyan:    '0x8abeb7'
-    white:   '0xc5c8c6'
+    black:   '0x101816'
+    red:     '0xd45077'
+    green:   '0xe54755'
+    yellow:  '0x6be4b9'
+    blue:    '0x7d8997'
+    magenta: '0x65a0a4'
+    cyan:    '0x5d8fcc'
+    white:   '0x3887c0'
 
   # Bright colors
   bright:
-    black:   '0x969896'
-    red:     '0xde935f'
-    green:   '0x282a2e'
-    yellow:  '0x373b41'
-    blue:    '0xb4b7b4'
-    magenta: '0xe0e0e0'
-    cyan:    '0xa3685a'
-    white:   '0xffffff'
+    black:   '0x606169'
+    red:     '0x4aa6bf'
+    green:   '0x2e221e'
+    yellow:  '0x432234'
+    blue:    '0x8b5672'
+    magenta: '0x3c3d42'
+    cyan:    '0x59c5ba'
+    white:   '0x5e3a4d'
 
 draw_bold_text_with_bright_colors: false
 

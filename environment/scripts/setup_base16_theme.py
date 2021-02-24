@@ -78,6 +78,10 @@ os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base1
 os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-3\" --output-root ~/.themes/FlatColor/gtk-3.20 --output-file colors3 -d".format(theme_path))
 os.system('notify-send "Built gtk-flatcolor schemes"')
 
+# Generate Neovim Colorscheme (Even though this is useless, I placed it here so that if I create my own base16 theme I do not have to build it manually)
+os.system('base16-builder build --scheme {} --template-repo ~/environment/base16/templates/alacritty --template-name default --output-root ~/environment/themes/alacritty'.format(theme_path))
+os.system('base16-builder build --scheme {} --template-repo ~/environment/base16/templates/vim --output-root ~/.local/share/nvim/site/pack/packer/start/vim-base16-colorschemes'.format(theme_path))
+
 # Generate icon theme
 os.system("exec ~/environment/scripts/generate_archdroid_icons.sh {}".format(theme["base0D"]))
 os.system("notify-send \"Generated icons\"")

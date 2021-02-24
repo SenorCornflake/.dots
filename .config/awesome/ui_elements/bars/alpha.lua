@@ -109,7 +109,7 @@ function M.setup()
 		vicious.register(ssid, vicious.widgets.wifi, "${ssid} ", 10, "wlan0")
 
 		local net = wibox.widget.textbox()
-		vicious.register(net, vicious.widgets.net, "${wlan0 down_kb} kb/s ${wlan0 up_kb} kb/s", 2);
+		vicious.register(net, vicious.widgets.net, "${wlan0 down_kb} KB/s ${wlan0 up_kb} KB/s", 2);
 
 		-- local cpu_freq = wibox.widget.textbox()
 		-- vicious.register(

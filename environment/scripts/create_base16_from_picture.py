@@ -12,13 +12,6 @@ if len(sys.argv) > 2:
     # Use flavours
     os.system('flavours generate {} "{}" --stdout > ~/environment/base16/schemes/flavours/flavours.yaml'.format(type, picture))
 
-    # Build the generated and 
-    os.system('base16-builder build --scheme ~/environment/base16/schemes/schemer2/schemer2.yaml --template-repo ~/environment/base16/templates/alacritty --template-name default --output-root ~/environment/themes/alacritty')
-    os.system('base16-builder build --scheme ~/environment/base16/schemes/schemer2/schemer2.yaml --template-repo ~/environment/base16/templates/vim --output-root ~/.local/share/nvim/site/pack/packer/start/vim-base16-colorschemes')
-
-    os.system('base16-builder build --scheme ~/environment/base16/schemes/flavours/flavours.yaml --template-repo ~/environment/base16/templates/alacritty --template-name default --output-root ~/environment/themes/alacritty')
-    os.system('base16-builder build --scheme ~/environment/base16/schemes/flavours/flavours.yaml --template-repo ~/environment/base16/templates/vim --output-root ~/.local/share/nvim/site/pack/packer/start/vim-base16-colorschemes')
-
     os.system('exconman set awesome.general.wallpaper \"{}\"'.format(picture))
 
     # Enables shadows

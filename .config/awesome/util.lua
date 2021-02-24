@@ -23,6 +23,7 @@ function M.session.restart()
 
 	local screens = {}
 
+	-- Save tag state
 	awful.screen.connect_for_each_screen(function(s)
 		local tags = {}
 
@@ -41,12 +42,19 @@ function M.session.restart()
 		screens[s.index] = tags
 	end)
 
-	--local clients = {}I
+	-- Save client state
+	local clients = {}
+
+	for i, c in pairs(client.get()) do
+		clients[c.window] = {}
+		clients[c.window].geometry = c:geometry()
+	end
 
 	local settings = {
 		focused_screen = focused_screen,
 		focused_tag = focused_tag,
 		screens = screens,
+		clients = clients
 	}
 
 	table.save(settings, awful.util.get_cache_dir() .. "/session_state")
@@ -91,6 +99,7 @@ function M.session.load()
 		return tag
 	end
 
+	-- Restore tag state for all screens
 	for s_index, tags in pairs(settings.screens) do
 		local s = get_screen_by_idx(s_index)
 
@@ -114,6 +123,13 @@ function M.session.load()
 			if s_index == settings.focused_screen then
 				awful.screen.focus(s)
 			end
+		end
+	end
+
+	-- Restore clients' geometry
+	for _, c in pairs(client.get()) do
+		if settings.clients[c.window] ~= nil then
+			c:geometry(settings.clients[c.window].geometry)
 		end
 	end
 
