@@ -7,6 +7,8 @@ vim.o.updatetime = 300
 vim.o.completeopt = "menuone,noselect"
 vim.o.showmode = false
 vim.o.clipboard = "unnamedplus"
+vim.o.splitbelow = true
+vim.o.splitright = true
 
 -- Had to repeat these as global
 vim.o.tabstop = 4

@@ -420,6 +420,7 @@ M.global_keys = gears.table.join(
 			group = "Layout"
 		}
 	),
+	-- Resize client width factor
 	awful.key(
 		{ shift, alt },
 		"j",
@@ -444,54 +445,54 @@ M.global_keys = gears.table.join(
 	),
 
 	
-	-- Change number of columns
-	--awful.key(
-	--	{ super, alt },
-	--	"j",
-	--	function()
-	--		awful.tag.incncol(-1, nil, true)
-	--	end,
-	--	{
-	--		description = "Decrease number of columns",
-	--		group = "Layout"
-	--	}
-	--),
+	--Change number of columns
+	awful.key(
+	{ super },
+	"[",
+	function()
+		awful.tag.incncol(-1, nil, true)
+	end,
+	{
+		description = "Decrease number of columns",
+		group = "Layout"
+	}
+	),
 
-	--awful.key(
-	--	{ super, alt },
-	--	"k",
-	--	function()
-	--		awful.tag.incncol(1, nil, true)
-	--	end,
-	--	{
-	--		description = "Increase number of columns",
-	--		group = "Layout"
-	--	}
-	--),
+	awful.key(
+	{ super },
+	"]",
+	function()
+		awful.tag.incncol(1, nil, true)
+	end,
+	{
+		description = "Increase number of columns",
+		group = "Layout"
+	}
+	),
 	
-	-- Change number of masters
-	--awful.key(
-	--	{ shift, alt },
-	--	"j",
-	--	function()
-	--		awful.tag.incnmaster(-1, nil, true)
-	--	end,
-	--	{
-	--		description = "Decrease number of masters",
-	--		group = "Layout"
-	--	}
-	--),
-	--awful.key(
-	--	{ shift, alt },
-	--	"k",
-	--	function()
-	--		awful.tag.incnmaster(1, nil, true)
-	--	end,
-	--	{
-	--		description = "Increase number of masters",
-	--		group = "Layout"
-	--	}
-	--),
+	--Change number of masters
+	awful.key(
+	{ shift, super },
+	"[",
+	function()
+		awful.tag.incnmaster(-1, nil, true)
+	end,
+	{
+		description = "Decrease number of masters",
+		group = "Layout"
+	}
+	),
+	awful.key(
+	{ shift, super },
+	"]",
+	function()
+		awful.tag.incnmaster(1, nil, true)
+	end,
+	{
+		description = "Increase number of masters",
+		group = "Layout"
+	}
+	),
 
 	-- Volume control
 	awful.key(

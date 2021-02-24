@@ -3,10 +3,9 @@ local beautiful = require("beautiful")
 local wibox = require("wibox")
 local gears = require("gears")
 
+local vicious = require("vicious");
+
 local util = require("util")
-local volume_helper = require("widgets.volume")
-local battery_helper = require("widgets.battery")
-local net_helper = require("widgets.net")
 
 local M = {}
 
@@ -18,8 +17,8 @@ function M.setup()
 				['1'] = "WEB",
 				['2'] = "DEV",
 				['3'] = "TERM",
-				['4'] = "FILES", 
-				['5'] = "5", 
+				['4'] = "FILES",
+				['5'] = "5",
 				['6'] = "6",
 				['7'] = "7",
 				['8'] = "8",
@@ -68,27 +67,49 @@ function M.setup()
 		})
 
 		local volume = wibox.widget.textbox()
-		volume_helper.textbox(volume, {
-			muted_markup = '<span foreground="' .. beautiful.alpha.bar.muted_fg .. '">muted</span>',
-			volume_markup = '<span foreground="' .. beautiful.alpha.bar.fg .. '">{volume}</span>'
-		})
 
+		vicious.register(
+			volume,
+			vicious.widgets.volume,
+			function(widget, args)
+				local v = args[1]
+				local m = args[2]
+
+				if m == "🔈" then
+					return '<span foreground="' .. beautiful.alpha.bar.muted_fg .. '">muted</span>'
+				else
+					return v
+				end
+			end,
+			1,
+			{"Master", "-D", "pulse"}
+		)
 		local battery = wibox.widget.textbox()
-		battery_helper.textbox(battery, {
-			full = 90,
-			low_markup = '<span foreground="' .. beautiful.alpha.bar.low_battery_fg .. '">!! {capacity} !!</span>',
-			middle_markup = '<span foreground="' .. beautiful.alpha.bar.middle_battery_fg .. '">{capacity}</span>',
-			full_markup = '<span foreground="' .. beautiful.alpha.bar.full_battery_fg .. '">{capacity}</span>',
-			interval = 5
-		})
-		
+
+		vicious.register(
+			battery,
+			vicious.widgets.bat,
+			function(widget, args)
+				local b = args[2]
+				if b <= 20 then
+					return '<span foreground="' .. beautiful.alpha.bar.low_battery_fg .. '">' .. b .. "</span>"
+				elseif b <= 50 then
+					return '<span foreground="' .. beautiful.alpha.bar.middle_battery_fg .. '">' .. b .. "</span>"
+				elseif b <= 100 then
+					return '<span foreground="' .. beautiful.alpha.bar.full_battery_fg .. '">' .. b .. "</span>"
+				else
+					return b
+				end
+			end,
+			60,
+			"BAT0"
+		)
+
+		local ssid = wibox.widget.textbox()
+		vicious.register(ssid, vicious.widgets.wifi, "${ssid} ", 10, "wlan0")
+
 		local net = wibox.widget.textbox()
-		net_helper.textbox(net, {
-			markup = '<span foreground="' .. beautiful.alpha.bar.fg .. '">{ssid} {rx} KB/s {tx} KB/s</span>',
-			unit = "kilobyte",
-			interval = 1,
-			decimal_points = 0
-		})
+		vicious.register(net, vicious.widgets.net, "${wlan0 down_kb} ${wlan0 up_kb}", 2);
 
 		-- Create bar
 		local bar_height = 25
@@ -199,6 +220,10 @@ function M.setup()
 								{
 									widget = wibox.widget.textbox,
 									markup = '<span foreground="' .. beautiful.alpha.bar.label_fg .. '">NET: </span>',
+									font = beautiful.alpha.bar.font
+								},
+								{
+									widget = ssid,
 									font = beautiful.alpha.bar.font
 								},
 								{

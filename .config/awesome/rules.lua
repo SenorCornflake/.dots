@@ -28,7 +28,8 @@ M.rules = {
 			type = {"dialog"}
 		},
 		properties = {
-			ontop = true
+			ontop = true,
+			floating = true
 		}
 	},
 	{
@@ -37,6 +38,15 @@ M.rules = {
 		},
 		properties = {
 			titlebars_enabled = true,
+		}
+	},
+	{ -- Fix firefox always floating, I never used to have this issue, but it happened suddenly and I don't know why
+		rule = {
+			class = "firefox",
+		},
+		properties = {
+			floating = false,
+			maximized = false
 		}
 	}
 }

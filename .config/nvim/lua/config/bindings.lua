@@ -33,7 +33,7 @@ vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "<C-p>" : "<S-Tab>"', { 
 vim.api.nvim_set_keymap('n', '<leader>e', ":RnvimrToggle<cr>", { noremap = true, silent = true })
 
 -- Telescope
-vim.api.nvim_set_keymap('n', '<leader>ff', ':lua require("telescope.builtin").find_files()<cr>',            { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ff', ':lua require("telescope.builtin").find_files({file_ignore_patterns = { "node_modules" }})<cr>',            { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fg', ':lua require("telescope.builtin").live_grep()<cr>',             { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fb', ':lua require("telescope.builtin").buffers()<cr>',               { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fs', ':lua require("telescope.builtin").lsp_document_symbols()<cr>',  { noremap = true, silent = true })

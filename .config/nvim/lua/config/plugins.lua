@@ -9,7 +9,7 @@ vim.api.nvim_command("packadd packer.nvim")
 
 
 return require('packer').startup(function()
-	use { 'wbthomason/packer.nvim', opt = true }
+	use { 'wbthomason/packer.nvim', opt = true } -- Plugin Manager
 	use 'neovim/nvim-lspconfig'                  -- LSP
 	use 'nvim-lua/lsp_extensions.nvim'           -- Exra LSP Stuff
 	use 'hrsh7th/nvim-compe'                     -- Completion
@@ -33,7 +33,8 @@ return require('packer').startup(function()
 		"npxbr/glow.nvim",                       --
 		cmd = ":GlowInstall"                     --
 	}                                            --
-
+	use 'lambdalisue/suda.vim'                   -- Sudo write
+	use 'tpope/vim-surround'                     -- Surround text objects
 	-- Remember hyperstyle
 end)
 
