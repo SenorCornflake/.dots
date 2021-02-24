@@ -186,4 +186,17 @@ function M.read_command(cmd)
 	return result
 end
 
+-- Return the average amount between numbers
+function M.average_of(numbers)
+	local total_amount = 0
+	local total_numbers = 0
+
+	for _, v in pairs(numbers) do
+		total_amount = total_amount + v
+		total_numbers = total_numbers + 1
+	end
+
+	return total_amount / total_numbers
+end
+
 return M

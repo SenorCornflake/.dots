@@ -109,7 +109,45 @@ function M.setup()
 		vicious.register(ssid, vicious.widgets.wifi, "${ssid} ", 10, "wlan0")
 
 		local net = wibox.widget.textbox()
-		vicious.register(net, vicious.widgets.net, "${wlan0 down_kb} ${wlan0 up_kb}", 2);
+		vicious.register(net, vicious.widgets.net, "${wlan0 down_kb} kb/s ${wlan0 up_kb} kb/s", 2);
+
+		-- local cpu_freq = wibox.widget.textbox()
+		-- vicious.register(
+		-- 	cpu_freq,
+		-- 	vicious.widgets.cpuinf,
+		-- 	function(widget, args)
+		-- 		local cpu_id = 0
+		-- 		local cpu_freqs = {}
+
+		-- 		while true do
+		-- 			if args["{cpu" .. cpu_id .. " ghz}"] == nil then
+		-- 				break
+		-- 			else
+		-- 				table.insert(cpu_freqs, args["{cpu" .. cpu_id .. " ghz}"])
+		-- 				cpu_id = cpu_id + 1
+		-- 			end
+		-- 		end
+
+		-- 		return string.format("%.1f GHz", util.average_of(cpu_freqs))
+		-- 	end,
+		-- 	2
+		-- )
+
+		local cpu_usage = wibox.widget.textbox()
+		vicious.register(
+			cpu_usage,
+			vicious.widgets.cpu,
+			"$1%",
+			2
+		)
+		
+		local memory = wibox.widget.textbox()
+		vicious.register(
+			memory,
+			vicious.widgets.mem,
+			"$2 MB",
+			2
+		)
 
 		-- Create bar
 		local bar_height = 25
@@ -152,14 +190,42 @@ function M.setup()
 						right = 10,
 						{
 							layout = wibox.layout.fixed.horizontal,
+							spacing = 10,
 							{
-								widget = wibox.widget.textbox,
-								font = beautiful.alpha.bar.font,
-								markup = '<span foreground="' .. beautiful.alpha.bar.label_fg .. '">TIME: </span>'
+								layout = wibox.layout.fixed.horizontal,
+								{
+									widget = wibox.widget.textbox,
+									font = beautiful.alpha.bar.font,
+									markup = '<span foreground="' .. beautiful.alpha.bar.label_fg .. '">TIME: </span>'
+								},
+								{
+									widget = wibox.widget.textclock('<span foreground="' .. beautiful.alpha.bar.fg .. '" font="' .. beautiful.alpha.bar.font .. '">%a, %d %B, %Y | %H:%M</span>')
+								}
 							},
 							{
-								widget = wibox.widget.textclock('<span foreground="' .. beautiful.alpha.bar.fg .. '" font="' .. beautiful.alpha.bar.font .. '">%a, %d %B, %Y | %H:%M</span>')
-							}
+								layout = wibox.layout.fixed.horizontal,
+								{
+									widget = wibox.widget.textbox,
+									markup = '<span foreground="' .. beautiful.alpha.bar.label_fg .. '">CPU: </span>',
+									font = beautiful.alpha.bar.font
+								},
+								{
+									widget = cpu_usage,
+									font = beautiful.alpha.bar.font
+								}
+							},
+							{
+								layout = wibox.layout.fixed.horizontal,
+								{
+									widget = wibox.widget.textbox,
+									markup = '<span foreground="' .. beautiful.alpha.bar.label_fg .. '">MEM: </span>',
+									font = beautiful.alpha.bar.font
+								},
+								{
+									widget = memory,
+									font = beautiful.alpha.bar.font
+								}
+							},
 						}
 					},
 					{
