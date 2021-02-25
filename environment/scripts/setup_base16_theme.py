@@ -10,7 +10,7 @@ if len(sys.argv) < 2:
 theme_path = os.path.expanduser(sys.argv[1])
 theme_name = os.path.splitext(os.path.basename(theme_path))[0]
 
-os.system("notify-send \"Please wait, this'll take a while.\"")
+os.system("notify-send \"{}\"".format(theme_name))
 
 if not os.path.exists(theme_path):
     print("Path does not exist")
@@ -80,30 +80,37 @@ os.system('notify-send "Built gtk-flatcolor schemes"')
 
 # Generate Neovim Colorscheme (Even though this is useless, I placed it here so that if I create my own base16 theme I do not have to build it manually)
 os.system('base16-builder build --scheme {} --template-repo ~/environment/base16/templates/alacritty --template-name default --output-root ~/environment/themes/alacritty'.format(theme_path))
+os.system("notify-send \"Built Alacritty scheme\"")
 os.system('base16-builder build --scheme {} --template-repo ~/environment/base16/templates/vim --output-root ~/.local/share/nvim/site/pack/packer/start/vim-base16-colorschemes'.format(theme_path))
+os.system("notify-send \"Built Neovim scheme\"")
 
-# Generate icon theme
-os.system("exec ~/environment/scripts/generate_archdroid_icons.sh {}".format(theme["base0D"]))
-os.system("notify-send \"Generated icons\"")
-
-# Convert current wallpaper to base16 theme
-if wallpaper_name == "generated_from_picture":
-    last_converted_wallpaper = open(os.path.expanduser("~/environment/cache/last_converted_wallpaper.txt"), "r").read()
-    os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, last_converted_wallpaper))
-else:
-    os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, wallpaper_path))
-os.system("notify-send \"Converted wallpaper\"")
-
-# Exconman settings
+# Set Exconman settings
 for setting in settings.keys():
     value = settings[setting]
     os.system('exconman set "{}" "{}"'.format(setting, value))
 os.system("notify-send \"Set exconman settings\"")
 
-# Reload awesomewm
-os.system('awesome-client "require(\'util\').session.restart()" &')
 # Reload neovim colorscheme
 os.system('python ~/environment/scripts/execute_command_for_all_neovim_instances.py ":luafile ~/.config/nvim/lua/config/opts.lua" &')
+
+# Reload awesomewm
+os.system('awesome-client "require(\'util\').session.restart()" &')
+
+# Generate icon theme
+os.system("exec ~/environment/scripts/generate_archdroid_icons.sh {}".format(theme["base0D"]))
+os.system("notify-send \"Generated icons\"")
+
 # Reload xsettingsd
 os.system('killall xsettingsd')
 os.system('xsettingsd &')
+
+# Convert current wallpaper to base16 theme
+if wallpaper_name == "generated_from_picture":
+    last_converted_wallpaper = open(os.path.expanduser("~/environment/cache/last_converted_wallpaper.txt"), "r").read()
+    os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, last_converted_wallpaper))
+    os.system("awesome-client 'require(\"util\").set_wallpaper(\"{}\")'".format(wallpaper_path));
+elif wallpaper_name != "generated":
+    os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, wallpaper_path))
+
+os.system("notify-send \"Converted wallpaper\"")
+

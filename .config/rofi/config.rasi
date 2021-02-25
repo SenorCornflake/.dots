@@ -1,9 +1,9 @@
 @import "layouts/alpha.rasi"
 
 * {
-	alpha-bg: #101816;
-	alpha-fg: #3887c0;
-	alpha-fg-focused: #101816;
-	alpha-bg-focused: #5d8fcc;
-	alpha-prompt-fg: #59c5ba;
+	alpha-bg: #1d2021;
+	alpha-fg: #d5c4a1;
+	alpha-fg-focused: #1d2021;
+	alpha-bg-focused: #8ec07c;
+	alpha-prompt-fg: #d65d0e;
 }

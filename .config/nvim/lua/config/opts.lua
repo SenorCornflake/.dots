@@ -39,7 +39,7 @@ vim.wo.foldmethod = "syntax"
 
 vim.g.php_folding = 2
 
-local colorscheme = "base16-schemer2"
+local colorscheme = "base16-gruvbox-dark-hard"
 
 vim.api.nvim_command("colorscheme "..colorscheme)
 

@@ -429,7 +429,7 @@ M.global_keys = gears.table.join(
 		end,
 		{
 			description = "Decrease client width factor",
-			group = "Layout"
+			group = "Client"
 		}
 	),
 	awful.key(
@@ -440,7 +440,29 @@ M.global_keys = gears.table.join(
 		end,
 		{
 			description = "Increase client width factor",
-			group = "Layout"
+			group = "Client"
+		}
+	),
+	awful.key(
+		{ super },
+		"m",
+		function()
+			awful.client.setmaster(client.focus)
+		end,
+		{
+			description = "Make Master",
+			group = "Client"
+		}
+	),
+	awful.key(
+		{ super },
+		"s",
+		function()
+			awful.client.setslave(client.focus)
+		end,
+		{
+			description = "Make Slave",
+			group = "Client"
 		}
 	),
 

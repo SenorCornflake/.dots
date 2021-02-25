@@ -5,11 +5,11 @@ local M = {}
 
 -- Generic Settings
 M.general = {
-	border_normal = "#2e221e",
-	border_focused = "#4aa6bf",
+	border_normal = "#3c3836",
+	border_focused = "#fe8019",
 	border_width = xresources.apply_dpi(2),
 	gap_size = xresources.apply_dpi(5),
-	wallpaper = "/home/breton/Pictures/wallpapers/cube-middle-weird.jpeg",
+	wallpaper = "/home/breton/Pictures/wallpapers/generated_from_picture.jpg",
 }
 
 
@@ -19,45 +19,45 @@ M.alpha = {
 		-- alpha.bar.font
 		font = "Dina 7",
 		-- alpha.bar.bg
-		bg = "#101816",
+		bg = "#1d2021",
 		-- alpha.bar.fg
-		fg = "#3887c0",
+		fg = "#d5c4a1",
 		-- alpha.bar.focused_tag_fg
-		focused_tag_fg = "#4aa6bf",
+		focused_tag_fg = "#fe8019",
 		-- alpha.bar.occupied_tag_fg
-		occupied_tag_fg = "#e54755",
+		occupied_tag_fg = "#b8bb26",
 		-- alpha.bar.empty_tag_fg
-		empty_tag_fg = "#606169",
+		empty_tag_fg = "#665c54",
 		-- alpha.bar.label_fg
-		label_fg = "#65a0a4",
+		label_fg = "#d3869b",
 		-- alpha.bar.decoration_fg
-		decoration_fg = "#7d8997",
+		decoration_fg = "#83a598",
 		-- alpha.bar.muted_fg
-		muted_fg = "#d45077",
+		muted_fg = "#fb4934",
 		-- alpha.bar.low_battery_fg
-		low_battery_fg = "#d45077",
+		low_battery_fg = "#fb4934",
 		-- alpha.bar.middle_battery_fg
-		middle_battery_fg = "#6be4b9",
+		middle_battery_fg = "#fabd2f",
 		-- alpha.bar.full_battery_fg
-		full_battery_fg = "#e54755",
+		full_battery_fg = "#b8bb26",
 	},
 	titlebar = {
 		-- alpha.titlebar.font
 		font = "Dina 7",
 		-- alpha.titlebar.bg_normal
-		bg_normal = "#2e221e",
+		bg_normal = "#3c3836",
 		-- alpha.titlebar.fg_normal
-		fg_normal = "#4aa6bf",
+		fg_normal = "#fe8019",
 		-- alpha.titlebar.bg_focused
-		bg_focused = "#4aa6bf",
+		bg_focused = "#fe8019",
 		-- alpha.titlebar.fg_focused
-		fg_focused = "#2e221e",
+		fg_focused = "#3c3836",
 	},
 	notification = {
 		-- alpha.notification.bg
-		bg = "#101816",
+		bg = "#1d2021",
 		-- alpha.notification.fg
-		fg = "#3887c0",
+		fg = "#d5c4a1",
 		-- alpha.notification.font
 		font = "Dina 7",
 	}
