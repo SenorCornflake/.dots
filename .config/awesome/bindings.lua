@@ -521,48 +521,55 @@ M.global_keys = gears.table.join(
 	 	{ },
 		"XF86AudioRaiseVolume",
 		function ()
-			awful.spawn.with_line_callback(
-				"pulseaudio-ctl up", {
-				exit = function()
-					--widget_helpers.volume.emit_volume_state()
-				end
-			})
+			awful.spawn.with_shell("pulseaudio-ctl up")
 		end,
 		{
 			description = "Raise Volume",
-			group = "Volume"
+			group = "Other"
 		}
 	),
 	awful.key(
 	 	{ },
 		"XF86AudioLowerVolume",
 		function ()
-			awful.spawn.with_line_callback(
-				"pulseaudio-ctl down", {
-				exit = function()
-					--widget_helpers.volume.emit_volume_state()
-				end
-			})
+			awful.spawn.with_shell("pulseaudio-ctl down")
 		end,
 		{
 			description = "Lower Volume",
-			group = "Volume"
+			group = "Other"
 		}
 	),
 	awful.key(
 	 	{ },
 		"XF86AudioMute",
 		function ()
-			awful.spawn.with_line_callback(
-				"pulseaudio-ctl mute", {
-				exit = function()
-					--widget_helpers.volume.emit_volume_state()
-				end
-			})
+			awful.spawn.with_shell("pulseaudio-ctl mute")
 		end,
 		{
 			description = "Mute Volume",
-			group = "Volume"
+			group = "Other"
+		}
+	),
+	awful.key(
+	 	{ },
+		"XF86MonBrightnessUp",
+		function ()
+			awful.spawn.with_shell("brightnessctl set 10%+")
+		end,
+		{
+			description = "Increase brightness",
+			group = "Other"
+		}
+	),
+	awful.key(
+	 	{ },
+		"XF86MonBrightnessDown",
+		function ()
+			awful.spawn.with_shell("brightnessctl set 10%-")
+		end,
+		{
+			description = "Decrease brightness",
+			group = "Other"
 		}
 	)
 

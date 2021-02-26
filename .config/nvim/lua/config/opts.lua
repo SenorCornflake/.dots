@@ -19,6 +19,8 @@ vim.o.autoindent = true
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
 
+vim.o.guifont = "Dina:h9"
+
 -- Buffer Local
 vim.bo.tabstop = 4
 vim.bo.shiftwidth = 4
@@ -39,7 +41,7 @@ vim.wo.foldmethod = "syntax"
 
 vim.g.php_folding = 2
 
-local colorscheme = "base16-gruvbox-dark-hard"
+local colorscheme = "base16-equilibrium-dark"
 
 vim.api.nvim_command("colorscheme "..colorscheme)
 
