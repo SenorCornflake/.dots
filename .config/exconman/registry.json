@@ -256,6 +256,22 @@
 		"value_is_file": true
 	},
 	{
+		"name": "alacritty.font",
+		"file": "~/.config/alacritty/alacritty.yml",
+		"pattern": "family: .*",
+		"replace_value": "family: {value}",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "alacritty.font_size",
+		"file": "~/.config/alacritty/alacritty.yml",
+		"pattern": "size: .*",
+		"replace_value": "size: {value}",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
 		"name": "neovim.colorscheme",
 		"file": "~/.config/nvim/lua/config/opts.lua",
 		"pattern": "local colorscheme = \".+\"",

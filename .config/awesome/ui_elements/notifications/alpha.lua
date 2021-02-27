@@ -10,6 +10,9 @@ local util = require("util")
 local M = {}
 
 M.setup = function()
+	naughty.connect_signal("destroyed", function(n)
+		util.debug.notify(n)
+	end)
 	naughty.connect_signal("request::display", function(n)
 		local box = naughty.layout.box {
 			notification = n,

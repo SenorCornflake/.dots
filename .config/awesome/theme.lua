@@ -5,7 +5,7 @@ local M = {}
 
 -- Generic Settings
 M.general = {
-	border_normal = "#181c22",
+	border_normal = "#1b1b1b",
 	border_focused = "#df5923",
 	border_width = xresources.apply_dpi(2),
 	gap_size = xresources.apply_dpi(5),
@@ -19,15 +19,15 @@ M.alpha = {
 		-- alpha.bar.font
 		font = "Dina 7",
 		-- alpha.bar.bg
-		bg = "#0c1118",
+		bg = "#111111",
 		-- alpha.bar.fg
-		fg = "#afaba2",
+		fg = "#ababab",
 		-- alpha.bar.focused_tag_fg
 		focused_tag_fg = "#df5923",
 		-- alpha.bar.occupied_tag_fg
 		occupied_tag_fg = "#7f8b00",
 		-- alpha.bar.empty_tag_fg
-		empty_tag_fg = "#7b776e",
+		empty_tag_fg = "#777777",
 		-- alpha.bar.label_fg
 		label_fg = "#6a7fd2",
 		-- alpha.bar.decoration_fg
@@ -45,19 +45,19 @@ M.alpha = {
 		-- alpha.titlebar.font
 		font = "Dina 7",
 		-- alpha.titlebar.bg_normal
-		bg_normal = "#181c22",
+		bg_normal = "#1b1b1b",
 		-- alpha.titlebar.fg_normal
 		fg_normal = "#df5923",
 		-- alpha.titlebar.bg_focused
 		bg_focused = "#df5923",
 		-- alpha.titlebar.fg_focused
-		fg_focused = "#181c22",
+		fg_focused = "#1b1b1b",
 	},
 	notification = {
 		-- alpha.notification.bg
-		bg = "#0c1118",
+		bg = "#111111",
 		-- alpha.notification.fg
-		fg = "#afaba2",
+		fg = "#ababab",
 		-- alpha.notification.font
 		font = "Dina 7",
 	}

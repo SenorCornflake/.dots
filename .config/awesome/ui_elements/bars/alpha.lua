@@ -199,7 +199,18 @@ function M.setup()
 									markup = '<span foreground="' .. beautiful.alpha.bar.label_fg .. '">TIME: </span>'
 								},
 								{
-									widget = wibox.widget.textclock('<span foreground="' .. beautiful.alpha.bar.fg .. '" font="' .. beautiful.alpha.bar.font .. '">%a, %d %B, %Y | %H:%M</span>')
+									widget = wibox.widget.textclock('<span foreground="' .. beautiful.alpha.bar.fg .. '" font="' .. beautiful.alpha.bar.font .. '">%H:%M</span>')
+								}
+							},
+							{
+								layout = wibox.layout.fixed.horizontal,
+								{
+									widget = wibox.widget.textbox,
+									font = beautiful.alpha.bar.font,
+									markup = '<span foreground="' .. beautiful.alpha.bar.label_fg .. '">DATE: </span>'
+								},
+								{
+									widget = wibox.widget.textclock('<span foreground="' .. beautiful.alpha.bar.fg .. '" font="' .. beautiful.alpha.bar.font .. '">%a, %d %B, %Y</span>')
 								}
 							},
 							{
