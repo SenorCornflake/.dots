@@ -1,5 +1,29 @@
 [
 	{
+		"name": "awesome.bar",
+		"file": "~/.config/awesome/theme.lua",
+		"pattern": "M\\.bar = \".+\"",
+		"replace_value": "M.bar = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.titlebar",
+		"file": "~/.config/awesome/theme.lua",
+		"pattern": "M\\.titlebar = \".+\"",
+		"replace_value": "M.titlebar = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.notification",
+		"file": "~/.config/awesome/theme.lua",
+		"pattern": "M\\.notification = \".+\"",
+		"replace_value": "M.notification = \"{value}\",",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
 		"name": "awesome.general.border_normal",
 		"file": "~/.config/awesome/theme.lua",
 		"pattern": "border_normal = \".+\",",
@@ -196,6 +220,14 @@
 		"file": "~/.config/awesome/theme.lua",
 		"pattern": "-- alpha.notification.font",
 		"replace_value": "\t\tfont = \"{value}\",",
+		"replace_type": "below",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.alpha.notification.spacing",
+		"file": "~/.config/awesome/theme.lua",
+		"pattern": "-- alpha.notification.spacing",
+		"replace_value": "\t\tspacing = \"{value}\",",
 		"replace_type": "below",
 		"value_is_file": false
 	},

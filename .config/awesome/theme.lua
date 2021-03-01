@@ -60,6 +60,7 @@ M.alpha = {
 		fg = "#ababab",
 		-- alpha.notification.font
 		font = "Dina 7",
+		-- alpha.notification.spacing
 		spacing = 10
 	}
 }
