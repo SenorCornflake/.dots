@@ -73,7 +73,7 @@ local servers = {
 
 for server, config in pairs(servers) do
 	config.on_attach = config.on_attach or function()
-		print('started ' .. server)
+		print('starting ' .. server)
 	end
 
 	lspconfig[server].setup(config)
@@ -104,13 +104,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 
 -- Rust Inlay hints
 vim.cmd('autocmd InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *.rs :lua require("lsp_extensions").inlay_hints{ prefix = " -- ", highlight = "Special", aligned = true, enabled = {"ChainingHint"} }')
-
-
--- Show diagnostics on hover
---vim.cmd 'autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()'
-
--- Completion
---vim.cmd "autocmd BufEnter * lua require'completion'.on_attach()"
 
 -- Completion Icons
 require('lspkind').init({

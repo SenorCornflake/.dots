@@ -16,7 +16,6 @@ local bar = require("ui_elements.bar")
 local titlebar = require("ui_elements.titlebar")
 local notification = require("ui_elements.notification")
 
-
 do
     local in_error = false
     awesome.connect_signal("debug::error", function (err)

@@ -9,7 +9,7 @@ M.general = {
 	border_focused = "#df5923",
 	border_width = xresources.apply_dpi(2),
 	gap_size = xresources.apply_dpi(5),
-	wallpaper = "/home/breton/Pictures/wallpapers/generated.png",
+	wallpaper = "/home/breton/Pictures/wallpapers/generated_from_picture.jpg",
 }
 
 
@@ -60,11 +60,17 @@ M.alpha = {
 		fg = "#ababab",
 		-- alpha.notification.font
 		font = "Dina 7",
+		spacing = 10
 	}
 }
 
 M.bar = "alpha"
 M.titlebar = "alpha"
 M.notification = "alpha"
+
+if M.notification == "alpha" then
+	M.notification_spacing = M.alpha.notification.spacing
+end
+
 
 return M
