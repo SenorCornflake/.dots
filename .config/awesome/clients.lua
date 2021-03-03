@@ -21,4 +21,23 @@ function M.set_at_slave()
 	end)
 end
 
+function M.getwfact(c, t)
+	local c = c or client.focus
+    if not c then return end
+
+    local t = t
+    local w = client.idx(c)
+    if not w then return end
+
+    local data = t.windowfact or {}
+    local colfact = data[w.col] or {}
+    local curr = colfact[w.idx] or 1
+    colfact[w.idx] = curr + add
+
+    -- keep our ratios normalized
+    normalize(colfact, w.num)
+
+    t:emit_signal("property::windowfact")
+end
+
 return M

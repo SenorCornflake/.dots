@@ -45,10 +45,8 @@ _G.packer_plugins = {
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
   ["glow.nvim"] = {
-    commands = { ":GlowInstall" },
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/opt/glow.nvim"
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/glow.nvim"
   },
   kommentary = {
     loaded = true,
@@ -99,6 +97,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/rnvimr"
   },
+  ["suda.vim"] = {
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/suda.vim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/telescope.nvim"
@@ -118,12 +120,12 @@ _G.packer_plugins = {
   ["vim-smoothie"] = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-smoothie"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-surround"
   }
 }
-
-
--- Command lazy-loads
-vim.cmd [[command! -nargs=* -range -bang -complete=file :GlowInstall lua require("packer.load")({'glow.nvim'}, { cmd = ":GlowInstall", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 
 END
 

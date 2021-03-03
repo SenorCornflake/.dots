@@ -31,7 +31,6 @@ return require('packer').startup(function()
 	use 'norcalli/nvim-colorizer.lua'            -- Highlight Color Codes
 	use {                                        -- Markdown file preview
 		"npxbr/glow.nvim",                       --
-		cmd = ":GlowInstall"                     --
 	}                                            --
 	use 'lambdalisue/suda.vim'                   -- Sudo write
 	use 'tpope/vim-surround'                     -- Surround text objects

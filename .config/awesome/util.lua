@@ -45,7 +45,7 @@ function M.session.restart()
 	-- Save client state
 	local clients = {}
 
-	for i, c in pairs(client.get()) do
+	for _, c in pairs(client.get()) do
 		clients[c.window] = {}
 		clients[c.window].geometry = c:geometry()
 	end
@@ -126,7 +126,7 @@ function M.session.load()
 		end
 	end
 
-	-- Restore clients' geometry
+	-- Restore clients
 	for _, c in pairs(client.get()) do
 		if settings.clients[c.window] ~= nil then
 			c:geometry(settings.clients[c.window].geometry)
