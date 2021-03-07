@@ -1,14 +1,13 @@
--- Seperate file for setting up bar
 local awful = require("awful")
 local beautiful = require("beautiful")
 local gears = require("gears")
+local wibox = require("wibox")
 
 local util = require("util")
 
-local bar = {}
+local M = {}
 
-function bar.use(b)
-	require("ui_elements.bars." .. b).setup()
+function M.setup()
 end
 
-return bar
+return M

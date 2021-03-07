@@ -1,12 +1,12 @@
 local xresources = require("beautiful.xresources")
 local gears = require("gears")
 
-local M = {}
+local theme = {}
 
 -- Generic Settings
-M.general = {
+theme.general = {
 	border_normal = "#1b1b1b",
-	border_focused = "#df5923",
+	border_focused = "#6a7fd2",
 	border_width = xresources.apply_dpi(2),
 	gap_size = xresources.apply_dpi(5),
 	wallpaper = "/home/breton/Pictures/wallpapers/generated_from_picture.jpg",
@@ -14,7 +14,7 @@ M.general = {
 
 
 -- Alpha Theme Settings
-M.alpha = {
+theme.alpha = {
 	bar = {
 		-- alpha.bar.font
 		font = "Dina 7",
@@ -23,7 +23,7 @@ M.alpha = {
 		-- alpha.bar.fg
 		fg = "#ababab",
 		-- alpha.bar.focused_tag_fg
-		focused_tag_fg = "#df5923",
+		focused_tag_fg = "#6a7fd2",
 		-- alpha.bar.occupied_tag_fg
 		occupied_tag_fg = "#7f8b00",
 		-- alpha.bar.empty_tag_fg
@@ -47,9 +47,9 @@ M.alpha = {
 		-- alpha.titlebar.bg_normal
 		bg_normal = "#1b1b1b",
 		-- alpha.titlebar.fg_normal
-		fg_normal = "#df5923",
+		fg_normal = "#6a7fd2",
 		-- alpha.titlebar.bg_focused
-		bg_focused = "#df5923",
+		bg_focused = "#6a7fd2",
 		-- alpha.titlebar.fg_focused
 		fg_focused = "#1b1b1b",
 	},
@@ -65,13 +65,43 @@ M.alpha = {
 	}
 }
 
-M.bar = "alpha"
-M.titlebar = "alpha"
-M.notification = "alpha"
+-- Bravo Theme Settings
+theme.bravo = {
+	bar = {
+		-- bravo.bar.font
+		font = "Dina 7",
+		-- bravo.bar.bg
+		bg = "#111111",
+		-- bravo.bar.fg
+		fg = "#ababab",
+		-- bravo.bar.sep_fg
+		sep_fg = "#262626",
+		-- bravo.bar.label_fg
+		label_fg = "#008dd1",
+		-- bravo.bar.focused_tag_fg
+		focused_tag_fg = "#6a7fd2",
+		-- bravo.bar.occupied_tag_fg
+		occupied_tag_fg = "#bb8801",
+		-- bravo.bar.empty_tag_fg
+		empty_tag_fg = "#777777",
+		-- bravo.bar.muted_fg
+		muted_fg = "#f04339",
+	},
+	notification = {
+		-- bravo.notification.bg
+		bg = "#111111",
+		-- bravo.notification.fg
+		fg = "#ababab",
+		-- bravo.notification.font
+		font = "Dina 7",
+		-- bravo.notification.spacing
+		spacing = 0
+	}
+}
+theme.bar = "bravo"
+theme.titlebar = "bravo"
+theme.notification = "alpha"
 
-if M.notification == "alpha" then
-	M.notification_spacing = M.alpha.notification.spacing
-end
+theme.notification_spacing = theme[theme.notification].notification.spacing
 
-
-return M
+return theme

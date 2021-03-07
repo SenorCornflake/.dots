@@ -18,37 +18,37 @@ M.setup = function()
 			border_color = beautiful.general.border_focused,
 			position = "top_right",
 			type = "notification",
-			x = 10,
-			y = 100,
 			bg = beautiful.alpha.notification.bg,
 			fg = beautiful.alpha.notification.fg,
 			widget_template = {
 				widget = wibox.container.margin,
-				margins = 10,
-				layout = wibox.layout.align.horizontal,
+				margins = 0,
 				{
-					widget = wibox.container.margin,
-					margins = xresources.apply_dpi(10),
+					layout = wibox.layout.align.horizontal,
 					{
-						layout = wibox.layout.align.vertical,
+						widget = wibox.container.margin,
+						margins = xresources.apply_dpi(10),
 						{
-							widget = wibox.container.margin,
-							margins = {
-								bottom = xresources.apply_dpi(3),
+							layout = wibox.layout.align.vertical,
+							{
+								widget = wibox.container.margin,
+								margins = {
+									bottom = xresources.apply_dpi(3),
+								},
+								{
+									widget = wibox.widget.textbox,
+									markup = "<b>"..n.title.."</b>",
+									font = beautiful.alpha.notification.font,
+									fg = beautiful.alpha.notification.fg
+								}
 							},
 							{
 								widget = wibox.widget.textbox,
-								markup = "<b>"..n.title.."</b>",
+								fg = beautiful.alpha.notification.fg,
 								font = beautiful.alpha.notification.font,
-								fg = beautiful.alpha.notification.fg
-							}
-						},
-						{
-							widget = wibox.widget.textbox,
-							fg = beautiful.alpha.notification.fg,
-							font = beautiful.alpha.notification.font,
-							markup = n.message
-						},
+								markup = n.message
+							},
+						}
 					}
 				}
 			}

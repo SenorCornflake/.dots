@@ -5,6 +5,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 
 local util = require("util")
 local programs = require("programs")
+local session = require("session")
 
 local super = "Mod4"
 local ctrl = "Control"
@@ -46,7 +47,7 @@ M.global_keys = gears.table.join(
 	awful.key(
 		{ super, shift },
 		"r",
-		util.session.restart,
+		session.restart,
 		{
 			description = "Restart Awesome",
 			group = "Awesome"
@@ -425,7 +426,7 @@ M.global_keys = gears.table.join(
 		{ shift, alt },
 		"j",
 		function()
-			awful.client.incwfact(-0.05)
+			awful.client.incwfact(-0.10)
 		end,
 		{
 			description = "Decrease client width factor",
@@ -436,7 +437,7 @@ M.global_keys = gears.table.join(
 		{ shift, alt },
 		"k",
 		function()
-			awful.client.incwfact(0.05)
+			awful.client.incwfact(0.10)
 		end,
 		{
 			description = "Increase client width factor",

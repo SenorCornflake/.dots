@@ -29,12 +29,12 @@ if wallpaper_name == "generated":
 settings = {
     # GENERAL
     "awesome.general.border_normal"       : "#" + theme["base01"],
-    "awesome.general.border_focused"      : "#" + theme["base09"],
+    "awesome.general.border_focused"      : "#" + theme["base0E"],
                                                  
     # ALPHA BAR                                  
     "awesome.alpha.bar.bg"                : "#" + theme["base00"],
     "awesome.alpha.bar.fg"                : "#" + theme["base05"],
-    "awesome.alpha.bar.focused_tag_fg"    : "#" + theme["base09"],
+    "awesome.alpha.bar.focused_tag_fg"    : "#" + theme["base0E"],
     "awesome.alpha.bar.occupied_tag_fg"   : "#" + theme["base0B"],
     "awesome.alpha.bar.empty_tag_fg"      : "#" + theme["base03"],
     "awesome.alpha.bar.label_fg"          : "#" + theme["base0E"],
@@ -43,11 +43,11 @@ settings = {
     "awesome.alpha.bar.low_battery_fg"    : "#" + theme["base08"],
     "awesome.alpha.bar.middle_battery_fg" : "#" + theme["base0A"],
     "awesome.alpha.bar.full_battery_fg"   : "#" + theme["base0B"],
-                                                 
+
     # ALPHA TITLEBAR                             
     "awesome.alpha.titlebar.bg_normal"    : "#" + theme["base01"],
-    "awesome.alpha.titlebar.fg_normal"    : "#" + theme["base09"],
-    "awesome.alpha.titlebar.bg_focused"   : "#" + theme["base09"],
+    "awesome.alpha.titlebar.fg_normal"    : "#" + theme["base0E"],
+    "awesome.alpha.titlebar.bg_focused"   : "#" + theme["base0E"],
     "awesome.alpha.titlebar.fg_focused"   : "#" + theme["base01"],
 
     # ALPHA NOTIFICATION                             
@@ -60,6 +60,16 @@ settings = {
     "rofi.alpha.bg_focused"               : "#" + theme["base0C"],
     "rofi.alpha.fg_focused"               : "#" + theme["base00"],
     "rofi.alpha.prompt_fg"                : "#" + theme["base0F"],
+
+    # BRAVO BAR
+    "awesome.bravo.bar.bg"                : "#" + theme["base00"],
+    "awesome.bravo.bar.fg"                : "#" + theme["base05"],
+    "awesome.bravo.bar.focused_tag_fg"    : "#" + theme["base0E"],
+    "awesome.bravo.bar.occupied_tag_fg"   : "#" + theme["base0A"],
+    "awesome.bravo.bar.empty_tag_fg"      : "#" + theme["base03"],
+    "awesome.bravo.bar.label_fg"          : "#" + theme["base0D"],
+    "awesome.bravo.bar.sep_fg"            : "#" + theme["base02"],
+    "awesome.bravo.bar.muted_fg"          : "#" + theme["base08"],
 
     # ALACRITTY
     "alacritty.theme"                     : "~/environment/themes/alacritty/colors/base16-" + theme_name + ".yml",
@@ -94,7 +104,7 @@ os.system("notify-send \"Set exconman settings\"")
 os.system('python ~/environment/scripts/execute_command_for_all_neovim_instances.py ":luafile ~/.config/nvim/lua/config/opts.lua" &')
 
 # Reload awesomewm
-os.system('awesome-client "require(\'util\').session.restart()" &')
+os.system('awesome-client "require(\'session\').restart()" &')
 
 # Generate icon theme
 os.system("exec ~/environment/scripts/generate_archdroid_icons.sh {}".format(theme["base0D"]))

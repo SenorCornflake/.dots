@@ -2,24 +2,24 @@
 	{
 		"name": "awesome.bar",
 		"file": "~/.config/awesome/theme.lua",
-		"pattern": "M\\.bar = \".+\"",
-		"replace_value": "M.bar = \"{value}\"",
+		"pattern": "theme\\.bar = \".+\"",
+		"replace_value": "theme.bar = \"{value}\"",
 		"replace_type": "matched",
 		"value_is_file": false
 	},
 	{
 		"name": "awesome.titlebar",
 		"file": "~/.config/awesome/theme.lua",
-		"pattern": "M\\.titlebar = \".+\"",
-		"replace_value": "M.titlebar = \"{value}\"",
+		"pattern": "theme\\.titlebar = \".+\"",
+		"replace_value": "theme.titlebar = \"{value}\"",
 		"replace_type": "matched",
 		"value_is_file": false
 	},
 	{
 		"name": "awesome.notification",
 		"file": "~/.config/awesome/theme.lua",
-		"pattern": "M\\.notification = \".+\"",
-		"replace_value": "M.notification = \"{value}\",",
+		"pattern": "theme\\.notification = \".+\"",
+		"replace_value": "theme.notification = \"{value}\"",
 		"replace_type": "matched",
 		"value_is_file": false
 	},
@@ -277,6 +277,78 @@
 		"pattern": "alpha-prompt-fg: .+;",
 		"replace_value": "alpha-prompt-fg: {value};",
 		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.bravo.bar.font",
+		"file": "~/.config/awesome/theme.lua",
+		"pattern": "-- bravo.bar.font",
+		"replace_value": "\t\tfont = \"{value}\",",
+		"replace_type": "below",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.bravo.bar.bg",
+		"file": "~/.config/awesome/theme.lua",
+		"pattern": "-- bravo.bar.bg",
+		"replace_value": "\t\tbg = \"{value}\",",
+		"replace_type": "below",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.bravo.bar.fg",
+		"file": "~/.config/awesome/theme.lua",
+		"pattern": "-- bravo.bar.fg",
+		"replace_value": "\t\tfg = \"{value}\",",
+		"replace_type": "below",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.bravo.bar.focused_tag_fg",
+		"file": "~/.config/awesome/theme.lua",
+		"pattern": "-- bravo.bar.focused_tag_fg",
+		"replace_value": "\t\tfocused_tag_fg = \"{value}\",",
+		"replace_type": "below",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.bravo.bar.occupied_tag_fg",
+		"file": "~/.config/awesome/theme.lua",
+		"pattern": "-- bravo.bar.occupied_tag_fg",
+		"replace_value": "\t\toccupied_tag_fg = \"{value}\",",
+		"replace_type": "below",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.bravo.bar.empty_tag_fg",
+		"file": "~/.config/awesome/theme.lua",
+		"pattern": "-- bravo.bar.empty_tag_fg",
+		"replace_value": "\t\tempty_tag_fg = \"{value}\",",
+		"replace_type": "below",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.bravo.bar.label_fg",
+		"file": "~/.config/awesome/theme.lua",
+		"pattern": "-- bravo.bar.label_fg",
+		"replace_value": "\t\tlabel_fg = \"{value}\",",
+		"replace_type": "below",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.bravo.bar.sep_fg",
+		"file": "~/.config/awesome/theme.lua",
+		"pattern": "-- bravo.bar.sep_fg",
+		"replace_value": "\t\tsep_fg = \"{value}\",",
+		"replace_type": "below",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.bravo.bar.muted_fg",
+		"file": "~/.config/awesome/theme.lua",
+		"pattern": "-- bravo.bar.muted_fg",
+		"replace_value": "\t\tmuted_fg = \"{value}\",",
+		"replace_type": "below",
 		"value_is_file": false
 	},
 	{

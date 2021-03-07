@@ -5,16 +5,19 @@ local naughty = require("naughty")
 
 require("awful.autofocus")
 
+-- This is a global variable because I had issues previously with recursive requiring so I just made it global to save myself in the future
 _G.bindings = require("bindings")
 
 local util = require("util")
-local clients = require("clients")
-local tags = require("tags")
+local client_functions = require("client_functions")
+local tag_functions = require("tag_functions")
 local rules = require("rules")
 local programs = require("programs")
+local session = require("session")
 local bar = require("ui_elements.bar")
 local titlebar = require("ui_elements.titlebar")
 local notification = require("ui_elements.notification")
+
 
 do
     local in_error = false
@@ -42,7 +45,7 @@ beautiful.init(gears.filesystem.get_configuration_dir() .. "/theme.lua")
 awful.layout.layouts = {
 	awful.layout.suit.tile,
 	awful.layout.suit.tile.bottom,
-	awful.layout.suit.floating
+	--awful.layout.suit.floating
 }
 
 -- Setup global keys
@@ -52,28 +55,26 @@ root.keys(_G.bindings.global_keys)
 rules.setup()
 
 -- Setup tag configuration
-tags.setup()
-tags.set_gaps()
+tag_functions.setup()
+tag_functions.set_gaps()
 
 -- Setup client configuration
-clients.setup_border_colors()
-clients.set_at_slave()
+client_functions.setup_border_colors()
+client_functions.set_at_slave()
 
 -- Use the bar, titlebar and notifications defined in the beautiful theme
 bar.use(beautiful.bar)
 titlebar.use(beautiful.titlebar)
 notification.use(beautiful.notification)
 
-
 -- Set the wallpaper defined in the beautiful theme
 util.set_wallpaper()
 
--- Launch programs
+-- Launch  programs
 programs.compositor()
 programs.disk_automounter()
 programs.polkit()
 
 -- Load any session saved previously
-util.session.load()
-
+session.load()
 
