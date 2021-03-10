@@ -15,7 +15,7 @@ M.setup = function()
 		naughty.layout.box {
 			notification = n,
 			border_width = beautiful.general.border_width,
-			border_color = beautiful.general.border_focused,
+			border_color = beautiful.alpha.notification.border_color,
 			position = "top_right",
 			type = "notification",
 			bg = beautiful.alpha.notification.bg,

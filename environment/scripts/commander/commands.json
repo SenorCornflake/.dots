@@ -8,6 +8,22 @@
 		"action": "python ~/environment/scripts/commander/main.py ~/environment/scripts/commander/base16_picture_menu.json"
 	},
 	{
+		"name": "Change Bar",
+		"action": "python ~/environment/scripts/change_awesome_bar.py"
+	},
+	{
+		"name": "Change Titlebar",
+		"action": "python ~/environment/scripts/change_awesome_titlebar.py"
+	},
+	{
+		"name": "Change Notification",
+		"action": "python ~/environment/scripts/change_awesome_notification.py"
+	},
+	{
+		"name": "Change Rofi Layout",
+		"action": "python ~/environment/scripts/change_rofi_layout.py"
+	},
+	{
 		"name": "Change Wallpaper",
 		"action": "python ~/environment/scripts/change_wallpaper.py"
 	},

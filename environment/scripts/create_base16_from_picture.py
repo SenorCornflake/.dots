@@ -19,6 +19,6 @@ if len(sys.argv) > 2:
 
 
     if backend == "flavours":
-        os.system('python ~/environment/scripts/setup_base16_theme.py ~/environment/base16/schemes/flavours/flavours.yaml')
+        os.system('python ~/environment/scripts/setup_base16_theme.py ~/environment/base16/schemes/flavours/flavours.yaml true')
     elif backend == "schemer2":
-        os.system('python ~/environment/scripts/setup_base16_theme.py ~/environment/base16/schemes/schemer2/schemer2.yaml')
+        os.system('python ~/environment/scripts/setup_base16_theme.py ~/environment/base16/schemes/schemer2/schemer2.yaml true')

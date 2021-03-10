@@ -40,4 +40,9 @@ function programs.polkit()
 	end)
 end
 
+function programs.package_list_updater()
+	os.execute("killall sh ~/environment/scripts/auto_update_package_list.sh")
+	awful.spawn.easy_async_with_shell("sh ~/environment/scripts/auto_update_package_list.sh")
+end
+
 return programs

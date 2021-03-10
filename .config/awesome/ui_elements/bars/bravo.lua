@@ -17,11 +17,17 @@ function bravo.setup()
 	local sep_fg = beautiful.bravo.bar.sep_fg
 	local font = beautiful.bravo.bar.font
 
+	local very_short_delay = 1
+	local short_delay = 3
+	local moderate_delay = 10
+	local long_delay = 30
+	local very_long_delay = 60
+
 	awful.screen.connect_for_each_screen(function(s)
 
 		local sep = {
 			widget = wibox.widget.textbox,
-			markup = '<span font="' .. font .. '" foreground="' .. sep_fg .. '"> | </span>'
+			markup = '<span font="' .. font .. '" foreground="' .. sep_fg .. '">|</span>'
 		}
 
 		local battery = wibox.widget.textbox()
@@ -29,11 +35,18 @@ function bravo.setup()
 			battery,
 			vicious.widgets.bat,
 			function(widget, args)
-				local b = args[2]
-				local icon = ""
-				return '<span font="' .. font .. '">' .. '<span foreground="' .. label_fg .. '">BAT</span> ' .. b .. "%</span>"
+				local state = args[1]
+
+				if state == "↯" then
+					state = " Charging"
+				else
+					state = ""
+				end
+
+				local level = args[2]
+				return '<span font="' .. font .. '">' .. '<span foreground="' .. label_fg .. '">BAT</span> ' .. level .. "%" .. state .. "</span>"
 			end,
-			10,
+			moderate_delay,
 			"BAT0"
 		)
 
@@ -44,7 +57,7 @@ function bravo.setup()
 			function(widget, args)
 				return '<span font="' .. font .. '">' .. '<span foreground="' .. label_fg .. '">DISK</span> ' .. args["{/ avail_gb}"] .. " GB</span>"
 			end,
-			2,
+			moderate_delay,
 			false
 		)
 
@@ -56,7 +69,7 @@ function bravo.setup()
 				local mem_usage_mb = args[2]
 				return '<span font="' .. font .. '">' .. '<span foreground="' .. label_fg .. '">MEM</span> ' .. mem_usage_mb .. " MB</span>"
 			end,
-			2
+			short_delay
 		)
 
 		local cpu = wibox.widget.textbox()
@@ -66,7 +79,7 @@ function bravo.setup()
 			function(widget, args)
 				return '<span font="' .. font .. '">' .. '<span foreground="' .. label_fg .. '">CPU</span> ' .. args[1] .. "%</span>"
 			end,
-			2
+			short_delay
 		)
 
 		local net_speed = wibox.widget.textbox()
@@ -74,8 +87,8 @@ function bravo.setup()
 			net_speed,
 			vicious.widgets.net,
 			function(widget, args)
-				local up_kb = tonumber(args["{wlan0 up_kb}"])
-				local down_kb = tonumber(args["{wlan0 down_kb}"])
+				local up_kb = tonumber(args["{" .. _G.WIFI_INTERFACE .. " up_kb}"])
+				local down_kb = tonumber(args["{" .. _G.WIFI_INTERFACE .. " down_kb}"])
 
 				-- Do not show decimal point if it is a zero; ie: Display "2.0" as "2"
 				-- if (up_kb % 1) == 0 then
@@ -87,7 +100,7 @@ function bravo.setup()
 
 				return '<span font="' .. font .. '">' .. '<span foreground="' .. label_fg .. '">UP/DOWN</span> ' .. up_kb .. " KB/s " ..  down_kb .. " KB/s</span>"
 			end,
-			2
+			short_delay
 		)
 
 		local ssid = wibox.widget.textbox()
@@ -97,8 +110,8 @@ function bravo.setup()
 			function(widget, args)
 				return '<span font="' .. font .. '">' .. '<span foreground="' .. label_fg .. '">SSID</span> ' .. args["{ssid}"] .. "</span>"
 			end,
-			30,
-			"wlan0"
+			short_delay,
+			_G.WIFI_INTERFACE
 		)
 
 		local volume = wibox.widget.textbox()
@@ -116,7 +129,7 @@ function bravo.setup()
 					return '<span font="' .. font .. '">' .. '<span foreground="' .. label_fg .. '">VOLUME</span> ' .. v .. "</span>"
 				end
 			end,
-			1,
+			very_short_delay,
 			{"Master", "-D", "pulse"}
 		)
 
@@ -151,9 +164,53 @@ function bravo.setup()
 				-- end
 
 				average_ghz = string.format("%.2f", average_ghz)
-				return '<span font="' .. font .. '">' .. '<span foreground="' .. label_fg .. '">FREQ</span> ' .. average_ghz .. " GHz</span>"
+				return '<span font="' .. font .. '">' .. '<span foreground="' .. label_fg .. '">CPU_FREQ</span> ' .. average_ghz .. " GHz</span>"
 			end,
-			2
+			short_delay
+		)
+
+		local package_updates = wibox.widget.textbox()
+		vicious.register(
+			package_updates,
+			vicious.widgets.pkg,
+			function(widget, args)
+				return '<span font="' .. font .. '">' .. '<span foreground="' .. label_fg .. '">UPDATES</span> ' .. args[1] .. "</span>"
+			end,
+			long_delay,
+			"Arch"
+		)
+
+		local cpu_temp = wibox.widget.textbox()
+		vicious.register(
+			cpu_temp,
+			vicious.widgets.thermal,
+			function(widget, args)
+				return '<span font="' .. font .. '">' .. '<span foreground="' .. label_fg .. '">CPU_TEMP</span> ' .. args[1] .. "°C</span>"
+			end,
+			short_delay,
+			"thermal_zone1"
+		)
+
+		local weather = wibox.widget.textbox()
+		vicious.register(
+			weather,
+			vicious.widgets.weather,
+			function(widget, args)
+				return '<span font="' .. font .. '">' .. '<span foreground="' .. label_fg .. '">WEATHER</span> Temp: ' .. args["{tempc}"] .. "°C; Sky: " .. args["{sky}"] .. "; Humidity: " .. args["{humid}"] .. "%; Wind: " .. args["{windkmh}"] .. " km/h</span>"
+			end,
+			very_long_delay,
+			_G.ICAO_CODE
+		)
+
+		local link_quality = wibox.widget.textbox()
+		vicious.register(
+			link_quality,
+			vicious.widgets.wifi,
+			function(widget, args)
+				return '<span font="' .. font .. '">' .. '<span foreground="' .. label_fg .. '">LINK_QUALITY</span> ' .. args["{linp}"] .. "%</span>"
+			end,
+			short_delay,
+			_G.WIFI_INTERFACE
 		)
 
 		local client_title = wibox.widget.textbox()
@@ -194,13 +251,13 @@ function bravo.setup()
 			local tag_fg = ""
 
 			if focused then
-				name = "&gt; " .. tag_names[t.name] .. " &lt;"
+				name = "[" .. tag_names[t.name] .. "]"
 				tag_fg = beautiful.bravo.bar.focused_tag_fg
 			elseif occupied then
 				name = tag_names[t.name]
 				tag_fg = beautiful.bravo.bar.occupied_tag_fg
 			elseif empty then
-				name = "-"
+				name = tag_names[t.name]
 				tag_fg = beautiful.bravo.bar.empty_tag_fg
 			end
 
@@ -257,7 +314,17 @@ function bravo.setup()
 				layout = wibox.layout.align.horizontal,
 				expand = "none",
 				{
-					widget = client_title
+					layout = wibox.layout.fixed.horizontal,
+					spacing = 10,
+					{
+						widget = date
+					},
+					{
+						widget = time
+					},
+					{
+						widget = client_title
+					}
 				},
 				{
 					widget = taglist
@@ -266,10 +333,7 @@ function bravo.setup()
 					layout = wibox.layout.fixed.horizontal,
 					spacing = 10,
 					{
-						widget = date
-					},
-					{
-						widget = time
+						widget = weather
 					}
 				}
 			}
@@ -303,6 +367,7 @@ function bravo.setup()
 			nil,
 			{
 				layout = wibox.layout.fixed.horizontal,
+				spacing = 3,
 				{
 					widget = battery,
 				},
@@ -320,6 +385,10 @@ function bravo.setup()
 				},
 				sep,
 				{
+					widget = cpu_temp,
+				},
+				sep,
+				{
 					widget = cpu_freq,
 				},
 				sep,
@@ -328,7 +397,15 @@ function bravo.setup()
 				},
 				sep,
 				{
+					widget = link_quality,
+				},
+				sep,
+				{
 					widget = ssid,
+				},
+				sep,
+				{
+					widget = package_updates,
 				},
 				sep,
 				{

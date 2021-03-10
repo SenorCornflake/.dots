@@ -3,34 +3,34 @@
 colors:
   # Default colors
   primary:
-    background: '0x0e0a0a'
-    foreground: '0x727a7c'
+    background: '0x130f12'
+    foreground: '0xa04d69'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x0e0a0a'
-    cursor: '0x727a7c'
+    text: '0x130f12'
+    cursor: '0xa04d69'
 
   # Normal colors
   normal:
-    black:   '0x0e0a0a'
-    red:     '0xbd8465'
-    green:   '0xe19d5c'
-    yellow:  '0x8c8a8b'
-    blue:    '0x9f7d74'
-    magenta: '0xc9a470'
-    cyan:    '0xc9a470'
-    white:   '0x727a7c'
+    black:   '0x130f12'
+    red:     '0xe56c8f'
+    green:   '0xd05b76'
+    yellow:  '0xda837e'
+    blue:    '0xe56c8f'
+    magenta: '0xb26e7b'
+    cyan:    '0xb26e7b'
+    white:   '0xa04d69'
 
   # Bright colors
   bright:
-    black:   '0x6c5a5e'
-    red:     '0xbb9386'
-    green:   '0x1f1d1c'
-    yellow:  '0x323134'
-    blue:    '0x866a67'
-    magenta: '0x403b43'
-    cyan:    '0x8c8a8b'
-    white:   '0x534548'
+    black:   '0x863d59'
+    red:     '0xb75f5d'
+    green:   '0x211c30'
+    yellow:  '0x352b3a'
+    blue:    '0x7a576b'
+    magenta: '0x4c323e'
+    cyan:    '0xd05b76'
+    white:   '0x653364'
 
 draw_bold_text_with_bright_colors: false

@@ -3,12 +3,18 @@ import sys
 
 import yaml
 
-if len(sys.argv) < 2:
-    print("Provide a base16 theme")
+if len(sys.argv) < 3:
+    print("Provide a base16 theme and state whether to avoid converting the wallpapers colors")
     sys.exit()
 
 theme_path = os.path.expanduser(sys.argv[1])
 theme_name = os.path.splitext(os.path.basename(theme_path))[0]
+avoid_conversion = sys.argv[2]
+
+if avoid_conversion == "true":
+    avoid_conversion = True
+elif avoid_conversion == "false":
+    avoid_conversion = False
 
 os.system("notify-send \"{}\"".format(theme_name))
 
@@ -28,54 +34,55 @@ if wallpaper_name == "generated":
 
 settings = {
     # GENERAL
-    "awesome.general.border_normal"       : "#" + theme["base01"],
-    "awesome.general.border_focused"      : "#" + theme["base0E"],
+    "awesome.general.border_normal"           : "#" + theme["base01"],
+    "awesome.general.border_focused"          : "#" + theme["base03"],
                                                  
     # ALPHA BAR                                  
-    "awesome.alpha.bar.bg"                : "#" + theme["base00"],
-    "awesome.alpha.bar.fg"                : "#" + theme["base05"],
-    "awesome.alpha.bar.focused_tag_fg"    : "#" + theme["base0E"],
-    "awesome.alpha.bar.occupied_tag_fg"   : "#" + theme["base0B"],
-    "awesome.alpha.bar.empty_tag_fg"      : "#" + theme["base03"],
-    "awesome.alpha.bar.label_fg"          : "#" + theme["base0E"],
-    "awesome.alpha.bar.decoration_fg"     : "#" + theme["base0D"],
-    "awesome.alpha.bar.muted_fg"          : "#" + theme["base08"],
-    "awesome.alpha.bar.low_battery_fg"    : "#" + theme["base08"],
-    "awesome.alpha.bar.middle_battery_fg" : "#" + theme["base0A"],
-    "awesome.alpha.bar.full_battery_fg"   : "#" + theme["base0B"],
+    "awesome.alpha.bar.bg"                    : "#" + theme["base00"],
+    "awesome.alpha.bar.fg"                    : "#" + theme["base05"],
+    "awesome.alpha.bar.focused_tag_fg"        : "#" + theme["base0E"],
+    "awesome.alpha.bar.occupied_tag_fg"       : "#" + theme["base0B"],
+    "awesome.alpha.bar.empty_tag_fg"          : "#" + theme["base03"],
+    "awesome.alpha.bar.label_fg"              : "#" + theme["base0C"],
+    "awesome.alpha.bar.decoration_fg"         : "#" + theme["base0D"],
+    "awesome.alpha.bar.muted_fg"              : "#" + theme["base08"],
+    "awesome.alpha.bar.low_battery_fg"        : "#" + theme["base08"],
+    "awesome.alpha.bar.middle_battery_fg"     : "#" + theme["base0A"],
+    "awesome.alpha.bar.full_battery_fg"       : "#" + theme["base0B"],
 
-    # ALPHA TITLEBAR                             
-    "awesome.alpha.titlebar.bg_normal"    : "#" + theme["base01"],
-    "awesome.alpha.titlebar.fg_normal"    : "#" + theme["base0E"],
-    "awesome.alpha.titlebar.bg_focused"   : "#" + theme["base0E"],
-    "awesome.alpha.titlebar.fg_focused"   : "#" + theme["base01"],
+    # ALPHA TITLEBAR                                 
+    "awesome.alpha.titlebar.bg_normal"        : "#" + theme["base01"],
+    "awesome.alpha.titlebar.fg_normal"        : "#" + theme["base05"],
+    "awesome.alpha.titlebar.bg_focused"       : "#" + theme["base03"],
+    "awesome.alpha.titlebar.fg_focused"       : "#" + theme["base05"],
 
-    # ALPHA NOTIFICATION                             
-    "awesome.alpha.notification.bg"       : "#" + theme["base00"],
-    "awesome.alpha.notification.fg"       : "#" + theme["base05"],
+    # ALPHA NOTIFICATION                                 
+    "awesome.alpha.notification.bg"           : "#" + theme["base00"],
+    "awesome.alpha.notification.fg"           : "#" + theme["base05"],
+    "awesome.alpha.notification.border_color" : "#" + theme["base0F"],
                                                  
     # ALPHA ROFI                                 
-    "rofi.alpha.bg"                       : "#" + theme["base00"],
-    "rofi.alpha.fg"                       : "#" + theme["base05"],
-    "rofi.alpha.bg_focused"               : "#" + theme["base0C"],
-    "rofi.alpha.fg_focused"               : "#" + theme["base00"],
-    "rofi.alpha.prompt_fg"                : "#" + theme["base0F"],
+    "rofi.alpha.bg"                           : "#" + theme["base00"],
+    "rofi.alpha.fg"                           : "#" + theme["base05"],
+    "rofi.alpha.bg_focused"                   : "#" + theme["base0C"],
+    "rofi.alpha.fg_focused"                   : "#" + theme["base00"],
+    "rofi.alpha.prompt_fg"                    : "#" + theme["base0F"],
 
     # BRAVO BAR
-    "awesome.bravo.bar.bg"                : "#" + theme["base00"],
-    "awesome.bravo.bar.fg"                : "#" + theme["base05"],
-    "awesome.bravo.bar.focused_tag_fg"    : "#" + theme["base0E"],
-    "awesome.bravo.bar.occupied_tag_fg"   : "#" + theme["base0A"],
-    "awesome.bravo.bar.empty_tag_fg"      : "#" + theme["base03"],
-    "awesome.bravo.bar.label_fg"          : "#" + theme["base0D"],
-    "awesome.bravo.bar.sep_fg"            : "#" + theme["base02"],
-    "awesome.bravo.bar.muted_fg"          : "#" + theme["base08"],
+    "awesome.bravo.bar.bg"                    : "#" + theme["base00"],
+    "awesome.bravo.bar.fg"                    : "#" + theme["base05"],
+    "awesome.bravo.bar.focused_tag_fg"        : "#" + theme["base0E"],
+    "awesome.bravo.bar.occupied_tag_fg"       : "#" + theme["base0A"],
+    "awesome.bravo.bar.empty_tag_fg"          : "#" + theme["base03"],
+    "awesome.bravo.bar.label_fg"              : "#" + theme["base0D"],
+    "awesome.bravo.bar.sep_fg"                : "#" + theme["base02"],
+    "awesome.bravo.bar.muted_fg"              : "#" + theme["base08"],
 
     # ALACRITTY
-    "alacritty.theme"                     : "~/environment/themes/alacritty/colors/base16-" + theme_name + ".yml",
+    "alacritty.theme"                         : "~/environment/themes/alacritty/colors/base16-" + theme_name + ".yml",
 
     # NEOVIM
-    "neovim.colorscheme"                  : "base16-" + theme_name
+    "neovim.colorscheme"                      : "base16-" + theme_name
 }
 
 # Generate plain color wallpaper
@@ -115,12 +122,14 @@ os.system('killall xsettingsd')
 os.system('xsettingsd &')
 
 # Convert current wallpaper to base16 theme
-if wallpaper_name == "generated_from_picture":
-    last_converted_wallpaper = open(os.path.expanduser("~/environment/cache/last_converted_wallpaper.txt"), "r").read()
-    os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, last_converted_wallpaper))
-    os.system("awesome-client 'require(\"util\").set_wallpaper(\"{}\")'".format(wallpaper_path));
-elif wallpaper_name != "generated":
-    os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, wallpaper_path))
+if not avoid_conversion:
+    if wallpaper_name == "generated_from_picture":
+        last_converted_wallpaper = open(os.path.expanduser("~/environment/cache/last_converted_wallpaper.txt"), "r").read()
+        os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, last_converted_wallpaper))
+        os.system("awesome-client 'require(\"util\").set_wallpaper(\"{}\")'".format(wallpaper_path));
+        os.system("notify-send \"Converted wallpaper\"")
+    elif wallpaper_name != "generated":
+        os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, wallpaper_path))
+        os.system("notify-send \"Converted wallpaper\"")
 
-os.system("notify-send \"Converted wallpaper\"")
 

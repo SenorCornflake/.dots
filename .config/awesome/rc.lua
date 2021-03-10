@@ -18,6 +18,8 @@ local bar = require("ui_elements.bar")
 local titlebar = require("ui_elements.titlebar")
 local notification = require("ui_elements.notification")
 
+_G.ICAO_CODE = "FACT"
+_G.WIFI_INTERFACE = "wlan0"
 
 do
     local in_error = false
@@ -74,6 +76,7 @@ util.set_wallpaper()
 programs.compositor()
 programs.disk_automounter()
 programs.polkit()
+programs.package_list_updater()
 
 -- Load any session saved previously
 session.load()

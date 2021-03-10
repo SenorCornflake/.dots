@@ -34,40 +34,40 @@ window:
     decorations: none
 
 # THEME
-# Base16 Equilibrium Gray Dark - alacritty color config
-# Carlo Abelli
+# Base16 Material Palenight - alacritty color config
+# Nate Peterson
 colors:
   # Default colors
   primary:
-    background: '0x111111'
-    foreground: '0xababab'
+    background: '0x292D3E'
+    foreground: '0x959DCB'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x111111'
-    cursor: '0xababab'
+    text: '0x292D3E'
+    cursor: '0x959DCB'
 
   # Normal colors
   normal:
-    black:   '0x111111'
-    red:     '0xf04339'
-    green:   '0x7f8b00'
-    yellow:  '0xbb8801'
-    blue:    '0x008dd1'
-    magenta: '0x6a7fd2'
-    cyan:    '0x00948b'
-    white:   '0xababab'
+    black:   '0x292D3E'
+    red:     '0xF07178'
+    green:   '0xC3E88D'
+    yellow:  '0xFFCB6B'
+    blue:    '0x82AAFF'
+    magenta: '0xC792EA'
+    cyan:    '0x89DDFF'
+    white:   '0x959DCB'
 
   # Bright colors
   bright:
-    black:   '0x777777'
-    red:     '0xdf5923'
-    green:   '0x1b1b1b'
-    yellow:  '0x262626'
-    blue:    '0x919191'
-    magenta: '0xc6c6c6'
-    cyan:    '0xe3488e'
-    white:   '0xe2e2e2'
+    black:   '0x676E95'
+    red:     '0xF78C6C'
+    green:   '0x444267'
+    yellow:  '0x32374D'
+    blue:    '0x8796B0'
+    magenta: '0x959DCB'
+    cyan:    '0xFF5370'
+    white:   '0xFFFFFF'
 
 draw_bold_text_with_bright_colors: false
 

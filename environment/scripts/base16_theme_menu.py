@@ -27,4 +27,4 @@ index = os.popen(cmd).read()[:-1]
 
 if index != "":
     index = int(index)
-    os.system('python ~/environment/scripts/setup_base16_theme.py "{}"'.format(theme_paths[index]))
+    os.system('python ~/environment/scripts/setup_base16_theme.py "{}" false'.format(theme_paths[index]))

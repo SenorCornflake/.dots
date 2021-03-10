@@ -63,6 +63,16 @@
 		"replace_type": "matched",
 		"value_is_file": false
 	},
+
+
+
+
+
+
+
+
+
+
 	{
 		"name": "awesome.alpha.bar.font",
 		"file": "~/.config/awesome/theme.lua",
@@ -216,6 +226,14 @@
 		"value_is_file": false
 	},
 	{
+		"name": "awesome.alpha.notification.border_color",
+		"file": "~/.config/awesome/theme.lua",
+		"pattern": "-- alpha.notification.border_color",
+		"replace_value": "\t\tborder_color = \"{value}\",",
+		"replace_type": "below",
+		"value_is_file": false
+	},
+	{
 		"name": "awesome.alpha.notification.font",
 		"file": "~/.config/awesome/theme.lua",
 		"pattern": "-- alpha.notification.font",
@@ -279,6 +297,14 @@
 		"replace_type": "matched",
 		"value_is_file": false
 	},
+
+
+
+
+
+
+
+
 	{
 		"name": "awesome.bravo.bar.font",
 		"file": "~/.config/awesome/theme.lua",
@@ -351,6 +377,21 @@
 		"replace_type": "below",
 		"value_is_file": false
 	},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	{
 		"name": "alacritty.theme",
 		"file": "~/.config/alacritty/alacritty.yml",
