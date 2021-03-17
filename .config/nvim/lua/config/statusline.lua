@@ -43,9 +43,9 @@ M.setup = function()
 	}
 
 	-- I set the colors for the highlight groups because when I reload neovim with a different colorscheme, it doesn't refresh the statusbar's colors (I spent quite a few minutes aligning this, was worth it though)
-	vim.cmd(":hi ViModeSeparator       guifg=bg                     guibg="..colors.bg[1].." ctermfg=bg                     ctermbg="..colors.bg[2])
-	vim.cmd(":hi GalaxyFileName        guifg="..colors.normal[1].." guibg="..colors.bg[1].." ctermfg="..colors.normal[2].." ctermbg="..colors.bg[2])
-	vim.cmd(":hi GalaxyLineColumn      guifg="..colors.normal[1].." guibg="..colors.bg[1].." ctermfg="..colors.normal[2].." ctermbg="..colors.bg[2])
+	-- vim.cmd(":hi ViModeSeparator       guifg=bg                     guibg="..colors.bg[1].." ctermfg=bg                     ctermbg="..colors.bg[2])
+	-- vim.cmd(":hi GalaxyFileName        guifg="..colors.normal[1].." guibg="..colors.bg[1].." ctermfg="..colors.normal[2].." ctermbg="..colors.bg[2])
+	-- vim.cmd(":hi GalaxyLineColumn      guifg="..colors.normal[1].." guibg="..colors.bg[1].." ctermfg="..colors.normal[2].." ctermbg="..colors.bg[2])
 	vim.cmd(":hi GalaxyDiagnosticError guifg="..colors.error [1].." guibg="..colors.bg[1].." ctermfg="..colors.error [2].." ctermbg="..colors.bg[2].." gui=underline cterm=underline")
 	vim.cmd(":hi GalaxyDiagnosticWarn  guifg="..colors.warn  [1].." guibg="..colors.bg[1].." ctermfg="..colors.warn  [2].." ctermbg="..colors.bg[2].." gui=underline cterm=underline")
 	vim.cmd(":hi GalaxyDiagnosticInfo  guifg="..colors.info  [1].." guibg="..colors.bg[1].." ctermfg="..colors.info  [2].." ctermbg="..colors.bg[2].." gui=underline cterm=underline")

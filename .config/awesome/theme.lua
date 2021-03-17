@@ -5,8 +5,8 @@ local theme = {}
 
 -- Generic Settings
 theme.general = {
-	border_normal = "#444267",
-	border_focused = "#676E95",
+	border_normal = "#26232a",
+	border_focused = "#655f6d",
 	border_width = xresources.apply_dpi(2),
 	gap_size = xresources.apply_dpi(5),
 	wallpaper = "/home/breton/Pictures/wallpapers/generated.png",
@@ -19,47 +19,47 @@ theme.alpha = {
 		-- alpha.bar.font
 		font = "Dina 7",
 		-- alpha.bar.bg
-		bg = "#292D3E",
+		bg = "#19171c",
 		-- alpha.bar.fg
-		fg = "#959DCB",
+		fg = "#8b8792",
 		-- alpha.bar.focused_tag_fg
-		focused_tag_fg = "#C792EA",
+		focused_tag_fg = "#955ae7",
 		-- alpha.bar.occupied_tag_fg
-		occupied_tag_fg = "#C3E88D",
+		occupied_tag_fg = "#2a9292",
 		-- alpha.bar.empty_tag_fg
-		empty_tag_fg = "#676E95",
+		empty_tag_fg = "#655f6d",
 		-- alpha.bar.label_fg
-		label_fg = "#89DDFF",
+		label_fg = "#398bc6",
 		-- alpha.bar.decoration_fg
-		decoration_fg = "#82AAFF",
+		decoration_fg = "#576ddb",
 		-- alpha.bar.muted_fg
-		muted_fg = "#F07178",
+		muted_fg = "#be4678",
 		-- alpha.bar.low_battery_fg
-		low_battery_fg = "#F07178",
+		low_battery_fg = "#be4678",
 		-- alpha.bar.middle_battery_fg
-		middle_battery_fg = "#FFCB6B",
+		middle_battery_fg = "#a06e3b",
 		-- alpha.bar.full_battery_fg
-		full_battery_fg = "#C3E88D",
+		full_battery_fg = "#2a9292",
 	},
 	titlebar = {
 		-- alpha.titlebar.font
 		font = "Dina 7",
 		-- alpha.titlebar.bg_normal
-		bg_normal = "#444267",
+		bg_normal = "#26232a",
 		-- alpha.titlebar.fg_normal
-		fg_normal = "#959DCB",
+		fg_normal = "#8b8792",
 		-- alpha.titlebar.bg_focused
-		bg_focused = "#676E95",
+		bg_focused = "#655f6d",
 		-- alpha.titlebar.fg_focused
-		fg_focused = "#959DCB",
+		fg_focused = "#8b8792",
 	},
 	notification = {
 		-- alpha.notification.bg
-		bg = "#292D3E",
+		bg = "#19171c",
 		-- alpha.notification.fg
-		fg = "#959DCB",
+		fg = "#8b8792",
 		-- alpha.notification.border_color
-		border_color = "#FF5370",
+		border_color = "#bf40bf",
 		-- alpha.notification.font
 		font = "Dina 7",
 		-- alpha.notification.spacing
@@ -73,21 +73,21 @@ theme.bravo = {
 		-- bravo.bar.font
 		font = "Dina 7",
 		-- bravo.bar.bg
-		bg = "#292D3E",
+		bg = "#19171c",
 		-- bravo.bar.fg
-		fg = "#959DCB",
+		fg = "#8b8792",
 		-- bravo.bar.sep_fg
-		sep_fg = "#32374D",
+		sep_fg = "#585260",
 		-- bravo.bar.label_fg
-		label_fg = "#82AAFF",
+		label_fg = "#576ddb",
 		-- bravo.bar.focused_tag_fg
-		focused_tag_fg = "#C792EA",
+		focused_tag_fg = "#955ae7",
 		-- bravo.bar.occupied_tag_fg
-		occupied_tag_fg = "#FFCB6B",
+		occupied_tag_fg = "#a06e3b",
 		-- bravo.bar.empty_tag_fg
-		empty_tag_fg = "#676E95",
+		empty_tag_fg = "#655f6d",
 		-- bravo.bar.muted_fg
-		muted_fg = "#F07178",
+		muted_fg = "#be4678",
 	}
 }
 theme.bar = "bravo"
