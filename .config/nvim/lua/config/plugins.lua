@@ -26,7 +26,6 @@ return require('packer').startup(function()
 	use 'Konfekt/FastFold'                       -- Faster Folding (Specifically for PHP)
 	use 'glepnir/galaxyline.nvim'                -- Status Line
 	use 'onsails/lspkind-nvim'                   -- Completion Icons for LSP
-	use 'b3nj5m1n/kommentary'                    -- Comment Plugin
 	use 'kevinhwang91/nvim-bqf'                  -- Better Quickfix windows
 	use 'norcalli/nvim-colorizer.lua'            -- Highlight Color Codes
 	use {                                        -- Markdown file preview

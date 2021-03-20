@@ -4,7 +4,6 @@ for k, _ in pairs(package.loaded) do
 	end
 end
 
-require "config.kommentary"
 require "config.plugins"
 require "config.opts"
 require "config.bindings"
