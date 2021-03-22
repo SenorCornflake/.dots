@@ -32,41 +32,17 @@ local function try_loadstring(s, component, name)
 end
 
 _G.packer_plugins = {
-  FastFold = {
+  ["auto-pairs"] = {
     loaded = true,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/FastFold"
-  },
-  ["emmet-vim"] = {
-    loaded = true,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/emmet-vim"
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
   ["galaxyline.nvim"] = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
-  ["glow.nvim"] = {
-    loaded = true,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/glow.nvim"
-  },
-  kommentary = {
-    loaded = true,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/kommentary"
-  },
-  ["lsp_extensions.nvim"] = {
-    loaded = true,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/lsp_extensions.nvim"
-  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
-  },
-  ["nvim-bqf"] = {
-    loaded = true,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/nvim-bqf"
-  },
-  ["nvim-colorizer.lua"] = {
-    loaded = true,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
   ["nvim-compe"] = {
     loaded = true,
@@ -79,6 +55,10 @@ _G.packer_plugins = {
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = false,
@@ -97,10 +77,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/rnvimr"
   },
-  ["suda.vim"] = {
-    loaded = true,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/suda.vim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/telescope.nvim"
@@ -113,17 +89,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-fugitive"
   },
+  ["vim-gitgutter"] = {
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-gitgutter"
+  },
   ["vim-rooter"] = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-rooter"
   },
-  ["vim-smoothie"] = {
+  ["vista.vim"] = {
     loaded = true,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-smoothie"
-  },
-  ["vim-surround"] = {
-    loaded = true,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-surround"
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vista.vim"
   }
 }
 
