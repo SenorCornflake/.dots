@@ -79,24 +79,24 @@ settings = {
     "awesome.bravo.bar.muted_fg"              : "#" + theme["base08"],
 
     # ALACRITTY
-    "alacritty.theme"                         : "~/environment/themes/alacritty/colors/base16-" + theme_name + ".yml",
+    "alacritty.theme"                         : "~/environment/application_colorschemes/alacritty/colors/base16-" + theme_name + ".yml",
 
     # NEOVIM
     "neovim.colorscheme"                      : "base16-" + theme_name
 }
 
 # Generate plain color wallpaper
-os.system('convert -size 1920x1080 xc:#{} ~/Pictures/wallpapers/generated.png'.format(theme["base00"]))
-os.system('notify-send "Generated plain wallpaper"')
+# os.system('convert -size 1920x1080 xc:#{} ~/Pictures/wallpapers/generated.png'.format(theme["base00"]))
+# os.system('notify-send "Generated plain wallpaper"')
 
 # Generate flatcolor base16 theme
-os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-2\" --output-root ~/.themes/FlatColor/gtk-2.0 --output-file colors2 -d".format(theme_path))
-os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-3\" --output-root ~/.themes/FlatColor/gtk-3.0 --output-file colors3 -d".format(theme_path))
-os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-3\" --output-root ~/.themes/FlatColor/gtk-3.20 --output-file colors3 -d".format(theme_path))
-os.system('notify-send "Built gtk-flatcolor schemes"')
+# os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-2\" --output-root ~/.themes/FlatColor/gtk-2.0 --output-file colors2 -d".format(theme_path))
+# os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-3\" --output-root ~/.themes/FlatColor/gtk-3.0 --output-file colors3 -d".format(theme_path))
+# os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-3\" --output-root ~/.themes/FlatColor/gtk-3.20 --output-file colors3 -d".format(theme_path))
+# os.system('notify-send "Built gtk-flatcolor schemes"')
 
 # Generate Neovim Colorscheme (Even though this is useless, I placed it here so that if I create my own base16 theme I do not have to build it manually)
-os.system('base16-builder build --scheme {} --template-repo ~/environment/base16/templates/alacritty --template-name default --output-root ~/environment/themes/alacritty'.format(theme_path))
+os.system('base16-builder build --scheme {} --template-repo ~/environment/base16/templates/alacritty --template-name default --output-root ~/environment/application_colorschemes/alacritty'.format(theme_path))
 os.system("notify-send \"Built Alacritty scheme\"")
 os.system('base16-builder build --scheme {} --template-repo ~/environment/base16/templates/vim --output-root ~/.local/share/nvim/site/pack/packer/start/vim-base16-colorschemes'.format(theme_path))
 os.system("notify-send \"Built Neovim scheme\"")
@@ -104,32 +104,33 @@ os.system("notify-send \"Built Neovim scheme\"")
 # Set Exconman settings
 for setting in settings.keys():
     value = settings[setting]
-    os.system('exconman set "{}" "{}"'.format(setting, value))
-os.system("notify-send \"Set exconman settings\"")
+    os.system('python ~/environment/scripts/modify_json.py ~/environment/themes/base16.json "{}" "{}"'.format(setting, value))
+os.system("exconman load ~/environment/themes/base16.json")
+# os.system("notify-send \"Set exconman settings\"")
 
 # Reload neovim colorscheme
-os.system('python ~/environment/scripts/execute_command_for_all_neovim_instances.py ":luafile ~/.config/nvim/lua/config/opts.lua" &')
+os.system('python ~/environment/scripts/execute_command_for_all_neovim_instances.py ":lua require [[CONFIG.colorscheme]]([[base16-' + theme_name + ']])" &')
 
 # Reload awesomewm
-os.system('awesome-client "require(\'session\').restart()" &')
+# os.system('awesome-client "require(\'session\').restart()" &')
 
 # Generate icon theme
-os.system("exec ~/environment/scripts/generate_archdroid_icons.sh {}".format(theme["base0D"]))
-os.system("notify-send \"Generated icons\"")
+# os.system("exec ~/environment/scripts/generate_archdroid_icons.sh {}".format(theme["base0D"]))
+# os.system("notify-send \"Generated icons\"")
 
 # Reload xsettingsd
-os.system('killall xsettingsd')
-os.system('xsettingsd &')
+# os.system('killall xsettingsd')
+# os.system('xsettingsd &')
 
 # Convert current wallpaper to base16 theme
-if not avoid_conversion:
-    if wallpaper_name == "generated_from_picture":
-        last_converted_wallpaper = open(os.path.expanduser("~/environment/cache/last_converted_wallpaper.txt"), "r").read()
-        os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, last_converted_wallpaper))
-        os.system("awesome-client 'require(\"util\").set_wallpaper(\"{}\")'".format(wallpaper_path));
-        os.system("notify-send \"Converted wallpaper\"")
-    elif wallpaper_name != "generated":
-        os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, wallpaper_path))
-        os.system("notify-send \"Converted wallpaper\"")
-
+# if not avoid_conversion:
+#     if wallpaper_name == "generated_from_picture":
+#         last_converted_wallpaper = open(os.path.expanduser("~/environment/cache/last_converted_wallpaper.txt"), "r").read()
+#         os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, last_converted_wallpaper))
+#         os.system("awesome-client 'require(\"util\").set_wallpaper(\"{}\")'".format(wallpaper_path));
+#         os.system("notify-send \"Converted wallpaper\"")
+#     elif wallpaper_name != "generated":
+#         os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, wallpaper_path))
+#         os.system("notify-send \"Converted wallpaper\"")
+# 
 

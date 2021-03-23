@@ -7,7 +7,7 @@ end
 
 vim = vim -- Less "undefined global" warnings this way
 
-local colorschemes = "base16-onedark"
+local colorscheme = "base16-gruvbox-dark-hard"
 local powerline_symbol = "up_slant"
 
 -------------
@@ -16,7 +16,7 @@ local powerline_symbol = "up_slant"
 require 'CONFIG.plugins'
 require 'CONFIG.opts'
 require 'CONFIG.bindings'
-require 'CONFIG.colorscheme'(colorschemes)
+require 'CONFIG.colorscheme'(colorscheme)
 require "CONFIG.lsp"
 require "CONFIG.statusline"(powerline_symbol)
 

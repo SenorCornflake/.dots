@@ -93,10 +93,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-fugitive"
   },
-  ["vim-gitgutter"] = {
-    loaded = true,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-gitgutter"
-  },
   ["vim-rooter"] = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-rooter"

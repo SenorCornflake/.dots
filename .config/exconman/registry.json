@@ -418,7 +418,7 @@
 	},
 	{
 		"name": "neovim.colorscheme",
-		"file": "~/.config/nvim/lua/config/opts.lua",
+		"file": "~/.config/nvim/init.lua",
 		"pattern": "local colorscheme = \".+\"",
 		"replace_value": "local colorscheme = \"{value}\"",
 		"replace_type": "matched",

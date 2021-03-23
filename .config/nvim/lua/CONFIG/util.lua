@@ -34,17 +34,44 @@ util.bind = function (mode, binding, command, args)
 	vim.api.nvim_set_keymap(mode, binding, command, args)
 end
 
+-----------------------------
+-- SPLIT STRING INTO TABLE --
+-----------------------------
+function util.split(source, delimiters)
+	local elements = {}
+	local pattern = '([^'..delimiters..']+)'
+	string.gsub(source, pattern, function(value) elements[#elements + 1] = value; end);
+	return elements
+end
+
 -------------------------------
 -- GET HIGHLIGHT COLOR CODES --
 -------------------------------
-util.gh = function(highlight)
+util.gh = function(highlight, fallback_colors)
+	fallback_colors = fallback_colors or true
 	local output = vim.api.nvim_exec(":hi " .. highlight, true)
 
-	local remove = function(text, string)
-		if string then
-			return string:gsub(text, "")
+	if output:gmatch("cleared")() then
+		return nil
+	end
+
+	if output:gmatch("links")() then
+		highlight = util.split(output, " ")
+		highlight = highlight[#highlight]
+		output = vim.api.nvim_exec(":hi " .. highlight, true)
+	end
+
+	local remove = function(text, str)
+		if str then
+			return str:gsub(text, "")
+		elseif fallback_colors then
+			if text:gmatch("fg")() then
+				return "white"
+			else
+				return "black"
+			end
 		else
-			return false
+			return nil
 		end
 	end
 

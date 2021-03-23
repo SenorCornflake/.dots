@@ -27,29 +27,40 @@ SetupStatusline = function(symbol)
 	gl.section.left = {}
 	gl.section.right = {}
 
+	local function_hl    = util.gh("Function")    -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
+	local string_hl      = util.gh("String")      -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
+	local keyword_hl     = util.gh("Keyword")     -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
+	local constant_hl    = util.gh("Constant")    -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
+	local statusline_hl  = util.gh("StatusLine")  -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
+	local errormsg_hl    = util.gh("ErrorMsg")    -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
+	local tag_hl         = util.gh("Tag")         -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
+	local special_hl     = util.gh("Special")     -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
+	local normal_hl      = util.gh("Normal")      -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
+	local conditional_hl = util.gh("Conditional") -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
+
 	local colors = {
-		normal_mode = { util.gh("Function"   ).guifg, util.gh("Function"   ).ctermfg },
-		insert      = { util.gh("String"     ).guifg, util.gh("String"     ).ctermfg },
-		visual      = { util.gh("Keyword"    ).guifg, util.gh("Keyword"    ).ctermfg },
-		other       = { util.gh("Constant"   ).guifg, util.gh("Constant"   ).ctermfg },
-		bg          = { util.gh("StatusLine" ).guibg, util.gh("StatusLine" ).ctermbg },
-		error       = { util.gh("ErrorMsg"   ).guifg, util.gh("ErrorMsg"   ).ctermfg },
-		warn        = { util.gh("Tag"        ).guifg, util.gh("Tag"        ).ctermfg },
-		info        = { util.gh("Function"   ).guifg, util.gh("Function"   ).ctermfg },
-		hint        = { util.gh("Special"    ).guifg, util.gh("Special"    ).ctermfg },
-		normal      = { util.gh("Normal"     ).guifg, util.gh("Normal"     ).ctermfg },
-		git         = { util.gh("Conditional").guifg, util.gh("Conditional").ctermfg },
+		normal_mode = { function_hl   .guifg , function_hl   .ctermfg },
+		insert      = { string_hl     .guifg , string_hl     .ctermfg },
+		visual      = { keyword_hl    .guifg , keyword_hl    .ctermfg },
+		other       = { constant_hl   .guifg , constant_hl   .ctermfg },
+		bg          = { normal_hl     .guibg , normal_hl     .ctermbg },
+		error       = { errormsg_hl   .guifg , errormsg_hl   .ctermfg },
+		warn        = { tag_hl        .guifg , tag_hl        .ctermfg },
+		info        = { function_hl   .guifg , function_hl   .ctermfg },
+		hint        = { special_hl    .guifg , special_hl    .ctermfg },
+		normal      = { normal_hl     .guifg , normal_hl     .ctermfg },
+		git         = { constant_hl   .guifg , constant_hl   .ctermfg },
 	}
 
 	local mode_colors = {
 		['n']  = { colors.normal_mode[1], colors.normal_mode[2] },
 		['no'] = { colors.normal_mode[1], colors.normal_mode[2] },
 		['v']  = { colors.visual     [1], colors.visual     [2] },
-		['V']  = {colors.visual      [1], colors.visual     [2] },
+		['V']  = { colors.visual     [1], colors.visual     [2] },
 		[''] = { colors.visual     [1], colors.visual     [2] },
 		['s']  = { colors.visual     [1], colors.visual     [2] },
 		['S']  = { colors.visual     [1], colors.visual     [2] },
-		[''] = {colors.visual      [1], colors.visual     [2] },
+		[''] = { colors.visual     [1], colors.visual     [2] },
 		['i']  = { colors.insert     [1], colors.insert     [2] },
 		['ic'] = { colors.insert     [1], colors.insert     [2] },
 		['ix'] = { colors.insert     [1], colors.insert     [2] },
@@ -98,7 +109,7 @@ SetupStatusline = function(symbol)
 			provider = function()
 				local mode = vim.fn.mode()
 
-				vim.cmd(":silent hi GalaxyMode guifg=bg guibg=" .. mode_colors[mode][1] .. " ctermfg=bg ctermbg=" .. mode_colors[mode][2])
+				vim.cmd(":silent hi GalaxyMode guifg=" .. colors.bg[1] .. " guibg=" .. mode_colors[mode][1] .. " ctermfg=" .. colors.bg[2] .. " ctermbg=" .. mode_colors[mode][2])
 
 				update_symbol_color(mode_colors[mode][1], mode_colors[mode][2])
 
