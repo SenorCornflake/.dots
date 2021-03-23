@@ -40,6 +40,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/lspkind-nvim"

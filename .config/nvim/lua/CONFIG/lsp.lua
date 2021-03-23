@@ -93,6 +93,11 @@ vim.cmd ":highlight link LspDiagnosticsDefaultHint Special"
 -- vim.cmd "sign define LspDiagnosticsSignInformation text=I texthl=LspDiagnosticsSignInformation linehl= numhl=LspDiagnosticsSignInformation"
 -- vim.cmd "sign define LspDiagnosticsSignHint text=H texthl=LspDiagnosticsSignHint linehl= numhl=LspDiagnosticsSignHint"
 
+--vim.cmd "sign undefine LspDiagnosticsSignError"
+--vim.cmd "sign undefine LspDiagnosticsSignWarning"
+--vim.cmd "sign undefine LspDiagnosticsSignInformation"
+--vim.cmd "sign undefine LspDiagnosticsSignHint"
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {
 		virtual_text = {

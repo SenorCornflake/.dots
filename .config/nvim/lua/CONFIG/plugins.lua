@@ -59,6 +59,6 @@ return require("packer").startup(function(use)
 	-- Git commands in vim
 	use 'tpope/vim-fugitive'
 
-	-- Git sign in gutter
-	use 'airblade/vim-gitgutter'
+	-- Git signs in gutter
+	use 'lewis6991/gitsigns.nvim'
 end)
