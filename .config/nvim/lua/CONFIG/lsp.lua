@@ -88,15 +88,16 @@ vim.cmd ":highlight link LspDiagnosticsDefaultWarning Tag"
 vim.cmd ":highlight link LspDiagnosticsDefaultInformation Function"
 vim.cmd ":highlight link LspDiagnosticsDefaultHint Special"
 
--- vim.cmd "sign define LspDiagnosticsSignError text=E texthl=LspDiagnosticsSignError linehl= numhl=LspDiagnosticsSignError"
--- vim.cmd "sign define LspDiagnosticsSignWarning text=W texthl=LspDiagnosticsSignWarning linehl= numhl=LspDiagnosticsSignWarning"
--- vim.cmd "sign define LspDiagnosticsSignInformation text=I texthl=LspDiagnosticsSignInformation linehl= numhl=LspDiagnosticsSignInformation"
--- vim.cmd "sign define LspDiagnosticsSignHint text=H texthl=LspDiagnosticsSignHint linehl= numhl=LspDiagnosticsSignHint"
+-- Redefine the signs here to that if I refresh neovim then it won't complain about the signs not existing
+vim.cmd "sign define LspDiagnosticsSignError text=E texthl=LspDiagnosticsSignError linehl= numhl=LspDiagnosticsSignError"
+vim.cmd "sign define LspDiagnosticsSignWarning text=W texthl=LspDiagnosticsSignWarning linehl= numhl=LspDiagnosticsSignWarning"
+vim.cmd "sign define LspDiagnosticsSignInformation text=I texthl=LspDiagnosticsSignInformation linehl= numhl=LspDiagnosticsSignInformation"
+vim.cmd "sign define LspDiagnosticsSignHint text=H texthl=LspDiagnosticsSignHint linehl= numhl=LspDiagnosticsSignHint"
 
---vim.cmd "sign undefine LspDiagnosticsSignError"
---vim.cmd "sign undefine LspDiagnosticsSignWarning"
---vim.cmd "sign undefine LspDiagnosticsSignInformation"
---vim.cmd "sign undefine LspDiagnosticsSignHint"
+vim.cmd "sign undefine LspDiagnosticsSignError"
+vim.cmd "sign undefine LspDiagnosticsSignWarning"
+vim.cmd "sign undefine LspDiagnosticsSignInformation"
+vim.cmd "sign undefine LspDiagnosticsSignHint"
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {
