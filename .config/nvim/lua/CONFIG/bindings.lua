@@ -71,6 +71,7 @@ util.bind("n", "<leader>v", ":Vista!!<CR>")
 -- Rooter --
 ------------
 util.bind("n", "<leader>.", ":Rooter<CR>")
+
 --------------
 -- Fugitive --
 --------------
@@ -80,3 +81,9 @@ util.bind("n", "<leader>gp", ":Git push<CR>")
 util.bind("n", "<leader>gP", ":Git pull<CR>")
 util.bind("n", "<leader>gb", ":Git blame<CR>")
 util.bind("n", "<leader>gl", ":Git log<CR>")
+
+----------------------------
+-- Color Scheme Switching --
+----------------------------
+util.bind("n", "<Left>", ":lua require('CONFIG.util').next_colorscheme(true)<CR>")
+util.bind("n", "<Right>", ":lua require('CONFIG.util').next_colorscheme(false)<CR>")

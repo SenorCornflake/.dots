@@ -14,6 +14,7 @@ return require("packer").startup(function(use)
 
 	-- Color Schemes
 	use "SenorCornflake/vim-base16-colorschemes"
+	use "flazz/vim-colorschemes"
 
 	-- Highlighting
 	use "nvim-treesitter/nvim-treesitter"

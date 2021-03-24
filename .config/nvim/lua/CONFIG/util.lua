@@ -52,6 +52,15 @@ util.gh = function(highlight, fallback_colors)
 	local output = vim.api.nvim_exec(":hi " .. highlight, true)
 
 	if output:gmatch("cleared")() then
+		if fallback_colors then
+			local normal = util.gh("Normal", false)
+
+			if normal then
+				return normal
+			else
+				return { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
+			end
+		end
 		return nil
 	end
 
@@ -64,14 +73,8 @@ util.gh = function(highlight, fallback_colors)
 	local remove = function(text, str)
 		if str then
 			return str:gsub(text, "")
-		elseif fallback_colors then
-			if text:gmatch("fg")() then
-				return "white"
-			else
-				return "black"
-			end
 		else
-			return nil
+			return "none"
 		end
 	end
 
@@ -114,6 +117,77 @@ util.active_lsp = function()
 	end
 
 	return nil
+end
+
+------------------------------------
+-- GET A LIST OF ALL COLORSCHEMES --
+------------------------------------
+util.colorschemes = function()
+	local rtps = vim.o.runtimepath
+	rtps = util.split(rtps, ",")
+
+	local colorschemes = {}
+
+	for _, rtp in pairs(rtps) do
+		local colors_dir = rtp .. "/colors"
+
+		if vim.fn.isdirectory(colors_dir) then
+			for _, colorscheme in pairs(util.split(vim.fn.glob(colors_dir .. "/*.vim"), "\n")) do
+				colorscheme = vim.fn.fnamemodify(colorscheme, ":t:r")
+				table.insert(colorschemes, colorscheme)
+			end
+		end
+	end
+
+	-- Remove duplicates
+	local hash = {}
+	local res = {}
+
+	for _,v in pairs(colorschemes) do
+	   if not hash[v] then
+		   res[#res + 1] = v
+		   hash[v] = true
+	   end
+	end
+
+	colorschemes = res
+
+	return colorschemes
+end
+
+----------------------------
+-- GO TO NEXT COLORSCHEME --
+----------------------------
+util.next_colorscheme = function(backward)
+	local current_colorscheme = vim.g.colors_name
+	local current_colorscheme_index = nil
+
+	if not colorschemes then
+		colorschemes = util.colorschemes()
+	end
+
+	for i, colorscheme in pairs(colorschemes) do
+		if colorscheme == current_colorscheme then
+			current_colorscheme_index = i 
+		end
+	end
+
+	if backward then
+		if colorschemes[current_colorscheme_index - 1] then
+			current_colorscheme_index = current_colorscheme_index - 1
+		else
+			current_colorscheme_index = #colorschemes
+		end
+	else
+		if colorschemes[current_colorscheme_index + 1] then
+			current_colorscheme_index = current_colorscheme_index + 1
+		else
+			current_colorscheme_index = 1
+		end
+	end
+
+	print(current_colorscheme_index .. "/" .. #colorschemes .. " " .. colorschemes[current_colorscheme_index])
+	vim.cmd("colorscheme " .. colorschemes[current_colorscheme_index])
 end
 
 return util

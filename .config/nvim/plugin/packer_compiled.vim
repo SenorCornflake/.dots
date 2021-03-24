@@ -89,9 +89,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-base16-colorschemes"
   },
+  ["vim-colorscheme-switcher"] = {
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-colorscheme-switcher"
+  },
+  ["vim-colorschemes"] = {
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-colorschemes"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+  },
+  ["vim-misc"] = {
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-misc"
   },
   ["vim-rooter"] = {
     loaded = true,

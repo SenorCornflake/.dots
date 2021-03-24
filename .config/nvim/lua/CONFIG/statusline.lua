@@ -27,16 +27,16 @@ SetupStatusline = function(symbol)
 	gl.section.left = {}
 	gl.section.right = {}
 
-	local function_hl    = util.gh("Function")    -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
-	local string_hl      = util.gh("String")      -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
-	local keyword_hl     = util.gh("Keyword")     -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
-	local constant_hl    = util.gh("Constant")    -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
-	local statusline_hl  = util.gh("StatusLine")  -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
-	local errormsg_hl    = util.gh("ErrorMsg")    -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
-	local tag_hl         = util.gh("Tag")         -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
-	local special_hl     = util.gh("Special")     -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
-	local normal_hl      = util.gh("Normal")      -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
-	local conditional_hl = util.gh("Conditional") -- or { guifg = "#ffffff", guibg = "#000000", ctermfg = "#ffffff", ctermbg = "#000000"}
+	local function_hl    = util.gh("Function")    or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
+	local string_hl      = util.gh("String")      or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
+	local keyword_hl     = util.gh("Keyword")     or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
+	local constant_hl    = util.gh("Constant")    or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
+	local statusline_hl  = util.gh("StatusLine")  or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
+	local errormsg_hl    = util.gh("ErrorMsg")    or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
+	local tag_hl         = util.gh("Tag")         or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
+	local special_hl     = util.gh("Special")     or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
+	local normal_hl      = util.gh("Normal")      or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
+	local conditional_hl = util.gh("Conditional") or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
 
 	local colors = {
 		normal_mode = { function_hl   .guifg , function_hl   .ctermfg },
@@ -233,6 +233,5 @@ end
 return function(powerline_symbol)
 	vim.cmd ("autocmd VimEnter * lua SetupStatusline('" .. powerline_symbol .. "')")
 	vim.cmd ("autocmd ColorScheme * lua SetupStatusline('" .. powerline_symbol .. "')")
-	vim.cmd ("autocmd ColorSchemePre * lua SetupStatusline('" .. powerline_symbol .. "')")
 end
 
