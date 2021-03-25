@@ -159,35 +159,31 @@ end
 -- GO TO NEXT COLORSCHEME --
 ----------------------------
 util.next_colorscheme = function(backward)
-	local current_colorscheme = vim.g.colors_name
-	local current_colorscheme_index = nil
+	Current_colorscheme_index = Current_colorscheme_index or 1
 
-	if not colorschemes then
-		colorschemes = util.colorschemes()
-	end
-
-	for i, colorscheme in pairs(colorschemes) do
-		if colorscheme == current_colorscheme then
-			current_colorscheme_index = i 
-		end
+	if not Colorschemes then
+		Colorschemes = util.colorschemes()
 	end
 
 	if backward then
-		if colorschemes[current_colorscheme_index - 1] then
-			current_colorscheme_index = current_colorscheme_index - 1
+		local prev = Colorschemes[Current_colorscheme_index - 1]
+		if prev then
+			Current_colorscheme_index = Current_colorscheme_index - 1
 		else
-			current_colorscheme_index = #colorschemes
+			Current_colorscheme_index = #Colorschemes
 		end
 	else
-		if colorschemes[current_colorscheme_index + 1] then
-			current_colorscheme_index = current_colorscheme_index + 1
+		local next = Colorschemes[Current_colorscheme_index + 1]
+
+		if next then
+			Current_colorscheme_index = Current_colorscheme_index + 1
 		else
-			current_colorscheme_index = 1
+			Current_colorscheme_index = 1
 		end
 	end
 
-	print(current_colorscheme_index .. "/" .. #colorschemes .. " " .. colorschemes[current_colorscheme_index])
-	vim.cmd("colorscheme " .. colorschemes[current_colorscheme_index])
+	print(Current_colorscheme_index .. "/" .. #Colorschemes .. " " .. Colorschemes[Current_colorscheme_index])
+	vim.cmd("colorscheme " .. Colorschemes[Current_colorscheme_index])
 end
 
 return util
