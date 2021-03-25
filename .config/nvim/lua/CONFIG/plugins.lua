@@ -13,8 +13,13 @@ return require("packer").startup(function(use)
 	use { "wbthomason/packer.nvim", opt = true }
 
 	-- Color Schemes
-	use "SenorCornflake/vim-base16-colorschemes"
-	use "flazz/vim-colorschemes"
+	-- use "SenorCornflake/vim-base16-colorschemes"
+	use "wadackel/vim-dogrun"
+	use "challenger-deep-theme/vim"
+	use "arcticicestudio/nord-vim"
+	use "ayu-theme/ayu-vim"
+	use "cocopon/iceberg.vim"
+
 
 	-- Highlighting
 	use "nvim-treesitter/nvim-treesitter"

@@ -155,14 +155,38 @@ util.colorschemes = function()
 	return colorschemes
 end
 
+-------------------------------------
+-- GET THE INDEX OF VALUE IN TABLE --
+-------------------------------------
+util.index = function(table, value)
+	for k, v in pairs(table) do
+		if v == value then
+			return k
+		end
+	end
+
+	return nil
+end
+
 ----------------------------
 -- GO TO NEXT COLORSCHEME --
 ----------------------------
-util.next_colorscheme = function(backward)
-	Current_colorscheme_index = Current_colorscheme_index or 1
+vim.cmd "autocmd User Restarted lua Current_colorscheme_index = nil"
+vim.cmd "autocmd User Restarted lua Colorschemes = nil"
 
+util.next_colorscheme = function(backward)
 	if not Colorschemes then
 		Colorschemes = util.colorschemes()
+	end
+
+	if not Current_colorscheme_index then
+		local index = util.index(Colorschemes, vim.g.colors_name)
+
+		if index then
+			Current_colorscheme_index = index
+		else
+			Current_colorscheme_index = 1
+		end
 	end
 
 	if backward then
