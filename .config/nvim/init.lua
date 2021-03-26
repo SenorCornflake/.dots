@@ -7,7 +7,7 @@ end
 
 vim = vim -- Less "undefined global" warnings this way
 
-local colorscheme = "slate"
+local colorscheme = "dogrun"
 local powerline_symbol = "up_slant"
 
 -- General --
@@ -32,3 +32,5 @@ require "CONFIG.PLUGINS.compe"
 require "CONFIG.PLUGINS.lspkind"
 require "CONFIG.PLUGINS.rooter"
 require "CONFIG.PLUGINS.gitsigns"
+
+vim.cmd "doautocmd User Restarted"

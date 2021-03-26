@@ -45,4 +45,9 @@ function programs.package_list_updater()
 	awful.spawn.easy_async_with_shell("sh ~/environment/scripts/auto_update_package_list.sh")
 end
 
+function programs.notification_daemon()
+	os.execute("killall dunst")
+	awful.spawn.easy_async_with_shell("dunst &")
+end
+
 return programs

@@ -210,4 +210,68 @@ util.next_colorscheme = function(backward)
 	vim.cmd("colorscheme " .. Colorschemes[Current_colorscheme_index])
 end
 
+util.base16ify = function()
+	local theme = {
+		scheme = vim.g.colors_name,
+		author = "Generated",
+		base00 = util.gh("Normal")     .guibg:gsub("#", ""),
+		base01 = util.gh("CursorLine") .guibg:gsub("#", ""),
+		base02 = util.gh("Visual")     .guibg:gsub("#", ""),
+		base03 = util.gh("Comment")    .guifg:gsub("#", ""),
+		base04 = util.gh("StatusLine") .guifg:gsub("#", ""),
+		base05 = util.gh("Normal")     .guifg:gsub("#", ""),
+		base06 = util.gh("StatusLine") .guifg:gsub("#", ""),
+		base07 = util.gh("Normal")     .guifg:gsub("#", ""),
+		base08 = util.gh("Character")  .guifg:gsub("#", ""),
+		base09 = util.gh("Number")     .guifg:gsub("#", ""),
+		base0A = util.gh("Type")       .guifg:gsub("#", ""),
+		base0B = util.gh("String")     .guifg:gsub("#", ""),
+		base0C = util.gh("Special")    .guifg:gsub("#", ""),
+		base0D = util.gh("Function")   .guifg:gsub("#", ""),
+		base0E = util.gh("Conditional").guifg:gsub("#", ""),
+		base0F = util.gh("Constant")   .guifg:gsub("#", "")
+	}
+
+
+	for d, base in pairs(theme) do
+		if base == "none" then
+			print(d)
+			return
+		end
+	end
+
+	local text =   'scheme: "' .. theme.scheme .. '"\n'
+	text = text .. 'author: "' .. theme.author .. '"\n'
+	text = text .. 'base00: "' .. theme.base00 .. '"\n'
+	text = text .. 'base01: "' .. theme.base01 .. '"\n'
+	text = text .. 'base02: "' .. theme.base02 .. '"\n'
+	text = text .. 'base03: "' .. theme.base03 .. '"\n'
+	text = text .. 'base04: "' .. theme.base04 .. '"\n'
+	text = text .. 'base05: "' .. theme.base05 .. '"\n'
+	text = text .. 'base06: "' .. theme.base05 .. '"\n'
+	text = text .. 'base07: "' .. theme.base07 .. '"\n'
+	text = text .. 'base08: "' .. theme.base08 .. '"\n'
+	text = text .. 'base09: "' .. theme.base09 .. '"\n'
+	text = text .. 'base0A: "' .. theme.base0A .. '"\n'
+	text = text .. 'base0B: "' .. theme.base0B .. '"\n'
+	text = text .. 'base0C: "' .. theme.base0C .. '"\n'
+	text = text .. 'base0D: "' .. theme.base0D .. '"\n'
+	text = text .. 'base0E: "' .. theme.base0E .. '"\n'
+	text = text .. 'base0F: "' .. theme.base0F .. '"'
+
+	return text
+end
+
+-----------------------------------------------------------------------------
+-- ECHO HL GROUP NAMES OF WORD UNDER CURSOR (too lazy to remake it in lua) --
+-----------------------------------------------------------------------------
+vim.cmd [[
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+]]
+
 return util

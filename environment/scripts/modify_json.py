@@ -20,7 +20,7 @@ json_file.close()
 
 jsons[key] = value
 
-jsons = json.dumps(jsons)
+jsons = json.dumps(jsons, indent = 4)
 
 json_file = open(file_name, "w")
 json_file.write(jsons)

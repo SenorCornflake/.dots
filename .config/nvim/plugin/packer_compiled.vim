@@ -36,6 +36,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
+  ["ayu-vim"] = {
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/ayu-vim"
+  },
   ["galaxyline.nvim"] = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
@@ -44,9 +48,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
+  ["iceberg.vim"] = {
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/iceberg.vim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
+  },
+  ["nord-vim"] = {
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/nord-vim"
   },
   ["nvim-compe"] = {
     loaded = true,
@@ -85,25 +97,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
+  vim = {
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim"
+  },
   ["vim-base16-colorschemes"] = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-base16-colorschemes"
   },
-  ["vim-colorscheme-switcher"] = {
+  ["vim-dogrun"] = {
     loaded = true,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-colorscheme-switcher"
-  },
-  ["vim-colorschemes"] = {
-    loaded = true,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-colorschemes"
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-dogrun"
   },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-fugitive"
-  },
-  ["vim-misc"] = {
-    loaded = true,
-    path = "/home/breton/.local/share/nvim/site/pack/packer/start/vim-misc"
   },
   ["vim-rooter"] = {
     loaded = true,

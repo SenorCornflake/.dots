@@ -417,6 +417,22 @@
 		"value_is_file": false
 	},
 	{
+		"name": "alacritty.padding_x",
+		"file": "~/.config/alacritty/alacritty.yml",
+		"pattern": "x: .* # PADDING",
+		"replace_value": "x: {value} # PADDING",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "alacritty.padding_y",
+		"file": "~/.config/alacritty/alacritty.yml",
+		"pattern": "y: .* # PADDING",
+		"replace_value": "y: {value} # PADDING",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
 		"name": "neovim.colorscheme",
 		"file": "~/.config/nvim/init.lua",
 		"pattern": "local colorscheme = \".+\"",
@@ -429,6 +445,110 @@
 		"file": "~/.config/picom/picom.conf",
 		"pattern": "shadow = .+; # GLOBAL",
 		"replace_value": "shadow = {value}; # GLOBAL",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "xsettingsd.font_name",
+		"file": "~/.config/xsettingsd/xsettingsd.conf",
+		"pattern": "Gtk/FontName .+",
+		"replace_value": "Gtk/FontName \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "xsettingsd.icon_theme_name",
+		"file": "~/.config/xsettingsd/xsettingsd.conf",
+		"pattern": "Net/IconThemeName .+",
+		"replace_value": "Net/IconThemeName \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "xsettingsd.theme_name",
+		"file": "~/.config/xsettingsd/xsettingsd.conf",
+		"pattern": "Net/ThemeName .+",
+		"replace_value": "Net/ThemeName \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "xsettingsd.cursor_theme_name",
+		"file": "~/.config/xsettingsd/xsettingsd.conf",
+		"pattern": "Gtk/CursorThemeName .+",
+		"replace_value": "Gtk/CursorThemeName \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "dunst.frame_width",
+		"file": "~/.config/dunst/dunstrc",
+		"pattern": "frame_width = .+",
+		"replace_value": "frame_width = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "dunst.frame_color",
+		"file": "~/.config/dunst/dunstrc",
+		"pattern": "frame_color = .+",
+		"replace_value": "frame_color = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "dunst.font",
+		"file": "~/.config/dunst/dunstrc",
+		"pattern": "font = .+",
+		"replace_value": "font = {value}",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "dunst.icon",
+		"file": "~/.config/dunst/dunstrc",
+		"pattern": "icon = .+",
+		"replace_value": "icon = {value}",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "dunst.background",
+		"file": "~/.config/dunst/dunstrc",
+		"pattern": "background = .+",
+		"replace_value": "background = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "dunst.foreground",
+		"file": "~/.config/dunst/dunstrc",
+		"pattern": "foreground = .+",
+		"replace_value": "foreground = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "dunst.padding",
+		"file": "~/.config/dunst/dunstrc",
+		"pattern": "padding = .+",
+		"replace_value": "padding = {value}",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "dunst.horizontal_padding",
+		"file": "~/.config/dunst/dunstrc",
+		"pattern": "horizontal_padding = .+",
+		"replace_value": "horizontal_padding = {value}",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "dunst.geometry",
+		"file": "~/.config/dunst/dunstrc",
+		"pattern": "geometry = .+",
+		"replace_value": "geometry = \"{value}\"",
 		"replace_type": "matched",
 		"value_is_file": false
 	}

@@ -4,6 +4,10 @@
 		"action": "python ~/environment/scripts/base16_theme_menu.py"
 	},
 	{
+		"name": "Change Theme",
+		"action": "python ~/environment/scripts/change_theme.py"
+	},
+	{
 		"name": "Change Base16 Picture",
 		"action": "python ~/environment/scripts/commander/main.py ~/environment/scripts/commander/base16_picture_menu.json"
 	},

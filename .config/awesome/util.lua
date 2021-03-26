@@ -60,6 +60,7 @@ end
 -- Set Wallpaper
 function util.set_wallpaper(wallpaper)
 	wallpaper = wallpaper or beautiful.general.wallpaper
+	wallpaper = wallpaper:gsub("~", os.getenv("HOME"))
 	if wallpaper then
 		awful.screen.connect_for_each_screen(function(s)
 			gears.wallpaper.maximized(wallpaper, s)

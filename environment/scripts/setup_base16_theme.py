@@ -16,7 +16,7 @@ if avoid_conversion == "true":
 elif avoid_conversion == "false":
     avoid_conversion = False
 
-os.system("notify-send \"{}\"".format(theme_name))
+# os.system("notify-send \"{}\"".format(theme_name))
 
 if not os.path.exists(theme_path):
     print("Path does not exist")
@@ -86,51 +86,38 @@ settings = {
 }
 
 # Generate plain color wallpaper
-# os.system('convert -size 1920x1080 xc:#{} ~/Pictures/wallpapers/generated.png'.format(theme["base00"]))
-# os.system('notify-send "Generated plain wallpaper"')
+os.system('convert -size 1920x1080 xc:#{} ~/Pictures/wallpapers/generated.png'.format(theme["base00"]))
 
 # Generate flatcolor base16 theme
-# os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-2\" --output-root ~/.themes/FlatColor/gtk-2.0 --output-file colors2 -d".format(theme_path))
-# os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-3\" --output-root ~/.themes/FlatColor/gtk-3.0 --output-file colors3 -d".format(theme_path))
-# os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-3\" --output-root ~/.themes/FlatColor/gtk-3.20 --output-file colors3 -d".format(theme_path))
-# os.system('notify-send "Built gtk-flatcolor schemes"')
+os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-2\" --output-root ~/.themes/FlatColor/gtk-2.0 --output-file colors2 -d".format(theme_path))
+os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-3\" --output-root ~/.themes/FlatColor/gtk-3.0 --output-file colors3 -d".format(theme_path))
+os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-3\" --output-root ~/.themes/FlatColor/gtk-3.20 --output-file colors3 -d".format(theme_path))
 
 # Generate Neovim Colorscheme (Even though this is useless, I placed it here so that if I create my own base16 theme I do not have to build it manually)
 os.system('base16-builder build --scheme {} --template-repo ~/environment/base16/templates/alacritty --template-name default --output-root ~/environment/application_colorschemes/alacritty'.format(theme_path))
-os.system("notify-send \"Built Alacritty scheme\"")
 os.system('base16-builder build --scheme {} --template-repo ~/environment/base16/templates/vim --output-root ~/.local/share/nvim/site/pack/packer/start/vim-base16-colorschemes'.format(theme_path))
-os.system("notify-send \"Built Neovim scheme\"")
 
 # Set Exconman settings
 for setting in settings.keys():
     value = settings[setting]
     os.system('python ~/environment/scripts/modify_json.py ~/environment/themes/base16.json "{}" "{}"'.format(setting, value))
 os.system("exconman load ~/environment/themes/base16.json")
-# os.system("notify-send \"Set exconman settings\"")
-
-# Reload neovim colorscheme
-os.system('python ~/environment/scripts/execute_command_for_all_neovim_instances.py ":lua require [[CONFIG.colorscheme]]([[base16-' + theme_name + ']])" &')
-
-# Reload awesomewm
-# os.system('awesome-client "require(\'session\').restart()" &')
 
 # Generate icon theme
-# os.system("exec ~/environment/scripts/generate_archdroid_icons.sh {}".format(theme["base0D"]))
-# os.system("notify-send \"Generated icons\"")
+os.system("exec ~/environment/scripts/generate_archdroid_icons.sh {}".format(theme["base0D"]))
 
-# Reload xsettingsd
-# os.system('killall xsettingsd')
-# os.system('xsettingsd &')
+# Restart all programs that nedd rastarting
+os.system("python ~/environment/scripts/restart_all.py")
 
 # Convert current wallpaper to base16 theme
-# if not avoid_conversion:
-#     if wallpaper_name == "generated_from_picture":
-#         last_converted_wallpaper = open(os.path.expanduser("~/environment/cache/last_converted_wallpaper.txt"), "r").read()
-#         os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, last_converted_wallpaper))
-#         os.system("awesome-client 'require(\"util\").set_wallpaper(\"{}\")'".format(wallpaper_path));
-#         os.system("notify-send \"Converted wallpaper\"")
-#     elif wallpaper_name != "generated":
-#         os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, wallpaper_path))
-#         os.system("notify-send \"Converted wallpaper\"")
-# 
+if not avoid_conversion:
+    if wallpaper_name == "generated_from_picture":
+        last_converted_wallpaper = open(os.path.expanduser("~/environment/cache/last_converted_wallpaper.txt"), "r").read()
+        os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, last_converted_wallpaper))
+        os.system("awesome-client 'require(\"util\").set_wallpaper(\"{}\")'".format(wallpaper_path));
+        os.system("notify-send \"Converted wallpaper\"")
+    elif wallpaper_name != "generated":
+        os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, wallpaper_path))
+        os.system("notify-send \"Converted wallpaper\"")
+
 

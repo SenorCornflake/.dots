@@ -1,0 +1,60 @@
+{
+	"awesome.general.border_normal": "#2a2c3f",
+	"awesome.general.border_focused": "#545c8c",
+	"awesome.general.wallpaper": "~/Pictures/wallpapers/astronaut-powers-dogrun.jpg",
+	"awesome.alpha.bar.bg": "#222433",
+	"awesome.alpha.bar.fg": "#9ea3c0",
+	"awesome.alpha.bar.focused_tag_fg": "#929be5",
+	"awesome.alpha.bar.occupied_tag_fg": "#7cbe8c",
+	"awesome.alpha.bar.empty_tag_fg": "#545c8c",
+	"awesome.alpha.bar.label_fg": "#b871b8",
+	"awesome.alpha.bar.decoration_fg": "#929be5",
+	"awesome.alpha.bar.muted_fg": "#73c1a9",
+	"awesome.alpha.bar.low_battery_fg": "#73c1a9",
+	"awesome.alpha.bar.middle_battery_fg": "#a8a384",
+	"awesome.alpha.bar.full_battery_fg": "#7cbe8c",
+	"awesome.alpha.titlebar.bg_normal": "#2a2c3f",
+	"awesome.alpha.titlebar.fg_normal": "#9ea3c0",
+	"awesome.alpha.titlebar.bg_focused": "#545c8c",
+	"awesome.alpha.titlebar.fg_focused": "#9ea3c0",
+	"awesome.alpha.notification.bg": "#222433",
+	"awesome.alpha.notification.fg": "#9ea3c0",
+	"awesome.alpha.notification.border_color": "#73c1a9",
+	"awesome.bravo.bar.bg": "#222433",
+	"awesome.bravo.bar.fg": "#9ea3c0",
+	"awesome.bravo.bar.focused_tag_fg": "#929be5",
+	"awesome.bravo.bar.occupied_tag_fg": "#a8a384",
+	"awesome.bravo.bar.empty_tag_fg": "#545c8c",
+	"awesome.bravo.bar.label_fg": "#929be5",
+	"awesome.bravo.bar.sep_fg": "#363e7f",
+	"awesome.bravo.bar.muted_fg": "#73c1a9",
+
+	"rofi.alpha.bg": "#222433",
+	"rofi.alpha.fg": "#9ea3c0",
+	"rofi.alpha.bg_focused": "#b871b8",
+	"rofi.alpha.fg_focused": "#222433",
+	"rofi.alpha.prompt_fg": "#73c1a9",
+
+
+	"alacritty.theme": "~/environment/application_colorschemes/alacritty/colors/base16-dogrun.yml",
+	"alacritty.padding_x": "20",
+	"alacritty.padding_y": "20",
+
+	"neovim.colorscheme": "dogrun",
+
+	"picom.shadow": "false",
+
+	"xsettingsd.font_name": "Sarasa Mono CL, 9",
+	"xsettingsd.theme_name": "Adwaita-Dark",
+	"xsettingsd.icon_theme_name": "Adwaita",
+
+	"dunst.font": "Sarasa Mono CL 9",
+	"dunst.padding": "10",
+	"dunst.horizontal_padding": "10",
+	"dunst.frame_width": "2",
+	"dunst.foreground": "#9ea3c0",
+	"dunst.background": "#222433",
+	"dunst.frame_color": "#545c8c",
+	"dunst.geometry": "800x10-10+40"
+}
+

@@ -87,3 +87,13 @@ util.bind("n", "<leader>gl", ":Git log<CR>")
 ----------------------------
 util.bind("n", "<Left>", ":lua require('CONFIG.util').next_colorscheme(true)<CR>")
 util.bind("n", "<Right>", ":lua require('CONFIG.util').next_colorscheme(false)<CR>")
+
+---------------------------------
+-- Dsplay highlight group name --
+---------------------------------
+util.bind("n", "<CR>", ":call SynStack()<CR>")
+
+----------------------------------------------
+-- Generate base16 theme from active scheme --
+----------------------------------------------
+vim.cmd "command! GenBase16 lua print(require('CONFIG.util').base16ify())"

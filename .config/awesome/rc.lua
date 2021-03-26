@@ -16,7 +16,6 @@ local programs = require("programs")
 local session = require("session")
 local bar = require("ui_elements.bar")
 local titlebar = require("ui_elements.titlebar")
-local notification = require("ui_elements.notification")
 
 _G.ICAO_CODE = "FACT"
 _G.WIFI_INTERFACE = "wlan0"
@@ -64,10 +63,9 @@ tag_functions.set_gaps()
 client_functions.setup_border_colors()
 client_functions.set_at_slave()
 
--- Use the bar, titlebar and notifications defined in the beautiful theme
+-- Use the bar and titlebar defined in the beautiful theme
 bar.use(beautiful.bar)
 titlebar.use(beautiful.titlebar)
-notification.use(beautiful.notification)
 
 -- Set the wallpaper defined in the beautiful theme
 util.set_wallpaper()
@@ -77,6 +75,7 @@ programs.compositor()
 programs.disk_automounter()
 programs.polkit()
 programs.package_list_updater()
+programs.notification_daemon()
 
 -- Load any session saved previously
 session.load()

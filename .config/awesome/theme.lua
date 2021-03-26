@@ -5,11 +5,11 @@ local theme = {}
 
 -- Generic Settings
 theme.general = {
-	border_normal = "#3c3836",
-	border_focused = "#665c54",
+	border_normal = "#2a2c3f",
+	border_focused = "#545c8c",
 	border_width = xresources.apply_dpi(2),
 	gap_size = xresources.apply_dpi(5),
-	wallpaper = "/home/breton/Pictures/wallpapers/generated.png",
+	wallpaper = "~/Pictures/wallpapers/astronaut-powers-dogrun.jpg",
 }
 
 
@@ -17,53 +17,41 @@ theme.general = {
 theme.alpha = {
 	bar = {
 		-- alpha.bar.font
-		font = "Dina 7",
+		font = "Sarasa Mono CL 10",
 		-- alpha.bar.bg
-		bg = "#1d2021",
+		bg = "#222433",
 		-- alpha.bar.fg
-		fg = "#d5c4a1",
+		fg = "#9ea3c0",
 		-- alpha.bar.focused_tag_fg
-		focused_tag_fg = "#d3869b",
+		focused_tag_fg = "#929be5",
 		-- alpha.bar.occupied_tag_fg
-		occupied_tag_fg = "#b8bb26",
+		occupied_tag_fg = "#7cbe8c",
 		-- alpha.bar.empty_tag_fg
-		empty_tag_fg = "#665c54",
+		empty_tag_fg = "#545c8c",
 		-- alpha.bar.label_fg
-		label_fg = "#8ec07c",
+		label_fg = "#b871b8",
 		-- alpha.bar.decoration_fg
-		decoration_fg = "#83a598",
+		decoration_fg = "#929be5",
 		-- alpha.bar.muted_fg
-		muted_fg = "#fb4934",
+		muted_fg = "#73c1a9",
 		-- alpha.bar.low_battery_fg
-		low_battery_fg = "#fb4934",
+		low_battery_fg = "#73c1a9",
 		-- alpha.bar.middle_battery_fg
-		middle_battery_fg = "#fabd2f",
+		middle_battery_fg = "#a8a384",
 		-- alpha.bar.full_battery_fg
-		full_battery_fg = "#b8bb26",
+		full_battery_fg = "#7cbe8c",
 	},
 	titlebar = {
 		-- alpha.titlebar.font
-		font = "Dina 7",
+		font = "Sarasa Mono CL 10",
 		-- alpha.titlebar.bg_normal
-		bg_normal = "#3c3836",
+		bg_normal = "#2a2c3f",
 		-- alpha.titlebar.fg_normal
-		fg_normal = "#d5c4a1",
+		fg_normal = "#9ea3c0",
 		-- alpha.titlebar.bg_focused
-		bg_focused = "#665c54",
+		bg_focused = "#545c8c",
 		-- alpha.titlebar.fg_focused
-		fg_focused = "#d5c4a1",
-	},
-	notification = {
-		-- alpha.notification.bg
-		bg = "#1d2021",
-		-- alpha.notification.fg
-		fg = "#d5c4a1",
-		-- alpha.notification.border_color
-		border_color = "#d65d0e",
-		-- alpha.notification.font
-		font = "Dina 7",
-		-- alpha.notification.spacing
-		spacing = 10,
+		fg_focused = "#9ea3c0",
 	}
 }
 
@@ -71,29 +59,26 @@ theme.alpha = {
 theme.bravo = {
 	bar = {
 		-- bravo.bar.font
-		font = "Dina 7",
+		font = "Sarasa Mono CL 10",
 		-- bravo.bar.bg
-		bg = "#1d2021",
+		bg = "#222433",
 		-- bravo.bar.fg
-		fg = "#d5c4a1",
+		fg = "#9ea3c0",
 		-- bravo.bar.sep_fg
-		sep_fg = "#504945",
+		sep_fg = "#363e7f",
 		-- bravo.bar.label_fg
-		label_fg = "#83a598",
+		label_fg = "#929be5",
 		-- bravo.bar.focused_tag_fg
-		focused_tag_fg = "#d3869b",
+		focused_tag_fg = "#929be5",
 		-- bravo.bar.occupied_tag_fg
-		occupied_tag_fg = "#fabd2f",
+		occupied_tag_fg = "#a8a384",
 		-- bravo.bar.empty_tag_fg
-		empty_tag_fg = "#665c54",
+		empty_tag_fg = "#545c8c",
 		-- bravo.bar.muted_fg
-		muted_fg = "#fb4934",
+		muted_fg = "#73c1a9",
 	}
 }
 theme.bar = "bravo"
 theme.titlebar = "none"
-theme.notification = "alpha"
-
-theme.notification_spacing = theme[theme.notification].notification.spacing
 
 return theme

@@ -1,5 +1,5 @@
 configuration {
-	font: "Dina 9";
+	font: "Sarasa Mono CL 9";
 	show-icons: false;
 	drun-display-format: "{name}";
 	display-drun: ">";
