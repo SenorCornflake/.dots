@@ -67,4 +67,7 @@ return require("packer").startup(function(use)
 
 	-- Git signs in gutter
 	use 'lewis6991/gitsigns.nvim'
+
+	-- Buffer tab line
+	use "jose-elias-alvarez/buftabline.nvim"
 end)

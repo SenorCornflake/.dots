@@ -40,6 +40,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/ayu-vim"
   },
+  ["buftabline.nvim"] = {
+    loaded = true,
+    path = "/home/breton/.local/share/nvim/site/pack/packer/start/buftabline.nvim"
+  },
   ["galaxyline.nvim"] = {
     loaded = true,
     path = "/home/breton/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"

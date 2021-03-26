@@ -32,5 +32,6 @@ require "CONFIG.PLUGINS.compe"
 require "CONFIG.PLUGINS.lspkind"
 require "CONFIG.PLUGINS.rooter"
 require "CONFIG.PLUGINS.gitsigns"
+require "CONFIG.PLUGINS.buftabline"
 
 vim.cmd "doautocmd User Restarted"

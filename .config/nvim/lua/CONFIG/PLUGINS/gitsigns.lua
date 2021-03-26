@@ -8,8 +8,8 @@ require('gitsigns').setup {
 		topdelete    = { hl = 'GitSignsDelete', text = '^' },
 		changedelete = { hl = 'GitSignsChange', text = '~' },
 	},
-	numhl = true,
-	linehl = true,
+	numhl = false,
+	linehl = false,
 	-- keymaps = {
 	-- 	-- Default keymap options
 	-- 	noremap = true,
