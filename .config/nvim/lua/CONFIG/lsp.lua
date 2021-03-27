@@ -79,14 +79,14 @@ for server, config in pairs(servers) do
 end
 
 
-vim.cmd ":highlight clear LspDiagnosticsDefaultError"
-vim.cmd ":highlight clear LspDiagnosticsDefaultWarning"
-vim.cmd ":highlight clear LspDiagnosticsDefaultInformation"
-vim.cmd ":highlight clear LspDiagnosticsDefaultHint"
-vim.cmd ":highlight link LspDiagnosticsDefaultError ErrorMsg"
-vim.cmd ":highlight link LspDiagnosticsDefaultWarning Tag"
-vim.cmd ":highlight link LspDiagnosticsDefaultInformation Function"
-vim.cmd ":highlight link LspDiagnosticsDefaultHint Special"
+vim.cmd "autocmd ColorScheme * highlight clear LspDiagnosticsDefaultError"
+vim.cmd "autocmd ColorScheme * highlight clear LspDiagnosticsDefaultWarning"
+vim.cmd "autocmd ColorScheme * highlight clear LspDiagnosticsDefaultInformation"
+vim.cmd "autocmd ColorScheme * highlight clear LspDiagnosticsDefaultHint"
+vim.cmd "autocmd ColorScheme * highlight link LspDiagnosticsDefaultError ErrorMsg"
+vim.cmd "autocmd ColorScheme * highlight link LspDiagnosticsDefaultWarning Tag"
+vim.cmd "autocmd ColorScheme * highlight link LspDiagnosticsDefaultInformation Function"
+vim.cmd "autocmd ColorScheme * highlight link LspDiagnosticsDefaultHint Special"
 
 -- Redefine the signs here to that if I refresh neovim then it won't complain about the signs not existing
 vim.cmd "sign define LspDiagnosticsSignError text=E texthl=LspDiagnosticsSignError linehl= numhl=LspDiagnosticsSignError"

@@ -15,7 +15,6 @@ function session.restart()
 		focused_client = client.focus.window
 	end
 
-	util.debug.dump_to_file("dump.txt", focused_client)
 	focused_screen = focused_screen.index
 
 	local screens = {}

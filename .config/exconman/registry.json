@@ -1,262 +1,289 @@
 [
 	{
 		"name": "awesome.bar",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "theme\\.bar = \".+\"",
-		"replace_value": "theme.bar = \"{value}\"",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme.general_bar = .+",
+		"replace_value": "theme\\.general_bar = \"{value}\"",
 		"replace_type": "matched",
 		"value_is_file": false
 	},
 	{
 		"name": "awesome.titlebar",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "theme\\.titlebar = \".+\"",
-		"replace_value": "theme.titlebar = \"{value}\"",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.general_titlebar = \".+\"",
+		"replace_value": "theme.general_bar = \"{value}\"",
 		"replace_type": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "awesome.notification",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "theme\\.notification = \".+\"",
-		"replace_value": "theme.notification = \"{value}\"",
+		"name": "awesome.general.borderNormal",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.general_borderNormal = \".+\"",
+		"replace_value": "theme.general_borderNormal = \"{value}\"",
 		"replace_type": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "awesome.general.border_normal",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "border_normal = \".+\",",
-		"replace_value": "border_normal = \"{value}\",",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.general.border_focused",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "border_focused = \".+\"",
-		"replace_value": "border_focused = \"{value}\"",
+		"name": "awesome.general.borderFocused",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.general_borderFocused = \".+\"",
+		"replace_value": "theme.general_borderFocused = \"{value}\"",
 		"replace_type": "matched",
 		"value_is_file": false
 	},
 	{
 		"name": "awesome.general.border_width",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "border_width = .+",
-		"replace_value": "border_width = xresources.apply_dpi({value}),",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.general_borderWidth = .+",
+		"replace_value": "theme.general_borderWidth = {value}",
 		"replace_type": "matched",
 		"value_is_file": false
 	},
 	{
 		"name": "awesome.general.gap_size",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "gap_size = .+",
-		"replace_value": "gap_size = xresources.apply_dpi({value}),",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.general_gapSize = .+",
+		"replace_value": "theme.general_gapSize = {value}",
 		"replace_type": "matched",
 		"value_is_file": false
 	},
 	{
 		"name": "awesome.general.wallpaper",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "wallpaper = .+",
-		"replace_value": "wallpaper = \"{value}\",",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.general_wallpaper = .+",
+		"replace_value": "theme.general_wallpaper = \"{value}\"",
 		"replace_type": "matched",
 		"value_is_file": false
 	},
 
 
 
-
-
-
-
-
-
+	
 
 	{
 		"name": "awesome.alpha.bar.font",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.bar.font",
-		"replace_value": "\t\tfont = \"{value}\",",
-		"replace_type": "below",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.alpha_bar_font = .+",
+		"replace_value": "theme.alpha_bar_font = \"{value}\"",
+		"replace_type": "matched",
 		"value_is_file": false
 	},
 	{
 		"name": "awesome.alpha.bar.bg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.bar.bg",
-		"replace_value": "\t\tbg = \"{value}\",",
-		"replace_type": "below",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.alpha_bar_bg = .+",
+		"replace_value": "theme.alpha_bar_bg = \"{value}\"",
+		"replace_type": "matched",
 		"value_is_file": false
 	},
 	{
 		"name": "awesome.alpha.bar.fg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.bar.fg",
-		"replace_value": "\t\tfg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.bar.focused_tag_fg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.bar.focused_tag_fg",
-		"replace_value": "\t\tfocused_tag_fg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.bar.occupied_tag_fg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.bar.occupied_tag_fg",
-		"replace_value": "\t\toccupied_tag_fg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.bar.empty_tag_fg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.bar.empty_tag_fg",
-		"replace_value": "\t\tempty_tag_fg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.bar.label_fg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.bar.label_fg",
-		"replace_value": "\t\tlabel_fg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.bar.decoration_fg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.bar.decoration_fg",
-		"replace_value": "\t\tdecoration_fg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.bar.muted_fg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.bar.muted_fg",
-		"replace_value": "\t\tmuted_fg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.bar.low_battery_fg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.bar.low_battery_fg",
-		"replace_value": "\t\tlow_battery_fg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.bar.middle_battery_fg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.bar.middle_battery_fg",
-		"replace_value": "\t\tmiddle_battery_fg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.bar.full_battery_fg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.bar.full_battery_fg",
-		"replace_value": "\t\tfull_battery_fg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.titlebar.font",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.titlebar.font",
-		"replace_value": "\t\tfont = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.titlebar.bg_normal",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.titlebar.bg_normal",
-		"replace_value": "\t\tbg_normal = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.titlebar.fg_normal",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.titlebar.fg_normal",
-		"replace_value": "\t\tfg_normal = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.titlebar.bg_focused",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.titlebar.bg_focused",
-		"replace_value": "\t\tbg_focused = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.titlebar.fg_focused",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.titlebar.fg_focused",
-		"replace_value": "\t\tfg_focused = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.notification.bg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.notification.bg",
-		"replace_value": "\t\tbg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.notification.fg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.notification.fg",
-		"replace_value": "\t\tfg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.notification.border_color",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.notification.border_color",
-		"replace_value": "\t\tborder_color = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.notification.font",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.notification.font",
-		"replace_value": "\t\tfont = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.notification.spacing",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- alpha.notification.spacing",
-		"replace_value": "\t\tspacing = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "rofi.layout",
-		"file": "~/.config/rofi/config.rasi",
-		"pattern": "import .+",
-		"replace_value": "import \"layouts/{value}.rasi\"",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.alpha_bar_fg = .+",
+		"replace_value": "theme.alpha_bar_fg = \"{value}\"",
 		"replace_type": "matched",
 		"value_is_file": false
 	},
+	{
+		"name": "awesome.alpha.bar.focusedTagFg",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.alpha_bar_focusedTagFg = .+",
+		"replace_value": "theme.alpha_bar_focusedTagFg = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.alpha.bar.occupiedTagFg",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.alpha_bar_occupiedTagFg = .+",
+		"replace_value": "theme.alpha_bar_occupiedTagFg = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.alpha.bar.emptyTagFg",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.alpha_bar_emptyTagFg = .+",
+		"replace_value": "theme.alpha_bar_emptyTagFg = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.alpha.bar.labelFg",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.alpha_bar_labelFg = .+",
+		"replace_value": "theme.alpha_bar_labelFg = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.alpha.bar.decorationFg",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.alpha_bar_decorationFg = .+",
+		"replace_value": "theme.alpha_bar_decorationFg = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.alpha.bar.mutedFg",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.alpha_bar_mutedFg = .+",
+		"replace_value": "theme.alpha_bar_mutedFg = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.alpha.bar.lowBatteryFg",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.alpha_bar_lowBatteryFg = .+",
+		"replace_value": "theme.alpha_bar_lowBatteryFg = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.alpha.bar.middleBatteryFg",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.alpha_bar_middleBatteryFg = .+",
+		"replace_value": "theme.alpha_bar_middleBatteryFg = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.alpha.bar.fullBatteryFg",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.alpha_bar_fullBatteryFg = .+",
+		"replace_value": "theme.alpha_bar_fullBatteryFg = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.alpha.bar.fg",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.alpha_bar_fg = .+",
+		"replace_value": "theme.alpha_bar_fg = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+
+	{
+		"name": "awesome.alpha.titlebar.font",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.alpha_titlebar_font = .+",
+		"replace_value": "theme.alpha_titlebar_font = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.alpha.titlebar.bgNormal",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.alpha_titlebar_bgNormal = .+",
+		"replace_value": "theme.alpha_titlebar_bgNormal = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.alpha.titlebar.fgNormal",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.alpha_titlebar_fgNormal = .+",
+		"replace_value": "theme.alpha_titlebar_fgNormal = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.alpha.titlebar.bgFocused",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.alpha_titlebar_bgFocused = .+",
+		"replace_value": "theme.alpha_titlebar_bgFocused = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.alpha.titlebar.fgFocused",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.alpha_titlebar_fgFocused = .+",
+		"replace_value": "theme.alpha_titlebar_fgFocused = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+
+
+
+
+	{
+		"name": "awesome.bravo.bar.font",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.bravo_bar_font = .+",
+		"replace_value": "theme.bravo_bar_font = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.bravo.bar.bg",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.bravo_bar_bg = .+",
+		"replace_value": "theme.bravo_bar_bg = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.bravo.bar.fg",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.bravo_bar_fg = .+",
+		"replace_value": "theme.bravo_bar_fg = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.bravo.bar.sepFg",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.bravo_bar_sepFg = .+",
+		"replace_value": "theme.bravo_bar_sepFg = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.bravo.bar.labelFg",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.bravo_bar_labelFg = .+",
+		"replace_value": "theme.bravo_bar_labelFg = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.bravo.bar.focusedTagFg",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.bravo_bar_focusedTagFg = .+",
+		"replace_value": "theme.bravo_bar_focusedTagFg = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.bravo.bar.occupiedTagFg",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.bravo_bar_occupiedTagFg = .+",
+		"replace_value": "theme.bravo_bar_occupiedTagFg = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.bravo.bar.emptyTagFg",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.bravo_bar_emptyTagFg = .+",
+		"replace_value": "theme.bravo_bar_emptyTagFg = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "awesome.bravo.bar.mutedFg",
+		"file": "~/.config/awesome/CONFIG/theme.lua",
+		"pattern": "theme\\.bravo_bar_mutedFg = .+",
+		"replace_value": "theme.bravo_bar_mutedFg = \"{value}\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+
+
+
 	{
 		"name": "rofi.alpha.bg",
 		"file": "~/.config/rofi/config.rasi",
@@ -274,18 +301,18 @@
 		"value_is_file": false
 	},
 	{
-		"name": "rofi.alpha.fg_focused",
-		"file": "~/.config/rofi/config.rasi",
-		"pattern": "alpha-fg-focused: .+;",
-		"replace_value": "alpha-fg-focused: {value};",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
 		"name": "rofi.alpha.bg_focused",
 		"file": "~/.config/rofi/config.rasi",
 		"pattern": "alpha-bg-focused: .+;",
 		"replace_value": "alpha-bg-focused: {value};",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "rofi.alpha.fg_focused",
+		"file": "~/.config/rofi/config.rasi",
+		"pattern": "alpha-fg-focused: .+;",
+		"replace_value": "alpha-fg-focused: {value};",
 		"replace_type": "matched",
 		"value_is_file": false
 	},
@@ -297,98 +324,6 @@
 		"replace_type": "matched",
 		"value_is_file": false
 	},
-
-
-
-
-
-
-
-
-	{
-		"name": "awesome.bravo.bar.font",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- bravo.bar.font",
-		"replace_value": "\t\tfont = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.bravo.bar.bg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- bravo.bar.bg",
-		"replace_value": "\t\tbg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.bravo.bar.fg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- bravo.bar.fg",
-		"replace_value": "\t\tfg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.bravo.bar.focused_tag_fg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- bravo.bar.focused_tag_fg",
-		"replace_value": "\t\tfocused_tag_fg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.bravo.bar.occupied_tag_fg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- bravo.bar.occupied_tag_fg",
-		"replace_value": "\t\toccupied_tag_fg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.bravo.bar.empty_tag_fg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- bravo.bar.empty_tag_fg",
-		"replace_value": "\t\tempty_tag_fg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.bravo.bar.label_fg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- bravo.bar.label_fg",
-		"replace_value": "\t\tlabel_fg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.bravo.bar.sep_fg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- bravo.bar.sep_fg",
-		"replace_value": "\t\tsep_fg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.bravo.bar.muted_fg",
-		"file": "~/.config/awesome/theme.lua",
-		"pattern": "-- bravo.bar.muted_fg",
-		"replace_value": "\t\tmuted_fg = \"{value}\",",
-		"replace_type": "below",
-		"value_is_file": false
-	},
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

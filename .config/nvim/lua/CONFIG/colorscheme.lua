@@ -8,5 +8,5 @@ return function (colorscheme)
 	-- vim.cmd "autocmd VimEnter * hi clear LineNr"
 	-- vim.cmd "autocmd VimEnter * hi clear SignColumn"
 	-- vim.cmd "autocmd VimEnter * hi link LineNr Comment"
-	vim.cmd "autocmd VimEnter * hi Comment cterm=italic gui=italic"
+	vim.cmd "autocmd ColorScheme * hi Comment cterm=italic gui=italic"
 end

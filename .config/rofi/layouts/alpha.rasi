@@ -50,10 +50,9 @@ listview {
 }
 
 element {
-    background-color: @alpha-bg;
+    background-color: #00000000;
     text-color: @alpha-fg;
 	padding: 5px 10px;
-	str: "lemon";
 }
 
 element-icon {

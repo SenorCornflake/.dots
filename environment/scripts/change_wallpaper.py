@@ -10,7 +10,7 @@ index = os.popen(cmd).read()[:-1]
 
 if index != "":
     index = int(index)
-    os.system('awesome-client "require(\\"util\\").set_wallpaper(\\"{}\\")"'.format(wallpapers_dir + "/" + wallpapers[index]))
+    os.system('awesome-client "require(\\"CONFIG.util\\").set_wallpaper(\\"{}\\")"'.format(wallpapers_dir + "/" + wallpapers[index]))
     wallpaper = os.path.splitext(os.path.basename(wallpapers[index]))[0]
 
     # Disable shadows if the wallpaper is generated (because it's ugly)

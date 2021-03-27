@@ -34,55 +34,56 @@ if wallpaper_name == "generated":
 
 settings = {
     # GENERAL
-    "awesome.general.border_normal"           : "#" + theme["base01"],
-    "awesome.general.border_focused"          : "#" + theme["base03"],
-                                                 
-    # ALPHA BAR                                  
-    "awesome.alpha.bar.bg"                    : "#" + theme["base00"],
-    "awesome.alpha.bar.fg"                    : "#" + theme["base05"],
-    "awesome.alpha.bar.focused_tag_fg"        : "#" + theme["base0E"],
-    "awesome.alpha.bar.occupied_tag_fg"       : "#" + theme["base0B"],
-    "awesome.alpha.bar.empty_tag_fg"          : "#" + theme["base03"],
-    "awesome.alpha.bar.label_fg"              : "#" + theme["base0C"],
-    "awesome.alpha.bar.decoration_fg"         : "#" + theme["base0D"],
-    "awesome.alpha.bar.muted_fg"              : "#" + theme["base08"],
-    "awesome.alpha.bar.low_battery_fg"        : "#" + theme["base08"],
-    "awesome.alpha.bar.middle_battery_fg"     : "#" + theme["base0A"],
-    "awesome.alpha.bar.full_battery_fg"       : "#" + theme["base0B"],
+    "awesome.general.borderNormal"      : "#" + theme["base01"],
+    "awesome.general.borderFocused"     : "#" + theme["base03"],
+                                           
+    # ALPHA BAR                            
+    "awesome.alpha.bar.bg"              : "#" + theme["base00"],
+    "awesome.alpha.bar.fg"              : "#" + theme["base05"],
+    "awesome.alpha.bar.focusedTagFg"    : "#" + theme["base0E"],
+    "awesome.alpha.bar.occupiedTagFg"   : "#" + theme["base0B"],
+    "awesome.alpha.bar.emptyTagFg"      : "#" + theme["base03"],
+    "awesome.alpha.bar.labelFg"         : "#" + theme["base0C"],
+    "awesome.alpha.bar.decorationFg"    : "#" + theme["base0D"],
+    "awesome.alpha.bar.mutedFg"         : "#" + theme["base08"],
+    "awesome.alpha.bar.lowBatteryFg"    : "#" + theme["base08"],
+    "awesome.alpha.bar.middleBatteryFg" : "#" + theme["base0A"],
+    "awesome.alpha.bar.fullBatteryFg"   : "#" + theme["base0B"],
 
-    # ALPHA TITLEBAR                                 
-    "awesome.alpha.titlebar.bg_normal"        : "#" + theme["base01"],
-    "awesome.alpha.titlebar.fg_normal"        : "#" + theme["base05"],
-    "awesome.alpha.titlebar.bg_focused"       : "#" + theme["base03"],
-    "awesome.alpha.titlebar.fg_focused"       : "#" + theme["base05"],
+    # ALPHA TITLEBAR                           
+    "awesome.alpha.titlebar.bgNormal"   : "#" + theme["base01"],
+    "awesome.alpha.titlebar.fgNormal"   : "#" + theme["base05"],
+    "awesome.alpha.titlebar.bgFocused"  : "#" + theme["base03"],
+    "awesome.alpha.titlebar.fgFocused"  : "#" + theme["base05"],
 
-    # ALPHA NOTIFICATION                                 
-    "awesome.alpha.notification.bg"           : "#" + theme["base00"],
-    "awesome.alpha.notification.fg"           : "#" + theme["base05"],
-    "awesome.alpha.notification.border_color" : "#" + theme["base0F"],
-                                                 
-    # ALPHA ROFI                                 
-    "rofi.alpha.bg"                           : "#" + theme["base00"],
-    "rofi.alpha.fg"                           : "#" + theme["base05"],
-    "rofi.alpha.bg_focused"                   : "#" + theme["base0C"],
-    "rofi.alpha.fg_focused"                   : "#" + theme["base00"],
-    "rofi.alpha.prompt_fg"                    : "#" + theme["base0F"],
+    # ALPHA ROFI                           
+    "rofi.alpha.bg"                     : "#" + theme["base00"],
+    "rofi.alpha.fg"                     : "#" + theme["base05"],
+    "rofi.alpha.bg_focused"              : "#" + theme["base0C"],
+    "rofi.alpha.fg_focused"              : "#" + theme["base00"],
+    "rofi.alpha.prompt_fg"               : "#" + theme["base0F"],
 
     # BRAVO BAR
-    "awesome.bravo.bar.bg"                    : "#" + theme["base00"],
-    "awesome.bravo.bar.fg"                    : "#" + theme["base05"],
-    "awesome.bravo.bar.focused_tag_fg"        : "#" + theme["base0E"],
-    "awesome.bravo.bar.occupied_tag_fg"       : "#" + theme["base0A"],
-    "awesome.bravo.bar.empty_tag_fg"          : "#" + theme["base03"],
-    "awesome.bravo.bar.label_fg"              : "#" + theme["base0D"],
-    "awesome.bravo.bar.sep_fg"                : "#" + theme["base02"],
-    "awesome.bravo.bar.muted_fg"              : "#" + theme["base08"],
+    "awesome.bravo.bar.bg"              : "#" + theme["base00"],
+    "awesome.bravo.bar.fg"              : "#" + theme["base05"],
+    "awesome.bravo.bar.focusedTagFg"    : "#" + theme["base0E"],
+    "awesome.bravo.bar.occupiedTagFg"   : "#" + theme["base0A"],
+    "awesome.bravo.bar.emptyTagFg"      : "#" + theme["base03"],
+    "awesome.bravo.bar.labelFg"         : "#" + theme["base0D"],
+    "awesome.bravo.bar.sepFg"           : "#" + theme["base02"],
+    "awesome.bravo.bar.mutedFg"         : "#" + theme["base08"],
 
     # ALACRITTY
-    "alacritty.theme"                         : "~/environment/application_colorschemes/alacritty/colors/base16-" + theme_name + ".yml",
+    "alacritty.theme"                   : "~/environment/application_colorschemes/alacritty/colors/base16-" + theme_name + ".yml",
 
     # NEOVIM
-    "neovim.colorscheme"                      : "base16-" + theme_name
+    "neovim.colorscheme"                : "base16-" + theme_name,
+
+    # DUNST
+    "dunst.background"                  : "#" + theme["base00"],
+    "dunst.foreground"                  : "#" + theme["base05"],
+    "dunst.frame_color"                 : "#" + theme["base03"],
+    "dunst.icon"                        : "archdroid",
 }
 
 # Generate plain color wallpaper
@@ -93,7 +94,7 @@ os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base1
 os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-3\" --output-root ~/.themes/FlatColor/gtk-3.0 --output-file colors3 -d".format(theme_path))
 os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base16-builder/templates/gtk-flatcolor --template-name \"gtk-3\" --output-root ~/.themes/FlatColor/gtk-3.20 --output-file colors3 -d".format(theme_path))
 
-# Generate Neovim Colorscheme (Even though this is useless, I placed it here so that if I create my own base16 theme I do not have to build it manually)
+# Generate Neovim and Alacritty Colorscheme (Even though this is useless, I placed it here so that if I create my own base16 theme I do not have to build it manually)
 os.system('base16-builder build --scheme {} --template-repo ~/environment/base16/templates/alacritty --template-name default --output-root ~/environment/application_colorschemes/alacritty'.format(theme_path))
 os.system('base16-builder build --scheme {} --template-repo ~/environment/base16/templates/vim --output-root ~/.local/share/nvim/site/pack/packer/start/vim-base16-colorschemes'.format(theme_path))
 
@@ -106,7 +107,7 @@ os.system("exconman load ~/environment/themes/base16.json")
 # Generate icon theme
 os.system("exec ~/environment/scripts/generate_archdroid_icons.sh {}".format(theme["base0D"]))
 
-# Restart all programs that nedd rastarting
+# Restart all programs that need rastarting
 os.system("python ~/environment/scripts/restart_all.py")
 
 # Convert current wallpaper to base16 theme
