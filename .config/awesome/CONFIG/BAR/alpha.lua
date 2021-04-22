@@ -4,9 +4,6 @@ local wibox = require("wibox")
 
 local vicious = require("vicious");
 
-
-local M = {}
-
 awful.screen.connect_for_each_screen(function(s)
 	-- Create Widgets
 	local function taglist_callback(self, t, _, _)
@@ -22,7 +19,7 @@ awful.screen.connect_for_each_screen(function(s)
 			['9'] = "TORRENTS"
 		}
 
-		local focused = t.screen.selectedTag.index == t.index
+		local focused = t.screen.selected_tag.index == t.index
 		local occupied = #t:clients() > 0
 		local empty = #t:clients() == 0
 
@@ -147,7 +144,7 @@ awful.screen.connect_for_each_screen(function(s)
 	)
 
 	-- Create bar
-	local bar_height = 25
+	local bar_height = 30
 
 	local bar = wibox({
 		type = "dock",
@@ -168,9 +165,9 @@ awful.screen.connect_for_each_screen(function(s)
 
 	bar:setup({
 		widget = wibox.container.margin,
-		top = 2,
-		left = 5,
-		right = 5,
+		bottom = 2,
+		left = 10,
+		right = 10,
 		{
 			layout = wibox.layout.align.horizontal,
 			expand = "none",
@@ -328,5 +325,3 @@ awful.screen.connect_for_each_screen(function(s)
 		}
 	})
 end)
-
-return M

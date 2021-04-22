@@ -29,46 +29,46 @@ window:
         lines: 0
 
     padding:
-        x: 20 # PADDING
-        y: 20 # PADDING
+        x: 0 # PADDING
+        y: 0 # PADDING
 
     #decorations: none
 
 # THEME
-# Base16 dogrun - alacritty color config
-# Generated
+# Base16 Gruvbox dark, hard - alacritty color config
+# Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
 colors:
   # Default colors
   primary:
-    background: '0x222433'
-    foreground: '0x9ea3c0'
+    background: '0x1d2021'
+    foreground: '0xd5c4a1'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x222433'
-    cursor: '0x9ea3c0'
+    text: '0x1d2021'
+    cursor: '0xd5c4a1'
 
   # Normal colors
   normal:
-    black:   '0x222433'
-    red:     '0x73c1a9'
-    green:   '0x7cbe8c'
-    yellow:  '0xa8a384'
-    blue:    '0x929be5'
-    magenta: '0x929be5'
-    cyan:    '0xb871b8'
-    white:   '0x9ea3c0'
+    black:   '0x1d2021'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xd5c4a1'
 
   # Bright colors
   bright:
-    black:   '0x545c8c'
-    red:     '0x73c1a9'
-    green:   '0x2a2c3f'
-    yellow:  '0x363e7f'
-    blue:    '0x757aa5'
-    magenta: '0x9ea3c0'
-    cyan:    '0x73c1a9'
-    white:   '0x9ea3c0'
+    black:   '0x665c54'
+    red:     '0xfe8019'
+    green:   '0x3c3836'
+    yellow:  '0x504945'
+    blue:    '0xbdae93'
+    magenta: '0xebdbb2'
+    cyan:    '0xd65d0e'
+    white:   '0xfbf1c7'
 
 draw_bold_text_with_bright_colors: false
 

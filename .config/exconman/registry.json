@@ -1,17 +1,17 @@
 [
 	{
-		"name": "awesome.bar",
+		"name": "awesome.general.bar",
 		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme.general_bar = .+",
-		"replace_value": "theme\\.general_bar = \"{value}\"",
+		"pattern": "theme\\.general_bar = .+",
+		"replace_value": "theme.general_bar = \"{value}\"",
 		"replace_type": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "awesome.titlebar",
+		"name": "awesome.general.titlebar",
 		"file": "~/.config/awesome/CONFIG/theme.lua",
 		"pattern": "theme\\.general_titlebar = \".+\"",
-		"replace_value": "theme.general_bar = \"{value}\"",
+		"replace_value": "theme.general_titlebar = \"{value}\"",
 		"replace_type": "matched",
 		"value_is_file": false
 	},
@@ -32,18 +32,18 @@
 		"value_is_file": false
 	},
 	{
-		"name": "awesome.general.border_width",
+		"name": "awesome.general.borderWidth",
 		"file": "~/.config/awesome/CONFIG/theme.lua",
 		"pattern": "theme\\.general_borderWidth = .+",
-		"replace_value": "theme.general_borderWidth = {value}",
+		"replace_value": "theme.general_borderWidth = dpi({value})",
 		"replace_type": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "awesome.general.gap_size",
+		"name": "awesome.general.gapSize",
 		"file": "~/.config/awesome/CONFIG/theme.lua",
 		"pattern": "theme\\.general_gapSize = .+",
-		"replace_value": "theme.general_gapSize = {value}",
+		"replace_value": "theme.general_gapSize = dpi({value})",
 		"replace_type": "matched",
 		"value_is_file": false
 	},
@@ -284,6 +284,14 @@
 
 
 
+	{
+		"name": "rofi.layout",
+		"file": "~/.config/rofi/config.rasi",
+		"pattern": "@import .+",
+		"replace_value": "@import \"layouts/{value}.rasi\"",
+		"replace_type": "matched",
+		"value_is_file": false
+	},
 	{
 		"name": "rofi.alpha.bg",
 		"file": "~/.config/rofi/config.rasi",

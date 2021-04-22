@@ -96,4 +96,4 @@ util.bind("n", "<CR>", ":call SynStack()<CR>")
 ----------------------------------------------
 -- Generate base16 theme from active scheme --
 ----------------------------------------------
-vim.cmd "command! GenBase16 lua print(require('CONFIG.util').base16ify())"
+vim.cmd "command! Base16ify lua print(require('CONFIG.util').base16ify())"

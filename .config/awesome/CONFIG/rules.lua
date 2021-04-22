@@ -40,5 +40,14 @@ awful.rules.rules = {
 			floating = false,
 			maximized = false
 		}
+	},
+	{ -- Fix firefox vlc floating, I never used to have this issue, but it happened suddenly and I don't know why
+		rule = {
+			class = "vlc",
+		},
+		properties = {
+			--floating = false,
+			maximized = false
+		}
 	}
 }

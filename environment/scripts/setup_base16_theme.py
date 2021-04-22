@@ -26,16 +26,11 @@ theme = open(theme_path, 'r').read()
 theme = yaml.load(theme, Loader=yaml.FullLoader)
 
 wallpaper_path = os.popen("exconman get awesome.general.wallpaper").read()[:-1]
-wallpaper_name = os.path.splitext(os.path.basename(wallpaper_path))[0]
-
-# Disable shadows if the wallpaper is generated (because it's ugly)
-if wallpaper_name == "generated":
-    os.system("exconman set picom.shadow false")
 
 settings = {
     # GENERAL
     "awesome.general.borderNormal"      : "#" + theme["base01"],
-    "awesome.general.borderFocused"     : "#" + theme["base03"],
+    "awesome.general.borderFocused"     : "#" + theme["base05"],
                                            
     # ALPHA BAR                            
     "awesome.alpha.bar.bg"              : "#" + theme["base00"],
@@ -53,15 +48,15 @@ settings = {
     # ALPHA TITLEBAR                           
     "awesome.alpha.titlebar.bgNormal"   : "#" + theme["base01"],
     "awesome.alpha.titlebar.fgNormal"   : "#" + theme["base05"],
-    "awesome.alpha.titlebar.bgFocused"  : "#" + theme["base03"],
+    "awesome.alpha.titlebar.bgFocused"  : "#" + theme["base05"],
     "awesome.alpha.titlebar.fgFocused"  : "#" + theme["base05"],
 
     # ALPHA ROFI                           
     "rofi.alpha.bg"                     : "#" + theme["base00"],
     "rofi.alpha.fg"                     : "#" + theme["base05"],
-    "rofi.alpha.bg_focused"              : "#" + theme["base0C"],
-    "rofi.alpha.fg_focused"              : "#" + theme["base00"],
-    "rofi.alpha.prompt_fg"               : "#" + theme["base0F"],
+    "rofi.alpha.bg_focused"             : "#" + theme["base0C"],
+    "rofi.alpha.fg_focused"             : "#" + theme["base00"],
+    "rofi.alpha.prompt_fg"              : "#" + theme["base0F"],
 
     # BRAVO BAR
     "awesome.bravo.bar.bg"              : "#" + theme["base00"],
@@ -82,7 +77,7 @@ settings = {
     # DUNST
     "dunst.background"                  : "#" + theme["base00"],
     "dunst.foreground"                  : "#" + theme["base05"],
-    "dunst.frame_color"                 : "#" + theme["base03"],
+    "dunst.frame_color"                 : "#" + theme["base05"],
     "dunst.icon"                        : "archdroid",
 }
 
@@ -98,27 +93,38 @@ os.system("base16-builder build --scheme {} --template-repo ~/Repositories/base1
 os.system('base16-builder build --scheme {} --template-repo ~/environment/base16/templates/alacritty --template-name default --output-root ~/environment/application_colorschemes/alacritty'.format(theme_path))
 os.system('base16-builder build --scheme {} --template-repo ~/environment/base16/templates/vim --output-root ~/.local/share/nvim/site/pack/packer/start/vim-base16-colorschemes'.format(theme_path))
 
-# Set Exconman settings
+# Change exconman base16 style
 for setting in settings.keys():
     value = settings[setting]
-    os.system('python ~/environment/scripts/modify_json.py ~/environment/themes/base16.json "{}" "{}"'.format(setting, value))
-os.system("exconman load ~/environment/themes/base16.json")
+    os.system('python ~/environment/scripts/modify_json.py ~/environment/themes/styles/base16.json "{}" "{}"'.format(setting, value))
+os.system("exconman load ~/environment/themes/styles/base16.json")
 
 # Generate icon theme
 os.system("exec ~/environment/scripts/generate_archdroid_icons.sh {}".format(theme["base0D"]))
 
-# Restart all programs that need rastarting
+# Restart all programs that need restarting
 os.system("python ~/environment/scripts/restart_all.py")
+
+wallpapers_with_no_shadow = [
+    os.path.expanduser("~/Pictures/wallpapers/generated.png"),
+    os.path.expanduser("~/Pictures/wallpapers/color-skull.jpg"),
+    os.path.expanduser("~/Pictures/wallpapers/astronaut-powers.jpg"),
+]
 
 # Convert current wallpaper to base16 theme
 if not avoid_conversion:
-    if wallpaper_name == "generated_from_picture":
+    if wallpaper_path == os.path.expanduser("~/Pictures/wallpapers/generated_from_picture.jpg"):
         last_converted_wallpaper = open(os.path.expanduser("~/environment/cache/last_converted_wallpaper.txt"), "r").read()
         os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, last_converted_wallpaper))
-        os.system("awesome-client 'require(\"util\").set_wallpaper(\"{}\")'".format(wallpaper_path));
-        os.system("notify-send \"Converted wallpaper\"")
-    elif wallpaper_name != "generated":
+        os.system("awesome-client 'require(\"CONFIG.util\").set_wallpaper(\"{}\")'".format(wallpaper_path))
+
+        # Disable shadows if last converted wallpaper is any of the following
+        if last_converted_wallpaper in wallpapers_with_no_shadow:
+            os.system("exconman set picom.shadow false")
+    elif wallpaper_path != os.path.expanduser("~/Pictures/wallpapers/generated.png"):
         os.system("python ~/environment/scripts/match_image_to_base16.py {} {}".format(theme_path, wallpaper_path))
-        os.system("notify-send \"Converted wallpaper\"")
+        os.system("awesome-client 'require(\"CONFIG.util\").set_wallpaper(\"{}\")'".format("~/Pictures/wallpapers/generated_from_picture.jpg"))
 
-
+        if wallpaper_path in wallpapers_with_no_shadow:
+            os.system("exconman set picom.shadow false")
+os.system("notify-send \"COMPLETED\"")

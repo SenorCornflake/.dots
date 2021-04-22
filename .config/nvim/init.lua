@@ -7,8 +7,8 @@ end
 
 vim = vim -- Less "undefined global" warnings this way
 
-local colorscheme = "dogrun"
-local powerline_symbol = "up_slant"
+local colorscheme = "base16-gruvbox-dark-hard"
+local powerline_symbol = ""
 
 -- General --
 -------------

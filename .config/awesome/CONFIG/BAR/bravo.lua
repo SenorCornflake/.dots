@@ -241,7 +241,7 @@ awful.screen.connect_for_each_screen(function(s)
 			['9'] = "TORRENTS"
 		}
 
-		local focused = t.screen.selectedTag.index == t.index
+		local focused = t.screen.selected_tag.index == t.index
 		local occupied = #t:clients() > 0
 		local empty = #t:clients() == 0
 

@@ -1,39 +1,27 @@
 [
 	{
 		"name": "Change Base16 Theme",
-		"action": "python ~/environment/scripts/base16_theme_menu.py"
+		"action": "python ~/environment/scripts/ui_scripts/base16_theme_menu.py"
 	},
 	{
-		"name": "Change Theme",
-		"action": "python ~/environment/scripts/change_theme.py"
+		"name": "Change Style",
+		"action": "python ~/environment/scripts/ui_scripts/change_style.py"
 	},
 	{
-		"name": "Change Base16 Picture",
+		"name": "Change Layout",
+		"action": "python ~/environment/scripts/ui_scripts/change_layout.py"
+	},
+	{
+		"name": "Generate Base16 Theme",
 		"action": "python ~/environment/scripts/commander/main.py ~/environment/scripts/commander/base16_picture_menu.json"
 	},
 	{
-		"name": "Change Bar",
-		"action": "python ~/environment/scripts/change_awesome_bar.py"
-	},
-	{
-		"name": "Change Titlebar",
-		"action": "python ~/environment/scripts/change_awesome_titlebar.py"
-	},
-	{
-		"name": "Change Notification",
-		"action": "python ~/environment/scripts/change_awesome_notification.py"
-	},
-	{
-		"name": "Change Rofi Layout",
-		"action": "python ~/environment/scripts/change_rofi_layout.py"
-	},
-	{
 		"name": "Change Wallpaper",
-		"action": "python ~/environment/scripts/change_wallpaper.py"
+		"action": "python ~/environment/scripts/ui_scripts/change_wallpaper.py"
 	},
 	{
 		"name": "Toggle Nightmode",
-		"action": "python ~/environment/scripts/nightmode.py toggle"
+		"action": "python ~/environment/scripts/ui_scripts/nightmode.py toggle"
 	},
     {
         "name": "Exit",
@@ -77,6 +65,20 @@
                     {
                         "name": "Continue",
                         "action": "shutdown now"
+                    }
+                ]
+            },
+            {
+                "name": "Suspend",
+                "prompt": "Are you sure?",
+                "action": [
+                    {
+                        "name": "Cancel",
+                        "action": ""
+                    },
+                    {
+                        "name": "Continue",
+                        "action": "systemctl suspend"
                     }
                 ]
             }

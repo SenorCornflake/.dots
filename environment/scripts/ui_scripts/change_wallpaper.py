@@ -13,7 +13,7 @@ if index != "":
     os.system('awesome-client "require(\\"CONFIG.util\\").set_wallpaper(\\"{}\\")"'.format(wallpapers_dir + "/" + wallpapers[index]))
     wallpaper = os.path.splitext(os.path.basename(wallpapers[index]))[0]
 
-    # Disable shadows if the wallpaper is generated (because it's ugly)
+    # Disable shadows for some wallpapers (because it's ugly)
     if wallpaper == "generated":
         os.system("exconman set picom.shadow false")
     else:

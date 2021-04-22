@@ -14,4 +14,4 @@ type = sys.argv[2]
 
 if index != "":
     index = int(index)
-    os.system('python ~/environment/scripts/create_base16_from_picture.py {} {} "{}"'.format(backend, type, wallpapers_dir + "/" + wallpapers[index]))
+    os.system('python ~/environment/scripts/generate_base16_theme.py {} {} "{}"'.format(backend, type, wallpapers_dir + "/" + wallpapers[index]))

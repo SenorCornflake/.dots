@@ -24,6 +24,9 @@ require "CONFIG.client"
 require "CONFIG.tag"
 require("CONFIG.BAR." .. theme.general_bar)
 require("CONFIG.TITLEBAR." .. theme.general_titlebar)
+
 util.set_wallpaper()
+
+os.execute("xset r rate 250 30")
 
 session.load()

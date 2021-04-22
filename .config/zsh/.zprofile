@@ -1,1 +1,1 @@
-sh ~/environment/scripts/wm_chooser.sh
+sh ~/environment/scripts/other/wm_chooser.sh

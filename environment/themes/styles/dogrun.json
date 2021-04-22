@@ -32,7 +32,6 @@
 	"rofi.alpha.fg_focused": "#222433",
 	"rofi.alpha.prompt_fg": "#73c1a9",
 
-
 	"alacritty.theme": "~/environment/application_colorschemes/alacritty/colors/base16-dogrun.yml",
 	"alacritty.padding_x": "20",
 	"alacritty.padding_y": "20",
@@ -46,12 +45,8 @@
 	"xsettingsd.icon_theme_name": "Adwaita",
 
 	"dunst.font": "Sarasa Mono CL 9",
-	"dunst.padding": "10",
-	"dunst.horizontal_padding": "10",
-	"dunst.frame_width": "2",
 	"dunst.foreground": "#9ea3c0",
 	"dunst.background": "#222433",
-	"dunst.frame_color": "#545c8c",
-	"dunst.geometry": "800x10-10+40"
+	"dunst.frame_color": "#545c8c"
 }
 
