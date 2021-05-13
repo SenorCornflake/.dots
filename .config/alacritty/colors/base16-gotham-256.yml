@@ -1,0 +1,42 @@
+# Base16 gotham 256 - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0x0c1014'
+    foreground: '0x99d1ce'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x0c1014'
+    cursor: '0x99d1ce'
+
+  # Normal colors
+  normal:
+    black:   '0x0c1014'
+    red:     '0x888ca6'
+    green:   '0x2aa889'
+    yellow:  '0xd26937'
+    blue:    '0x599cab'
+    magenta: '0x599cab'
+    cyan:    '0xd26937'
+    white:   '0x99d1ce'
+
+  # Bright colors
+  bright:
+    black:   '0x195466'
+    red:     '0x888ca6'
+    green:   '0x2aa889'
+    yellow:  '0xd26937'
+    blue:    '0x599cab'
+    magenta: '0x599cab'
+    cyan:    '0xd26937'
+    white:   '0x99d1ce'
+
+  indexed_colors:
+    - { index: 16, color: '0xd26937' }
+    - { index: 17, color: '0x888ca6' }
+    - { index: 18, color: '0x11151c' }
+    - { index: 19, color: '0x0a3749' }
+    - { index: 20, color: '0x599cab' }
+    - { index: 21, color: '0x99d1ce' }

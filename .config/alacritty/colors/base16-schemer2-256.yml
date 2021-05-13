@@ -1,0 +1,42 @@
+# Base16 auto-generated 256 - alacritty color config
+# Auto Base16 Theme (https://github.com/makuto/auto-base16-theme/)
+colors:
+  # Default colors
+  primary:
+    background: '0x040404'
+    foreground: '0x666666'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x040404'
+    cursor: '0x666666'
+
+  # Normal colors
+  normal:
+    black:   '0x040404'
+    red:     '0xfcd404'
+    green:   '0x7c7c7c'
+    yellow:  '0x919191'
+    blue:    '0x7c7c7c'
+    magenta: '0x919191'
+    cyan:    '0x7c7c7c'
+    white:   '0x666666'
+
+  # Bright colors
+  bright:
+    black:   '0x555555'
+    red:     '0xfcd404'
+    green:   '0x7c7c7c'
+    yellow:  '0x919191'
+    blue:    '0x7c7c7c'
+    magenta: '0x919191'
+    cyan:    '0x7c7c7c'
+    white:   '0x434343'
+
+  indexed_colors:
+    - { index: 16, color: '0x7c7c7c' }
+    - { index: 17, color: '0x919191' }
+    - { index: 18, color: '0x191919' }
+    - { index: 19, color: '0x2c2c2c' }
+    - { index: 20, color: '0x87762e' }
+    - { index: 21, color: '0x5f5112' }

@@ -1,0 +1,42 @@
+# Base16 srcery 256 - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0x1C1B19'
+    foreground: '0xFCE8C3'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1C1B19'
+    cursor: '0xFCE8C3'
+
+  # Normal colors
+  normal:
+    black:   '0x1C1B19'
+    red:     '0xFF5C8F'
+    green:   '0x98BC37'
+    yellow:  '0x68A8E4'
+    blue:    '0xFBB829'
+    magenta: '0xEF2F27'
+    cyan:    '0xFF5F00'
+    white:   '0xFCE8C3'
+
+  # Bright colors
+  bright:
+    black:   '0x918175'
+    red:     '0xFF5C8F'
+    green:   '0x98BC37'
+    yellow:  '0x68A8E4'
+    blue:    '0xFBB829'
+    magenta: '0xEF2F27'
+    cyan:    '0xFF5F00'
+    white:   '0xFCE8C3'
+
+  indexed_colors:
+    - { index: 16, color: '0xFF5C8F' }
+    - { index: 17, color: '0xFF5C8F' }
+    - { index: 18, color: '0x303030' }
+    - { index: 19, color: '0xFCE8C3' }
+    - { index: 20, color: '0xFCE8C3' }
+    - { index: 21, color: '0xFCE8C3' }

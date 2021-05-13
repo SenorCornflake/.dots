@@ -1,0 +1,36 @@
+# Base16 nord - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0x2E3440'
+    foreground: '0xD8DEE9'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x2E3440'
+    cursor: '0xD8DEE9'
+
+  # Normal colors
+  normal:
+    black:   '0x2E3440'
+    red:     '0xA3BE8C'
+    green:   '0xA3BE8C'
+    yellow:  '0x81A1C1'
+    blue:    '0x88C0D0'
+    magenta: '0x81A1C1'
+    cyan:    '0xD8DEE9'
+    white:   '0xD8DEE9'
+
+  # Bright colors
+  bright:
+    black:   '0x616E88'
+    red:     '0xB48EAD'
+    green:   '0x3B4252'
+    yellow:  '0x434C5E'
+    blue:    '0x88C0D0'
+    magenta: '0xD8DEE9'
+    cyan:    '0xD8DEE9'
+    white:   '0xD8DEE9'
+
+draw_bold_text_with_bright_colors: false

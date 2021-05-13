@@ -1,0 +1,36 @@
+# Base16 Apprentice - alacritty color config
+# romainl
+colors:
+  # Default colors
+  primary:
+    background: '0x262626'
+    foreground: '0xBCBCBC'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x262626'
+    cursor: '0xBCBCBC'
+
+  # Normal colors
+  normal:
+    black:   '0x262626'
+    red:     '0x5F8787'
+    green:   '0x87AF87'
+    yellow:  '0x5F8787'
+    blue:    '0xFFFFAF'
+    magenta: '0x87AFD7'
+    cyan:    '0x5F875F'
+    white:   '0xBCBCBC'
+
+  # Bright colors
+  bright:
+    black:   '0x6C6C6C'
+    red:     '0xFF8700'
+    green:   '0x303030'
+    yellow:  '0x333333'
+    blue:    '0x787878'
+    magenta: '0xC9C9C9'
+    cyan:    '0x5F87AF'
+    white:   '0xFFFFFF'
+
+draw_bold_text_with_bright_colors: false

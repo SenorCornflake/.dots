@@ -1,0 +1,26 @@
+{
+	"alacritty.padding_x": "15",
+	"alacritty.padding_y": "15",
+
+	"polybar.bar": "2",
+
+	"picom.shadow": "true",
+	"picom.shadow-radius": "15",
+	"picom.shadow-offset-x": "-15",
+	"picom.shadow-offset-y": "-15",
+	"picom.shadow-opacity": "1",
+
+	"bspwm.border_width": "2",
+	"bspwm.window_gap": "15",
+	"bspwm.top_padding": "67",
+	"bspwm.bottom_padding": "5",
+	"bspwm.right_padding": "5",
+	"bspwm.left_padding": "5",
+	"bspwm.gapless_monocle": "false",
+	"bspwm.borderless_monocle": "false",
+
+	"dunst.geometry": "800x10-20+82",
+	"dunst.padding": "10",
+	"dunst.horizontal_padding": "10",
+	"dunst.frame_width": "2"
+}

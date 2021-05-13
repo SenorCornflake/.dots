@@ -1,0 +1,42 @@
+# Base16 archery 256 - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0x25272C'
+    foreground: '0x81A3CF'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x25272C'
+    cursor: '0x81A3CF'
+
+  # Normal colors
+  normal:
+    black:   '0x25272C'
+    red:     '0x25B8A5'
+    green:   '0xF6F9FC'
+    yellow:  '0x0088CC'
+    blue:    '0x006596'
+    magenta: '0x0088CC'
+    cyan:    '0x53586F'
+    white:   '0x81A3CF'
+
+  # Bright colors
+  bright:
+    black:   '0x535B6F'
+    red:     '0x25B8A5'
+    green:   '0xF6F9FC'
+    yellow:  '0x0088CC'
+    blue:    '0x006596'
+    magenta: '0x0088CC'
+    cyan:    '0x53586F'
+    white:   '0x81A3CF'
+
+  indexed_colors:
+    - { index: 16, color: '0x25B8A5' }
+    - { index: 17, color: '0x25B8A5' }
+    - { index: 18, color: '0x282D34' }
+    - { index: 19, color: '0x81A3CF' }
+    - { index: 20, color: '0x000000' }
+    - { index: 21, color: '0x81A3CF' }

@@ -1,498 +1,410 @@
 [
 	{
-		"name": "awesome.general.bar",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.general_bar = .+",
-		"replace_value": "theme.general_bar = \"{value}\"",
-		"replace_type": "matched",
+		"name": "bspwm.wallpaper",
+		"file": "~/.config/bspwm/bspwmrc",
+		"pattern": "wallpaper=\".+\"",
+		"substitute": "wallpaper=\"{value}\"",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "awesome.general.titlebar",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.general_titlebar = \".+\"",
-		"replace_value": "theme.general_titlebar = \"{value}\"",
-		"replace_type": "matched",
+		"name": "bspwm.normal_border_color",
+		"file": "~/.config/bspwm/bspwmrc",
+		"pattern": "bspc config normal_border_color .*",
+		"substitute": "bspc config normal_border_color \"{value}\"",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "awesome.general.borderNormal",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.general_borderNormal = \".+\"",
-		"replace_value": "theme.general_borderNormal = \"{value}\"",
-		"replace_type": "matched",
+		"name": "bspwm.focused_border_color",
+		"file": "~/.config/bspwm/bspwmrc",
+		"pattern": "bspc config focused_border_color .*",
+		"substitute": "bspc config focused_border_color \"{value}\"",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "awesome.general.borderFocused",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.general_borderFocused = \".+\"",
-		"replace_value": "theme.general_borderFocused = \"{value}\"",
-		"replace_type": "matched",
+		"name": "bspwm.active_border_color",
+		"file": "~/.config/bspwm/bspwmrc",
+		"pattern": "bspc config active_border_color .*",
+		"substitute": "bspc config active_border_color \"{value}\"",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "awesome.general.borderWidth",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.general_borderWidth = .+",
-		"replace_value": "theme.general_borderWidth = dpi({value})",
-		"replace_type": "matched",
+		"name": "bspwm.urgent_border_color",
+		"file": "~/.config/bspwm/bspwmrc",
+		"pattern": "bspc config urgent_border_color .*",
+		"substitute": "bspc config urgent_border_color \"{value}\"",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "awesome.general.gapSize",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.general_gapSize = .+",
-		"replace_value": "theme.general_gapSize = dpi({value})",
-		"replace_type": "matched",
+		"name": "bspwm.presel_feedback_color",
+		"file": "~/.config/bspwm/bspwmrc",
+		"pattern": "bspc config presel_feedback_color .*",
+		"substitute": "bspc config presel_feedback_color \"{value}\"",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "awesome.general.wallpaper",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.general_wallpaper = .+",
-		"replace_value": "theme.general_wallpaper = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-
-
-
-	
-
-	{
-		"name": "awesome.alpha.bar.font",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.alpha_bar_font = .+",
-		"replace_value": "theme.alpha_bar_font = \"{value}\"",
-		"replace_type": "matched",
+		"name": "bspwm.window_gap",
+		"file": "~/.config/bspwm/bspwmrc",
+		"pattern": "bspc config window_gap .*",
+		"substitute": "bspc config window_gap \"{value}\"",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "awesome.alpha.bar.bg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.alpha_bar_bg = .+",
-		"replace_value": "theme.alpha_bar_bg = \"{value}\"",
-		"replace_type": "matched",
+		"name": "bspwm.border_width",
+		"file": "~/.config/bspwm/bspwmrc",
+		"pattern": "bspc config border_width .*",
+		"substitute": "bspc config border_width \"{value}\"",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "awesome.alpha.bar.fg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.alpha_bar_fg = .+",
-		"replace_value": "theme.alpha_bar_fg = \"{value}\"",
-		"replace_type": "matched",
+		"name": "bspwm.top_padding",
+		"file": "~/.config/bspwm/bspwmrc",
+		"pattern": "bspc config top_padding .*",
+		"substitute": "bspc config top_padding \"{value}\"",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "awesome.alpha.bar.focusedTagFg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.alpha_bar_focusedTagFg = .+",
-		"replace_value": "theme.alpha_bar_focusedTagFg = \"{value}\"",
-		"replace_type": "matched",
+		"name": "bspwm.bottom_padding",
+		"file": "~/.config/bspwm/bspwmrc",
+		"pattern": "bspc config bottom_padding .*",
+		"substitute": "bspc config bottom_padding \"{value}\"",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "awesome.alpha.bar.occupiedTagFg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.alpha_bar_occupiedTagFg = .+",
-		"replace_value": "theme.alpha_bar_occupiedTagFg = \"{value}\"",
-		"replace_type": "matched",
+		"name": "bspwm.left_padding",
+		"file": "~/.config/bspwm/bspwmrc",
+		"pattern": "bspc config left_padding .*",
+		"substitute": "bspc config left_padding \"{value}\"",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "awesome.alpha.bar.emptyTagFg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.alpha_bar_emptyTagFg = .+",
-		"replace_value": "theme.alpha_bar_emptyTagFg = \"{value}\"",
-		"replace_type": "matched",
+		"name": "bspwm.right_padding",
+		"file": "~/.config/bspwm/bspwmrc",
+		"pattern": "bspc config right_padding .*",
+		"substitute": "bspc config right_padding \"{value}\"",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "awesome.alpha.bar.labelFg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.alpha_bar_labelFg = .+",
-		"replace_value": "theme.alpha_bar_labelFg = \"{value}\"",
-		"replace_type": "matched",
+		"name": "bspwm.gapless_monocle",
+		"file": "~/.config/bspwm/bspwmrc",
+		"pattern": "bspc config gapless_monocle .*",
+		"substitute": "bspc config gapless_monocle \"{value}\"",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "awesome.alpha.bar.decorationFg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.alpha_bar_decorationFg = .+",
-		"replace_value": "theme.alpha_bar_decorationFg = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.bar.mutedFg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.alpha_bar_mutedFg = .+",
-		"replace_value": "theme.alpha_bar_mutedFg = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.bar.lowBatteryFg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.alpha_bar_lowBatteryFg = .+",
-		"replace_value": "theme.alpha_bar_lowBatteryFg = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.bar.middleBatteryFg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.alpha_bar_middleBatteryFg = .+",
-		"replace_value": "theme.alpha_bar_middleBatteryFg = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.bar.fullBatteryFg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.alpha_bar_fullBatteryFg = .+",
-		"replace_value": "theme.alpha_bar_fullBatteryFg = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.bar.fg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.alpha_bar_fg = .+",
-		"replace_value": "theme.alpha_bar_fg = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-
-	{
-		"name": "awesome.alpha.titlebar.font",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.alpha_titlebar_font = .+",
-		"replace_value": "theme.alpha_titlebar_font = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.titlebar.bgNormal",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.alpha_titlebar_bgNormal = .+",
-		"replace_value": "theme.alpha_titlebar_bgNormal = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.titlebar.fgNormal",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.alpha_titlebar_fgNormal = .+",
-		"replace_value": "theme.alpha_titlebar_fgNormal = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.titlebar.bgFocused",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.alpha_titlebar_bgFocused = .+",
-		"replace_value": "theme.alpha_titlebar_bgFocused = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.alpha.titlebar.fgFocused",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.alpha_titlebar_fgFocused = .+",
-		"replace_value": "theme.alpha_titlebar_fgFocused = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-
-
-
-
-	{
-		"name": "awesome.bravo.bar.font",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.bravo_bar_font = .+",
-		"replace_value": "theme.bravo_bar_font = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.bravo.bar.bg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.bravo_bar_bg = .+",
-		"replace_value": "theme.bravo_bar_bg = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.bravo.bar.fg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.bravo_bar_fg = .+",
-		"replace_value": "theme.bravo_bar_fg = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.bravo.bar.sepFg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.bravo_bar_sepFg = .+",
-		"replace_value": "theme.bravo_bar_sepFg = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.bravo.bar.labelFg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.bravo_bar_labelFg = .+",
-		"replace_value": "theme.bravo_bar_labelFg = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.bravo.bar.focusedTagFg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.bravo_bar_focusedTagFg = .+",
-		"replace_value": "theme.bravo_bar_focusedTagFg = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.bravo.bar.occupiedTagFg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.bravo_bar_occupiedTagFg = .+",
-		"replace_value": "theme.bravo_bar_occupiedTagFg = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.bravo.bar.emptyTagFg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.bravo_bar_emptyTagFg = .+",
-		"replace_value": "theme.bravo_bar_emptyTagFg = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "awesome.bravo.bar.mutedFg",
-		"file": "~/.config/awesome/CONFIG/theme.lua",
-		"pattern": "theme\\.bravo_bar_mutedFg = .+",
-		"replace_value": "theme.bravo_bar_mutedFg = \"{value}\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-
-
-
-	{
-		"name": "rofi.layout",
-		"file": "~/.config/rofi/config.rasi",
-		"pattern": "@import .+",
-		"replace_value": "@import \"layouts/{value}.rasi\"",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "rofi.alpha.bg",
-		"file": "~/.config/rofi/config.rasi",
-		"pattern": "alpha-bg: .+;",
-		"replace_value": "alpha-bg: {value};",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "rofi.alpha.fg",
-		"file": "~/.config/rofi/config.rasi",
-		"pattern": "alpha-fg: .+;",
-		"replace_value": "alpha-fg: {value};",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "rofi.alpha.bg_focused",
-		"file": "~/.config/rofi/config.rasi",
-		"pattern": "alpha-bg-focused: .+;",
-		"replace_value": "alpha-bg-focused: {value};",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "rofi.alpha.fg_focused",
-		"file": "~/.config/rofi/config.rasi",
-		"pattern": "alpha-fg-focused: .+;",
-		"replace_value": "alpha-fg-focused: {value};",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "rofi.alpha.prompt_fg",
-		"file": "~/.config/rofi/config.rasi",
-		"pattern": "alpha-prompt-fg: .+;",
-		"replace_value": "alpha-prompt-fg: {value};",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-
-
-
-	{
-		"name": "alacritty.theme",
-		"file": "~/.config/alacritty/alacritty.yml",
-		"pattern": ["# THEME", "# /THEME"],
-		"replace_value": "{value}",
-		"replace_type": "matched",
-		"value_is_file": true
-	},
-	{
-		"name": "alacritty.font",
-		"file": "~/.config/alacritty/alacritty.yml",
-		"pattern": "family: .*",
-		"replace_value": "family: {value}",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "alacritty.font_size",
-		"file": "~/.config/alacritty/alacritty.yml",
-		"pattern": "size: .*",
-		"replace_value": "size: {value}",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "alacritty.padding_x",
-		"file": "~/.config/alacritty/alacritty.yml",
-		"pattern": "x: .* # PADDING",
-		"replace_value": "x: {value} # PADDING",
-		"replace_type": "matched",
-		"value_is_file": false
-	},
-	{
-		"name": "alacritty.padding_y",
-		"file": "~/.config/alacritty/alacritty.yml",
-		"pattern": "y: .* # PADDING",
-		"replace_value": "y: {value} # PADDING",
-		"replace_type": "matched",
+		"name": "bspwm.borderless_monocle",
+		"file": "~/.config/bspwm/bspwmrc",
+		"pattern": "bspc config borderless_monocle .*",
+		"substitute": "bspc config borderless_monocle \"{value}\"",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
 		"name": "neovim.colorscheme",
 		"file": "~/.config/nvim/init.lua",
 		"pattern": "local colorscheme = \".+\"",
-		"replace_value": "local colorscheme = \"{value}\"",
-		"replace_type": "matched",
+		"substitute": "local colorscheme = \"{value}\"",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "picom.shadow",
-		"file": "~/.config/picom/picom.conf",
-		"pattern": "shadow = .+; # GLOBAL",
-		"replace_value": "shadow = {value}; # GLOBAL",
-		"replace_type": "matched",
+		"name": "alacritty.colorscheme",
+		"file": "~/.config/alacritty/alacritty.yml",
+		"pattern": ["# COLORSCHEME", "# /COLORSCHEME"],
+		"substitute": "{value}",
+		"replace": "matched",
+		"value_is_file": true
+	},
+	{
+		"name": "alacritty.padding_x",
+		"file": "~/.config/alacritty/alacritty.yml",
+		"pattern": "x: .* # PADDING",
+		"substitute": "x: {value} # PADDING",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "xsettingsd.font_name",
-		"file": "~/.config/xsettingsd/xsettingsd.conf",
-		"pattern": "Gtk/FontName .+",
-		"replace_value": "Gtk/FontName \"{value}\"",
-		"replace_type": "matched",
+		"name": "alacritty.padding_y",
+		"file": "~/.config/alacritty/alacritty.yml",
+		"pattern": "y: .* # PADDING",
+		"substitute": "y: {value} # PADDING",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "xsettingsd.icon_theme_name",
-		"file": "~/.config/xsettingsd/xsettingsd.conf",
-		"pattern": "Net/IconThemeName .+",
-		"replace_value": "Net/IconThemeName \"{value}\"",
-		"replace_type": "matched",
+		"name": "polybar.bar",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "include-file = .*",
+		"substitute": "include-file = ~/.config/polybar/{value}.ini",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "xsettingsd.theme_name",
-		"file": "~/.config/xsettingsd/xsettingsd.conf",
-		"pattern": "Net/ThemeName .+",
-		"replace_value": "Net/ThemeName \"{value}\"",
-		"replace_type": "matched",
+		"name": "polybar.1_bg",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "1_bg = .*",
+		"substitute": "1_bg = {value}",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "xsettingsd.cursor_theme_name",
-		"file": "~/.config/xsettingsd/xsettingsd.conf",
-		"pattern": "Gtk/CursorThemeName .+",
-		"replace_value": "Gtk/CursorThemeName \"{value}\"",
-		"replace_type": "matched",
+		"name": "polybar.1_fg",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "1_fg = .*",
+		"substitute": "1_fg = {value}",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "dunst.frame_width",
-		"file": "~/.config/dunst/dunstrc",
-		"pattern": "frame_width = .+",
-		"replace_value": "frame_width = \"{value}\"",
-		"replace_type": "matched",
+		"name": "polybar.1_widget_bg",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "1_widget_bg = .*",
+		"substitute": "1_widget_bg = {value}",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "dunst.frame_color",
-		"file": "~/.config/dunst/dunstrc",
-		"pattern": "frame_color = .+",
-		"replace_value": "frame_color = \"{value}\"",
-		"replace_type": "matched",
+		"name": "polybar.1_accent",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "1_accent = .*",
+		"substitute": "1_accent = {value}",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "dunst.font",
-		"file": "~/.config/dunst/dunstrc",
-		"pattern": "font = .+",
-		"replace_value": "font = {value}",
-		"replace_type": "matched",
+		"name": "polybar.1_empty",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "1_empty = .*",
+		"substitute": "1_empty = {value}",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
-		"name": "dunst.icon",
-		"file": "~/.config/dunst/dunstrc",
-		"pattern": "icon = .+",
-		"replace_value": "icon = {value}",
-		"replace_type": "matched",
+		"name": "polybar.1_error",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "1_error = .*",
+		"substitute": "1_error = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.1_warn",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "1_warn = .*",
+		"substitute": "1_warn = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.1_success",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "1_success = .*",
+		"substitute": "1_success = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.1_icon",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "1_icon = .*",
+		"substitute": "1_icon = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.2_bg",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "2_bg = .*",
+		"substitute": "2_bg = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.2_fg",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "2_fg = .*",
+		"substitute": "2_fg = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.2_focused",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "2_focused = .*",
+		"substitute": "2_focused = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.2_occupied",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "2_occupied = .*",
+		"substitute": "2_occupied = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.2_empty",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "2_empty = .*",
+		"substitute": "2_empty = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "rofi.bottom-bg",
+		"file": "~/.config/rofi/config.rasi",
+		"pattern": "bottom-bg: .*;",
+		"substitute": "bottom-bg: {value};",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "rofi.bottom-fg",
+		"file": "~/.config/rofi/config.rasi",
+		"pattern": "bottom-fg: .*;",
+		"substitute": "bottom-fg: {value};",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "rofi.bottom-fg-focused",
+		"file": "~/.config/rofi/config.rasi",
+		"pattern": "bottom-fg-focused: .*;",
+		"substitute": "bottom-fg-focused: {value};",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "rofi.bottom-bg-focused",
+		"file": "~/.config/rofi/config.rasi",
+		"pattern": "bottom-bg-focused: .*;",
+		"substitute": "bottom-bg-focused: {value};",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "rofi.bottom-prompt-fg",
+		"file": "~/.config/rofi/config.rasi",
+		"pattern": "bottom-prompt-fg: .*;",
+		"substitute": "bottom-prompt-fg: {value};",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
 		"name": "dunst.background",
 		"file": "~/.config/dunst/dunstrc",
-		"pattern": "background = .+",
-		"replace_value": "background = \"{value}\"",
-		"replace_type": "matched",
+		"pattern": "background = .*",
+		"substitute": "background = \"{value}\"",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
 		"name": "dunst.foreground",
 		"file": "~/.config/dunst/dunstrc",
-		"pattern": "foreground = .+",
-		"replace_value": "foreground = \"{value}\"",
-		"replace_type": "matched",
+		"pattern": "foreground = .*",
+		"substitute": "foreground = \"{value}\"",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "dunst.frame_color",
+		"file": "~/.config/dunst/dunstrc",
+		"pattern": "frame_color = .*",
+		"substitute": "frame_color = \"{value}\"",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "dunst.frame_width",
+		"file": "~/.config/dunst/dunstrc",
+		"pattern": "frame_width = .*",
+		"substitute": "frame_width = \"{value}\"",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
 		"name": "dunst.padding",
 		"file": "~/.config/dunst/dunstrc",
 		"pattern": "padding = .+",
-		"replace_value": "padding = {value}",
-		"replace_type": "matched",
+		"substitute": "padding = {value}",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
 		"name": "dunst.horizontal_padding",
 		"file": "~/.config/dunst/dunstrc",
 		"pattern": "horizontal_padding = .+",
-		"replace_value": "horizontal_padding = {value}",
-		"replace_type": "matched",
+		"substitute": "horizontal_padding = {value}",
+		"replace": "matched",
 		"value_is_file": false
 	},
 	{
 		"name": "dunst.geometry",
 		"file": "~/.config/dunst/dunstrc",
 		"pattern": "geometry = .+",
-		"replace_value": "geometry = \"{value}\"",
-		"replace_type": "matched",
+		"substitute": "geometry = \"{value}\"",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "dunst.font",
+		"file": "~/.config/dunst/dunstrc",
+		"pattern": "font = .+",
+		"substitute": "font = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "picom.shadow",
+		"file": "~/.config/picom/picom.conf",
+		"pattern": "shadow = .*",
+		"substitute": "shadow = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "picom.shadow-radius",
+		"file": "~/.config/picom/picom.conf",
+		"pattern": "shadow-radius = .*",
+		"substitute": "shadow-radius = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "picom.shadow-offset-x",
+		"file": "~/.config/picom/picom.conf",
+		"pattern": "shadow-offset-x = .*",
+		"substitute": "shadow-offset-x = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "picom.shadow-offset-y",
+		"file": "~/.config/picom/picom.conf",
+		"pattern": "shadow-offset-y = .*",
+		"substitute": "shadow-offset-y = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "picom.shadow-opacity",
+		"file": "~/.config/picom/picom.conf",
+		"pattern": "shadow-opacity = .*",
+		"substitute": "shadow-opacity = {value}",
+		"replace": "matched",
 		"value_is_file": false
 	}
 ]

@@ -1,0 +1,36 @@
+# Base16 ayu - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0x0F1419'
+    foreground: '0xE6E1CF'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x0F1419'
+    cursor: '0xE6E1CF'
+
+  # Normal colors
+  normal:
+    black:   '0x0F1419'
+    red:     '0xFFEE99'
+    green:   '0xB8CC52'
+    yellow:  '0x36A3D9'
+    blue:    '0xFFB454'
+    magenta: '0xFF7733'
+    cyan:    '0xE6B673'
+    white:   '0xE6E1CF'
+
+  # Bright colors
+  bright:
+    black:   '0x5C6773'
+    red:     '0xFFEE99'
+    green:   '0x151A1E'
+    yellow:  '0x253340'
+    blue:    '0xE6E1CF'
+    magenta: '0xE6E1CF'
+    cyan:    '0xFFEE99'
+    white:   '0xE6E1CF'
+
+draw_bold_text_with_bright_colors: false

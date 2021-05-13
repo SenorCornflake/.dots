@@ -1,49 +1,76 @@
 #!/bin/sh
 
+
+# KILL IF STARTED THEN RESTART
+# Keybinding daemon
+pidof sxhkd && killall sxhkd
 sxhkd &
-
-# Setup monitors
-autorandr --change
-
-# Manage desktops
-python ~/.config/scrypts/bspwm_manage_desktops.py
-
-# Kill programs before starting them (if they were open)
+# Notification daemon
 pidof dunst && killall dunst
+dunst &
 
-bspc config top_padding 0
-bspc config bottom_padding 0
-bspc config border_width 3
-bspc config window_gap 15
+# START IF NOT STARTED
+# Update interval
+pidof ~/MAIN/scripts/updates.sh || ~/MAIN/scripts/updates.sh &
+# Compositor
+pidof picom || picom --experimental-backends &
+# Polkit
+pidof /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 || /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Monitors
+xrandr --output VGA-1 --auto --primary --output eDP-1 --auto --right-of VGA-1
+bspc monitor VGA-1 -d 1 2 3 4 5 6
+bspc monitor eDP-1 -d 7 8 9 0
+
+
+bspc config top_padding "0"
+bspc config bottom_padding "0"
+bspc config left_padding "0"
+bspc config right_padding "0"
+bspc config border_width "2"
+bspc config window_gap "10"
 bspc config split_ratio 0.50
-bspc config borderless_monocle false
-bspc config gapless_monocle false
+bspc config borderless_monocle "true"
+bspc config gapless_monocle "true"
 bspc config automatic_scheme alternate
 
-bspc config normal_border_color "#242924"
-bspc config focused_border_color "#87711d"
-bspc config active_border_color "#809980"
-bspc config urgent_border_color "#e6193c"
-bspc config presel_feedback_color "#87711d"
+bspc config focused_border_color "#c6c699"
+bspc config normal_border_color "#222222"
+bspc config active_border_color "#c1a770"
+bspc config urgent_border_color "#ff7799"
+bspc config presel_feedback_color "#dcdcaa"
 
-# 3rd party
-dunst &
-python .config/polybar/launch.py &
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-feh --no-fehbg --bg-fill /home/breton/Pictures/wallpapers/generated.png &
-pidof picom || picom --experimental-backends &
+# Generate plain color background
+bg=$(exconman get polybar.1_bg)
+convert -size 1920x1080 xc:"$bg" ~/wallpapers/solid.png
 
-# Take a break reminder
-ps -fA | grep python | grep ~/.config/scrypts/break_notifier.py || python ~/.config/scrypts/break_notifier.py &
-# Night mode
-python ~/.config/scrypts/night_mode/main.py no_toggle
+# bspc rule -a Gimp desktop='^8' state=floating follow=on
+# bspc rule -a Chromium desktop='^2'
+# bspc rule -a mplayer2 state=floating
+# bspc rule -a Kupfer.py focus=on
+# bspc rule -a Screenkey manage=off
+bspc rule -a Gpick state=floating
 
-# Reload termite configs
-killall -USR1 termite
 
-# Set cursor to pointer
-xsetroot -cursor_name left_ptr &
-# Keyboard delay and rate
-xset r rate 250 30
+# WALLPAPER
+wallpaper="/home/a/wallpapers/firewatch-black-yellow.jpg"
+feh --no-fehbg --bg-fill "$wallpaper"
 
-notify-send "Started BSPWM using `audot query config modifier`"
+# Enable nightmode if it was enabled prior to restarting
+python ~/MAIN/scripts/nightmode.py
+
+# Some quality of life X settings
+xset r rate 250 30 # Keyboard repeat rate and delay
+xsetroot -cursor_name left_ptr # change default cursor to pointer
+
+# Polybar
+killall polybar
+primary_monitor = $(xrandr --query | grep " connected " | grep " primary " | cut -d" " -f1)
+
+# Launch primary monitor's polybar first to secure system tray
+#monitor="$primary_monitor" polybar -c ~/.config/polybar/config.ini "$m" &
+
+# Afterwards, launch all polybars for non-primary monitors
+for m in $(xrandr --query | grep " connected " | cut -d" " -f1); do
+	monitor="$m" polybar -c ~/.config/polybar/config.ini "$m" &
+done

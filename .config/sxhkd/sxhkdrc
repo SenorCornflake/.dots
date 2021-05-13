@@ -8,10 +8,10 @@ XF86AudioMute
 
 # Take screenshot
 F12
-    scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/Pictures'
+    scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/screenshots'
 
 # Restart bspwm
-super + x
+super + shift + r
     bspc wm -r
 
 # Restart sxhkd
@@ -36,10 +36,10 @@ super + {h,j,k,l}
 
 # Focus desktop
 super + {1-9,0}
-    bspc desktop --focus {1-9,10}
+    bspc desktop --focus {1-9,0}
 
 # Switch window states
-super {u,i,o,p}
+super {shift + f,f,t,shift + t}
     bspc node --state {floating,fullscreen,tiled,pseudo_tiled}
 
 # Switch between monocle and tiled
@@ -48,11 +48,15 @@ super + d
 
 # Application launcher
 super + a
-    rofi -modi drun -show drun -theme-str "prompt \{ enabled: false; \}"
+    rofi -modi drun -show drun
 
 # List custom commands
 super + c
-    python ~/.config/scrypts/commander/main.py
+    python ~/MAIN/commander/main.py ~/MAIN/commander/commands.json
+
+# Change keyboard layout
+super + Insert
+	python ~/MAIN/menus/keyboard_layout.py
 
 # Rotate desktop
 super + r
@@ -60,7 +64,7 @@ super + r
 
 # Send to desktop
 super + shift + {1-9,0}
-    bspc node --to-desktop {1-9,10}
+    bspc node --to-desktop {1-9,0}
 
 # Swap window in direction
 super + shift + {h,j,k,l}
@@ -72,7 +76,7 @@ super + shift + w
 
 # Move windows
 alt + shift + {h,j,k,l}
-    bspc node --move {-40 0, 0 40, 0 -40, 40 0}
+    bspc node --move {-20 0, 0 20, 0 -20, 20 0}
 
 # Move node to node
 super + alt + {h,j,k,l}
@@ -80,44 +84,36 @@ super + alt + {h,j,k,l}
 
 # Resize by removing
 control + super + {h,j,k,l}
-    bspc node --resize {right -40 -40, top 40 40, bottom -40 -40, left 40 40}
+    bspc node --resize {left -20 -20, bottom 20 20, top -20 -20, right 20 20}
 
 # Resize by adding
 control + alt + {h,j,k,l}
-    bspc node --resize {left -40 -40, bottom 40 40, top -40 -40, right 40 40}
+    bspc node --resize {left 20 20, bottom -20 -20, top 20 20, right -20 -20}
 
 # Preselection dir
-alt + {h,j,k,l}
+control + shift + {h,j,k,l}
     bspc node --presel-dir {west,south,north,east}
 
 # Preselection size
-alt + {1-9}
+control + shift + {1-9}
     bspc node --presel-ratio 0.{1-9} 
 
 # Cancel all preselections
 alt + c
     bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-# Cycle through windows forwards
+# Cycle through floating windows forwards
 alt + Tab
-    bspc node -f next.local
+    bspc node -f next.local.floating
 
-# Cycle through window backwards
+# Cycle through floating windows backwards
 alt + shift + Tab
-    bspc node -f prev.local
+    bspc node -f prev.local.floating
 
 # Change window gap
 super + {Up,Down}
     bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 10 ))
 
 # Rofi show list of open windows
-alt + space
+alt + a
     rofi -modi window -show window -columns 1
-
-# Choose random pywal
-super + {Prior,Next}
-    python ~/.config/scrypts/change_pywal.py {dark, light} random
-
-# Choose random modifier
-super + Home
-    python ~/.config/scrypts/change_modifier.py random

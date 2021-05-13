@@ -1,0 +1,36 @@
+# Base16 alduin - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0x1c1c1c'
+    foreground: '0xdfdfaf'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1c1c1c'
+    cursor: '0xdfdfaf'
+
+  # Normal colors
+  normal:
+    black:   '0x1c1c1c'
+    red:     '0xaf5f00'
+    green:   '0xffdf87'
+    yellow:  '0xaf875f'
+    blue:    '0x875f5f'
+    magenta: '0x878787'
+    cyan:    '0xaf5f5f'
+    white:   '0xdfdfaf'
+
+  # Bright colors
+  bright:
+    black:   '0x87875f'
+    red:     '0xaf5f00'
+    green:   '0x262626'
+    yellow:  '0x875f5f'
+    blue:    '0x9e9e9e'
+    magenta: '0xdfdfaf'
+    cyan:    '0xaf8787'
+    white:   '0xdfdfaf'
+
+draw_bold_text_with_bright_colors: false

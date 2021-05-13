@@ -18,6 +18,7 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 # Other
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export BAT_THEME="base16" # Set bat theme to base16, this is the program FZF in vim uses to highlight code previews
+export TODO_DIR="~/.config/todotxt"
 
 # Path related
 export PATH=~/.local/bin:$PATH

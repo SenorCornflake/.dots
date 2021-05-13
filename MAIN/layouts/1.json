@@ -1,0 +1,26 @@
+{
+	"alacritty.padding_x": "0",
+	"alacritty.padding_y": "0",
+
+	"polybar.bar": "1",
+
+	"bspwm.border_width": "2",
+	"bspwm.window_gap": "10",
+	"bspwm.top_padding": "0",
+	"bspwm.bottom_padding": "0",
+	"bspwm.right_padding": "0",
+	"bspwm.left_padding": "0",
+	"bspwm.gapless_monocle": "true",
+	"bspwm.borderless_monocle": "true",
+
+	"picom.shadow": "true",
+	"picom.shadow-radius": "15",
+	"picom.shadow-offset-x": "-15",
+	"picom.shadow-offset-y": "-15",
+	"picom.shadow-opacity": "0.40",
+
+	"dunst.geometry": "800x10-10+40",
+	"dunst.padding": "10",
+	"dunst.horizontal_padding": "10",
+	"dunst.frame_width": "2"
+}

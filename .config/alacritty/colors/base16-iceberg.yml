@@ -1,0 +1,36 @@
+# Base16 iceberg - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0x161821'
+    foreground: '0xc6c8d1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x161821'
+    cursor: '0xc6c8d1'
+
+  # Normal colors
+  normal:
+    black:   '0x161821'
+    red:     '0xa093c7'
+    green:   '0x89b8c2'
+    yellow:  '0x84a0c6'
+    blue:    '0x84a0c6'
+    magenta: '0x84a0c6'
+    cyan:    '0xb4be82'
+    white:   '0xc6c8d1'
+
+  # Bright colors
+  bright:
+    black:   '0x6b7089'
+    red:     '0xa093c7'
+    green:   '0x1e2132'
+    yellow:  '0x272c42'
+    blue:    '0x818596'
+    magenta: '0xc6c8d1'
+    cyan:    '0xa093c7'
+    white:   '0xc6c8d1'
+
+draw_bold_text_with_bright_colors: false

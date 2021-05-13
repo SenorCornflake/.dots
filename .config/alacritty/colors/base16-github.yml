@@ -1,0 +1,36 @@
+# Base16 github - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0xF8F8FF'
+    foreground: '0x000000'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xF8F8FF'
+    cursor: '0x000000'
+
+  # Normal colors
+  normal:
+    black:   '0xF8F8FF'
+    red:     '0x1C9898'
+    green:   '0xD81745'
+    yellow:  '0x445588'
+    blue:    '0x990000'
+    magenta: '0x000000'
+    cyan:    '0x159828'
+    white:   '0x000000'
+
+  # Bright colors
+  bright:
+    black:   '0x999988'
+    red:     '0x1C9898'
+    green:   '0xD8D8DD'
+    yellow:  '0x3465a3'
+    blue:    '0x404040'
+    magenta: '0x000000'
+    cyan:    '0x177F80'
+    white:   '0x000000'
+
+draw_bold_text_with_bright_colors: false

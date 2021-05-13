@@ -64,7 +64,7 @@
     frame_width = "2"
 
     # Defines color of the frame around the notification window.
-    frame_color = "#d5c4a1"
+    frame_color = "#c586c0"
 
     # Define a color for the separator.
     # possible values are:
@@ -275,23 +275,23 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#1d2021"
-    foreground = "#d5c4a1"
+    background = "#1e1e1e"
+    foreground = "#d4d4d4"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     icon = archdroid
 
 [urgency_normal]
-    background = "#1d2021"
-    foreground = "#d5c4a1"
+    background = "#1e1e1e"
+    foreground = "#d4d4d4"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     icon = archdroid
 
 [urgency_critical]
-    background = "#1d2021"
-    foreground = "#d5c4a1"
-    # frame_color = "#d5c4a1"
+    background = "#1e1e1e"
+    foreground = "#d4d4d4"
+    # frame_color = "#c586c0"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     icon = archdroid

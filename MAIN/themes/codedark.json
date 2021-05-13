@@ -1,0 +1,37 @@
+{
+	"alacritty.colorscheme": "~/.config/alacritty/colors/base16-codedark.yml",
+
+	"bspwm.focused_border_color": "#c6c699",
+	"bspwm.normal_border_color": "#222222",
+	"bspwm.active_border_color": "#c1a770",
+	"bspwm.urgent_border_color": "#ff7799",
+	"bspwm.presel_feedback_color": "#dcdcaa",
+
+	"dunst.background": "#1e1e1e",
+	"dunst.foreground": "#d4d4d4",
+	"dunst.frame_color": "#c586c0",
+
+	"neovim.colorscheme": "codedark",
+
+	"polybar.1_bg": "#1e1e1e",
+	"polybar.1_fg": "#d4d4d4",
+	"polybar.1_widget_bg": "#222222",
+	"polybar.1_accent": "#569cd6",
+	"polybar.1_empty": "#333333",
+	"polybar.1_error": "#ce9178",
+	"polybar.1_warn": "#c1a770",
+	"polybar.1_success": "#6a9955",
+	"polybar.1_icon": "#d7ba7d",
+
+	"polybar.2_bg": "#1e1e1e",
+	"polybar.2_fg": "#d4d4d4",
+	"polybar.2_focused": "#b179ad",
+	"polybar.2_occupied": "#aeafad",
+	"polybar.2_empty": "#373737",
+
+	"rofi.bottom-bg": "#1e1e1e",
+	"rofi.bottom-fg": "#d4d4d4",
+	"rofi.bottom-fg-focused": "#0f1419",
+	"rofi.bottom-bg-focused": "#ce9178",
+	"rofi.bottom-prompt-fg": "#c586c0"
+}

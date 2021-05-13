@@ -1,0 +1,36 @@
+# Base16 orbital - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0x5fafff'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0x5fafff'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0xe4e4e4'
+    green:   '0x87afd7'
+    yellow:  '0xffd7af'
+    blue:    '0xbcbcbc'
+    magenta: '0x0087d7'
+    cyan:    '0xd7af87'
+    white:   '0x5fafff'
+
+  # Bright colors
+  bright:
+    black:   '0x5f5f5f'
+    red:     '0x5f87af'
+    green:   '0x262626'
+    yellow:  '0x87afd7'
+    blue:    '0x87afd7'
+    magenta: '0x5fafff'
+    cyan:    '0xe4e4e4'
+    white:   '0x5fafff'
+
+draw_bold_text_with_bright_colors: false

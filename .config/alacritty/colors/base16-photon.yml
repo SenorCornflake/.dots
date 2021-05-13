@@ -1,0 +1,36 @@
+# Base16 photon - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0x262626'
+    foreground: '0xc6c6c6'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x262626'
+    cursor: '0xc6c6c6'
+
+  # Normal colors
+  normal:
+    black:   '0x262626'
+    red:     '0xaf87d7'
+    green:   '0xaf87d7'
+    yellow:  '0xc6c6c6'
+    blue:    '0xc6c6c6'
+    magenta: '0x767676'
+    cyan:    '0x767676'
+    white:   '0xc6c6c6'
+
+  # Bright colors
+  bright:
+    black:   '0x626262'
+    red:     '0xaf87d7'
+    green:   '0x303030'
+    yellow:  '0x3a3a3a'
+    blue:    '0xaf87d7'
+    magenta: '0xc6c6c6'
+    cyan:    '0xaf87d7'
+    white:   '0xc6c6c6'
+
+draw_bold_text_with_bright_colors: false

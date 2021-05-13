@@ -1,0 +1,42 @@
+# Base16 iceberg 256 - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0x161821'
+    foreground: '0xc6c8d1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x161821'
+    cursor: '0xc6c8d1'
+
+  # Normal colors
+  normal:
+    black:   '0x161821'
+    red:     '0xa093c7'
+    green:   '0x89b8c2'
+    yellow:  '0x84a0c6'
+    blue:    '0x84a0c6'
+    magenta: '0x84a0c6'
+    cyan:    '0xb4be82'
+    white:   '0xc6c8d1'
+
+  # Bright colors
+  bright:
+    black:   '0x6b7089'
+    red:     '0xa093c7'
+    green:   '0x89b8c2'
+    yellow:  '0x84a0c6'
+    blue:    '0x84a0c6'
+    magenta: '0x84a0c6'
+    cyan:    '0xb4be82'
+    white:   '0xc6c8d1'
+
+  indexed_colors:
+    - { index: 16, color: '0xa093c7' }
+    - { index: 17, color: '0xa093c7' }
+    - { index: 18, color: '0x1e2132' }
+    - { index: 19, color: '0x272c42' }
+    - { index: 20, color: '0x818596' }
+    - { index: 21, color: '0xc6c8d1' }

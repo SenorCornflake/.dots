@@ -1,0 +1,42 @@
+# Base16 codedark 256 - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0x1E1E1E'
+    foreground: '0xD4D4D4'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1E1E1E'
+    cursor: '0xD4D4D4'
+
+  # Normal colors
+  normal:
+    black:   '0x1E1E1E'
+    red:     '0xCE9178'
+    green:   '0xCE9178'
+    yellow:  '0x569CD6'
+    blue:    '0xDCDCAA'
+    magenta: '0xC586C0'
+    cyan:    '0xD7BA7D'
+    white:   '0xD4D4D4'
+
+  # Bright colors
+  bright:
+    black:   '0x6A9955'
+    red:     '0xCE9178'
+    green:   '0xCE9178'
+    yellow:  '0x569CD6'
+    blue:    '0xDCDCAA'
+    magenta: '0xC586C0'
+    cyan:    '0xD7BA7D'
+    white:   '0xD4D4D4'
+
+  indexed_colors:
+    - { index: 16, color: '0xB5CEA8' }
+    - { index: 17, color: '0x569CD6' }
+    - { index: 18, color: '0x222222' }
+    - { index: 19, color: '0x264F78' }
+    - { index: 20, color: '0xD4D4D4' }
+    - { index: 21, color: '0xD4D4D4' }

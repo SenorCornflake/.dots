@@ -1,0 +1,13 @@
+Packages
+Down / Up speed
+Brightness
+cpu usage
+ram
+cpu temp
+brightness
+volume
+battery
+weather
+date/time
+task manager
+
