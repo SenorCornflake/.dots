@@ -1,9 +1,17 @@
-@import "layouts/bottom.rasi"
+@import "layouts/center.rasi"
 
 * {
-	bottom-bg: #1e1e1e;
-	bottom-fg: #d4d4d4;
-	bottom-fg-focused: #0f1419;
-	bottom-bg-focused: #ce9178;
-	bottom-prompt-fg: #c586c0;
+	bottom-bg: #282c34;
+	bottom-fg: #abb2bf;
+	bottom-fg-focused: #282c34;
+	bottom-bg-focused: #56b6c2;
+	bottom-prompt-fg: #c678dd;
+
+	center-border-width: 2px;
+	center-border-color: #56b6c2;
+	center-bg: #282c34;
+	center-fg: #abb2bf;
+	center-fg-focused: #282c34;
+	center-bg-focused: #56b6c2;
+	center-prompt-fg: #98c379;
 }

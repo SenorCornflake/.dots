@@ -18,10 +18,17 @@ return require("packer").startup(function(use)
 	use "rafi/awesome-vim-colorschemes"
 	use "axvr/photon.vim"
 	use "srcery-colors/srcery-vim"
+	use "navarasu/onedark.nvim"
 
+	-- Colorizor
+	use {
+		"RRethy/vim-hexokinase",
+		run = "make hexokinase"
+	}
 
 	-- Highlighting
 	use "nvim-treesitter/nvim-treesitter"
+	use "LnL7/vim-nix" -- For nix config files
 
 	-- Auto Pairs
 	use "jiangmiao/auto-pairs"

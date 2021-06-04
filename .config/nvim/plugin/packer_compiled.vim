@@ -111,6 +111,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/onedark.nvim"
+  },
   ["packer.nvim"] = {
     loaded = false,
     needs_bufread = false,
@@ -147,6 +151,14 @@ _G.packer_plugins = {
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/vim-fugitive"
+  },
+  ["vim-hexokinase"] = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/vim-hexokinase"
+  },
+  ["vim-nix"] = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/vim-nix"
   },
   ["vim-rooter"] = {
     loaded = true,

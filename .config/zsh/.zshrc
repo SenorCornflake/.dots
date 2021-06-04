@@ -2,7 +2,7 @@ HISTSIZE=10000
 SAVEHIST=100000
 HISTFILE="$XDG_DATA_HOME"/zsh/history
 
-source /usr/share/zsh/plugins/zsh-autosuggestions-git/zsh-autosuggestions.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
@@ -27,6 +27,5 @@ alias vs='sudoedit'
 alias nnn='nnn -dCHeQ'
 alias r='ranger'
 alias t='todo.sh -c -d "$HOME/.config/todotxt/conf/config"'
-alias yay='paru'
 
 neofetch

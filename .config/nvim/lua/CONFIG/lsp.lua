@@ -56,6 +56,7 @@ local servers = {
 	},
 
 	html = {
+		cmd = { "vscode-html-languageserver", "--stdio" },
 		root_dir = lspconfig.util.root_pattern(".root", ".git"),
 		filetypes = {"php", "html"}
 	},

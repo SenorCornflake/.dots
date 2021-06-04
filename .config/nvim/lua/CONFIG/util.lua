@@ -287,7 +287,7 @@ util.adapt_system = function()
 	file:write(theme)
 	file:close()
 
-	os.execute("python ~/MAIN/scripts/base16.py ~/MAIN/tmp/base16_schemes/" .. vim.g.colors_name .. ".yaml " .. vim.g.colors_name)
+	os.execute("python ~/MAIN/scripts/adapt_to_base16.py ~/MAIN/tmp/base16_schemes/" .. vim.g.colors_name .. ".yaml " .. vim.g.colors_name)
 end
 
 -----------------------------------------------------------------------------

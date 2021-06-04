@@ -4,6 +4,8 @@
 
 	"polybar.bar": "1",
 
+	"rofi.layout": "bottom",
+
 	"bspwm.border_width": "2",
 	"bspwm.window_gap": "10",
 	"bspwm.top_padding": "0",
@@ -22,5 +24,6 @@
 	"dunst.geometry": "800x10-10+40",
 	"dunst.padding": "10",
 	"dunst.horizontal_padding": "10",
-	"dunst.frame_width": "2"
+	"dunst.frame_width": "2",
+	"dunst.corner_radius": "0"
 }

@@ -1,25 +1,27 @@
 local util = require("CONFIG.util")
 
-util.O  ("hidden"         , true )
-util.O  ("termguicolors"  , true )
-util.O  ("hlsearch"       , true )
-util.O  ("incsearch"      , true )
-util.O  ("splitbelow"     , true )
-util.O  ("splitright"     , true )
-util.O  ("showmode"       , false )
-util.O  ("updatetime"     , 300 )
-util.O  ("laststatus"     , 2 )
-util.O  ("clipboard"      , "unnamedplus" )
-util.O  ("runtimepath"    , vim.o.runtimepath .. "," .. "~/MAIN/tmp/vim_colors/" )
+vim.opt.hidden         = true 
+vim.opt.termguicolors  = true 
+vim.opt.hlsearch       = true 
+vim.opt.incsearch      = true 
+vim.opt.splitbelow     = true 
+vim.opt.splitright     = true 
+vim.opt.showmode       = false
+vim.opt.updatetime     = 300
+vim.opt.laststatus     = 2
+vim.opt.clipboard      = "unnamedplus"
+vim.opt.runtimepath    = vim.o.runtimepath .. "," .. "~/MAIN/tmp/vim_colors/"
 
-util.W  ("number"         , true )
-util.W  ("relativenumber" , true )
-util.W  ("cursorline"     , true )
-util.W  ("wrap"           , false )
-util.W  ("scrolloff"      , 8 )
-util.WO ("sidescrolloff"  , 8 )
-util.WO ("signcolumn"     , "yes" )
+vim.opt.number         = true
+vim.opt.relativenumber = true
+vim.opt.cursorline     = true
+vim.opt.wrap           = false
+vim.opt.scrolloff      = 8
+vim.opt.sidescrolloff  = 8
+vim.opt.signcolumn     = "yes"
 
-util.BO ("undofile"       , true )
-util.BO ("tabstop"        , 4 )
-util.BO ("shiftwidth"     , 4 )
+vim.opt.undofile       = true
+vim.opt.tabstop        = 4
+vim.opt.shiftwidth     = 4
+
+vim.cmd "autocmd FileType nix setlocal shiftwidth=2 tabstop=2 expandtab"

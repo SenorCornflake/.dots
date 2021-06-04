@@ -20,6 +20,9 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export BAT_THEME="base16" # Set bat theme to base16, this is the program FZF in vim uses to highlight code previews
 export TODO_DIR="~/.config/todotxt"
 
+# Pfetch
+export PF_INFO="ascii title os host kernel uptime pkgs memory shell editor wm de palette"
+
 # Path related
 export PATH=~/.local/bin:$PATH
 
@@ -49,4 +52,4 @@ export LESS_TERMCAP_ue=$(tput sgr0)
 # End bold, blinking, standout, underline
 export LESS_TERMCAP_me=$(tput sgr0)
 
-
+if [ -e /home/a/.nix-profile/etc/profile.d/nix.sh ]; then . /home/a/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

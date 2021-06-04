@@ -33,5 +33,12 @@
 	"rofi.bottom-fg": "#d4d4d4",
 	"rofi.bottom-fg-focused": "#0f1419",
 	"rofi.bottom-bg-focused": "#ce9178",
-	"rofi.bottom-prompt-fg": "#c586c0"
+	"rofi.bottom-prompt-fg": "#c586c0",
+
+	"rofi.center-bg": "#1e1e1e",
+	"rofi.center-fg": "#d4d4d4",
+	"rofi.center-fg-focused": "#0f1419",
+	"rofi.center-bg-focused": "#ce9178",
+	"rofi.center-prompt-fg": "#c586c0",
+	"rofi.center-border-color": "#ce9178"
 }

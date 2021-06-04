@@ -7,9 +7,10 @@ end
 
 vim = vim -- Less "undefined global" warnings this way
 
-local colorscheme = "codedark"
+local colorscheme = "base16-onedark"
 local powerline_symbol = ""
 
+-------------
 -- General --
 -------------
 require 'CONFIG.plugins'
@@ -18,7 +19,6 @@ require 'CONFIG.bindings'
 require 'CONFIG.colorscheme'(colorscheme)
 require "CONFIG.lsp"
 require "CONFIG.statusline"(powerline_symbol)
-
 
 -------------
 -- Plugins --
@@ -33,5 +33,6 @@ require "CONFIG.PLUGINS.lspkind"
 require "CONFIG.PLUGINS.rooter"
 require "CONFIG.PLUGINS.gitsigns"
 require "CONFIG.PLUGINS.buftabline"
+require "CONFIG.PLUGINS.hexokinase"
 
 vim.cmd "doautocmd User Restarted"

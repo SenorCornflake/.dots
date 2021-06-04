@@ -144,10 +144,26 @@
 		"value_is_file": false
 	},
 	{
+		"name": "alacritty.font",
+		"file": "~/.config/alacritty/alacritty.yml",
+		"pattern": "family: .*",
+		"substitute": "family: {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "alacritty.size",
+		"file": "~/.config/alacritty/alacritty.yml",
+		"pattern": "size: .*",
+		"substitute": "size: {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
 		"name": "polybar.bar",
 		"file": "~/.config/polybar/config.ini",
 		"pattern": "include-file = .*",
-		"substitute": "include-file = ~/.config/polybar/{value}.ini",
+		"substitute": "include-file = ~/.config/polybar/bars/{value}.ini",
 		"replace": "matched",
 		"value_is_file": false
 	},
@@ -264,6 +280,70 @@
 		"value_is_file": false
 	},
 	{
+		"name": "polybar.3_bg",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "3_bg = .*",
+		"substitute": "3_bg = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.3_fg",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "3_fg = .*",
+		"substitute": "3_fg = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.3_widget_bg",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "3_widget_bg = .*",
+		"substitute": "3_widget_bg = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.3_color_1",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "3_color_1 = .*",
+		"substitute": "3_color_1 = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.3_color_2",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "3_color_2 = .*",
+		"substitute": "3_color_2 = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.3_color_3",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "3_color_3 = .*",
+		"substitute": "3_color_3 = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.3_color_4",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "3_color_4 = .*",
+		"substitute": "3_color_4 = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.3_color_5",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "3_color_5 = .*",
+		"substitute": "3_color_5 = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
 		"name": "rofi.bottom-bg",
 		"file": "~/.config/rofi/config.rasi",
 		"pattern": "bottom-bg: .*;",
@@ -300,6 +380,70 @@
 		"file": "~/.config/rofi/config.rasi",
 		"pattern": "bottom-prompt-fg: .*;",
 		"substitute": "bottom-prompt-fg: {value};",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "rofi.center-bg",
+		"file": "~/.config/rofi/config.rasi",
+		"pattern": "center-bg: .*;",
+		"substitute": "center-bg: {value};",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "rofi.center-fg",
+		"file": "~/.config/rofi/config.rasi",
+		"pattern": "center-fg: .*;",
+		"substitute": "center-fg: {value};",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "rofi.center-fg-focused",
+		"file": "~/.config/rofi/config.rasi",
+		"pattern": "center-fg-focused: .*;",
+		"substitute": "center-fg-focused: {value};",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "rofi.center-bg-focused",
+		"file": "~/.config/rofi/config.rasi",
+		"pattern": "center-bg-focused: .*;",
+		"substitute": "center-bg-focused: {value};",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "rofi.center-prompt-fg",
+		"file": "~/.config/rofi/config.rasi",
+		"pattern": "center-prompt-fg: .*;",
+		"substitute": "center-prompt-fg: {value};",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "rofi.center-border-width",
+		"file": "~/.config/rofi/config.rasi",
+		"pattern": "center-border-width: .*;",
+		"substitute": "center-border-width: {value};",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "rofi.center-border-color",
+		"file": "~/.config/rofi/config.rasi",
+		"pattern": "center-border-color: .*;",
+		"substitute": "center-border-color: {value};",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "rofi.layout",
+		"file": "~/.config/rofi/config.rasi",
+		"pattern": "@import .*",
+		"substitute": "@import \"layouts/{value}.rasi\"",
 		"replace": "matched",
 		"value_is_file": false
 	},
@@ -368,6 +512,14 @@
 		"value_is_file": false
 	},
 	{
+		"name": "dunst.corner_radius",
+		"file": "~/.config/dunst/dunstrc",
+		"pattern": "corner_radius = .+",
+		"substitute": "corner_radius = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
 		"name": "picom.shadow",
 		"file": "~/.config/picom/picom.conf",
 		"pattern": "shadow = .*",
@@ -404,6 +556,38 @@
 		"file": "~/.config/picom/picom.conf",
 		"pattern": "shadow-opacity = .*",
 		"substitute": "shadow-opacity = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "xsettingsd.FontName",
+		"file": "~/.config/xsettingsd/xsettingsd.conf",
+		"pattern": "Gtk/FontName .+",
+		"substitute": "Gtk/FontName \"{value}\"",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "xsettingsd.IconThemeName",
+		"file": "~/.config/xsettingsd/xsettingsd.conf",
+		"pattern": "Net/IconThemeName .+",
+		"substitute": "Net/IconThemeName \"{value}\"",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "xsettingsd.ThemeName",
+		"file": "~/.config/xsettingsd/xsettingsd.conf",
+		"pattern": "Net/ThemeName .+",
+		"substitute": "Net/ThemeName \"{value}\"",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "xsettingsd.CursorThemeName",
+		"file": "~/.config/xsettingsd/xsettingsd.conf",
+		"pattern": "Gtk/CursorThemeName .+",
+		"substitute": "Gtk/CursorThemeName \"{value}\"",
 		"replace": "matched",
 		"value_is_file": false
 	}

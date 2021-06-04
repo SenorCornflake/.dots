@@ -4,11 +4,13 @@
 
 	"polybar.bar": "2",
 
+	"rofi.layout": "bottom",
+
 	"picom.shadow": "true",
 	"picom.shadow-radius": "15",
 	"picom.shadow-offset-x": "-15",
 	"picom.shadow-offset-y": "-15",
-	"picom.shadow-opacity": "1",
+	"picom.shadow-opacity": "0.5",
 
 	"bspwm.border_width": "2",
 	"bspwm.window_gap": "15",
@@ -22,5 +24,6 @@
 	"dunst.geometry": "800x10-20+82",
 	"dunst.padding": "10",
 	"dunst.horizontal_padding": "10",
-	"dunst.frame_width": "2"
+	"dunst.frame_width": "2",
+	"dunst.corner_radius": "0"
 }
