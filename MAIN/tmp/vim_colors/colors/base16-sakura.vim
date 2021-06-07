@@ -2,7 +2,7 @@
 
 " base16-vim (https://github.com/chriskempson/base16-vim)
 " by Chris Kempson (http://chriskempson.com)
-" Darcula scheme by jetbrains
+" Sakura scheme by Misterio77 (http://github.com/Misterio77)
 
 " This enables the coresponding base16-shell script to run so that
 " :colorscheme works in terminals supported by base16-shell scripts
@@ -10,43 +10,43 @@
 "   let g:base16_shell_path=base16-builder/output/shell/
 if !has("gui_running")
   if exists("g:base16_shell_path")
-    execute "silent !/bin/sh ".g:base16_shell_path."/base16-darcula.sh"
+    execute "silent !/bin/sh ".g:base16_shell_path."/base16-sakura.sh"
   endif
 endif
 
 " GUI color definitions
-let s:gui00        = "2b2b2b"
-let g:base16_gui00 = "2b2b2b"
-let s:gui01        = "323232"
-let g:base16_gui01 = "323232"
-let s:gui02        = "323232"
-let g:base16_gui02 = "323232"
-let s:gui03        = "606366"
-let g:base16_gui03 = "606366"
-let s:gui04        = "a4a3a3"
-let g:base16_gui04 = "a4a3a3"
-let s:gui05        = "a9b7c6"
-let g:base16_gui05 = "a9b7c6"
-let s:gui06        = "ffc66d"
-let g:base16_gui06 = "ffc66d"
-let s:gui07        = "ffffff"
-let g:base16_gui07 = "ffffff"
-let s:gui08        = "4eade5"
-let g:base16_gui08 = "4eade5"
-let s:gui09        = "689757"
-let g:base16_gui09 = "689757"
-let s:gui0A        = "bbb529"
-let g:base16_gui0A = "bbb529"
-let s:gui0B        = "6a8759"
-let g:base16_gui0B = "6a8759"
-let s:gui0C        = "629755"
-let g:base16_gui0C = "629755"
-let s:gui0D        = "9876aa"
-let g:base16_gui0D = "9876aa"
-let s:gui0E        = "cc7832"
-let g:base16_gui0E = "cc7832"
-let s:gui0F        = "808080"
-let g:base16_gui0F = "808080"
+let s:gui00        = "feedf3"
+let g:base16_gui00 = "feedf3"
+let s:gui01        = "f8e2e7"
+let g:base16_gui01 = "f8e2e7"
+let s:gui02        = "e0ccd1"
+let g:base16_gui02 = "e0ccd1"
+let s:gui03        = "755f64"
+let g:base16_gui03 = "755f64"
+let s:gui04        = "665055"
+let g:base16_gui04 = "665055"
+let s:gui05        = "564448"
+let g:base16_gui05 = "564448"
+let s:gui06        = "42383a"
+let g:base16_gui06 = "42383a"
+let s:gui07        = "33292b"
+let g:base16_gui07 = "33292b"
+let s:gui08        = "df2d52"
+let g:base16_gui08 = "df2d52"
+let s:gui09        = "f6661e"
+let g:base16_gui09 = "f6661e"
+let s:gui0A        = "c29461"
+let g:base16_gui0A = "c29461"
+let s:gui0B        = "2e916d"
+let g:base16_gui0B = "2e916d"
+let s:gui0C        = "1d8991"
+let g:base16_gui0C = "1d8991"
+let s:gui0D        = "006e93"
+let g:base16_gui0D = "006e93"
+let s:gui0E        = "5e2180"
+let g:base16_gui0E = "5e2180"
+let s:gui0F        = "ba0d35"
+let g:base16_gui0F = "ba0d35"
 
 " Terminal color definitions
 let s:cterm00        = "00"
@@ -99,22 +99,22 @@ endif
 
 " Neovim terminal colours
 if has("nvim")
-  let g:terminal_color_0 =  "#2b2b2b"
-  let g:terminal_color_1 =  "#4eade5"
-  let g:terminal_color_2 =  "#6a8759"
-  let g:terminal_color_3 =  "#bbb529"
-  let g:terminal_color_4 =  "#9876aa"
-  let g:terminal_color_5 =  "#cc7832"
-  let g:terminal_color_6 =  "#629755"
-  let g:terminal_color_7 =  "#a9b7c6"
-  let g:terminal_color_8 =  "#606366"
-  let g:terminal_color_9 =  "#4eade5"
-  let g:terminal_color_10 = "#6a8759"
-  let g:terminal_color_11 = "#bbb529"
-  let g:terminal_color_12 = "#9876aa"
-  let g:terminal_color_13 = "#cc7832"
-  let g:terminal_color_14 = "#629755"
-  let g:terminal_color_15 = "#ffffff"
+  let g:terminal_color_0 =  "#feedf3"
+  let g:terminal_color_1 =  "#df2d52"
+  let g:terminal_color_2 =  "#2e916d"
+  let g:terminal_color_3 =  "#c29461"
+  let g:terminal_color_4 =  "#006e93"
+  let g:terminal_color_5 =  "#5e2180"
+  let g:terminal_color_6 =  "#1d8991"
+  let g:terminal_color_7 =  "#564448"
+  let g:terminal_color_8 =  "#755f64"
+  let g:terminal_color_9 =  "#df2d52"
+  let g:terminal_color_10 = "#2e916d"
+  let g:terminal_color_11 = "#c29461"
+  let g:terminal_color_12 = "#006e93"
+  let g:terminal_color_13 = "#5e2180"
+  let g:terminal_color_14 = "#1d8991"
+  let g:terminal_color_15 = "#33292b"
   let g:terminal_color_background = g:terminal_color_0
   let g:terminal_color_foreground = g:terminal_color_5
   if &background == "light"
@@ -123,29 +123,29 @@ if has("nvim")
   endif
 elseif has("terminal")
   let g:terminal_ansi_colors = [
-        \ "#2b2b2b",
-        \ "#4eade5",
-        \ "#6a8759",
-        \ "#bbb529",
-        \ "#9876aa",
-        \ "#cc7832",
-        \ "#629755",
-        \ "#a9b7c6",
-        \ "#606366",
-        \ "#4eade5",
-        \ "#6a8759",
-        \ "#bbb529",
-        \ "#9876aa",
-        \ "#cc7832",
-        \ "#629755",
-        \ "#ffffff",
+        \ "#feedf3",
+        \ "#df2d52",
+        \ "#2e916d",
+        \ "#c29461",
+        \ "#006e93",
+        \ "#5e2180",
+        \ "#1d8991",
+        \ "#564448",
+        \ "#755f64",
+        \ "#df2d52",
+        \ "#2e916d",
+        \ "#c29461",
+        \ "#006e93",
+        \ "#5e2180",
+        \ "#1d8991",
+        \ "#33292b",
         \ ]
 endif
 
 " Theme setup
 hi clear
 syntax reset
-let g:colors_name = "base16-darcula"
+let g:colors_name = "base16-sakura"
 
 " Highlighting function
 " Optional variables are attributes and guisp

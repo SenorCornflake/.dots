@@ -8,8 +8,8 @@ if len(sys.argv) > 1:
     base16 = yaml.load(open(base16_path, "r").read(), Loader=yaml.FullLoader)
     base16_name = os.path.splitext(os.path.basename(base16_path))[0]
 
-    base16_theme_path = os.path.expanduser("~/MAIN/themes/base16.json")
-    base16_theme = {
+    exconman_theme_path = os.path.expanduser("~/MAIN/themes/base16.json")
+    exconman_settings = {
         "polybar.1_bg": "#" + base16["base00"],
         "polybar.1_fg": "#" + base16["base05"],
         "polybar.1_widget_bg": "#" + base16["base01"],
@@ -62,22 +62,29 @@ if len(sys.argv) > 1:
 
     os.system("base16-builder build -t ~/repos/base16-builder/templates/alacritty/ -s {} -o ~/.config/alacritty/colors/ -d".format(base16_path))
 
-    # Use the neovim colorscheme that was used to generate base16 theme as neovim's colorscheme
+    # If we generated a base16 theme from neovim colorscheme, don't bother generating a base16 colorscheme for neovim
     if len(sys.argv) == 3:
-        base16_theme["neovim.colorscheme"] = sys.argv[2]
+        exconman_settings["neovim.colorscheme"] = sys.argv[2]
     else:
         os.system("base16-builder build -t ~/repos/base16-builder/templates/vim/ -s {} -o ~/MAIN/tmp/vim_colors/colors/ -d".format(base16_path))
-        base16_theme["neovim.colorscheme"] = "base16-" + base16_name
+        exconman_settings["neovim.colorscheme"] = "base16-" + base16_name
 
+    # Build alacritty scheme
     os.system("base16-builder build -t ~/repos/base16-builder/templates/alacritty/ -s {} -o ~/.config/alacritty/colors/ -d".format(base16_path))
 
+    # Build gtk theme for FlatColor
     os.system("base16-builder build -t ~/repos/base16-builder/templates/gtk-flatcolor/ -s {} -o ~/.themes/FlatColor/gtk-2.0/ -f colors2 -d".format(base16_path))
     os.system("base16-builder build -t ~/repos/base16-builder/templates/gtk-flatcolor/ -s {} -o ~/.themes/FlatColor/gtk-3.0/ -f colors3 -d".format(base16_path))
     os.system("base16-builder build -t ~/repos/base16-builder/templates/gtk-flatcolor/ -s {} -o ~/.themes/FlatColor/gtk-3.20/ -f colors3 -d".format(base16_path))
 
+    # Generate archdroid icons
     os.system("sh ~/MAIN/scripts/generate_archdroid_icons.sh {}".format(base16["base0A"]))
 
-    open(base16_theme_path, "w").write(json.dumps(base16_theme, indent=4))
+    # Create/Overwrite exconman base16 theme with the one we just created. 
+    open(exconman_theme_path, "w").write(json.dumps(exconman_settings, indent=4))
 
-    os.system("exconman load {}".format(base16_theme_path))
+    # Load the exconman theme we created
+    os.system("exconman load {}".format(exconman_theme_path))
+
+    # Restart most applications
     os.system("sh ~/MAIN/scripts/restart_all.sh")

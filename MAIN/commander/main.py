@@ -3,7 +3,7 @@ import json
 import sys
 
 """
-This is the script that all my menus runs on, kept this script through out all my arch reinstallations, still going strong.
+This is the script that all my menus scripts runs on, kept this script through out all my arch reinstallations, still going strong.
 """
 
 def e(command): 
