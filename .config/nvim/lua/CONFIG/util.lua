@@ -1,29 +1,15 @@
 local util = {}
 
+-- This file contains General Functions
+
 --------------------
--- MANAGE OPTIONS --
+-- List directory --
 --------------------
-util.O = function (opt, value)
-	vim.o[opt] = value
-end
-
-util.W = function (opt, value)
-	vim.wo[opt] = value
-end
-
--- For options that also need to be set as global, same applies to the BO function
-util.WO = function (opt, value)
-	vim.o[opt] = value
-	vim.wo[opt] = value
-end
-
-util.B = function (opt, value)
-	vim.bo[opt] = value
-end
-
-util.BO = function (opt, value)
-	vim.o[opt] = value
-	vim.bo[opt] = value
+util.scandir = function(directory)
+	local cmd = assert(io.popen('ls -A ' .. directory, "r"))
+	local output = cmd:read("*all")
+	cmd:close()
+	return output
 end
 
 ---------------------
@@ -301,5 +287,42 @@ function! SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 ]]
+
+
+------------------------------------------
+-- List Dashboard Sessions in Telescope --
+------------------------------------------
+util.sessions = function()
+	local sessions = util.scandir(vim.g.dashboard_session_directory)
+	sessions = util.split(sessions, "\n")
+
+	for i, session in pairs(sessions) do
+		sessions[i] = session:gsub(".vim", "")
+	end
+
+	local previewers = require('telescope.previewers')
+	local pickers = require('telescope.pickers')
+	local sorters = require('telescope.sorters')
+	local finders = require('telescope.finders')
+	local actions = require('telescope.actions')
+	local action_set = require('telescope.actions.set')
+	local action_state = require('telescope.actions.state')
+
+	pickers.new(opts, {
+    	prompt_title = 'Sessions',
+    	finder = finders.new_table(sessions),
+    	sorter = sorters.get_generic_fuzzy_sorter(),
+		attach_mappings = function(prompt_bufnr)
+      		actions.select_default:replace(function()
+				local selection = action_state.get_selected_entry()
+				actions.close(prompt_bufnr)
+				
+				vim.cmd(":SessionLoad " .. selection.display)
+      		end)
+
+      		return true
+    	end,
+	}):find()
+end
 
 return util

@@ -1,0 +1,36 @@
+# Base16 sonokai - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0x2c2e34'
+    foreground: '0xe2e2e3'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x2c2e34'
+    cursor: '0xe2e2e3'
+
+  # Normal colors
+  normal:
+    black:   '0x2c2e34'
+    red:     '0xe7c664'
+    green:   '0xe7c664'
+    yellow:  '0x76cce0'
+    blue:    '0x9ed072'
+    magenta: '0xfc5d7c'
+    cyan:    '0xb39df3'
+    white:   '0xe2e2e3'
+
+  # Bright colors
+  bright:
+    black:   '0x7f8490'
+    red:     '0xb39df3'
+    green:   '0x33353f'
+    yellow:  '0x3b3e48'
+    blue:    '0xe2e2e3'
+    magenta: '0xe2e2e3'
+    cyan:    '0xf39660'
+    white:   '0xe2e2e3'
+
+draw_bold_text_with_bright_colors: false

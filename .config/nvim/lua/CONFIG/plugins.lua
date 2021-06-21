@@ -19,6 +19,7 @@ return require("packer").startup(function(use)
 	use "axvr/photon.vim"
 	use "srcery-colors/srcery-vim"
 	use "navarasu/onedark.nvim"
+	use "haishanh/night-owl.vim"
 
 	-- Colorizor
 	use {
@@ -31,7 +32,7 @@ return require("packer").startup(function(use)
 	use "LnL7/vim-nix" -- For nix config files
 
 	-- Auto Pairs
-	use "jiangmiao/auto-pairs"
+	use "windwp/nvim-autopairs"
 
 	-- Lsp
 	use "neovim/nvim-lspconfig"
@@ -79,4 +80,13 @@ return require("packer").startup(function(use)
 
 	-- Surround
 	use "tpope/vim-surround"
+
+	-- Faster Movement
+	use "phaazon/hop.nvim"
+
+	-- Keybinding visualizer
+	use "folke/which-key.nvim"
+
+	-- Dashboard
+	use "glepnir/dashboard-nvim"
 end)

@@ -1,0 +1,21 @@
+set hidden true
+set icons true
+set ignorecase true
+set color256 true
+
+cmd q quit
+
+map dd cut
+map x delete
+map p paste
+map <enter> open
+map y copy
+map r rename
+map a mkfile
+map A mkdir
+
+map `h cd ~
+map `w cd /srv/http
+map `W cd ~/wallpapers
+map `d cd ~/Downloads
+map `c cd ~/.config

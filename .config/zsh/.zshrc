@@ -27,5 +27,6 @@ alias vs='sudoedit'
 alias nnn='nnn -dCHeQ'
 alias r='ranger'
 alias t='todo.sh -c -d "$HOME/.config/todotxt/conf/config"'
+alias hc='herbstclient'
 
 neofetch

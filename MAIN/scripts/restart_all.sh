@@ -3,6 +3,9 @@
 # Reload bspwm
 bspc wm -r
 
+# Reload herbstluftwm
+herbstclient reload
+
 # Reload xsettingsd
 killall xsettingsd
 xsettingsd &

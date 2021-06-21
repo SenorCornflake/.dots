@@ -52,6 +52,7 @@ local servers = {
 	},
 
 	cssls = {
+		cmd = { "css-languageserver", "--stdio" },
 		root_dir = lspconfig.util.root_pattern(".root", ".git")
 	},
 

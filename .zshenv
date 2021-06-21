@@ -33,6 +33,10 @@ export TERMINAL=alacritty
 export BROWSER=firefox
 export VIDEO=vlc
 
+
+# For alacritty
+export WINIT_X11_SCALE_FACTOR=1
+
 # highlight (for ranger previews)
 export HIGHLIGHT_STYLE=base16
 
@@ -51,5 +55,3 @@ export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 1) # red
 export LESS_TERMCAP_ue=$(tput sgr0)
 # End bold, blinking, standout, underline
 export LESS_TERMCAP_me=$(tput sgr0)
-
-if [ -e /home/a/.nix-profile/etc/profile.d/nix.sh ]; then . /home/a/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

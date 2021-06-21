@@ -24,18 +24,6 @@ util.bind('i', '<S-Tab>', 'pumvisible() ? "<C-p>" : "<S-Tab>"', { expr = true, n
 -- Reload neovim
 util.bind("n", "<leader>,", ":luafile ~/.config/nvim/init.lua<CR>")
 
-
----------
--- LSP --
----------
--- util.bind("n", "<leader>ld", ":Lspsaga lsp_finder<CR>")
--- util.bind("n", "<leader>lS", ":Lspsaga signature_help<CR>")
--- util.bind("n", "<leader>lh", ":Lspsaga hover_doc<CR>")
--- util.bind("n", "<leader>la", ":Lspsaga code_action<CR>")
--- util.bind("n", "<leader>lA", ":Lspsaga range_code_action<CR>")
--- util.bind("n", "<leader>lr", ":Lspsaga rename<CR>")
--- util.bind("n", "<leader>ld", ":Lspsaga show_line_diagnostics<CR>")
-
 util.bind('n', '<leader>ld', ':lua vim.lsp.buf.definition()<cr>')
 util.bind('n', '<leader>lD', ':lua vim.lsp.buf.declaration()<cr>')
 util.bind('n', '<leader>li', ':lua vim.lsp.buf.implementation()<cr>')
@@ -51,11 +39,14 @@ util.bind('n', '<leader>lh', ':lua require("lsp_extensions").inlay_hints()<cr>')
 ---------------
 util.bind("n", "<leader>f.", ":Telescope builtin<CR>")
 util.bind("n", "<leader>ff", ":Telescope find_files<CR>")
+util.bind("n", "<leader>fF", ":Telescope file_browser<CR>")
 util.bind("n", "<leader>fg", ":Telescope live_grep<CR>")
 util.bind("n", "<leader>fb", ":Telescope buffers<CR>")
 util.bind("n", "<leader>fs", ":Telescope lsp_document_symbols<CR>")
 util.bind("n", "<leader>fS", ":Telescope lsp_workspace_symbols<CR>")
-util.bind("n", "<leader>fr", ":Telescope lsp_references<CR>")
+util.bind("n", "<leader>fe", ":Telescope lsp_document_diagnostics<CR>")
+util.bind("n", "<leader>fE", ":Telescope lsp_workspace_diagnostics<CR>")
+util.bind("n", "<leader>f/", ":Telescope current_buffer_fuzzy_find<CR>")
 
 ------------
 -- RnvimR --
@@ -82,15 +73,31 @@ util.bind("n", "<leader>gP", ":Git pull<CR>")
 util.bind("n", "<leader>gb", ":Git blame<CR>")
 util.bind("n", "<leader>gl", ":Git log<CR>")
 
+------------------------
+-- Dashboard Sessions --
+------------------------
+util.bind("n", "<leader>sl", ":lua require('CONFIG.util').sessions()<cr>")
+util.bind("n", "<leader>ss", ":SessionSave<CR>")
+
+------------
+-- Packer --
+------------
+util.bind("n", "<leader>ps", ":PackerSync<CR>")
+
+---------
+-- Hop --
+---------
+util.bind("n", "s", ":HopChar1<CR>")
+
 ----------------------------
 -- Color Scheme Switching --
 ----------------------------
 util.bind("n", "<Left>", ":lua require('CONFIG.util').next_colorscheme(true)<CR>")
 util.bind("n", "<Right>", ":lua require('CONFIG.util').next_colorscheme(false)<CR>")
 
----------------------------------
--- Dsplay highlight group name --
----------------------------------
+----------------------------------
+-- Display highlight group name --
+----------------------------------
 util.bind("n", "<CR>", ":call SynStack()<CR>")
 
 ----------------------------------------------

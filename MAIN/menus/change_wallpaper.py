@@ -11,5 +11,5 @@ if index != "":
     index = int(index)
     os.system('feh --no-fehbg --bg-fill "{}"'.format(wallpaper_dir + "/" + wallpapers[index]))
 
-    os.system('exconman set bspwm.wallpaper "{}"'.format(wallpaper_dir + "/" + wallpapers[index]))
+    os.system('exconman set misc.wallpaper "{}"'.format(wallpaper_dir + "/" + wallpapers[index]))
 

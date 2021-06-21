@@ -1,7 +1,7 @@
 [
 	{
-		"name": "bspwm.wallpaper",
-		"file": "~/.config/bspwm/bspwmrc",
+		"name": "misc.wallpaper",
+		"file": "~/MAIN/scripts/set_wallpaper.sh",
 		"pattern": "wallpaper=\".+\"",
 		"substitute": "wallpaper=\"{value}\"",
 		"replace": "matched",
@@ -164,6 +164,14 @@
 		"file": "~/.config/polybar/config.ini",
 		"pattern": "include-file = .*",
 		"substitute": "include-file = ~/.config/polybar/bars/{value}.ini",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.pin_workspaces",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "pin_workspaces = .*",
+		"substitute": "pin_workspaces = {value}",
 		"replace": "matched",
 		"value_is_file": false
 	},
@@ -340,6 +348,62 @@
 		"file": "~/.config/polybar/config.ini",
 		"pattern": "3_color_5 = .*",
 		"substitute": "3_color_5 = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.4_fg",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "4_fg = .*",
+		"substitute": "4_fg = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.4_bg",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "4_bg = .*",
+		"substitute": "4_bg = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.4_title",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "4_title = .*",
+		"substitute": "4_title = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.4_label_2",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "4_label_2 = .*",
+		"substitute": "4_label_2 = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.4_label_3",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "4_label_3 = .*",
+		"substitute": "4_label_3 = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.4_label_1",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "4_label_1 = .*",
+		"substitute": "4_label_1 = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.4_occupied",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "4_occupied = .*",
+		"substitute": "4_occupied = {value}",
 		"replace": "matched",
 		"value_is_file": false
 	},
@@ -588,6 +652,102 @@
 		"file": "~/.config/xsettingsd/xsettingsd.conf",
 		"pattern": "Gtk/CursorThemeName .+",
 		"substitute": "Gtk/CursorThemeName \"{value}\"",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.active.color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc attr theme.active.color .*",
+		"substitute" : "hc attr theme.active.color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.active.title_color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc attr theme.active.title_color .*",
+		"substitute" : "hc attr theme.active.title_color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.normal.color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc attr theme.normal.color .*",
+		"substitute" : "hc attr theme.normal.color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.urgent.color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc attr theme.urgent.color .*",
+		"substitute" : "hc attr theme.urgent.color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.normal.title_color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc attr theme.normal.title_color .*",
+		"substitute" : "hc attr theme.normal.title_color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.inner_color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc attr theme.inner_color .*",
+		"substitute" : "hc attr theme.inner_color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.outer_color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc attr theme.outer_color .*",
+		"substitute" : "hc attr theme.outer_color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.background_color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc attr theme.background_color .*",
+		"substitute" : "hc attr theme.background_color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.frame_border_normal_color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc set frame_border_normal_color .*",
+		"substitute" : "hc set frame_border_normal_color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.frame_border_active_color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc set frame_border_active_color .*",
+		"substitute" : "hc set frame_border_active_color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.frame_bg_normal_color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc set frame_bg_normal_color .*",
+		"substitute" : "hc set frame_bg_normal_color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.frame_bg_active_color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc set frame_bg_active_color .*",
+		"substitute" : "hc set frame_bg_active_color '{value}'",
 		"replace": "matched",
 		"value_is_file": false
 	}
