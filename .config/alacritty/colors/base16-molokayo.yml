@@ -1,40 +1,3 @@
-
-font:
-    normal:
-        family: Sarasa Mono CL
-        style: Regular
-    bold:
-        family: Sarasa Mono CL
-        style: Bold
-    italic:
-        family: Sarasa Mono CL
-        style: Italic
-    bold_italic:
-        family: Sarasa Mono CL
-        style: Bold Italic
-    size: 10
-
-    offset:
-        x: 0
-        y: -1 # offset
-    glyph_offset:
-        x: 0
-        y: 0
-  
-background_opacity: 1
-
-window:
-    dimensions:
-        columns: 0
-        lines: 0
-
-    padding:
-        x: 0 # PADDING
-        y: 0 # PADDING
-
-    #decorations: none
-
-# COLORSCHEME
 # Base16 molokayo - alacritty color config
 # Generated
 colors:
@@ -71,5 +34,3 @@ colors:
     white:   '0xffffff'
 
 draw_bold_text_with_bright_colors: false
-
-# /COLORSCHEME

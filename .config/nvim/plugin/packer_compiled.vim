@@ -72,6 +72,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["auto-pairs"] = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/auto-pairs"
+  },
   ["awesome-vim-colorschemes"] = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/awesome-vim-colorschemes"
@@ -103,10 +107,6 @@ _G.packer_plugins = {
   ["night-owl.vim"] = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/night-owl.vim"
-  },
-  ["nvim-autopairs"] = {
-    loaded = true,
-    path = "/home/a/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
   ["nvim-compe"] = {
     loaded = true,

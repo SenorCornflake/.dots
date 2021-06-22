@@ -7,7 +7,7 @@ end
 
 vim = vim -- Less "undefined global" warnings this way
 
-local colorscheme = "base16-ia-dark"
+local colorscheme = "molokayo"
 local powerline_symbol = ""
 
 -------------

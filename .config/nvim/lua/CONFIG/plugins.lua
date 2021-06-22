@@ -32,11 +32,10 @@ return require("packer").startup(function(use)
 	use "LnL7/vim-nix" -- For nix config files
 
 	-- Auto Pairs
-	use "windwp/nvim-autopairs"
+	use "jiangmiao/auto-pairs"
 
 	-- Lsp
 	use "neovim/nvim-lspconfig"
-	--use "glepnir/lspsaga.nvim"
 
 	-- Fuzzy picker
 	use "nvim-telescope/telescope.nvim"

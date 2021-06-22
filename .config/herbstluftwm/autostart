@@ -10,6 +10,7 @@ hc emit_hook reload
 xrandr --output VGA-1 --auto --primary --output eDP-1 --right-of VGA-1
 hc detect_monitors
 
+
 sh ~/.config/herbstluftwm/keybindings
 sh ~/.config/herbstluftwm/settings
 sh ~/.config/herbstluftwm/rules
@@ -17,26 +18,10 @@ sh ~/.config/herbstluftwm/rules
 # unlock, just to be sure
 hc unlock
 
-
-# NON-HLWM SETTINGS #
-xset r rate 250 30
-xsetroot -cursor_name left_ptr
-
-# AUTOSTART #
-pidof dunst && killall dunst
-dunst &
-
-pidof picom || picom --experimental-backends --shadow-ignore-shaped &
-
-killall polybar
-exconman set polybar.pin_workspaces "false"
-python ~/MAIN/scripts/launch_polybars.py &
-
-pidof /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 || /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# Autostart
+sh ~/MAIN/scripts/autostart.sh
 
 # WALLPAPERS #
 sh ~/MAIN/scripts/generate_wallapers.sh
 sh ~/MAIN/scripts/set_wallpaper.sh
 
-# NIGHT MODE #
-python ~/MAIN/scripts/nightmode.py

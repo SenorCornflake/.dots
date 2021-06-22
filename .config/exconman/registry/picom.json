@@ -1,0 +1,42 @@
+[
+	{
+		"name": "picom.shadow",
+		"file": "~/.config/picom/picom.conf",
+		"pattern": "shadow = .*",
+		"substitute": "shadow = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "picom.shadow-radius",
+		"file": "~/.config/picom/picom.conf",
+		"pattern": "shadow-radius = .*",
+		"substitute": "shadow-radius = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "picom.shadow-offset-x",
+		"file": "~/.config/picom/picom.conf",
+		"pattern": "shadow-offset-x = .*",
+		"substitute": "shadow-offset-x = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "picom.shadow-offset-y",
+		"file": "~/.config/picom/picom.conf",
+		"pattern": "shadow-offset-y = .*",
+		"substitute": "shadow-offset-y = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "picom.shadow-opacity",
+		"file": "~/.config/picom/picom.conf",
+		"pattern": "shadow-opacity = .*",
+		"substitute": "shadow-opacity = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	}
+]

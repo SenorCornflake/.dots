@@ -1,0 +1,98 @@
+[
+	{
+		"name": "herbstluftwm.active.color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc attr theme.active.color .*",
+		"substitute" : "hc attr theme.active.color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.active.title_color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc attr theme.active.title_color .*",
+		"substitute" : "hc attr theme.active.title_color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.normal.color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc attr theme.normal.color .*",
+		"substitute" : "hc attr theme.normal.color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.urgent.color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc attr theme.urgent.color .*",
+		"substitute" : "hc attr theme.urgent.color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.normal.title_color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc attr theme.normal.title_color .*",
+		"substitute" : "hc attr theme.normal.title_color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.inner_color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc attr theme.inner_color .*",
+		"substitute" : "hc attr theme.inner_color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.outer_color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc attr theme.outer_color .*",
+		"substitute" : "hc attr theme.outer_color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.background_color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc attr theme.background_color .*",
+		"substitute" : "hc attr theme.background_color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.frame_border_normal_color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc set frame_border_normal_color .*",
+		"substitute" : "hc set frame_border_normal_color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.frame_border_active_color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc set frame_border_active_color .*",
+		"substitute" : "hc set frame_border_active_color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.frame_bg_normal_color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc set frame_bg_normal_color .*",
+		"substitute" : "hc set frame_bg_normal_color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "herbstluftwm.frame_bg_active_color",
+		"file": "~/.config/herbstluftwm/settings",
+		"pattern": "hc set frame_bg_active_color .*",
+		"substitute" : "hc set frame_bg_active_color '{value}'",
+		"replace": "matched",
+		"value_is_file": false
+	}
+]

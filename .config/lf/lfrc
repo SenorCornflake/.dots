@@ -11,8 +11,8 @@ map p paste
 map <enter> open
 map y copy
 map r rename
-map a mkfile
-map A mkdir
+map A push %mkdir<space>
+map a push %touch<space>
 
 map `h cd ~
 map `w cd /srv/http

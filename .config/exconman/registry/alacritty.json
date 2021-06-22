@@ -1,0 +1,42 @@
+[
+	{
+		"name": "alacritty.colorscheme",
+		"file": "~/.config/alacritty/alacritty.yml",
+		"pattern": ["# COLORSCHEME", "# /COLORSCHEME"],
+		"substitute": "{value}",
+		"replace": "matched",
+		"value_is_file": true
+	},
+	{
+		"name": "alacritty.padding_x",
+		"file": "~/.config/alacritty/alacritty.yml",
+		"pattern": "x: .* # PADDING",
+		"substitute": "x: {value} # PADDING",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "alacritty.padding_y",
+		"file": "~/.config/alacritty/alacritty.yml",
+		"pattern": "y: .* # PADDING",
+		"substitute": "y: {value} # PADDING",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "alacritty.font",
+		"file": "~/.config/alacritty/alacritty.yml",
+		"pattern": "family: .*",
+		"substitute": "family: {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "alacritty.size",
+		"file": "~/.config/alacritty/alacritty.yml",
+		"pattern": "size: .*",
+		"substitute": "size: {value}",
+		"replace": "matched",
+		"value_is_file": false
+	}
+]

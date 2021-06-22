@@ -1,0 +1,10 @@
+[
+	{
+		"name": "misc.wallpaper",
+		"file": "~/MAIN/scripts/set_wallpaper.sh",
+		"pattern": "wallpaper=\".+\"",
+		"substitute": "wallpaper=\"{value}\"",
+		"replace": "matched",
+		"value_is_file": false
+	}
+]

@@ -20,10 +20,10 @@ hc set frame_gap 0
 hc set always_show_frame on
 hc set smart_frame_surroundings on
 hc set frame_padding 0
-hc set frame_border_normal_color '#222222'
-hc set frame_border_active_color '#cccccc'
-hc set frame_bg_normal_color '#222222'
-hc set frame_bg_active_color '#222222'
+hc set frame_border_normal_color '#3E3D32'
+hc set frame_border_active_color '#ffffff'
+hc set frame_bg_normal_color '#3E3D32'
+hc set frame_bg_active_color '#3E3D32'
 
 # ATTRS #
 hc attr theme.tiling.reset 1
@@ -36,11 +36,11 @@ hc attr theme.border_width 2
 hc attr theme.title_font 'Dina:size=10'  # example using Xft
 
 # COLORS #
-hc attr theme.normal.title_color '#cccccc'
-hc attr theme.active.title_color '#222222'
-hc attr theme.active.color '#cccccc'
-hc attr theme.normal.color '#222222'
-hc attr theme.urgent.color '#d86868'
-hc attr theme.inner_color '#222222'
-hc attr theme.outer_color '#222222'
-hc attr theme.background_color '#1a1a1a'
+hc attr theme.normal.title_color '#ffffff'
+hc attr theme.active.title_color '#3E3D32'
+hc attr theme.active.color '#ffffff'
+hc attr theme.normal.color '#3E3D32'
+hc attr theme.urgent.color '#AE81FF'
+hc attr theme.inner_color '#3E3D32'
+hc attr theme.outer_color '#3E3D32'
+hc attr theme.background_color '#202020'

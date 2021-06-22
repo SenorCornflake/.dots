@@ -1,0 +1,10 @@
+[
+	{
+		"name": "neovim.colorscheme",
+		"file": "~/.config/nvim/init.lua",
+		"pattern": "local colorscheme = \".+\"",
+		"substitute": "local colorscheme = \"{value}\"",
+		"replace": "matched",
+		"value_is_file": false
+	}
+]

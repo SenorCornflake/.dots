@@ -1,0 +1,42 @@
+# Base16 molokayo 256 - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0x202020'
+    foreground: '0xffffff'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x202020'
+    cursor: '0xffffff'
+
+  # Normal colors
+  normal:
+    black:   '0x202020'
+    red:     '0xE6DB74'
+    green:   '0xE6DB74'
+    yellow:  '0x66D9EF'
+    blue:    '0xA6E22E'
+    magenta: '0xF92672'
+    cyan:    '0x66d0ef'
+    white:   '0xffffff'
+
+  # Bright colors
+  bright:
+    black:   '0x75715E'
+    red:     '0xE6DB74'
+    green:   '0xE6DB74'
+    yellow:  '0x66D9EF'
+    blue:    '0xA6E22E'
+    magenta: '0xF92672'
+    cyan:    '0x66d0ef'
+    white:   '0xffffff'
+
+  indexed_colors:
+    - { index: 16, color: '0xAE81FF' }
+    - { index: 17, color: '0xAE81FF' }
+    - { index: 18, color: '0x3E3D32' }
+    - { index: 19, color: '0x403D3D' }
+    - { index: 20, color: '0xffffff' }
+    - { index: 21, color: '0xffffff' }
