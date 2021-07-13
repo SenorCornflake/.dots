@@ -1,9 +1,20 @@
+set ratios 1:2:3
+set cleaner ~/.config/lf/cleaner
+set previewer ~/.config/lf/preview
+
 set hidden true
 set icons true
 set ignorecase true
-set color256 true
+set drawbox true
 
 cmd q quit
+
+cmd open ${{
+    case $(file --mime-type "$f" -bL) in
+        text/*|application/json) $EDITOR "$f";;
+        *) xdg-open "$f" ;;
+    esac
+}}
 
 map dd cut
 map x delete
@@ -19,3 +30,4 @@ map `w cd /srv/http
 map `W cd ~/wallpapers
 map `d cd ~/Downloads
 map `c cd ~/.config
+map `m cd ~/MAIN

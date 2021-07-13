@@ -23,5 +23,6 @@ vim.opt.signcolumn     = "yes"
 vim.opt.undofile       = true
 vim.opt.tabstop        = 4
 vim.opt.shiftwidth     = 4
+vim.opt.expandtab      = false
 
 vim.cmd "autocmd FileType nix setlocal shiftwidth=2 tabstop=2 expandtab"

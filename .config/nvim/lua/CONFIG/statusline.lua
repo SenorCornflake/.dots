@@ -6,8 +6,11 @@ local left = function(item)
 	table.insert(gl.section.left, item)
 end
 
-local right = function(item)
-	table.insert(gl.section.right, item)
+local center = function(item)
+	table.insert(gl.section.mid, item)
+end
+
+local right = function(item) table.insert(gl.section.right, item)
 end
 
 SetupStatusline = function(symbol)
@@ -26,30 +29,204 @@ SetupStatusline = function(symbol)
 	-- First Reset
 	gl.section.left = {}
 	gl.section.right = {}
+	gl.section.mid = {}
 
-	local function_hl    = util.gh("Function")    or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
-	local string_hl      = util.gh("String")      or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
-	local keyword_hl     = util.gh("Keyword")     or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
-	local constant_hl    = util.gh("Constant")    or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
-	local statusline_hl  = util.gh("StatusLine")  or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
-	local errormsg_hl    = util.gh("ErrorMsg")    or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
-	local tag_hl         = util.gh("Tag")         or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
-	local special_hl     = util.gh("Special")     or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
-	local normal_hl      = util.gh("Normal")      or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
-	local conditional_hl = util.gh("Conditional") or { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
+	local info_hl = {
+		ctermfg = util.get_color(
+			{
+				{ "LspDiagnosticsDefaultInformation", "fg" }
+			},
+			"0",
+			"cterm"
+		),
+		guifg = util.get_color(
+			{
+				{ "LspDiagnosticsDefaultInformation", "fg" }
+			},
+			"#ffffff",
+			"gui"
+		)
+	}
+
+	local string_hl    = {
+		ctermfg = util.get_color(
+			{
+				{ "String", "fg" }
+			},
+			"0",
+			"cterm"
+		),
+		guifg = util.get_color(
+			{
+				{ "String", "fg" }
+			},
+			"#ffffff",
+			"gui"
+		)
+	}
+
+	local keyword_hl    = {
+		ctermfg = util.get_color(
+			{
+				{ "Keyword", "fg" }
+			},
+			"0",
+			"cterm"
+		),
+		guifg = util.get_color(
+			{
+				{ "Keyword", "fg" }
+			},
+			"#ffffff",
+			"gui"
+		)
+	}
+
+	local constant_hl    = {
+		ctermfg = util.get_color(
+			{
+				{ "Constant", "fg" }
+			},
+			"0",
+			"cterm"
+		),
+		guifg = util.get_color(
+			{
+				{ "Constant", "fg" }
+			},
+			"#ffffff",
+			"gui"
+		)
+	}
+
+	local statusline_hl= {
+		ctermfg = util.get_color(
+			{
+				{ "StatusLine", "fg" }
+			},
+			"0",
+			"cterm"
+		),
+		guifg = util.get_color(
+			{
+				{ "StatusLine", "fg" }
+			},
+			"#ffffff",
+			"gui"
+		)
+	}
+
+	local error_hl= {
+		ctermfg = util.get_color(
+			{
+				{ "LspDiagnosticsDefaultError", "fg" }
+			},
+			"0",
+			"cterm"
+		),
+		guifg = util.get_color(
+			{
+				{ "LspDiagnosticsDefaultError", "fg" }
+			},
+			"#ffffff",
+			"gui"
+		)
+	}
+
+	local warning_hl= {
+		ctermfg = util.get_color(
+			{
+				{ "LspDiagnosticsDefaultWarning", "fg" }
+			},
+			"0",
+			"cterm"
+		),
+		guifg = util.get_color(
+			{
+				{ "LspDiagnosticsDefaultWarning", "fg" }
+			},
+			"#ffffff",
+			"gui"
+		)
+	}
+
+	local hint_hl= {
+		ctermfg = util.get_color(
+			{
+				{ "LspDiagnosticsDefaultHint", "fg" }
+			},
+			"0",
+			"cterm"
+		),
+		guifg = util.get_color(
+			{
+				{ "LspDiagnosticsDefaultHint", "fg" }
+			},
+			"#ffffff",
+			"gui"
+		)
+	}
+
+	local normal_hl = {
+		ctermbg = util.get_color(
+			{
+				{ "Normal", "bg" }
+			},
+			"0",
+			"cterm"
+		),
+		guibg = util.get_color(
+			{
+				{ "Normal", "bg" }
+			},
+			"#000000",
+			"gui"
+		),
+		ctermfg = util.get_color(
+			{
+				{ "Normal", "fg" }
+			},
+			"0",
+			"cterm"
+		),
+		guifg = util.get_color(
+			{
+				{ "Normal", "fg" }
+			},
+			"#000000",
+			"gui"
+		)
+	}
+
+	local conditional_hl = {
+		ctermbg = util.get_color(
+			{
+				{ "Conditional", "fg" }
+			},
+			"0",
+			"cterm"
+		),
+		guibg = util.get_color(
+			{
+				{ "Conditional", "fg" }
+			},
+			"#ffffff",
+			"gui"
+		)
+	}
 
 	local colors = {
-		normal_mode = { function_hl   .guifg , function_hl   .ctermfg },
+		normal_mode = { info_hl   .guifg , info_hl   .ctermfg },
 		insert      = { string_hl     .guifg , string_hl     .ctermfg },
 		visual      = { keyword_hl    .guifg , keyword_hl    .ctermfg },
 		other       = { constant_hl   .guifg , constant_hl   .ctermfg },
-		bg          = { normal_hl     .guibg , normal_hl     .ctermbg },
-		error       = { errormsg_hl   .guifg , errormsg_hl   .ctermfg },
-		warn        = { tag_hl        .guifg , tag_hl        .ctermfg },
-		info        = { function_hl   .guifg , function_hl   .ctermfg },
-		hint        = { special_hl    .guifg , special_hl    .ctermfg },
-		normal      = { normal_hl     .guifg , normal_hl     .ctermfg },
+		error       = { error_hl   .guifg , error_hl   .ctermfg },
+		warn        = { warning_hl        .guifg , warning_hl        .ctermfg },
+		info        = { info_hl   .guifg , info_hl   .ctermfg },
+		hint        = { hint_hl    .guifg , hint_hl    .ctermfg },
 		git         = { constant_hl   .guifg , constant_hl   .ctermfg },
+		normal      = { normal_hl     .guifg , normal_hl     .ctermfg },
+		bg          = { normal_hl     .guibg , normal_hl     .ctermbg },
 	}
 
 	local mode_colors = {
@@ -100,21 +277,14 @@ SetupStatusline = function(symbol)
 		['t']  = 'TERMINAL'
 	}
 
-	local update_symbol_color = function(color_g, color_t)
-		vim.cmd (":hi GalaxyModePowerline guifg=" ..  color_g .. " ctermfg=" .. color_t)
-	end
-
 	left({
 		Mode = {
 			provider = function()
 				local mode = vim.fn.mode()
 
 				vim.cmd(":silent hi GalaxyMode guifg=" .. colors.bg[1] .. " guibg=" .. mode_colors[mode][1] .. " ctermfg=" .. colors.bg[2] .. " ctermbg=" .. mode_colors[mode][2])
+				vim.cmd(":silent hi GalaxyModePowerline guifg=" .. mode_colors[mode][1] .. " guibg=" .. colors.bg[1] .. " ctermfg=" .. mode_colors[mode][2] .. " ctermbg=" .. colors.bg[2])
 
-				update_symbol_color(mode_colors[mode][1], mode_colors[mode][2])
-
-				-- I know, you're thinking "Why is this here?", well, the reason is that if I place it anywhere else it doesn't work unless I call SetupStatusline() manually
-				-- So I put it here because this works
 				vim.cmd ("hi GalaxyFileIcon guifg=" .. colors.warn[1] .. " ctermfg=" .. colors.warn[2])
 				vim.cmd ("hi GalaxyFileName guifg=" .. colors.warn[1] .. " ctermfg=" .. colors.warn[2])
 
@@ -145,7 +315,7 @@ SetupStatusline = function(symbol)
 		FileSize = {
 			provider = "FileSize",
 			separator = " ",
-			separator_highlight = "NONE"
+			separator_highlight = "NONE",
 		}
 	})
 
@@ -159,7 +329,7 @@ SetupStatusline = function(symbol)
 		FileName = {
 			provider = "FileName",
 			separator = " ",
-			separator_highlight = "NONE"
+			separator_highlight = "NONE",
 		}
 	})
 
@@ -170,6 +340,8 @@ SetupStatusline = function(symbol)
 			separator_highlight = "NONE"
 		}
 	})
+
+
 	right({
 		LanguageServer = {
 			provider = function()
@@ -180,7 +352,7 @@ SetupStatusline = function(symbol)
 				end
 
 				return "  "
-			end
+			end,
 		}
 	})
 
@@ -188,28 +360,28 @@ SetupStatusline = function(symbol)
 		DiagnosticError = {
 			provider = 'DiagnosticError',
 			icon = '  ',
-		}
+		},
 	})
 
 	right({
 		DiagnosticWarn = {
 			provider = 'DiagnosticWarn',
 			icon = '  ',
-		}
+		},
 	})
 
 	right({
 		DiagnosticInfo = {
 			provider = 'DiagnosticInfo',
 			icon = '  ',
-		}
+		},
 	})
 
 	right({
 		DiagnosticHint = {
 			provider = 'DiagnosticHint',
 			icon = '  ',
-		}
+		},
 	})
 
 
@@ -234,4 +406,3 @@ return function(powerline_symbol)
 	vim.cmd ("autocmd VimEnter * lua SetupStatusline('" .. powerline_symbol .. "')")
 	vim.cmd ("autocmd ColorScheme * lua SetupStatusline('" .. powerline_symbol .. "')")
 end
-

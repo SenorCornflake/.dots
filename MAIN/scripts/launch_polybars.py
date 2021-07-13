@@ -19,10 +19,15 @@ for i, bar in enumerate(bar_names):
     bar_names[i] = bar.replace(".ini", "")
 
 for i, bar in enumerate(bar_names):
+    # Specify the names of the bars that have more than one bar
     if bar == "4":
         bars[bar] = []
         bars[bar].append("top")
         bars[bar].append("bottom")
+    if bar == "do-you-even-luft":
+        bars[bar] = []
+        bars[bar].append("left")
+        bars[bar].append("right")
     else:
         bars[bar] = []
         bars[bar].append("main")

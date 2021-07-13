@@ -58,7 +58,7 @@ require 'nvim-treesitter.configs'.setup {
 	highlight = {
 		enable = true,
 		-- Keeps PHP auto indenting
-		additional_vim_regex_highlighting = true
+		--additional_vim_regex_highlighting = true
 	},
 	indent = {
 		enable = true

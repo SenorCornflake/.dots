@@ -10,12 +10,13 @@ require "compe".setup {
 	source = {
 		path = true,
 		buffer = true,
-		calc = true,
-		vsnip = true,
 		nvim_lsp = true,
-		spell = true,
-		--tags = true,
-		--snippets_nvim = true,
 		treesitter = true,
+
+		spell = false,
+		tags = false,
+		snippets_nvim = false,
+		calc = false,
+		vsnip = false,
 	}
 }

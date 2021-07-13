@@ -19,7 +19,7 @@ if index != "":
     cmd = "schemer2 -threshold 50 -format img::colors -in {} -out {} && python {} --inputColorPaletteFile {} {} {}".format(image_location, colors_txt, script_location, colors_txt, template_location, output_location)
     os.system(cmd)
 
-    os.system('exconman set misc.wallpaper "{}"'.format(wallpaper_dir + "/" + wallpapers[index]))
+    os.system('exconman set misc.wallpaper "{}" --perform-long-tasks'.format(wallpaper_dir + "/" + wallpapers[index]))
 
     os.system("python ~/MAIN/scripts/adapt_to_base16.py ~/MAIN/tmp/base16_schemes/schemer2.yaml")
 

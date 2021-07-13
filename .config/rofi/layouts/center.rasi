@@ -1,5 +1,5 @@
 configuration {
-	font: "Sarasa Mono CL 9";
+	font: "Iosevka Nerd Font 9";
 	show-icons: true;
 	drun-display-format: "{name}";
 	display-drun: ">";

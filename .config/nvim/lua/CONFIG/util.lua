@@ -31,7 +31,7 @@ function util.split(source, delimiters)
 end
 
 -------------------------------
--- GET HIGHLIGHT COLOR CODES --
+-- GET HIGHLIGHT COLOR CODES (OLD VERSION)--
 -------------------------------
 util.gh = function(highlight, fallback_colors)
 	fallback_colors = fallback_colors or true
@@ -75,6 +75,41 @@ util.gh = function(highlight, fallback_colors)
 		guifg = guifg,
 		guibg = guibg
 	}
+end
+
+---------------------------------------------
+-- GET HIGHLIGHT COLOR CODES (NEW VERSION) --
+---------------------------------------------
+util.get_color = function(highlights, fallback, mode)
+	if not highlights then return end
+
+	if mode then
+		mode = ', "' .. mode .. '"'
+	else
+		mode = ""
+	end
+
+	local outputted = false
+
+	for i, h in pairs(highlights) do
+		local name = h[1]
+		local attr = h[2]
+
+		local output = vim.api.nvim_exec('echo synIDattr(synIDtrans(hlID("' .. name .. '")), "' .. attr .. '#"' .. mode .. ')', true)
+
+		if output:len() > 1 then
+			outputted = true
+			return output
+		end
+	end
+	
+	if not outputted then
+		if fallback then
+			return fallback
+		else
+			return "#000000"
+		end
+	end
 end
 
 ---------------------------
@@ -211,38 +246,26 @@ util.base16ify = function()
 	local theme = {
 		scheme = vim.g.colors_name,
 		author = "Generated",
-		base00 = util.gh("Normal")     .guibg:gsub("#", ""),
-		base01 = util.gh("CursorLine") .guibg:gsub("#", ""),
-		base02 = util.gh("Visual")     .guibg:gsub("#", ""),
-		base03 = util.gh("Comment")    .guifg:gsub("#", ""),
-		base04 = util.gh("StatusLine") .guifg:gsub("#", ""),
-		base05 = util.gh("Normal")     .guifg:gsub("#", ""),
-		base06 = util.gh("StatusLine") .guifg:gsub("#", ""),
-		base07 = util.gh("Normal")     .guifg:gsub("#", ""),
-		base08 = util.gh("Character")  .guifg:gsub("#", ""),
-		base09 = util.gh("Number")     .guifg:gsub("#", ""),
-		base0A = util.gh("Type")       .guifg:gsub("#", ""),
-		base0B = util.gh("String")     .guifg:gsub("#", ""),
-		base0C = util.gh("Special")    .guifg:gsub("#", ""),
-		base0D = util.gh("Function")   .guifg:gsub("#", ""),
-		base0E = util.gh("Conditional").guifg:gsub("#", ""),
-		base0F = util.gh("Constant")   .guifg:gsub("#", "")
+		base00 = util.get_color({{"Normal"     , "bg"}}, "#000000", "gui"):gsub("#", ""),
+		base01 = util.get_color({{"CursorLine" , "bg"}}, "#000000", "gui"):gsub("#", ""),
+		base02 = util.get_color({{"Visual"     , "bg"}}, "#000000", "gui"):gsub("#", ""),
+		base03 = util.get_color({{"Comment"    , "fg"}}, "#000000", "gui"):gsub("#", ""),
+		base04 = util.get_color({{"StatusLine" , "fg"}}, "#000000", "gui"):gsub("#", ""),
+		base05 = util.get_color({{"Normal"     , "fg"}}, "#000000", "gui"):gsub("#", ""),
+		base06 = util.get_color({{"StatusLine" , "fg"}}, "#000000", "gui"):gsub("#", ""),
+		base07 = util.get_color({{"Normal"     , "fg"}}, "#000000", "gui"):gsub("#", ""),
+		base08 = util.get_color({{"Character"  , "fg"}}, "#000000", "gui"):gsub("#", ""),
+		base09 = util.get_color({{"Number"     , "fg"}}, "#000000", "gui"):gsub("#", ""),
+		base0A = util.get_color({{"Type"       , "fg"}}, "#000000", "gui"):gsub("#", ""),
+		base0B = util.get_color({{"String"     , "fg"}}, "#000000", "gui"):gsub("#", ""),
+		base0C = util.get_color({{"Special"    , "fg"}}, "#000000", "gui"):gsub("#", ""),
+		base0D = util.get_color({{"Function"   , "fg"}}, "#000000", "gui"):gsub("#", ""),
+		base0E = util.get_color({{"Conditional", "fg"}}, "#000000", "gui"):gsub("#", ""),
+		base0F = util.get_color({{"Constant"   , "fg"}}, "#000000", "gui"):gsub("#", "")
 	}
 
-	-- Some themes don't set some highlights so we just fallback to the normal foreground
-	for k, v in pairs(theme) do
-		if v == "none" then
-			theme[k] = util.gh("Normal").guifg:gsub("#", "")
-		end
-	end
-
-	for k, base in pairs(theme) do
-		if base == "none" then
-			print("Failed getting color for " .. k)
-		end
-	end
-
-	local text =   'scheme: "' .. theme.scheme .. '"\n'
+	local  text = "\n"
+	text = text .. 'scheme: "' .. theme.scheme .. '"\n'
 	text = text .. 'author: "' .. theme.author .. '"\n'
 	text = text .. 'base00: "' .. theme.base00 .. '"\n'
 	text = text .. 'base01: "' .. theme.base01 .. '"\n'
@@ -273,7 +296,7 @@ util.adapt_system = function()
 	file:write(theme)
 	file:close()
 
-	os.execute("python ~/MAIN/scripts/adapt_to_base16.py ~/MAIN/tmp/base16_schemes/" .. vim.g.colors_name .. ".yaml " .. vim.g.colors_name)
+	os.execute("python ~/MAIN/scripts/adapt_to_base16.py --perform-long-tasks ~/MAIN/tmp/base16_schemes/" .. vim.g.colors_name .. ".yaml " .. vim.g.colors_name)
 end
 
 -----------------------------------------------------------------------------
@@ -323,6 +346,20 @@ util.sessions = function()
       		return true
     	end,
 	}):find()
+end
+
+---------------------------------
+-- Get output of shell command --
+---------------------------------
+util.capture = function(cmd, raw) -- From stackoverflow: https://stackoverflow.com/questions/132397/get-back-the-output-of-os-execute-in-lua
+	local f = assert(io.popen(cmd, 'r'))
+  	local s = assert(f:read('*a'))
+  	f:close()
+  	if raw then return s end
+  	s = string.gsub(s, '^%s+', '')
+  	s = string.gsub(s, '%s+$', '')
+  	s = string.gsub(s, '[\n\r]+', ' ')
+  	return s
 end
 
 return util

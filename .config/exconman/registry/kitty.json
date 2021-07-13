@@ -1,0 +1,58 @@
+[
+	{
+		"name": "kitty.colorscheme",
+		"file": "~/.config/kitty/kitty.conf",
+		"pattern": ["# COLORSCHEME", "# /COLORSCHEME"],
+		"substitute": "{value}",
+		"replace": "matched",
+		"value_is_file": true
+	},
+	{
+		"name": "kitty.font_family",
+		"file": "~/.config/kitty/kitty.conf",
+		"pattern": "font_family .*",
+		"substitute": "font_family {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "kitty.bold_font",
+		"file": "~/.config/kitty/kitty.conf",
+		"pattern": "bold_font .*",
+		"substitute": "bold_font {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "kitty.italic_font",
+		"file": "~/.config/kitty/kitty.conf",
+		"pattern": "italic_font .*",
+		"substitute": "italic_font {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "kitty.bold_italic_font",
+		"file": "~/.config/kitty/kitty.conf",
+		"pattern": "bold_italic_font .*",
+		"substitute": "bold_italic_font {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "kitty.font_size",
+		"file": "~/.config/kitty/kitty.conf",
+		"pattern": "font_size .*",
+		"substitute": "font_size {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "kitty.window_padding_width",
+		"file": "~/.config/kitty/kitty.conf",
+		"pattern": "window_padding_width .*",
+		"substitute": "window_padding_width {value}",
+		"replace": "matched",
+		"value_is_file": false
+	}
+]

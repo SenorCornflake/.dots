@@ -2,10 +2,11 @@ HISTSIZE=10000
 SAVEHIST=100000
 HISTFILE="$XDG_DATA_HOME"/zsh/history
 
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh || paru --skipreview -S zsh-autosuggestions-git
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh || paru --skipreview -S zsh-history-substring-search 
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh || paru --skipreview -S zsh-fast-syntax-highlighting
+source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh || paru --skipreview -S zsh-you-should-use
+
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -28,5 +29,6 @@ alias nnn='nnn -dCHeQ'
 alias r='ranger'
 alias t='todo.sh -c -d "$HOME/.config/todotxt/conf/config"'
 alias hc='herbstclient'
+alias f='lfrun'
 
 neofetch

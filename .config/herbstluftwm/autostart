@@ -6,10 +6,10 @@ hc() {
 
 hc emit_hook reload
 
-# MONITORS #
-xrandr --output VGA-1 --auto --primary --output eDP-1 --right-of VGA-1
-hc detect_monitors
+sh ~/MAIN/scripts/autostart.sh
 
+# MONITORS #
+hc detect_monitors
 
 sh ~/.config/herbstluftwm/keybindings
 sh ~/.config/herbstluftwm/settings
@@ -18,10 +18,6 @@ sh ~/.config/herbstluftwm/rules
 # unlock, just to be sure
 hc unlock
 
-# Autostart
-sh ~/MAIN/scripts/autostart.sh
-
-# WALLPAPERS #
-sh ~/MAIN/scripts/generate_wallapers.sh
-sh ~/MAIN/scripts/set_wallpaper.sh
-
+killall polybar
+exconman set polybar.pin_workspaces "false"
+python ~/MAIN/scripts/launch_polybars.py &

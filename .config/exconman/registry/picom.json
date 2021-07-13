@@ -38,5 +38,21 @@
 		"substitute": "shadow-opacity = {value}",
 		"replace": "matched",
 		"value_is_file": false
+	},
+	{
+		"name": "picom.polybar_shadow",
+		"file": "~/.config/picom/picom.conf",
+		"pattern": ".*\"class_g = 'Polybar'\", # Shadow",
+		"substitute": "\t{value}\"class_g = 'Polybar'\", # Shadow",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "picom.rofi_shadow",
+		"file": "~/.config/picom/picom.conf",
+		"pattern": ".*\"class_g = 'Rofi'\", # Shadow",
+		"substitute": "\t{value}\"class_g = 'Rofi'\", # Shadow",
+		"replace": "matched",
+		"value_is_file": false
 	}
 ]

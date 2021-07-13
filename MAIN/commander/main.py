@@ -4,6 +4,8 @@ import sys
 
 """
 This is the script that all my menus scripts runs on, kept this script through out all my arch reinstallations, still going strong.
+
+is uses rofi
 """
 
 def e(command): 

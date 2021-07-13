@@ -246,5 +246,69 @@
 		"substitute": "4_occupied = {value}",
 		"replace": "matched",
 		"value_is_file": false
+	},
+	{
+		"name": "polybar.do_you_even_luft_accent_left",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "do_you_even_luft_accent_left = .*",
+		"substitute": "do_you_even_luft_accent_left = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.do_you_even_luft_accent_right",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "do_you_even_luft_accent_right = .*",
+		"substitute": "do_you_even_luft_accent_right = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.do_you_even_luft_fg",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "do_you_even_luft_fg = .*",
+		"substitute": "do_you_even_luft_fg = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.do_you_even_luft_fg",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "do_you_even_luft_fg = .*",
+		"substitute": "do_you_even_luft_fg = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.do_you_even_luft_bg",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "do_you_even_luft_bg = .*",
+		"substitute": "do_you_even_luft_bg = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.do_you_even_luft_color_1",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "do_you_even_luft_color_1 = .*",
+		"substitute": "do_you_even_luft_color_1 = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.do_you_even_luft_color_2",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "do_you_even_luft_color_2 = .*",
+		"substitute": "do_you_even_luft_color_2 = {value}",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "polybar.do_you_even_luft_fg_2",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "do_you_even_luft_fg_2 = .*",
+		"substitute": "do_you_even_luft_fg_2 = {value}",
+		"replace": "matched",
+		"value_is_file": false
 	}
 ]

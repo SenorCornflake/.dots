@@ -7,8 +7,8 @@ end
 
 vim = vim -- Less "undefined global" warnings this way
 
-local colorscheme = "molokayo"
-local powerline_symbol = ""
+local colorscheme = "oceanic_material"
+local powerline_symbol = "up_slant"
 
 -------------
 -- General --
@@ -23,9 +23,9 @@ require "CONFIG.statusline"(powerline_symbol)
 -------------
 -- Plugins --
 -------------
-require "CONFIG.PLUGINS.treesitter"
+--require "CONFIG.PLUGINS.treesitter" -- Treesitter's indenting is horrific
 require "CONFIG.PLUGINS.autopairs"
-require "CONFIG.PLUGINS.rnvimr"
+--require "CONFIG.PLUGINS.rnvimr"
 require "CONFIG.PLUGINS.telescope"
 require "CONFIG.PLUGINS.vista"
 require "CONFIG.PLUGINS.compe"
@@ -37,6 +37,11 @@ require "CONFIG.PLUGINS.hexokinase"
 require "CONFIG.PLUGINS.hop"
 require "CONFIG.PLUGINS.whichkey"
 require "CONFIG.PLUGINS.dashboard"
-
+require "CONFIG.PLUGINS.floatterm"
+require "CONFIG.PLUGINS.emmet"
+require "CONFIG.PLUGINS.truezen"
+require "CONFIG.PLUGINS.kommentary"
+require "CONFIG.PLUGINS.trouble"
+require "CONFIG.PLUGINS.polyglot"
 
 vim.cmd "doautocmd User Restarted"

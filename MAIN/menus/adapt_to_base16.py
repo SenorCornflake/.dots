@@ -27,4 +27,4 @@ index = os.popen(cmd).read()[:-1]
 
 if index != "":
     index = int(index)
-    os.system('python ~/MAIN/scripts/adapt_to_base16.py "{}"'.format(theme_paths[index]))
+    os.system('python ~/MAIN/scripts/adapt_to_base16.py "{}" --perform-long-tasks'.format(theme_paths[index]))

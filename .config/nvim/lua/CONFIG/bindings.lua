@@ -24,6 +24,9 @@ util.bind('i', '<S-Tab>', 'pumvisible() ? "<C-p>" : "<S-Tab>"', { expr = true, n
 -- Reload neovim
 util.bind("n", "<leader>,", ":luafile ~/.config/nvim/init.lua<CR>")
 
+---------
+-- LSP --
+---------
 util.bind('n', '<leader>ld', ':lua vim.lsp.buf.definition()<cr>')
 util.bind('n', '<leader>lD', ':lua vim.lsp.buf.declaration()<cr>')
 util.bind('n', '<leader>li', ':lua vim.lsp.buf.implementation()<cr>')
@@ -33,6 +36,13 @@ util.bind('n', '<leader>lr', ':lua vim.lsp.buf.rename()<cr>')
 util.bind('n', '<leader>lR', ':lua vim.lsp.buf.references()<cr>')
 util.bind('n', '<leader>le', ':lua vim.lsp.diagnostic.show_line_diagnostics()<cr>')
 util.bind('n', '<leader>lh', ':lua require("lsp_extensions").inlay_hints()<cr>')
+
+-------------
+-- Buffers --
+-------------
+util.bind('n', '<leader>bd', ':bd<CR>')
+util.bind('n', '<leader>bD', ':bd!<CR>')
+
 
 ---------------
 -- Telescope --
@@ -51,7 +61,7 @@ util.bind("n", "<leader>f/", ":Telescope current_buffer_fuzzy_find<CR>")
 ------------
 -- RnvimR --
 ------------
-util.bind("n", "<leader>e", ":RnvimrToggle<CR>")
+util.bind("n", "<leader>e", ":FloatermNew lf<CR>")
 
 -----------
 -- Vista --
@@ -84,10 +94,30 @@ util.bind("n", "<leader>ss", ":SessionSave<CR>")
 ------------
 util.bind("n", "<leader>ps", ":PackerSync<CR>")
 
+-------------
+-- TrueZen --
+-------------
+util.bind("n", "<leader>za", ":TZAtaraxis<CR>")
+util.bind("n", "<leader>zf", ":TZFocus<CR>", { noremap = true, silent = false })
+util.bind("n", "<leader>zm", ":TZMinimalist<CR>")
+
 ---------
 -- Hop --
 ---------
 util.bind("n", "s", ":HopChar1<CR>")
+
+----------------
+-- Kommentary --
+----------------
+util.bind("n", "<leader>cc", "<Plug>kommentary_line_default", { silent = true })
+util.bind("n", "<leader>c", "<Plug>kommentary_motion_default", { silent = true })
+util.bind("v", "<leader>c", "<Plug>kommentary_visual_default", { silent = true })
+
+-------------
+-- Trouble --
+-------------
+util.bind("n", "<leader>t", ":TroubleToggle<CR>")
+
 
 ----------------------------
 -- Color Scheme Switching --

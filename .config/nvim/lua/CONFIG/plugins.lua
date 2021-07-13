@@ -28,8 +28,10 @@ return require("packer").startup(function(use)
 	}
 
 	-- Highlighting
-	use "nvim-treesitter/nvim-treesitter"
+	--use "nvim-treesitter/nvim-treesitter"
+	--use "sheerun/vim-polyglot"
 	use "LnL7/vim-nix" -- For nix config files
+	use "fladson/vim-kitty"
 
 	-- Auto Pairs
 	use "jiangmiao/auto-pairs"
@@ -46,6 +48,8 @@ return require("packer").startup(function(use)
 
 	-- File manager
 	use 'kevinhwang91/rnvimr'
+
+	use 'voldikss/vim-floaterm'
 
 	-- Symbol sidebar lister
 	use 'liuchengxu/vista.vim'
@@ -88,4 +92,20 @@ return require("packer").startup(function(use)
 
 	-- Dashboard
 	use "glepnir/dashboard-nvim"
+
+	-- HTML auto thingy
+	use "mattn/emmet-vim"
+
+	-- Zen mode
+	use "Pocco81/TrueZen.nvim"
+
+	-- Comment Code
+	use "b3nj5m1n/kommentary"
+
+	-- LSP Highlights
+	-- use "folke/lsp-colors.nvim"
+
+	-- Bottom lister
+	use "folke/trouble.nvim"
+
 end)

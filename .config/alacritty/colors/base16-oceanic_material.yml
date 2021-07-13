@@ -1,0 +1,36 @@
+# Base16 oceanic_material - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0x1b2b34'
+    foreground: '0xd4be98'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1b2b34'
+    cursor: '0xd4be98'
+
+  # Normal colors
+  normal:
+    black:   '0x1b2b34'
+    red:     '0xa7c777'
+    green:   '0xa7c777'
+    yellow:  '0xd8a657'
+    blue:    '0xd16d9e'
+    magenta: '0xc594c5'
+    cyan:    '0xd8a657'
+    white:   '0xd4be98'
+
+  # Bright colors
+  bright:
+    black:   '0x928374'
+    red:     '0xc594c5'
+    green:   '0x343d46'
+    yellow:  '0xc0c5ce'
+    blue:    '0xddc7a1'
+    magenta: '0xd4be98'
+    cyan:    '0x62b3b2'
+    white:   '0xd4be98'
+
+draw_bold_text_with_bright_colors: false

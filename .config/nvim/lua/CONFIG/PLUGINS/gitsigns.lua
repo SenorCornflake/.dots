@@ -7,6 +7,24 @@ require('gitsigns').setup {
 		delete       = { hl = 'GitSignsDelete', text = '-' },
 		topdelete    = { hl = 'GitSignsDelete', text = '^' },
 		changedelete = { hl = 'GitSignsChange', text = '~' },
+
+		-- add          = { hl = 'GitSignsAdd'   , text = '|' },
+		-- change       = { hl = 'GitSignsChange', text = '|' },
+		-- delete       = { hl = 'GitSignsDelete', text = '|' },
+		-- topdelete    = { hl = 'GitSignsDelete', text = '|' },
+		-- changedelete = { hl = 'GitSignsChange', text = '|' },
+
+		-- add          = { hl = 'GitSignsAdd'   , text = '▌' },
+		-- change       = { hl = 'GitSignsChange', text = '▌' },
+		-- delete       = { hl = 'GitSignsDelete', text = '▌' },
+		-- topdelete    = { hl = 'GitSignsDelete', text = '▌' },
+		-- changedelete = { hl = 'GitSignsChange', text = '▌' },
+
+		-- add          = { hl = 'GitSignsAdd'   , text = '│' },
+		-- change       = { hl = 'GitSignsChange', text = '│' },
+		-- delete       = { hl = 'GitSignsDelete', text = '│' },
+		-- topdelete    = { hl = 'GitSignsDelete', text = '│' },
+		-- changedelete = { hl = 'GitSignsChange', text = '│' },
 	},
 	numhl = false,
 	linehl = false,
@@ -39,20 +57,87 @@ require('gitsigns').setup {
 	use_internal_diff = true,  -- If luajit is present
 }
 
-SetGitSignHighlights = function()
-	local sign_bg = util.gh("SignColumn")
+Setup_Gitsigns = function()
+	local sign_bg_cterm = util.get_color(
+		{
+			{ "SignColumn", "bg" },
+			{ "Normal", "bg" }
+		},
+		"none",
+		"cterm"
+	)
 
-	if vim.g.colors_name == "base16-schemer2" then
-		sign_bg = util.gh("Normal")
-	end
+	local sign_bg_gui = util.get_color(
+		{
+			{ "SignColumn", "bg" },
+			{ "Normal", "bg" }
+		},
+		"none",
+		"gui"
+	)
+	
 
-	local add = util.gh("String")
-	local delete = util.gh("ErrorMsg")
-	local change = util.gh("Include")
+	local add_fg_cterm = util.get_color(
+		{
+			{ "DiffAdded", "fg" },
+			{ "DiffAdd", "fg" },
+		},
+		"0",
+		"cterm"
+	)
 
-	if add then vim.cmd("hi GitSignsAdd guibg=" .. sign_bg.guibg .. " ctermbg=" .. sign_bg.ctermbg .. " guifg=" .. add.guifg .. " ctermfg=" .. add.ctermfg) end
-	if delete then vim.cmd("hi GitSignsDelete guibg=" .. sign_bg.guibg .. " ctermbg=" .. sign_bg.ctermbg .. " guifg=" .. delete.guifg .. " ctermfg=" .. delete.ctermfg) end
-	if change then vim.cmd("hi GitSignsChange guibg=" .. sign_bg.guibg .. " ctermbg=" .. sign_bg.ctermbg .. " guifg=" .. change.guifg .. " ctermfg=" .. change.ctermfg) end
+	local add_fg_gui = util.get_color(
+		{
+			{ "DiffAdded", "fg" },
+			{ "DiffAdd", "fg" },
+		},
+		"#00aa00",
+		"gui"
+	)
+
+
+	local delete_fg_cterm = util.get_color(
+		{
+			{ "DiffRemoved", "fg" },
+			{ "DiffDelete", "fg" },
+			{ "ErrorMsg", "fg" }
+		},
+		"0",
+		"cterm"
+	)
+
+	local delete_fg_gui = util.get_color(
+		{
+			{ "DiffRemoved", "fg" },
+			{ "DiffDelete", "fg" },
+			{ "ErrorMsg", "fg" }
+		},
+		"#aa0000",
+		"gui"
+	)
+
+	local change_fg_cterm = util.get_color(
+		{
+			{ "DiffFile", "fg" },
+		},
+		"0",
+		"cterm"
+	)
+
+	local change_fg_gui = util.get_color(
+		{
+			{ "DiffFile", "fg" },
+		},
+		"#aa22ff",
+		"gui"
+	)
+
+	vim.cmd("hi clear GitSignsAdd")
+	vim.cmd("hi clear GitSignsDelete")
+	vim.cmd("hi clear GitSignsChange")
+	vim.cmd("hi GitSignsAdd guibg="    .. sign_bg_gui .. " ctermbg=" .. sign_bg_cterm .. " guifg=" .. add_fg_gui    .. " ctermfg=" .. add_fg_cterm)
+	vim.cmd("hi GitSignsDelete guibg=" .. sign_bg_gui .. " ctermbg=" .. sign_bg_cterm .. " guifg=" .. delete_fg_gui .. " ctermfg=" .. delete_fg_cterm)
+	vim.cmd("hi GitSignsChange guibg=" .. sign_bg_gui .. " ctermbg=" .. sign_bg_cterm .. " guifg=" .. change_fg_gui .. " ctermfg=" .. change_fg_cterm) 
 end
 
-vim.cmd "autocmd ColorScheme * :lua SetGitSignHighlights()"
+vim.cmd "autocmd VimEnter,ColorScheme * lua Setup_Gitsigns()"

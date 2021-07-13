@@ -16,7 +16,8 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 
 # Other
-export QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_QPA_PLATFORMTHEME="kde"
+#export QT_QPA_PLATFORMTHEME="qt5ct"
 export BAT_THEME="base16" # Set bat theme to base16, this is the program FZF in vim uses to highlight code previews
 export TODO_DIR="~/.config/todotxt"
 
@@ -29,7 +30,7 @@ export PATH=~/.local/bin:$PATH
 # Default applications
 export EDITOR=nvim
 export VISUAL=nvim
-export TERMINAL=alacritty
+export TERMINAL=kitty
 export BROWSER=firefox
 export VIDEO=vlc
 

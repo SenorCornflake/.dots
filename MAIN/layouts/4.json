@@ -4,7 +4,7 @@
 
 	"polybar.bar": "4",
 
-	"rofi.layout": "center",
+	"rofi.layout": "bottom",
 
 	"bspwm.border_width": "2",
 	"bspwm.window_gap": "15",
@@ -15,7 +15,7 @@
 	"bspwm.gapless_monocle": "true",
 	"bspwm.borderless_monocle": "true",
 
-	"picom.shadow": "false",
+	"picom.shadow": "true",
 	"picom.shadow-radius": "15",
 	"picom.shadow-offset-x": "-15",
 	"picom.shadow-offset-y": "-15",
@@ -25,5 +25,8 @@
 	"dunst.padding": "10",
 	"dunst.horizontal_padding": "10",
 	"dunst.frame_width": "2",
-	"dunst.corner_radius": "5"
+	"dunst.corner_radius": "5",
+
+	"xsettingsd.IconThemeName": "archdroid",
+	"xsettingsd.ThemeName": "FlatColor"
 }

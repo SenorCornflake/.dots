@@ -11,22 +11,22 @@ xrandr --output VGA-1 --auto --primary --output eDP-1 --auto --right-of VGA-1
 bspc monitor VGA-1 -d 1 2 3 4 5 6
 bspc monitor eDP-1 -d 7 8 9 0
 
-bspc config top_padding "0"
-bspc config bottom_padding "0"
-bspc config left_padding "0"
-bspc config right_padding "0"
+bspc config top_padding "67"
+bspc config bottom_padding "5"
+bspc config left_padding "5"
+bspc config right_padding "5"
 bspc config border_width "2"
 bspc config window_gap "15"
 bspc config split_ratio 0.50
-bspc config borderless_monocle "true"
-bspc config gapless_monocle "true"
+bspc config borderless_monocle "false"
+bspc config gapless_monocle "false"
 bspc config automatic_scheme alternate
 
-bspc config focused_border_color "#ffffff"
-bspc config normal_border_color "#3E3D32"
-bspc config active_border_color "#403D3D"
-bspc config urgent_border_color "#E6DB74"
-bspc config presel_feedback_color "#ffffff"
+bspc config focused_border_color "#d4be98"
+bspc config normal_border_color "#343d46"
+bspc config active_border_color "#c0c5ce"
+bspc config urgent_border_color "#a7c777"
+bspc config presel_feedback_color "#d4be98"
 
 sh ~/MAIN/scripts/generate_wallapers.sh
 

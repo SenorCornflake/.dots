@@ -1,16 +1,16 @@
 
 font:
     normal:
-        family: Sarasa Mono CL
+        family: Iosevka Nerd Font
         style: Regular
     bold:
-        family: Sarasa Mono CL
+        family: Iosevka Nerd Font
         style: Bold
     italic:
-        family: Sarasa Mono CL
+        family: Iosevka Nerd Font
         style: Italic
     bold_italic:
-        family: Sarasa Mono CL
+        family: Iosevka Nerd Font
         style: Bold Italic
     size: 10
 
@@ -29,46 +29,46 @@ window:
         lines: 0
 
     padding:
-        x: 0 # PADDING
-        y: 0 # PADDING
+        x: 15 # PADDING
+        y: 15 # PADDING
 
     #decorations: none
 
 # COLORSCHEME
-# Base16 molokayo - alacritty color config
+# Base16 oceanic_material - alacritty color config
 # Generated
 colors:
   # Default colors
   primary:
-    background: '0x202020'
-    foreground: '0xffffff'
+    background: '0x1b2b34'
+    foreground: '0xd4be98'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x202020'
-    cursor: '0xffffff'
+    text: '0x1b2b34'
+    cursor: '0xd4be98'
 
   # Normal colors
   normal:
-    black:   '0x202020'
-    red:     '0xE6DB74'
-    green:   '0xE6DB74'
-    yellow:  '0x66D9EF'
-    blue:    '0xA6E22E'
-    magenta: '0xF92672'
-    cyan:    '0x66d0ef'
-    white:   '0xffffff'
+    black:   '0x1b2b34'
+    red:     '0xa7c777'
+    green:   '0xa7c777'
+    yellow:  '0xd8a657'
+    blue:    '0xd16d9e'
+    magenta: '0xc594c5'
+    cyan:    '0xd8a657'
+    white:   '0xd4be98'
 
   # Bright colors
   bright:
-    black:   '0x75715E'
-    red:     '0xAE81FF'
-    green:   '0x3E3D32'
-    yellow:  '0x403D3D'
-    blue:    '0xffffff'
-    magenta: '0xffffff'
-    cyan:    '0xAE81FF'
-    white:   '0xffffff'
+    black:   '0x928374'
+    red:     '0xc594c5'
+    green:   '0x343d46'
+    yellow:  '0xc0c5ce'
+    blue:    '0xddc7a1'
+    magenta: '0xd4be98'
+    cyan:    '0x62b3b2'
+    white:   '0xd4be98'
 
 draw_bold_text_with_bright_colors: false
 
