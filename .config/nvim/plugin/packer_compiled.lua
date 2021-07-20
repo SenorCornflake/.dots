@@ -113,6 +113,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
   },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/neoscroll.nvim"
+  },
   ["night-owl.vim"] = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/night-owl.vim"

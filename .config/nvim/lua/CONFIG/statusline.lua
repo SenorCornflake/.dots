@@ -38,13 +38,6 @@ local mode_labels = {
 	['t']  = 'TERMINAL'
 }
 
-local get_color = function(highlights, fallbacks)
-	return {
-		cterm = util.get_color(highlights, fallbacks.cterm, "cterm"),
-		gui = util.get_color(highlights, fallbacks.gui, "gui")
-	}
-end
-
 SetupStatusline = function(symbol)
 	symbol = symbol or "arrow"
 
@@ -92,7 +85,7 @@ SetupStatusline = function(symbol)
 	gl.section.mid = {}
 
 	local colors = {
-		bg = get_color(
+		bg = util.get_color(
 			{
 				{ "StatusLine", "bg" },
 				{ "Normal", "bg" },
@@ -103,7 +96,7 @@ SetupStatusline = function(symbol)
 				gui = "#000000"
 			}
 		),
-		alt_bg = get_color(
+		alt_bg = util.get_color(
 			{
 				{ "Normal", "bg" },
 				{ "StatusLine", "bg" },
@@ -114,7 +107,7 @@ SetupStatusline = function(symbol)
 				gui = "#000000"
 			}
 		),
-		fg = get_color(
+		fg = util.get_color(
 			{
 				{ "Normal", "fg" }
 			},
@@ -123,7 +116,7 @@ SetupStatusline = function(symbol)
 				gui = "#000000"
 			}
 		),
-		insert_mode = get_color(
+		insert_mode = util.get_color(
 			{
 				{ "Function", "fg" }
 			},
@@ -132,7 +125,7 @@ SetupStatusline = function(symbol)
 				gui = "#000000"
 			}
 		),
-		normal_mode = get_color(
+		normal_mode = util.get_color(
 			{
 				{ "String", "fg" }
 			},
@@ -141,7 +134,7 @@ SetupStatusline = function(symbol)
 				gui = "#000000"
 			}
 		),
-		visual_mode = get_color(
+		visual_mode = util.get_color(
 			{
 				{ "Conditional", "fg" },
 				{ "Keyword", "fg" },
@@ -151,7 +144,7 @@ SetupStatusline = function(symbol)
 				gui = "#aa00aa"
 			}
 		),
-		other_mode = get_color(
+		other_mode = util.get_color(
 			{
 				{ "Tag", "fg" },
 				{ "Search", "bg" },
@@ -161,7 +154,7 @@ SetupStatusline = function(symbol)
 				gui = "#000000"
 			}
 		),
-		file = get_color(
+		file = util.get_color(
 			{
 				{ "Function", "fg" },
 				{ "Include", "fg" },
@@ -171,7 +164,7 @@ SetupStatusline = function(symbol)
 				gui = "#000000"
 			}
 		),
-		git_branch = get_color(
+		git_branch = util.get_color(
 			{
 				{ "Tag", "fg" },
 				{ "Search", "bg" }
@@ -181,7 +174,7 @@ SetupStatusline = function(symbol)
 				gui = "#000000"
 			}
 		),
-		diff_add = get_color(
+		diff_add = util.get_color(
 			{
 				{ "DiffAdded", "fg" },
 				{ "DiffAdd", "fg" },
@@ -192,7 +185,7 @@ SetupStatusline = function(symbol)
 				gui = "#00aa00"
 			}
 		),
-		diff_modified = get_color(
+		diff_modified = util.get_color(
 			{
 				{ "Include", "fg" },
 				{ "Function", "fg" },
@@ -204,7 +197,7 @@ SetupStatusline = function(symbol)
 				gui = "#00aaaa"
 			}
 		),
-		diff_removed = get_color(
+		diff_removed = util.get_color(
 			{
 				{ "ErrorMsg", "fg" },
 				{ "DiffRemoved", "fg" },
@@ -215,7 +208,7 @@ SetupStatusline = function(symbol)
 				gui = "#000000"
 			}
 		),
-		language_server = get_color(
+		language_server = util.get_color(
 			{
 				{ "Conditional", "fg" },
 			},
@@ -224,7 +217,7 @@ SetupStatusline = function(symbol)
 				gui = "#000000"
 			}
 		),
-		diagnostic_error = get_color(
+		diagnostic_error = util.get_color(
 			{
 				{ "DiffRemoved", "fg" },
 				{ "DiffDelete", "fg" },
@@ -235,7 +228,7 @@ SetupStatusline = function(symbol)
 				gui = "#000000"
 			}
 		),
-		diagnostic_warn = get_color(
+		diagnostic_warn = util.get_color(
 			{
 				{ "Constant", "fg" },
 				{ "WarningMsg", "fg"  },
@@ -247,7 +240,7 @@ SetupStatusline = function(symbol)
 				gui = "#000000"
 			}
 		),
-		diagnostic_hint = get_color(
+		diagnostic_hint = util.get_color(
 			{
 				{ "Special", "fg" },
 				{ "Function", "fg" },
@@ -258,7 +251,7 @@ SetupStatusline = function(symbol)
 				gui = "#000000"
 			}
 		),
-		diagnostic_info = get_color(
+		diagnostic_info = util.get_color(
 			{
 				{ "String", "fg" },
 				{ "DiffAdded", "fg" },

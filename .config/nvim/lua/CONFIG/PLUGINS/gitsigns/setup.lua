@@ -58,90 +58,43 @@ require('gitsigns').setup {
 }
 
 Setup_Gitsigns = function()
-	local sign_bg_cterm = util.get_color(
+	local sign_bg = util.get_color(
 		{
 			{ "SignColumn", "bg" },
 			{ "Normal", "bg" }
-		},
-		"none",
-		"cterm"
+		}
 	)
 
-	local sign_bg_gui = util.get_color(
-		{
-			{ "SignColumn", "bg" },
-			{ "Normal", "bg" }
-		},
-		"none",
-		"gui"
-	)
-	
-
-	local add_fg_cterm = util.get_color(
+	local add_fg = util.get_color(
 		{
 			{ "DiffAdded", "fg" },
 			{ "DiffAdd", "fg" },
 			{ "MoreMsg", "fg" },
-		},
-		"0",
-		"cterm"
+		}
 	)
 
-	local add_fg_gui = util.get_color(
-		{
-			{ "DiffAdded", "fg" },
-			{ "DiffAdd", "fg" },
-			{ "MoreMsg", "fg" },
-		},
-		"#00aa00",
-		"gui"
-	)
-
-
-	local delete_fg_cterm = util.get_color(
+	local delete_fg = util.get_color(
 		{
 			{ "ErrorMsg", "fg" }
-		},
-		"0",
-		"cterm"
+		}
 	)
 
-	local delete_fg_gui = util.get_color(
-		{
-			{ "ErrorMsg", "fg" }
-		},
-		"#aa0000",
-		"gui"
-	)
-
-	local change_fg_cterm = util.get_color(
+	local change_fg = util.get_color(
 		{
 			{ "Include", "fg" },
 			{ "Function", "fg" },
 			{ "Conditional", "fg" },
 			{ "Keyword", "fg" },
-		},
-		"0",
-		"cterm"
-	)
-
-	local change_fg_gui = util.get_color(
-		{
-			{ "Include", "fg" },
-			{ "Function", "fg" },
-			{ "Conditional", "fg" },
-			{ "Keyword", "fg" },
-		},
-		"#00aaaa",
-		"gui"
+		}
 	)
 
 	vim.cmd("hi clear GitSignsAdd")
 	vim.cmd("hi clear GitSignsDelete")
 	vim.cmd("hi clear GitSignsChange")
-	vim.cmd("hi GitSignsAdd guibg="    .. sign_bg_gui .. " ctermbg=" .. sign_bg_cterm .. " guifg=" .. add_fg_gui    .. " ctermfg=" .. add_fg_cterm)
-	vim.cmd("hi GitSignsDelete guibg=" .. sign_bg_gui .. " ctermbg=" .. sign_bg_cterm .. " guifg=" .. delete_fg_gui .. " ctermfg=" .. delete_fg_cterm)
-	vim.cmd("hi GitSignsChange guibg=" .. sign_bg_gui .. " ctermbg=" .. sign_bg_cterm .. " guifg=" .. change_fg_gui .. " ctermfg=" .. change_fg_cterm) 
+
+	vim.cmd("hi GitSignsAdd guibg="    .. sign_bg.gui .. " ctermbg=" .. sign_bg.cterm .. " guifg=" .. add_fg.gui    .. " ctermfg=" .. add_fg.cterm)
+	vim.cmd("hi GitSignsDelete guibg=" .. sign_bg.gui .. " ctermbg=" .. sign_bg.cterm .. " guifg=" .. delete_fg.gui .. " ctermfg=" .. delete_fg.cterm)
+	vim.cmd("hi GitSignsChange guibg=" .. sign_bg.gui .. " ctermbg=" .. sign_bg.cterm .. " guifg=" .. change_fg.gui .. " ctermfg=" .. change_fg.cterm) 
 end
 
 vim.cmd "autocmd VimEnter,ColorScheme * lua Setup_Gitsigns()"

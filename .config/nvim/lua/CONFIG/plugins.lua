@@ -110,6 +110,8 @@ require("packer").startup(function(use)
 	-- Bottom lister
 	use "folke/trouble.nvim"
 
+	-- Smooth scroll
+	use "karb94/neoscroll.nvim"
 end)
 
 -- Load all plugin configs

@@ -87,15 +87,7 @@ vim.cmd "autocmd ColorScheme * highlight clear LspDiagnosticsDefaultWarning"
 vim.cmd "autocmd ColorScheme * highlight clear LspDiagnosticsDefaultInformation"
 vim.cmd "autocmd ColorScheme * highlight clear LspDiagnosticsDefaultHint"
 
-
-local get_color = function(highlights, fallbacks)
-	return {
-		cterm = util.get_color(highlights, fallbacks.cterm, "cterm"),
-		gui = util.get_color(highlights, fallbacks.gui, "gui")
-	}
-end
-
-local bg = get_color(
+local bg = util.get_color(
 	{
 		{ "SignColumn", "bg" },
 		{ "Normal", "bg" }
@@ -105,7 +97,7 @@ local bg = get_color(
 		gui = "#000000"
 	}
 )
-local error = get_color(
+local error = util.get_color(
 	{
 		{ "ErrorMsg", "fg" }
 	},
@@ -114,7 +106,7 @@ local error = get_color(
 		gui = "#000000"
 	}
 )
-local warn = get_color(
+local warn = util.get_color(
 	{
 		{ "Constant", "fg" },
 		{ "WarningMsg", "fg"  },
@@ -126,7 +118,7 @@ local warn = get_color(
 		gui = "#000000"
 	}
 )
-local hint = get_color(
+local hint = util.get_color(
 	{
 		{ "Special", "fg" },
 		{ "Function", "fg" },
@@ -137,7 +129,7 @@ local hint = get_color(
 		gui = "#000000"
 	}
 )
-local info = get_color(
+local info = util.get_color(
 	{
 		{ "String", "fg" },
 		{ "DiffAdded", "fg" },
