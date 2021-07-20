@@ -81,6 +81,7 @@ Setup_Gitsigns = function()
 		{
 			{ "DiffAdded", "fg" },
 			{ "DiffAdd", "fg" },
+			{ "MoreMsg", "fg" },
 		},
 		"0",
 		"cterm"
@@ -90,6 +91,7 @@ Setup_Gitsigns = function()
 		{
 			{ "DiffAdded", "fg" },
 			{ "DiffAdd", "fg" },
+			{ "MoreMsg", "fg" },
 		},
 		"#00aa00",
 		"gui"
@@ -98,8 +100,6 @@ Setup_Gitsigns = function()
 
 	local delete_fg_cterm = util.get_color(
 		{
-			{ "DiffRemoved", "fg" },
-			{ "DiffDelete", "fg" },
 			{ "ErrorMsg", "fg" }
 		},
 		"0",
@@ -108,8 +108,6 @@ Setup_Gitsigns = function()
 
 	local delete_fg_gui = util.get_color(
 		{
-			{ "DiffRemoved", "fg" },
-			{ "DiffDelete", "fg" },
 			{ "ErrorMsg", "fg" }
 		},
 		"#aa0000",
@@ -118,7 +116,10 @@ Setup_Gitsigns = function()
 
 	local change_fg_cterm = util.get_color(
 		{
-			{ "DiffFile", "fg" },
+			{ "Include", "fg" },
+			{ "Function", "fg" },
+			{ "Conditional", "fg" },
+			{ "Keyword", "fg" },
 		},
 		"0",
 		"cterm"
@@ -126,9 +127,12 @@ Setup_Gitsigns = function()
 
 	local change_fg_gui = util.get_color(
 		{
-			{ "DiffFile", "fg" },
+			{ "Include", "fg" },
+			{ "Function", "fg" },
+			{ "Conditional", "fg" },
+			{ "Keyword", "fg" },
 		},
-		"#aa22ff",
+		"#00aaaa",
 		"gui"
 	)
 

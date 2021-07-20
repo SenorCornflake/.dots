@@ -8,7 +8,9 @@ end
 
 vim.cmd "packadd packer.nvim"
 
-return require("packer").startup(function(use)
+local util = require("CONFIG.util")
+
+require("packer").startup(function(use)
 	-- Lua Plugin Manager
 	use { "wbthomason/packer.nvim", opt = true }
 
@@ -28,7 +30,7 @@ return require("packer").startup(function(use)
 	}
 
 	-- Highlighting
-	--use "nvim-treesitter/nvim-treesitter"
+	use "nvim-treesitter/nvim-treesitter"
 	--use "sheerun/vim-polyglot"
 	use "LnL7/vim-nix" -- For nix config files
 	use "fladson/vim-kitty"
@@ -109,3 +111,19 @@ return require("packer").startup(function(use)
 	use "folke/trouble.nvim"
 
 end)
+
+-- Load all plugin configs
+local plugin_configs = util.scandir("~/.config/nvim/lua/CONFIG/PLUGINS")
+
+for i, config in pairs(plugin_configs) do
+	local plugins_dir = util.expanduser("~/.config/nvim/lua/CONFIG/PLUGINS/")
+	local filename = config:gsub(".lua", "")
+
+	if util.isdir(plugins_dir .. config) then
+		if util.file_exists(plugins_dir .. config .. "/setup.lua") then
+			require("CONFIG.PLUGINS." .. filename .. ".setup")
+		end
+	else
+		require ("CONFIG.PLUGINS." .. filename)
+	end
+end

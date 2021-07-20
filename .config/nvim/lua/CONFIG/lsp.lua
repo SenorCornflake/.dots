@@ -1,4 +1,5 @@
 local lspconfig = require "lspconfig"
+local util = require "CONFIG.util"
 
 local servers = {
 	sumneko_lua = {
@@ -86,15 +87,77 @@ vim.cmd "autocmd ColorScheme * highlight clear LspDiagnosticsDefaultWarning"
 vim.cmd "autocmd ColorScheme * highlight clear LspDiagnosticsDefaultInformation"
 vim.cmd "autocmd ColorScheme * highlight clear LspDiagnosticsDefaultHint"
 
-vim.cmd "autocmd ColorScheme * highlight link LspDiagnosticsDefaultError ErrorMsg"
-vim.cmd "autocmd ColorScheme * highlight link LspDiagnosticsDefaultWarning Tag"
-vim.cmd "autocmd ColorScheme * highlight link LspDiagnosticsDefaultInformation Function"
-vim.cmd "autocmd ColorScheme * highlight link LspDiagnosticsDefaultHint Special"
 
-vim.cmd "sign define LspDiagnosticsSignError text=E texthl=LspDiagnosticsSignError linehl= numhl=LspDiagnosticsSignError"
-vim.cmd "sign define LspDiagnosticsSignWarning text=W texthl=LspDiagnosticsSignWarning linehl= numhl=LspDiagnosticsSignWarning"
-vim.cmd "sign define LspDiagnosticsSignInformation text=I texthl=LspDiagnosticsSignInformation linehl= numhl=LspDiagnosticsSignInformation"
-vim.cmd "sign define LspDiagnosticsSignHint text=H texthl=LspDiagnosticsSignHint linehl= numhl=LspDiagnosticsSignHint"
+local get_color = function(highlights, fallbacks)
+	return {
+		cterm = util.get_color(highlights, fallbacks.cterm, "cterm"),
+		gui = util.get_color(highlights, fallbacks.gui, "gui")
+	}
+end
+
+local bg = get_color(
+	{
+		{ "SignColumn", "bg" },
+		{ "Normal", "bg" }
+	},
+	{
+		cterm = "0",
+		gui = "#000000"
+	}
+)
+local error = get_color(
+	{
+		{ "ErrorMsg", "fg" }
+	},
+	{
+		cterm = "0",
+		gui = "#000000"
+	}
+)
+local warn = get_color(
+	{
+		{ "Constant", "fg" },
+		{ "WarningMsg", "fg"  },
+		{ "Boolean", "fg" },
+		{ "Delimiter", "fg" }
+	},
+	{
+		cterm = "0",
+		gui = "#000000"
+	}
+)
+local hint = get_color(
+	{
+		{ "Special", "fg" },
+		{ "Function", "fg" },
+		{ "Include", "fg" }
+	},
+	{
+		cterm = "0",
+		gui = "#000000"
+	}
+)
+local info = get_color(
+	{
+		{ "String", "fg" },
+		{ "DiffAdded", "fg" },
+		{ "DiffAdd", "fg" },
+	},
+	{
+		cterm = "0",
+		gui = "#000000"
+	}
+)
+
+vim.cmd("autocmd ColorScheme * highlight LspDiagnosticsDefaultError guifg=" .. error.gui .. " guibg=" .. bg.gui .. " ctermfg=" .. error.cterm .. " ctermbg=" .. bg.cterm)
+vim.cmd("autocmd ColorScheme * highlight LspDiagnosticsDefaultWarning guifg=" .. warn.gui .. " guibg=" .. bg.gui .. " ctermfg=" .. warn.cterm .. " ctermbg=" .. bg.cterm)
+vim.cmd("autocmd ColorScheme * highlight LspDiagnosticsDefaultInformation guifg=" .. info.gui .. " guibg=" .. bg.gui .. " ctermfg=" .. info.cterm .. " ctermbg=" .. bg.cterm)
+vim.cmd("autocmd ColorScheme * highlight LspDiagnosticsDefaultHint guifg=" .. hint.gui .. " guibg=" .. bg.gui .. " ctermfg=" .. hint.cterm .. " ctermbg=" .. bg.cterm)
+
+vim.cmd "sign define LspDiagnosticsSignError text= texthl=LspDiagnosticsDefaultError linehl= numhl=LspDiagnosticsDefaultError"
+vim.cmd "sign define LspDiagnosticsSignWarning text= texthl=LspDiagnosticsDefaultWarning linehl= numhl=LspDiagnosticsDefaultWarning"
+vim.cmd "sign define LspDiagnosticsSignInformation text= texthl=LspDiagnosticsDefaultInformation linehl= numhl=LspDiagnosticsDefaultInformation"
+vim.cmd "sign define LspDiagnosticsSignHint text= texthl=LspDiagnosticsDefaultHint linehl= numhl=LspDiagnosticsDefaultHint"
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {

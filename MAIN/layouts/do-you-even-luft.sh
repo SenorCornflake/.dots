@@ -23,7 +23,7 @@ exconman set dunst.padding 10
 exconman set dunst.horizontal_padding 10
 exconman set dunst.frame_width 4
 exconman set dunst.corner_radius 0
-exconman set dunst.font "Sarasa Mono CL 10"
+exconman set dunst.font "Iosevka 10"
 
 exconman set polybar.bar "do-you-even-luft"
 exconman set rofi.layout "bottom"

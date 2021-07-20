@@ -125,6 +125,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"

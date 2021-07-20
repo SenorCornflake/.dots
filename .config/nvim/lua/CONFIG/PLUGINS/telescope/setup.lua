@@ -1,3 +1,4 @@
+
 local util = require("CONFIG.util")
 local actions = require('telescope.actions')
 
@@ -22,3 +23,4 @@ require "telescope".setup {
 -- vim.cmd ("autocmd ColorScheme * hi TelescopePromptBorder   guifg=" .. foreground.guifg .. " ctermfg=" .. foreground.ctermfg)
 -- vim.cmd ("autocmd ColorScheme * hi TelescopeResultsBorder  guifg=" .. foreground.guifg .. " ctermfg=" .. foreground.ctermfg)
 -- vim.cmd ("autocmd ColorScheme * hi TelescopePreviewBorder  guifg=" .. foreground.guifg .. " ctermfg=" .. foreground.ctermfg)
+

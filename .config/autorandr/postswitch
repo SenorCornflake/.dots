@@ -1,0 +1,2 @@
+#!/bin/bash
+sh ~/MAIN/scripts/restart_all.sh

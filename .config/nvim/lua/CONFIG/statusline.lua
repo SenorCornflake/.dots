@@ -9,21 +9,81 @@ end
 local center = function(item)
 	table.insert(gl.section.mid, item)
 end
+local right = function(item) 
+	table.insert(gl.section.right, item)
+end
 
-local right = function(item) table.insert(gl.section.right, item)
+
+local mode_labels = {
+	['n']  = 'NORMAL',
+	['no'] = 'N·Operator Pending',
+	['v']  = 'VISUAL',
+	['V']  = 'V·Line',
+	[''] = 'V·Block',
+	['s']  = 'Select',
+	['S']  = 'S·Line',
+	[''] = 'S·Block',
+	['i']  = 'INSERT',
+	['ic'] = 'INSERT',
+	['ix'] = 'INSERT',
+	['R']  = 'Replace',
+	['Rv'] = 'V·Replace',
+	['c']  = 'COMMAND',
+	['cv'] = 'Vim Ex',
+	['ce'] = 'Ex',
+	['r']  = 'Prompt',
+	['rm'] = 'More',
+	['r?'] = 'Confirm',
+	['!']  = 'Shell',
+	['t']  = 'TERMINAL'
+}
+
+local get_color = function(highlights, fallbacks)
+	return {
+		cterm = util.get_color(highlights, fallbacks.cterm, "cterm"),
+		gui = util.get_color(highlights, fallbacks.gui, "gui")
+	}
 end
 
 SetupStatusline = function(symbol)
 	symbol = symbol or "arrow"
 
+
 	if symbol == "arrow" then
-		symbol = ""
+		symbol = {
+			left = "",
+			right = ""
+		}
 	elseif symbol == "down_slant" then
-		symbol = ""
+		symbol = {
+			left = "",
+			right = ""
+		}
 	elseif symbol == "up_slant" then
-		symbol = ""
+		symbol = {
+			left = "",
+			right = ""
+		}
 	elseif symbol == "curve" then
-		symbol = ""
+		symbol = {
+			left = "",
+			right = ""
+		}
+	elseif symbol == "flame" then
+		symbol = {
+			left = "",
+			right = ""
+		}
+	elseif symbol == "glitch_small" then
+		symbol = {
+			left = "",
+			right = ""
+		}
+	elseif symbol == "glitch_big" then
+		symbol = {
+			left = "",
+			right = ""
+		}
 	end
 
 	-- First Reset
@@ -31,274 +91,251 @@ SetupStatusline = function(symbol)
 	gl.section.right = {}
 	gl.section.mid = {}
 
-	local info_hl = {
-		ctermfg = util.get_color(
-			{
-				{ "LspDiagnosticsDefaultInformation", "fg" }
-			},
-			"0",
-			"cterm"
-		),
-		guifg = util.get_color(
-			{
-				{ "LspDiagnosticsDefaultInformation", "fg" }
-			},
-			"#ffffff",
-			"gui"
-		)
-	}
-
-	local string_hl    = {
-		ctermfg = util.get_color(
-			{
-				{ "String", "fg" }
-			},
-			"0",
-			"cterm"
-		),
-		guifg = util.get_color(
-			{
-				{ "String", "fg" }
-			},
-			"#ffffff",
-			"gui"
-		)
-	}
-
-	local keyword_hl    = {
-		ctermfg = util.get_color(
-			{
-				{ "Keyword", "fg" }
-			},
-			"0",
-			"cterm"
-		),
-		guifg = util.get_color(
-			{
-				{ "Keyword", "fg" }
-			},
-			"#ffffff",
-			"gui"
-		)
-	}
-
-	local constant_hl    = {
-		ctermfg = util.get_color(
-			{
-				{ "Constant", "fg" }
-			},
-			"0",
-			"cterm"
-		),
-		guifg = util.get_color(
-			{
-				{ "Constant", "fg" }
-			},
-			"#ffffff",
-			"gui"
-		)
-	}
-
-	local statusline_hl= {
-		ctermfg = util.get_color(
-			{
-				{ "StatusLine", "fg" }
-			},
-			"0",
-			"cterm"
-		),
-		guifg = util.get_color(
-			{
-				{ "StatusLine", "fg" }
-			},
-			"#ffffff",
-			"gui"
-		)
-	}
-
-	local error_hl= {
-		ctermfg = util.get_color(
-			{
-				{ "LspDiagnosticsDefaultError", "fg" }
-			},
-			"0",
-			"cterm"
-		),
-		guifg = util.get_color(
-			{
-				{ "LspDiagnosticsDefaultError", "fg" }
-			},
-			"#ffffff",
-			"gui"
-		)
-	}
-
-	local warning_hl= {
-		ctermfg = util.get_color(
-			{
-				{ "LspDiagnosticsDefaultWarning", "fg" }
-			},
-			"0",
-			"cterm"
-		),
-		guifg = util.get_color(
-			{
-				{ "LspDiagnosticsDefaultWarning", "fg" }
-			},
-			"#ffffff",
-			"gui"
-		)
-	}
-
-	local hint_hl= {
-		ctermfg = util.get_color(
-			{
-				{ "LspDiagnosticsDefaultHint", "fg" }
-			},
-			"0",
-			"cterm"
-		),
-		guifg = util.get_color(
-			{
-				{ "LspDiagnosticsDefaultHint", "fg" }
-			},
-			"#ffffff",
-			"gui"
-		)
-	}
-
-	local normal_hl = {
-		ctermbg = util.get_color(
-			{
-				{ "Normal", "bg" }
-			},
-			"0",
-			"cterm"
-		),
-		guibg = util.get_color(
-			{
-				{ "Normal", "bg" }
-			},
-			"#000000",
-			"gui"
-		),
-		ctermfg = util.get_color(
-			{
-				{ "Normal", "fg" }
-			},
-			"0",
-			"cterm"
-		),
-		guifg = util.get_color(
-			{
-				{ "Normal", "fg" }
-			},
-			"#000000",
-			"gui"
-		)
-	}
-
-	local conditional_hl = {
-		ctermbg = util.get_color(
-			{
-				{ "Conditional", "fg" }
-			},
-			"0",
-			"cterm"
-		),
-		guibg = util.get_color(
-			{
-				{ "Conditional", "fg" }
-			},
-			"#ffffff",
-			"gui"
-		)
-	}
-
 	local colors = {
-		normal_mode = { info_hl   .guifg , info_hl   .ctermfg },
-		insert      = { string_hl     .guifg , string_hl     .ctermfg },
-		visual      = { keyword_hl    .guifg , keyword_hl    .ctermfg },
-		other       = { constant_hl   .guifg , constant_hl   .ctermfg },
-		error       = { error_hl   .guifg , error_hl   .ctermfg },
-		warn        = { warning_hl        .guifg , warning_hl        .ctermfg },
-		info        = { info_hl   .guifg , info_hl   .ctermfg },
-		hint        = { hint_hl    .guifg , hint_hl    .ctermfg },
-		git         = { constant_hl   .guifg , constant_hl   .ctermfg },
-		normal      = { normal_hl     .guifg , normal_hl     .ctermfg },
-		bg          = { normal_hl     .guibg , normal_hl     .ctermbg },
+		bg = get_color(
+			{
+				{ "StatusLine", "bg" },
+				{ "Normal", "bg" },
+				{ "SignColumn", "bg" },
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		),
+		alt_bg = get_color(
+			{
+				{ "Normal", "bg" },
+				{ "StatusLine", "bg" },
+				{ "SignColumn", "bg" },
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		),
+		fg = get_color(
+			{
+				{ "Normal", "fg" }
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		),
+		insert_mode = get_color(
+			{
+				{ "Function", "fg" }
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		),
+		normal_mode = get_color(
+			{
+				{ "String", "fg" }
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		),
+		visual_mode = get_color(
+			{
+				{ "Conditional", "fg" },
+				{ "Keyword", "fg" },
+			},
+			{
+				cterm = "0",
+				gui = "#aa00aa"
+			}
+		),
+		other_mode = get_color(
+			{
+				{ "Tag", "fg" },
+				{ "Search", "bg" },
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		),
+		file = get_color(
+			{
+				{ "Function", "fg" },
+				{ "Include", "fg" },
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		),
+		git_branch = get_color(
+			{
+				{ "Tag", "fg" },
+				{ "Search", "bg" }
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		),
+		diff_add = get_color(
+			{
+				{ "DiffAdded", "fg" },
+				{ "DiffAdd", "fg" },
+				{ "MoreMsg", "fg" },
+			},
+			{
+				cterm = "0",
+				gui = "#00aa00"
+			}
+		),
+		diff_modified = get_color(
+			{
+				{ "Include", "fg" },
+				{ "Function", "fg" },
+				{ "Conditional", "fg" },
+				{ "Keyword", "fg" },
+			},
+			{
+				cterm = "0",
+				gui = "#00aaaa"
+			}
+		),
+		diff_removed = get_color(
+			{
+				{ "ErrorMsg", "fg" },
+				{ "DiffRemoved", "fg" },
+				{ "DiffDelete", "fg" },
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		),
+		language_server = get_color(
+			{
+				{ "Conditional", "fg" },
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		),
+		diagnostic_error = get_color(
+			{
+				{ "DiffRemoved", "fg" },
+				{ "DiffDelete", "fg" },
+				{ "ErrorMsg", "fg" }
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		),
+		diagnostic_warn = get_color(
+			{
+				{ "Constant", "fg" },
+				{ "WarningMsg", "fg"  },
+				{ "Boolean", "fg" },
+				{ "Delimiter", "fg" }
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		),
+		diagnostic_hint = get_color(
+			{
+				{ "Special", "fg" },
+				{ "Function", "fg" },
+				{ "Include", "fg" }
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		),
+		diagnostic_info = get_color(
+			{
+				{ "String", "fg" },
+				{ "DiffAdded", "fg" },
+				{ "DiffAdd", "fg" },
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		),
 	}
 
+	
 	local mode_colors = {
-		['n']  = { colors.normal_mode[1], colors.normal_mode[2] },
-		['no'] = { colors.normal_mode[1], colors.normal_mode[2] },
-		['v']  = { colors.visual     [1], colors.visual     [2] },
-		['V']  = { colors.visual     [1], colors.visual     [2] },
-		[''] = { colors.visual     [1], colors.visual     [2] },
-		['s']  = { colors.visual     [1], colors.visual     [2] },
-		['S']  = { colors.visual     [1], colors.visual     [2] },
-		[''] = { colors.visual     [1], colors.visual     [2] },
-		['i']  = { colors.insert     [1], colors.insert     [2] },
-		['ic'] = { colors.insert     [1], colors.insert     [2] },
-		['ix'] = { colors.insert     [1], colors.insert     [2] },
-		['R']  = { colors.other      [1], colors.other      [2] },
-		['Rv'] = { colors.other      [1], colors.other      [2] },
-		['c']  = { colors.other      [1], colors.other      [2] },
-		['cv'] = { colors.other      [1], colors.other      [2] },
-		['ce'] = { colors.other      [1], colors.other      [2] },
-		['r']  = { colors.other      [1], colors.other      [2] },
-		['rm'] = { colors.other      [1], colors.other      [2] },
-		['r?'] = { colors.other      [1], colors.other      [2] },
-		['!']  = { colors.other      [1], colors.other      [2] },
-		['t']  = { colors.other      [1], colors.other      [2] }
+		['n']  = colors.normal_mode,
+		['no'] = colors.normal_mode,
+		['v']  = colors.visual_mode, 
+		['V']  = colors.visual_mode, 
+		[''] = colors.visual_mode, 
+		['s']  = colors.visual_mode, 
+		['S']  = colors.visual_mode, 
+		[''] = colors.visual_mode, 
+		['i']  = colors.insert_mode, 
+		['ic'] = colors.insert_mode, 
+		['ix'] = colors.insert_mode, 
+		['R']  = colors.other_mode,  
+		['Rv'] = colors.other_mode,  
+		['c']  = colors.other_mode,  
+		['cv'] = colors.other_mode,  
+		['ce'] = colors.other_mode,  
+		['r']  = colors.other_mode,  
+		['rm'] = colors.other_mode,  
+		['r?'] = colors.other_mode,  
+		['!']  = colors.other_mode,  
+		['t']  = colors.other_mode,  
 	}
 
-	local mode_labels = {
-		['n']  = 'NORMAL',
-		['no'] = 'N·Operator Pending',
-		['v']  = 'VISUAL',
-		['V']  = 'V·Line',
-		[''] = 'V·Block',
-		['s']  = 'Select',
-		['S']  = 'S·Line',
-		[''] = 'S·Block',
-		['i']  = 'INSERT',
-		['ic'] = 'INSERT',
-		['ix'] = 'INSERT',
-		['R']  = 'Replace',
-		['Rv'] = 'V·Replace',
-		['c']  = 'COMMAND',
-		['cv'] = 'Vim Ex',
-		['ce'] = 'Ex',
-		['r']  = 'Prompt',
-		['rm'] = 'More',
-		['r?'] = 'Confirm',
-		['!']  = 'Shell',
-		['t']  = 'TERMINAL'
-	}
+	local setup_highlights = function()
+		local mode = vim.fn.mode()
+		vim.cmd(":silent hi GalaxyMode guifg=" .. colors.bg.gui .. " guibg=" .. mode_colors[mode].gui .. " ctermfg=" .. colors.bg.cterm .. " ctermbg=" .. mode_colors[mode].cterm)
+		vim.cmd(":silent hi GalaxyModePowerline guifg=" .. mode_colors[mode].gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. mode_colors[mode].cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+
+		-- TODO: Avoid this
+		vim.cmd(":silent hi GalaxyFileIcon guifg=" .. colors.file.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.file.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi GalaxyFileName guifg=" .. colors.file.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.file.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi GalaxyFileNameDecor guifg=" .. colors.alt_bg.gui .. " guibg=" .. colors.bg.gui .. " ctermfg=" .. colors.alt_bg.cterm .. " ctermbg=" .. colors.bg.cterm)
+		vim.cmd(":silent hi GalaxyFileSize guifg=" .. colors.fg.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.fg.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi GalaxyLineColumn guifg=" .. colors.fg.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.fg.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi GalaxyLinePercent guifg=" .. colors.fg.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.fg.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+
+		vim.cmd(":silent hi GalaxyGitBranchDecor guifg=" .. colors.alt_bg.gui .. " guibg=" .. colors.bg.gui .. " ctermfg=" .. colors.alt_bg.cterm .. " ctermbg=" .. colors.bg.cterm)
+		vim.cmd(":silent hi GalaxyGitBranch guifg=" .. colors.git_branch.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.git_branch.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi GalaxyDiffAdd guifg=" .. colors.diff_add.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diff_add.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi GalaxyDiffModified guifg=" .. colors.diff_modified.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diff_modified.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi GalaxyDiffRemove guifg=" .. colors.diff_removed.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diff_removed.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+
+		vim.cmd(":silent hi GalaxyLanguageServer guifg=" .. colors.language_server.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.language_server.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi GalaxyDiagnosticError guifg=" .. colors.diagnostic_error.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diagnostic_error.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi GalaxyDiagnosticWarn guifg=" .. colors.diagnostic_warn.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diagnostic_warn.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi GalaxyDiagnosticHint guifg=" .. colors.diagnostic_hint.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diagnostic_hint.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi GalaxyDiagnosticInfo guifg=" .. colors.diagnostic_info.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diagnostic_info.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+	end
+
+	left({
+		ModeSpacing = {
+			provider = function() return "" end,
+			separator = " ",
+			separator_highlight = "GalaxyMode",
+		}
+	})
 
 	left({
 		Mode = {
 			provider = function()
+				setup_highlights()
 				local mode = vim.fn.mode()
-
-				vim.cmd(":silent hi GalaxyMode guifg=" .. colors.bg[1] .. " guibg=" .. mode_colors[mode][1] .. " ctermfg=" .. colors.bg[2] .. " ctermbg=" .. mode_colors[mode][2])
-				vim.cmd(":silent hi GalaxyModePowerline guifg=" .. mode_colors[mode][1] .. " guibg=" .. colors.bg[1] .. " ctermfg=" .. mode_colors[mode][2] .. " ctermbg=" .. colors.bg[2])
-
-				vim.cmd ("hi GalaxyFileIcon guifg=" .. colors.warn[1] .. " ctermfg=" .. colors.warn[2])
-				vim.cmd ("hi GalaxyFileName guifg=" .. colors.warn[1] .. " ctermfg=" .. colors.warn[2])
-
-				vim.cmd ("hi GalaxyGitIcon guifg=" .. colors.git[1] .. " ctermfg=" .. colors.git[2])
-				vim.cmd ("hi GalaxyGitBranch guifg=" .. colors.git[1] .. " ctermfg=" .. colors.git[2])
-
-				vim.cmd ("hi GalaxyLanguageServer guifg=" .. colors.insert[1] .. " ctermfg=" .. colors.insert[2])
-
-				vim.cmd ("hi GalaxyDiagnosticError guifg=" .. colors.error[1] .. " ctermfg=" .. colors.error[2])
-				vim.cmd ("hi GalaxyDiagnosticWarn guifg=" .. colors.warn[1] .. " ctermfg=" .. colors.warn[2])
-				vim.cmd ("hi GalaxyDiagnosticInfo guifg=" .. colors.info[1] .. " ctermfg=" .. colors.info[2])
-				vim.cmd ("hi GalaxyDiagnosticHint guifg=" .. colors.hint[1] .. " ctermfg=" .. colors.hint[2])
-
-				local label = "  " .. mode_labels[mode] .. " "
+				local label = mode_labels[mode] .. " "
 				return label
 			end
 		}
@@ -306,16 +343,23 @@ SetupStatusline = function(symbol)
 
 	left({
 		ModePowerline = {
-			provider = function() return symbol end,
-			separator = " ",
+			provider = function() return symbol["left"] .. " " end,
 		}
 	})
 
 	left({
-		FileSize = {
-			provider = "FileSize",
+		LineColumn = {
+			provider = "LineColumn",
 			separator = " ",
-			separator_highlight = "NONE",
+			separator_highlight = "GalaxyLineColumn"
+		}
+	})
+
+	left({
+		LinePercent = {
+			provider = "LinePercent",
+			separator = " ",
+			separator_highlight = "GalaxyLinePercent"
 		}
 	})
 
@@ -328,20 +372,52 @@ SetupStatusline = function(symbol)
 	left({
 		FileName = {
 			provider = "FileName",
-			separator = " ",
-			separator_highlight = "NONE",
+			separator = symbol["left"],
+			separator_highlight = "GalaxyFileNameDecor",
 		}
 	})
 
-	left({
-		LineColumn = {
-			provider = "LineColumn",
-			separator = " ",
-			separator_highlight = "NONE"
+	right({
+		GitBranchDecor = {
+			provider = function() return symbol["right"] end
 		}
 	})
 
+	right({
+		GitBranch = {
+			provider = "GitBranch",
+			separator = " ",
+			separator_highlight = "GalaxyGitBranch",
+ 			condition = require('galaxyline.condition').check_git_workspace,
+			icon = " "
+		}
+	})
 
+	right({
+		DiffAdd = {
+			provider = "DiffAdd",
+			separator = " ",
+			separator_highlight = "GalaxyDiffAdd",
+			icon = "+",
+		}
+	})
+	right({
+		DiffModified = {
+			provider = "DiffModified",
+			separator = " ",
+			separator_highlight = "GalaxyDiffModified",
+			icon = "~",
+		}
+	})
+	right({
+		DiffRemove = {
+			provider = "DiffRemove",
+			separator = " ",
+			separator_highlight = "GalaxyDiffRemove",
+			icon = "-",
+		}
+	})
+	
 	right({
 		LanguageServer = {
 			provider = function()
@@ -358,51 +434,34 @@ SetupStatusline = function(symbol)
 
 	right({
 		DiagnosticError = {
-			provider = 'DiagnosticError',
-			icon = '  ',
-		},
+			provider = "DiagnosticError",
+			icon = " "
+		}
 	})
 
 	right({
 		DiagnosticWarn = {
-			provider = 'DiagnosticWarn',
-			icon = '  ',
-		},
-	})
-
-	right({
-		DiagnosticInfo = {
-			provider = 'DiagnosticInfo',
-			icon = '  ',
-		},
+			provider = "DiagnosticWarn",
+			icon = " "
+		}
 	})
 
 	right({
 		DiagnosticHint = {
-			provider = 'DiagnosticHint',
-			icon = '  ',
-		},
-	})
-
-
-	right({
-		GitIcon = {
-			provider = function() return ' ' end,
-			condition = require('galaxyline.condition').check_git_workspace,
-			separator = ' ',
-		},
+			provider = "DiagnosticHint",
+			icon = " "
+		}
 	})
 
 	right({
-		GitBranch = {
-			provider = 'GitBranch',
-			condition = require('galaxyline.condition').check_git_workspace,
-		},
+		DiagnosticInfo = {
+			provider = "DiagnosticInfo",
+			icon = " "
+		}
 	})
-
 end
 
 return function(powerline_symbol)
-	vim.cmd ("autocmd VimEnter * lua SetupStatusline('" .. powerline_symbol .. "')")
-	vim.cmd ("autocmd ColorScheme * lua SetupStatusline('" .. powerline_symbol .. "')")
+	vim.cmd ("autocmd VimEnter,ColorScheme * lua SetupStatusline('" .. powerline_symbol .. "')")
+	vim.cmd ("autocmd WinLeave,BufLeave * setlocal statusline=")
 end

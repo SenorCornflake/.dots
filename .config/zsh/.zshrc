@@ -30,5 +30,6 @@ alias r='ranger'
 alias t='todo.sh -c -d "$HOME/.config/todotxt/conf/config"'
 alias hc='herbstclient'
 alias f='lfrun'
+alias fetch='macchina -p -t Boron --no-box --custom-ascii ~/MAIN/tmp/arch_ascii.txt --custom-ascii-color Blue'
 
-neofetch
+fetch

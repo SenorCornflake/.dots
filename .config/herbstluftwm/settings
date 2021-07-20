@@ -5,12 +5,13 @@ hc() {
 }
 
 # SETTINGS #
-hc set window_gap '15'
+hc set window_gap '10'
 hc set smart_window_surroundings off
 hc set mouse_recenter_gap 0
 hc set hide_covered_windows on
 hc set tree_style '╾│ ├└╼─┐'
 hc set auto_detect_monitors on
+hc set focus_stealing_prevention false
 
 # FRAME #
 hc set default_frame_layout 'grid'
@@ -21,10 +22,10 @@ hc set frame_gap '0'
 hc set always_show_frame on
 hc set smart_frame_surroundings off
 hc set frame_padding 0
-hc set frame_border_normal_color '#343d46'
-hc set frame_border_active_color '#a7c777'
-hc set frame_bg_normal_color '#1b2b3480'
-hc set frame_bg_active_color '#1b2b3480'
+hc set frame_border_normal_color '#1a1b1c'
+hc set frame_border_active_color '#06ea61'
+hc set frame_bg_normal_color '#05060880'
+hc set frame_bg_active_color '#05060880'
 
 # ATTRS #
 hc attr theme.tiling.reset 1
@@ -35,18 +36,18 @@ hc attr theme.outer_width '0'
 hc attr theme.padding_top 0
 hc attr theme.padding_right 0
 hc attr theme.padding_bottom 0
-hc attr theme.padding_left '10'
-hc attr theme.border_width '0'
+hc attr theme.padding_left '0'
+hc attr theme.border_width '2'
 hc attr theme.title_font 'Dina:size=10'
 
 # COLORS #
-hc attr theme.normal.title_color '#d4be98'
-hc attr theme.active.title_color '#343d46'
-hc attr theme.active.color '#a7c777'
-hc attr theme.normal.color '#343d46'
-hc attr theme.urgent.color '#c594c5'
-hc attr theme.inner_color '#343d46'
+hc attr theme.normal.title_color '#c1c3c4'
+hc attr theme.active.title_color '#1a1b1c'
+hc attr theme.active.color '#c1c3c4'
+hc attr theme.normal.color '#1a1b1c'
+hc attr theme.urgent.color '#ea770d'
+hc attr theme.inner_color '#1a1b1c'
 hc attr theme.inner_width '0'
-hc attr theme.outer_color '#343d46'
+hc attr theme.outer_color '#1a1b1c'
 hc attr theme.outer_width '0'
-hc attr theme.background_color '#1b2b34'
+hc attr theme.background_color '#050608'

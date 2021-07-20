@@ -1,6 +1,24 @@
 local util = {}
-
 -- This file contains General Functions
+
+
+---------------------
+-- MANAGE BINDINGS --
+---------------------
+util.bind = function(mode, binding, command, args)
+	args = args or { noremap = true, silent = true }
+	vim.api.nvim_set_keymap(mode, binding, command, args)
+end
+
+-----------------------------
+-- SPLIT STRING INTO TABLE --
+-----------------------------
+util.split = function(source, delimiters)
+	local elements = {}
+	local pattern = '([^'..delimiters..']+)'
+	string.gsub(source, pattern, function(value) elements[#elements + 1] = value; end);
+	return elements
+end
 
 --------------------
 -- List directory --
@@ -9,25 +27,32 @@ util.scandir = function(directory)
 	local cmd = assert(io.popen('ls -A ' .. directory, "r"))
 	local output = cmd:read("*all")
 	cmd:close()
-	return output
+	return util.split(output, "\n")
+end
+
+------------------
+-- IS DIRECTORY --
+------------------
+util.isdir = function(path)
+    local f = io.open(path, "r")
+    local ok, err, code = f:read(1)
+    f:close()
+    return code == 21
+end
+
+-----------------
+-- FILE EXISTS --
+-----------------
+util.file_exists = function(path)
+	local f = io.open(path, "r")
+	return f ~= nil and io.close(f)
 end
 
 ---------------------
--- MANAGE BINDINGS --
+-- EXPAND HOME DIR --
 ---------------------
-util.bind = function (mode, binding, command, args)
-	args = args or { noremap = true, silent = true }
-	vim.api.nvim_set_keymap(mode, binding, command, args)
-end
-
------------------------------
--- SPLIT STRING INTO TABLE --
------------------------------
-function util.split(source, delimiters)
-	local elements = {}
-	local pattern = '([^'..delimiters..']+)'
-	string.gsub(source, pattern, function(value) elements[#elements + 1] = value; end);
-	return elements
+util.expanduser = function(path)
+	return path:gsub("~", os.getenv("HOME"))
 end
 
 -------------------------------
@@ -117,16 +142,14 @@ end
 ---------------------------
 util.active_lsp = function()
 	local active_clients = vim.lsp.buf_get_clients()
-
 	if #active_clients > 0 then
-		local found = false
 		local index = 0
 		local active_client = nil
 
-		while not found do
+		while true do
 			if active_clients[index] then
-				found = true
 				active_client = active_clients[index]
+				break
 			end
 
 			index = index + 1

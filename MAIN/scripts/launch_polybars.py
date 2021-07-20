@@ -24,7 +24,7 @@ for i, bar in enumerate(bar_names):
         bars[bar] = []
         bars[bar].append("top")
         bars[bar].append("bottom")
-    if bar == "do-you-even-luft":
+    elif bar == "do-you-even-luft":
         bars[bar] = []
         bars[bar].append("left")
         bars[bar].append("right")
@@ -33,6 +33,8 @@ for i, bar in enumerate(bar_names):
         bars[bar].append("main")
 
 enabled_bar = e("exconman get polybar.bar")
+
+print(bars)
 
 for m in connected_monitors:
     for bar in bars[enabled_bar]:

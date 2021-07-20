@@ -1,0 +1,11 @@
+local util = require "CONFIG.util"
+util.bind("n", "<leader>f.", ":Telescope builtin<CR>")
+util.bind("n", "<leader>ff", ":Telescope find_files<CR>")
+util.bind("n", "<leader>fF", ":Telescope file_browser<CR>")
+util.bind("n", "<leader>fg", ":Telescope live_grep<CR>")
+util.bind("n", "<leader>fb", ":Telescope buffers<CR>")
+util.bind("n", "<leader>fs", ":Telescope lsp_document_symbols<CR>")
+util.bind("n", "<leader>fS", ":Telescope lsp_workspace_symbols<CR>")
+util.bind("n", "<leader>fe", ":Telescope lsp_document_diagnostics<CR>")
+util.bind("n", "<leader>fE", ":Telescope lsp_workspace_diagnostics<CR>")
+util.bind("n", "<leader>f/", ":Telescope current_buffer_fuzzy_find<CR>")
