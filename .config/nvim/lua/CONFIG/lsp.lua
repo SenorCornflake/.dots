@@ -68,6 +68,7 @@ local servers = {
 	},
 
 	jsonls = {
+		cmd = { "vscode-json-languageserver", "--stdio" },
 		root_dir = lspconfig.util.root_pattern(".root", ".git")
 	},
 
