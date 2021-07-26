@@ -70,16 +70,21 @@ vim.cmd "command! Base16ify lua print(require('CONFIG.util').base16ify())"
 -----------------------------------
 vim.cmd "command! AdaptSystem lua require('CONFIG.util').adapt_system()"
 
+----------------
+-- Sudo Write --
+----------------
+vim.cmd "command! SudoWrite w !sudo tee %"
+
 -- Load all plugin bindings
-local plugin_configs = util.scandir("~/.config/nvim/lua/CONFIG/PLUGINS")
+ local plugin_configs = util.scandir("~/.config/nvim/lua/CONFIG/PLUGINS")
 
-for i, config in pairs(plugin_configs) do
-	local plugins_dir = util.expanduser("~/.config/nvim/lua/CONFIG/PLUGINS/")
-	local filename = config:gsub(".lua", "")
+ for i, config in pairs(plugin_configs) do
+ 	local plugins_dir = util.expanduser("~/.config/nvim/lua/CONFIG/PLUGINS/")
+ 	local filename = config:gsub(".lua", "")
 
-	if util.isdir(plugins_dir .. config) then
-		if util.file_exists(plugins_dir .. config .. "/bindings.lua") then
-			require("CONFIG.PLUGINS." .. filename .. ".bindings")
-		end
-	end
-end
+ 	if util.isdir(plugins_dir .. config) then
+ 		if util.file_exists(plugins_dir .. config .. "/bindings.lua") then
+ 			require("CONFIG.PLUGINS." .. filename .. ".bindings")
+ 		end
+ 	end
+ end

@@ -82,7 +82,6 @@ for server, config in pairs(servers) do
 	lspconfig[server].setup(config)
 end
 
-
 vim.cmd "autocmd ColorScheme * highlight clear LspDiagnosticsDefaultError"
 vim.cmd "autocmd ColorScheme * highlight clear LspDiagnosticsDefaultWarning"
 vim.cmd "autocmd ColorScheme * highlight clear LspDiagnosticsDefaultInformation"

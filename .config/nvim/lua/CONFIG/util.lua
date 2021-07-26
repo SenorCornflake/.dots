@@ -105,7 +105,7 @@ end
 ---------------------------------------------
 -- GET HIGHLIGHT COLOR CODES (NEW VERSION) --
 ---------------------------------------------
-util.get_color = function(highlights, fallback)
+util.get_color = function(highlights, fallbacks)
 	if not highlights then return end
 
 	local default_fallbacks = {
@@ -133,7 +133,11 @@ util.get_color = function(highlights, fallback)
 			output.gui = color
 			break
 		else
-			output.gui = default_fallbacks.gui
+			if fallbacks then
+				output.gui = fallbacks.gui
+			else
+				output.gui = default_fallbacks.gui
+			end
 		end
 	end
 
@@ -147,7 +151,11 @@ util.get_color = function(highlights, fallback)
 			output.cterm = color
 			break
 		else
-			output.cterm = default_fallbacks.cterm
+			if fallbacks then
+				output.cterm = fallbacks.cterm
+			else
+				output.cterm = default_fallbacks.cterm
+			end
 		end
 	end
 	
@@ -286,22 +294,71 @@ util.base16ify = function()
 	local theme = {
 		scheme = vim.g.colors_name,
 		author = "Generated",
-		base00 = util.get_color({{"Normal"     , "bg"}}).gui:gsub("#", ""),
-		base01 = util.get_color({{"CursorLine" , "bg"}}).gui:gsub("#", ""),
-		base02 = util.get_color({{"Visual"     , "bg"}}).gui:gsub("#", ""),
-		base03 = util.get_color({{"Comment"    , "fg"}}).gui:gsub("#", ""),
-		base04 = util.get_color({{"StatusLine" , "fg"}}).gui:gsub("#", ""),
-		base05 = util.get_color({{"Normal"     , "fg"}}).gui:gsub("#", ""),
-		base06 = util.get_color({{"StatusLine" , "fg"}}).gui:gsub("#", ""),
-		base07 = util.get_color({{"Normal"     , "fg"}}).gui:gsub("#", ""),
-		base08 = util.get_color({{"Character"  , "fg"}}).gui:gsub("#", ""),
-		base09 = util.get_color({{"Number"     , "fg"}}).gui:gsub("#", ""),
-		base0A = util.get_color({{"Type"       , "fg"}}).gui:gsub("#", ""),
-		base0B = util.get_color({{"String"     , "fg"}}).gui:gsub("#", ""),
-		base0C = util.get_color({{"Special"    , "fg"}}).gui:gsub("#", ""),
-		base0D = util.get_color({{"Function"   , "fg"}}).gui:gsub("#", ""),
-		base0E = util.get_color({{"Conditional", "fg"}}).gui:gsub("#", ""),
-		base0F = util.get_color({{"Constant"   , "fg"}}).gui:gsub("#", "")
+
+		base00 = util.get_color({
+			{"Normal", "bg"}
+		}).gui:gsub("#", ""),
+
+		base01 = util.get_color({
+			{"CursorLine" , "bg"}
+		}).gui:gsub("#", ""),
+
+		base02 = util.get_color({
+			{"Visual", "bg"},
+			{"Normal", "bg"},
+		}).gui:gsub("#", ""),
+
+		base03 = util.get_color({
+			{"Comment", "fg"}
+		}).gui:gsub("#", ""),
+
+		base04 = util.get_color({
+			{"StatusLine", "fg"}
+		}).gui:gsub("#", ""),
+		
+		base05 = util.get_color({
+			{"Normal", "fg"}
+		}).gui:gsub("#", ""),
+
+		base06 = util.get_color({
+			{"StatusLine", "fg"}
+		}).gui:gsub("#", ""),
+
+		base07 = util.get_color({
+			{"Normal", "fg"}
+		}).gui:gsub("#", ""),
+
+		base08 = util.get_color({
+			{"Character", "fg"}
+		}).gui:gsub("#", ""),
+
+		base09 = util.get_color({
+			{"Number", "fg"}
+		}).gui:gsub("#", ""),
+
+		base0A = util.get_color({
+			{"Type", "fg"}
+		}).gui:gsub("#", ""),
+
+		base0B = util.get_color({
+			{"String", "fg"}
+		}).gui:gsub("#", ""),
+
+		base0C = util.get_color({
+			{"Special", "fg"}
+		}).gui:gsub("#", ""),
+
+		base0D = util.get_color({
+			{"Function", "fg"}
+		}).gui:gsub("#", ""),
+
+		base0E = util.get_color({
+			{"Conditional", "fg"}
+		}).gui:gsub("#", ""),
+
+		base0F = util.get_color({
+			{"Constant", "fg"}
+		}).gui:gsub("#", "")
 	}
 
 	local  text = "\n"

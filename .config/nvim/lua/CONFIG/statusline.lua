@@ -116,6 +116,15 @@ SetupStatusline = function(symbol)
 				gui = "#000000"
 			}
 		),
+		mode_fg = util.get_color(
+			{
+				{ "Normal", "bg" }
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		),
 		insert_mode = util.get_color(
 			{
 				{ "Function", "fg" }
@@ -291,7 +300,7 @@ SetupStatusline = function(symbol)
 
 	local setup_highlights = function()
 		local mode = vim.fn.mode()
-		vim.cmd(":silent hi GalaxyMode guifg=" .. colors.bg.gui .. " guibg=" .. mode_colors[mode].gui .. " ctermfg=" .. colors.bg.cterm .. " ctermbg=" .. mode_colors[mode].cterm)
+		vim.cmd(":silent hi GalaxyMode guifg=" .. colors.mode_fg.gui .. " guibg=" .. mode_colors[mode].gui .. " ctermfg=" .. colors.mode_fg.cterm .. " ctermbg=" .. mode_colors[mode].cterm)
 		vim.cmd(":silent hi GalaxyModePowerline guifg=" .. mode_colors[mode].gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. mode_colors[mode].cterm .. " ctermbg=" .. colors.alt_bg.cterm)
 
 		-- TODO: Avoid this

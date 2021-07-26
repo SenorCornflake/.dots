@@ -85,6 +85,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/buftabline.nvim"
   },
+  ["calvera-dark.nvim"] = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/calvera-dark.nvim"
+  },
   ["dashboard-nvim"] = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
@@ -105,6 +109,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/hop.nvim"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+  },
   kommentary = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/kommentary"
@@ -113,6 +121,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
   },
+  neon = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/neon"
+  },
   ["neoscroll.nvim"] = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/neoscroll.nvim"
@@ -120,6 +132,10 @@ _G.packer_plugins = {
   ["night-owl.vim"] = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/night-owl.vim"
+  },
+  ["nvim-base16"] = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/nvim-base16"
   },
   ["nvim-compe"] = {
     loaded = true,

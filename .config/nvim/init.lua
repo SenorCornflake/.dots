@@ -4,10 +4,8 @@ for k, _ in pairs(package.loaded) do
 	end
 end
 
-
 vim = vim -- Less "undefined global" warnings this way
 
-local colorscheme = "srcery"
 local powerline_symbol = "up_slant"
 
 -------------
@@ -16,7 +14,7 @@ local powerline_symbol = "up_slant"
 require 'CONFIG.plugins'
 require 'CONFIG.opts'
 require 'CONFIG.bindings'
-require 'CONFIG.colorscheme'(colorscheme)
+require 'CONFIG.colorscheme'
 require "CONFIG.lsp"
 require "CONFIG.statusline"(powerline_symbol)
 

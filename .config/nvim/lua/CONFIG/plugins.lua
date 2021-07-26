@@ -16,12 +16,24 @@ require("packer").startup(function(use)
 
 	-- Color Schemes
 	--use "SenorCornflake/vim-base16-colorschemes"
-	use "tomasiser/vim-code-dark"
-	use "rafi/awesome-vim-colorschemes"
-	use "axvr/photon.vim"
-	use "srcery-colors/srcery-vim"
-	use "navarasu/onedark.nvim"
-	use "haishanh/night-owl.vim"
+	--
+	local colorscheme = function(name) 
+		use {
+			name,
+			event = "VimEnter"
+		}
+	end
+
+	colorscheme("tomasiser/vim-code-dark")
+	colorscheme("rafi/awesome-vim-colorschemes")
+	colorscheme("axvr/photon.vim")
+	colorscheme("srcery-colors/srcery-vim")
+	colorscheme("navarasu/onedark.nvim")
+	colorscheme("haishanh/night-owl.vim")
+	colorscheme("rafamadriz/neon")
+	colorscheme("RRethy/nvim-base16")
+	colorscheme('yashguptaz/calvera-dark.nvim')
+	colorscheme("sainnhe/everforest")
 
 	-- Colorizor
 	use {
@@ -29,11 +41,17 @@ require("packer").startup(function(use)
 		run = "make hexokinase"
 	}
 
+	-- Indent marks
+	use "lukas-reineke/indent-blankline.nvim"
+
 	-- Highlighting
 	use "nvim-treesitter/nvim-treesitter"
 	--use "sheerun/vim-polyglot"
-	use "LnL7/vim-nix" -- For nix config files
+	use "LnL7/vim-nix"
 	use "fladson/vim-kitty"
+
+	-- Highlight word under cursor
+	--use "yamatsum/nvim-cursorline"
 
 	-- Auto Pairs
 	use "jiangmiao/auto-pairs"
