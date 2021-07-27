@@ -6,10 +6,13 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh || paru --skipreview -S zsh-history-substring-search 
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh || paru --skipreview -S zsh-fast-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh || paru --skipreview -S zsh-you-should-use
+source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh || paru --skipreview -S zsh-vi-mode
 
+ZVM_VI_INSERT_ESCAPE_BINDKEY=kj
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey "\e[3~" delete-char 
 
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^v' edit-command-line
