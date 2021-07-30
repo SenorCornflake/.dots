@@ -15,25 +15,16 @@ require("packer").startup(function(use)
 	use { "wbthomason/packer.nvim", opt = true }
 
 	-- Color Schemes
-	--use "SenorCornflake/vim-base16-colorschemes"
-	--
-	local colorscheme = function(name) 
-		use {
-			name,
-			event = "VimEnter"
-		}
-	end
-
-	colorscheme("tomasiser/vim-code-dark")
-	colorscheme("rafi/awesome-vim-colorschemes")
-	colorscheme("axvr/photon.vim")
-	colorscheme("srcery-colors/srcery-vim")
-	colorscheme("navarasu/onedark.nvim")
-	colorscheme("haishanh/night-owl.vim")
-	colorscheme("rafamadriz/neon")
-	colorscheme("RRethy/nvim-base16")
-	colorscheme('yashguptaz/calvera-dark.nvim')
-	colorscheme("sainnhe/everforest")
+	use "tomasiser/vim-code-dark"
+	use "axvr/photon.vim"
+	use "srcery-colors/srcery-vim"
+	use "navarasu/onedark.nvim"
+	use "haishanh/night-owl.vim"
+	use "rafamadriz/neon"
+	use "SenorCornflake/nvim-base16"
+	use 'yashguptaz/calvera-dark.nvim'
+	use "sainnhe/everforest"
+	use "folke/tokyonight.nvim"
 
 	-- Colorizor
 	use {
@@ -46,7 +37,6 @@ require("packer").startup(function(use)
 
 	-- Highlighting
 	use "nvim-treesitter/nvim-treesitter"
-	--use "sheerun/vim-polyglot"
 	use "LnL7/vim-nix"
 	use "fladson/vim-kitty"
 
@@ -58,6 +48,8 @@ require("packer").startup(function(use)
 
 	-- Lsp
 	use "neovim/nvim-lspconfig"
+	use "simrat39/symbols-outline.nvim"
+	--use 'liuchengxu/vista.vim'
 
 	-- Fuzzy picker
 	use "nvim-telescope/telescope.nvim"
@@ -68,11 +60,8 @@ require("packer").startup(function(use)
 
 	-- File manager
 	use 'kevinhwang91/rnvimr'
+	use 'voldikss/vim-floaterm' -- for lf filemanager
 
-	use 'voldikss/vim-floaterm'
-
-	-- Symbol sidebar lister
-	use 'liuchengxu/vista.vim'
 
 	-- Statusline builder
 	use {
@@ -113,7 +102,7 @@ require("packer").startup(function(use)
 	-- Dashboard
 	use "glepnir/dashboard-nvim"
 
-	-- HTML auto thingy
+	-- HTML expander
 	use "mattn/emmet-vim"
 
 	-- Zen mode
@@ -121,9 +110,6 @@ require("packer").startup(function(use)
 
 	-- Comment Code
 	use "b3nj5m1n/kommentary"
-
-	-- LSP Highlights
-	-- use "folke/lsp-colors.nvim"
 
 	-- Bottom lister
 	use "folke/trouble.nvim"

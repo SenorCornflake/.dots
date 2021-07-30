@@ -20,7 +20,7 @@ exconman set dunst.padding 10
 exconman set dunst.horizontal_padding 10
 exconman set dunst.frame_width 2
 exconman set dunst.corner_radius 0
-exconman set dunst.font "Iosevka 10"
+exconman set dunst.font "Iosevka Nerd Font 10"
 
 exconman set polybar.bar "4"
 exconman set rofi.layout "bottom"
@@ -33,4 +33,4 @@ exconman set picom.rofi_shadow "#"
 exconman set picom.shadow-radius 10
 exconman set picom.shadow-offset-y -- "-10" # -- Allows you to pass in negative numbers
 exconman set picom.shadow-offset-x -- "-10"
-exconman set picom.shadow-opacity 
+exconman set picom.shadow-opacity "0.5"

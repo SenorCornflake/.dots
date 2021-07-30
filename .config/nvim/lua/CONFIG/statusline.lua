@@ -1,3 +1,6 @@
+--[[
+This can certainly be improved. I need to avoid using my hacky way of setting the highlights
+--]]
 local util = require("CONFIG.util")
 
 local gl = require("galaxyline")
@@ -12,7 +15,6 @@ end
 local right = function(item) 
 	table.insert(gl.section.right, item)
 end
-
 
 local mode_labels = {
 	['n']  = 'NORMAL',
@@ -40,7 +42,6 @@ local mode_labels = {
 
 SetupStatusline = function(symbol)
 	symbol = symbol or "arrow"
-
 
 	if symbol == "arrow" then
 		symbol = {
@@ -79,11 +80,12 @@ SetupStatusline = function(symbol)
 		}
 	end
 
-	-- First Reset
+	-- First Reset all sections
 	gl.section.left = {}
 	gl.section.right = {}
 	gl.section.mid = {}
 
+	-- Get all colors {{{
 	local colors = {
 		bg = util.get_color(
 			{
@@ -220,6 +222,7 @@ SetupStatusline = function(symbol)
 		language_server = util.get_color(
 			{
 				{ "Conditional", "fg" },
+				{ "Statement", "fg" }
 			},
 			{
 				cterm = "0",
@@ -228,6 +231,7 @@ SetupStatusline = function(symbol)
 		),
 		diagnostic_error = util.get_color(
 			{
+				{ "LspDiagnosticsDefaultError", "fg" },
 				{ "DiffRemoved", "fg" },
 				{ "DiffDelete", "fg" },
 				{ "ErrorMsg", "fg" }
@@ -239,6 +243,7 @@ SetupStatusline = function(symbol)
 		),
 		diagnostic_warn = util.get_color(
 			{
+				{ "LspDiagnosticsDefaultWarning", "fg" },
 				{ "Constant", "fg" },
 				{ "WarningMsg", "fg"  },
 				{ "Boolean", "fg" },
@@ -251,6 +256,7 @@ SetupStatusline = function(symbol)
 		),
 		diagnostic_hint = util.get_color(
 			{
+				{ "LspDiagnosticsDefaultHint", "fg" },
 				{ "Special", "fg" },
 				{ "Function", "fg" },
 				{ "Include", "fg" }
@@ -262,6 +268,7 @@ SetupStatusline = function(symbol)
 		),
 		diagnostic_info = util.get_color(
 			{
+				{ "LspDiagnosticsDefaultInformation", "fg" },
 				{ "String", "fg" },
 				{ "DiffAdded", "fg" },
 				{ "DiffAdd", "fg" },
@@ -272,7 +279,7 @@ SetupStatusline = function(symbol)
 			}
 		),
 	}
-
+	-- }}}
 	
 	local mode_colors = {
 		['n']  = colors.normal_mode,

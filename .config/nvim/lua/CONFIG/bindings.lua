@@ -13,7 +13,7 @@ util.bind("n", "<C-j>", "<C-w>j")
 util.bind("n", "<C-k>", "<C-w>k")
 util.bind("n", "<C-l>", "<C-w>l")
 
--- Copy line without newline
+-- Copy to end of line without newline
 util.bind("n", "Y", "y$")
 
 -- Better indenting experience
@@ -58,7 +58,7 @@ util.bind("n", "<Right>", ":lua require('CONFIG.util').next_colorscheme(false)<C
 ----------------------------------
 -- Display highlight group name --
 ----------------------------------
-util.bind("n", "<CR>", ":call SynStack()<CR>")
+vim.cmd "command! GetHighlight call SynStack()"
 
 ----------------------------------------------
 -- Generate base16 theme from active scheme --

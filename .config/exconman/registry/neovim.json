@@ -1,9 +1,17 @@
 [
 	{
 		"name": "neovim.colorscheme",
-		"file": "~/.config/nvim/init.lua",
+		"file": "~/.config/nvim/lua/CONFIG/colorscheme.lua",
 		"pattern": "local colorscheme = \".+\"",
 		"substitute": "local colorscheme = \"{value}\"",
+		"replace": "matched",
+		"value_is_file": false
+	},
+	{
+		"name": "neovim.base16_theme",
+		"file": "~/.config/nvim/lua/CONFIG/PLUGINS/nvim-base16/setup.lua",
+		"pattern": ["-- <theme>", "-- </theme>"],
+		"substitute": "\t{value}",
 		"replace": "matched",
 		"value_is_file": false
 	}

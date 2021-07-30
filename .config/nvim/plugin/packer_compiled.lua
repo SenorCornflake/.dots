@@ -77,10 +77,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
-  ["awesome-vim-colorschemes"] = {
-    loaded = true,
-    path = "/home/a/.local/share/nvim/site/pack/packer/start/awesome-vim-colorschemes"
-  },
   ["buftabline.nvim"] = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/buftabline.nvim"
@@ -96,6 +92,10 @@ _G.packer_plugins = {
   ["emmet-vim"] = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/emmet-vim"
+  },
+  everforest = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/everforest"
   },
   ["galaxyline.nvim"] = {
     loaded = true,
@@ -182,9 +182,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/srcery-vim"
   },
+  ["symbols-outline.nvim"] = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/tokyonight.nvim"
   },
   ["trouble.nvim"] = {
     loaded = true,
@@ -221,10 +229,6 @@ _G.packer_plugins = {
   ["vim-surround"] = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/vim-surround"
-  },
-  ["vista.vim"] = {
-    loaded = true,
-    path = "/home/a/.local/share/nvim/site/pack/packer/start/vista.vim"
   },
   ["which-key.nvim"] = {
     loaded = true,

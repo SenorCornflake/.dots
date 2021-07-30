@@ -1,2 +1,2 @@
-wallpaper="/home/a/wallpapers/landscape-field-plants.jpg"
+wallpaper="/home/a/wallpapers/brownish-wallpaper-pattern.jpg"
 feh --no-fehbg --bg-fill "$wallpaper"

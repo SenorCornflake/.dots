@@ -7,7 +7,6 @@ end
 vim = vim -- Less "undefined global" warnings this way
 
 local powerline_symbol = "up_slant"
-
 -------------
 -- General --
 -------------

@@ -1,0 +1,42 @@
+# Base16 night-owl 256 - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0x011627'
+    foreground: '0xd6deeb'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x011627'
+    cursor: '0xd6deeb'
+
+  # Normal colors
+  normal:
+    black:   '0x011627'
+    red:     '0xaddb67'
+    green:   '0xecc48d'
+    yellow:  '0xaddb67'
+    blue:    '0x7fdbca'
+    magenta: '0x82aaff'
+    cyan:    '0xffa500'
+    white:   '0xd6deeb'
+
+  # Bright colors
+  bright:
+    black:   '0x637777'
+    red:     '0xaddb67'
+    green:   '0xecc48d'
+    yellow:  '0xaddb67'
+    blue:    '0x7fdbca'
+    magenta: '0x82aaff'
+    cyan:    '0xffa500'
+    white:   '0xd6deeb'
+
+  indexed_colors:
+    - { index: 16, color: '0xaddb67' }
+    - { index: 17, color: '0xaddb67' }
+    - { index: 18, color: '0x112630' }
+    - { index: 19, color: '0x2d2c5d' }
+    - { index: 20, color: '0xeeeeee' }
+    - { index: 21, color: '0xd6deeb' }

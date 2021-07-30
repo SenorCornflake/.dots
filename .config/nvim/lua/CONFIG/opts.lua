@@ -11,12 +11,14 @@ vim.opt.updatetime     = 300
 vim.opt.laststatus     = 2
 vim.opt.clipboard      = "unnamedplus"
 vim.opt.runtimepath    = vim.o.runtimepath .. "," .. "~/MAIN/tmp/vim_colors/"
+vim.opt.foldmethod     = "syntax"
+vim.opt.foldenable     = true
 
 vim.opt.number         = true
 vim.opt.relativenumber = true
 vim.opt.cursorline     = true
 vim.opt.wrap           = false
-vim.opt.scrolloff      = 8
+vim.opt.scrolloff      = 4
 vim.opt.sidescrolloff  = 8
 vim.opt.signcolumn     = "yes"
 

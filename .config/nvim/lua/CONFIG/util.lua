@@ -56,55 +56,8 @@ util.expanduser = function(path)
 end
 
 -------------------------------
--- GET HIGHLIGHT COLOR CODES (OLD VERSION)--
+-- GET HIGHLIGHT COLOR CODES --
 -------------------------------
-util.gh = function(highlight, fallback_colors)
-	fallback_colors = fallback_colors or true
-	local output = vim.api.nvim_exec(":hi " .. highlight, true)
-
-	if output:gmatch("cleared")() then
-		if fallback_colors then
-			local normal = util.gh("Normal", false)
-
-			if normal then
-				return normal
-			else
-				return { guifg = "white", guibg = "black", ctermfg = "white", ctermbg = "black"}
-			end
-		end
-		return nil
-	end
-
-	if output:gmatch("links")() then
-		highlight = util.split(output, " ")
-		highlight = highlight[#highlight]
-		output = vim.api.nvim_exec(":hi " .. highlight, true)
-	end
-
-	local remove = function(text, str)
-		if str then
-			return str:gsub(text, "")
-		else
-			return "none"
-		end
-	end
-
-	local ctermfg = remove("ctermfg=", output:gmatch("ctermfg=[a-zA-Z0-9#]*")())
-	local ctermbg = remove("ctermbg=", output:gmatch("ctermbg=[a-zA-Z0-9#]*")())
-	local guifg = remove("guifg=", output:gmatch("guifg=[a-zA-Z0-9#]*")())
-	local guibg = remove("guibg=", output:gmatch("guibg=[a-zA-Z0-9#]*")())
-
-	return {
-		ctermfg = ctermfg,
-		ctermbg = ctermbg,
-		guifg = guifg,
-		guibg = guibg
-	}
-end
-
----------------------------------------------
--- GET HIGHLIGHT COLOR CODES (NEW VERSION) --
----------------------------------------------
 util.get_color = function(highlights, fallbacks)
 	if not highlights then return end
 
@@ -384,6 +337,9 @@ util.base16ify = function()
 	return text
 end
 
+-------------------------------------------------------
+-- ADAPT MY SYSTEM COLORS TO THE CURRENT COLORSCHEME --
+-------------------------------------------------------
 util.adapt_system = function()
 	local theme = util.base16ify()
 

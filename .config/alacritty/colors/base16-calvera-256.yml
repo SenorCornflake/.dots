@@ -1,0 +1,42 @@
+# Base16 calvera 256 - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0x0c0c1f'
+    foreground: '0xb0bec5'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x0c0c1f'
+    cursor: '0xb0bec5'
+
+  # Normal colors
+  normal:
+    black:   '0x0c0c1f'
+    red:     '0xf78c6c'
+    green:   '0xadcea1'
+    yellow:  '0xc792ea'
+    blue:    '0x82aaff'
+    magenta: '0xc792ea'
+    cyan:    '0xe97a7a'
+    white:   '0xb0bec5'
+
+  # Bright colors
+  bright:
+    black:   '0x47478f'
+    red:     '0xf78c6c'
+    green:   '0xadcea1'
+    yellow:  '0xc792ea'
+    blue:    '0x82aaff'
+    magenta: '0xc792ea'
+    cyan:    '0xe97a7a'
+    white:   '0xb0bec5'
+
+  indexed_colors:
+    - { index: 16, color: '0xd6b295' }
+    - { index: 17, color: '0xd6b295' }
+    - { index: 18, color: '0x121230' }
+    - { index: 19, color: '0x17173d' }
+    - { index: 20, color: '0x373777' }
+    - { index: 21, color: '0xb0bec5' }
