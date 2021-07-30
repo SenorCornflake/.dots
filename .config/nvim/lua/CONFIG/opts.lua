@@ -21,6 +21,7 @@ vim.opt.wrap           = false
 vim.opt.scrolloff      = 4
 vim.opt.sidescrolloff  = 8
 vim.opt.signcolumn     = "yes"
+vim.opt.mouse = "a"
 
 vim.opt.undofile       = true
 vim.opt.tabstop        = 4

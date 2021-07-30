@@ -35,8 +35,13 @@ require("packer").startup(function(use)
 	-- Indent marks
 	use "lukas-reineke/indent-blankline.nvim"
 
-	-- Highlighting
+	-- Treesitter
 	use "nvim-treesitter/nvim-treesitter"
+	use "JoosepAlviste/nvim-ts-context-commentstring"
+	use "windwp/nvim-ts-autotag"
+	use "haringsrob/nvim_context_vt"
+
+	-- Syntax
 	use "LnL7/vim-nix"
 	use "fladson/vim-kitty"
 
@@ -88,7 +93,8 @@ require("packer").startup(function(use)
 	use 'lewis6991/gitsigns.nvim'
 
 	-- Buffer tab line
-	use "jose-elias-alvarez/buftabline.nvim"
+	--use "jose-elias-alvarez/buftabline.nvim"
+	use "akinsho/nvim-bufferline.lua"
 
 	-- Surround
 	use "tpope/vim-surround"
@@ -112,10 +118,14 @@ require("packer").startup(function(use)
 	use "b3nj5m1n/kommentary"
 
 	-- Bottom lister
-	use "folke/trouble.nvim"
+	use {
+		"folke/trouble.nvim"
+	}
 
 	-- Smooth scroll
 	use "karb94/neoscroll.nvim"
+
+	use "dstein64/vim-startuptime"
 end)
 
 -- Load all plugin configs

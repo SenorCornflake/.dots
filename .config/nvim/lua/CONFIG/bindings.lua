@@ -30,6 +30,17 @@ util.bind('i', '<S-Tab>', 'pumvisible() ? "<C-p>" : "<S-Tab>"', { expr = true, n
 -- Reload neovim
 util.bind("n", "<leader>,", ":luafile ~/.config/nvim/init.lua<CR>")
 
+-- Undo breakpoints
+util.bind("i", ",", ",<c-g>u")
+util.bind("i", ".", ".<c-g>u")
+util.bind("i", ";", ";<c-g>u")
+util.bind("i", "!", "!<c-g>u")
+util.bind("i", "?", "?<c-g>u")
+
+-- Keep searches centered
+util.bind("n", "n", "nzzzv")
+util.bind("n", "N", "Nzzzv")
+
 ---------
 -- LSP --
 ---------

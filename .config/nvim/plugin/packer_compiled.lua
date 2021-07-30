@@ -77,10 +77,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
-  ["buftabline.nvim"] = {
-    loaded = true,
-    path = "/home/a/.local/share/nvim/site/pack/packer/start/buftabline.nvim"
-  },
   ["calvera-dark.nvim"] = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/calvera-dark.nvim"
@@ -137,6 +133,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/nvim-base16"
   },
+  ["nvim-bufferline.lua"] = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua"
+  },
   ["nvim-compe"] = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/nvim-compe"
@@ -149,9 +149,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag"
+  },
+  ["nvim-ts-context-commentstring"] = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+  },
+  nvim_context_vt = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/nvim_context_vt"
   },
   ["onedark.nvim"] = {
     loaded = true,
@@ -225,6 +237,10 @@ _G.packer_plugins = {
   ["vim-rooter"] = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/vim-rooter"
+  },
+  ["vim-startuptime"] = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/vim-startuptime"
   },
   ["vim-surround"] = {
     loaded = true,

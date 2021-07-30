@@ -27,6 +27,13 @@ require "telescope".setup {
 	pickers = {
 		find_files = {
 			hidden = true
+		},
+		buffers = {
+			mappings = {
+				n = {
+					["D"] = "delete_buffer"
+				}
+			}
 		}
 	}
 }

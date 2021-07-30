@@ -61,14 +61,9 @@ end
 util.get_color = function(highlights, fallbacks)
 	if not highlights then return end
 
-	local default_fallbacks = {
+	local output = {
 		gui = "#000000",
 		cterm = "0"
-	}
-
-	local output = {
-		gui = false,
-		cterm = false
 	}
 
 	local get = function(name, attr, mode)
@@ -88,8 +83,6 @@ util.get_color = function(highlights, fallbacks)
 		else
 			if fallbacks then
 				output.gui = fallbacks.gui
-			else
-				output.gui = default_fallbacks.gui
 			end
 		end
 	end
@@ -106,8 +99,6 @@ util.get_color = function(highlights, fallbacks)
 		else
 			if fallbacks then
 				output.cterm = fallbacks.cterm
-			else
-				output.cterm = default_fallbacks.cterm
 			end
 		end
 	end

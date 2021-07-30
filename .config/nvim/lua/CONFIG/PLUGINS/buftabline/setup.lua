@@ -1,3 +1,3 @@
-require("buftabline").setup {
-	icons = true
-}
+--require("buftabline").setup {
+--	icons = true
+--}
