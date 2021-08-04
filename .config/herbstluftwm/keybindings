@@ -114,7 +114,7 @@ hc keybind XF86AudioRaiseVolume spawn pulseaudio-ctl up
 hc keybind XF86AudioMute spawn pulseaudio-ctl mute
 
 # Scrots
-hc keybind F12 scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/screenshots'
+hc keybind $Mod-F12 scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/screenshots'
 
 # Brightness
 hc keybind $Mod-XF86AudioRaiseVolume spawn brightnessctl s 10%+

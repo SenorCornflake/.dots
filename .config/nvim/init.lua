@@ -4,9 +4,12 @@ for k, _ in pairs(package.loaded) do
 	end
 end
 
+
 vim = vim -- Less "undefined global" warnings this way
 
+local colorscheme = "srcery"
 local powerline_symbol = "up_slant"
+
 -------------
 -- General --
 -------------

@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "800x40-20-40"
+geometry = "800x40-20-40"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -54,17 +54,17 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 10
+padding = 10
 
     # Horizontal padding.
-    horizontal_padding = 10
+horizontal_padding = 10
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = "2"
+frame_width = "2"
 
     # Defines color of the frame around the notification window.
-    frame_color = "#bb9af7"
+frame_color = "#c678dd"
 
     # Define a color for the separator.
     # possible values are:
@@ -86,7 +86,7 @@
 
     ### Text ###
 
-    font = Iosevka Nerd Font 10
+font = Iosevka Nerd Font 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -213,7 +213,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 0
+corner_radius = 0
 
     ### Legacy
 
@@ -275,23 +275,23 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#1a1b26"
-    foreground = "#c0caf5"
+background = "#282c34"
+foreground = "#abb2bf"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     icon = archdroid
 
 [urgency_normal]
-    background = "#1a1b26"
-    foreground = "#c0caf5"
+    background = "#1d2021"
+    foreground = "#d5c4a1"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     icon = archdroid
 
 [urgency_critical]
-    background = "#1a1b26"
-    foreground = "#c0caf5"
-    # frame_color = "#bb9af7"
+    background = "#1d2021"
+    foreground = "#d5c4a1"
+    # frame_color = "#d3869b"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     icon = archdroid

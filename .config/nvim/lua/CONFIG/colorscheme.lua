@@ -1,7 +1,7 @@
 local util = require("CONFIG.util")
 
 -- Exconman manages the value of this variable
-local colorscheme = "tokyonight"
+local colorscheme = "base16"
 
 -- Use base16 theme if it's set to base16
 if colorscheme == "base16" then

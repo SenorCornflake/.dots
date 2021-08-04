@@ -8,22 +8,22 @@ local setup = function()
 	require "base16-colorscheme".setup {
 		-- theme section is managed by exconman
 		-- <theme>
-		base00 = "#1a1b26",
-		base01 = "#292e42",
-		base02 = "#33467c",
-		base03 = "#565f89",
-		base04 = "#a9b1d6",
-		base05 = "#c0caf5",
-		base06 = "#c0caf5",
-		base07 = "#c0caf5",
-		base08 = "#9ece6a",
-		base09 = "#ff9e64",
-		base0A = "#2ac3de",
-		base0B = "#9ece6a",
-		base0C = "#2ac3de",
-		base0D = "#7aa2f7",
-		base0E = "#bb9af7",
-		base0F = "#ff9e64"
+		base00 = "#282c34",
+		base01 = "#353b45",
+		base02 = "#3e4451",
+		base03 = "#545862",
+		base04 = "#565c64",
+		base05 = "#abb2bf",
+		base06 = "#b6bdca",
+		base07 = "#c8ccd4",
+		base08 = "#e06c75",
+		base09 = "#d19a66",
+		base0A = "#e5c07b",
+		base0B = "#98c379",
+		base0C = "#56b6c2",
+		base0D = "#61afef",
+		base0E = "#c678dd",
+		base0F = "#be5046"
 		-- </theme>
 	}
 	

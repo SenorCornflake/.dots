@@ -4,103 +4,103 @@
 		"file": "~/.config/rofi/config.rasi",
 		"pattern": "bottom-bg: .*;",
 		"substitute": "bottom-bg: {value};",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "rofi.bottom-fg",
 		"file": "~/.config/rofi/config.rasi",
 		"pattern": "bottom-fg: .*;",
 		"substitute": "bottom-fg: {value};",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "rofi.bottom-fg-focused",
 		"file": "~/.config/rofi/config.rasi",
 		"pattern": "bottom-fg-focused: .*;",
 		"substitute": "bottom-fg-focused: {value};",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "rofi.bottom-bg-focused",
 		"file": "~/.config/rofi/config.rasi",
 		"pattern": "bottom-bg-focused: .*;",
 		"substitute": "bottom-bg-focused: {value};",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "rofi.bottom-prompt-fg",
 		"file": "~/.config/rofi/config.rasi",
 		"pattern": "bottom-prompt-fg: .*;",
 		"substitute": "bottom-prompt-fg: {value};",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "rofi.center-bg",
 		"file": "~/.config/rofi/config.rasi",
 		"pattern": "center-bg: .*;",
 		"substitute": "center-bg: {value};",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "rofi.center-fg",
 		"file": "~/.config/rofi/config.rasi",
 		"pattern": "center-fg: .*;",
 		"substitute": "center-fg: {value};",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "rofi.center-fg-focused",
 		"file": "~/.config/rofi/config.rasi",
 		"pattern": "center-fg-focused: .*;",
 		"substitute": "center-fg-focused: {value};",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "rofi.center-bg-focused",
 		"file": "~/.config/rofi/config.rasi",
 		"pattern": "center-bg-focused: .*;",
 		"substitute": "center-bg-focused: {value};",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "rofi.center-prompt-fg",
 		"file": "~/.config/rofi/config.rasi",
 		"pattern": "center-prompt-fg: .*;",
 		"substitute": "center-prompt-fg: {value};",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "rofi.center-border-width",
 		"file": "~/.config/rofi/config.rasi",
 		"pattern": "center-border-width: .*;",
 		"substitute": "center-border-width: {value};",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "rofi.center-border-color",
 		"file": "~/.config/rofi/config.rasi",
 		"pattern": "center-border-color: .*;",
 		"substitute": "center-border-color: {value};",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "rofi.layout",
 		"file": "~/.config/rofi/config.rasi",
 		"pattern": "@import .*",
 		"substitute": "@import \"layouts/{value}.rasi\"",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	}
 ]

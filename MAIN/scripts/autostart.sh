@@ -2,8 +2,6 @@
 
 # Start Programs that are always started regardless of wm
 
-autorandr --change
-
 # Notification daemon
 pidof dunst && killall dunst
 dunst &

@@ -4,7 +4,7 @@ hc() {
     herbstclient "$@"
 }
 
-hc emit_hook reload
+#hc emit_hook reload
 
 sh ~/MAIN/scripts/autostart.sh
 

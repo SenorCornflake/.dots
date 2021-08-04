@@ -4,31 +4,31 @@
 		"file": "~/.config/xsettingsd/xsettingsd.conf",
 		"pattern": "Gtk/FontName .+",
 		"substitute": "Gtk/FontName \"{value}\"",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "xsettingsd.IconThemeName",
 		"file": "~/.config/xsettingsd/xsettingsd.conf",
 		"pattern": "Net/IconThemeName .+",
 		"substitute": "Net/IconThemeName \"{value}\"",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "xsettingsd.ThemeName",
 		"file": "~/.config/xsettingsd/xsettingsd.conf",
 		"pattern": "Net/ThemeName .+",
 		"substitute": "Net/ThemeName \"{value}\"",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "xsettingsd.CursorThemeName",
 		"file": "~/.config/xsettingsd/xsettingsd.conf",
 		"pattern": "Gtk/CursorThemeName .+",
 		"substitute": "Gtk/CursorThemeName \"{value}\"",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	}
 ]

@@ -4,7 +4,7 @@
 		"file": "~/MAIN/scripts/set_wallpaper.sh",
 		"pattern": "wallpaper=\".+\"",
 		"substitute": "wallpaper=\"{value}\"",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	}
 ]

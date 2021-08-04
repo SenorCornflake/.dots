@@ -126,6 +126,9 @@ require("packer").startup(function(use)
 	use "karb94/neoscroll.nvim"
 
 	use "dstein64/vim-startuptime"
+
+	-- Markdown preview
+	use {"npxbr/glow.nvim", run = "GlowInstall"}
 end)
 
 -- Load all plugin configs

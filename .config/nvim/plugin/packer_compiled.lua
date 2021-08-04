@@ -101,6 +101,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
+  ["glow.nvim"] = {
+    loaded = true,
+    path = "/home/a/.local/share/nvim/site/pack/packer/start/glow.nvim"
+  },
   ["hop.nvim"] = {
     loaded = true,
     path = "/home/a/.local/share/nvim/site/pack/packer/start/hop.nvim"

@@ -4,71 +4,71 @@
 		"file": "~/.config/dunst/dunstrc",
 		"pattern": "background = .*",
 		"substitute": "background = \"{value}\"",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "dunst.foreground",
 		"file": "~/.config/dunst/dunstrc",
 		"pattern": "foreground = .*",
 		"substitute": "foreground = \"{value}\"",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "dunst.frame_color",
 		"file": "~/.config/dunst/dunstrc",
 		"pattern": "frame_color = .*",
 		"substitute": "frame_color = \"{value}\"",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "dunst.frame_width",
 		"file": "~/.config/dunst/dunstrc",
 		"pattern": "frame_width = .*",
 		"substitute": "frame_width = \"{value}\"",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "dunst.padding",
 		"file": "~/.config/dunst/dunstrc",
 		"pattern": "padding = .+",
 		"substitute": "padding = {value}",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "dunst.horizontal_padding",
 		"file": "~/.config/dunst/dunstrc",
 		"pattern": "horizontal_padding = .+",
 		"substitute": "horizontal_padding = {value}",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "dunst.geometry",
 		"file": "~/.config/dunst/dunstrc",
 		"pattern": "geometry = .+",
 		"substitute": "geometry = \"{value}\"",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "dunst.font",
 		"file": "~/.config/dunst/dunstrc",
 		"pattern": "font = .+",
 		"substitute": "font = {value}",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	},
 	{
 		"name": "dunst.corner_radius",
 		"file": "~/.config/dunst/dunstrc",
 		"pattern": "corner_radius = .+",
 		"substitute": "corner_radius = {value}",
-		"replace": "matched",
-		"value_is_file": false
+		"replace": "matched_text",
+		"read_value_path": false
 	}
 ]
