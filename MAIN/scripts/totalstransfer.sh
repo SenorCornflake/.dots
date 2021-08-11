@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 rx=`cat /sys/class/net/wlp3s0/statistics/rx_bytes`
 tx=`cat /sys/class/net/wlp3s0/statistics/tx_bytes`
 

@@ -176,5 +176,3 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 		}
 	}
 )
-
---vim.cmd "autocmd CursorHold * Lspsaga show_line_diagnostics"

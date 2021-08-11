@@ -6,13 +6,5 @@
 		"substitute": "local colorscheme = \"{value}\"",
 		"replace": "matched_text",
 		"read_value_path": false
-	},
-	{
-		"name": "neovim.base16_theme",
-		"file": "~/.config/nvim/lua/CONFIG/PLUGINS/nvim-base16/setup.lua",
-		"pattern": ["-- <theme>", "-- </theme>"],
-		"substitute": "\t{value}",
-		"replace": "matched_text",
-		"read_value_path": false
 	}
 ]

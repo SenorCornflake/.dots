@@ -23,7 +23,7 @@ base16_path = os.path.expanduser(sys.argv[1])
 base16 = yaml.load(open(base16_path, "r").read(), Loader=yaml.FullLoader)
 base16_name = os.path.splitext(os.path.basename(base16_path))[0]
 
-exconman_theme_path = os.path.expanduser("~/MAIN/themes/base16.json")
+exconman_theme_path = os.path.expandvars("$DOTFILES_BRAIN_ROOT/themes/base16.json")
 exconman_settings = {
 	"polybar.1_bg": "#" + base16["base00"],
 	"polybar.1_fg": "#" + base16["base05"],
@@ -102,23 +102,6 @@ exconman_settings = {
 
 	"kitty.colorscheme": "~/.config/kitty/colors/base16-" + base16_name + ".conf",
 
-	"neovim.base16_theme":	"\tbase00 = " + "\"#" + base16["base00"] + "\",\n" +
-							"\t\tbase01 = " + "\"#" + base16["base01"] + "\",\n" +
-							"\t\tbase02 = " + "\"#" + base16["base02"] + "\",\n" +
-							"\t\tbase03 = " + "\"#" + base16["base03"] + "\",\n" +
-							"\t\tbase04 = " + "\"#" + base16["base04"] + "\",\n" +
-							"\t\tbase05 = " + "\"#" + base16["base05"] + "\",\n" +
-							"\t\tbase06 = " + "\"#" + base16["base06"] + "\",\n" +
-							"\t\tbase07 = " + "\"#" + base16["base07"] + "\",\n" +
-							"\t\tbase08 = " + "\"#" + base16["base08"] + "\",\n" +
-							"\t\tbase09 = " + "\"#" + base16["base09"] + "\",\n" +
-							"\t\tbase0A = " + "\"#" + base16["base0A"] + "\",\n" +
-							"\t\tbase0B = " + "\"#" + base16["base0B"] + "\",\n" +
-							"\t\tbase0C = " + "\"#" + base16["base0C"] + "\",\n" +
-							"\t\tbase0D = " + "\"#" + base16["base0D"] + "\",\n" +
-							"\t\tbase0E = " + "\"#" + base16["base0E"] + "\",\n" +
-							"\t\tbase0F = " + "\"#" + base16["base0F"] + "\"",
-
 	"dunst.background": "#" + base16["base00"],
 	"dunst.foreground": "#" + base16["base05"],
 	"dunst.frame_color": "#" + base16["base0E"],
@@ -132,12 +115,17 @@ def kitty():
 	# Build kitty scheme
 	os.system("base16-builder build -t ~/repos/base16-builder/templates/kitty/ -s {} -o ~/.config/kitty/colors/ -d".format(base16_path))
 
+def neovim():
+    # Build neovim color scheme
+	os.system("base16-builder build -t ~/repos/base16-builder/templates/vim/ -s {} -o $DOTFILES_BRAIN_ROOT/tmp/vim_colors/colors/ -d".format(base16_path))
+
 # If we generated a base16 theme from neovim colorscheme, don't bother generating a base16 colorscheme for neovim, and check if we have a corresponding colorscheme
 # for other programs before generating a colorscheme for them as well
 if len(args_excluding_options) == 3:
 	colorscheme = args_excluding_options[2]
 	exconman_settings["neovim.colorscheme"] = colorscheme
 
+    # If a colorscheme for a terminal exists that matches the neovim theme, use it.
 	if os.path.exists(os.path.expanduser("~/.config/alacritty/colors/{}.yaml").format(colorscheme)):
 		exconman_settings["alacritty.colorscheme"] = "~/.config/alacritty/colors/{}.yaml".format(colorscheme)
 	else:
@@ -151,8 +139,8 @@ else:
 	exconman_settings["neovim.colorscheme"] = "base16"
 	alacritty()
 	kitty()
-	#os.system("base16-builder build -t ~/repos/base16-builder/templates/vim/ -s {} -o ~/MAIN/tmp/vim_colors/colors/ -d".format(base16_path))
-	#exconman_settings["neovim.colorscheme"] = "base16-" + base16_name
+	neovim()
+	exconman_settings["neovim.colorscheme"] = "base16-" + base16_name
 
 # Build gtk theme for FlatColor
 os.system("base16-builder build -t ~/repos/base16-builder/templates/gtk-flatcolor/ -s {} -o ~/.themes/FlatColor/gtk-2.0/ -f colors2 -d".format(base16_path))
@@ -161,7 +149,7 @@ os.system("base16-builder build -t ~/repos/base16-builder/templates/gtk-flatcolo
 
 if "--perform-long-tasks" in sys.argv:
 	# Generate archdroid icons
-	os.system("sh ~/MAIN/scripts/generate_archdroid_icons.sh {}".format(base16["base0A"]))
+	os.system("sh /scripts/generate_archdroid_icons.sh {}".format(base16["base0A"]))
 
 # Create/Overwrite exconman base16 theme with the one we just created. 
 open(exconman_theme_path, "w").write(json.dumps(exconman_settings, indent=4))
@@ -170,9 +158,10 @@ open(exconman_theme_path, "w").write(json.dumps(exconman_settings, indent=4))
 os.system("exconman load {}".format(exconman_theme_path))
 
 # Reload the layout because it might contain settings that the theme overrided
-layouts_dir  = os.path.expanduser("~/MAIN/layouts")
-layout = os.popen("cat ~/MAIN/tmp/current_layout.txt").read()
+layouts_dir  = os.path.expandvars("$DOTFILES_BRAIN_ROOT/layouts")
+layout = os.popen("cat $DOTFILES_BRAIN_ROOT/tmp/current_layout.txt").read()
 
+# If the layout is shell script, then run shell script, if it's JSON, then load it.
 filename, extension = os.path.splitext(layout)
 if extension == ".sh":
 	os.system("sh {}".format(layouts_dir + "/" + layout))
@@ -180,4 +169,4 @@ elif extension == ".json":
 	os.system("exconman load {}".format(layouts_dir + "/" + layout))
 
 # Restart applications
-os.system("sh ~/MAIN/scripts/restart_all.sh")
+os.system("sh $DOTFILES_BRAIN_ROOT/scripts/restart_all.sh")

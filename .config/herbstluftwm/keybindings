@@ -103,8 +103,8 @@ hc keybind $Mod-Shift-Tab   cycle_all -1
 hc keybind $Mod-i jumpto urgent
 
 # custom
-hc keybind "$Mod-Insert" spawn python ~/MAIN/menus/keyboard_layout.py
-hc keybind $Mod-c spawn python ~/MAIN/commander/main.py ~/MAIN/commander/commands.json
+hc keybind "$Mod-Insert" spawn python $DOTFILES_BRAIN_ROOT/menus/keyboard_layout.py
+hc keybind $Mod-c spawn python $DOTFILES_BRAIN_ROOT/commander/main.py $DOTFILES_BRAIN_ROOT/commander/commands.json
 hc keybind $Mod-a spawn rofi -modi drun -show drun
 hc keybind $Alt-a spawn rofi -modi window -show window
 

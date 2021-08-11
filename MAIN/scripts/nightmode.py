@@ -1,7 +1,7 @@
 import os
 import sys
 
-cache_file = os.path.expanduser("~/MAIN/tmp/nightmode_enabled.txt")
+cache_file = os.path.expandvars("$DOTFILES_BRAIN_ROOT/tmp/nightmode_enabled.txt")
 
 if not os.path.exists(cache_file):
     open(cache_file, "w").write("false")

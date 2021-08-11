@@ -37,6 +37,11 @@ util.bind("i", ";", ";<c-g>u")
 util.bind("i", "!", "!<c-g>u")
 util.bind("i", "?", "?<c-g>u")
 
+-------------------------------------------------------
+-- Search and replace all files in working directory --
+-------------------------------------------------------
+util.bind("n", "<leader>r", ":args `find . -type f`<CR>")
+
 -- Keep searches centered
 util.bind("n", "n", "nzzzv")
 util.bind("n", "N", "Nzzzv")
@@ -87,15 +92,15 @@ vim.cmd "command! AdaptSystem lua require('CONFIG.util').adapt_system()"
 vim.cmd "command! SudoWrite w !sudo tee %"
 
 -- Load all plugin bindings
- local plugin_configs = util.scandir("~/.config/nvim/lua/CONFIG/PLUGINS")
-
- for i, config in pairs(plugin_configs) do
- 	local plugins_dir = util.expanduser("~/.config/nvim/lua/CONFIG/PLUGINS/")
- 	local filename = config:gsub(".lua", "")
-
- 	if util.isdir(plugins_dir .. config) then
- 		if util.file_exists(plugins_dir .. config .. "/bindings.lua") then
- 			require("CONFIG.PLUGINS." .. filename .. ".bindings")
- 		end
- 	end
- end
+-- local plugin_configs = util.scandir("~/.config/nvim/lua/CONFIG/PLUGINS")
+--
+-- for i, config in pairs(plugin_configs) do
+-- 	local plugins_dir = util.expanduser("~/.config/nvim/lua/CONFIG/PLUGINS/")
+-- 	local filename = config:gsub(".lua", "")
+--
+-- 	if util.isdir(plugins_dir .. config) then
+-- 		if util.file_exists(plugins_dir .. config .. "/bindings.lua") then
+-- 			require("CONFIG.PLUGINS." .. filename .. ".bindings")
+-- 		end
+-- 	end
+-- end

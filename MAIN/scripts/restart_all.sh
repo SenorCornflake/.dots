@@ -1,9 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 wmname=$(wmctrl -m | head -n 1 | sed "s/\w\+: //g")
 
 # Reload all kitty instances
 killall -USR1 kitty
+
+# Dunst reload
+pidof dunst && killall dunst && dunst &
+
 
 if [[ $wmname == "bspwm" ]]; then
 	# Reload bspwm
@@ -23,4 +27,4 @@ if [[ $wmname != "kwin" && $wmname != "mutter" ]]; then
 fi
 
 # Reload neovim
-python ~/MAIN/scripts/neovim_command.py ":luafile ~/.config/nvim/init.lua" &
+python $DOTFILES_BRAIN_ROOT/scripts/neovim_command.py ":luafile ~/.config/nvim/init.lua" &

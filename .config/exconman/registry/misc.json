@@ -1,7 +1,7 @@
 [
 	{
 		"name": "misc.wallpaper",
-		"file": "~/MAIN/scripts/set_wallpaper.sh",
+		"file": "$DOTFILES_BRAIN_ROOT/scripts/set_wallpaper.sh",
 		"pattern": "wallpaper=\".+\"",
 		"substitute": "wallpaper=\"{value}\"",
 		"replace": "matched_text",

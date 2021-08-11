@@ -336,11 +336,11 @@ util.adapt_system = function()
 
 	if theme == nil then return end
 
-	local file = io.open(os.getenv("HOME") .. "/MAIN/tmp/base16_schemes/" .. vim.g.colors_name .. ".yaml", "w")
+	local file = io.open(os.getenv("DOTFILES_BRAIN_ROOT") .. "/tmp/base16_schemes/" .. vim.g.colors_name .. ".yaml", "w")
 	file:write(theme)
 	file:close()
 
-	os.execute("python ~/MAIN/scripts/adapt_to_base16.py --perform-long-tasks ~/MAIN/tmp/base16_schemes/" .. vim.g.colors_name .. ".yaml " .. vim.g.colors_name)
+	os.execute("python $DOTFILES_BRAIN_ROOT/scripts/adapt_to_base16.py --perform-long-tasks $DOTFILES_BRAIN_ROOT/tmp/base16_schemes/" .. vim.g.colors_name .. ".yaml " .. vim.g.colors_name)
 end
 
 -----------------------------------------------------------------------------

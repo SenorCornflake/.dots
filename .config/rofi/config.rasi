@@ -1,17 +1,17 @@
 @import "layouts/bottom.rasi"
 
 * {
-bottom-bg: #282c34;
-bottom-fg: #abb2bf;
-bottom-fg-focused: #282c34;
-bottom-bg-focused: #56b6c2;
-bottom-prompt-fg: #c678dd;
+bottom-bg: #1e1e1e;
+bottom-fg: #d4d4d4;
+bottom-fg-focused: #1e1e1e;
+bottom-bg-focused: #d7ba7d;
+bottom-prompt-fg: #c586c0;
 
 	center-border-width: 2px;
-center-border-color: #56b6c2;
-center-bg: #282c34;
-center-fg: #abb2bf;
-center-fg-focused: #282c34;
-center-bg-focused: #56b6c2;
-center-prompt-fg: #98c379;
+center-border-color: #d7ba7d;
+center-bg: #1e1e1e;
+center-fg: #d4d4d4;
+center-fg-focused: #1e1e1e;
+center-bg-focused: #d7ba7d;
+center-prompt-fg: #ce9178;
 }

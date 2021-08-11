@@ -1,0 +1,121 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.015  000.015: --- NVIM STARTING ---
+000.380  000.365: locale set
+000.758  000.377: inits 1
+000.775  000.017: window checked
+004.861  004.087: parsing arguments
+005.020  000.159: expanding arguments
+005.067  000.047: inits 2
+005.949  000.883: init highlight
+005.963  000.013: waiting for UI
+008.677  002.714: done waiting for UI
+008.802  000.125: initialized screen early for UI
+009.445  000.043  000.043: sourcing /usr/share/nvim/archlinux.vim
+009.473  000.139  000.096: sourcing /etc/xdg//nvim/sysinit.vim
+035.508  017.282  017.282: sourcing /home/a/.local/share/nvim/site/pack/packer/opt/vim-code-dark/colors/codedark.vim
+051.970  042.438  025.155: sourcing /home/a/.config/nvim/init.lua
+051.986  000.607: sourcing vimrc file(s)
+058.029  000.045  000.045: sourcing /usr/share/vim/vimfiles/ftdetect/gnfiletype.vim
+058.073  000.023  000.023: sourcing /usr/share/vim/vimfiles/ftdetect/lf.vim
+058.110  000.023  000.023: sourcing /usr/share/vim/vimfiles/ftdetect/meson.vim
+058.512  000.028  000.028: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/elixir.vim
+058.540  000.013  000.013: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/fish.vim
+058.567  000.013  000.013: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdresource.vim
+058.589  000.009  000.009: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdscript.vim
+058.615  000.012  000.012: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/gomod.vim
+058.647  000.018  000.018: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/graphql.vim
+058.677  000.017  000.017: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/hcl.vim
+058.698  000.009  000.009: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/julia.vim
+058.727  000.015  000.015: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/ledger.vim
+058.752  000.011  000.011: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/nix.vim
+058.781  000.015  000.015: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/ql.vim
+058.815  000.022  000.022: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/query.vim
+058.843  000.012  000.012: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/surface.vim
+058.866  000.011  000.011: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/teal.vim
+058.890  000.010  000.010: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/yang.vim
+058.916  000.011  000.011: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/zig.vim
+058.940  000.011  000.011: sourcing /home/a/.local/share/nvim/site/pack/packer/start/vim-fugitive/ftdetect/fugitive.vim
+059.436  007.411  007.084: sourcing /usr/share/nvim/runtime/filetype.vim
+059.720  000.033  000.033: sourcing /usr/share/nvim/runtime/ftplugin.vim
+060.031  000.031  000.031: sourcing /usr/share/nvim/runtime/indent.vim
+060.394  000.075  000.075: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+060.472  000.208  000.133: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+061.978  000.217  000.217: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+062.005  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+062.090  000.072  000.072: sourcing /usr/share/nvim/runtime/plugin/man.vim
+062.660  000.202  000.202: sourcing /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+062.747  000.640  000.438: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+062.901  000.139  000.139: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+063.341  000.424  000.424: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+063.516  000.011  000.011: sourcing /home/a/.local/share/nvim/rplugin.vim
+063.549  000.180  000.169: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+063.662  000.095  000.095: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+063.710  000.023  000.023: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+063.872  000.140  000.140: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+063.988  000.083  000.083: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+064.027  000.018  000.018: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+064.223  000.178  000.178: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+064.953  000.621  000.621: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+066.134  000.234  000.234: sourcing /home/a/.local/share/nvim/site/pack/packer/opt/dashboard-nvim/plugin/dashboard.vim
+095.394  000.045  000.045: sourcing /home/a/.local/share/nvim/site/pack/packer/opt/vim-nix/ftdetect/nix.vim
+095.583  000.159  000.159: sourcing /home/a/.local/share/nvim/site/pack/packer/opt/vim-kitty/ftdetect/kitty.vim
+095.590  030.530  030.093: sourcing /home/a/.config/nvim/plugin/packer_compiled.lua
+095.817  002.776: loading plugins
+096.416  000.328  000.328: sourcing /home/a/.local/share/nvim/site/pack/packer/start/auto-pairs/plugin/auto-pairs.vim
+097.663  001.067  001.067: sourcing /home/a/.local/share/nvim/site/pack/packer/start/emmet-vim/plugin/emmet.vim
+097.944  000.150  000.150: sourcing /home/a/.local/share/nvim/site/pack/packer/start/galaxyline.nvim/plugin/galaxyline.vim
+099.122  001.025  001.025: sourcing /home/a/.local/share/nvim/site/pack/packer/start/kommentary/plugin/kommentary.vim
+099.355  000.077  000.077: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
+100.626  001.156  001.156: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.vim
+100.859  000.030  000.030: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/elixir.vim
+100.899  000.016  000.016: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/fish.vim
+100.934  000.015  000.015: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdresource.vim
+100.963  000.010  000.010: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdscript.vim
+100.993  000.010  000.010: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/gomod.vim
+101.031  000.018  000.018: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/graphql.vim
+101.065  000.016  000.016: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/hcl.vim
+101.091  000.009  000.009: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/julia.vim
+101.122  000.014  000.014: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/ledger.vim
+101.149  000.009  000.009: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/nix.vim
+101.177  000.011  000.011: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/ql.vim
+101.212  000.018  000.018: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/query.vim
+101.245  000.012  000.012: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/surface.vim
+101.272  000.009  000.009: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/teal.vim
+101.299  000.009  000.009: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/yang.vim
+101.325  000.009  000.009: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-treesitter/ftdetect/zig.vim
+102.128  000.700  000.700: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag/plugin/nvim-ts-autotag.vim
+102.409  000.154  000.154: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring/plugin/ts_context_commentstring.vim
+102.572  000.042  000.042: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
+102.735  000.028  000.028: sourcing /home/a/.local/share/nvim/site/pack/packer/start/nvim_context_vt/plugin/nvim_context_vt.vim
+102.919  000.041  000.041: sourcing /home/a/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+103.094  000.038  000.038: sourcing /home/a/.local/share/nvim/site/pack/packer/start/rnvimr/plugin/rnvimr.vim
+104.625  001.398  001.398: sourcing /home/a/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim/plugin/symbols-outline.vim
+105.267  000.513  000.513: sourcing /home/a/.local/share/nvim/site/pack/packer/start/telescope.nvim/plugin/telescope.vim
+105.635  000.244  000.244: sourcing /home/a/.local/share/nvim/site/pack/packer/start/vim-floaterm/plugin/floaterm.vim
+107.239  001.481  001.481: sourcing /home/a/.local/share/nvim/site/pack/packer/start/vim-fugitive/plugin/fugitive.vim
+107.343  000.012  000.012: sourcing /home/a/.local/share/nvim/site/pack/packer/start/vim-fugitive/ftdetect/fugitive.vim
+107.627  000.208  000.208: sourcing /home/a/.local/share/nvim/site/pack/packer/start/vim-rooter/plugin/rooter.vim
+108.106  000.363  000.363: sourcing /home/a/.local/share/nvim/site/pack/packer/start/vim-surround/plugin/surround.vim
+108.250  000.015  000.015: sourcing /home/a/.local/share/nvim/site/pack/packer/start/which-key.nvim/plugin/which-key.vim
+108.406  003.334: loading packages
+108.599  000.193: loading after plugins
+108.617  000.017: inits 3
+111.908  003.291: reading ShaDa
+112.199  000.291: opening buffers
+116.029  003.830: BufEnter autocommands
+116.036  000.006: editing files in windows
+117.149  000.129  000.129: sourcing /home/a/.local/share/nvim/site/pack/packer/opt/dashboard-nvim/autoload/dashboard.vim
+117.314  000.031  000.031: sourcing /home/a/.local/share/nvim/site/pack/packer/opt/dashboard-nvim/autoload/dashboard/utils.vim
+117.585  000.103  000.103: sourcing /home/a/.local/share/nvim/site/pack/packer/opt/dashboard-nvim/autoload/dashboard/section.vim
+118.188  000.219  000.219: sourcing /usr/share/nvim/runtime/autoload/provider/clipboard.vim
+122.335  000.112  000.112: sourcing /home/a/.local/share/nvim/site/pack/packer/opt/dashboard-nvim/syntax/dashboard.vim
+137.216  020.587: VimEnter autocommands
+137.222  000.006: UIEnter autocommands
+137.227  000.005: before starting main loop
+141.945  004.717: first screen update
+141.952  000.007: --- NVIM STARTED ---

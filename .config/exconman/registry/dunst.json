@@ -5,7 +5,8 @@
 		"pattern": "background = .*",
 		"substitute": "background = \"{value}\"",
 		"replace": "matched_text",
-		"read_value_path": false
+		"read_value_path": false,
+		"multiple": true
 	},
 	{
 		"name": "dunst.foreground",
@@ -13,7 +14,8 @@
 		"pattern": "foreground = .*",
 		"substitute": "foreground = \"{value}\"",
 		"replace": "matched_text",
-		"read_value_path": false
+		"read_value_path": false,
+		"multiple": true
 	},
 	{
 		"name": "dunst.frame_color",

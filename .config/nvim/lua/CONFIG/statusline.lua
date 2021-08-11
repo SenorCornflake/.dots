@@ -306,53 +306,56 @@ SetupStatusline = function(symbol)
 	}
 
 	local setup_highlights = function()
-		local mode = vim.fn.mode()
-		vim.cmd(":silent hi GalaxyMode guifg=" .. colors.mode_fg.gui .. " guibg=" .. mode_colors[mode].gui .. " ctermfg=" .. colors.mode_fg.cterm .. " ctermbg=" .. mode_colors[mode].cterm)
-		vim.cmd(":silent hi GalaxyModePowerline guifg=" .. mode_colors[mode].gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. mode_colors[mode].cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi StatusLineFileIcon guifg=" .. colors.file.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.file.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi StatusLineFileName guifg=" .. colors.file.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.file.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi StatusLineFileNameDecor guifg=" .. colors.alt_bg.gui .. " guibg=" .. colors.bg.gui .. " ctermfg=" .. colors.alt_bg.cterm .. " ctermbg=" .. colors.bg.cterm)
+		vim.cmd(":silent hi StatusLineFileSize guifg=" .. colors.fg.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.fg.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi StatusLineLineColumn guifg=" .. colors.fg.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.fg.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi StatusLineLinePercent guifg=" .. colors.fg.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.fg.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
 
-		-- TODO: Avoid this
-		vim.cmd(":silent hi GalaxyFileIcon guifg=" .. colors.file.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.file.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
-		vim.cmd(":silent hi GalaxyFileName guifg=" .. colors.file.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.file.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
-		vim.cmd(":silent hi GalaxyFileNameDecor guifg=" .. colors.alt_bg.gui .. " guibg=" .. colors.bg.gui .. " ctermfg=" .. colors.alt_bg.cterm .. " ctermbg=" .. colors.bg.cterm)
-		vim.cmd(":silent hi GalaxyFileSize guifg=" .. colors.fg.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.fg.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
-		vim.cmd(":silent hi GalaxyLineColumn guifg=" .. colors.fg.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.fg.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
-		vim.cmd(":silent hi GalaxyLinePercent guifg=" .. colors.fg.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.fg.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi StatusLineGitBranchDecor guifg=" .. colors.alt_bg.gui .. " guibg=" .. colors.bg.gui .. " ctermfg=" .. colors.alt_bg.cterm .. " ctermbg=" .. colors.bg.cterm)
+		vim.cmd(":silent hi StatusLineGitBranch guifg=" .. colors.git_branch.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.git_branch.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi StatusLineDiffAdd guifg=" .. colors.diff_add.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diff_add.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi StatusLineDiffModified guifg=" .. colors.diff_modified.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diff_modified.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi StatusLineDiffRemove guifg=" .. colors.diff_removed.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diff_removed.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
 
-		vim.cmd(":silent hi GalaxyGitBranchDecor guifg=" .. colors.alt_bg.gui .. " guibg=" .. colors.bg.gui .. " ctermfg=" .. colors.alt_bg.cterm .. " ctermbg=" .. colors.bg.cterm)
-		vim.cmd(":silent hi GalaxyGitBranch guifg=" .. colors.git_branch.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.git_branch.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
-		vim.cmd(":silent hi GalaxyDiffAdd guifg=" .. colors.diff_add.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diff_add.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
-		vim.cmd(":silent hi GalaxyDiffModified guifg=" .. colors.diff_modified.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diff_modified.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
-		vim.cmd(":silent hi GalaxyDiffRemove guifg=" .. colors.diff_removed.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diff_removed.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi StatusLineLanguageServer guifg=" .. colors.language_server.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.language_server.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi StatusLineDiagnosticError guifg=" .. colors.diagnostic_error.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diagnostic_error.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi StatusLineDiagnosticWarn guifg=" .. colors.diagnostic_warn.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diagnostic_warn.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi StatusLineDiagnosticHint guifg=" .. colors.diagnostic_hint.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diagnostic_hint.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+		vim.cmd(":silent hi StatusLineDiagnosticInfo guifg=" .. colors.diagnostic_info.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diagnostic_info.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+	end
+	setup_highlights()
 
-		vim.cmd(":silent hi GalaxyLanguageServer guifg=" .. colors.language_server.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.language_server.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
-		vim.cmd(":silent hi GalaxyDiagnosticError guifg=" .. colors.diagnostic_error.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diagnostic_error.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
-		vim.cmd(":silent hi GalaxyDiagnosticWarn guifg=" .. colors.diagnostic_warn.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diagnostic_warn.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
-		vim.cmd(":silent hi GalaxyDiagnosticHint guifg=" .. colors.diagnostic_hint.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diagnostic_hint.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
-		vim.cmd(":silent hi GalaxyDiagnosticInfo guifg=" .. colors.diagnostic_info.gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. colors.diagnostic_info.cterm .. " ctermbg=" .. colors.alt_bg.cterm)
+	local setup_mode_highlights = function(mode)
+		vim.cmd(":silent hi StatusLineMode guifg=" .. colors.mode_fg.gui .. " guibg=" .. mode_colors[mode].gui .. " ctermfg=" .. colors.mode_fg.cterm .. " ctermbg=" .. mode_colors[mode].cterm)
+		vim.cmd(":silent hi StatusLineModeDecor guifg=" .. mode_colors[mode].gui .. " guibg=" .. colors.alt_bg.gui .. " ctermfg=" .. mode_colors[mode].cterm .. " ctermbg=" .. colors.alt_bg.cterm)
 	end
 
 	left({
 		ModeSpacing = {
 			provider = function() return "" end,
 			separator = " ",
-			separator_highlight = "GalaxyMode",
+			separator_highlight = "StatuslineMode",
 		}
 	})
 
 	left({
 		Mode = {
 			provider = function()
-				setup_highlights()
 				local mode = vim.fn.mode()
 				local label = mode_labels[mode] .. " "
+				setup_mode_highlights(mode)
 				return label
-			end
+			end,
+			highlight = "StatusLineMode"
 		}
 	})
 
 	left({
-		ModePowerline = {
+		ModeDecor = {
 			provider = function() return symbol["left"] .. " " end,
+			highlight = "StatusLineModeDecor"
 		}
 	})
 
@@ -360,7 +363,8 @@ SetupStatusline = function(symbol)
 		LineColumn = {
 			provider = "LineColumn",
 			separator = " ",
-			separator_highlight = "GalaxyLineColumn"
+			separator_highlight = "StatusLineLineColumn",
+			highlight = "StatusLineLineColumn"
 		}
 	})
 
@@ -368,13 +372,15 @@ SetupStatusline = function(symbol)
 		LinePercent = {
 			provider = "LinePercent",
 			separator = " ",
-			separator_highlight = "GalaxyLinePercent"
+			separator_highlight = "StatusLineLinePercent",
+			highlight = "StatusLineLinePercent"
 		}
 	})
 
 	left({
 		FileIcon = {
 			provider = "FileIcon",
+			highlight = "StatusLineFileIcon"
 		}
 	})
 
@@ -382,13 +388,15 @@ SetupStatusline = function(symbol)
 		FileName = {
 			provider = "FileName",
 			separator = symbol["left"],
-			separator_highlight = "GalaxyFileNameDecor",
+			separator_highlight = "StatusLineFileNameDecor",
+			highlight = "StatusLineFileName"
 		}
 	})
 
 	right({
 		GitBranchDecor = {
-			provider = function() return symbol["right"] end
+			provider = function() return symbol["right"] end,
+			highlight = "StatusLineGitBranchDecor"
 		}
 	})
 
@@ -396,9 +404,10 @@ SetupStatusline = function(symbol)
 		GitBranch = {
 			provider = "GitBranch",
 			separator = " ",
-			separator_highlight = "GalaxyGitBranch",
+			separator_highlight = "StatusLineGitBranch",
  			condition = require('galaxyline.condition').check_git_workspace,
-			icon = " "
+			icon = " ",
+			highlight = "StatusLineGitBranch"
 		}
 	})
 
@@ -406,24 +415,27 @@ SetupStatusline = function(symbol)
 		DiffAdd = {
 			provider = "DiffAdd",
 			separator = " ",
-			separator_highlight = "GalaxyDiffAdd",
+			separator_highlight = "StatusLineDiffAdd",
 			icon = "+",
+			highlight = "StatusLineDiffAdd"
 		}
 	})
 	right({
 		DiffModified = {
 			provider = "DiffModified",
 			separator = " ",
-			separator_highlight = "GalaxyDiffModified",
+			separator_highlight = "StatusLineDiffModified",
 			icon = "~",
+			highlight = "StatusLineDiffModified",
 		}
 	})
 	right({
 		DiffRemove = {
 			provider = "DiffRemove",
 			separator = " ",
-			separator_highlight = "GalaxyDiffRemove",
+			seperator_highlight = "StatusLineDiffRemoved",
 			icon = "-",
+			highlight = "StatusLineDiffRemoved",
 		}
 	})
 	
@@ -438,34 +450,39 @@ SetupStatusline = function(symbol)
 
 				return "  "
 			end,
-		}
+			highlight = "StatusLineLanguageServer"
+		},
 	})
 
 	right({
 		DiagnosticError = {
 			provider = "DiagnosticError",
-			icon = " "
-		}
+			icon = " ",
+			highlight = "StatusLineDiagnosticError"
+		},
 	})
 
 	right({
 		DiagnosticWarn = {
 			provider = "DiagnosticWarn",
-			icon = " "
+			icon = " ",
+			highlight = "StatusLineDiagnosticWarn"
 		}
 	})
 
 	right({
 		DiagnosticHint = {
 			provider = "DiagnosticHint",
-			icon = " "
+			icon = " ",
+			highlight = "StatusLineDiagnosticHint"
 		}
 	})
 
 	right({
 		DiagnosticInfo = {
 			provider = "DiagnosticInfo",
-			icon = " "
+			icon = " ",
+			highlight = "StatusLineDiagnosticInfo"
 		}
 	})
 end

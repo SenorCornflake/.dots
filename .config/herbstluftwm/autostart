@@ -6,7 +6,7 @@ hc() {
 
 #hc emit_hook reload
 
-sh ~/MAIN/scripts/autostart.sh
+sh $DOTFILES_BRAIN_ROOT/scripts/autostart.sh
 
 # MONITORS #
 hc detect_monitors
@@ -20,4 +20,4 @@ hc unlock
 
 killall polybar
 exconman set polybar.pin_workspaces "false"
-python ~/MAIN/scripts/launch_polybars.py &
+python $DOTFILES_BRAIN_ROOT/scripts/launch_polybars.py &

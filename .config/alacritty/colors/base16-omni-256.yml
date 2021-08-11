@@ -1,0 +1,42 @@
+# Base16 omni 256 - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0x191622'
+    foreground: '0xe1e1e6'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x191622'
+    cursor: '0xe1e1e6'
+
+  # Normal colors
+  normal:
+    black:   '0x191622'
+    red:     '0x67e480'
+    green:   '0x67e480'
+    yellow:  '0xe7de79'
+    blue:    '0x78d1e1'
+    magenta: '0x78d1e1'
+    cyan:    '0x78d1e1'
+    white:   '0xe1e1e6'
+
+  # Bright colors
+  bright:
+    black:   '0x5a4b81'
+    red:     '0x67e480'
+    green:   '0x67e480'
+    yellow:  '0xe7de79'
+    blue:    '0x78d1e1'
+    magenta: '0x78d1e1'
+    cyan:    '0x78d1e1'
+    white:   '0xe1e1e6'
+
+  indexed_colors:
+    - { index: 16, color: '0xe7de79' }
+    - { index: 17, color: '0xa1efe4' }
+    - { index: 18, color: '0x252131' }
+    - { index: 19, color: '0x30354e' }
+    - { index: 20, color: '0x000000' }
+    - { index: 21, color: '0xe1e1e6' }

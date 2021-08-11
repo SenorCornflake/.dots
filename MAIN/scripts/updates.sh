@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 while true; do
 	sudo pacman -Sy >> /dev/null
-	sudo pacman -Qu | wc -l > ~/MAIN/tmp/updates.txt
+	sudo pacman -Qu | wc -l > $DOTFILES_BRAIN_ROOT/tmp/updates.txt
 	notify-send "Found $(sudo pacman -Qu | wc -l) updates"
 	sleep 1500
 done
