@@ -7,9 +7,7 @@ end
 
 vim = vim -- Less "undefined global" warnings this way
 
-local colorscheme = "srcery"
 local powerline_symbol = "up_slant"
-
 -------------
 -- General --
 -------------
@@ -21,3 +19,4 @@ require "CONFIG.lsp"
 require "CONFIG.statusline"(powerline_symbol)
 
 vim.cmd "doautocmd User Restarted"
+

@@ -1,5 +1,5 @@
 -- Install packer if not installed
-local install_path = vim.fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
+local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	vim.cmd("!git clone https://github.com/wbthomason/packer.nvim "..install_path)
@@ -14,7 +14,7 @@ require("packer").startup(function(use)
 	-- Lua Plugin Manager
 	use {
 		"wbthomason/packer.nvim",
-		opt = true,
+		opt = false,
 		config = function()
 			require "CONFIG.PLUGINS.packer.bindings"
 		end
@@ -23,8 +23,8 @@ require("packer").startup(function(use)
 	local function color(repo)
 		use {
 			repo,
-			cmd = "color",
-			event = "ColorSchemePre"
+			-- cmd = "color",
+			-- event = "ColorSchemePre"
 		}
 	end
 
@@ -40,16 +40,18 @@ require("packer").startup(function(use)
 	color "yonlu/omni.vim"
 	use {
 		"folke/tokyonight.nvim",
-		cmd = "color",
-		event = "ColorSchemePre",
+		-- cmd = "color",
+		-- event = "ColorSchemePre",
+		opt = false,
 		config = function()
 			require "CONFIG.PLUGINS.tokyonight.setup"
 		end
 	}
 	use {
 		"Shatur/neovim-ayu",
-		cmd = "color",
-		event = "ColorSchemePre",
+		-- cmd = "color",
+		-- event = "ColorSchemePre",
+		opt = false,
 		config = function()
 			require "CONFIG.PLUGINS.nvim-ayu.setup"
 		end
@@ -272,19 +274,3 @@ require("packer").startup(function(use)
 
 	use "dstein64/vim-startuptime"
 end)
-
--- Load all plugin configs
--- local plugin_configs = util.scandir("~/.config/nvim/lua/CONFIG/PLUGINS")
-
--- for i, config in pairs(plugin_configs) do
--- 	local plugins_dir = util.expanduser("~/.config/nvim/lua/CONFIG/PLUGINS/")
--- 	local filename = config:gsub(".lua", "")
-
--- 	if util.isdir(plugins_dir .. config) then
--- 		if util.file_exists(plugins_dir .. config .. "/setup.lua") then
--- 			require("CONFIG.PLUGINS." .. filename .. ".setup")
--- 		end
--- 	else
--- 		require ("CONFIG.PLUGINS." .. filename)
--- 	end
--- end
