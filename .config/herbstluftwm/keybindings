@@ -14,6 +14,7 @@ Alt=Mod1
 
 hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
+hc keybind $Mod-Shift-e spawn autorandr --change
 hc keybind $Mod-w close
 hc keybind $Mod-Return spawn sh -c "WXINIT_X11_SCALE_FACTOR=1 ${TERMINAL:-xterm}"
 
@@ -103,8 +104,8 @@ hc keybind $Mod-Shift-Tab   cycle_all -1
 hc keybind $Mod-i jumpto urgent
 
 # custom
-hc keybind "$Mod-Insert" spawn python $DOTFILES_BRAIN_ROOT/menus/keyboard_layout.py
-hc keybind $Mod-c spawn python $DOTFILES_BRAIN_ROOT/commander/main.py $DOTFILES_BRAIN_ROOT/commander/commands.json
+hc keybind "$Mod-Insert" spawn python $DOTFILES_BRAIN_ROOT/scripts/gui/keyboard_layout.py
+hc keybind $Mod-c spawn python $DOTFILES_BRAIN_ROOT/scripts/gui/commander.py
 hc keybind $Mod-a spawn rofi -modi drun -show drun
 hc keybind $Alt-a spawn rofi -modi window -show window
 

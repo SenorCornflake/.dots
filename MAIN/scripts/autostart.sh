@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
-
 # Start Programs that are always started regardless of wm
+
+autorandr --change
 
 # Notification daemon
 pidof dunst || dunst &
 
 # Update interval
-pgrep updates.sh || $DOTFILES_BRAIN_ROOT/scripts/updates.sh &
+#pgrep updates.sh || sh $DOTFILES_BRAIN_ROOT/scripts/updates.sh &
 
 # Compositor
 pidof picom || picom --experimental-backends --shadow-ignore-shaped &

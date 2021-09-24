@@ -16,7 +16,7 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 
 # Other
-export QT_QPA_PLATFORMTHEME="kde"
+export QT_QPA_PLATFORMTHEME="qt5ct"
 #export QT_QPA_PLATFORMTHEME="qt5ct"
 export BAT_THEME="base16" # Set bat theme to base16, this is the program FZF in vim uses to highlight code previews
 export TODO_DIR="~/.config/todotxt"
@@ -37,7 +37,7 @@ export VIDEO=vlc
 # highlight (for ranger previews)
 export HIGHLIGHT_STYLE=base16
 
-export DOTFILES_BRAIN_ROOT="$HOME/MAIN"
+export DOTFILES_BRAIN_ROOT="$HOME/.brain"
 
 
 # Man pages highlight
@@ -55,4 +55,5 @@ export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 1) # red
 export LESS_TERMCAP_ue=$(tput sgr0)
 # End bold, blinking, standout, underline
 export LESS_TERMCAP_me=$(tput sgr0)
+
 if [ -e /home/a/.nix-profile/etc/profile.d/nix.sh ]; then . /home/a/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

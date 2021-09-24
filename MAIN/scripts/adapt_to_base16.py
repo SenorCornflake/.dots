@@ -58,6 +58,15 @@ exconman_settings = {
 	"polybar.4_label_3": "#" + base16["base0E"],
 	"polybar.4_title": "#" + base16["base0A"],
 
+	"polybar.5_bg": "#" + base16["base00"],
+	"polybar.5_fg": "#" + base16["base05"],
+	"polybar.5_color_1": "#" + base16["base0A"],
+	"polybar.5_color_2": "#" + base16["base0B"],
+	"polybar.5_color_3": "#" + base16["base0C"],
+	"polybar.5_color_4": "#" + base16["base0D"],
+	"polybar.5_color_5": "#" + base16["base0E"],
+	"polybar.5_pointers": "#" + base16["base0F"],
+	"polybar.5_borders": "#" + base16["base0C"],
 
 	"polybar.do_you_even_luft_bg": "#" + base16["base00"],
 	"polybar.do_you_even_luft_fg": "#" + base16["base00"],
@@ -74,9 +83,9 @@ exconman_settings = {
 	"bspwm.presel_feedback_color": "#" + base16["base05"],
 
 	"herbstluftwm.frame_border_normal_color": "#" + base16["base01"],
-	"herbstluftwm.frame_border_active_color": "#" + base16["base0B"],
-	"herbstluftwm.frame_bg_normal_color": "#" + base16["base00"] + "80",
-	"herbstluftwm.frame_bg_active_color": "#" + base16["base00"] + "80",
+	"herbstluftwm.frame_border_active_color": "#" + base16["base03"],
+	"herbstluftwm.frame_bg_normal_color": "#" + base16["base00"],
+	"herbstluftwm.frame_bg_active_color": "#" + base16["base00"],
 	"herbstluftwm.theme.normal.title_color": "#" + base16["base05"],
 	"herbstluftwm.theme.active.title_color": "#" + base16["base01"],
 	"herbstluftwm.theme.active.color": "#" + base16["base05"],
@@ -169,4 +178,4 @@ elif extension == ".json":
 	os.system("exconman load {}".format(layouts_dir + "/" + layout))
 
 # Restart applications
-os.system("sh $DOTFILES_BRAIN_ROOT/scripts/restart_all.sh")
+os.system("sh {}/scripts/restart_all.sh".format(os.getenv("DOTFILES_BRAIN_ROOT")))

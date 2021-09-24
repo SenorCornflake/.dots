@@ -36,3 +36,5 @@ alias f='lfrun'
 alias fetch='macchina -p -t Boron --no-box --custom-ascii ~/MAIN/tmp/arch_ascii.txt --custom-ascii-color Blue'
 
 fetch
+
+source /home/a/.config/broot/launcher/bash/br

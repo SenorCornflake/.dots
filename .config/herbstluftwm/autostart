@@ -6,7 +6,32 @@ hc() {
 
 #hc emit_hook reload
 
-sh $DOTFILES_BRAIN_ROOT/scripts/autostart.sh
+# AUTOSTART
+# Notification daemon
+pidof dunst || dunst &
+
+# Update interval
+# pgrep updates.sh || sh $DOTFILES_BRAIN_ROOT/scripts/updates.sh &
+
+# Compositor
+pidof picom || picom --experimental-backends --shadow-ignore-shaped &
+
+# Thingy
+pidof xsettingsd || xsettingsd &
+
+# Polkit
+pidof /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 || /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# X settings
+xset r rate 250 30 
+xsetroot -cursor_name left_ptr
+
+# Enable nightmode if it was enabled prior to restarting
+python $DOTFILES_BRAIN_ROOT/scripts/night_mode.py
+
+# WALLPAPERS #
+sh $DOTFILES_BRAIN_ROOT/scripts/generate_wallapers.sh
+sh $DOTFILES_BRAIN_ROOT/scripts/set_wallpaper.sh
 
 # MONITORS #
 hc detect_monitors

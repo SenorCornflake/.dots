@@ -1,1 +1,1 @@
-generic.sh
+semi-stable.sh

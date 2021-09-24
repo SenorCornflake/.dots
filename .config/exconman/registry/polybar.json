@@ -310,5 +310,77 @@
 		"substitute": "do_you_even_luft_fg_2 = {value}",
 		"replace": "matched_text",
 		"read_value_path": false
+	},
+	{
+		"name": "polybar.5_fg",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "5_fg = .*",
+		"substitute": "5_fg = {value}",
+		"replace": "matched_text",
+		"read_value_path": false
+	},
+	{
+		"name": "polybar.5_bg",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "5_bg = .*",
+		"substitute": "5_bg = {value}",
+		"replace": "matched_text",
+		"read_value_path": false
+	},
+	{
+		"name": "polybar.5_color_1",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "5_color_1 = .*",
+		"substitute": "5_color_1 = {value}",
+		"replace": "matched_text",
+		"read_value_path": false
+	},
+	{
+		"name": "polybar.5_color_2",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "5_color_2 = .*",
+		"substitute": "5_color_2 = {value}",
+		"replace": "matched_text",
+		"read_value_path": false
+	},
+	{
+		"name": "polybar.5_color_3",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "5_color_3 = .*",
+		"substitute": "5_color_3 = {value}",
+		"replace": "matched_text",
+		"read_value_path": false
+	},
+	{
+		"name": "polybar.5_color_4",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "5_color_4 = .*",
+		"substitute": "5_color_4 = {value}",
+		"replace": "matched_text",
+		"read_value_path": false
+	},
+	{
+		"name": "polybar.5_color_5",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "5_color_5 = .*",
+		"substitute": "5_color_5 = {value}",
+		"replace": "matched_text",
+		"read_value_path": false
+	},
+	{
+		"name": "polybar.5_pointers",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "5_pointers = .*",
+		"substitute": "5_pointers = {value}",
+		"replace": "matched_text",
+		"read_value_path": false
+	},
+	{
+		"name": "polybar.5_borders",
+		"file": "~/.config/polybar/config.ini",
+		"pattern": "5_borders = .*",
+		"substitute": "5_borders = {value}",
+		"replace": "matched_text",
+		"read_value_path": false
 	}
 ]

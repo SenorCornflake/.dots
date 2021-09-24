@@ -1,9 +1,9 @@
 [
 	{
 		"name": "misc.wallpaper",
-		"file": "$DOTFILES_BRAIN_ROOT/scripts/set_wallpaper.sh",
-		"pattern": "wallpaper=\".+\"",
-		"substitute": "wallpaper=\"{value}\"",
+		"file": "$DOTFILES_BRAIN_ROOT/storage/wallpaper.txt",
+		"pattern": ".+",
+		"substitute": "{value}",
 		"replace": "matched_text",
 		"read_value_path": false
 	}

@@ -22,11 +22,11 @@ bspc config borderless_monocle "false"
 bspc config gapless_monocle "false"
 bspc config automatic_scheme alternate
 
-bspc config focused_border_color "#d4d4d4"
-bspc config normal_border_color "#222222"
-bspc config active_border_color "#264f78"
-bspc config urgent_border_color "#ce9178"
-bspc config presel_feedback_color "#d4d4d4"
+bspc config focused_border_color "#d4be98"
+bspc config normal_border_color "#282828"
+bspc config active_border_color "#3c3836"
+bspc config urgent_border_color "#a9b665"
+bspc config presel_feedback_color "#d4be98"
 
 sh ~/MAIN/scripts/generate_wallapers.sh
 

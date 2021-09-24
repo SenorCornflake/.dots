@@ -1,0 +1,83 @@
+configuration {
+	font: "AcPlus IBM VGA 9x16 12";
+	show-icons: true;
+	drun-display-format: "{name}";
+	display-drun: "// ";
+}
+
+@theme "/dev/null"
+
+window {
+	width: 100%;
+	height: 100%;
+	text-color: #7a7a7a;
+	location: northwest;
+	anchor: northwest;
+	x-offset: 0;
+	y-offset: 0;
+}
+
+mainbox {
+    children: [listview, inputbar];
+    text-color: #7a7a7a;
+	background-color: #000000;
+	orientation: vertical;
+	padding: 10%;
+}
+
+inputbar {
+    children: [prompt, entry];
+	margin: -2px 0px 0px 0px;
+	background-color: #000000;
+    text-color: #7a7a7a;
+}
+
+prompt {
+    text-color: #7a7a7a;
+	background-color: #000000;
+}
+
+entry {
+    text-color: #b6b6b6;
+	background-color: #000000;
+	width: 100px;
+	margin: 0px 0px 0px -2px;
+}
+
+listview {
+    text-color: #7a7a7a;
+    columns: 10;
+	dynamic: true;
+	background-color: #000000;
+}
+
+element {
+    text-color: #7a7a7a;
+	background-color: #000000;
+}
+
+element-text {
+    text-color: #7a7a7a;
+	background-color: #000000;
+}
+
+element-icon {
+	size: 12px;
+	margin: 0px 10px 0px 10px;
+	background-color: #000000;
+}
+
+element-icon.selected {
+    text-color: #7a7a7a;
+	background-color: #007a7a;
+}
+
+element-text.selected {
+    text-color: #007a7a;
+	background-color: #00007a;
+	text-color: #00f2f2;
+}
+element.selected {
+    text-color: #007a7a;
+	background-color: #000000;
+}

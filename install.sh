@@ -10,7 +10,7 @@ done
 
 for f in "$SCRIPT_DIR"/*; do
 	file_name=`basename "$f"`
-	if [[ "$file_name" != "install.sh" && "$file_name" != ".git" && "$file_name" != ".root" && "$file_name" != ".config" ]]; then
+	if [[ "$file_name" != "install.sh" && "$file_name" != ".git" && "$file_name" != ".root" && "$file_name" != ".config" && "$file_name" != ".gitignore" ]]; then
 		echo "~/$file_name"
 	fi
 done
@@ -37,7 +37,7 @@ done
 for f in "$SCRIPT_DIR"/*; do
 	file_name=`basename "$f"`
 
-	if [[ "$file_name" != "install.sh" && "$file_name" != ".git" && "$file_name" != ".root" && "$file_name" != ".config" ]]; then
+	if [[ "$file_name" != "install.sh" && "$file_name" != ".git" && "$file_name" != ".root" && "$file_name" != ".config" && "$file_name" != ".gitignore" ]]; then
 		echo "rm -rf ~/$file_name"
 		rm -rf ~/"$file_name"
 

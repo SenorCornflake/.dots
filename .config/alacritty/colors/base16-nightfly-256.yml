@@ -1,0 +1,42 @@
+# Base16 nightfly 256 - alacritty color config
+# Generated
+colors:
+  # Default colors
+  primary:
+    background: '0x011627'
+    foreground: '0xc3ccdc'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x011627'
+    cursor: '0xc3ccdc'
+
+  # Normal colors
+  normal:
+    black:   '0x011627'
+    red:     '0xae81ff'
+    green:   '0xecc48d'
+    yellow:  '0x21c7a8'
+    blue:    '0x82aaff'
+    magenta: '0xc792ea'
+    cyan:    '0xff5874'
+    white:   '0xc3ccdc'
+
+  # Bright colors
+  bright:
+    black:   '0x7c8f8f'
+    red:     '0xae81ff'
+    green:   '0xecc48d'
+    yellow:  '0x21c7a8'
+    blue:    '0x82aaff'
+    magenta: '0xc792ea'
+    cyan:    '0xff5874'
+    white:   '0xc3ccdc'
+
+  indexed_colors:
+    - { index: 16, color: '0xf78c6c' }
+    - { index: 17, color: '0xf78c6c' }
+    - { index: 18, color: '0x092236' }
+    - { index: 19, color: '0x1d3b53' }
+    - { index: 20, color: '0xc3ccdc' }
+    - { index: 21, color: '0xc3ccdc' }

@@ -2,7 +2,7 @@
 
 wmname=$(wmctrl -m | head -n 1 | sed "s/\w\+: //g")
 
-# Reload all kitty instances
+#Reload all kitty instances
 killall -USR1 kitty
 
 # Dunst reload
@@ -27,4 +27,4 @@ if [[ $wmname != "kwin" && $wmname != "mutter" ]]; then
 fi
 
 # Reload neovim
-python $DOTFILES_BRAIN_ROOT/scripts/neovim_command.py ":luafile ~/.config/nvim/init.lua" &
+timeout 5s python $DOTFILES_BRAIN_ROOT/scripts/neovim_command.py ":lua require('neovim_configuration.util').reload()"

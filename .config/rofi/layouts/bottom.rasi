@@ -5,6 +5,8 @@ configuration {
 	display-drun: ">";
 }
 
+@theme "/dev/null"
+
 window {
 	width: 100%;
 	height: 25%;
@@ -55,10 +57,24 @@ element {
 	padding: 5px 10px;
 }
 
-element-icon {
-	size: 12px;
+element-text {
+    background-color: #00000000;
+    text-color: @bottom-fg;
 }
 
+element-icon {
+	size: 12px;
+    background-color: #00000000;
+}
+
+element-icon.selected {
+    background-color: @bottom-bg-focused;
+    text-color: @bottom-fg-focused;
+}
+element-text.selected {
+    background-color: @bottom-bg-focused;
+    text-color: @bottom-fg-focused;
+}
 element.selected {
     background-color: @bottom-bg-focused;
     text-color: @bottom-fg-focused;

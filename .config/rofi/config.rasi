@@ -1,17 +1,17 @@
-@import "layouts/bottom.rasi"
+@import "layouts/ascii.rasi"
 
 * {
-bottom-bg: #1e1e1e;
-bottom-fg: #d4d4d4;
-bottom-fg-focused: #1e1e1e;
-bottom-bg-focused: #d7ba7d;
-bottom-prompt-fg: #c586c0;
+bottom-bg: #1d2021;
+bottom-fg: #d4be98;
+bottom-fg-focused: #1d2021;
+bottom-bg-focused: #d8a657;
+bottom-prompt-fg: #ea6962;
 
 	center-border-width: 2px;
-center-border-color: #d7ba7d;
-center-bg: #1e1e1e;
-center-fg: #d4d4d4;
-center-fg-focused: #1e1e1e;
-center-bg-focused: #d7ba7d;
-center-prompt-fg: #ce9178;
+center-border-color: #d8a657;
+center-bg: #1d2021;
+center-fg: #d4be98;
+center-fg-focused: #1d2021;
+center-bg-focused: #d8a657;
+center-prompt-fg: #a9b665;
 }
