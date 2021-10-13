@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-sh $DOTFILES_BRAIN_ROOT/scripts/restart.sh

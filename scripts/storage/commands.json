@@ -1,0 +1,71 @@
+[
+	{
+		"name": "Change wallpaper",
+		"action": "python $DOT_ROOT/scripts/gui/change_wallpaper.py"
+	},
+	{
+		"name": "Toggle Nightmode",
+		"action": "python $DOT_ROOT/scripts/night_mode.py toggle"
+	},
+    {
+        "name": "Exit",
+        "action": [
+            {
+                "name": "Logout",
+                "prompt": "Are you sure?",
+                "action": [
+                    {
+                        "name": "Cancel",
+                        "action": ""
+                    },
+                    {
+                        "name": "Continue",
+                        "action": "kill -9 -1"
+                    }
+                ]
+            },
+            {
+                "name": "Reboot",
+                "prompt": "Are you sure?",
+                "action": [
+                    {
+                        "name": "Cancel",
+                        "action": ""
+                    },
+                    {
+                        "name": "Continue",
+                        "action": "shutdown -r now"
+                    }
+                ]
+            },
+            {
+                "name": "Shutdown",
+                "prompt": "Are you sure?",
+                "action": [
+                    {
+                        "name": "Cancel",
+                        "action": ""
+                    },
+                    {
+                        "name": "Continue",
+                        "action": "shutdown now"
+                    }
+                ]
+            },
+            {
+                "name": "Suspend",
+                "prompt": "Are you sure?",
+                "action": [
+                    {
+                        "name": "Cancel",
+                        "action": ""
+                    },
+                    {
+                        "name": "Continue",
+                        "action": "systemctl suspend"
+                    }
+                ]
+            }
+        ]
+    }
+]

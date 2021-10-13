@@ -1,49 +1,15 @@
-#/bin/bash
-shopt -s dotglob
+#!/usr/bin/env bash
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+pushd ~/.dots/config
 
-
-for f in "$SCRIPT_DIR"/.config/*; do
-	echo "~/.config/`basename "$f"`"
-done
-
-for f in "$SCRIPT_DIR"/*; do
-	file_name=`basename "$f"`
-	if [[ "$file_name" != "install.sh" && "$file_name" != ".git" && "$file_name" != ".root" && "$file_name" != ".config" && "$file_name" != ".gitignore" ]]; then
-		echo "~/$file_name"
-	fi
-done
-
-echo
-read -p "The previous files will be forcefully deleted if they exist. Continue? [y/n] " -n 1 -r
-
-echo    # move to a new line
-if [[ ! $REPLY =~ ^[Yy]$ ]]
-then
-    exit 1
+if [[ $1 == "system" || $1 == "all" ]]; then
+	sudo nixos-rebuild switch --flake .#
 fi
 
-for f in "$SCRIPT_DIR"/.config/*; do
-	file_name=`basename "$f"`
+if [[ $1 == "home" || $1 == "all" ]]; then
+	nix build .#homeManagerConfigurations.a.activationPackage --impure
+	./result/activate
+	rm -rf ./result
+fi
 
-	echo "rm -rf ~/.config/$file_name"
-	rm -rf ~/.config/"$file_name"
-
-	echo "ln -s $f ~/.config/$file_name"
-	ln -s $f ~/.config/"$file_name"
-done
-
-for f in "$SCRIPT_DIR"/*; do
-	file_name=`basename "$f"`
-
-	if [[ "$file_name" != "install.sh" && "$file_name" != ".git" && "$file_name" != ".root" && "$file_name" != ".config" && "$file_name" != ".gitignore" ]]; then
-		echo "rm -rf ~/$file_name"
-		rm -rf ~/"$file_name"
-
-		echo "ln -s $f ~/$file_name"
-		ln -s $f ~/"$file_name"
-	fi
-done
-
-shopt -u dotglob
+popd
