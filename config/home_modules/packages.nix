@@ -40,5 +40,6 @@
     bat
     wmctrl
     libreoffice
+    todo-txt-cli
   ];
 }

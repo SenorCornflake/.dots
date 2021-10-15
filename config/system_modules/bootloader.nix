@@ -16,6 +16,5 @@
     #  }
     #'';
     useOSProber = true;
-    theme = pkgs.libsForQt5.breeze-grub;
   };
 }

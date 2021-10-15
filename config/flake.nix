@@ -49,7 +49,7 @@
             imports = [
               ./home_modules/neovim.nix
               ./home_modules/zsh.nix
-              ./home_modules/kitty.nix
+              ./home_modules/kitty/default.nix
               ./home_modules/exa.nix
               ./home_modules/home-manager.nix
               ./home_modules/picom.nix
@@ -65,6 +65,7 @@
               ./home_modules/autorandr.nix
               ./home_modules/xinit.nix
               ./home_modules/git.nix
+              ./home_modules/todo-txt.nix
               ./home_modules/packages.nix
             ];
           };

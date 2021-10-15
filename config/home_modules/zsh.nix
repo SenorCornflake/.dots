@@ -23,6 +23,7 @@
       _s = "sh $DOT_ROOT/install.sh system";
       _a = "sh $DOT_ROOT/install.sh all";
       X = "startx ~/.config/xinit/xinitrc";
+      t = "todo.sh -c";
     };
 
     plugins = [ 
@@ -51,18 +52,20 @@
         };
       }
     ];
-
+    
     sessionVariables = {
       MANPAGER = "nvim +Man!";
       MANWIDTH = 999;
-      DOT_ROOT = "$HOME/.dots";
-      WALL_ROOT = "$HOME/Pictures/wallpapers";
-      PATH = "~/.local/bin:$PATH";
       EDITOR = "nvim";
       VISUAL = "nvim";
       TERMINAL = "kitty";
       BROWSER = "firefox";
       VIDEO = "mpv";
+
+      DOT_ROOT = "$HOME/.dots";
+      WALL_ROOT = "$HOME/Pictures/wallpapers";
+      PATH = "~/.local/bin:$PATH";
+      TODOTXT_CFG_FILE = "$XDG_CONFIG_HOME/todo/todo.cfg";
 
       # Highlight man pages in less (keep this there even though i use neovim for man pages)
       LESS_TERMCAP_mb = "$(tput bold; tput setaf 2)";

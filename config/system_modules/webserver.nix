@@ -37,6 +37,7 @@ in
             default_type application/octet-stream;
             client_max_body_size 10M;
             server_tokens off;
+            allow all;
 
             server {
               listen 0.0.0.0:80;
@@ -44,6 +45,7 @@ in
               server_name arsenal.dv;
               root /srv/http/arsenal.dv/public_html;
               index index.php index.html;
+              allow all;
               
               ${phpmyadminConfig}
 
@@ -52,6 +54,7 @@ in
               }
 
               location ~ [^/]\.php(/|$) {
+                allow all;
                 try_files $uri =404;
                 fastcgi_split_path_info ^(.+?\.php)(/.*)$;
                 fastcgi_pass unix:${config.services.phpfpm.pools.mypool.socket};
@@ -98,8 +101,12 @@ in
           "arsenal.dv"
         ];
       };
+      firewall = {
+        enable = false;
+      };
     };
-
+    
+    # Apache does work, but for some reason phpmyadmin is just loaded as a blank page, so until I figure out what is happening, I'll have to use nginx
     # services = {
     #   httpd = {
     #     enable = true;

@@ -95,6 +95,9 @@ in {
       (vimPlugin {
         repo = "marko-cerovac/material.nvim";
       })
+      (vimPlugin {
+        repo = "wuelnerdotexe/vim-enfocado";
+      })
     ];
   };
 }

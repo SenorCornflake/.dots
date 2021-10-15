@@ -7,7 +7,10 @@
     terminus_font_ttf
     termsyn
     (nerdfonts.override {
-      fonts = ["Iosevka"];
+      fonts = [
+        "Iosevka"
+        "VictorMono"
+      ];
     })
     scheherazade-new
     scheherazade
