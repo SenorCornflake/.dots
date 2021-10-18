@@ -2,22 +2,22 @@
 
 {
   home.file."autostart" = {
-    text = builtins.readFile ../config/herbstluftwm/autostart;
+    text = builtins.readFile ../files/herbstluftwm/autostart;
     target = ".config/herbstluftwm/autostart";
     executable = true;
   };
   home.file."rules" = {
-    text = builtins.readFile ../config/herbstluftwm/rules;
+    text = builtins.readFile ../files/herbstluftwm/rules;
     target = ".config/herbstluftwm/rules";
     executable = true;
   };
   home.file."keybindings" = {
-    text = builtins.readFile ../config/herbstluftwm/keybindings;
+    text = builtins.readFile ../files/herbstluftwm/keybindings;
     target = ".config/herbstluftwm/keybindings";
     executable = true;
   };
   home.file."settings" = {
-    text = builtins.readFile ../config/herbstluftwm/settings;
+    text = builtins.readFile ../files/herbstluftwm/settings;
     target = ".config/herbstluftwm/settings";
     executable = true;
   };

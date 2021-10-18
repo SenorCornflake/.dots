@@ -2,7 +2,7 @@
 
 {
   xdg.configFile."xinit/xinitrc" = {
-    source = ../config/xinit/xinitrc;
+    source = ../files/xinit/xinitrc;
     executable = true;
     target = "xinit/xinitrc";
   };

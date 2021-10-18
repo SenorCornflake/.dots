@@ -5,15 +5,17 @@
     enable = true;
 
     iconTheme = {
-      name = "Arc";
-      package = pkgs.arc-icon-theme;
+      name = "Adwaita";
+      package = pkgs.gnome.adwaita-icon-theme;
     };
 
     theme = {
-      name = "Arc-Dark";
-      package = pkgs.arc-theme;
+      name = "Adwaita-dark";
+      package = pkgs.gnome.gnome-themes-extra;
     };
 
     font.name = "Iosevka Nerd Font, 10";
+
+    gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
   };
 }

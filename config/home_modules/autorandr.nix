@@ -7,7 +7,7 @@
 
   xdg.configFile."autorandr" = {
     target = "autorandr";
-    source = ../config/autorandr;
+    source = ../files/autorandr;
     recursive = true;
   };
 }

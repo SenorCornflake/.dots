@@ -28,3 +28,19 @@ require "fzf-lua".setup {
 }
 
 vim.cmd "autocmd FileType fzf tnoremap <silent> <buffer> <M-q> <C-\\><C-n>:q<CR>"
+
+
+local actions = require "fzf-lua.actions"
+
+require "fzf-lua".setup {
+	winopts = {
+		win_width = 0.79,
+		win_height = 0.89,
+		win_row = 0.30,
+		win_col = 0.50,
+		win_border       = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
+		hl_fzfBorder = "TelescopeBorder",
+	},
+}
+
+vim.cmd "autocmd FileType fzf tnoremap <silent> <buffer> <M-q> <C-\\><C-n>:q<CR>"

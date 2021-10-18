@@ -10,6 +10,10 @@
       size = 1000;
       path = "$XDG_DATA_HOME/zsh/history";
     };
+    
+    completionInit = ''
+      autoload -U compinit && compinit -d ~/.config/zsh/zcompdump
+    '';
 
     shellAliases = {
       v = "nvim";
@@ -67,6 +71,8 @@
       PATH = "~/.local/bin:$PATH";
       TODOTXT_CFG_FILE = "$XDG_CONFIG_HOME/todo/todo.cfg";
 
+      NPM_CONFIG_USERCONFIG = "$XDG_CONFIG_HOME/npm/npmrc";
+
       # Highlight man pages in less (keep this there even though i use neovim for man pages)
       LESS_TERMCAP_mb = "$(tput bold; tput setaf 2)";
       # Start bold
@@ -98,6 +104,8 @@
       zstyle ':completion:*' matcher-list ${"''"} 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*' # match all case
       _comp_options+=(globdots) # complete hidden files
       bindkey '^[[Z' reverse-menu-complete
+
+      any-nix-shell zsh --info-right | source /dev/stdin
 
       PROMPT=' %F{blue}%~%f > '
       macchina -p -t Boron --no-box

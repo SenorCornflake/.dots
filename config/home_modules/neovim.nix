@@ -1,4 +1,5 @@
 { config, pkgs, lib, ... }:
+
 let
   # THANKS TO "https://breuer.dev/blog/nixos-home-manager-neovim"
 
@@ -16,13 +17,13 @@ in {
   
   xdg.configFile."lua" = {
     target = "nvim/lua";
-    source = ../config/nvim/lua;
+    source = ../files/nvim/lua;
     recursive = true;
   };
 
   xdg.configFile."main.lua" = {
     target = "nvim/main.lua";
-    source = ../config/nvim/main.lua;
+    source = ../files/nvim/main.lua;
     recursive = false;
   };
 
@@ -97,6 +98,9 @@ in {
       })
       (vimPlugin {
         repo = "wuelnerdotexe/vim-enfocado";
+      })
+      (vimPlugin {
+        repo = "elkowar/yuck.vim";
       })
     ];
   };

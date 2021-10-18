@@ -41,5 +41,7 @@
     wmctrl
     libreoffice
     todo-txt-cli
+    bottom
+    any-nix-shell
   ];
 }

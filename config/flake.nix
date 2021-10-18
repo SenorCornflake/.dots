@@ -66,6 +66,7 @@
               ./home_modules/xinit.nix
               ./home_modules/git.nix
               ./home_modules/todo-txt.nix
+              ./home_modules/npm.nix
               ./home_modules/packages.nix
             ];
           };

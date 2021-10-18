@@ -1,8 +1,4 @@
 local actions = require "telescope.actions"
--- local pickers = require "telescope.pickers"
--- local finders = require "telescope.finders"
--- local previewers = require "telescope.previewers"
--- local sorters = require "telescope.sorters"
 
 require "telescope".setup {
 	defaults = {
@@ -33,5 +29,26 @@ require "telescope".setup {
 	},
 }
 
-vim.cmd "doautocmd User load_project_plugin"
 require "telescope".load_extension("projects")
+
+
+local actions = require "telescope.actions"
+
+require "telescope".setup {
+	defaults = {
+		layout_config = {
+			horizontal = {
+				width = 0.79,
+				height = 0.93
+			}
+		},
+		mappings = {
+			i = {
+				["<M-q>"] = actions.close
+			},
+			n = {
+				["<M-q>"] = actions.close
+			}
+		}
+	},
+}

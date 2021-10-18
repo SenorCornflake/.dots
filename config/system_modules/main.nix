@@ -55,14 +55,9 @@
   };
 
   security = {
+    # This doesn't seem to do anything
     polkit = {
       enable = true;
-      # allow all local users
-      extraConfig = '' 
-        polkit.addRule(function(action, subject) {
-          if (subject.local) return "yes";
-        });
-      '';
     };
     sudo = {
       enable = true;
