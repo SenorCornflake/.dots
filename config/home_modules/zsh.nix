@@ -70,6 +70,7 @@
       WALL_ROOT = "$HOME/Pictures/wallpapers";
       PATH = "~/.local/bin:$PATH";
       TODOTXT_CFG_FILE = "$XDG_CONFIG_HOME/todo/todo.cfg";
+      SSH_ASKPASS = "";
 
       NPM_CONFIG_USERCONFIG = "$XDG_CONFIG_HOME/npm/npmrc";
 

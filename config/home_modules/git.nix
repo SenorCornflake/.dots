@@ -5,5 +5,10 @@
     enable = true;
     userName = "Baker";
     userEmail = "cmdwannabe@gmail.com";
+    extraConfig = {
+      credential = {
+        helper = "store";
+      };
+    };
   };
 }
