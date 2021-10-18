@@ -91,32 +91,6 @@ util.scandir = function(directory)
 	return util.split(output, "\n")
 end
 
-util.reload = function()
-	for package_name, _ in pairs(package.loaded) do
-		if string.match(package_name, "^neovim_configuration") then
-			package.loaded[package_name] = nil
-			require (package_name)
-		end
-	end
-
-	vim.cmd "doautocmd VimEnter"
-end
-
-util.search_package_cache = function(search, reload) 
-	for package_name, _ in pairs(package.loaded) do
-		if string.match(package_name, search) then
-			if reload then
-				package.loaded[package_name] = nil
-				print("Reloaded " .. package_name)
-			else
-				print(package_name)
-			end
-		end
-	end
-
-	return nil
-end
-
 util.base16ify = function()
 	local theme = {
 		scheme = vim.g.colors_name,
@@ -209,18 +183,6 @@ util.base16ify = function()
 	text = text .. 'base0F: "' .. theme.base0F .. '"'
 
 	return text
-end
-
-util.adapt_system = function()
-	local theme = util.base16ify()
-
-	if theme == nil then return end
-
-	local file = io.open(os.getenv("DOTFILES_BRAIN_ROOT") .. "/tmp/base16_schemes/" .. vim.g.colors_name .. ".yaml", "w")
-	file:write(theme)
-	file:close()
-
-	os.execute("python $DOTFILES_BRAIN_ROOT/scripts/adapt_to_base16.py --perform-long-tasks $DOTFILES_BRAIN_ROOT/tmp/base16_schemes/" .. vim.g.colors_name .. ".yaml " .. vim.g.colors_name)
 end
 
 util.synstack = function()

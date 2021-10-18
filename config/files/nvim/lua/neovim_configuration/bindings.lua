@@ -95,9 +95,6 @@ util.map("n", "<leader>gl", ":Git log<CR>")
 -- Symbols outline
 util.map("n", "<leader>o", ":SymbolsOutline<CR>")
 
--- Reload
-util.map("n", "<leader>,", ":lua require 'neovim_configuration.util'.reload()<CR>")
-
 -- define Project root
 util.map("n", "<leader>.", ":ProjectRoot<CR>")
 
