@@ -2,7 +2,7 @@ import os
 
 wallpapers = os.listdir(os.path.expandvars("$WALL_ROOT"))
 
-cmd = 'echo "{}" | rofi -dmenu -format i -i -p "Layout:"'.format("\n".join(wallpapers))
+cmd = 'echo "{}" | rofi -dmenu -format i -i -p "Wallpaper:"'.format("\n".join(wallpapers))
 
 index = os.popen(cmd).read()[:-1]
 

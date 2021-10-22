@@ -64,6 +64,31 @@ in
                 index index.php index.html;
               }
             }
+            server {
+              listen 0.0.0.0:80;
+              listen [::0]:80;
+              server_name knitandthread.dv;
+              root /srv/http/knitandthread.dv/public_html;
+              index index.php index.html;
+              allow all;
+              
+              ${phpmyadminConfig}
+
+              location / {
+                try_files $uri $uri/ /index.php;
+              }
+
+              location ~ [^/]\.php(/|$) {
+                allow all;
+                try_files $uri =404;
+                fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+                fastcgi_pass unix:${config.services.phpfpm.pools.mypool.socket};
+                fastcgi_index index.php;
+                fastcgi_param  SCRIPT_FILENAME   $document_root$fastcgi_script_name;
+                include ${pkgs.nginx}/conf/fastcgi_params;
+                index index.php index.html;
+              }
+            }
           }
         '';
       };
@@ -99,6 +124,7 @@ in
       hosts = {
         "127.0.0.1" = [
           "arsenal.dv"
+          "knitandthread.dv"
         ];
       };
       firewall = {

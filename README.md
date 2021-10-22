@@ -7,3 +7,4 @@ Run `./install.sh all|system|home` on a flake ready system.
 - Enable all firefox plugins for the first time.
 - You'll have to type your git password at least once after pushing.
 - Recreate mysql website databases.
+- Create custom thunar action to open neovim in kitty

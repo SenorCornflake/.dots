@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let 
-  theme = import ./colors/selenized-black.nix;
+  theme = import ./colors/plain_black.nix;
 in {
   programs.kitty = {
     enable = (if builtins.pathExists /etc/NIXOS then true else false);

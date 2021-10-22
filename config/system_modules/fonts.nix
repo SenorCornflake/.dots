@@ -14,5 +14,6 @@
     })
     scheherazade-new
     scheherazade
+    cantarell-fonts
   ];
 }

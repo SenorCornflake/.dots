@@ -43,5 +43,14 @@
     todo-txt-cli
     bottom
     any-nix-shell
+    filezilla
+    (dwarf-fortress-packages.dwarf-fortress-full.override {
+      enableIntro = false;
+      enableTruetype = true;
+      enableFPS = true;
+      enableSound = false;
+      theme = dwarf-fortress-packages.themes.phoebus;
+    })
+    whatsapp-for-linux
   ];
 }
