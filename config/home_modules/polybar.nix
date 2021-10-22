@@ -52,6 +52,10 @@
 
       "bar/main-primary" = {
         "inherit" = "bar/main";
+        tray.position = "right";
+        tray.detached = false;
+        tray.background = bg;
+        tray.padding = 0;
       };
 
       "module/desktops" = {
