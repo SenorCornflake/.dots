@@ -28,7 +28,7 @@
       ":a" = "sh $DOT_ROOT/install.sh all";
       X = "startx ~/.config/xinit/xinitrc";
       t = "todo.sh -c";
-      ch_nginx = "sudo chmod -R 755 /srv/http && sudo chown -R nginx:nginx /srv/http";
+      ch_nginx = "sudo chmod -R 775 /srv/http && sudo chown -R nginx:nginx /srv/http";
     };
 
     plugins = [ 

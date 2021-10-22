@@ -49,7 +49,7 @@
       enableTruetype = true;
       enableFPS = true;
       enableSound = false;
-      theme = dwarf-fortress-packages.themes.phoebus;
+      theme = dwarf-fortress-packages.themes.meph;
     })
     whatsapp-for-linux
   ];
