@@ -22,10 +22,10 @@
       hc = "herbstclient";
       f = "lf";
       fetch = "macchina -p -t Boron --no-box";
-      _u = "sh $DOT_ROOT/update.sh";
-      _h = "sh $DOT_ROOT/install.sh home";
-      _s = "sh $DOT_ROOT/install.sh system";
-      _a = "sh $DOT_ROOT/install.sh all";
+      ":u" = "sh $DOT_ROOT/update.sh";
+      ":h" = "sh $DOT_ROOT/install.sh home";
+      ":s" = "sh $DOT_ROOT/install.sh system";
+      ":a" = "sh $DOT_ROOT/install.sh all";
       X = "startx ~/.config/xinit/xinitrc";
       t = "todo.sh -c";
       ch_nginx = "sudo chmod -R 755 /srv/http && sudo chown -R nginx:nginx /srv/http";
