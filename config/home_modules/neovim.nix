@@ -77,6 +77,7 @@ in {
       nvim-autopairs
       kommentary
       feline-nvim
+      emmet-vim
 
       (vimPlugin {
         repo = "blackCauldron7/surround.nvim";
