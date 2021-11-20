@@ -68,7 +68,7 @@
       VIDEO = "mpv";
 
       DOT_ROOT = "$HOME/.dots";
-      WALL_ROOT = "$HOME/Pictures/wallpapers";
+      WALL_ROOT = "$DOT_ROOT/wallpapers";
       PATH = "~/.local/bin:$PATH";
       TODOTXT_CFG_FILE = "$XDG_CONFIG_HOME/todo/todo.cfg";
       SSH_ASKPASS = "";

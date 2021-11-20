@@ -15,7 +15,6 @@
     #    initrd /boot/initramfs-linux.img
     #  }
     #'';
-    splashImage = /home/a/Pictures/wallpapers/dark-market-in-night-pixels.jpg;
     useOSProber = true;
   };
 }
