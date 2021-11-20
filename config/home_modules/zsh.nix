@@ -21,7 +21,7 @@
       r = "ranger";
       hc = "herbstclient";
       f = "lf";
-      fetch = "macchina -p -t Boron --no-box";
+      fetch = "macchina";
       ":u" = "sh $DOT_ROOT/update.sh";
       ":h" = "sh $DOT_ROOT/install.sh home";
       ":s" = "sh $DOT_ROOT/install.sh system";
@@ -110,7 +110,7 @@
       any-nix-shell zsh --info-right | source /dev/stdin
 
       PROMPT=' %F{blue}%~%f > '
-      macchina -p -t Boron --no-box
+      macchina
     '';
 
     # .zshenv

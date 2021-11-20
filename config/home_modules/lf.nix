@@ -8,7 +8,7 @@
       hidden = true;
       preview = true;
       drawbox = true;
-      icons = true;
+      icons = false;
       ignorecase = true;
     };
     previewer.source = pkgs.writeShellScript "pv.sh" ''

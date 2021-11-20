@@ -1,12 +1,12 @@
 local util = require "neovim_configuration.util"
 local cmd = vim.cmd
 
-local colorscheme = "material"
+local colorscheme = "tokyonight"
 
 local config_dir = os.getenv("XDG_CONFIG_HOME")
 local has_theme = util.file_exists(config_dir .. "/nvim/lua/neovim_configuration/themes/" .. colorscheme .. ".lua")
 
--- Each theme gets it's unique custom hook so that we can selectively choose which theme we want to load
+-- All the doautocmds here are from before I used nix, it was for lazy loading, I don't lazy load anymore because of some issues I had but I think I'll leave these doautocmds here for future reference
 LOAD_THEME = function()
 	if not has_theme then
 		cmd ("doautocmd User load_" .. colorscheme .. "_theme")

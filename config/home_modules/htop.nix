@@ -43,7 +43,7 @@ hide_function_bar=0
   programs.htop = {
     enable = true;
     settings = {
-      color_scheme = 1;
+      color_scheme = 0;
       fields = with config.lib.htop.fields; [
         PID
         USER

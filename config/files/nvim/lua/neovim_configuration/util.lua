@@ -12,10 +12,10 @@ util.expanduser = function(path)
 end
 
 util.isdir = function(path)
-    local f = io.open(path, "r")
-    local ok, err, code = f:read(1)
-    f:close()
-    return code == 21
+	local f = io.open(path, "r")
+	local ok, err, code = f:read(1)
+	f:close()
+	return code == 21
 end
 
 -- Get both gui and cterm highlights
@@ -181,17 +181,16 @@ util.base16ify = function()
 	text = text .. 'base0D: "' .. theme.base0D .. '"\n'
 	text = text .. 'base0E: "' .. theme.base0E .. '"\n'
 	text = text .. 'base0F: "' .. theme.base0F .. '"'
-
 	return text
 end
 
 util.synstack = function()
-  for _, i1 in ipairs(vim.fn.synstack(vim.fn.line('.'), vim.fn.col('.'))) do
-    local i2 = vim.fn.synIDtrans(i1)
-    local n1 = vim.fn.synIDattr(i1, 'name')
-    local n2 = vim.fn.synIDattr(i2, 'name')
-    print(n1, '->', n2)
-  end
+	for _, i1 in ipairs(vim.fn.synstack(vim.fn.line('.'), vim.fn.col('.'))) do
+		local i2 = vim.fn.synIDtrans(i1)
+		local n1 = vim.fn.synIDattr(i1, 'name')
+		local n2 = vim.fn.synIDattr(i2, 'name')
+		print(n1, '->', n2)
+	end
 end
 
 return util

@@ -1,0 +1,13 @@
+if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+	eval $(dbus-launch --exit-with-session --sh-syntax)
+fi
+systemctl --user import-environment DISPLAY XAUTHORITY DOT_ROOT
+
+if command -v dbus-update-activation-environment >/dev/null 2>&1; then
+	dbus-update-activation-environment DISPLAY XAUTHORITY DOT_ROOT
+fi
+
+touch "$DOT_ROOT/scripts/storage/first_start.txt"
+
+#exec herbstluftwm --locked
+exec qtile start

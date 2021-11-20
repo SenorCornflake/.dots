@@ -53,7 +53,7 @@
               ./home_modules/exa.nix
               ./home_modules/home-manager.nix
               ./home_modules/picom.nix
-              ./home_modules/polybar.nix
+              ./home_modules/polybar
               ./home_modules/lf.nix
               ./home_modules/dunst.nix
               ./home_modules/rofi.nix
@@ -62,6 +62,7 @@
               ./home_modules/gtk.nix
               ./home_modules/xdg.nix
               ./home_modules/herbstluftwm.nix
+              ./home_modules/qtile.nix
               ./home_modules/autorandr.nix
               ./home_modules/xinit.nix
               ./home_modules/git.nix

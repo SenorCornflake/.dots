@@ -11,7 +11,6 @@
     neofetch
     macchina
     git
-    python39
     psmisc
     transmission-gtk
     libsForQt5.ark
@@ -49,8 +48,14 @@
       enableTruetype = true;
       enableFPS = true;
       enableSound = false;
-      theme = dwarf-fortress-packages.themes.meph;
+      theme = dwarf-fortress-packages.themes.phoebus;
     })
     whatsapp-for-linux
+    bc
+    python39
+    /* qtile */
+    herbstluftwm
+    file # for lf
+    android-tools
   ];
 }

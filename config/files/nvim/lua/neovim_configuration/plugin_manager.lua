@@ -18,6 +18,7 @@ packer.init {
 		theshold = 1
 	}
 }
+
 -- Disable some ddefault plugins
 local disabled_built_ins = {
     "netrw",

@@ -81,19 +81,14 @@ local servers = {
 
 }
 
-local has_coq = pcall(require, "coq") 
-
 -- Print a message when a server starts
 for server, config in pairs(servers) do
 	config.on_attach = config.on_attach or function()
 		print("Started " .. server)
 	end
+  	config.capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-	if has_coq then
-		lspconfig[server].setup(require "coq"().lsp_ensure_capabilities(config))
-	else
-		lspconfig[server].setup(config)
-	end
+	lspconfig[server].setup(config)
 end
 
 -- Lsp signs

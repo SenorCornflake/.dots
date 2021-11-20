@@ -14,10 +14,9 @@ if "toggle" in sys.argv:
     else:
         enabled = "true"
 
+os.system("redshift -x")
+
 if enabled == "true":
-    os.system("redshift -x")
     os.system("redshift -O 4500")
-else:
-    os.system("redshift -x")
 
 open(storage_file, "w").write(enabled)

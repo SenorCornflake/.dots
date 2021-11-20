@@ -1,10 +1,4 @@
-#!/usr/bin/env bash
-
-hc() {
-    herbstclient "$@"
-}
-
-#hc emit_hook reload
+#!/bin/sh
 
 # AUTOSTART
 # Notification daemon
@@ -20,7 +14,12 @@ setxkbmap -option keypad:pointerkeys
 xkbset ma 1 5 70 6 0
 
 # Enable nightmode if it was enabled prior to restarting
-python $DOT_ROOT/scripts/night_mode.py
+# python $DOT_ROOT/scripts/night_mode.py
+
+if [[ -f "$DOT_ROOT/scripts/storage/first_start.txt" ]]; then
+	rm "$DOT_ROOT/scripts/storage/first_start.txt"
+	autorandr --change
+fi
 
 # WALLPAPERS #
 sh ~/.config/herbstluftwm/wallpaper
@@ -33,15 +32,5 @@ sh ~/.config/herbstluftwm/settings
 sh ~/.config/herbstluftwm/rules
 
 systemctl --user stop polybar
-systemctl --user start polybar
+#systemctl --user start polybar
 systemctl --user start picom
-
-if [[ -f "$DOT_ROOT/scripts/storage/first_start.txt" ]]; then
-	rm "$DOT_ROOT/scripts/storage/first_start.txt"
-	autorandr --change
-fi
-
-pgrep -f "sh $DOT_ROOT/scripts/polybar/health.sh" || sh $DOT_ROOT/scripts/polybar/health.sh &
-
-# unlock, just to be sure
-hc unlock

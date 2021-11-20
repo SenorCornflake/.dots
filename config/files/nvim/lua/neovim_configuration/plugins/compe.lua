@@ -25,7 +25,7 @@
 vim.cmd("hi link CompeDocumentation Normal")
 
 require 'compe'.setup {
-	enabled = true,
+	enabled = false,
 	autocomplete = true,
 	debug = false,
 	min_length = 1,

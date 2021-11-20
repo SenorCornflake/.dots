@@ -2,7 +2,8 @@ local opt = vim.opt
 
 -- Pain incurs without these options
 opt.hidden = true
-opt.termguicolors = true opt.hlsearch = true
+opt.termguicolors = true 
+opt.hlsearch = true
 opt.incsearch = true
 opt.splitbelow = true
 opt.splitright = true
@@ -20,10 +21,12 @@ opt.sidescrolloff = 8
 opt.mouse = "a"
 opt.undofile = true
 opt.cursorline = true
-opt.completeopt = "menuone,noinsert,noselect"
+opt.completeopt = "menu,menuone,noselect,noinsert"
 opt.inccommand = "nosplit"
 opt.showmode = false
-opt.runtimepath    = vim.o.runtimepath .. "," .. "~/MAIN/tmp/vim_colors/"
+--opt.runtimepath    = vim.o.runtimepath .. "," .. "~/MAIN/tmp/vim_colors/"
+opt.list = true
+opt.listchars:append("trail:⋅")
 
 -- Buffer sides
 opt.number = true

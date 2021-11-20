@@ -43,6 +43,7 @@ in {
       gcc
       bat
       ripgrep
+      /* qtile */
 
       # Language servers
       rnix-lsp
@@ -63,6 +64,12 @@ in {
       # Plugs
       nvim-lspconfig
       nvim-compe
+      nvim-cmp
+      cmp-buffer
+      cmp-nvim-lsp
+      cmp_luasnip
+      cmp-path
+      luasnip
       nvim-treesitter
       vim-floaterm
       telescope-nvim
@@ -78,6 +85,8 @@ in {
       kommentary
       feline-nvim
       emmet-vim
+      #indent-blankline-nvim
+      gruvbox-material
 
       (vimPlugin {
         repo = "blackCauldron7/surround.nvim";
@@ -101,8 +110,9 @@ in {
         repo = "wuelnerdotexe/vim-enfocado";
       })
       (vimPlugin {
-        repo = "elkowar/yuck.vim";
+        repo = "folke/tokyonight.nvim";
       })
     ];
   };
 }
+

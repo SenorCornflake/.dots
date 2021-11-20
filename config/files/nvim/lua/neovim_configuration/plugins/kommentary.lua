@@ -6,7 +6,7 @@ cl("default", {
 	use_consistent_indentation = true,
 	ignore_whitespace = true,
 	single_line_comment_string = 'auto',
-	multi_line_comment_strings = 'auto'
+	multi_line_comment_strings = 'auto',
 })
 
 cl("lua", {

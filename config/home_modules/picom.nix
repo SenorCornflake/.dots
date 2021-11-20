@@ -15,8 +15,8 @@
     shadow = true;
     noDockShadow = false;
     shadowOffsets = [
-      (-20)
-      (-20)
+      (-15)
+      (-15)
     ];
     shadowExclude = [
       "! name~=''"
