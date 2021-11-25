@@ -18,6 +18,7 @@ xset r rate 250 30
 xsetroot -cursor_name left_ptr
 setxkbmap -option keypad:pointerkeys
 xkbset ma 1 5 70 6 0
+xkbset exp 1800
 
 # Enable nightmode if it was enabled prior to restarting
 python $DOT_ROOT/scripts/night_mode.py

@@ -57,5 +57,7 @@
     herbstluftwm
     file # for lf
     android-tools
+    lutris
+    flameshot
   ];
 }

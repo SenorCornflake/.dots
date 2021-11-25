@@ -23,7 +23,7 @@ in {
       enable_audio_bell no
 
       window_padding_width 0
-      
+
       ${theme}
     '';
   };

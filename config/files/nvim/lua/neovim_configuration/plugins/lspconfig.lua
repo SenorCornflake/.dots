@@ -29,14 +29,14 @@ local servers = {
 				},
 			}
 		},
-		root_dir = lspconfig.util.root_pattern(".root", ".git")
+		root_dir = lspconfig.util.root_pattern(".root")
 	},
 	rust_analyzer = {
-		root_dir = lspconfig.util.root_pattern(".root", ".git", "Cargo.toml")
+		root_dir = lspconfig.util.root_pattern(".root", "Cargo.toml")
 	},
 
 	intelephense = {
-		root_dir = lspconfig.util.root_pattern(".root", ".git"),
+		root_dir = lspconfig.util.root_pattern(".root"),
 		settings = {
 			intelephense = {
 				format = {
@@ -51,32 +51,32 @@ local servers = {
 	},
 
 	tsserver = {
-		root_dir = lspconfig.util.root_pattern(".root", ".git")
+		root_dir = lspconfig.util.root_pattern(".root")
 	},
 
 	cssls = {
 		cmd = { "css-languageserver", "--stdio" },
-		root_dir = lspconfig.util.root_pattern(".root", ".git")
+		root_dir = lspconfig.util.root_pattern(".root")
 	},
 
 	html = {
 		cmd = { "html-languageserver", "--stdio" },
-		root_dir = lspconfig.util.root_pattern(".root", ".git"),
+		root_dir = lspconfig.util.root_pattern(".root"),
 		filetypes = {"php", "html"}
 	},
 
 	pyright = {
-		root_dir = lspconfig.util.root_pattern(".root", ".git")
+		root_dir = lspconfig.util.root_pattern(".root")
 	},
 
 	jsonls = {
 		cmd = { "json-languageserver", "--stdio" },
-		root_dir = lspconfig.util.root_pattern(".root", ".git")
+		root_dir = lspconfig.util.root_pattern(".root")
 	},
 
 	rnix = {
 		cmd = { "rnix-lsp" },
-		root_dir = lspconfig.util.root_pattern(".root", ".git")
+		root_dir = lspconfig.util.root_pattern(".root")
 	},
 
 }

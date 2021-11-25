@@ -10,6 +10,7 @@
       fonts = [
         "Iosevka"
         "VictorMono"
+        "FiraCode"
       ];
     })
     scheherazade-new

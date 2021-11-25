@@ -112,6 +112,10 @@ in {
       (vimPlugin {
         repo = "folke/tokyonight.nvim";
       })
+      (vimPlugin {
+        repo = "bluz71/vim-moonfly-colors";
+      })
+
     ];
   };
 }

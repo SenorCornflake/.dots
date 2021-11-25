@@ -253,7 +253,7 @@ SetupStatusline = function()
 	al {
 		provider = function()
 			local label = mode_labels[vim.fn.mode()]
-			return " " .. label
+			return " " .. label .. " "
 			--return "  "
 		end,
 		hl = function()

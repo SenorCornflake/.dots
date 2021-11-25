@@ -42,8 +42,8 @@ in
             server {
               listen 0.0.0.0:80;
               listen [::0]:80;
-              server_name arsenal.dv;
-              root /srv/http/arsenal.dv/public_html;
+              server_name knitandthread.dv;
+              root /srv/http/knitandthread.dv/public_html;
               index index.php index.html;
               allow all;
               
@@ -64,11 +64,12 @@ in
                 index index.php index.html;
               }
             }
+
             server {
               listen 0.0.0.0:80;
               listen [::0]:80;
-              server_name knitandthread.dv;
-              root /srv/http/knitandthread.dv/public_html;
+              server_name arsenal.dv;
+              root /srv/http/arsenal.dv/public_html;
               index index.php index.html;
               allow all;
               

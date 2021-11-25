@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       global = {
-        geometry = "300x15-30+50";
+        geometry = "300x15-30-50";
         frame_color = "#00ffff";
         frame_width = 2;
         separator_height = 2;

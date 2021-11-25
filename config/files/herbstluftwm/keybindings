@@ -120,3 +120,6 @@ hc keybind $Mod-F12 scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f ~/screenshots'
 # Brightness
 hc keybind $Mod-XF86AudioRaiseVolume spawn brightnessctl s 10%+
 hc keybind $Mod-XF86AudioLowerVolume spawn brightnessctl s 10%-
+
+# Sleep
+hc keybind $Mod-Escape spawn systemctl suspend

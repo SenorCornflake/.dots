@@ -261,7 +261,7 @@ pkgs:
         };
       };
       label = {
-        connected = "%essid% %upspeed% UP %downspeed% DOWN";
+        connected = "%essid% %upspeed% ↑ %downspeed% ↓";
         disconnected = "disconnected";
       };
     };
