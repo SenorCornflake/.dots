@@ -10,7 +10,7 @@
       size = 1000;
       path = "$XDG_DATA_HOME/zsh/history";
     };
-    
+
     completionInit = ''
       autoload -U compinit && compinit -d ~/.config/zsh/zcompdump
     '';
@@ -29,6 +29,10 @@
       X = "startx ~/.config/xinit/xinitrc";
       t = "todo.sh -c";
       ch_nginx = "sudo chmod -R 777 /srv/http && sudo chown -R nginx:nginx /srv/http";
+      gp = "git push";
+      gP = "git pull";
+      gc = "git commit";
+      ga = "git add";
     };
 
     plugins = [ 
