@@ -43,25 +43,12 @@ pkgs:
       width = "100%";
       font."0" = "Terminus:size=10;2";
       modules.left = "desktops title";
-      modules.right = "disk sep total_transfer sep network sep ram sep cpu sep cputemp sep battery sep volume sep time sep layout sep weather";
+      modules.right = "disk sep total_transfer sep network sep ram sep cpu sep cputemp sep battery sep volume sep time sep layout sep weather sep health";
       background = bg;
       foreground = fg;
       monitor = "\${env:MONITOR:eDP-1}";
       enable-ipc = true;
     };
-
-    /* "bar/bottom" = {
-      bottom = true;
-      height = 20;
-      width = "100%";
-      font."0" = "Terminus:size=10;2";
-      modules.left = "health";
-      modules.right = "";
-      background = bg;
-      foreground = fg;
-      monitor = "\${env:MONITOR:eDP-1}";
-      enable-ipc = true;
-    }; */
 
     "bar/bottom-primary" = {
       "inherit" = "bar/bottom";
@@ -193,7 +180,7 @@ pkgs:
     "module/sep" = {
       type = "custom/text";
       content = {
-        text = " :: ";
+        text = ":";
         foreground = separator;
       };
     };
@@ -284,7 +271,7 @@ pkgs:
       hook-0 = "${pkgs.coreutils}/bin/cat $DOT_ROOT/scripts/storage/health.txt";
       initial = 1;
       format = {
-        text = "<output> min";
+        text = "<output>";
         padding = 1;
         foreground = health;
       };

@@ -5,8 +5,12 @@
     enable = true;
     settings = {
       global = {
-        geometry = "300x15-30-50";
-        frame_color = "#00ffff";
+        height = 300;
+        width = "(0, 400)";
+        origin = "bottom-right";
+        offset = "10x30";
+        notification_limit = 0;
+        frame_color = "#77bbbb";
         frame_width = 2;
         separator_height = 2;
         separator_color = "#111111";
@@ -38,6 +42,7 @@
       urgency_critical = {
         background = "#000000";
         foreground = "#ffffff";
+        frame_color = "#aa0000";
       };
 
       shortcuts = {

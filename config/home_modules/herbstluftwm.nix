@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 
+# TODO: Use xdg.configFile instead of home.file
 {
   home.file."autostart" = {
     text = builtins.readFile ../files/herbstluftwm/autostart;
