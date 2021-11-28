@@ -5,8 +5,17 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    ./bootloader.nix
+    ./fonts.nix
     ./hardware-configuration.nix
+    ./networking.nix
+    ./programs.nix
+    ./security.nix
+    ./services.nix
+    ./sound.nix
+    ./users.nix
+    ./webserver.nix
   ];
 
   nix = {
@@ -19,18 +28,6 @@
      (lib.optionalString (config.nix.package == pkgs.nixUnstable) "experimental-features = nix-command flakes");
   };
 
-  networking = {
-    hostName = "slab";
-    wireless.enable = false;
-    networkmanager.enable = true;
-
-    interfaces = {
-      enp0s25.useDHCP = false;
-      wlp3s0.useDHCP = true;
-      wwp0s20u10i6.useDHCP = true;
-    };
-  };
-
   time.timeZone = "Africa/Johannesburg";
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -40,45 +37,7 @@
     keyMap = "us";
   };
 
-  services = {
-    xserver = {
-      enable = true;
-      layout = "us";
-      displayManager.startx.enable = true;
-    };
-
-    gvfs = {
-      enable = true;
-    };
-
-    gnome = {
-      glib-networking = {
-        enable = true;
-      };
-    };
-  };
-
-  security = {
-    # This doesn't seem to do anything
-    polkit = {
-      enable = true;
-    };
-    sudo = {
-      enable = true;
-      wheelNeedsPassword = false;
-    };
-  };
-
-  programs.zsh.enable = true;
-
-  programs.dconf = {
-    enable = true;
-  };
-
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
-  environment.systemPackages = with pkgs; [];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

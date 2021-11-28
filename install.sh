@@ -3,7 +3,7 @@
 pushd ~/.dots/config
 
 if [[ $1 == "system" || $1 == "all" ]]; then
-	sudo nixos-rebuild switch --flake .# --impure
+	sudo nixos-rebuild switch --flake .#slab --impure
 fi
 
 if [[ $1 == "home" || $1 == "all" ]]; then
