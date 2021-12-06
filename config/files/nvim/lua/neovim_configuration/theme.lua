@@ -1,7 +1,7 @@
 local util = require "neovim_configuration.util"
 local cmd = vim.cmd
 
-local colorscheme = "tokyonight"
+local colorscheme = "catppuccin"
 
 local config_dir = os.getenv("XDG_CONFIG_HOME")
 local has_theme = util.file_exists(config_dir .. "/nvim/lua/neovim_configuration/themes/" .. colorscheme .. ".lua")

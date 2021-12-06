@@ -23,6 +23,8 @@
   outputs = { self, nixpkgs, ... }@inputs: 
 
   let
+    home_theme = ./home/themes/default.nix;
+
     system = "x86_64-linux";
 
     pkgs = import nixpkgs {
@@ -46,8 +48,11 @@
         stateVersion = "21.11";
         configuration = { config, pkgs, ... }: {
           imports = [
-            ./home_modules/main.nix
+            ./home/main.nix
           ];
+        };
+        extraSpecialArgs = {
+          theme = import home_theme;
         };
       };
     };
@@ -56,7 +61,7 @@
       slab = lib.nixosSystem {
         inherit system;
         modules = [
-          ./system_modules/main.nix
+          ./system/main.nix
         ];
         specialArgs = { inherit inputs; };
       };

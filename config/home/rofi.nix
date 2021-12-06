@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, theme, ... }:
 
 {
   programs.rofi = {
@@ -13,11 +13,11 @@
     };
     theme = let
       inherit (config.lib.formats.rasi) mkLiteral;
-      bg = "#000000";
-      fg = "#dddddd";
-      border = "#8888ff";
-      active_text = "#ddaa00";
-      prompt = "#44dd44";
+      bg = theme.rofi.bg;
+      fg = theme.rofi.fg;
+      border = theme.rofi.border;
+      active_text = theme.rofi.active_text;
+      prompt = theme.rofi.prompt;
     in {
       window = {
         width = mkLiteral "100%";

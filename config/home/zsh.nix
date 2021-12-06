@@ -1,7 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  programs.zsh = {
+  programs.zsh = 
+  let
+    # TODO: Add other libraries
+    fetchcmd = "fastfetch -l $DOT_ROOT/scripts/storage/nixos.txt --lib-gio ${pkgs.glib}/lib/libgio-2.0.so --lib-Xrandr ${pkgs.xorg.xrandr}/lib/libXrandr.so";
+  in {
     enable = true;
     dotDir = ".config/zsh";
 
@@ -21,7 +25,7 @@
       r = "ranger";
       hc = "herbstclient";
       f = "lf";
-      fetch = "macchina";
+      fetch = fetchcmd;
       ":u" = "sh $DOT_ROOT/update.sh";
       ":h" = "sh $DOT_ROOT/install.sh home";
       ":s" = "sh $DOT_ROOT/install.sh system";
@@ -114,7 +118,7 @@
       any-nix-shell zsh --info-right | source /dev/stdin
 
       PROMPT=' %F{blue}%~%f > '
-      macchina
+      ${fetchcmd}
     '';
 
     # .zshenv

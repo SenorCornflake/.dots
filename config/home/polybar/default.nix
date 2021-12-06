@@ -1,7 +1,7 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, theme, ... }: 
 
 let
-  bar = ((import ./bars/simple.nix) pkgs);
+  bar = import ./bars/simple.nix { inherit pkgs theme; };
 in {
   services.polybar = {
     enable = true;

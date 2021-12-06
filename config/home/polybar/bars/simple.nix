@@ -1,4 +1,5 @@
-pkgs:
+{ pkgs, theme }:
+
 {
   script = ''
     PATH=$PATH:${pkgs.gnugrep}/bin:${pkgs.xorg.xrandr}/bin:${pkgs.gawk}/bin
@@ -16,27 +17,27 @@ pkgs:
     done
   '';
   settings = let
-    bg = "#000000";
-    fg = "#ffffff";
+    bg = theme.polybar.simple.bg;
+    fg = theme.polybar.simple.fg;
 
-    active = "#44bb55"; occupied = "#999999"; empty = "#333333";
-    title = "#ddaa00";
+    active = theme.polybar.simple.active; occupied = theme.polybar.simple.occupied; empty = theme.polybar.simple.empty;
+    title = theme.polybar.simple.title;
 
-    disk = "#0088dd";
-    total_transfer = "#cccc00";
-    network = "#77bbbb";
-    ram = "#44dd44";
-    cpu = "#ee5599";
-    cputemp = "#ff4400";
-    battery = "#0088dd";
-    volume = "#00ddaa"; muted = "#aa0000";
-    backlight = "#cccc00";
-    time = "#bbbbbb";
-    layout = "#ee5599";
-    weather = "8888ff";
-    health = "#33cc33";
+    disk = theme.polybar.simple.disk;
+    total_transfer = theme.polybar.simple.total_transfer;
+    network = theme.polybar.simple.network;
+    ram = theme.polybar.simple.ram;
+    cpu = theme.polybar.simple.cpu;
+    cputemp = theme.polybar.simple.cputemp;
+    battery = theme.polybar.simple.battery;
+    volume = theme.polybar.simple.volume; muted = theme.polybar.simple.muted;
+    backlight = theme.polybar.simple.backlight;
+    time = theme.polybar.simple.time;
+    layout = theme.polybar.simple.layout;
+    weather = theme.polybar.simple.weather;
+    health = theme.polybar.simple.health;
 
-    separator = "#333333";
+    separator = theme.polybar.simple.separator;
   in {
     "bar/bottom" = {
       bottom = true;

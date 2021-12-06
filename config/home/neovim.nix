@@ -12,9 +12,8 @@ let
       ref = ref;
     };
   };
-  customNodePackages = pkgs.callPackage ../pkgs/nodePackages {  };
 in {
-  
+
   xdg.configFile."lua" = {
     target = "nvim/lua";
     source = ../files/nvim/lua;
@@ -35,9 +34,11 @@ in {
     withPython3 = true;
     withNodeJs = true;
     package = pkgs.neovim-nightly;
+
     extraConfig = ''
       luafile ~/.config/nvim/main.lua
     '';
+
     extraPackages = with pkgs; [
       tree-sitter
       gcc
@@ -54,8 +55,9 @@ in {
       nodePackages.vscode-html-languageserver-bin
       nodePackages.vscode-json-languageserver-bin
       nodePackages.pyright
-      customNodePackages.intelephense
+      nodePackages.intelephense
     ];
+
     plugins = with pkgs.vimPlugins; [
       # Deps
       plenary-nvim
@@ -115,7 +117,9 @@ in {
       (vimPlugin {
         repo = "bluz71/vim-moonfly-colors";
       })
-
+      (vimPlugin {
+        repo = "catppuccin/nvim";
+      })
     ];
   };
 }
