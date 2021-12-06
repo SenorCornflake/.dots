@@ -50,11 +50,11 @@ git remote update
 
 status=$(git status -uno) 
 if [[ $(echo $status | grep -w "is up to date") ]]; then
-	notify-send "Configuration is up to date with remote"
+	notify-send "Configuration is up to date with remote" -a ""
 elif [[ $(echo $status | grep -w "is ahead of") ]]; then
-	notify-send "Configuration is ahead of remote"
+	notify-send "Configuration is ahead of remote" -a ""
 else
-	notify-send "Configuration is behind remote"
+	notify-send "Configuration is behind remote" -a ""
 fi
 popd
 
