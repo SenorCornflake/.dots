@@ -59,6 +59,7 @@
     android-tools
     lutris
     flameshot
-    blueman
+    blueberry
+    pkgs.nur.repos.vanilla.fastfetch
   ];
 }

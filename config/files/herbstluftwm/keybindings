@@ -126,3 +126,8 @@ hc keybind $Mod-Escape spawn systemctl suspend
 
 # Set random wallpaper
 hc keybind $Mod-r spawn sh $DOT_ROOT/scripts/set_random_wallpaper.sh
+
+# Notifications
+hc keybind Control-Shift-period spawn dunstctl context
+hc keybind Control-Shift-space spawn dunstctl close-all
+hc keybind Control-space spawn dunstctl close

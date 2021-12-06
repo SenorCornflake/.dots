@@ -17,5 +17,9 @@
         enable = true;
       };
     };
+
+    getty = {
+      autologinUser = "a";
+    };
   };
 }

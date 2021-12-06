@@ -58,6 +58,7 @@
         modules = [
           ./system_modules/main.nix
         ];
+        specialArgs = { inherit inputs; };
       };
     };
   };

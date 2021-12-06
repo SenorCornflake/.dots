@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-pushd ~/.dots/config
+pushd $DOT_ROOT/config
 
 if [[ $1 == "system" || $1 == "all" ]]; then
 	sudo nixos-rebuild switch --flake .#slab --impure

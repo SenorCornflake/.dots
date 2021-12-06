@@ -44,13 +44,6 @@
         foreground = "#ffffff";
         frame_color = "#aa0000";
       };
-
-      shortcuts = {
-        close = "ctrl+space";
-        close_all = "ctrl+shift+space";
-        history = "ctrl+shift+grave";
-        context = "ctrl+shift+period";
-      };
     };
   };
 }

@@ -44,5 +44,19 @@ fi
 
 pgrep -f "sh $DOT_ROOT/scripts/polybar/health.sh" || sh $DOT_ROOT/scripts/polybar/health.sh &
 
+# Check if dots repo is up to date with remote
+pushd $DOT_ROOT
+git remote update
+
+status=$(git status -uno) 
+if [[ $(echo $status | grep -w "is up to date") ]]; then
+	notify-send "Configuration is up to date with remote"
+elif [[ $(echo $status | grep -w "is ahead of") ]]; then
+	notify-send "Configuration is ahead of remote"
+else
+	notify-send "Configuration is behind remote"
+fi
+popd
+
 # unlock, just to be sure
 hc unlock

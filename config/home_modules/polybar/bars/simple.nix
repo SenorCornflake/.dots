@@ -30,6 +30,7 @@ pkgs:
     cputemp = "#ff4400";
     battery = "#0088dd";
     volume = "#00ddaa"; muted = "#aa0000";
+    backlight = "#cccc00";
     time = "#bbbbbb";
     layout = "#ee5599";
     weather = "8888ff";
@@ -43,7 +44,7 @@ pkgs:
       width = "100%";
       font."0" = "Terminus:size=10;2";
       modules.left = "desktops title";
-      modules.right = "disk sep total_transfer sep network sep ram sep cpu sep cputemp sep battery sep volume sep time sep layout sep weather sep health";
+      modules.right = "disk sep total_transfer sep network sep ram sep cpu sep cputemp sep battery sep volume sep backlight sep time sep layout sep weather sep health";
       background = bg;
       foreground = fg;
       monitor = "\${env:MONITOR:eDP-1}";
@@ -286,7 +287,7 @@ pkgs:
         foreground = disk;
       };
       label = {
-        mounted = "%free%";
+        mounted = "%used%/%total%";
       };
     };
 
@@ -300,6 +301,18 @@ pkgs:
       label = {
         layout = "%name%";
       };
+    };
+
+    "module/backlight" = {
+      type = "internal/backlight";
+      format = {
+        test = "<label>";
+        foreground = backlight;
+        padding = 1;
+        suffix = " L";
+      };
+      label = "%percentage%";
+      card = "intel_backlight";
     };
   };
 }

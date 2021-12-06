@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }: # The inputs come from flake.nix, I passed it as a special argument to all nixos system config modules
 
 {
   imports = [
@@ -20,13 +20,15 @@
   ];
 
   nix = {
-     package = pkgs.nixUnstable;
-     autoOptimiseStore = true;
-     extraOptions = ''
+    package = pkgs.nixUnstable;
+    autoOptimiseStore = true;
+    extraOptions = ''
       keep-outputs = false
       keep-derivations = false
-     '' +
-     (lib.optionalString (config.nix.package == pkgs.nixUnstable) "experimental-features = nix-command flakes");
+    '' + (lib.optionalString (config.nix.package == pkgs.nixUnstable) "experimental-features = nix-command flakes");
+    registry = {
+      nixpkgs.flake = inputs.nixpkgs; # Pin the nixpkgs repo version used across the entire system with the flake cli
+    };
   };
 
   time.timeZone = "Africa/Johannesburg";
