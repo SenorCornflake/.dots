@@ -59,5 +59,6 @@
     android-tools
     lutris
     flameshot
+    blueman
   ];
 }

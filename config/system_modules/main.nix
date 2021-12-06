@@ -16,6 +16,7 @@
     ./sound.nix
     ./users.nix
     ./webserver.nix
+    ./hardware.nix
   ];
 
   nix = {
