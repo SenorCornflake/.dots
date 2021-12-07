@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, theme, ... }:
 
 let
   # THANKS TO "https://breuer.dev/blog/nixos-home-manager-neovim"
@@ -23,6 +23,12 @@ in {
   xdg.configFile."main.lua" = {
     target = "nvim/main.lua";
     source = ../files/nvim/main.lua;
+    recursive = false;
+  };
+
+  xdg.dataFile."colorscheme.txt" = {
+    target = "nvim/colorscheme.txt";
+    source = pkgs.writeText "neovim_colorscheme" theme.neovim.colorscheme; 
     recursive = false;
   };
 

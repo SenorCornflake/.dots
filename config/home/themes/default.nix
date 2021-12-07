@@ -53,4 +53,8 @@
     frame_color = "#77bbbb";
     separator_color = "#111111";
   };
+
+  neovim = {
+    colorscheme = "catppuccino";
+  };
 }
