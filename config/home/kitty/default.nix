@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, theme, ... }:
 
 let 
-  theme = import ./colors/plain_black.nix;
+  colorscheme = import theme.kitty.colorscheme;
 in {
   programs.kitty = {
-    enable = (if builtins.pathExists /etc/NIXOS then true else false);
+    enable = true;
     extraConfig = ''
       font_family Iosevka Nerd Font
       bold_font auto
@@ -24,7 +24,7 @@ in {
 
       window_padding_width 0
 
-      ${theme}
+      ${colorscheme}
     '';
   };
 }

@@ -55,6 +55,16 @@
   };
 
   neovim = {
-    colorscheme = "catppuccino";
+    colorscheme = "tokyonight";
+  };
+
+  kitty = {
+    colorscheme = ../kitty/colors/plain_black.nix;
+  };
+
+  herbstluftwm = {
+    active_color = "#666666";
+    normal_color = "#111111";
+    urgent_color = "#aa0000";
   };
 }

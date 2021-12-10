@@ -53,13 +53,12 @@
     whatsapp-for-linux
     bc
     python39
-    /* qtile */
     herbstluftwm
     file # for lf
     android-tools
-    lutris
+    #lutris
     flameshot
     blueberry
-    pkgs.nur.repos.vanilla.fastfetch
+    jq # used in herbstluftwm config
   ];
 }

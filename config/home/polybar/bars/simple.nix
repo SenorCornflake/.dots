@@ -189,7 +189,7 @@
 
     "module/weather" = {
       type = "custom/script";
-      exec = "${pkgs.curl}/bin/curl -s 'wttr.in?format=%f'";
+      exec = "${pkgs.curl}/bin/curl -s 'wttr.in/Capetown?format=%f'";
       interval = 60;
       label = "%output%";
       format = {

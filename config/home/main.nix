@@ -13,6 +13,7 @@
     ./htop.nix
     ./kitty
     ./lf.nix
+    ./macchina.nix
     ./neovim.nix
     ./npm.nix
     ./packages.nix

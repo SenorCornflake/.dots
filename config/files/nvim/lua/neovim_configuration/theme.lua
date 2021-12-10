@@ -5,11 +5,11 @@ local cmd = vim.cmd
 LOAD_THEME = function()
 	local colorscheme = io.open(os.getenv("XDG_DATA_HOME") .. "/nvim/colorscheme.txt", "r")
 
-	print(colorscheme)
 	if colorscheme == nil then
 		colorscheme = "darkblue"
 	else
 		colorscheme = colorscheme:read()
+		print(colorscheme)
 	end
 
 	local config_dir = os.getenv("XDG_CONFIG_HOME")

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, theme, ... }:
 
 # TODO: Use xdg.configFile instead of home.file
 {
@@ -7,16 +7,19 @@
     target = ".config/herbstluftwm/autostart";
     executable = true;
   };
+
   home.file."rules" = {
     text = builtins.readFile ../files/herbstluftwm/rules;
     target = ".config/herbstluftwm/rules";
     executable = true;
   };
+
   home.file."keybindings" = {
     text = builtins.readFile ../files/herbstluftwm/keybindings;
     target = ".config/herbstluftwm/keybindings";
     executable = true;
   };
+
   home.file."settings" = {
     text = builtins.readFile ../files/herbstluftwm/settings;
     target = ".config/herbstluftwm/settings";
@@ -39,5 +42,11 @@
     '';
     target = ".config/herbstluftwm/wallpaper";
     executable = true;
+  };
+
+  xdg.dataFile."hc_settings.json" = {
+    target = "herbstluftwm/settings.json";
+    source = pkgs.writeText "herbstluftwm_settings" (builtins.toJSON theme.herbstluftwm);
+    recursive = false;
   };
 }

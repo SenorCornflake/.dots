@@ -3,8 +3,7 @@
 {
   programs.zsh = 
   let
-    # TODO: Add other libraries
-    fetchcmd = "fastfetch -l $DOT_ROOT/scripts/storage/nixos.txt --lib-gio ${pkgs.glib}/lib/libgio-2.0.so --lib-Xrandr ${pkgs.xorg.xrandr}/lib/libXrandr.so";
+    fetchcmd = "macchina";
   in {
     enable = true;
     dotDir = ".config/zsh";
@@ -37,9 +36,10 @@
       gP = "git pull";
       gc = "git commit";
       ga = "git add";
+      ls = "exa --git --icons";
     };
 
-    plugins = [ 
+    plugins = [
       {
         name = "zsh-fast-syntax-highlighting";
         file = "share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh";
@@ -57,15 +57,11 @@
       }
       {
         name = "zsh-vi-mode";
-        src = pkgs.fetchFromGitHub {
-            owner = "jeffreytse";
-            repo = "zsh-vi-mode";
-            rev = "5eb9c43f941a3ac419584a5c390aeedf4916b245";
-            sha256 = "0qfzai7319ndi81crlpxfkpl1ry3hyjr87q7n6y5s6s4kgq38swr";
-        };
+        src = "${pkgs.zsh-vi-mode}";
+        file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
       }
     ];
-    
+
     sessionVariables = {
       MANPAGER = "nvim +Man!";
       MANWIDTH = 999;

@@ -12,6 +12,9 @@ util.map("n", "<leader>w", ":w<CR>")
 util.map('i', '<Tab>'  , 'pumvisible() ? "<C-n>" : "<Tab>"'  , { expr = true, noremap = true, silent = true })
 util.map('i', '<S-Tab>', 'pumvisible() ? "<C-p>" : "<S-Tab>"', { expr = true, noremap = true, silent = true })
 
+-- Reload theme
+util.map("n", "<leader>,", ":lua LOAD_THEME()")
+
 -- Undo points
 util.map("i", ",", ",<c-g>u")
 util.map("i", ".", ".<c-g>u")
