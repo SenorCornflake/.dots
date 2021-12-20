@@ -11,12 +11,12 @@ lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
 
       disk = "#B3E1A3";
       total_transfer = "#EADDA0";
-      network = "#C6AAE8";
+      net = "#C6AAE8";
       ram = "#D7DAE0";
       cpu = "#B3E1A3";
-      cputemp = "#E28C8C";
-      battery = "#A4B9EF";
-      volume = "#F0AFE1"; muted = "#E28C8C";
+      cpu_temp = "#E28C8C";
+      bat = "#A4B9EF";
+      vol = "#F0AFE1"; muted = "#E28C8C";
       backlight = "#EADDA0";
       time = "#D7DAE0";
       layout = "#F0AFE1";

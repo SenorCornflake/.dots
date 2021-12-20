@@ -130,7 +130,7 @@
     };
 
     "module/bat" = {
-      type = "internal/bat";
+      type = "internal/battery";
       bat = "BAT0";
       adapter = "AC";
       poll-interval = "20";
@@ -234,7 +234,7 @@
     };
 
     "module/net" = {
-      type = "internal/net";
+      type = "internal/network";
       interface = "wlp3s0";
       interval = "5";
       format = {

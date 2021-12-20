@@ -38,8 +38,11 @@ if index != "":
         # Generate kitty theme
         os.system("flavours build $DOT_ROOT/scripts/storage/base16.yaml ~/.local/share/flavours/base16/templates/kitty/templates/default.mustache > $DOT_ROOT/scripts/storage/kitty/colors/generated.conf")
 
-        os.system("notify-send 'Applying theme, please wait...'")
+        # Set theme to base16
+        open(os.path.expandvars("$DOT_ROOT/scripts/storage/theme.txt"), "w").write("base16")
+
+        os.system("notify-send 'Applying styles, please wait...' -a ''")
         os.system("sh $DOT_ROOT/install.sh home")
-        os.system("notify-send 'Done!'")
+        os.system("notify-send 'Done!' -a ''")
         os.system("python $DOT_ROOT/scripts/neovim_command.py 'lua LOAD_THEME()'")
         os.system("herbstclient reload")

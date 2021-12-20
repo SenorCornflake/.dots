@@ -23,8 +23,11 @@
   outputs = { self, nixpkgs, ... }@inputs: 
 
   let
-    theme = import (./home/themes/base16.nix) { inherit pkgs lib; };
-    layout = import (./home/layouts/second.nix) { inherit pkgs lib; };
+    t = builtins.readFile ../scripts/storage/theme.txt;
+    l = builtins.readFile ../scripts/storage/layout.txt;
+
+    theme = import (./. + "/home/themes/${t}.nix") { inherit pkgs lib; };
+    layout = import (./. + "/home/layouts/${l}.nix") { inherit pkgs lib; };
 
     style = lib.recursiveUpdate theme layout;
 

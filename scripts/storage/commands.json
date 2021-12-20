@@ -8,6 +8,10 @@
 		"action": "python $DOT_ROOT/scripts/night_mode.py toggle"
 	},
 	{
+		"name": "Change style",
+		"action": "python $DOT_ROOT/scripts/gui/change_style.py"
+	},
+	{
 		"name": "Set picture based theme",
 		"action": "python $DOT_ROOT/scripts/gui/set_picture_based_theme.py"
 	},

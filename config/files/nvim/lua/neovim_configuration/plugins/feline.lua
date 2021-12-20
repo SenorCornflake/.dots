@@ -367,49 +367,49 @@ SetupStatusline = function()
 		},
 	}
 
-	ar {
-		provider = "diagnostic_hints",
-		hl = "StatuslineLSPHint",
-		right_sep = {
-			str = " ",
-			hl = "StatuslineAltBackground"
-		},
-		icon = " ",
-		enabled = function() return lsp.diagnostics_exist('Hint') end,
-	}
+	-- ar {
+	-- 	provider = "diagnostic_hints",
+	-- 	hl = "StatuslineLSPHint",
+	-- 	right_sep = {
+	-- 		str = " ",
+	-- 		hl = "StatuslineAltBackground"
+	-- 	},
+	-- 	icon = " ",
+	-- 	enabled = function() return lsp.diagnostics_exist('Hint') end,
+	-- }
 
-	ar {
-		provider = "diagnostic_errors",
-		hl = "StatuslineLSPError",
-		right_sep = {
-			str = " ",
-			hl = "StatuslineAltBackground"
-		},
-		icon = " ",
-		enabled = function() return lsp.diagnostics_exist('Error') end,
-	}
+	-- ar {
+	-- 	provider = "diagnostic_errors",
+	-- 	hl = "StatuslineLSPError",
+	-- 	right_sep = {
+	-- 		str = " ",
+	-- 		hl = "StatuslineAltBackground"
+	-- 	},
+	-- 	icon = " ",
+	-- 	enabled = function() return lsp.diagnostics_exist('Error') end,
+	-- }
 
-	ar {
-		provider = "diagnostic_warnings",
-		hl = "StatuslineLSPWarn",
-		right_sep = {
-			str = " ",
-			hl = "StatuslineAltBackground"
-		},
-		icon = " ",
-		enabled = function() return lsp.diagnostics_exist('Warning') end,
-	}
+	-- ar {
+	-- 	provider = "diagnostic_warnings",
+	-- 	hl = "StatuslineLSPWarn",
+	-- 	right_sep = {
+	-- 		str = " ",
+	-- 		hl = "StatuslineAltBackground"
+	-- 	},
+	-- 	icon = " ",
+	-- 	enabled = function() return lsp.diagnostics_exist('Warning') end,
+	-- }
 
-	ar {
-		provider = "diagnostic_info",
-		hl = "StatuslineLSPInfo",
-		right_sep = {
-			str = " ",
-			hl = "StatuslineAltBackground"
-		},
-		icon = " ",
-		enabled = function() return lsp.diagnostics_exist('Information') end,
-	}
+	-- ar {
+	-- 	provider = "diagnostic_info",
+	-- 	hl = "StatuslineLSPInfo",
+	-- 	right_sep = {
+	-- 		str = " ",
+	-- 		hl = "StatuslineAltBackground"
+	-- 	},
+	-- 	icon = " ",
+	-- 	enabled = function() return lsp.diagnostics_exist('Information') end,
+	-- }
 
 	ar {
 		provider = function()

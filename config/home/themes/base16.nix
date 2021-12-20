@@ -114,7 +114,7 @@ in lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
   };
 
   neovim = {
-    colorscheme = "base16";
+    colorscheme = "catppuccin";
   };
 
   kitty = {
