@@ -1,6 +1,8 @@
-(import ./default.nix) // {
+{ pkgs, lib, ... }:
+
+lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
   polybar = {
-    simple = {
+    first = {
       bg = "#1E1E29";
       fg = "#D7DAE0";
 
@@ -26,32 +28,36 @@
   };
 
   rofi = {
-    bg = "#1E1E29";
-    fg = "#6E6C7C";
-    border = "#B3E1A3";
-    active_text = "#A4B9EF";
-    prompt = "#C6AAE8";
+    first = {
+      bg = "#1E1E29";
+      fg = "#6E6C7C";
+      border = "#B3E1A3";
+      active_text = "#A4B9EF";
+      prompt = "#C6AAE8";
+    };
   };
 
   dunst = {
-    urgency_low = {
-      background = "#1E1E29";
-      foreground = "#D7DAE0";
-    };
+    first = {
+      urgency_low = {
+        background = "#1E1E29";
+        foreground = "#D7DAE0";
+      };
 
-    urgency_normal = {
-      background = "#1E1E29";
-      foreground = "#D7DAE0";
-    };
+      urgency_normal = {
+        background = "#1E1E29";
+        foreground = "#D7DAE0";
+      };
 
-    urgency_critical = {
-      background = "#1E1E29";
-      foreground = "#D7DAE0";
-      frame_color = "#E28C8C";
-    };
+      urgency_critical = {
+        background = "#1E1E29";
+        foreground = "#D7DAE0";
+        frame_color = "#E28C8C";
+      };
 
-    frame_color = "#A4B9EF";
-    separator_color = "#3E4058";
+      frame_color = "#A4B9EF";
+      separator_color = "#3E4058";
+    };
   };
 
   neovim = {
@@ -59,7 +65,7 @@
   };
 
   kitty = {
-    colorscheme = ../kitty/colors/catppuccin.nix;
+    colorscheme = "catppuccin";
   };
 
   herbstluftwm = {

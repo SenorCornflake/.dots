@@ -3,12 +3,12 @@
 {
   imports = [
     ./autorandr.nix
-    ./dunst.nix
+    ./dunst
     ./exa.nix
     ./firefox.nix
     ./git.nix
     ./gtk.nix
-    ./herbstluftwm.nix
+    ./herbstluftwm
     ./home-manager.nix
     ./htop.nix
     ./kitty
@@ -21,7 +21,7 @@
     ./polybar
     ./qt.nix
     ./qtile.nix
-    ./rofi.nix
+    ./rofi
     ./todo-txt.nix
     ./xdg.nix
     ./xinit.nix

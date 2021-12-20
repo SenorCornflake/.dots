@@ -12,3 +12,5 @@ if index != "":
 
     os.system("feh --no-fehbg --bg-fill \"$WALL_ROOT/{}\"".format(wallpaper))
     os.system("echo \"$WALL_ROOT/{}\" > $DOT_ROOT/scripts/storage/wallpaper.txt".format(wallpaper))
+
+    

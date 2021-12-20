@@ -24,7 +24,7 @@ opt.cursorline = true
 opt.completeopt = "menu,menuone,noselect,noinsert"
 opt.inccommand = "nosplit"
 opt.showmode = false
---opt.runtimepath    = vim.o.runtimepath .. "," .. "~/MAIN/tmp/vim_colors/"
+opt.runtimepath    = vim.o.runtimepath .. "," .. os.getenv("DOT_ROOT") .. "/scripts/storage/vim"
 opt.list = true
 opt.listchars:append("trail:⋅")
 

@@ -8,7 +8,7 @@ hc() {
 
 # AUTOSTART
 # Notification daemon
-pidof dunst || dunst &
+killall dunst
 
 # Polkit
 sh ~/.config/herbstluftwm/polkit
@@ -17,6 +17,7 @@ sh ~/.config/herbstluftwm/polkit
 xset r rate 250 30 
 xsetroot -cursor_name left_ptr
 setxkbmap -option keypad:pointerkeys
+setxkbmap -option caps:backspace
 xkbset ma 1 5 70 6 0
 xkbset exp 1800
 

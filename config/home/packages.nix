@@ -8,7 +8,6 @@
     pulseaudio-ctl
     pavucontrol
     feh
-    neofetch
     macchina
     git
     psmisc
@@ -52,7 +51,10 @@
     })
     whatsapp-for-linux
     bc
-    python39
+    (python39.withPackages (p: with p; [
+      pyyaml
+      pynvim
+    ]))
     herbstluftwm
     file # for lf
     android-tools
@@ -60,5 +62,9 @@
     flameshot
     blueberry
     jq # used in herbstluftwm config
+    gimp
+    inkscape
+    krita
+    flavours
   ];
 }

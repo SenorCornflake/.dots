@@ -37,6 +37,7 @@
       gc = "git commit";
       ga = "git add";
       ls = "exa --git --icons";
+      weather = "curl -s \"wttr.in/$(echo \"$(curl -s https://ipinfo.io/)\" | jq -r '.city' | sed 's/ /+/g')\"";
     };
 
     plugins = [

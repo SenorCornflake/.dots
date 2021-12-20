@@ -28,11 +28,14 @@ def get_all_instances():
 
 
 def reload(instance):
-    # connect over the socket
-    nvim = attach('socket', path=instance)
+    try:
+        # connect over the socket
+        nvim = attach('socket', path=instance)
 
-    # execute the command
-    nvim.command(cmd)
+        # execute the command
+        nvim.command(cmd)
+    except:
+        pass
 
 
 # search for neovim instances

@@ -8,7 +8,6 @@
   imports = [
     ./bootloader.nix
     ./fonts.nix
-    ./hardware-configuration.nix
     ./networking.nix
     ./programs.nix
     ./security.nix

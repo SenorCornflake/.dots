@@ -154,8 +154,10 @@ SetupStatusline = function()
 				gui = "#000000"
 			}
 		),
-
 	}
+	if vim.g.colors_name == "base16-base16" then
+		StatuslineColors.alt_bg = StatuslineColors.bg
+	end
 
 	cmd ("hi! StatuslineBackground ctermfg="      .. StatuslineColors.fg.cterm        .. " guifg=" .. StatuslineColors.fg.gui        .. " ctermbg=" .. StatuslineColors.bg.cterm .. " guibg=" .. StatuslineColors.bg.gui)
 	cmd ("hi! StatuslineAltBackground ctermfg="      .. StatuslineColors.fg.cterm        .. " guifg=" .. StatuslineColors.fg.gui        .. " ctermbg=" .. StatuslineColors.alt_bg.cterm .. " guibg=" .. StatuslineColors.alt_bg.gui)

@@ -9,7 +9,6 @@ LOAD_THEME = function()
 		colorscheme = "darkblue"
 	else
 		colorscheme = colorscheme:read()
-		print(colorscheme)
 	end
 
 	local config_dir = os.getenv("XDG_CONFIG_HOME")
@@ -25,7 +24,8 @@ LOAD_THEME = function()
 		end
 
 		cmd ("doautocmd User load_" .. colorscheme .. "_theme")
-		require ("neovim_configuration.themes." .. colorscheme)
+		--require ("neovim_configuration.themes." .. colorscheme)
+		dofile(os.getenv("XDG_CONFIG_HOME") .. "/nvim/lua/neovim_configuration/themes/" .. colorscheme .. ".lua")
 	end
 
 	cmd "doautocmd User ThemeLoaded"

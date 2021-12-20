@@ -2,7 +2,7 @@
 
 {
   networking = {
-    hostName = "slab";
+    hostName = "t440p";
     wireless.enable = false;
     networkmanager.enable = true;
 

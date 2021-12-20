@@ -1,4 +1,4 @@
-{ config, pkgs, lib, theme, ... }:
+{ config, pkgs, lib, style, ... }:
 
 let
   # THANKS TO "https://breuer.dev/blog/nixos-home-manager-neovim"
@@ -28,7 +28,7 @@ in {
 
   xdg.dataFile."colorscheme.txt" = {
     target = "nvim/colorscheme.txt";
-    source = pkgs.writeText "neovim_colorscheme" theme.neovim.colorscheme; 
+    source = pkgs.writeText "neovim_colorscheme" style.neovim.colorscheme; 
     recursive = false;
   };
 
@@ -95,6 +95,7 @@ in {
       emmet-vim
       #indent-blankline-nvim
       gruvbox-material
+      nvim-base16
 
       (vimPlugin {
         repo = "blackCauldron7/surround.nvim";

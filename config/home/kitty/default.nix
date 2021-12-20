@@ -1,7 +1,7 @@
-{ config, pkgs, theme, ... }:
+{ config, pkgs, style, ... }:
 
 let 
-  colorscheme = import theme.kitty.colorscheme;
+  colorscheme = import (./. + "/colors/${style.kitty.colorscheme}.nix");
 in {
   programs.kitty = {
     enable = true;

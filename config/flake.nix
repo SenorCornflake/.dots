@@ -2,7 +2,7 @@
   description = "NixOS Configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/master";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -23,7 +23,10 @@
   outputs = { self, nixpkgs, ... }@inputs: 
 
   let
-    home_theme = ./home/themes/default.nix;
+    theme = import (./home/themes/base16.nix) { inherit pkgs lib; };
+    layout = import (./home/layouts/second.nix) { inherit pkgs lib; };
+
+    style = lib.recursiveUpdate theme layout;
 
     system = "x86_64-linux";
 
@@ -39,6 +42,15 @@
     };
 
     lib = nixpkgs.lib;
+
+    mkSystem = name: lib.nixosSystem {
+      inherit system;
+      modules = [
+        ./system/main.nix
+        (./. + "/system/hardware-configurations/${name}.nix")
+      ];
+      specialArgs = { inherit inputs; };
+    };
   in {
     homeManagerConfigurations = {
       a = inputs.home-manager.lib.homeManagerConfiguration {
@@ -52,19 +64,13 @@
           ];
         };
         extraSpecialArgs = {
-          theme = import home_theme;
+          style = style;
         };
       };
     };
 
     nixosConfigurations = {
-      slab = lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./system/main.nix
-        ];
-        specialArgs = { inherit inputs; };
-      };
+      t440p = mkSystem "t440p";
     };
   };
 }
