@@ -1,3 +1,0 @@
-# Wallpapers Collection
-
-
