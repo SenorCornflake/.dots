@@ -119,7 +119,7 @@
         };
       };
       label = {
-        connected = "%upspeed%  %downspeed% ";
+        connected = "%upspeed%   %downspeed%  ";
         disconnected = "disconnected";
       };
     };

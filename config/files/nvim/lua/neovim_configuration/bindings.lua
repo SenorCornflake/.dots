@@ -43,8 +43,8 @@ util.map("n", "n", "nzzzv")
 util.map("n", "N", "Nzzzv")
 
 -- Fuzzy Finder
-util.map("n", "<leader>ff", ":FzfLua files<CR>")
-util.map("n", "<leader>fg", ":FzfLua live_grep<CR>")
+util.map("n", "<leader>ff", ":Telescope find_files<CR>")
+util.map("n", "<leader>fg", ":Telescope live_grep<CR>")
 util.map("n", "<leader>fs", ":Telescope lsp_document_symbols<CR>")
 util.map("n", "<leader>fS", ":Telescope lsp_workspace_symbols<CR>")
 util.map("n", "<leader>fr", ":Telescope lsp_references<CR>")

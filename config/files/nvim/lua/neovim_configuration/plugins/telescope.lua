@@ -22,33 +22,14 @@ require "telescope".setup {
 	},
 	pickers = {
 		find_files = {
-			hidden = true,
-			follow = true,
-			--theme = require('telescope.themes').get_dropdown({})qwertyuiopasdfghjklzxcvbnm,.qwertyuiop[asdfghjkl;zxcvbnm,]
+			-- hidden = true,
+			-- follow = true,
+			find_command = {"rg", "--files", "--hidden", "--follow", "--no-ignore", "-g", "!{.git,node_modules,target}/*"}
+		},
+		live_grep = {
+			vimgrep_arguments = {"rg", "--color=never", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case", "--hidden", "--no-ignore", "-g", "!{.git,node_modules,target}/*"}
 		}
 	},
 }
 
 require "telescope".load_extension("projects")
-
-
-local actions = require "telescope.actions"
-
-require "telescope".setup {
-	defaults = {
-		layout_config = {
-			horizontal = {
-				width = 0.79,
-				height = 0.93
-			}
-		},
-		mappings = {
-			i = {
-				["<M-q>"] = actions.close
-			},
-			n = {
-				["<M-q>"] = actions.close
-			}
-		}
-	},
-}

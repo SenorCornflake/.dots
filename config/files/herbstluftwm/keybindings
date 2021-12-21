@@ -131,3 +131,4 @@ hc keybind $Mod-r spawn sh $DOT_ROOT/scripts/set_random_wallpaper.sh
 hc keybind Control-Shift-period spawn dunstctl context
 hc keybind Control-Shift-space spawn dunstctl close-all
 hc keybind Control-space spawn dunstctl close
+hc keybind Control-Shift-grave spawn dunstctl history-pop
