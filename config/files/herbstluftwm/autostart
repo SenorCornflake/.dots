@@ -18,8 +18,9 @@ xset r rate 250 30
 xsetroot -cursor_name left_ptr
 setxkbmap -option keypad:pointerkeys
 setxkbmap -option caps:backspace
+xset r 66 # Enable repeat for capslock key
 xkbset ma 1 5 70 6 0
-xkbset exp 1800
+xkbset exp 60 =mousekeys
 
 # Enable nightmode if it was enabled prior to restarting
 python $DOT_ROOT/scripts/night_mode.py
