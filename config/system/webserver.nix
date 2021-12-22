@@ -35,7 +35,7 @@ in
             include ${pkgs.nginx}/conf/fastcgi.conf;
             include ${pkgs.nginx}/conf/uwsgi_params;
             default_type application/octet-stream;
-            client_max_body_size 10M;
+            client_max_body_size 1000M;
             server_tokens off;
             allow all;
 
@@ -46,7 +46,7 @@ in
               root /srv/http/knitandthread.dv/public_html;
               index index.php index.html;
               allow all;
-              
+
               ${phpmyadminConfig}
 
               location / {
@@ -72,7 +72,7 @@ in
               root /srv/http/arsenal.dv/public_html;
               index index.php index.html;
               allow all;
-              
+
               ${phpmyadminConfig}
 
               location / {
@@ -90,6 +90,7 @@ in
                 index index.php index.html;
               }
             }
+
           }
         '';
       };
@@ -132,7 +133,6 @@ in
         enable = false;
       };
     };
-    
     # Apache does work, but for some reason phpmyadmin is just loaded as a blank page, so until I figure out what is happening, I'll have to use nginx
     # services = {
     #   httpd = {

@@ -31,7 +31,7 @@
       ":a" = "sh $DOT_ROOT/install.sh all";
       X = "startx ~/.config/xinit/xinitrc";
       t = "todo.sh -c";
-      ch_nginx = "sudo chmod -R 777 /srv/http && sudo chown -R nginx:nginx /srv/http";
+      ch_nginx = "sudo chmod -R 777 /srv/http && sudo chown -R nginx:nginx /srv/http && sudo chmod 755 /srv/http/phpmyadmin/config.inc.php";
       gp = "git push";
       gP = "git pull";
       gc = "git commit";
@@ -74,6 +74,7 @@
 
       DOT_ROOT = "$HOME/.dots";
       WALL_ROOT = "$DOT_ROOT/wallpapers";
+      WIKI_ROOT = "$XDG_DATA_HOME/wikis";
       PATH = "~/.local/bin:$PATH";
       TODOTXT_CFG_FILE = "$XDG_CONFIG_HOME/todo/todo.cfg";
       SSH_ASKPASS = "";

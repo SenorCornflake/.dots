@@ -66,6 +66,6 @@
     inkscape
     krita
     flavours
-    ascii-image-converter
+    zeal
   ];
 }

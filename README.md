@@ -21,3 +21,4 @@ Run `./install.sh all|system|home` on a flake ready system.
 - You'll have to type your git password at least once after pushing.
 - Recreate mysql website databases.
 - Create custom thunar action to open neovim in kitty
+- Install docsets for zeal

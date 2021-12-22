@@ -41,6 +41,12 @@
       overlays = [
         inputs.neovim-nightly.overlay
         inputs.nur.overlay
+        (final: prev: {
+          php-docs = final.callPackage ./pkgs/php-docs.nix {};
+        })
+        (final: prev: {
+          rust-book = final.callPackage ./pkgs/rust-book.nix {};
+        })
       ];
     };
 
