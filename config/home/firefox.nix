@@ -14,6 +14,7 @@
     extensions = with pkgs.nur.repos.rycee.firefox-addons; [
       bitwarden
       ublock-origin
+      h264ify
     ];
   };
 }

@@ -47,6 +47,9 @@
       enableTruetype = true;
       enableFPS = true;
       enableSound = false;
+      enableSoundSense = true;
+      enableStoneSense = false;
+      enableDwarfTherapist = false;
       theme = dwarf-fortress-packages.themes.phoebus;
     })
     whatsapp-for-linux
@@ -54,18 +57,23 @@
     (python39.withPackages (p: with p; [
       pyyaml
       pynvim
+      urllib3
     ]))
     herbstluftwm
     file # for lf
     android-tools
-    #lutris
     flameshot
     blueberry
     jq # used in herbstluftwm config
+    (inkscape-with-extensions.override {
+      inkscapeExtensions = (with pkgs.inkscape-extensions; [
+        inkcut
+      ]);
+    })
     gimp
-    inkscape
     krita
     flavours
     zeal
-  ];
+    ntfs3g
+ ];
 }

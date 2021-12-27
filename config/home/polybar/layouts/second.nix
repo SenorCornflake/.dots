@@ -76,7 +76,7 @@
     "module/cpu_temp" = {
       type = "custom/script";
       # This is quite a beefy line, should probably do something about it
-      exec = "echo \"$(${pkgs.lm_sensors}/bin/sensors | grep \"Core\" | ${pkgs.gnused}/bin/sed \"s/.*://\" | ${pkgs.gnused}/bin/sed \"s/(.*)//\" | ${pkgs.gnused}/bin/sed \"s/ //g\" | ${pkgs.gnused}/bin/sed \"s/°C//\" | ${pkgs.gnused}/bin/sed \"s/+//\")\" | ${pkgs.gawk}/bin/awk '{s+=$1}END{print s/NR}' RS=\"\\n\"";
+      exec = "echo \"$(${pkgs.lm_sensors}/bin/sensors | ${pkgs.gnugrep}/bin/grep \"Core\" | ${pkgs.gnused}/bin/sed \"s/.*://\" | ${pkgs.gnused}/bin/sed \"s/(.*)//\" | ${pkgs.gnused}/bin/sed \"s/ //g\" | ${pkgs.gnused}/bin/sed \"s/°C//\" | ${pkgs.gnused}/bin/sed \"s/+//\")\" | ${pkgs.gawk}/bin/awk '{s+=$1}END{print s/NR}' RS=\"\\n\"";
       label = "%output%°C";
       interval = 5;
       format = {
@@ -153,7 +153,7 @@
 
     "module/weather" = {
       type = "custom/script";
-      exec = "${pkgs.curl}/bin/curl -s \"wttr.in/$(echo \"$(${pkgs.curl}/bin/curl -s https://ipinfo.io/)\" | ${pkgs.jq}/bin/jq -r '.city' | ${pkgs.gnused}/bin/sed 's/ /+/g')?format=%f+%C\"";
+      exec = "${pkgs.curl}/bin/curl -s \"wttr.in/$(echo \"$(${pkgs.curl}/bin/curl -s http://ip-api.com/json/)\" | ${pkgs.jq}/bin/jq -r '.city' | ${pkgs.gnused}/bin/sed 's/ /+/g')?format=%f+%C\"";
       interval = 60;
       label = "%output%";
       format = {

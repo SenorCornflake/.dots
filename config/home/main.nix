@@ -26,6 +26,5 @@
     ./xdg.nix
     ./xinit.nix
     ./zsh.nix
-    ./wikis.nix
   ];
 }

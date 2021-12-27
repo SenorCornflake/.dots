@@ -2,7 +2,8 @@
   description = "NixOS Configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/master";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-21.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/master";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -20,7 +21,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: 
+  outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs: 
 
   let
     t = builtins.readFile ../scripts/storage/theme.txt;
@@ -33,7 +34,7 @@
 
     system = "x86_64-linux";
 
-    pkgs = import nixpkgs {
+    pkgs-opts = {
       inherit system;
       config = {
         allowUnfree = true;
@@ -41,14 +42,14 @@
       overlays = [
         inputs.neovim-nightly.overlay
         inputs.nur.overlay
-        (final: prev: {
-          php-docs = final.callPackage ./pkgs/php-docs.nix {};
-        })
-        (final: prev: {
-          rust-book = final.callPackage ./pkgs/rust-book.nix {};
-        })
+        /* (final: prev: {
+          custom-dwarf-fortress-packages = final.callPackage ./pkgs/dwarf-fortress {};
+        }) */
       ];
     };
+
+    pkgs = import nixpkgs pkgs-opts;
+    pkgs-unstable = import nixpkgs-unstable pkgs-opts;
 
     lib = nixpkgs.lib;
 
@@ -58,7 +59,7 @@
         ./system/main.nix
         (./. + "/system/hardware-configurations/${name}.nix")
       ];
-      specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs pkgs-unstable; };
     };
   in {
     homeManagerConfigurations = {
@@ -67,7 +68,7 @@
         username = "a";
         homeDirectory = "/home/a";
         stateVersion = "21.11";
-        configuration = { config, pkgs, ... }: {
+        configuration = { config, pkgs, pkgs-unstable, ... }: {
           imports = [
             ./home/main.nix
           ];

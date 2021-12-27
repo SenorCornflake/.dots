@@ -18,7 +18,7 @@ in {
       adjust_baseline 1
       disable_ligatures never
 
-      scrollback_lines 2000
+      scrollback_lines 50000
       cursor_blink_interval 0
       enable_audio_bell no
 

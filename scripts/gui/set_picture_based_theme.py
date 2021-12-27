@@ -21,7 +21,6 @@ if index != "":
         index = int(index)
         style = styles[index]
 
-        os.system("feh --no-fehbg --bg-fill \"$WALL_ROOT/{}\"".format(wallpaper))
         os.system("echo \"$WALL_ROOT/{}\" > $DOT_ROOT/scripts/storage/wallpaper.txt".format(wallpaper))
 
         theme = os.popen("flavours generate {} $WALL_ROOT/{} --stdout > $DOT_ROOT/scripts/storage/base16.yaml".format(style, wallpaper)).read()[:-1]
