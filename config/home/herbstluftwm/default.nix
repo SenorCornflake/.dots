@@ -40,6 +40,7 @@ in {
   home.file."wallpaper" = {
     text = ''
       #!${pkgs.bash}/bin/bash
+      convert -size 1920x1080 xc:${style.wallpaper.solid.bg} $WALL_ROOT/solid.png
       feh --no-fehbg --bg-fill "$(cat $DOT_ROOT/scripts/storage/wallpaper.txt)"
     '';
     target = ".config/herbstluftwm/wallpaper";

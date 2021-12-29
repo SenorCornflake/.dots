@@ -16,6 +16,7 @@
     ./users.nix
     ./webserver.nix
     ./hardware.nix
+    ./packages.nix
   ];
 
   nix = {
@@ -30,6 +31,8 @@
     };
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   time.timeZone = "Africa/Johannesburg";
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -39,7 +42,7 @@
     keyMap = "us";
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  #boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -1,23 +1,20 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, style, ... }: 
 
 {
   services.picom = {
     enable = true;
     experimentalBackends = true;
     backend = "glx";
-    inactiveDim = "0.05";
+    inactiveDim = style.picom.inactiveDim;
     fade = true;
     fadeSteps = [
       "0.1"
       "0.1"
     ];
     vSync = true;
-    shadow = true;
-    noDockShadow = false;
-    shadowOffsets = [
-      (-15)
-      (-15)
-    ];
+    shadow = style.picom.shadow;
+    noDockShadow = style.picom.noDockShadow;
+    shadowOffsets = style.picom.shadowOffsets;
     shadowExclude = [
       "! name~=''"
       "name = 'Notification'"
@@ -38,5 +35,8 @@
       "_GTK_FRAME_EXTENTS@:c"
       "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
     ];
+    extraOptions = ''
+      shadow-radius = ${style.picom.shadowRadius}
+    '';
   };
 }

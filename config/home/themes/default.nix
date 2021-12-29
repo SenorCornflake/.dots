@@ -43,6 +43,13 @@
       health = "#44dd44";
       bat = "#ddaa00";
     };
+
+    third = {
+      bg = "#000000";
+      fg = "#bbbbbb";
+      active = "#00ddaa";
+      occupied = "#77bbbb";
+    };
   };
 
   rofi = {
@@ -107,7 +114,7 @@
   };
 
   neovim = {
-    colorscheme = "tokyonight";
+    colorscheme = "base16";
   };
 
   kitty = {
@@ -135,6 +142,22 @@
       inner_color = "#000000";
       active_title_color = "#333333";
       normal_title_color = "#000000";
+    };
+
+    third = {
+      active_color = "#999999";
+      normal_color = "#555555";
+      urgent_color = "#aa0000";
+      outer_color = "#000000";
+      inner_color = "#000000";
+      active_title_color = "#333333";
+      normal_title_color = "#000000";
+    };
+  };
+
+  wallpaper = {
+    solid = {
+      bg = "#000000";
     };
   };
 }

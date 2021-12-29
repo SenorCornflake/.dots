@@ -10,7 +10,7 @@ get_setting() {
 }
 
 # SETTINGS #
-hc set window_gap '10'
+hc set window_gap $(get_setting "window_gap")
 hc set smart_window_surroundings off
 hc set mouse_recenter_gap 0
 hc set hide_covered_windows on

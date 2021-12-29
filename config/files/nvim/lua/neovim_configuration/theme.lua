@@ -28,6 +28,7 @@ LOAD_THEME = function()
 		dofile(os.getenv("XDG_CONFIG_HOME") .. "/nvim/lua/neovim_configuration/themes/" .. colorscheme .. ".lua")
 	end
 
+
 	cmd "doautocmd User ThemeLoaded"
 end
 

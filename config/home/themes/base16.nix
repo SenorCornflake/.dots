@@ -47,6 +47,13 @@ in lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
       health = "#" + b.base0B;
       bat = "#" + b.base0A;
     };
+
+    third = {
+      bg = b.base00;
+      fg = b.base07;
+      active = b.base0C;
+      occupied = b.base0D;
+    };
   };
 
   rofi = {
@@ -114,7 +121,7 @@ in lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
   };
 
   neovim = {
-    colorscheme = "catppuccin";
+    colorscheme = "base16";
   };
 
   kitty = {
@@ -136,6 +143,22 @@ in lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
       inner_color = "#" + b.base00;
       active_title_color = "#" + b.base00;
       normal_title_color = "#" + b.base06;
+    };
+
+    third = {
+      active_color = "#" + b.base07;
+      normal_color = "#" + b.base02;
+      urgent_color = "#" + b.base09;
+      outer_color = "#" + b.base00;
+      inner_color = "#" + b.base00;
+      active_title_color = "#" + b.base00;
+      normal_title_color = "#" + b.base06;
+    };
+  };
+
+  wallpaper = {
+    solid = {
+      bg = "#" + b.base00;
     };
   };
 }

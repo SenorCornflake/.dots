@@ -7,4 +7,5 @@
   padding_top = "0";
   outer_width = "0";
   inner_width = "0";
+  window_gap = "10";
 }

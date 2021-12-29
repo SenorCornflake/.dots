@@ -16,5 +16,6 @@
     scheherazade-new
     scheherazade
     cantarell-fonts
+    siji
   ];
 }

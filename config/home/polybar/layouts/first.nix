@@ -9,9 +9,7 @@
     echo "$connected" | while read line; do
       if [[ $(xrandr --query | grep "$line" | grep primary) ]]; then
           MONITOR="$line" polybar bottom-primary &
-          MONITOR="$line" polybar bottom &
       else
-        #MONITOR="$line" polybar top &
         MONITOR="$line" polybar bottom &
       fi
     done

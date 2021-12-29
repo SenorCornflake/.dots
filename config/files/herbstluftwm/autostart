@@ -35,9 +35,10 @@ sh ~/.config/herbstluftwm/keybindings
 sh ~/.config/herbstluftwm/settings
 sh ~/.config/herbstluftwm/rules
 
+systemctl --user stop picom
+systemctl --user start picom
 systemctl --user stop polybar
 systemctl --user start polybar
-systemctl --user start picom
 
 if [[ -f "$DOT_ROOT/scripts/storage/first_start.txt" ]]; then
 	rm "$DOT_ROOT/scripts/storage/first_start.txt"

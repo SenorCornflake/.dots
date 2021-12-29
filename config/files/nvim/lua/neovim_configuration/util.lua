@@ -193,4 +193,45 @@ util.synstack = function()
 	end
 end
 
+util.colorschemes = function(display)
+	display = display or false
+
+	local rtps = vim.o.runtimepath
+	rtps = util.split(rtps, ",")
+
+	local colorschemes = {}
+
+	for _, rtp in pairs(rtps) do
+		local colors_dir = rtp .. "/colors"
+
+		if vim.fn.isdirectory(colors_dir) then
+			for _, colorscheme in pairs(util.split(vim.fn.glob(colors_dir .. "/*.vim"), "\n")) do
+				colorscheme = vim.fn.fnamemodify(colorscheme, ":t:r")
+				table.insert(colorschemes, colorscheme)
+			end
+		end
+	end
+
+	-- Remove duplicates
+	local hash = {}
+	local res = {}
+
+	for _,v in pairs(colorschemes) do
+	   if not hash[v] then
+		   res[#res + 1] = v
+		   hash[v] = true
+	   end
+	end
+
+	colorschemes = res
+
+	if display then
+		for _, colorscheme in pairs(colorschemes) do
+			print(colorscheme .. "\n")
+		end
+	else
+		return colorschemes
+	end
+end
+
 return util
