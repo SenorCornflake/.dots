@@ -16,7 +16,7 @@
   '';
 
   settings = let
-    inherit (style.polybar.third) bg fg active occupied; 
+    inherit (style.polybar.third) bg fg active occupied border; 
   in
   {
     "bar/main" = {
@@ -25,15 +25,21 @@
       width = "100%";
       font."0" = "Terminus:size=10;2";
       font."1" = "Siji:size=8;2";
-      modules.left = "time";
+      modules.left = "health time title";
       modules.center = "desktops";
-      modules.right = "cpu ram cpu_temp vol";
+      modules.right = "cpu ram cpu_temp vol bat";
       background = bg;
       foreground = fg;
       monitor = "\${env:MONITOR:eDP-1}";
       enable-ipc = true;
-      border-size = 6;
-      border-color = bg;
+      border-top-size = 6;
+      border-bottom-size = 6;
+      border-top-color = bg;
+      border-bottom-color = bg;
+      border-right-color = border;
+      border-left-color = border;
+      border-right-size = 2;
+      border-left-size = border;
     };
 
     "bar/main-primary" = {
@@ -42,6 +48,19 @@
       tray.detached = false;
       tray.background = bg;
       tray.padding = 2;
+    };
+
+    "module/health" = {
+      type = "custom/ipc";
+      hook-0 = "${pkgs.coreutils}/bin/cat $DOT_ROOT/scripts/storage/health.txt";
+      initial = 1;
+      format = {
+        text = "<output>";
+        padding = 2;
+        foreground = fg;
+        background = bg;
+        prefix = " ";
+      };
     };
 
     "module/time" = {
@@ -144,7 +163,7 @@
           padding = 2;
           background = bg;
           foreground = fg;
-          text = "<ramp-volume>  <label-volume>";
+          text = "<ramp-volume> <label-volume>";
         };
         muted = {
           padding = 2;
@@ -152,6 +171,53 @@
           foreground = fg;
           text = " <label-muted>";
         };
+      };
+    };
+
+    "module/bat" = {
+      type = "internal/battery";
+      bat = "BAT0";
+      adapter = "AC";
+      poll-interval = "20";
+      format = {
+        charging = {
+          text = " <label-charging>";
+          padding = 2;
+          foreground = fg;
+          background = bg;
+        };
+        discharging = {
+          text = " <label-discharging>";
+          padding = 2;
+          foreground = fg;
+          background = bg;
+        };
+        full = {
+          text = " <label-full>";
+          padding = 2;
+          foreground = fg;
+          background = bg;
+        };
+      };
+      label = {
+        charging = "%percentage%%";
+        discharging = "%percentage%%";
+        full = "%percentage%%";
+      };
+    };
+
+    "module/title" = {
+      type = "internal/xwindow";
+      label = {
+        text = "%title%";
+        maxlen = 30;
+      };
+      format = {
+        text = "<label>";
+        foreground = fg;
+        background = bg;
+        padding = 2;
+        prefix = " ";
       };
     };
   };

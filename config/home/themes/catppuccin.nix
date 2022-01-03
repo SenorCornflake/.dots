@@ -26,11 +26,31 @@ lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
       separator = "#3E4058";
     };
 
+    second = {
+      bg = "#1E1E29";
+      fg = "#D7DAE0";
+      disk = "#B3E1A3";
+      cpu = "#C6AAE8";
+      cpu_temp = "#E28C8C";
+      ram = "#D7DAE0";
+      net = "#C6AAE8";
+      weather = "#EADDA0";
+      active = "#6E6C7C";
+      occupied = "#6E6C7C";
+      empty = "#A4B9EF";
+      vol = "#EADDA0";
+      key_layout = "#F0AFE1";
+      time = "#D7DAE0";
+      health = "#B3E1A3";
+      bat = "#EADDA0";
+    };
+
     third = {
       bg = "#1E1E29";
       fg = "#D7DAE0";
       active = "#F0AFE1";
       occupied = "#C6AAE8";
+      border = "#A4B9EF";
     };
   };
 
@@ -118,8 +138,8 @@ lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
     };
 
     second = {
-      active_color = "#6E6C7C";
-      normal_color = "#3E4058";
+      active_color = "#B3E1A3";
+      normal_color = "#6E6C7C";
       urgent_color = "#E28C8C";
       outer_color = "#3E4058";
       inner_color = "#3E4058";
@@ -128,12 +148,11 @@ lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
     };
 
     third = {
-      # None of these are used
-      active_color = "#D7DAE0";
-      normal_color = "#555555";
+      active_color = "#A4B9EF";
+      normal_color = "#1E1E29";
       urgent_color = "#E28C8C";
-      outer_color = "#000000";
-      inner_color = "#000000";
+      outer_color = "#1E1E29";
+      inner_color = "#1E1E29";
       active_title_color = "#3E4058";
       normal_title_color = "#D7DAE0";
     };

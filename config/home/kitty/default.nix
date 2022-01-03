@@ -25,6 +25,8 @@ in {
       window_padding_width ${style.kitty.window_padding_width}
 
       ${colorscheme}
+
+      background_opacity ${style.kitty.background_opacity}
     '';
   };
 }

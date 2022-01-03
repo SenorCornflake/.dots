@@ -49,6 +49,7 @@
       fg = "#bbbbbb";
       active = "#00ddaa";
       occupied = "#77bbbb";
+      border = "#999999";
     };
   };
 
@@ -111,10 +112,31 @@
       frame_color = "#000000";
       separator_color = "#111111";
     };
+
+    third = {
+      urgency_low = {
+        background = "#000000";
+        foreground = "#ffffff";
+      };
+
+      urgency_normal = {
+        background = "#000000";
+        foreground = "#ffffff";
+      };
+
+      urgency_critical = {
+        background = "#000000";
+        foreground = "#ffffff";
+        frame_color = "#ff4400";
+      };
+
+      frame_color = "#77bbbb";
+      separator_color = "#000000";
+    };
   };
 
   neovim = {
-    colorscheme = "base16";
+    colorscheme = "moonfly";
   };
 
   kitty = {
@@ -146,7 +168,7 @@
 
     third = {
       active_color = "#999999";
-      normal_color = "#555555";
+      normal_color = "#000000";
       urgent_color = "#aa0000";
       outer_color = "#000000";
       inner_color = "#000000";

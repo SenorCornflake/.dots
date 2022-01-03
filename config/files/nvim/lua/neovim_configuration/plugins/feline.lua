@@ -533,5 +533,6 @@ SetupStatusline = function()
 
 end
 
+SetupStatusline()
 -- Sometimes, after reloading, the highlights just don't work, so reload the bar every few autocommands
-cmd "autocmd VimEnter,CursorHold * lua SetupStatusline()"
+cmd "autocmd VimEnter,CursorHold,ColorScheme * lua SetupStatusline()"

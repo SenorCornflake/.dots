@@ -1,4 +1,4 @@
-{ config, pkgs, lib, style, ... }:
+{ config, pkgs, pkgs-unstable, lib, style, ... }:
 
 let
   # THANKS TO "https://breuer.dev/blog/nixos-home-manager-neovim"
@@ -64,7 +64,7 @@ in {
       nodePackages.intelephense
     ];
 
-    plugins = with pkgs.vimPlugins; [
+    plugins = with pkgs-unstable.vimPlugins; [
       # Deps
       plenary-nvim
       nvim-web-devicons
@@ -95,8 +95,13 @@ in {
       emmet-vim
       #indent-blankline-nvim
       gruvbox-material
-      nvim-base16
 
+      (vimPlugin {
+        repo = "svban/YankAssassin.vim";
+      })
+      (vimPlugin {
+        repo = "SenorCornflake/nvim-base16";
+      })
       (vimPlugin {
         repo = "blackCauldron7/surround.nvim";
       })

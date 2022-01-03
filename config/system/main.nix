@@ -29,6 +29,14 @@
     registry = {
       nixpkgs.flake = inputs.nixpkgs; # Pin the nixpkgs repo version used across the entire system with the flake cli
     };
+
+    # TODO: Does this actually work? Neovim nightly still builds
+    binaryCaches = [
+      "https://nix-community.cachix.org"
+    ];
+    binaryCachePublicKeys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
   };
 
   nixpkgs.config.allowUnfree = true;

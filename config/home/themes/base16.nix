@@ -6,27 +6,27 @@ in lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
     bar = "first";
 
     first = {
-      bg = b.base00;
-      fg = b.base07;
+      bg = "#" + b.base00;
+      fg = "#" + b.base07;
 
-      active = b.base0B; occupied = b.base03; empty = b.base01;
-      title = b.base0A;
+      active = "#" + b.base0B; occupied = "#" + b.base03; empty = "#" + b.base01;
+      title = "#" + b.base0A;
 
-      disk = b.base0C;
-      total_transfer = b.base0D;
-      network = b.base0F;
-      ram = b.base0B;
-      cpu = b.base0E;
-      cputemp = b.base0F;
-      battery = b.base0C;
-      volume = b.base08; muted = b.base09;
-      backlight = b.base0A;
-      time = b.base07;
-      layout = b.base0C;
-      weather = b.base0D;
-      health = b.base0B;
+      disk = "#" + b.base0C;
+      total_transfer = "#" + b.base0D;
+      network = "#" + b.base0F;
+      ram = "#" + b.base0B;
+      cpu = "#" + b.base0E;
+      cputemp = "#" + b.base0F;
+      battery = "#" + b.base0C;
+      volume = "#" + b.base08; muted = "#" + b.base09;
+      backlight = "#" + b.base0A;
+      time = "#" + b.base07;
+      layout = "#" + b.base0C;
+      weather = "#" + b.base0D;
+      health = "#" + b.base0B;
 
-      separator = b.base01;
+      separator = "#" + b.base01;
     };
 
     second = {
@@ -49,10 +49,11 @@ in lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
     };
 
     third = {
-      bg = b.base00;
-      fg = b.base07;
-      active = b.base0C;
-      occupied = b.base0D;
+      bg = "#" + b.base00;
+      fg = "#" + b.base07;
+      active = "#" + b.base0C;
+      occupied = "#" + b.base0D;
+      border = "#" + b.base0E;
     };
   };
 
@@ -118,6 +119,26 @@ in lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
       frame_color = "#"+ b.base00;
       separator_color = "#" + b.base00;
     };
+
+    third = {
+      urgency_low = {
+        background = "#" + b.base07;
+        foreground = "#" + b.base00;
+      };
+
+      urgency_normal = {
+        background = "#" + b.base07;
+        foreground = "#" + b.base00;
+      };
+
+      urgency_critical = {
+        background = "#" + b.base09;
+        foreground = "#" + b.base00;
+      };
+
+      frame_color = "#"+ b.base00;
+      separator_color = "#" + b.base00;
+    };
   };
 
   neovim = {
@@ -146,8 +167,8 @@ in lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
     };
 
     third = {
-      active_color = "#" + b.base07;
-      normal_color = "#" + b.base02;
+      active_color = "#" + b.base0E;
+      normal_color = "#" + b.base00;
       urgent_color = "#" + b.base09;
       outer_color = "#" + b.base00;
       inner_color = "#" + b.base00;

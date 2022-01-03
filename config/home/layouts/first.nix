@@ -10,12 +10,14 @@
     font_family = "Iosevka Nerd Font";
     font_size = "10";
     window_padding_width = "0";
+    background_opacity = "1.0";
   };
 
   picom = {
     shadow = true;
     noDockShadow = false;
     shadowRadius = "15";
+    blur = false;
     inactiveDim = "0.05";
     shadowOffsets = [
       (-15)

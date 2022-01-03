@@ -1,5 +1,5 @@
 
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   home.packages = with pkgs; [
@@ -61,7 +61,8 @@
     krita
     flavours
     zeal
-    lutris
     imagemagick
- ];
+ ] ++ (with pkgs-unstable; [
+  lutris
+ ]);
 }

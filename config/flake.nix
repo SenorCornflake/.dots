@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-21.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/master";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -68,13 +68,13 @@
         username = "a";
         homeDirectory = "/home/a";
         stateVersion = "21.11";
-        configuration = { config, pkgs, pkgs-unstable, ... }: {
+        configuration = { config, pkgs, ... }: {
           imports = [
             ./home/main.nix
           ];
         };
         extraSpecialArgs = {
-          style = style;
+          inherit style pkgs-unstable;
         };
       };
     };

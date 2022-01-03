@@ -39,9 +39,9 @@ hc attr theme.title_height $(get_setting "title_height")
 hc attr theme.inner_width "$(get_setting "inner_width")"
 hc attr theme.outer_width $(get_setting "outer_width")
 hc attr theme.padding_top $(get_setting "padding_top")
-hc attr theme.padding_right 0
-hc attr theme.padding_bottom 0
-hc attr theme.padding_left '0'
+hc attr theme.padding_right $(get_setting "padding_right")
+hc attr theme.padding_bottom $(get_setting "padding_bottom")
+hc attr theme.padding_left $(get_setting "padding_left")
 hc attr theme.border_width $(get_setting "border_width")
 hc attr theme.title_font "$(get_setting "title_font")"
 

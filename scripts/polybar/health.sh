@@ -16,14 +16,14 @@ while true; do
 				echo "$remaining secs" > $DOT_ROOT/scripts/storage/health.txt
 			fi
 		elif [[ $remaining -lt 3600 ]]; then
-			minutes=$(/run/current-system/sw/bin/printf "%.0f" $(echo "$remaining/60" | ~/.nix-profile/bin/bc -l))
+			minutes=$(/run/current-system/sw/bin/printf "%.0f" $(echo "$remaining/60" | /run/current-system/sw/bin/bc -l))
 			if [[ $minutes == 1 ]]; then
 				echo "$minutes min" > $DOT_ROOT/scripts/storage/health.txt
 			else
 				echo "$minutes mins" > $DOT_ROOT/scripts/storage/health.txt
 			fi
 		else
-			hours=$(/run/current-system/sw/bin/printf "%.1f" $(echo "$remaining/60/60" | ~/.nix-profile/bin/bc -l))
+			hours=$(/run/current-system/sw/bin/printf "%.1f" $(echo "$remaining/60/60" | /run/current-system/sw/bin/bc -l))
 			if [[ $hours == 1 ]]; then
 				echo "$hours hour" > $DOT_ROOT/scripts/storage/health.txt
 			else

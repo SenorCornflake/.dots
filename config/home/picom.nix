@@ -1,8 +1,9 @@
-{ config, pkgs, style, ... }: 
+{ config, pkgs, pkgs-unstable, style, ... }: 
 
 {
   services.picom = {
     enable = true;
+    package = pkgs.picom-next;
     experimentalBackends = true;
     backend = "glx";
     inactiveDim = style.picom.inactiveDim;
@@ -13,6 +14,7 @@
     ];
     vSync = true;
     shadow = style.picom.shadow;
+    blur = style.picom.blur;
     noDockShadow = style.picom.noDockShadow;
     shadowOffsets = style.picom.shadowOffsets;
     shadowExclude = [
@@ -37,6 +39,9 @@
     ];
     extraOptions = ''
       shadow-radius = ${style.picom.shadowRadius}
+      blur-method="dual_kawase";
+      blur-strengh=10;
+      blur-background-fixed=true;
     '';
   };
 }
