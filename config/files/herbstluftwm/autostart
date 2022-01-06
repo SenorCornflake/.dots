@@ -25,27 +25,43 @@ xkbset exp 60 =mousekeys
 # Enable nightmode if it was enabled prior to restarting
 python $DOT_ROOT/scripts/night_mode.py
 
-# WALLPAPERS #
+# Wallpaper
 sh ~/.config/herbstluftwm/wallpaper
 
-# MONITORS #
+# MONITORS
 hc detect_monitors
 
+# Source other files
 sh ~/.config/herbstluftwm/keybindings
 sh ~/.config/herbstluftwm/settings
 sh ~/.config/herbstluftwm/rules
 
+# Reload picom and polybar
 systemctl --user stop picom
 systemctl --user start picom
 systemctl --user stop polybar
 systemctl --user start polybar
 
+# Setup monitors if it is the first time this config is running since starting X server
 if [[ -f "$DOT_ROOT/scripts/storage/first_start.txt" ]]; then
 	rm "$DOT_ROOT/scripts/storage/first_start.txt"
 	autorandr --change
 fi
 
+# Start health script if not already running
 pgrep -f "sh $DOT_ROOT/scripts/polybar/health.sh" || sh $DOT_ROOT/scripts/polybar/health.sh &
+
+# Reload wezterm (in a very hacky manner, refer to wezterm.nix)
+if [[ ! -f $XDG_DATA_HOME/wezterm/reload.txt ]]; then
+	mkdir $XDG_DATA_HOME/wezterm
+	touch reload.txt
+fi
+
+if [[ $(cat $XDG_DATA_HOME/wezterm/reload.txt) == "r" ]]; then
+	truncate -s-1 $XDG_DATA_HOME/wezterm/reload.txt
+else
+	echo "r" >> $XDG_DATA_HOME/wezterm/reload.txt
+fi
 
 # Check if dots repo is up to date with remote
 pushd $DOT_ROOT

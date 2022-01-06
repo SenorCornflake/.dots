@@ -68,7 +68,11 @@ lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
       fg = "#6E6C7C";
       border = "#1E1E29";
       active_bg = "#EADDA0";
-      entry_bg = "#1E1E29";
+    };
+
+    third = {
+      bg = "#1E1E29";
+      fg = "#D7DAE0";
     };
   };
 
@@ -122,6 +126,10 @@ lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
 
   kitty = {
     colorscheme = "catppuccin";
+  };
+
+  wezterm = {
+    color_scheme = "catppuccin";
   };
 
   herbstluftwm = {

@@ -17,5 +17,6 @@
     scheherazade
     cantarell-fonts
     siji
+    scientifica
   ];
 }

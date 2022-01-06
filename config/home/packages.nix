@@ -64,5 +64,6 @@
     imagemagick
  ] ++ (with pkgs-unstable; [
   lutris
+  wezterm
  ]);
 }

@@ -39,7 +39,7 @@
       border-right-color = border;
       border-left-color = border;
       border-right-size = 2;
-      border-left-size = border;
+      border-left-size = 2;
     };
 
     "bar/main-primary" = {

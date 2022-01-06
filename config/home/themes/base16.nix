@@ -72,7 +72,11 @@ in lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
       fg = "#" + b.base07;
       border = "#" + b.base00;
       active_bg = "#" + b.base0B;
-      entry_bg = "#" + b.base07;
+    };
+
+    third = {
+      bg = "#" + b.base00;
+      fg = "#" + b.base07;
     };
   };
 
@@ -147,6 +151,10 @@ in lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
 
   kitty = {
     colorscheme = "generated";
+  };
+
+  wezterm = {
+    color_scheme = "generated";
   };
 
   herbstluftwm = {

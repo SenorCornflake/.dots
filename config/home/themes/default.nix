@@ -67,7 +67,11 @@
       fg = "#dddddd";
       border = "#000000";
       active_bg = "#44dd44";
-      entry_bg = "#bbbbbb";
+    };
+
+    third = {
+      bg = "#000000";
+      fg = "#dddddd";
     };
   };
 
@@ -141,6 +145,10 @@
 
   kitty = {
     colorscheme = "plain_black";
+  };
+
+  wezterm = {
+    color_scheme = "simple";
   };
 
   herbstluftwm = {

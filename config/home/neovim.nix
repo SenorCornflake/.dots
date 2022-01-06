@@ -50,7 +50,6 @@ in {
       gcc
       bat
       ripgrep
-      /* qtile */
 
       # Language servers
       rnix-lsp
@@ -71,7 +70,6 @@ in {
 
       # Plugs
       nvim-lspconfig
-      nvim-compe
       nvim-cmp
       cmp-buffer
       cmp-nvim-lsp
@@ -84,7 +82,7 @@ in {
       vim-startuptime
       bufferline-nvim
       gitsigns-nvim
-      symbols-outline-nvim
+      #symbols-outline-nvim
       hop-nvim
       vim-hexokinase
       lspkind-nvim
@@ -94,7 +92,13 @@ in {
       feline-nvim
       emmet-vim
       #indent-blankline-nvim
+      #nvim-neoclip-lua
+      vim-wordmotion
+      project-nvim
+      #nvim-fzf
+
       gruvbox-material
+      tokyonight-nvim
 
       (vimPlugin {
         repo = "svban/YankAssassin.vim";
@@ -109,22 +113,10 @@ in {
         repo = "sindrets/winshift.nvim";
       })
       (vimPlugin {
-        repo = "ahmedkhalf/project.nvim";
-      })
-      (vimPlugin {
-        repo = "vijaymarupudi/nvim-fzf";
-      })
-      (vimPlugin {
-        repo = "ibhagwan/fzf-lua";
-      })
-      (vimPlugin {
         repo = "marko-cerovac/material.nvim";
       })
       (vimPlugin {
         repo = "wuelnerdotexe/vim-enfocado";
-      })
-      (vimPlugin {
-        repo = "folke/tokyonight.nvim";
       })
       (vimPlugin {
         repo = "bluz71/vim-moonfly-colors";
@@ -132,6 +124,9 @@ in {
       (vimPlugin {
         repo = "catppuccin/nvim";
       })
+      /* (vimPlugin {
+        repo = "ibhagwan/fzf-lua";
+      }) */
     ];
   };
 }

@@ -3,7 +3,7 @@
 {
   location = "center";
   extraConfig = {
-    font = "Iosevka Nerd font 9";
+    font = "Terminus 9";
     terminal = "${pkgs.kitty}/bin/kitty";
     show-icons = false;
     drun-display-format = "{name}";
@@ -11,17 +11,16 @@
   };
   theme = let
     inherit (config.lib.formats.rasi) mkLiteral;
-    inherit (style.rofi.second) bg fg border active_bg entry_bg;
+    inherit (style.rofi.third) bg fg;
   in {
     window = {
-      width = mkLiteral "80%";
-      height = mkLiteral "60%";
+      width = mkLiteral "30%";
+      height = mkLiteral "80%";
       location = "center";
       anchor = "center";
       background-color = mkLiteral bg;
       text-color = mkLiteral fg;
-      border = mkLiteral "3px";
-      border-color = mkLiteral border;
+      padding = mkLiteral "2px";
     };
 
     mainbox = {
@@ -29,6 +28,8 @@
       background-color = mkLiteral bg;
       text-color = mkLiteral fg;
       orientation = mkLiteral "vertical";
+      border = mkLiteral "0px 2px 0px 2px";
+      border-color = mkLiteral fg;
     };
 
     inputbar = {
@@ -47,7 +48,7 @@
     listview = {
       background-color = mkLiteral bg;
       text-color = mkLiteral fg;
-      columns = 10;
+      columns = 1;
       dynamic = true;
     };
 
@@ -73,12 +74,12 @@
     };
 
     "element-text.selected" = {
-      background-color = mkLiteral active_bg;
+      background-color = mkLiteral fg;
       text-color = mkLiteral bg;
     };
 
     "element.selected" = {
-      background-color = mkLiteral active_bg;
+      background-color = mkLiteral fg;
       text-color = mkLiteral bg;
     };
   };

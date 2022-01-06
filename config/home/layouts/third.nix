@@ -13,12 +13,23 @@ lib.recursiveUpdate (import ./first.nix { inherit pkgs lib; }) {
     background_opacity = "1";
   };
 
+  wezterm = {
+    font = "Iosevka Nerd Font";
+    font_size = "10";
+    window_padding = {
+      top = "10px";
+      right = "10px";
+      bottom = "10px";
+      left = "10px";
+    };
+  };
+
   picom = {
     shadow = true;
     noDockShadow = false;
     shadowRadius = "5";
     inactiveDim = "0.1";
-    blur = true;
+    blur = false;
     shadowOffsets = [
       (-5)
       (-5)

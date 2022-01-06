@@ -13,7 +13,7 @@ util.map('i', '<Tab>'  , 'pumvisible() ? "<C-n>" : "<Tab>"'  , { expr = true, no
 util.map('i', '<S-Tab>', 'pumvisible() ? "<C-p>" : "<S-Tab>"', { expr = true, noremap = true, silent = true })
 
 -- Reload theme
-util.map("n", "<leader>,", ":lua LOAD_THEME()")
+util.map("n", "<leader>,", ":lua LOAD_THEME()<cr>")
 
 -- Undo points
 util.map("i", ",", ",<c-g>u")
@@ -22,6 +22,16 @@ util.map("i", ";", ";<c-g>u")
 util.map("i", "!", "!<c-g>u")
 util.map("i", "?", "?<c-g>u")
 util.map("i", "=", "=<c-g>u")
+
+-- Black hole deleting
+util.map("n", "x", "\"_d")
+util.map("n", "xx", "\"_dd")
+util.map("n", "X", "\"_D")
+util.map("x", "X", "\"_d")
+util.map("x", "x", "\"_d")
+
+-- When pasting over visual selection, restore the clipboard as doing this will place the overwritten text into the register
+util.map("x", "p", 'p:let @+=@0<CR>:let @"=@0<CR>')
 
 -- Split management
 util.map("n", "<C-h>", "<C-w>h")
@@ -65,7 +75,6 @@ util.map('n', '<leader>le', ':lua vim.lsp.diagnostic.show_line_diagnostics()<cr>
 
 -- File manager
 util.map("n", "<leader>e", ":FloatermNew lf<CR>")
-util.map("n", "<leader>x", ":FloatermNew xplr<CR>")
 
 -- Hop
 util.map("n", "ss", ":HopChar1<CR>")

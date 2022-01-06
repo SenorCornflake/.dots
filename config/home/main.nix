@@ -23,6 +23,7 @@
     ./qtile.nix
     ./rofi
     ./todo-txt.nix
+    ./wezterm.nix
     ./xdg.nix
     ./xinit.nix
     ./zsh.nix

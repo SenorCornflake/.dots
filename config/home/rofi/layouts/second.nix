@@ -11,7 +11,7 @@
   };
   theme = let
     inherit (config.lib.formats.rasi) mkLiteral;
-    inherit (style.rofi.second) bg fg border active_bg entry_bg;
+    inherit (style.rofi.second) bg fg border active_bg;
   in {
     window = {
       width = mkLiteral "80%";
