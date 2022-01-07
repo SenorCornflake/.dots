@@ -21,5 +21,11 @@
     getty = {
       autologinUser = "a";
     };
+
+    openssh = {
+      enable = true;
+      permitRootLogin = "yes";
+      passwordAuthentication = true;
+    };
   };
 }

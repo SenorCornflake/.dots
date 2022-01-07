@@ -65,5 +65,6 @@
  ] ++ (with pkgs-unstable; [
   lutris
   wezterm
+  barrier
  ]);
 }
