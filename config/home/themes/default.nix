@@ -30,7 +30,7 @@
       fg = "#ffffff";
       disk = "#77bbbb";
       cpu = "#cccc00";
-      cpu_temp = "#ff4400";
+     cpu_temp = "#ff4400";
       ram = "#ee5599";
       net = "#0088dd";
       weather = "#44dd44";
@@ -72,6 +72,7 @@
     third = {
       bg = "#000000";
       fg = "#dddddd";
+      accent = "#999999";
     };
   };
 

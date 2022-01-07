@@ -4,7 +4,7 @@
   global = {
     height = 300;
     width = "(0, 400)";
-    origin = "top-left";
+    origin = "top-right";
     offset = "10x40";
     notification_limit = 0;
     frame_color = style.dunst.third.frame_color;

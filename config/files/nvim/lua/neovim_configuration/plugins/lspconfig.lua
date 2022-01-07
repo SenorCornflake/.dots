@@ -1,5 +1,4 @@
 local lspconfig = require "lspconfig"
-local cmd = vim.cmd
 
 local util = require "neovim_configuration.util"
 
@@ -16,7 +15,7 @@ local servers = {
 					}
 				},
 				diagnostics = {
-					enable = false,
+					enable = true,
 					globals = {
 						-- Neovim
 						"vim",
@@ -53,7 +52,6 @@ local servers = {
 	tsserver = {
 		root_dir = lspconfig.util.root_pattern(".root")
 	},
-
 	cssls = {
 		cmd = { "css-languageserver", "--stdio" },
 		root_dir = lspconfig.util.root_pattern(".root")
@@ -92,91 +90,96 @@ for server, config in pairs(servers) do
 end
 
 -- Lsp signs
-cmd "sign define LspDiagnosticsSignError text= texthl=LspDiagnosticsDefaultError linehl= numhl=LspDiagnosticsDefaultError"
-cmd "sign define LspDiagnosticsSignWarning text= texthl=LspDiagnosticsDefaultWarning linehl= numhl=LspDiagnosticsDefaultWarning"
-cmd "sign define LspDiagnosticsSignInformation text= texthl=LspDiagnosticsDefaultInformation linehl= numhl=LspDiagnosticsDefaultInformation"
-cmd "sign define LspDiagnosticsSignHint text= texthl=LspDiagnosticsDefaultHint linehl= numhl=LspDiagnosticsDefaultHint"
+vim.fn.sign_define("DiagnosticSignError" , { texthl = "DiagnosticError", text = "" })
+vim.fn.sign_define("DiagnosticSignWarn"  , { texthl = "DiagnosticWarn" , text = "" })
+vim.fn.sign_define("DiagnosticSignInfo"  , { texthl = "DiagnosticInfo" , text = "" })
+vim.fn.sign_define("DiagnosticSignHint"  , { texthl = "DiagnosticHint" , text = "" })
 
 -- Clear lsp highlights before loading the colorscheme so that we can see whether the colorscheme defines it's own lsp highlights
-vim.cmd "autocmd ColorSchemePre * highlight clear LspDiagnosticsDefaultError"
-vim.cmd "autocmd ColorSchemePre * highlight clear LspDiagnosticsDefaultWarning"
-vim.cmd "autocmd ColorSchemePre * highlight clear LspDiagnosticsDefaultInformation"
-vim.cmd "autocmd ColorSchemePre * highlight clear LspDiagnosticsDefaultHint"
+vim.cmd "autocmd ColorSchemePre * highlight clear DiagnosticError"
+vim.cmd "autocmd ColorSchemePre * highlight clear DiagnosticWarn"
+vim.cmd "autocmd ColorSchemePre * highlight clear DiagnosticInfo"
+vim.cmd "autocmd ColorSchemePre * highlight clear DiagnosticHint"
 
--- Check if lsp highlights have been set
-local lsp_color_test = util.get_color(
-	{
-		{"LspDiagnosticsDefaultError", "fg"},
-		{"LspDiagnosticsDefaultWarn", "fg"},
-		{"LspDiagnosticsDefaultInfo", "fg"},
-		{"LspDiagnosticsDefaultHint", "fg"}
-	},
-	{
-		cterm = false,
-		gui = false
-	}
-)
+SetupLspHighlights = function()
+	-- Check if lsp highlights have been set
+	local lsp_color_test = util.get_color(
+		{
+			{"DiagnosticError", "fg"},
+			{"DiagnosticWarn", "fg"},
+			{"DiagnosticInfo", "fg"},
+			{"DiagnosticHint", "fg"}
+		},
+		{
+			cterm = false,
+			gui = false
+		}
+	)
 
--- If they haven't, then define our own lsp colors based on other highlights
-if not lsp_color_test.gui or not lsp_color_test.cterm then
-	local bg = util.get_color(
-		{
-			{ "SignColumn", "bg" },
-			{ "Normal", "bg" }
-		},
-		{
-			cterm = "0",
-			gui = "#000000"
-		}
-	)
-	local error = util.get_color(
-		{
-			{ "ErrorMsg", "fg" }
-		},
-		{
-			cterm = "0",
-			gui = "#000000"
-		}
-	)
-	local warn = util.get_color(
-		{
-			{ "Constant", "fg" },
-			{ "WarningMsg", "fg"  },
-			{ "Boolean", "fg" },
-			{ "Delimiter", "fg" }
-		},
-		{
-			cterm = "0",
-			gui = "#000000"
-		}
-	)
-	local hint = util.get_color(
-		{
-			{ "Special", "fg" },
-			{ "Function", "fg" },
-			{ "Include", "fg" }
-		},
-		{
-			cterm = "0",
-			gui = "#000000"
-		}
-	)
-	local info = util.get_color(
-		{
-			{ "String", "fg" },
-			{ "DiffAdded", "fg" },
-			{ "DiffAdd", "fg" },
-		},
-		{
-			cterm = "0",
-			gui = "#000000"
-		}
-	)
-	cmd("highlight LspDiagnosticsDefaultError guifg="       .. error.gui .. " guibg=" .. bg.gui .. " ctermfg=" .. error.cterm .. " ctermbg=" .. bg.cterm)
-	cmd("highlight LspDiagnosticsDefaultWarning guifg="     .. warn.gui  .. " guibg=" .. bg.gui .. " ctermfg=" .. warn.cterm  .. " ctermbg=" .. bg.cterm)
-	cmd("highlight LspDiagnosticsDefaultInformation guifg=" .. info.gui  .. " guibg=" .. bg.gui .. " ctermfg=" .. info.cterm  .. " ctermbg=" .. bg.cterm)
-	cmd("highlight LspDiagnosticsDefaultHint guifg="        .. hint.gui  .. " guibg=" .. bg.gui .. " ctermfg=" .. hint.cterm  .. " ctermbg=" .. bg.cterm)
+	-- If they haven't, then define our own lsp colors based on other highlights
+	if not lsp_color_test.gui and not lsp_color_test.cterm then
+		local bg = util.get_color(
+			{
+				{ "SignColumn", "bg" },
+				{ "Normal", "bg" }
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		)
+		local error = util.get_color(
+			{
+				{ "ErrorMsg", "fg" }
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		)
+		local warn = util.get_color(
+			{
+				{ "Constant", "fg" },
+				{ "WarningMsg", "fg"  },
+				{ "Boolean", "fg" },
+				{ "Delimiter", "fg" }
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		)
+		local hint = util.get_color(
+			{
+				{ "Special", "fg" },
+				{ "Function", "fg" },
+				{ "Include", "fg" }
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		)
+		local info = util.get_color(
+			{
+				{ "String", "fg" },
+				{ "DiffAdded", "fg" },
+				{ "DiffAdd", "fg" },
+			},
+			{
+				cterm = "0",
+				gui = "#000000"
+			}
+		)
+		vim.cmd("highlight DiagnosticError guifg=" .. error.gui .. " guibg=" .. bg.gui .. " ctermfg=" .. error.cterm .. " ctermbg=" .. bg.cterm)
+		vim.cmd("highlight DiagnosticWarn  guifg=" .. warn.gui  .. " guibg=" .. bg.gui .. " ctermfg=" .. warn.cterm  .. " ctermbg=" .. bg.cterm)
+		vim.cmd("highlight DiagnosticInfo  guifg=" .. info.gui  .. " guibg=" .. bg.gui .. " ctermfg=" .. info.cterm  .. " ctermbg=" .. bg.cterm)
+		vim.cmd("highlight DiagnosticHint  guifg=" .. hint.gui  .. " guibg=" .. bg.gui .. " ctermfg=" .. hint.cterm  .. " ctermbg=" .. bg.cterm)
+	end
 end
+
+SetupLspHighlights()
+vim.cmd "autocmd ColorScheme * lua SetupLspHighlights()"
 
 -- Set lsp virtual text style
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

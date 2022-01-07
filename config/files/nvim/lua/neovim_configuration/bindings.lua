@@ -79,8 +79,15 @@ util.map("n", "<leader>e", ":FloatermNew lf<CR>")
 -- Hop
 util.map("n", "ss", ":HopChar1<CR>")
 util.map("n", "sS", ":HopChar2<CR>")
-util.map("n", "sl", ":HopLine<CR>")
+util.map("n", "sl", ":HopLineStart<CR>")
+util.map("n", "sL", ":HopLine<CR>")
 util.map("n", "sw", ":HopWord<CR>")
+
+util.map("x", "ss", ":HopChar1<CR>")
+util.map("x", "sS", ":HopChar2<CR>")
+util.map("x", "sl", ":HopLineStart<CR>")
+util.map("x", "sL", ":HopLine<CR>")
+util.map("x", "sw", ":HopWord<CR>")
 
 -- Buffers
 util.map('n', '<leader>bd', ':bd<CR>')

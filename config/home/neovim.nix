@@ -91,15 +91,15 @@ in {
       kommentary
       feline-nvim
       emmet-vim
-      #indent-blankline-nvim
-      #nvim-neoclip-lua
-      vim-wordmotion
       project-nvim
-      #nvim-fzf
+      targets-vim
 
       gruvbox-material
       tokyonight-nvim
 
+      (vimPlugin {
+        repo = "petertriho/nvim-scrollbar";
+      })
       (vimPlugin {
         repo = "svban/YankAssassin.vim";
       })
@@ -124,9 +124,6 @@ in {
       (vimPlugin {
         repo = "catppuccin/nvim";
       })
-      /* (vimPlugin {
-        repo = "ibhagwan/fzf-lua";
-      }) */
     ];
   };
 }

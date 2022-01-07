@@ -53,7 +53,6 @@ lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
       border = "#A4B9EF";
     };
   };
-
   rofi = {
     first = {
       bg = "#1E1E29";
@@ -73,6 +72,7 @@ lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
     third = {
       bg = "#1E1E29";
       fg = "#D7DAE0";
+      accent = "#A4B9EF";
     };
   };
 
@@ -110,8 +110,8 @@ lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
       };
 
       urgency_critical = {
-        background = "#1E1E29";
-        foreground = "#D7DAE0";
+        background = "#E28C8C";
+        foreground = "#1E1E29";
         frame_color = "#E28C8C";
       };
 

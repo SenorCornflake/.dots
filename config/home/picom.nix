@@ -6,6 +6,7 @@
     package = pkgs.picom-next;
     experimentalBackends = true;
     backend = "glx";
+    # TODO: Inactive dim affects rofi, try to fix
     inactiveDim = style.picom.inactiveDim;
     fade = true;
     fadeSteps = [

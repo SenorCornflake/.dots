@@ -1,6 +1,7 @@
 local util = require "neovim_configuration.util"
 local cmd = vim.cmd
 local lsp = require('feline.providers.lsp')
+local lsp_severity = vim.diagnostic.severity
 
 SetupStatusline = function()
 	local components = {
@@ -38,12 +39,12 @@ SetupStatusline = function()
 	StatuslineColors = {
 		bg = util.get_color(
 			{
-				{ "Normal", "bg" },
+				{ "StatusLine", "bg" },
 			}
 		),
 		alt_bg = util.get_color(
 			{
-				{ "StatusLine", "bg" },
+				{ "Normal", "bg" },
 			}
 		),
 		fg = util.get_color(
@@ -51,185 +52,32 @@ SetupStatusline = function()
 				{ "Normal", "fg" },
 			}
 		),
-		insert = util.get_color(
+		accent = util.get_color(
 			{
-				{ "Function", "fg" }
+				{"Tag", "fg"},
 			}
 		),
-		normal = util.get_color(
+		comment = util.get_color(
 			{
-				{ "String", "fg" }
-			}
-		),
-		visual = util.get_color(
-			{
-				{ "Conditional", "fg" }
-			}
-		),
-		other = util.get_color(
-			{
-				{ "Tag", "fg" },
-				{ "Search", "fg" },
-			}
-		),
-		filename = util.get_color(
-			{
-				{ "Include", "fg" },
-			}
-		),
-		error = util.get_color(
-			{
-				{ "LspDiagnosticsDefaultError", "fg" },
-			}
-		),
-		warn = util.get_color(
-			{
-				{ "LspDiagnosticsDefaultWarning", "fg" },
-			}
-		),
-		info = util.get_color(
-			{
-				{ "LspDiagnosticsDefaultInformation", "fg" },
-			}
-		),
-		hint = util.get_color(
-			{
-				{ "LspDiagnosticsDefaultHint", "fg" },
-			}
-		),
-		other_fg = util.get_color(
-			{
-				{ "String", "fg" },
-			}
-		),
-
-		lsp_clients = util.get_color(
-			{
-				{ "Special", "fg" },
-			}
-		),
-
-		git_branch = util.get_color(
-			{
-				{ "Tag", "fg" },
-				{ "Search", "fg" },
-			}
-		),
-		git_diff_added = util.get_color(
-			{
-				{ "GitSignsAdd", "fg" },
-				{ "DiffAdd", "fg" },
-				{ "DiffAdded", "fg" },
-				{ "MoreMsg", "fg" },
-			},
-			{
-				cterm = "0",
-				gui = "#00aa00"
-			}
-		),
-		git_diff_changed = util.get_color(
-			{
-				{ "GitSignsChange", "fg" },
-				{ "DiffChange", "fg" },
-				{ "DiffChanged", "fg" },
-				{ "Include", "fg" },
-				{ "Function", "fg" },
-				{ "Conditional", "fg" },
-				{ "Keyword", "fg" },
-			},
-			{
-				cterm = "0",
-				gui = "#00aaaa"
-			}
-		),
-		git_diff_removed = util.get_color(
-			{
-				{ "GitSignsDelete", "fg" },
-				{ "DiffDelete", "fg" },
-				{ "DiffRemoved", "fg" },
-				{ "ErrorMsg", "fg" },
-			},
-			{
-				cterm = "0",
-				gui = "#000000"
+				{"Comment", "fg"},
 			}
 		),
 	}
-	if vim.g.colors_name == "base16-base16" then
-		StatuslineColors.alt_bg = StatuslineColors.bg
+
+	local bg = StatuslineColors.alt_bg.gui
+	local statusline_bg = StatuslineColors.bg.gui
+
+	-- If the statusline color is considered bright for 0.5 it means it's not bright enough, so use the normal bg with the color darkened ( for light colorschemes)
+	if util.color_is_bright(bg, 0.5) and util.color_is_bright(statusline_bg, 0.5) then
+		StatuslineColors.bg.gui = util.shade_color(bg, -20)
+	-- If the statusline bg is too bright then use the normal backgound with the color lightened ( for dark colorthemes )
+	elseif util.color_is_bright(statusline_bg, 0.2) then
+		StatuslineColors.bg.gui = util.shade_color(bg, 20)
 	end
 
-	cmd ("hi! StatuslineBackground ctermfg="      .. StatuslineColors.fg.cterm        .. " guifg=" .. StatuslineColors.fg.gui        .. " ctermbg=" .. StatuslineColors.bg.cterm .. " guibg=" .. StatuslineColors.bg.gui)
-	cmd ("hi! StatuslineAltBackground ctermfg="      .. StatuslineColors.fg.cterm        .. " guifg=" .. StatuslineColors.fg.gui        .. " ctermbg=" .. StatuslineColors.alt_bg.cterm .. " guibg=" .. StatuslineColors.alt_bg.gui)
-	cmd ("hi! StatuslineAltBackgroundSymbol ctermfg="      .. StatuslineColors.alt_bg.cterm        .. " guifg=" .. StatuslineColors.alt_bg.gui        .. " ctermbg=" .. StatuslineColors.bg.cterm .. " guibg=" .. StatuslineColors.bg.gui)
-	cmd ("hi! StatuslineBackgroundSymbol ctermfg="      .. StatuslineColors.bg.cterm        .. " guifg=" .. StatuslineColors.bg.gui        .. " ctermbg=" .. StatuslineColors.alt_bg.cterm .. " guibg=" .. StatuslineColors.alt_bg.gui)
-	cmd ("hi! StatuslineFileName ctermfg="      .. StatuslineColors.filename.cterm        .. " guifg=" .. StatuslineColors.filename.gui        .. " ctermbg=" .. StatuslineColors.alt_bg.cterm .. " guibg=" .. StatuslineColors.alt_bg.gui)
-	cmd ("hi! StatuslineEncoding ctermfg="      .. StatuslineColors.other_fg.cterm        .. " guifg=" .. StatuslineColors.other_fg.gui        .. " ctermbg=" .. StatuslineColors.alt_bg.cterm .. " guibg=" .. StatuslineColors.alt_bg.gui)
-	cmd ("hi! StatuslineFileFormat ctermfg="    .. StatuslineColors.other_fg.cterm        .. " guifg=" .. StatuslineColors.other_fg.gui        .. " ctermbg=" .. StatuslineColors.alt_bg.cterm .. " guibg=" .. StatuslineColors.alt_bg.gui)
-	cmd ("hi! StatuslineFileType ctermfg="    .. StatuslineColors.other_fg.cterm        .. " guifg=" .. StatuslineColors.other_fg.gui        .. " ctermbg=" .. StatuslineColors.alt_bg.cterm .. " guibg=" .. StatuslineColors.alt_bg.gui)
-
-	cmd ("hi! StatuslineLSPError ctermfg="      .. StatuslineColors.error.cterm           .. " guifg=" .. StatuslineColors.error.gui           .. " ctermbg=" .. StatuslineColors.alt_bg.cterm .. " guibg=" .. StatuslineColors.alt_bg.gui)
-	cmd ("hi! StatuslineLSPWarn ctermfg="       .. StatuslineColors.warn.cterm            .. " guifg=" .. StatuslineColors.warn.gui            .. " ctermbg=" .. StatuslineColors.alt_bg.cterm .. " guibg=" .. StatuslineColors.alt_bg.gui)
-	cmd ("hi! StatuslineLSPInfo ctermfg="       .. StatuslineColors.info.cterm            .. " guifg=" .. StatuslineColors.info.gui            .. " ctermbg=" .. StatuslineColors.alt_bg.cterm .. " guibg=" .. StatuslineColors.alt_bg.gui)
-	cmd ("hi! StatuslineLSPHint ctermfg="       .. StatuslineColors.hint.cterm            .. " guifg=" .. StatuslineColors.hint.gui            .. " ctermbg=" .. StatuslineColors.alt_bg.cterm .. " guibg=" .. StatuslineColors.alt_bg.gui)
-	cmd ("hi! StatuslineLSPClients ctermfg="    .. StatuslineColors.fg.cterm     .. " guifg=" .. StatuslineColors.fg.gui     .. " ctermbg=" .. StatuslineColors.alt_bg.cterm .. " guibg=" .. StatuslineColors.alt_bg.gui)
-
-	cmd ("hi! StatuslineGitBranch ctermfg="    .. StatuslineColors.git_branch.cterm     .. " guifg=" .. StatuslineColors.git_branch.gui     .. " ctermbg=" .. StatuslineColors.alt_bg.cterm .. " guibg=" .. StatuslineColors.alt_bg.gui)
-	cmd ("hi! StatuslineGitDiffAdded ctermfg="    .. StatuslineColors.git_diff_added.cterm     .. " guifg=" .. StatuslineColors.git_diff_added.gui     .. " ctermbg=" .. StatuslineColors.alt_bg.cterm .. " guibg=" .. StatuslineColors.alt_bg.gui)
-	cmd ("hi! StatuslineGitDiffChanged ctermfg="    .. StatuslineColors.git_diff_changed.cterm     .. " guifg=" .. StatuslineColors.git_diff_changed.gui     .. " ctermbg=" .. StatuslineColors.alt_bg.cterm .. " guibg=" .. StatuslineColors.alt_bg.gui)
-	cmd ("hi! StatuslineGitDiffRemoved ctermfg="    .. StatuslineColors.git_diff_removed.cterm     .. " guifg=" .. StatuslineColors.git_diff_removed.gui     .. " ctermbg=" .. StatuslineColors.alt_bg.cterm .. " guibg=" .. StatuslineColors.alt_bg.gui)
-
-
-	StatuslineModeColors = {
-		['n']  = StatuslineColors.normal,
-		['no'] = StatuslineColors.normal,
-
-		['v']  = StatuslineColors.visual,
-		['V']  = StatuslineColors.visual,
-		[''] = StatuslineColors.visual,
-		['s']  = StatuslineColors.visual,
-		['S']  = StatuslineColors.visual,
-		[''] = StatuslineColors.visual,
-
-		['i']  = StatuslineColors.insert,
-		['ic'] = StatuslineColors.insert,
-		['ix'] = StatuslineColors.insert,
-
-		['R']  = StatuslineColors.other,
-		['Rv'] = StatuslineColors.other,
-		['c']  = StatuslineColors.other,
-		['cv'] = StatuslineColors.other,
-		['ce'] = StatuslineColors.other,
-		['r']  = StatuslineColors.other,
-		['rm'] = StatuslineColors.other,
-		['r?'] = StatuslineColors.other,
-		['!']  = StatuslineColors.other,
-		['t']  = StatuslineColors.other,
-	}
-
-	local mode_labels = {
-		['n']  = 'NORMAL',
-		['no'] = 'N·Operator Pending',
-		['v']  = 'VISUAL',
-		['V']  = 'V·Line',
-		[''] = 'V·Block',
-		['s']  = 'Select',
-		['S']  = 'S·Line',
-		[''] = 'S·Block',
-		['i']  = 'INSERT',
-		['ic'] = 'INSERT',
-		['ix'] = 'INSERT',
-		['R']  = 'Replace',
-		['Rv'] = 'V·Replace',
-		['c']  = 'COMMAND',
-		['cv'] = 'Vim Ex',
-		['ce'] = 'Ex',
-		['r']  = 'Prompt',
-		['rm'] = 'More',
-		['r?'] = 'Confirm',
-		['!']  = 'Shell',
-		['t']  = 'TERMINAL'
-	}
+	vim.cmd("hi StatuslineModule ctermbg=8 ctermfg=15 guibg=" .. StatuslineColors.bg.gui .. " guifg=" .. StatuslineColors.fg.gui)
+	vim.cmd("hi StatuslineModuleAlt ctermbg=0 ctermfg=7 guibg=" .. StatuslineColors.alt_bg.gui .. " guifg=" .. StatuslineColors.comment.gui)
+	vim.cmd("hi StatuslineModuleHighlighted ctermbg=8 ctermfg=14 guibg=" .. StatuslineColors.bg.gui .. " guifg=" .. StatuslineColors.accent.gui)
 
 	local buffer_not_empty = function()
 		if vim.fn.empty(vim.fn.expand('%:t')) ~= 1 then
@@ -246,284 +94,197 @@ SetupStatusline = function()
 		return false
 	end
 
-	local update_mode_color = function()
-		local color = StatuslineModeColors[vim.fn.mode()]
-		cmd ("hi! StatuslineMode ctermfg=" .. StatuslineColors.bg.cterm .. " guifg=" .. StatuslineColors.bg.gui .. " ctermbg=" .. color.cterm .. " guibg=" .. color.gui)
-		cmd ("hi! StatuslineModeSymbol ctermfg=" .. color.cterm .. " guifg=" .. color.gui .. " ctermbg=" .. StatuslineColors.alt_bg.cterm .. " guibg=" .. StatuslineColors.alt_bg.gui)
-	end
-
-	al {
-		provider = function()
-			local label = mode_labels[vim.fn.mode()]
-			return " " .. label .. " "
-			--return "  "
-		end,
-		hl = function()
-			update_mode_color()
-			return "StatuslineMode"
-		end
-	}
-
-	al {
-		provider = function()
-			return ""
-		end,
-		hl = function()
-			return "StatuslineModeSymbol"
-		end
-	}
-
-	al {
-		provider = "file_size",
-		hl = "StatuslineAltBackground",
-		left_sep = {
-			str = "  ",
-			hl = "StatuslineAltBackground"
-		},
-		right_sep = {
-			str = " ",
-			hl = "StatuslineAltBackground"
-		},
-	}
-
-	al {
-		provider = function()
-			return ""
-		end,
-		hl = function()
-			return "StatuslineAltBackgroundSymbol"
-		end
-	}
-
 	al {
 		provider = "file_info",
 		type = "relative-short",
-		hl = "StatuslineFileName",
+		hl = "StatuslineModule",
 		colored_icon = false, -- This as true caused problems
 		left_sep = {
-			str = " ",
-			hl = "StatuslineBackgroundSymbol"
+			str = "  ",
+			hl = "StatuslineModule",
 		},
 		right_sep = {
-			str = "",
-			hl = "StatuslineAltBackgroundSymbol"
+			str = "  ",
+			hl = "StatuslineModule",
 		},
 	}
 
 	al {
-		provider = function()
-			return ""
-		end,
-		hl = "StatuslineAltBackgroundSymbol"
-	}
-
-	al {
-		provider = "position",
-		hl = "StatuslineAltBackground",
+		provider = "git_branch",
+		hl = "StatuslineModuleAlt",
 		left_sep = {
-			str = " ",
-			hl = "StatuslineAltBackground"
-		},
-	}
-
-	al {
-		provider = "line_percentage",
-		hl = "StatuslineAltBackground",
-		left_sep = {
-			str = " ",
-			hl = "StatuslineAltBackground"
+			str = "   ",
+			hl = "StatuslineModuleAlt",
 		},
 		right_sep = {
 			str = " ",
-			hl = "StatuslineAltBackground"
+			hl = "StatuslineModuleAlt",
 		},
+		enabled = checkwidth
+	}
+
+	al {
+		provider = "git_diff_added",
+		hl = "StatuslineModuleAlt",
+		right_sep = {
+			str = " ",
+			hl = "StatuslineModuleAlt",
+		},
+		icon = "+",
+		enabled = checkwidth
+	}
+
+	al {
+		provider = "git_diff_changed",
+		hl = "StatuslineModuleAlt",
+		right_sep = {
+			str = " ",
+			hl = "StatuslineModuleAlt",
+		},
+		icon = "~",
+		enabled = checkwidth
+	}
+
+	al {
+		provider = "git_diff_removed",
+		hl = "StatuslineModuleAlt",
+		right_sep = {
+			str = " ",
+			hl = "StatuslineModuleAlt",
+		},
+		icon = "-",
+		enabled = checkwidth
+	}
+
+	al {
+		enabled = function()
+			return vim.b.gitsigns_status_dict ~= nil and checkwidth()
+		end,
+		provider = function()
+			return "  "
+		end,
+		hl = "StatuslineModuleAlt",
 	}
 
 	al {
 		provider = function()
-			return ""
+			return ""
 		end,
-		hl = "StatuslineAltBackgroundSymbol"
-	}
-
-
-	ar {
-		provider = function()
-			return ""
-		end,
-		hl = "StatuslineAltBackgroundSymbol"
+		hl = "StatuslineModule",
 	}
 
 	ar {
 		provider = "lsp_client_names",
-		hl = "StatuslineLspClients",
+		hl = "StatuslineModuleAlt",
 		left_sep = {
-			str = " ",
-			hl = "StatuslineAltBackground"
+			str = "  ",
+			hl = "StatuslineModuleAlt",
 		},
 		right_sep = {
 			str = " ",
-			hl = "StatuslineAltBackground"
+			hl = "StatuslineModuleAlt",
 		},
+		enabled = checkwidth
 	}
 
-	-- ar {
-	-- 	provider = "diagnostic_hints",
-	-- 	hl = "StatuslineLSPHint",
-	-- 	right_sep = {
-	-- 		str = " ",
-	-- 		hl = "StatuslineAltBackground"
-	-- 	},
-	-- 	icon = " ",
-	-- 	enabled = function() return lsp.diagnostics_exist('Hint') end,
-	-- }
+	ar {
+		provider = "diagnostic_hints",
+		hl = "StatuslineModuleAlt",
+		right_sep = {
+			str = " ",
+			hl = "StatuslineModuleAlt",
+		},
+		icon = " ",
+		enabled = function() return lsp.diagnostics_exist(lsp_severity.HINT) and checkwidth() end,
+	}
 
-	-- ar {
-	-- 	provider = "diagnostic_errors",
-	-- 	hl = "StatuslineLSPError",
-	-- 	right_sep = {
-	-- 		str = " ",
-	-- 		hl = "StatuslineAltBackground"
-	-- 	},
-	-- 	icon = " ",
-	-- 	enabled = function() return lsp.diagnostics_exist('Error') end,
-	-- }
+	ar {
+		provider = "diagnostic_errors",
+		hl = "StatuslineModuleAlt",
+		right_sep = {
+			str = " ",
+			hl = "StatuslineModuleAlt",
+		},
+		icon = " ",
+		enabled = function() return lsp.diagnostics_exist(lsp_severity.ERROR) and checkwidth() end,
+	}
 
-	-- ar {
-	-- 	provider = "diagnostic_warnings",
-	-- 	hl = "StatuslineLSPWarn",
-	-- 	right_sep = {
-	-- 		str = " ",
-	-- 		hl = "StatuslineAltBackground"
-	-- 	},
-	-- 	icon = " ",
-	-- 	enabled = function() return lsp.diagnostics_exist('Warning') end,
-	-- }
+	ar {
+		provider = "diagnostic_warnings",
+		hl = "StatuslineModuleAlt",
+		right_sep = {
+			str = " ",
+			hl = "StatuslineModuleAlt",
+		},
+		icon = " ",
+		enabled = function() return lsp.diagnostics_exist(lsp_severity.WARN) and checkwidth() end,
+	}
 
-	-- ar {
-	-- 	provider = "diagnostic_info",
-	-- 	hl = "StatuslineLSPInfo",
-	-- 	right_sep = {
-	-- 		str = " ",
-	-- 		hl = "StatuslineAltBackground"
-	-- 	},
-	-- 	icon = " ",
-	-- 	enabled = function() return lsp.diagnostics_exist('Information') end,
-	-- }
+	ar {
+		provider = "diagnostic_info",
+		hl = "StatuslineModuleAlt",
+		right_sep = {
+			str = " ",
+			hl = "StatuslineModuleAlt",
+		},
+		icon = " ",
+		enabled = function() return lsp.diagnostics_exist(lsp_severity.INFO) and checkwidth() end,
+	}
 
+	ar {
+		enabled = function()
+			return #vim.lsp.buf_get_clients() > 0 and checkwidth()
+		end,
+		provider = function()
+			return "  "
+		end,
+		hl = "StatuslineModuleAlt",
+	}
 	ar {
 		provider = function()
-			return ""
+			return vim.bo.fileencoding
 		end,
-		hl = "StatuslineBackgroundSymbol"
-	}
-
-	ar {
-		provider = function()
-			return ""
-		end,
-		hl = "StatuslineAltBackgroundSymbol"
-	}
-
-	ar {
-		provider = "git_branch",
-		hl = "StatuslineGitBranch",
+		hl = "StatuslineModuleHighlighted",
 		left_sep = {
-			str = " ",
-			hl = "StatuslineAltBackground"
+			str = "  ",
+			hl = "StatuslineModuleHighlighted",
 		},
 		right_sep = {
-			str = " ",
-			hl = "StatuslineAltBackground"
+			str = "  ",
+			hl = "StatuslineModuleHighlighted",
 		},
+		enabled = checkwidth
 	}
 
 	ar {
-		provider = "git_diff_added",
-		hl = "StatuslineGitDiffAdded",
+		provider = "position",
+		hl = "StatuslineModuleHighlighted",
 		right_sep = {
-			str = " ",
-			hl = "StatuslineAltBackground"
+			str = "  ",
+			hl = "StatuslineModuleHighlighted",
 		},
-		icon = "+"
-	}
-
-	ar {
-		provider = "git_diff_changed",
-		hl = "StatuslineGitDiffChanged",
-		right_sep = {
-			str = " ",
-			hl = "StatuslineAltBackground"
-		},
-		icon = "~"
-	}
-
-	ar {
-		provider = "git_diff_removed",
-		hl = "StatuslineGitDiffRemoved",
-		right_sep = {
-			str = " ",
-			hl = "StatuslineAltBackground"
-		},
-		icon = "-"
 	}
 
 	ar {
 		provider = function()
-			return ""
+			return vim.bo.filetype
 		end,
-		hl = "StatuslineBackgroundSymbol"
-	}
-
-	ar {
-		provider = function()
-			return ""
-		end,
-		hl = "StatuslineAltBackgroundSymbol"
-	}
-
-	ar {
-		provider = function()
-			return vim.bo.fileformat
-		end,
-		hl = "StatuslineFileFormat",
-		left_sep = {
-			str = " ",
-			hl = "StatuslineAltBackground"
-		},
+		hl = "StatuslineModuleHighlighted",
 		right_sep = {
-			str = " ",
-			hl = "StatuslineAltBackground"
+			str = "  ",
+			hl = "StatuslineModuleHighlighted",
 		},
+		enabled = checkwidth
 	}
-
-	ar {
-		provider = "file_encoding",
-		hl = "StatuslineEncoding",
-		right_sep = {
-			str = " ",
-			hl = "StatuslineAltBackground"
-		},
-	}
-
-	ar {
-		provider = "file_type",
-		hl = "StatuslineFileType",
-		right_sep = {
-			str = " ",
-			hl = "StatuslineAltBackground"
-		},
-	}
-
 
 	il {
 		provider = "file_info",
 		type = "relative-short",
-		hl = "StatuslineFileName",
+		hl = "StatuslineModule",
 		colored_icon = false, -- This as true caused problems
 		left_sep = {
 			str = "  ",
-			hl = "StatuslineAltBackground"
+			hl = "StatuslineModule",
 		},
 	}
 
@@ -535,4 +296,4 @@ end
 
 SetupStatusline()
 -- Sometimes, after reloading, the highlights just don't work, so reload the bar every few autocommands
-cmd "autocmd VimEnter,CursorHold,ColorScheme * lua SetupStatusline()"
+cmd "autocmd VimEnter,ColorScheme * lua SetupStatusline()"

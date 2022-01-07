@@ -10,7 +10,7 @@
     feh
     macchina
     git
-    transmission-gtk
+    qbittorrent
     libsForQt5.ark
     (xfce.thunar.override {
       thunarPlugins = [

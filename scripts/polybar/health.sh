@@ -4,7 +4,7 @@ elapsed=0
 
 while true; do
 	if [[ $elapsed == $interval ]]; then
-		notify-send "Take a break" "Go outside if possible and look at something far away" -a ""
+		notify-send "Take a break" "Go outside if possible and look at something far away" -a "" -u critical
 		elapsed=0
 	else
 		remaining=$(($interval - $elapsed))

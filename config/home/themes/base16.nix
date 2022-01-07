@@ -76,7 +76,8 @@ in lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
 
     third = {
       bg = "#" + b.base00;
-      fg = "#" + b.base07;
+      fg = "#" + b.base05;
+      accent = "#" + b.base0E;
     };
   };
 

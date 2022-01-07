@@ -7,10 +7,12 @@ util.map = function(mode, left, right, opts)
 	vim.api.nvim_set_keymap(mode, left, right, opts)
 end
 
+-- Expand home directory
 util.expanduser = function(path)
 	return path:gsub("~", os.getenv("HOME"))
 end
 
+-- Chech if file is directory
 util.isdir = function(path)
 	local f = io.open(path, "r")
 	local ok, err, code = f:read(1)
@@ -18,7 +20,7 @@ util.isdir = function(path)
 	return code == 21
 end
 
--- Get both gui and cterm highlights
+-- Get both gui and cterm colors of highlight groups ( with fallback support )
 util.get_color = function(highlights, fallbacks)
 	if not highlights then return end
 
@@ -73,10 +75,12 @@ util.file_exists = function(path)
 	return f ~= nil and io.close(f)
 end
 
+-- Get the file name from path ( with extension )
 util.extract_file_name = function(path)
 	return path:match("^.+/(.+)$")
 end
 
+-- Split a string into a table
 util.split = function(source, delimiters)
 	local elements = {}
 	local pattern = '([^'..delimiters..']+)'
@@ -84,6 +88,7 @@ util.split = function(source, delimiters)
 	return elements
 end
 
+-- List the files in a directory
 util.scandir = function(directory)
 	local cmd = assert(io.popen('ls -A ' .. directory, "r"))
 	local output = cmd:read("*all")
@@ -91,6 +96,7 @@ util.scandir = function(directory)
 	return util.split(output, "\n")
 end
 
+-- Generate a base16 theme using highlights from the current theme
 util.base16ify = function()
 	local theme = {
 		scheme = vim.g.colors_name,
@@ -184,6 +190,7 @@ util.base16ify = function()
 	return text
 end
 
+-- Print the name of the highlight group under the cursor
 util.synstack = function()
 	for _, i1 in ipairs(vim.fn.synstack(vim.fn.line('.'), vim.fn.col('.'))) do
 		local i2 = vim.fn.synIDtrans(i1)
@@ -193,6 +200,7 @@ util.synstack = function()
 	end
 end
 
+-- Return a list of colorschemes
 util.colorschemes = function(display)
 	display = display or false
 
@@ -232,6 +240,49 @@ util.colorschemes = function(display)
 	else
 		return colorschemes
 	end
+end
+
+-- Color manipulation, found it in bufferlines source
+---Convert a hex color to rgb
+util.hex_to_rgb = function(color)
+  local hex = color:gsub("#", "")
+  return tonumber(hex:sub(1, 2), 16), tonumber(hex:sub(3, 4), 16), tonumber(hex:sub(5), 16)
+end
+
+---@source https://stackoverflow.com/q/5560248
+---@see: https://stackoverflow.com/a/37797380
+---Darken a specified hex color
+util.shade_color = function(color, percent)
+	local alter = function(attr, percent)
+		return math.floor(attr * (100 + percent) / 100)
+	end
+
+	local r, g, b = util.hex_to_rgb(color)
+		if not r or not g or not b then
+	return "NONE"
+	end
+	r, g, b = alter(r, percent), alter(g, percent), alter(b, percent)
+	r, g, b = math.min(r, 255), math.min(g, 255), math.min(b, 255)
+	return string.format("#%02x%02x%02x", r, g, b)
+end
+
+--- Determine whether to use black or white text
+--- References:
+--- 1. https://stackoverflow.com/a/1855903/837964
+--- 2. https://stackoverflow.com/a/596243
+util.color_is_bright = function(hex, control)
+	control = control or 0.5
+	if not hex then
+		return false
+	end
+	local r, g, b = util.hex_to_rgb(hex)
+	-- If any of the colors are missing return false
+	if not r or not g or not b then
+		return false
+	end
+	-- Counting the perceptive luminance - human eye favors green color
+	local luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255
+	return luminance > control -- if > 0.5 Bright colors, black font, otherwise Dark colors, white font
 end
 
 return util

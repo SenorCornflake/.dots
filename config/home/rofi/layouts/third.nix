@@ -1,7 +1,7 @@
 { config, pkgs, style, ... }:
 
 {
-  location = "center";
+  location = "bottom-left";
   extraConfig = {
     font = "Terminus 9";
     terminal = "${pkgs.kitty}/bin/kitty";
@@ -11,16 +11,15 @@
   };
   theme = let
     inherit (config.lib.formats.rasi) mkLiteral;
-    inherit (style.rofi.third) bg fg;
+    inherit (style.rofi.third) bg fg accent;
   in {
     window = {
-      width = mkLiteral "30%";
-      height = mkLiteral "80%";
-      location = "center";
-      anchor = "center";
+      width = mkLiteral "20%";
+      height = mkLiteral "calc(100% - 32px)";
+      location = "south west";
+      anchor = "south west";
       background-color = mkLiteral bg;
       text-color = mkLiteral fg;
-      padding = mkLiteral "2px";
     };
 
     mainbox = {
@@ -28,8 +27,8 @@
       background-color = mkLiteral bg;
       text-color = mkLiteral fg;
       orientation = mkLiteral "vertical";
-      border = mkLiteral "0px 2px 0px 2px";
-      border-color = mkLiteral fg;
+      border = mkLiteral "0px 0px 0px 2px";
+      border-color = mkLiteral accent;
     };
 
     inputbar = {
@@ -69,17 +68,17 @@
     };
 
     "element-icon.selected" = {
-      background-color = mkLiteral bg;
+      background-color = mkLiteral accent;
       text-color = mkLiteral fg;
     };
 
     "element-text.selected" = {
-      background-color = mkLiteral fg;
+      background-color = mkLiteral accent;
       text-color = mkLiteral bg;
     };
 
     "element.selected" = {
-      background-color = mkLiteral fg;
+      background-color = mkLiteral accent;
       text-color = mkLiteral bg;
     };
   };
