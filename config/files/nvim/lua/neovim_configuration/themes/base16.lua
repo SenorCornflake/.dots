@@ -19,19 +19,25 @@ if base16.scheme == "Generated" then
 	local visual = util.get_color({{"Visual", "bg"}}).gui
 	local cursorline = visual
 
-	if util.color_is_bright(bg, 0.5) then
-		linenr = util.shade_color(linenr, 70)
-		visual = util.shade_color(visual, 30)
-		cursorline = util.shade_color(visual, 40)
-	else
-		linenr = util.shade_color(linenr, -50)
-		visual = util.shade_color(visual, -50)
+	if bg ~= nil and linenr ~= nil and visual ~= nil and os.getenv("TERM") ~= "linux" then -- If running in tty
+		if util.color_is_bright(bg, 0.5) then
+			print("Adjusting colors for light colorscheme")
+			linenr = util.shade_color(linenr, 70)
+			visual = util.shade_color(visual, 30)
+			cursorline = util.shade_color(cursorline, 40)
+		else
+			print("Adjusting colors for dark colorscheme")
+			linenr = util.shade_color(linenr, -50)
+			visual = util.shade_color(visual, -40)
+			cursorline = util.shade_color(cursorline, -50)
+		end
+
+		vim.cmd("hi LineNr guifg=" .. linenr)
+		vim.cmd("hi Visual guibg=" .. visual)
+		vim.cmd("hi CursorLine guibg=" .. cursorline)
+		vim.cmd("hi CursorLineNr guibg=" .. cursorline)
 	end
 
-	vim.cmd("hi LineNr guifg=" .. linenr)
-	vim.cmd("hi Visual guibg=" .. visual)
-	vim.cmd("hi CursorLine guibg=" .. cursorline)
-	vim.cmd("hi CursorLineNr guibg=" .. cursorline)
 end
 
 vim.cmd "doautocmd ColorScheme"

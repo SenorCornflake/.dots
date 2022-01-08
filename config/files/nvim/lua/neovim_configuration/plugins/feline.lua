@@ -67,12 +67,14 @@ SetupStatusline = function()
 	local bg = StatuslineColors.alt_bg.gui
 	local statusline_bg = StatuslineColors.bg.gui
 
-	-- If the statusline color is considered bright for 0.5 it means it's not bright enough, so use the normal bg with the color darkened ( for light colorschemes)
-	if util.color_is_bright(bg, 0.5) and util.color_is_bright(statusline_bg, 0.5) then
-		StatuslineColors.bg.gui = util.shade_color(bg, -20)
-	-- If the statusline bg is too bright then use the normal backgound with the color lightened ( for dark colorthemes )
-	elseif util.color_is_bright(statusline_bg, 0.2) then
-		StatuslineColors.bg.gui = util.shade_color(bg, 20)
+	if os.getenv("TERM") ~= "linux" then
+		-- If the statusline color is considered bright for 0.5 it means it's not bright enough, so use the normal bg with the color darkened ( for light colorschemes)
+		if util.color_is_bright(bg, 0.5) and util.color_is_bright(statusline_bg, 0.5) then
+			StatuslineColors.bg.gui = util.shade_color(bg, -20)
+		-- If the statusline bg is too bright then use the normal backgound with the color lightened ( for dark colorthemes )
+		elseif util.color_is_bright(statusline_bg, 0.2) then
+			StatuslineColors.bg.gui = util.shade_color(bg, 20)
+		end
 	end
 
 	vim.cmd("hi StatuslineModule ctermbg=8 ctermfg=15 guibg=" .. StatuslineColors.bg.gui .. " guifg=" .. StatuslineColors.fg.gui)
