@@ -39,6 +39,7 @@ cmp.setup {
 		{ name = 'luasnip' },
 		{ name = 'buffer' },
 		{ name = 'path' },
+		{ name = 'spell' },
 	},
 	experimental = {
 		native_menu = false,

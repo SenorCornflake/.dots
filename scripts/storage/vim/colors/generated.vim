@@ -2,7 +2,7 @@
 
 " base16-vim (https://github.com/chriskempson/base16-vim)
 " by Chris Kempson (http://chriskempson.com)
-" Generated scheme by Flavours
+" material scheme by Neovim
 
 " This enables the coresponding base16-shell script to run so that
 " :colorscheme works in terminals supported by base16-shell scripts
@@ -15,38 +15,38 @@ if !has("gui_running")
 endif
 
 " GUI color definitions
-let s:gui00        = "e3e0dd"
-let g:base16_gui00 = "e3e0dd"
-let s:gui01        = "bbb9b9"
-let g:base16_gui01 = "bbb9b9"
-let s:gui02        = "929395"
-let g:base16_gui02 = "929395"
-let s:gui03        = "6a6d72"
-let g:base16_gui03 = "6a6d72"
-let s:gui04        = "42474e"
-let g:base16_gui04 = "42474e"
-let s:gui05        = "1a212b"
-let g:base16_gui05 = "1a212b"
-let s:gui06        = "161c24"
-let g:base16_gui06 = "161c24"
-let s:gui07        = "12171e"
-let g:base16_gui07 = "12171e"
-let s:gui08        = "465f3d"
-let g:base16_gui08 = "465f3d"
-let s:gui09        = "465c66"
-let g:base16_gui09 = "465c66"
-let s:gui0A        = "7b4d43"
-let g:base16_gui0A = "7b4d43"
-let s:gui0B        = "305c80"
-let g:base16_gui0B = "305c80"
-let s:gui0C        = "4e637a"
-let g:base16_gui0C = "4e637a"
-let s:gui0D        = "485a71"
-let g:base16_gui0D = "485a71"
-let s:gui0E        = "963e0c"
-let g:base16_gui0E = "963e0c"
-let s:gui0F        = "3b5b80"
-let g:base16_gui0F = "3b5b80"
+let s:gui00        = "0f111a"
+let g:base16_gui00 = "0f111a"
+let s:gui01        = "1a1c25"
+let g:base16_gui01 = "1a1c25"
+let s:gui02        = "1f2233"
+let g:base16_gui02 = "1f2233"
+let s:gui03        = "464b5d"
+let g:base16_gui03 = "464b5d"
+let s:gui04        = "84ffff"
+let g:base16_gui04 = "84ffff"
+let s:gui05        = "a6accd"
+let g:base16_gui05 = "a6accd"
+let s:gui06        = "a6accd"
+let g:base16_gui06 = "a6accd"
+let s:gui07        = "a6accd"
+let g:base16_gui07 = "a6accd"
+let s:gui08        = "f78c6c"
+let g:base16_gui08 = "f78c6c"
+let s:gui09        = "f78c6c"
+let g:base16_gui09 = "f78c6c"
+let s:gui0A        = "c792ea"
+let g:base16_gui0A = "c792ea"
+let s:gui0B        = "c3e88d"
+let g:base16_gui0B = "c3e88d"
+let s:gui0C        = "f07178"
+let g:base16_gui0C = "f07178"
+let s:gui0D        = "82aaff"
+let g:base16_gui0D = "82aaff"
+let s:gui0E        = "c792ea"
+let g:base16_gui0E = "c792ea"
+let s:gui0F        = "ffcb6b"
+let g:base16_gui0F = "ffcb6b"
 
 " Terminal color definitions
 let s:cterm00        = "00"
@@ -99,22 +99,22 @@ endif
 
 " Neovim terminal colours
 if has("nvim")
-  let g:terminal_color_0 =  "#e3e0dd"
-  let g:terminal_color_1 =  "#465f3d"
-  let g:terminal_color_2 =  "#305c80"
-  let g:terminal_color_3 =  "#7b4d43"
-  let g:terminal_color_4 =  "#485a71"
-  let g:terminal_color_5 =  "#963e0c"
-  let g:terminal_color_6 =  "#4e637a"
-  let g:terminal_color_7 =  "#1a212b"
-  let g:terminal_color_8 =  "#6a6d72"
-  let g:terminal_color_9 =  "#465f3d"
-  let g:terminal_color_10 = "#305c80"
-  let g:terminal_color_11 = "#7b4d43"
-  let g:terminal_color_12 = "#485a71"
-  let g:terminal_color_13 = "#963e0c"
-  let g:terminal_color_14 = "#4e637a"
-  let g:terminal_color_15 = "#12171e"
+  let g:terminal_color_0 =  "#0f111a"
+  let g:terminal_color_1 =  "#f78c6c"
+  let g:terminal_color_2 =  "#c3e88d"
+  let g:terminal_color_3 =  "#c792ea"
+  let g:terminal_color_4 =  "#82aaff"
+  let g:terminal_color_5 =  "#c792ea"
+  let g:terminal_color_6 =  "#f07178"
+  let g:terminal_color_7 =  "#a6accd"
+  let g:terminal_color_8 =  "#464b5d"
+  let g:terminal_color_9 =  "#f78c6c"
+  let g:terminal_color_10 = "#c3e88d"
+  let g:terminal_color_11 = "#c792ea"
+  let g:terminal_color_12 = "#82aaff"
+  let g:terminal_color_13 = "#c792ea"
+  let g:terminal_color_14 = "#f07178"
+  let g:terminal_color_15 = "#a6accd"
   let g:terminal_color_background = g:terminal_color_0
   let g:terminal_color_foreground = g:terminal_color_5
   if &background == "light"
@@ -123,22 +123,22 @@ if has("nvim")
   endif
 elseif has("terminal")
   let g:terminal_ansi_colors = [
-        \ "#e3e0dd",
-        \ "#465f3d",
-        \ "#305c80",
-        \ "#7b4d43",
-        \ "#485a71",
-        \ "#963e0c",
-        \ "#4e637a",
-        \ "#1a212b",
-        \ "#6a6d72",
-        \ "#465f3d",
-        \ "#305c80",
-        \ "#7b4d43",
-        \ "#485a71",
-        \ "#963e0c",
-        \ "#4e637a",
-        \ "#12171e",
+        \ "#0f111a",
+        \ "#f78c6c",
+        \ "#c3e88d",
+        \ "#c792ea",
+        \ "#82aaff",
+        \ "#c792ea",
+        \ "#f07178",
+        \ "#a6accd",
+        \ "#464b5d",
+        \ "#f78c6c",
+        \ "#c3e88d",
+        \ "#c792ea",
+        \ "#82aaff",
+        \ "#c792ea",
+        \ "#f07178",
+        \ "#a6accd",
         \ ]
 endif
 

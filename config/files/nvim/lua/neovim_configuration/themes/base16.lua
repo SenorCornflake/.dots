@@ -12,6 +12,7 @@ end
 vim.cmd "doautocmd ColorSchemePre"
 
 require('base16-colorscheme').setup(base16)
+vim.g.colors_name = "base16"
 
 if base16.scheme == "Generated" then
 	local bg = util.get_color({{"Normal", "bg"}}).gui

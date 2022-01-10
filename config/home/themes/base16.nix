@@ -147,7 +147,7 @@ in lib.recursiveUpdate (import ./default.nix { inherit pkgs lib; }) {
   };
 
   neovim = {
-    colorscheme = "base16";
+    colorscheme = if b.author == "Neovim" then b.scheme else "base16";
   };
 
   kitty = {

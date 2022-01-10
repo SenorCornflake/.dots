@@ -71,7 +71,7 @@ util.map('n', '<leader>ls', ':lua vim.lsp.buf.signature_help()<cr>')
 util.map('n', '<leader>lk', ':lua vim.lsp.buf.hover()<cr>')
 util.map('n', '<leader>lr', ':lua vim.lsp.buf.rename()<cr>')
 util.map('n', '<leader>lR', ':lua vim.lsp.buf.references()<cr>')
-util.map('n', '<leader>le', ':lua vim.lsp.diagnostic.show_line_diagnostics()<cr>')
+util.map('n', '<leader>le', ':lua vim.diagnostic.show()<cr>')
 
 -- File manager
 util.map("n", "<leader>e", ":FloatermNew lf<CR>")
@@ -117,11 +117,22 @@ util.map("n", "<leader>o", ":SymbolsOutline<CR>")
 -- define Project root
 util.map("n", "<leader>.", ":ProjectRoot<CR>")
 
+util.map("n", "<leader>t", ":NeoTreeShowToggle<cr>")
+util.map("n", "<leader>T", ":NeoTreeClose<cr>")
+
 -- Comments -- Refer to kommentary.lua
 
 -- Visual
 util.map("v", ">", ">gv")
 util.map("v", "<", "<gv")
+
+-- Dial
+util.map("n", "<C-a>", "<Plug>(dial-increment)")
+util.map("n", "<C-x>", "<Plug>(dial-decrement)")
+util.map("x", "<C-a>", "<Plug>(dial-increment)")
+util.map("x", "<C-x>", "<Plug>(dial-decrement)")
+util.map("x", "g<C-a>", "<Plug>(dial-increment-additional)")
+util.map("x", "g<C-x>", "<Plug>(dial-decrement-additional)")
 
 -- Commands
 vim.cmd "command! AdaptSystem lua require('neovim_configuration.util').adapt_system()"

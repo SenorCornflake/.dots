@@ -1,3 +1,4 @@
+local json = require "neovim_configuration.lib.json"
 local util = {}
 
 -- Slightly easier map function
@@ -65,7 +66,7 @@ util.get_color = function(highlights, fallbacks)
 			end
 		end
 	end
-	
+
 	return output
 end
 
@@ -96,98 +97,84 @@ util.scandir = function(directory)
 	return util.split(output, "\n")
 end
 
+util.capture = function(cmd, raw)
+	local f = assert(io.popen(cmd, 'r'))
+	local s = assert(f:read('*a'))
+	f:close()
+	if raw then return s end
+	s = string.gsub(s, '^%s+', '')
+	s = string.gsub(s, '%s+$', '')
+	s = string.gsub(s, '[\n\r]+', ' ')
+	return s
+end
+
+util.adapt_system = function()
+	local base16 = util.base16ify()
+
+	local base16_json = json.encode(base16)
+	local base16_yaml = "\n"
+	base16_yaml = base16_yaml .. 'scheme: "' .. base16.scheme .. '"\n'
+	base16_yaml = base16_yaml .. 'author: "' .. base16.author .. '"\n'
+	base16_yaml = base16_yaml .. 'base00: "' .. base16.base00 .. '"\n'
+	base16_yaml = base16_yaml .. 'base01: "' .. base16.base01 .. '"\n'
+	base16_yaml = base16_yaml .. 'base02: "' .. base16.base02 .. '"\n'
+	base16_yaml = base16_yaml .. 'base03: "' .. base16.base03 .. '"\n'
+	base16_yaml = base16_yaml .. 'base04: "' .. base16.base04 .. '"\n'
+	base16_yaml = base16_yaml .. 'base05: "' .. base16.base05 .. '"\n'
+	base16_yaml = base16_yaml .. 'base06: "' .. base16.base05 .. '"\n'
+	base16_yaml = base16_yaml .. 'base07: "' .. base16.base07 .. '"\n'
+	base16_yaml = base16_yaml .. 'base08: "' .. base16.base08 .. '"\n'
+	base16_yaml = base16_yaml .. 'base09: "' .. base16.base09 .. '"\n'
+	base16_yaml = base16_yaml .. 'base0A: "' .. base16.base0A .. '"\n'
+	base16_yaml = base16_yaml .. 'base0B: "' .. base16.base0B .. '"\n'
+	base16_yaml = base16_yaml .. 'base0C: "' .. base16.base0C .. '"\n'
+	base16_yaml = base16_yaml .. 'base0D: "' .. base16.base0D .. '"\n'
+	base16_yaml = base16_yaml .. 'base0E: "' .. base16.base0E .. '"\n'
+	base16_yaml = base16_yaml .. 'base0F: "' .. base16.base0F .. '"\n'
+
+	-- Not manually closing the file made it only write when neovim closed
+	local file = io.open(os.getenv("DOT_ROOT") .. "/scripts/storage/base16.json", "w+")
+	file:write(base16_json)
+	file:close()
+
+	file = io.open(os.getenv("DOT_ROOT") .. "/scripts/storage/base16.yaml", "w+")
+	file:write(base16_yaml)
+	file:close()
+
+	-- TODO: Close the terminal when finished
+	vim.cmd ":vsplit | terminal sh $DOT_ROOT/scripts/setup_base16.sh && exit"
+end
+
 -- Generate a base16 theme using highlights from the current theme
 util.base16ify = function()
 	local theme = {
 		scheme = vim.g.colors_name,
-		author = "Generated",
-
-		base00 = util.get_color({
-			{"Normal", "bg"}
-		}).gui:gsub("#", ""),
-
-		base01 = util.get_color({
-			{"CursorLine" , "bg"}
-		}).gui:gsub("#", ""),
-
-		base02 = util.get_color({
-			{"Visual", "bg"},
-			{"Normal", "bg"},
-		}).gui:gsub("#", ""),
-
-		base03 = util.get_color({
-			{"Comment", "fg"}
-		}).gui:gsub("#", ""),
-
-		base04 = util.get_color({
-			{"StatusLine", "fg"}
-		}).gui:gsub("#", ""),
-		
-		base05 = util.get_color({
-			{"Normal", "fg"}
-		}).gui:gsub("#", ""),
-
-		base06 = util.get_color({
-			{"StatusLine", "fg"}
-		}).gui:gsub("#", ""),
-
-		base07 = util.get_color({
-			{"Normal", "fg"}
-		}).gui:gsub("#", ""),
-
-		base08 = util.get_color({
-			{"Character", "fg"}
-		}).gui:gsub("#", ""),
-
-		base09 = util.get_color({
-			{"Number", "fg"}
-		}).gui:gsub("#", ""),
-
-		base0A = util.get_color({
-			{"Type", "fg"}
-		}).gui:gsub("#", ""),
-
-		base0B = util.get_color({
-			{"String", "fg"}
-		}).gui:gsub("#", ""),
-
-		base0C = util.get_color({
-			{"Special", "fg"}
-		}).gui:gsub("#", ""),
-
-		base0D = util.get_color({
-			{"Function", "fg"}
-		}).gui:gsub("#", ""),
-
-		base0E = util.get_color({
-			{"Conditional", "fg"}
-		}).gui:gsub("#", ""),
-
-		base0F = util.get_color({
-			{"Constant", "fg"}
-		}).gui:gsub("#", "")
+		author = "Neovim",
+		base00 = util.get_color {{"Normal", "bg"}},
+		base01 = util.get_color {{"CursorLine" , "bg"}},
+		base02 = util.get_color {{"Visual", "bg"}, {"Normal", "bg"}},
+		base03 = util.get_color {{"Comment", "fg"}},
+		base04 = util.get_color {{"StatusLine", "fg"}},
+		base05 = util.get_color {{"Normal", "fg"}},
+		base06 = util.get_color {{"StatusLine", "fg"}},
+		base07 = util.get_color {{"Normal", "fg"}},
+		base08 = util.get_color {{"Character", "fg"}},
+		base09 = util.get_color {{"Number", "fg"}},
+		base0A = util.get_color {{"Type", "fg"}},
+		base0B = util.get_color {{"String", "fg"}},
+		base0C = util.get_color {{"Special", "fg"}},
+		base0D = util.get_color {{"Function", "fg"}},
+		base0E = util.get_color {{"Conditional", "fg"}},
+		base0F = util.get_color {{"Constant", "fg"}},
 	}
 
-	local  text = "\n"
-	text = text .. 'scheme: "' .. theme.scheme .. '"\n'
-	text = text .. 'author: "' .. theme.author .. '"\n'
-	text = text .. 'base00: "' .. theme.base00 .. '"\n'
-	text = text .. 'base01: "' .. theme.base01 .. '"\n'
-	text = text .. 'base02: "' .. theme.base02 .. '"\n'
-	text = text .. 'base03: "' .. theme.base03 .. '"\n'
-	text = text .. 'base04: "' .. theme.base04 .. '"\n'
-	text = text .. 'base05: "' .. theme.base05 .. '"\n'
-	text = text .. 'base06: "' .. theme.base05 .. '"\n'
-	text = text .. 'base07: "' .. theme.base07 .. '"\n'
-	text = text .. 'base08: "' .. theme.base08 .. '"\n'
-	text = text .. 'base09: "' .. theme.base09 .. '"\n'
-	text = text .. 'base0A: "' .. theme.base0A .. '"\n'
-	text = text .. 'base0B: "' .. theme.base0B .. '"\n'
-	text = text .. 'base0C: "' .. theme.base0C .. '"\n'
-	text = text .. 'base0D: "' .. theme.base0D .. '"\n'
-	text = text .. 'base0E: "' .. theme.base0E .. '"\n'
-	text = text .. 'base0F: "' .. theme.base0F .. '"'
-	return text
+	for k, v in pairs(theme) do
+		if k:find("base") then
+			theme[k] = v.gui:gsub("#", "")
+		end
+	end
+
+	return theme
 end
 
 -- Print the name of the highlight group under the cursor

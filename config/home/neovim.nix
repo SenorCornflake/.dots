@@ -61,6 +61,8 @@ in {
       nodePackages.vscode-json-languageserver-bin
       nodePackages.pyright
       nodePackages.intelephense
+      yq
+      coreutils
     ];
 
     plugins = with pkgs-unstable.vimPlugins; [
@@ -93,10 +95,17 @@ in {
       emmet-vim
       project-nvim
       targets-vim
+      nui-nvim
+      lush-nvim
 
       gruvbox-material
       tokyonight-nvim
-
+      (vimPlugin {
+        repo = "monaqa/dial.nvim";
+      })
+      (vimPlugin {
+        repo = "nvim-neo-tree/neo-tree.nvim";
+      })
       (vimPlugin {
         repo = "petertriho/nvim-scrollbar";
       })
@@ -124,6 +133,22 @@ in {
       (vimPlugin {
         repo = "catppuccin/nvim";
       })
+      (vimPlugin {
+        repo = "yashguptaz/calvera-dark.nvim";
+      })
+      (vimPlugin {
+        repo = "kvrohit/substrata.nvim";
+      })
+      (vimPlugin {
+        repo = "kdheepak/monochrome.nvim";
+      })
+      (vimPlugin {
+        repo = "shaunsingh/nord.nvim";
+      })
+      (vimPlugin {
+        repo = "mcchrish/zenbones.nvim";
+      })
+
     ];
   };
 }

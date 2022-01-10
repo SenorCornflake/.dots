@@ -25,3 +25,5 @@ require "neovim_configuration.plugins.treesitter"
 require "neovim_configuration.plugins.winshift"
 require "neovim_configuration.plugins.yankassassin"
 require "neovim_configuration.plugins.scrollbar"
+require "neovim_configuration.plugins.neo-tree"
+

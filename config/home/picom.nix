@@ -43,6 +43,9 @@
       blur-method="dual_kawase";
       blur-strengh=10;
       blur-background-fixed=true;
+      focus-exclude = [
+        "class_g = 'Rofi'"
+      ];
     '';
   };
 }

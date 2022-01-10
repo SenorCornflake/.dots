@@ -2,7 +2,7 @@ local opt = vim.opt
 
 -- Pain incurs without these options
 opt.hidden = true
-opt.termguicolors = true 
+opt.termguicolors = true
 opt.hlsearch = true
 opt.incsearch = true
 opt.splitbelow = true
@@ -24,7 +24,7 @@ opt.cursorline = true
 opt.completeopt = "menu,menuone,noselect,noinsert"
 opt.inccommand = "nosplit"
 opt.showmode = false
-opt.runtimepath    = vim.o.runtimepath .. "," .. os.getenv("DOT_ROOT") .. "/scripts/storage/vim"
+opt.runtimepath = vim.o.runtimepath .. "," .. os.getenv("DOT_ROOT") .. "/scripts/storage/vim"
 opt.list = true
 opt.listchars:append("trail:⋅")
 
@@ -42,3 +42,6 @@ opt.foldenable = true
 opt.foldmethod = "syntax"
 
 vim.cmd "autocmd FileType,BufRead,BufEnter *.nix setlocal shiftwidth=2 softtabstop=2 expandtab"
+
+-- WARN: This might cause problems closing other windows that are classified as terminals such as fzf etc.
+--vim.cmd "autocmd TermClose * bd!)"

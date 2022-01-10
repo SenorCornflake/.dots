@@ -31,20 +31,5 @@ if index != "":
         theme = json.dumps(theme)
         open(os.path.expandvars("$DOT_ROOT/scripts/storage/base16.json"), "w").write(theme)
 
-        # Generate neovim theme
-        os.system("flavours build $DOT_ROOT/scripts/storage/base16.yaml ~/.local/share/flavours/base16/templates/vim/templates/default.mustache > $DOT_ROOT/scripts/storage/vim/colors/generated.vim")
+        os.system("sh $DOT_ROOT/scripts/setup_base16.sh")
 
-        # Generate kitty theme
-        os.system("flavours build $DOT_ROOT/scripts/storage/base16.yaml ~/.local/share/flavours/base16/templates/kitty/templates/default.mustache > $DOT_ROOT/scripts/storage/kitty/colors/generated.conf")
-
-        # Generate wezterm theme
-        os.system("flavours build $DOT_ROOT/scripts/storage/base16.yaml $DOT_ROOT/scripts/storage/base16-templates/wezterm.mustache > $DOT_ROOT/scripts/storage/wezterm/colors/generated.toml")
-
-        # Set theme to base16
-        open(os.path.expandvars("$DOT_ROOT/scripts/storage/theme.txt"), "w").write("base16")
-
-        os.system("notify-send 'Applying styles, please wait...' -a ''")
-        os.system("sh $DOT_ROOT/install.sh home")
-        os.system("notify-send 'Done!' -a ''")
-        os.system("python $DOT_ROOT/scripts/neovim_command.py 'lua LOAD_THEME()'")
-        os.system("herbstclient reload")

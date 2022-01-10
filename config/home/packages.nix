@@ -62,6 +62,7 @@
     flavours
     zeal
     imagemagick
+    yq
  ] ++ (with pkgs-unstable; [
   lutris
   wezterm

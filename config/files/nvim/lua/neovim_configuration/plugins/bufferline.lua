@@ -34,6 +34,11 @@ SetupBufferline = function()
 					text_align = "center"
 				},
 				{
+					filetype = "neo-tree",
+					text = "",
+					text_align = "center"
+				},
+				{
 					filetype = "packer",
 					text = "Plugin Manager",
 					text_align = "center"
