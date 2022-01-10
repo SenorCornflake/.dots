@@ -38,8 +38,4 @@ if index != "":
 
 
 if got_something:
-    os.system("notify-send 'Applying styles, please wait...' -a ''")
-    os.system("sh $DOT_ROOT/install.sh home")
-    os.system("notify-send 'Done!' -a ''")
-    os.system("python $DOT_ROOT/scripts/neovim_command.py 'lua LOAD_THEME()'")
-    os.system("herbstclient reload")
+    os.system("sh $DOT_ROOT/scripts/apply_styles.sh")

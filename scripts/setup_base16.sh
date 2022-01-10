@@ -11,8 +11,4 @@ flavours build $DOT_ROOT/scripts/storage/base16.yaml $DOT_ROOT/scripts/storage/b
 
 echo -n "base16" > $DOT_ROOT/scripts/storage/theme.txt
 
-notify-send 'Applying styles, please wait...' -a ''
-sh $DOT_ROOT/install.sh home
-notify-send 'Done!' -a ''
-timeout 2s python $DOT_ROOT/scripts/neovim_command.py 'lua LOAD_THEME()'
-herbstclient reload
+sh $DOT_ROOT/scripts/apply_styles.sh
