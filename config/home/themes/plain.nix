@@ -145,11 +145,11 @@
   };
 
   kitty = {
-    colorscheme = "plain_black";
+    colorscheme = "plain";
   };
 
   wezterm = {
-    color_scheme = "simple";
+    color_scheme = "plain";
   };
 
   herbstluftwm = {

@@ -84,11 +84,11 @@
   outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-master, ... }@inputs: 
 
   let
-    t = builtins.readFile ../scripts/storage/theme.txt;
-    l = builtins.readFile ../scripts/storage/layout.txt;
+    theme_name = builtins.readFile ../scripts/storage/theme.txt;
+    layout_name = builtins.readFile ../scripts/storage/layout.txt;
 
-    theme = import (./. + "/home/themes/${t}.nix") { inherit pkgs lib; };
-    layout = import (./. + "/home/layouts/${l}.nix") { inherit pkgs lib; };
+    theme = import (./. + "/home/themes/${theme_name}.nix") { inherit pkgs lib; };
+    layout = import (./. + "/home/layouts/${layout_name}.nix") { inherit pkgs lib; };
 
     style = lib.recursiveUpdate theme layout;
 
