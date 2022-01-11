@@ -112,7 +112,7 @@
           foreground = vol;
           text = "<label-volume>";
           suffix = {
-            text = " V";
+            text = " VOL";
             foreground = vol;
           };
         };
@@ -121,7 +121,7 @@
           foreground = muted;
           text = "<label-muted>";
           suffix = {
-            text = " V";
+            text = "";
           };
         };
       };
@@ -138,7 +138,7 @@
           padding = 1;
           foreground = bat;
           suffix = {
-            text = " BC";
+            text = " BATc";
           };
         };
         discharging = {
@@ -146,7 +146,7 @@
           padding = 1;
           foreground = bat;
           suffix = {
-            text = " BD";
+            text = " BATd";
           };
         };
         full = {
@@ -154,7 +154,7 @@
           padding = 1;
           foreground = bat;
           suffix = {
-            text = " BF";
+            text = " BATf";
           };
         };
       };
@@ -205,7 +205,7 @@
       format = {
         foreground = cpu_temp;
         padding = 1;
-        suffix = " T";
+        suffix = " TMP";
       };
     };
 
@@ -215,7 +215,7 @@
       format = {
         foreground = ram;
         padding = 1;
-        suffix = " M";
+        suffix = " MEM";
       };
     };
 
@@ -225,7 +225,7 @@
       format = {
         text = "<label>";
         foreground = cpu;
-        suffix = " C";
+        suffix = " CPU";
         padding = 1;
       };
       label = "%percentage%%";
@@ -308,7 +308,7 @@
         test = "<label>";
         foreground = backlight;
         padding = 1;
-        suffix = " L";
+        suffix = " LIT";
       };
       label = "%percentage%";
       card = "intel_backlight";

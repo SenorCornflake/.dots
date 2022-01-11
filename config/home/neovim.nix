@@ -1,19 +1,42 @@
-{ config, pkgs, pkgs-unstable, lib, style, ... }:
+{ inputs, config, pkgs, pkgs-unstable, pkgs-master, lib, style, ... }:
 
 let
   # THANKS TO "https://breuer.dev/blog/nixos-home-manager-neovim"
-
   # installs a vim plugin from git with a given tag / branch
-  vimPlugin = { repo, ref ? "HEAD" }: pkgs.vimUtils.buildVimPluginFrom2Nix {
+  /* vimPlugin = { repo, ref ? "HEAD" }: pkgs.vimUtils.buildVimPluginFrom2Nix {
     pname = "${lib.strings.sanitizeDerivationName repo}";
     version = ref;
     src = builtins.fetchGit {
       url = "https://github.com/${repo}.git";
       ref = ref;
     };
-  };
-in {
+  }; */
 
+  # Flake approach for vim plugins, got from "https://github.com/SenchoPens/senixos/blob/master/profiles/nvim/default.nix"
+  flake-plugins = (pkgs.lib.genAttrs 
+    [
+      "dial-nvim"
+      "neo-tree-nvim"
+      "nvim-scrollbar"
+      "yankassassin-vim"
+      "nvim-base16"
+      "winshift-nvim"
+      "material-nvim"
+      "vim-enfocado"
+      "vim-moonfly-colors"
+      "catppuccin-nvim"
+      "calvera-dark-nvim"
+      "substrata-nvim"
+      "monochrome-nvim"
+      "zenbones-nvim"
+    ]
+    (plugin-name: pkgs.vimUtils.buildVimPlugin {
+      name = plugin-name;  
+      dontBuild = true;
+      src = inputs.${plugin-name};
+    })
+  );
+in {
   xdg.configFile."lua" = {
     target = "nvim/lua";
     source = ../files/nvim/lua;
@@ -65,91 +88,45 @@ in {
       coreutils
     ];
 
-    plugins = with pkgs-unstable.vimPlugins; [
+    plugins = with pkgs-master.vimPlugins; [
       # Deps
-      plenary-nvim
-      nvim-web-devicons
+      nvim-web-devicons # dependancy for many plugins
+      plenary-nvim # dependancy for many plugins
+      lush-nvim # zenbones dependancy
+      nui-nvim # neo tree dependancy
 
       # Plugs
-      nvim-lspconfig
-      nvim-cmp
+      #symbols-outline-nvim
+      bufferline-nvim
       cmp-buffer
       cmp-nvim-lsp
-      cmp_luasnip
       cmp-path
-      luasnip
-      nvim-treesitter
-      vim-floaterm
-      telescope-nvim
-      vim-startuptime
-      bufferline-nvim
-      gitsigns-nvim
-      #symbols-outline-nvim
-      hop-nvim
-      vim-hexokinase
-      lspkind-nvim
-      vim-fugitive
-      nvim-autopairs
-      kommentary
-      feline-nvim
+      cmp_luasnip
       emmet-vim
+      feline-nvim
+      gitsigns-nvim
+      hop-nvim
+      kommentary
+      lspkind-nvim
+      luasnip
+      nvim-autopairs
+      nvim-cmp
+      nvim-lspconfig
+      nvim-treesitter
       project-nvim
+      surround-nvim
       targets-vim
-      nui-nvim
-      lush-nvim
+      telescope-nvim
+      vim-floaterm
+      vim-fugitive
+      vim-hexokinase
+      vim-startuptime
+      which-key-nvim
 
       gruvbox-material
+      nord-nvim
       tokyonight-nvim
-      (vimPlugin {
-        repo = "monaqa/dial.nvim";
-      })
-      (vimPlugin {
-        repo = "nvim-neo-tree/neo-tree.nvim";
-      })
-      (vimPlugin {
-        repo = "petertriho/nvim-scrollbar";
-      })
-      (vimPlugin {
-        repo = "svban/YankAssassin.vim";
-      })
-      (vimPlugin {
-        repo = "SenorCornflake/nvim-base16";
-      })
-      (vimPlugin {
-        repo = "blackCauldron7/surround.nvim";
-      })
-      (vimPlugin {
-        repo = "sindrets/winshift.nvim";
-      })
-      (vimPlugin {
-        repo = "marko-cerovac/material.nvim";
-      })
-      (vimPlugin {
-        repo = "wuelnerdotexe/vim-enfocado";
-      })
-      (vimPlugin {
-        repo = "bluz71/vim-moonfly-colors";
-      })
-      (vimPlugin {
-        repo = "catppuccin/nvim";
-      })
-      (vimPlugin {
-        repo = "yashguptaz/calvera-dark.nvim";
-      })
-      (vimPlugin {
-        repo = "kvrohit/substrata.nvim";
-      })
-      (vimPlugin {
-        repo = "kdheepak/monochrome.nvim";
-      })
-      (vimPlugin {
-        repo = "shaunsingh/nord.nvim";
-      })
-      (vimPlugin {
-        repo = "mcchrish/zenbones.nvim";
-      })
-
-    ];
+    ] ++ (pkgs.lib.mapAttrsToList (_: plugin: plugin) flake-plugins);
   };
 }
 

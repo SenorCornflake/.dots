@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-21.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -19,9 +20,68 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Non Flakes
+    ## Neovim Plugins
+    dial-nvim = {
+      url = "github:monaqa/dial.nvim";
+      flake = false;
+    };
+    neo-tree-nvim = {
+      url = "github:nvim-neo-tree/neo-tree.nvim";
+      flake = false;
+    };
+    nvim-scrollbar = {
+      url = "github:petertriho/nvim-scrollbar";
+      flake = false;
+    };
+    yankassassin-vim = {
+      url = "github:svban/YankAssassin.vim";
+      flake = false;
+    };
+    nvim-base16 = {
+      url = "github:SenorCornflake/nvim-base16";
+      flake = false;
+    };
+    winshift-nvim = {
+      url = "github:sindrets/winshift.nvim";
+      flake = false;
+    };
+    material-nvim = {
+      url = "github:marko-cerovac/material.nvim";
+      flake = false;
+    };
+    vim-enfocado = {
+      url = "github:wuelnerdotexe/vim-enfocado";
+      flake = false;
+    };
+    vim-moonfly-colors = {
+      url = "github:bluz71/vim-moonfly-colors";
+      flake = false;
+    };
+    catppuccin-nvim = {
+      url = "github:catppuccin/nvim";
+      flake = false;
+    };
+    calvera-dark-nvim = {
+      url = "github:yashguptaz/calvera-dark.nvim";
+      flake = false;
+    };
+    substrata-nvim = {
+      url = "github:kvrohit/substrata.nvim";
+      flake = false;
+    };
+    monochrome-nvim = {
+      url = "github:kdheepak/monochrome.nvim";
+      flake = false;
+    };
+    zenbones-nvim = {
+      url = "github:mcchrish/zenbones.nvim";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs: 
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-master, ... }@inputs: 
 
   let
     t = builtins.readFile ../scripts/storage/theme.txt;
@@ -50,6 +110,7 @@
 
     pkgs = import nixpkgs pkgs-opts;
     pkgs-unstable = import nixpkgs-unstable pkgs-opts;
+    pkgs-master = import nixpkgs-master pkgs-opts;
 
     lib = nixpkgs.lib;
 
@@ -59,7 +120,7 @@
         ./system/main.nix
         (./. + "/system/hardware-configurations/${name}.nix")
       ];
-      specialArgs = { inherit inputs pkgs-unstable; };
+      specialArgs = { inherit inputs pkgs-unstable pkgs-master; };
     };
   in {
     homeManagerConfigurations = {
@@ -74,7 +135,7 @@
           ];
         };
         extraSpecialArgs = {
-          inherit style pkgs-unstable;
+          inherit inputs style pkgs-unstable pkgs-master;
         };
       };
     };
