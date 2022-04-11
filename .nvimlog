@@ -1,0 +1,3 @@
+WARN  2022-04-06T22:24:29.843 11050 log_path_init:95: Failed to create directory /root/.cache for writing logs: Unknown system error 1
+WARN  2022-04-06T22:26:28.497 11085 log_path_init:95: Failed to create directory /root/.cache for writing logs: Unknown system error 1
+WARN  2022-04-06T22:27:46.517 11107 log_path_init:95: Failed to create directory /root/.cache for writing logs: Unknown system error 1
