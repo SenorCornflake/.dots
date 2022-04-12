@@ -9,6 +9,7 @@
       filezilla
       qbittorrent
       gparted
+      wineWowPackages.stableFull
     ];
 
     theme = {

@@ -3,7 +3,7 @@
 let 
   inherit (lib.my) mkOpt mkBoolOpt;
   inherit (lib) mkIf attrNames;
-  inherit (builtins) readDir mapAttrs;
+  inherit (builtins) pathExists readDir mapAttrs;
 
   cfg = config.modules.networking.servers.apache;
 
@@ -16,10 +16,11 @@ let
     serverAliases = [name];
   };
 
-  virtualHosts = mapAttrs
-    (n: v: 
-      mkVhost n)
-    (readDir /srv/http);
+  virtualHosts = if pathExists /srv/http then mapAttrs
+      (n: v: 
+        mkVhost n)
+      (readDir /srv/http)
+    else {};
 in
 {
   options.modules.networking.servers.apache = {

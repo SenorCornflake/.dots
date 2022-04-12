@@ -26,7 +26,7 @@ in
         history = {
           save = 1000;
           size = 1000;
-          path = "$XDG_DATA_HOME/zsh/history";
+          path = ".local/share/zsh/history";
         };
 
         completionInit = ''

@@ -10,9 +10,6 @@ hc() {
 # Notification daemon
 killall dunst
 
-# Polkit
-sh ~/.config/herbstluftwm/polkit
-
 # X settings
 xset r rate 250 30 
 xsetroot -cursor_name left_ptr
@@ -23,7 +20,7 @@ xkbset ma 1 5 70 6 0
 xkbset exp 60 =mousekeys
 
 # Enable nightmode if it was enabled prior to restarting
-python $DOT_ROOT/scripts/night_mode.py
+#python $DOT_ROOT/scripts/night_mode.py
 
 # Wallpaper
 sh $XDG_DATA_HOME/dotfiles/wallpaper
@@ -47,26 +44,11 @@ if [[ -f "$XDG_DATA_HOME/herbstluftwm/first_start.txt" ]]; then
 	autorandr --change
 fi
 
-# Start health script if not already running
-pgrep -f "sh $DOT_ROOT/scripts/polybar/health.sh" || sh $DOT_ROOT/scripts/polybar/health.sh &
-
-# Reload wezterm (in a very hacky manner, refer to wezterm.nix)
-if [[ ! -f $XDG_DATA_HOME/wezterm/reload.txt ]]; then
-	mkdir $XDG_DATA_HOME/wezterm
-	touch reload.txt
-fi
-
-if [[ $(cat $XDG_DATA_HOME/wezterm/reload.txt) == "r" ]]; then
-	truncate -s-1 $XDG_DATA_HOME/wezterm/reload.txt
-else
-	echo "r" >> $XDG_DATA_HOME/wezterm/reload.txt
-fi
-
 # Check if dots repo is up to date with remote
 pushd $DOT_ROOT
 git remote update
 
-status=$(git status -uno) 
+status=$(git status -uno)
 if [[ $(echo $status | grep -w "is up to date") ]]; then
 	notify-send "Configuration is up to date with remote" -a ""
 elif [[ $(echo $status | grep -w "is ahead of") ]]; then
