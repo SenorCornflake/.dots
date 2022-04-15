@@ -21,6 +21,7 @@ xkbset exp 60 =mousekeys
 
 # Enable nightmode if it was enabled prior to restarting
 #python $DOT_ROOT/scripts/night_mode.py
+restore_nightmode_state
 
 # Wallpaper
 sh $XDG_DATA_HOME/dotfiles/wallpaper

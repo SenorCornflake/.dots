@@ -12,8 +12,8 @@ in
       nixpkgs.flake = inputs.nixpkgs; # Pin the nixpkgs repo version used across the entire system with the flake cli
     };
 
-    #autoOptimizeStore = true;
     settings = {
+      auto-optimise-store = true;
       substituters = [ 
         "https://nix-community.cachix.org"
       ];

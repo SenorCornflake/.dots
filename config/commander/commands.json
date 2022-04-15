@@ -1,7 +1,7 @@
 [
 	{
 		"name": "Toggle Nightmode",
-		"action": "python $DOT_ROOT/scripts/night_mode.py toggle"
+		"action": "toggle_nightmode"
 	},
     {
         "name": "Exit",

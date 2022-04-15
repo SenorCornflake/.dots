@@ -6,9 +6,12 @@
 
   modules = {
     homePackages = with pkgs; [
+      ark
+      extract-xiso
       filezilla
-      qbittorrent
       gparted
+      qbittorrent
+      whatsapp-for-linux
       wineWowPackages.stableFull
     ];
 
@@ -87,6 +90,7 @@
         };
         system = {
           bottom.enable = true;
+          btop.enable = true;
         };
         file-managers = {
           lf.enable = true;

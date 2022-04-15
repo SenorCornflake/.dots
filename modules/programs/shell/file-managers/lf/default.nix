@@ -21,7 +21,7 @@ in
         unrar
         python39Packages.pdftotext
         p7zip
-        dragon-drop
+        xdragon
         fzf
       ];
 

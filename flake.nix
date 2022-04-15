@@ -2,10 +2,12 @@
   description = "A very basic flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-    home-manager.url = "github:rycee/home-manager/master";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs.url = "nixpkgs/nixpkgs-unstable";
 
+    home-manager = {
+      url = "github:rycee/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     neovim-nightly = {
       url = "github:nix-community/neovim-nightly-overlay";
@@ -34,24 +36,12 @@
       url = "github:SenorCornflake/nvim-base16";
       flake = false;
     };
-    winshift-nvim = {
-      url = "github:sindrets/winshift.nvim";
-      flake = false;
-    };
-    material-nvim = {
-      url = "github:marko-cerovac/material.nvim";
-      flake = false;
-    };
     vim-enfocado = {
       url = "github:wuelnerdotexe/vim-enfocado";
       flake = false;
     };
     vim-moonfly-colors = {
       url = "github:bluz71/vim-moonfly-colors";
-      flake = false;
-    };
-    catppuccin-nvim = {
-      url = "github:catppuccin/nvim";
       flake = false;
     };
     calvera-dark-nvim = {
@@ -89,6 +79,7 @@
         (final: prev: {
           commander = final.callPackage ./pkgs/commander {};
           phpmyadmin = final.callPackage ./pkgs/phpmyadmin {};
+          extract-xiso = final.callPackage ./pkgs/extract-xiso {};
         })
       ];
     };

@@ -17,11 +17,8 @@ let
       "nvim-scrollbar"
       "yankassassin-vim"
       "nvim-base16"
-      "winshift-nvim"
-      "material-nvim"
       "vim-enfocado"
       "vim-moonfly-colors"
-      "catppuccin-nvim"
       "calvera-dark-nvim"
       "substrata-nvim"
       "monochrome-nvim"
@@ -94,13 +91,14 @@ in
 
         plugins = with pkgs.vimPlugins; [
           # Deps
-          nvim-web-devicons # dependancy for many plugins
-          plenary-nvim # dependancy for many plugins
           lush-nvim # zenbones dependancy
           nui-nvim # neo tree dependancy
+          nvim-web-devicons # dependancy for many plugins
+          plenary-nvim # dependancy for many plugins
 
           # Plugs
-          #symbols-outline-nvim
+          symbols-outline-nvim
+          (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
           bufferline-nvim
           cmp-buffer
           cmp-nvim-lsp
@@ -116,7 +114,6 @@ in
           nvim-autopairs
           nvim-cmp
           nvim-lspconfig
-          (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
           project-nvim
           surround-nvim
           targets-vim
@@ -126,8 +123,11 @@ in
           vim-hexokinase
           vim-startuptime
           which-key-nvim
+          winshift-nvim
 
+          catppuccin-nvim
           gruvbox-material
+          material-nvim
           nord-nvim
           tokyonight-nvim
         ] ++ (pkgs.lib.mapAttrsToList (_: plugin: plugin) flake-plugins);
