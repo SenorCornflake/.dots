@@ -133,16 +133,16 @@ util.adapt_system = function()
 	base16_yaml = base16_yaml .. 'base0F: "' .. base16.base0F .. '"\n'
 
 	-- Not manually closing the file made it only write when neovim closed
-	local file = io.open(os.getenv("DOT_ROOT") .. "/scripts/storage/base16.json", "w+")
+	local file = io.open(os.getenv("XDG_DATA_HOME") .. "/dotfiles/base16.json", "w+")
 	file:write(base16_json)
 	file:close()
 
-	file = io.open(os.getenv("DOT_ROOT") .. "/scripts/storage/base16.yaml", "w+")
+	file = io.open(os.getenv("XDG_DATA_HOME") .. "/dotfiles/base16.yaml", "w+")
 	file:write(base16_yaml)
 	file:close()
 
 	-- TODO: Close the terminal when finished
-	vim.cmd ":vsplit | terminal sh $DOT_ROOT/scripts/setup_base16.sh && exit"
+	vim.cmd ":vsplit | terminal sh setup_base16 && exit"
 end
 
 -- Generate a base16 theme using highlights from the current theme

@@ -55,9 +55,9 @@ in
               font."0" = "Terminus:size=10;2";
               monitor = "\${env:MONITOR:eDP-1}";
               enable-ipc = true;
-              modules.left = "desktops title";
-              modules.center = "time";
-              modules.right = "vol ram cpu cpu_temp bat";
+              modules.left = "desktops time title";
+              modules.center = "";
+              modules.right = "vol disk ram cpu cpu_temp bat";
               border-top-color = scheme.border;
               border-top-size = 1;
             };
@@ -156,6 +156,26 @@ in
                     foreground = scheme.accent;
                     padding = 1;
                   };
+                };
+              };
+            };
+
+            "module/disk" = {
+              type = "internal/fs";
+              interval = 5;
+              fixed-values = true;
+              spacing = 0;
+              mount-0 = "/";
+              label.mounted = "%percentage_used%%";
+              format-mounted = {
+                foreground = scheme.fg;
+                background = scheme.bg;
+                padding = 2;
+                text = "<label-mounted>";
+                prefix = {
+                  text = "DISK";
+                  foreground = scheme.accent;
+                  padding = 1;
                 };
               };
             };

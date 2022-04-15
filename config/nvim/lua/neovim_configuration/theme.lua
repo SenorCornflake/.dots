@@ -12,7 +12,7 @@ LOAD_THEME = function(name)
 	if name then
 		colorscheme = name
 	else
-		colorscheme = io.open(os.getenv("XDG_DATA_HOME") .. "/nvim/colorscheme.txt", "r")
+		colorscheme = io.open(os.getenv("XDG_DATA_HOME") .. "/dotfiles/colorscheme.txt", "r")
 
 		if colorscheme == nil then
 			colorscheme = "darkblue"

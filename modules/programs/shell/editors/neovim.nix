@@ -12,7 +12,7 @@ in
 let
   flake-plugins = (pkgs.lib.genAttrs 
     [
-      #"dial-nvim"
+      "dial-nvim"
       "neo-tree-nvim"
       "nvim-scrollbar"
       "yankassassin-vim"
@@ -51,7 +51,7 @@ in
       };
 
       xdg.dataFile."colorscheme.txt" = {
-        target = "nvim/colorscheme.txt";
+        target = "dotfiles/colorscheme.txt";
         text = cfg.colorScheme; 
         recursive = false;
       };

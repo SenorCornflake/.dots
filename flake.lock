@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "dial-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1649194963,
+        "narHash": "sha256-oekwV/gIO527J5znpLhC8Rj2sjOj3DFe+Cr3vQVhazc=",
+        "owner": "monaqa",
+        "repo": "dial.nvim",
+        "rev": "7413a51077744fed613eaa08f7b6d1f0635735d8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "monaqa",
+        "repo": "dial.nvim",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -211,6 +227,7 @@
     "root": {
       "inputs": {
         "calvera-dark-nvim": "calvera-dark-nvim",
+        "dial-nvim": "dial-nvim",
         "home-manager": "home-manager",
         "monochrome-nvim": "monochrome-nvim",
         "neo-tree-nvim": "neo-tree-nvim",

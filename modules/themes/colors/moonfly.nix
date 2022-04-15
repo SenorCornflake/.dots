@@ -15,7 +15,7 @@ let
   selection  = "#b2ceee";
 
   nBlack     = "#323437";
-  nRed       = "#ff5454";
+  nRed      = "#ff5454";
   nGreen     = "#8cc85f";
   nYellow    = "#e3c78a";
   nBlue      = "#80a0ff";
@@ -39,7 +39,7 @@ in
   config = mkIf (cfg.scheme == "moonfly") {
     modules = {
       theme = {
-        wallpaper = config.wallpaperDir + "/tinged-city.jpg";
+        wallpaper = "${config.wallpaperDir}/tinged-city.jpg";
       };
 
       window-managers = {
@@ -68,6 +68,7 @@ in
                   active = bBlue;
                   accent = nYellow;
                   title = nPurple;
+                  border = "#000000";
                 };
               })
             ];

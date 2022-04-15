@@ -3,6 +3,10 @@
 		"name": "Toggle Nightmode",
 		"action": "toggle_nightmode"
 	},
+	{
+		"name": "Set alternative wallpaper",
+		"action": "set_alternative_wallpaper"
+	},
     {
         "name": "Exit",
         "action": [

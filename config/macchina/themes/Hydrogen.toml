@@ -27,7 +27,7 @@ y = 0
 
 [custom_ascii]
 color = "Cyan"
-path = "~/.dots/scripts/storage/nixos.txt"
+path = "~/.config/macchina/art.txt"
 
 [randomize]
 key_color = false

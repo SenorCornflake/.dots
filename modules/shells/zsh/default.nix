@@ -6,6 +6,8 @@ let
   inherit (lib) mkIf types;
   inherit (lib.my) mkBoolOpt mkOpt;
   cfg = config.modules.shell.zsh;
+
+  fetchCommand = config.modules.programs.shell.fetchers.fetchCommand;
 in
 {
   config = mkIf (config.modules.shell == "zsh") {
@@ -16,10 +18,7 @@ in
     programs.zsh.enable = true;
 
     home-manager.users."${config.userName}" = {
-      programs.zsh =
-      let
-        fetchcmd = "macchina";
-      in {
+      programs.zsh = {
         enable = true;
         dotDir = ".config/zsh";
 
@@ -52,8 +51,8 @@ in
           ga = "git add";
           ls = (if config.modules.programs.shell.misc.exa.enable then "exa --git --icons" else "ls");
           weather = "curl -s \"wttr.in/$(echo \"$(curl -s https://ipinfo.io/)\" | jq -r '.city' | sed 's/ /+/g')\"";
-        } // (if config.modules.programs.shell.misc.macchina.enable then {
-          fetch = fetchcmd;
+        } // (if (fetchCommand != "") then {
+          fetch = fetchCommand;
         } else {});
 
         plugins = [
@@ -132,8 +131,8 @@ in
           any-nix-shell zsh --info-right | source /dev/stdin
 
           PROMPT=' %F{blue}%~%f > '
-        '' + (if config.modules.programs.shell.misc.macchina.enable then ''
-          ${fetchcmd}
+        '' + (if (fetchCommand != "") then ''
+          ${fetchCommand}
         '' else '''');
 
         # .zshenv

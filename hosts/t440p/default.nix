@@ -97,8 +97,11 @@
         };
         misc = {
           exa.enable = true;
-          macchina.enable = true;
           git.enable = true;
+        };
+        fetchers = {
+          macchina.enable = true;
+          neofetch.enable = false;
         };
       };
     };

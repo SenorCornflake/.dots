@@ -1,5 +1,9 @@
 { config, pkgs, lib, ... }:
 
+# TODO: Move these into seperate files
+let
+  inherit (config.modules.window-managers) herbstluftwm;
+in
 {
   environment.systemPackages = with pkgs; [
     (writeShellScriptBin "writeiso" ''
@@ -57,5 +61,28 @@
       exec = "wine \"/home/a/.wine/drive_c/Program Files/XM Global MT5/terminal64.exe\"";
       terminal = false;
     })
+
+    # TODO: Create backup script that automatically places all files needed into a specified location
+
+    (writeShellScriptBin "set_alternative_wallpaper" ''
+      wallpaper=$(echo `ls ${config.wallpaperDir}` | rofi -sep " " -dmenu)
+      echo -n "${config.wallpaperDir}/$wallpaper" > $XDG_DATA_HOME/dotfiles/alternative_wallpaper
+      feh --no-fehbg --bg-fill ${config.wallpaperDir}/$wallpaper
+    '')
+
+    flavours
+
+    (writeShellScriptBin "setup_base16" ''
+      # Generate kitty theme
+      flavours build $XDG_DATA_HOME/dotfiles/base16.yaml $XDG_DATA_HOME/flavours/base16/templates/kitty/templates/default.mustache > $XDG_DATA_HOME/dotfiles/kitty.conf
+
+      switch
+      reload_wm
+    '')
+
+    (writeShellScriptBin "reload_wm"
+      (if herbstluftwm.enable
+        then "herbstclient reload"
+        else "echo \"Update this command to support the current window manager\""))
   ];
 }

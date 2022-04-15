@@ -20,6 +20,11 @@
     };
 
     # Neovim plugin inputs (for plugins not officially packages on nix)
+    dial-nvim = {
+      url = "github:monaqa/dial.nvim";
+      flake = false;
+    };
+    
     neo-tree-nvim = {
       url = "github:nvim-neo-tree/neo-tree.nvim";
       flake = false;
