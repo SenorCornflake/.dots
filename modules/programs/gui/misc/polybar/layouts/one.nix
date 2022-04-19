@@ -2,6 +2,7 @@
 { config, lib, pkgs, ... }:
 
 let 
+# TODO: Don't hardcode the system specific values, like in battery and pulseaudio
   inherit (lib) mkIf mkMerge types recursiveUpdate;
   inherit (lib.my) mkBoolOpt mkOpt;
   cfg = config.modules.programs.gui.misc.polybar;
@@ -228,7 +229,7 @@ in
                 };
               };
             };
-
+            
             "module/bat" = {
               type = "internal/battery";
               bat = "BAT0";

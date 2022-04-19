@@ -64,12 +64,12 @@ in
             polybar = mkMerge [
               (mkIf (polybarLayout == "one") {
                 scheme = {
-                  bg = base01;
+                  bg = base00;
                   fg = base07;
                   active = base0C;
                   accent = base0F;
                   title = base0D;
-                  border = base00;
+                  border = base01;
                 };
               })
             ];
@@ -77,12 +77,12 @@ in
             rofi = mkMerge [
               (mkIf (rofiLayout == "one") {
                 scheme = {
-                  bg = base01;
+                  bg = base00;
                   fg = base07;
-                  alt-bg = base01;
-                  alter-bg = base02;
+                  alt-bg = base00;
+                  alter-bg = base00;
                   accent = base0E;
-                  border = base00;
+                  border = base01;
                 };
               })
             ];

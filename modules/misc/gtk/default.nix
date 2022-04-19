@@ -19,14 +19,22 @@ let
       package = pkgs.gnome.adwaita-icon-theme;
     };
   };
+  cursor-themes = {
+    adwaita = {
+      name = "Adwaita";
+      package = pkgs.gnome.gnome-themes-extra;
+    };
+  };
 in {
   options.modules.misc.gtk = {
     enable = mkBoolOpt true;
-    themes = mkOpt types.attrs themes;
-    icon-themes = mkOpt types.attrs icon-themes;
-    theme = mkOpt types.attrs themes.adwaita-dark;
-    icon-theme = mkOpt types.attrs icon-themes.adwaita;
     font = mkOpt types.str "Cantarell, 10";
+
+    icon-themes = mkOpt types.attrs icon-themes;
+    icon-theme = mkOpt types.attrs icon-themes.adwaita;
+
+    themes = mkOpt types.attrs themes;
+    theme = mkOpt types.attrs themes.adwaita-dark;
   };
 
   config = mkIf cfg.enable {
@@ -36,6 +44,7 @@ in {
 
         iconTheme = cfg.icon-theme;
         theme = cfg.theme;
+
         font.name = cfg.font;
 
         gtk2.configLocation = "${config.home-manager.users."${config.userName}".xdg.configHome}/gtk-2.0/gtkrc";

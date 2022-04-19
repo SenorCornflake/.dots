@@ -7,6 +7,10 @@
 		"name": "Set alternative wallpaper",
 		"action": "set_alternative_wallpaper"
 	},
+	{
+		"name": "Theme from picture",
+		"action": "generate_base16_theme"
+	},
     {
         "name": "Exit",
         "action": [

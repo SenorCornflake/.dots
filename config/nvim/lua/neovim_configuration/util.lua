@@ -272,4 +272,22 @@ util.color_is_bright = function(hex, control)
 	return luminance > control -- if > 0.5 Bright colors, black font, otherwise Dark colors, white font
 end
 
+util.parse_base16_file = function(path)
+	local text = io.open(path, "r"):read()
+	text = text:gsub("{", "")
+	text = text:gsub("}", "")
+	text = text:gsub(" ", "")
+	text = text:gsub('"', "")
+	text = util.split(text, ",")
+
+	local base16 = {}
+
+	for _, line in pairs(text) do
+		local key, value = util.split(line, ":")
+		base16[key] = value
+	end
+
+	return base16
+end
+
 return util

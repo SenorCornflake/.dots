@@ -99,6 +99,10 @@ in
           # Plugs
           symbols-outline-nvim
           (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
+          nvim-treesitter-refactor
+          nvim-treesitter-context
+          nvim-treesitter-textobjects
+          nvim-ts-autotag
           bufferline-nvim
           cmp-buffer
           cmp-nvim-lsp

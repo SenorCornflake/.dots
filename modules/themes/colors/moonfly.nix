@@ -39,7 +39,7 @@ in
   config = mkIf (cfg.scheme == "moonfly") {
     modules = {
       theme = {
-        wallpaper = "${config.wallpaperDir}/tinged-city.jpg";
+        wallpaper = "${config.wallpaperDir}/clear-moon.jpg";
       };
 
       window-managers = {

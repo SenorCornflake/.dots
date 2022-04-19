@@ -23,6 +23,7 @@ in
         p7zip
         xdragon
         fzf
+        file
       ];
 
       programs.lf = {

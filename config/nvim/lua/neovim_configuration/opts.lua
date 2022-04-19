@@ -19,6 +19,7 @@ opt.wrap = false
 opt.scrolloff = 4
 opt.sidescrolloff = 8
 opt.mouse = "a"
+
 opt.undofile = true
 opt.cursorline = true
 opt.completeopt = "menu,menuone,noselect,noinsert"
@@ -36,6 +37,7 @@ opt.signcolumn = "yes"
 -- Speed
 opt.lazyredraw = true
 opt.updatetime = 300
+opt.timeoutlen = 300
 
 -- Folds
 opt.foldenable = true

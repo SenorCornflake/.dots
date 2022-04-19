@@ -44,6 +44,7 @@ SetupGitsigns = function()
 			virt_text_pos = 'eol',
 		},
 		current_line_blame = true,
+		current_line_blame_formatter = " <author>, <author_time:%Y-%m-%d> - <summary>",
 		sign_priority = 0,
 		update_debounce = 100,
 		status_formatter = nil, -- Use default

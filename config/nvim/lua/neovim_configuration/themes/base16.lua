@@ -6,8 +6,7 @@ local base16_path = os.getenv("XDG_DATA_HOME") .. "/dotfiles/base16.json"
 vim.cmd "doautocmd ColorSchemePre"
 
 if util.file_exists(base16_path) then
-	local base16 = io.open(base16_path, "r"):read()
-	base16 = json.decode(base16)
+	local base16 = util.parse_base16_file(base16_path)
 
 	for k, v in pairs(base16) do
 		if k:find("base") then

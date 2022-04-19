@@ -63,6 +63,43 @@ in
     })
 
     # TODO: Create backup script that automatically places all files needed into a specified location
+    (writeShellScriptBin "backup" ''
+      date=$(date)
+
+      echo "Backing dotfiles"
+      pushd ${config.dotsDir}
+      git add .
+      git commit -m "BACKUP $date"
+      git push
+      popd
+      echo "done."
+
+      echo "Backing websites"
+      pushd /srv/http
+      git add .
+      git commit -m "BACKUP $date"
+      git push
+      popd
+      echo "done."
+
+      echo "Backing databases"
+      pushd ~
+      if [[ ! -d ~/databases ]]; then
+        git clone https://github.com/SenorCornflake/databases
+      fi
+
+      find /var/lib/mysql -maxdepth 1 -mindepth 1 -type d | while read dir; do
+        if [[ $(echo $dir | grep "_dv") ]]; then
+          cp -rf $dir ~/databases
+        fi
+      done
+
+      git add .
+      git commit -m "BACKUP $date"
+      git push
+      popd
+      echo "done."
+    '')
 
     (writeShellScriptBin "set_alternative_wallpaper" ''
       wallpaper=$(echo `ls ${config.wallpaperDir}` | rofi -sep " " -dmenu)
@@ -84,5 +121,16 @@ in
       (if herbstluftwm.enable
         then "herbstclient reload"
         else "echo \"Update this command to support the current window manager\""))
+
+    yq
+
+    (writeShellScriptBin "generate_base16_theme" ''
+      wallpaper=$(echo `ls ${config.wallpaperDir}` | rofi -sep " " -dmenu)
+
+      flavours generate dark ${config.wallpaperDir}/$wallpaper --stdout > $XDG_DATA_HOME/dotfiles/base16.yaml
+      flavours generate dark ${config.wallpaperDir}/$wallpaper --stdout | yq > $XDG_DATA_HOME/dotfiles/base16.json
+
+      setup_base16
+    '')
   ];
 }

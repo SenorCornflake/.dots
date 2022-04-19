@@ -11,7 +11,6 @@ local servers = {
 					library = {
 						["/usr/share/nvim/runtime/lua"] = true,
 						["/usr/share/nvim/runtime/lua/lsp"] = true,
-						["/usr/share/awesome/lib"] = true
 					}
 				},
 				diagnostics = {
@@ -19,11 +18,6 @@ local servers = {
 					globals = {
 						-- Neovim
 						"vim",
-
-						-- AwesomeWM
-						"awesome",
-						"client",
-						"root"
 					},
 				},
 			}
@@ -186,7 +180,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {
 		virtual_text = {
 			spacing = 4,
-			prefix = "» "
+			prefix = " "
 		}
 	}
 )

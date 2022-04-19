@@ -13,6 +13,8 @@
       qbittorrent
       whatsapp-for-linux
       wineWowPackages.stableFull
+      libreoffice
+      vlc
     ];
 
     theme = {
@@ -71,6 +73,7 @@
         };
         terminals = {
           kitty.enable = true;
+          default = "kitty";
         };
         media = {
           mpv.enable = true;
@@ -82,6 +85,13 @@
           rofi.enable = true;
           polybar.enable = true;
           dunst.enable = true;
+          zathura.enable = true;
+        };
+        games = {
+          dwarf-fortress.enable = true;
+        };
+        graphics = {
+          inkscape.enable = true;
         };
       };
       shell = {
@@ -101,11 +111,9 @@
         };
         fetchers = {
           macchina.enable = true;
-          neofetch.enable = false;
         };
       };
     };
-
   };
 
   system.stateVersion = "21.11";

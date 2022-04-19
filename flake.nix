@@ -38,7 +38,7 @@
       flake = false;
     };
     nvim-base16 = {
-      url = "github:SenorCornflake/nvim-base16";
+      url = "github:rrethy/nvim-base16";
       flake = false;
     };
     vim-enfocado = {

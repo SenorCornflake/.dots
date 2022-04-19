@@ -17,6 +17,7 @@ let
     cfg.scheme;
 
   l = config.home-manager.users."${config.userName}".lib.formats.rasi.mkLiteral;
+  terminal = config.modules.programs.gui.terminals.default;
 in
 
 {
@@ -35,7 +36,7 @@ in
           location = "center";
           extraConfig = {
             font = "Terminus 9";
-            terminal = "${pkgs.kitty}/bin/kitty"; # TODO: Don't hard code the terminal, make it easier to migrate to another terminal if i ever decide to
+            terminal = "${pkgs."${terminal}"}/bin/${terminal}";
             show-icons = true;
             icon-theme = "Paper";
           };

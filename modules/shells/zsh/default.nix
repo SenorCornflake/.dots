@@ -8,6 +8,8 @@ let
   cfg = config.modules.shell.zsh;
 
   fetchCommand = config.modules.programs.shell.fetchers.fetchCommand;
+
+  terminal = config.modules.programs.gui.terminals.default;
 in
 {
   config = mkIf (config.modules.shell == "zsh") {
@@ -44,7 +46,7 @@ in
           ":a" = "sh $DOT_ROOT/install.sh all";
           X = "startx ~/.config/xinit/xinitrc";
           t = "todo.sh -c";
-          ch_nginx = "sudo chmod -R 777 /srv/http && sudo chown -R nginx:nginx /srv/http && sudo chmod 755 /srv/http/phpmyadmin/config.inc.php";
+          chmod_server = "sudo chmod -R 777 /srv/http && sudo chown -R wwwrun:wwwrun /srv/http && sudo chmod 755 /srv/http/phpmyadmin/config.inc.php";
           gp = "git push";
           gP = "git pull";
           gc = "git commit";
@@ -83,7 +85,7 @@ in
           MANWIDTH = 999;
           EDITOR = "nvim";
           VISUAL = "nvim";
-          TERMINAL = "kitty";
+          TERMINAL = terminal;
           BROWSER = "firefox";
           VIDEO = "mpv";
 
@@ -130,7 +132,7 @@ in
 
           any-nix-shell zsh --info-right | source /dev/stdin
 
-          PROMPT=' %F{blue}%~%f > '
+          PROMPT=' %F{blue}%~%f  '
         '' + (if (fetchCommand != "") then ''
           ${fetchCommand}
         '' else '''');
