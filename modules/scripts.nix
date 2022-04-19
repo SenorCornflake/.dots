@@ -95,6 +95,8 @@ in
         fi
       done
 
+      sudo chmod -R 755 ~/databases
+
       pushd ~/databases
       git add .
       git commit -m "BACKUP $date"
