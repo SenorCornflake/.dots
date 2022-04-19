@@ -91,7 +91,8 @@ in
 
       sudo find /var/lib/mysql -maxdepth 1 -mindepth 1 -type d | while read dir; do
         if [[ $(echo $dir | grep "_dv") ]]; then
-          mysqldump -u root --password=root $dir > ~/databases/$dir.sql
+          name=$(basename $dir)
+          mysqldump -u root --password=root $name > ~/databases/$name.sql
         fi
       done
 
