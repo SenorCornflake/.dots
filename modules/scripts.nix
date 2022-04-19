@@ -87,13 +87,15 @@ in
       if [[ ! -d ~/databases ]]; then
         git clone https://github.com/SenorCornflake/databases
       fi
+      popd
 
-      find /var/lib/mysql -maxdepth 1 -mindepth 1 -type d | while read dir; do
+      sudo find /var/lib/mysql -maxdepth 1 -mindepth 1 -type d | while read dir; do
         if [[ $(echo $dir | grep "_dv") ]]; then
-          cp -rf $dir ~/databases
+          sudo cp -rf $dir ~/databases
         fi
       done
 
+      pushd ~/databases
       git add .
       git commit -m "BACKUP $date"
       git push
