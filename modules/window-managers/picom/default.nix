@@ -1,8 +1,9 @@
 { config, lib, pkgs, ... }:
 
-let 
-  inherit (lib) mkIf types;
+let
+  inherit (lib) mkIf types attrValues;
   inherit (lib.my) mkBoolOpt mkOpt;
+  inherit (builtins) any;
   cfg = config.modules.window-managers.picom;
 in
 
@@ -20,7 +21,7 @@ in
     shadow = mkBoolOpt true;
   };
 
-  config = mkIf cfg.enable {
+  config = mkIf (cfg.enable && (any (v: v.enable) (attrValues config.modules.window-managers))) {
     home-manager.users."${config.userName}" = {
       services.picom = {
         enable = true;

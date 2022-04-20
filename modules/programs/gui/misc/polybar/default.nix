@@ -1,8 +1,9 @@
 { config, lib, pkgs, ... }:
 
 let 
-  inherit (lib) mkIf types;
+  inherit (lib) mkIf types attrValues;
   inherit (lib.my) mkBoolOpt mkOpt;
+  inherit (builtins) any;
   cfg = config.modules.programs.gui.misc.polybar;
 in
 
@@ -13,7 +14,7 @@ in
     scheme = mkOpt types.attrs {};
   };
 
-  config = mkIf cfg.enable {
+  config = mkIf (cfg.enable && (any (v: v.enable) (attrValues config.modules.window-managers))) {
     home-manager.users."${config.userName}" = {
       home.packages = with pkgs; [
         pavucontrol

@@ -9,7 +9,9 @@ let
 
   fetchCommand = config.modules.programs.shell.fetchers.fetchCommand;
 
-  terminal = config.modules.programs.gui.terminals.default;
+  terminal = if config.modules.desktop-environments.kde.enable
+  then "konsole"
+  else config.modules.programs.gui.terminals.default;
 in
 {
   config = mkIf (config.modules.shell == "zsh") {

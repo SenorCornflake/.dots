@@ -24,7 +24,7 @@
       url = "github:monaqa/dial.nvim";
       flake = false;
     };
-    
+
     neo-tree-nvim = {
       url = "github:nvim-neo-tree/neo-tree.nvim";
       flake = false;
@@ -85,6 +85,7 @@
           commander = final.callPackage ./pkgs/commander {};
           phpmyadmin = final.callPackage ./pkgs/phpmyadmin {};
           extract-xiso = final.callPackage ./pkgs/extract-xiso {};
+          xinput-gui = final.callPackage ./pkgs/xinput-gui {};
         })
       ];
     };

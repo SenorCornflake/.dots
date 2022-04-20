@@ -1,7 +1,7 @@
 local json = require "neovim_configuration.lib.json"
 local util = require "neovim_configuration.util"
 
-local base16_path = os.getenv("XDG_DATA_HOME") .. "/dotfiles/base16.json"
+local base16_path = os.getenv("XDG_DATA_HOME") .. "/dotfiles/base16.yaml"
 
 vim.cmd "doautocmd ColorSchemePre"
 
@@ -18,32 +18,44 @@ if util.file_exists(base16_path) then
 		print("Using original neovim scheme")
 		vim.cmd("colorscheme " .. base16.scheme)
 	else
+		require('base16-colorscheme').with_config {
+			telescope = false,
+		}
 		require('base16-colorscheme').setup(base16)
 		vim.g.colors_name = "base16"
 
 		if base16.scheme == "Generated" then
 			local bg = util.get_color({{"Normal", "bg"}}).gui
-			local linenr = util.get_color({{"LineNr", "fg"}}).gui
-			local visual = util.get_color({{"Visual", "bg"}}).gui
-			local cursorline = visual
+			local linenr = bg
+			local visual = bg
+			local cursorline = bg
+			local statusline = bg
+			local specialkey = bg
 
 			if bg ~= nil and linenr ~= nil and visual ~= nil and os.getenv("TERM") ~= "linux" then -- If running in tty
 				if util.color_is_bright(bg, 0.5) then
 					print("Adjusting colors for light colorscheme")
-					linenr = util.shade_color(linenr, 70)
-					visual = util.shade_color(visual, 30)
-					cursorline = util.shade_color(cursorline, 40)
+					linenr = util.shade_color(linenr, -40)
+					specialkey = util.shade_color(specialkey, -40)
+					visual = util.shade_color(visual, -30)
+					cursorline = util.shade_color(cursorline, -20)
+					statusline = util.shade_color(statusline, -10)
 				else
 					print("Adjusting colors for dark colorscheme")
-					linenr = util.shade_color(linenr, -50)
-					visual = util.shade_color(visual, -40)
-					cursorline = util.shade_color(cursorline, -50)
+					linenr = util.shade_color(linenr, 50)
+					specialkey = util.shade_color(specialkey, 50)
+					visual = util.shade_color(visual, 40)
+					cursorline = util.shade_color(cursorline, 30)
+					statusline = util.shade_color(statusline, 20)
 				end
 
 				vim.cmd("hi LineNr guifg=" .. linenr)
 				vim.cmd("hi Visual guibg=" .. visual)
 				vim.cmd("hi CursorLine guibg=" .. cursorline)
 				vim.cmd("hi CursorLineNr guibg=" .. cursorline)
+				vim.cmd("hi StatusLine guibg=" .. statusline)
+				vim.cmd("hi SpecialKey guibg=" .. specialkey)
+				vim.cmd("hi NonText guifg=" .. specialkey)
 			end
 		end
 	end

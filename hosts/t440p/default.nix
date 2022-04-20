@@ -7,19 +7,22 @@
   modules = {
     homePackages = with pkgs; [
       ark
-      extract-xiso
       filezilla
       gparted
       qbittorrent
       whatsapp-for-linux
-      wineWowPackages.stableFull
+      wineWowPackages.stagingFull
+      winetricks
       libreoffice
       vlc
+
+      extract-xiso
+      xinput-gui
     ];
 
     theme = {
       layout = "one";
-      scheme = "moonfly";
+      scheme = "base16";
     };
 
     kernel = {
@@ -62,6 +65,11 @@
     window-managers = {
       herbstluftwm.enable = true;
       picom.enable = true;
+    };
+
+    desktop-environments = {
+      kde.enable = false;
+      gnome.enable = false;
     };
 
     shell = "zsh";

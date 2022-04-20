@@ -44,6 +44,3 @@ opt.foldenable = true
 opt.foldmethod = "syntax"
 
 vim.cmd "autocmd FileType,BufRead,BufEnter *.nix setlocal shiftwidth=2 softtabstop=2 expandtab"
-
--- WARN: This might cause problems closing other windows that are classified as terminals such as fzf etc.
---vim.cmd "autocmd TermClose * bd!)"

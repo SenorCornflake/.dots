@@ -132,9 +132,10 @@ in
     (writeShellScriptBin "generate_base16_theme" ''
       wallpaper=$(echo `ls ${config.wallpaperDir}` | rofi -sep " " -dmenu)
 
-      flavours generate dark ${config.wallpaperDir}/$wallpaper --stdout > $XDG_DATA_HOME/dotfiles/base16.yaml
-      flavours generate dark ${config.wallpaperDir}/$wallpaper --stdout | yq > $XDG_DATA_HOME/dotfiles/base16.json
+      flavours generate $1 ${config.wallpaperDir}/$wallpaper --stdout > $XDG_DATA_HOME/dotfiles/base16.yaml
+      flavours generate $1 ${config.wallpaperDir}/$wallpaper --stdout | yq > $XDG_DATA_HOME/dotfiles/base16.json
 
+      echo -n "${config.wallpaperDir}/$wallpaper" > $XDG_DATA_HOME/dotfiles/alternative_wallpaper
       setup_base16
     '')
   ];

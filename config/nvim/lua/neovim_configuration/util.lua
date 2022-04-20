@@ -273,18 +273,19 @@ util.color_is_bright = function(hex, control)
 end
 
 util.parse_base16_file = function(path)
-	local text = io.open(path, "r"):read()
-	text = text:gsub("{", "")
-	text = text:gsub("}", "")
-	text = text:gsub(" ", "")
-	text = text:gsub('"', "")
-	text = util.split(text, ",")
+	local text = io.open(path, "r"):read("a*")
+	text = util.split(text, "\n")
+
+	for i, line in pairs(text) do
+		line = line:gsub('"', ""):gsub(" ", "")
+		line = util.split(line, ":")
+		text[i] = line
+	end
 
 	local base16 = {}
 
 	for _, line in pairs(text) do
-		local key, value = util.split(line, ":")
-		base16[key] = value
+		base16[line[1]] = line[2]
 	end
 
 	return base16
