@@ -8,8 +8,17 @@
 		"action": "set_alternative_wallpaper"
 	},
 	{
-		"name": "Theme from picture",
-		"action": "generate_base16_theme"
+		"name": "Generate base16 theme",
+		"action": [
+			{
+				"name": "Dark",
+				"action": "generate_base16_theme dark"
+			},
+			{
+				"name": "Light",
+				"action": "generate_base16_theme light"
+			}
+		]
 	},
     {
         "name": "Exit",

@@ -86,6 +86,7 @@
           phpmyadmin = final.callPackage ./pkgs/phpmyadmin {};
           extract-xiso = final.callPackage ./pkgs/extract-xiso {};
           xinput-gui = final.callPackage ./pkgs/xinput-gui {};
+          neovim-command = final.callPackage ./pkgs/neovim-command {};
         })
       ];
     };

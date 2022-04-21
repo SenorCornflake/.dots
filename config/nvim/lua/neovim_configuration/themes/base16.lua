@@ -31,15 +31,17 @@ if util.file_exists(base16_path) then
 			local cursorline = bg
 			local statusline = bg
 			local specialkey = bg
+			local whichkeyfloat = bg
 
 			if bg ~= nil and linenr ~= nil and visual ~= nil and os.getenv("TERM") ~= "linux" then -- If running in tty
 				if util.color_is_bright(bg, 0.5) then
 					print("Adjusting colors for light colorscheme")
-					linenr = util.shade_color(linenr, -40)
-					specialkey = util.shade_color(specialkey, -40)
-					visual = util.shade_color(visual, -30)
-					cursorline = util.shade_color(cursorline, -20)
-					statusline = util.shade_color(statusline, -10)
+					linenr = util.shade_color(linenr, -20)
+					specialkey = util.shade_color(specialkey, -20)
+					visual = util.shade_color(visual, -15)
+					cursorline = util.shade_color(cursorline, -10)
+					statusline = util.shade_color(statusline, -15)
+					whichkeyfloat = util.shade_color(whichkeyfloat, -15)
 				else
 					print("Adjusting colors for dark colorscheme")
 					linenr = util.shade_color(linenr, 50)
@@ -47,6 +49,7 @@ if util.file_exists(base16_path) then
 					visual = util.shade_color(visual, 40)
 					cursorline = util.shade_color(cursorline, 30)
 					statusline = util.shade_color(statusline, 20)
+					whichkeyfloat = util.shade_color(whichkeyfloat, 20)
 				end
 
 				vim.cmd("hi LineNr guifg=" .. linenr)
@@ -56,11 +59,12 @@ if util.file_exists(base16_path) then
 				vim.cmd("hi StatusLine guibg=" .. statusline)
 				vim.cmd("hi SpecialKey guibg=" .. specialkey)
 				vim.cmd("hi NonText guifg=" .. specialkey)
+				vim.cmd("hi WhichKeyFLoat guibg=" .. whichkeyfloat)
 			end
 		end
 	end
 else
-	print(os.getenv("XDG_DATA_HOME") .. "/base16.json does not exist, using default theme")
+	print(os.getenv("XDG_DATA_HOME") .. "/base16.yaml does not exist, using default theme")
 	vim.cmd "colorscheme default"
 end
 

@@ -27,7 +27,7 @@ opt.inccommand = "nosplit"
 opt.showmode = false
 opt.runtimepath = vim.o.runtimepath -- .. "," .. os.getenv("DOT_ROOT") .. "/scripts/storage/vim"
 opt.list = true
-opt.listchars:append("trail:⋅")
+opt.listchars = "tab:⋅ ,trail:⋅"
 
 -- Buffer sides
 opt.number = true

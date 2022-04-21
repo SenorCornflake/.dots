@@ -18,6 +18,7 @@
 
       extract-xiso
       xinput-gui
+      neovim-command
     ];
 
     theme = {
