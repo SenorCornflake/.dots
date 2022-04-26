@@ -158,14 +158,14 @@ util.base16ify = function()
 		base05 = util.get_color {{"Normal", "fg"}},
 		base06 = util.get_color {{"StatusLine", "fg"}},
 		base07 = util.get_color {{"Normal", "fg"}},
-		base08 = util.get_color {{"Character", "fg"}},
-		base09 = util.get_color {{"Number", "fg"}},
+		base08 = util.get_color {{"Character", "fg"}, {"String", "fg"}},
+		base09 = util.get_color {{"Number", "fg"}, {"Conditional", "fg"}},
 		base0A = util.get_color {{"Type", "fg"}},
 		base0B = util.get_color {{"String", "fg"}},
 		base0C = util.get_color {{"Special", "fg"}},
 		base0D = util.get_color {{"Function", "fg"}},
 		base0E = util.get_color {{"Conditional", "fg"}},
-		base0F = util.get_color {{"Constant", "fg"}},
+		base0F = util.get_color {{"Constant", "fg"}, {"Function", "fg"}},
 	}
 
 	for k, v in pairs(theme) do
@@ -278,8 +278,13 @@ util.parse_base16_file = function(path)
 
 	for i, line in pairs(text) do
 		line = line:gsub('"', ""):gsub(" ", "")
-		line = util.split(line, ":")
-		text[i] = line
+
+		if line == "" then
+			table.remove(text, i)
+		else
+			line = util.split(line, ":")
+			text[i] = line
+		end
 	end
 
 	local base16 = {}

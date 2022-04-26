@@ -2,7 +2,7 @@
   description = "A very basic flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     home-manager = {
       url = "github:rycee/home-manager/master";
@@ -65,6 +65,10 @@
       url = "github:mcchrish/zenbones.nvim";
       flake = false;
     };
+    alpha-nvim = {
+      url = "github:goolord/alpha-nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ nixpkgs, ... }: 
@@ -87,6 +91,12 @@
           extract-xiso = final.callPackage ./pkgs/extract-xiso {};
           xinput-gui = final.callPackage ./pkgs/xinput-gui {};
           neovim-command = final.callPackage ./pkgs/neovim-command {};
+          schemer2 = final.callPackage ./pkgs/schemer2 {};
+          auto-base16-theme = final.callPackage ./pkgs/auto-base16-theme {};
+          haishoku = final.callPackage ./pkgs/haishoku {};
+          pywal = final.callPackage ./pkgs/pywal {};
+          picom-ibhagwan = final.callPackage ./pkgs/picom-ibhagwan {};
+          picom-jonaburg-fix = final.callPackage ./pkgs/picom-jonaburg-fix {};
         })
       ];
     };

@@ -19,6 +19,7 @@ in
     blur = mkBoolOpt false;
     noDockShadow = mkBoolOpt false;
     shadow = mkBoolOpt true;
+    shadowOpacity = mkOpt types.str "0.75";
   };
 
   config = mkIf (cfg.enable && (any (v: v.enable) (attrValues config.modules.window-managers))) {
@@ -28,7 +29,6 @@ in
         package = pkgs.picom-next;
         experimentalBackends = true;
         backend = "glx";
-        # TODO: Inactive dim affects rofi, try to fix
         inactiveDim = cfg.inactiveDim;
         fade = true;
         fadeSteps = [
@@ -61,13 +61,16 @@ in
           "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
         ];
         extraOptions = ''
-          shadow-radius = ${cfg.shadowRadius}
+          shadow-radius = ${cfg.shadowRadius};
+          shadow-opacity = ${cfg.shadowOpacity};
           blur-method="dual_kawase";
           blur-strengh=10;
           blur-background-fixed=true;
           focus-exclude = [
-            "class_g = 'Rofi'"
+            "class_g = 'Rofi'" # Fix inactive dim on rofi
           ];
+          corner-radius = 0;
+          round-borders = 0;
         '';
       };
     };

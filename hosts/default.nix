@@ -3,6 +3,7 @@
 let 
   inherit (lib.my) mapModulesRec;
   inherit (lib) mkDefault;
+  inherit (builtins) pathExists readFile;
 in
 {
   nix = {

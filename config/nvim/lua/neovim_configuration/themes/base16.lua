@@ -1,4 +1,3 @@
-local json = require "neovim_configuration.lib.json"
 local util = require "neovim_configuration.util"
 
 local base16_path = os.getenv("XDG_DATA_HOME") .. "/dotfiles/base16.yaml"
@@ -32,6 +31,7 @@ if util.file_exists(base16_path) then
 			local statusline = bg
 			local specialkey = bg
 			local whichkeyfloat = bg
+			local winseparator = bg
 
 			if bg ~= nil and linenr ~= nil and visual ~= nil and os.getenv("TERM") ~= "linux" then -- If running in tty
 				if util.color_is_bright(bg, 0.5) then
@@ -42,14 +42,16 @@ if util.file_exists(base16_path) then
 					cursorline = util.shade_color(cursorline, -10)
 					statusline = util.shade_color(statusline, -15)
 					whichkeyfloat = util.shade_color(whichkeyfloat, -15)
+					winseparator = util.shade_color(winseparator, -15)
 				else
 					print("Adjusting colors for dark colorscheme")
-					linenr = util.shade_color(linenr, 50)
-					specialkey = util.shade_color(specialkey, 50)
-					visual = util.shade_color(visual, 40)
-					cursorline = util.shade_color(cursorline, 30)
-					statusline = util.shade_color(statusline, 20)
-					whichkeyfloat = util.shade_color(whichkeyfloat, 20)
+					linenr = util.shade_color(linenr, 60)
+					specialkey = util.shade_color(specialkey, 60)
+					visual = util.shade_color(visual, 50)
+					cursorline = util.shade_color(cursorline, 40)
+					statusline = util.shade_color(statusline, 30)
+					whichkeyfloat = util.shade_color(whichkeyfloat, 30)
+					winseparator = util.shade_color(winseparator, 30)
 				end
 
 				vim.cmd("hi LineNr guifg=" .. linenr)
@@ -60,6 +62,7 @@ if util.file_exists(base16_path) then
 				vim.cmd("hi SpecialKey guibg=" .. specialkey)
 				vim.cmd("hi NonText guifg=" .. specialkey)
 				vim.cmd("hi WhichKeyFLoat guibg=" .. whichkeyfloat)
+				vim.cmd("hi WinSeparator guifg=" .. winseparator)
 			end
 		end
 	end

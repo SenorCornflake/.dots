@@ -10,6 +10,8 @@ let
 
   polybarLayout = config.modules.programs.gui.misc.polybar.layout;
   rofiLayout = config.modules.programs.gui.misc.rofi.layout;
+  dunstLayout = config.modules.programs.gui.misc.dunst.layout;
+  herbstluftwmLayout = config.modules.window-managers.herbstluftwm.layout;
 
   base16 = mapAttrs
     (n: v: "#" + v)
@@ -40,12 +42,39 @@ in
 {
   config = mkIf (cfg.scheme == "base16") {
     modules = {
+      theme.background = base00;
+
       window-managers = {
         herbstluftwm.settings = (mkMerge [
-          (mkIf (config.modules.theme.layout == "one") {
+          (mkIf (herbstluftwmLayout == "one") {
             active_color = base02;
             normal_color = base00;
             urgent_color = base09;
+          })
+          (mkIf (herbstluftwmLayout == "two") {
+            urgent_color = base09;
+            urgent_inner_color = base09;
+            urgent_outer_color = base09;
+
+            active_color = base02;
+            active_outer_color = base02;
+            active_title_color = base07;
+            active_inner_color = base02;
+
+            normal_color = base01;
+            normal_outer_color = base01;
+            normal_title_color = base05;
+            normal_inner_color = base01;
+
+            active_tab_color = base01;
+            active_tab_outer_color = base02;
+            active_tab_inner_color = base02;
+            active_tab_title_color = base05;
+
+            normal_tab_color = base00;
+            normal_tab_outer_color = base01;
+            normal_tab_inner_color = base01;
+            normal_tab_title_color = base05;
           })
         ]);
       };
@@ -72,6 +101,18 @@ in
                   border = base01;
                 };
               })
+              (mkIf (polybarLayout == "two") {
+                scheme = {
+                  bg = base00;
+                  fg = base05;
+                  decor = base01;
+                  icons = base0E;
+                  empty = base02;
+                  urgent = base09;
+                  other = base0D;
+                  indicators = base0E;
+                };
+              })
             ];
 
             rofi = mkMerge [
@@ -85,25 +126,53 @@ in
                   border = base01;
                 };
               })
+              (mkIf (rofiLayout == "two") {
+                scheme = {
+                  bg = base00;
+                  fg = base07;
+                  alt-bg = base02;
+                  accent = base0E;
+                  border = base02;
+                };
+              })
             ];
 
-            dunst = {
-              urgencyLow = {
-                background = base00;
-                foreground = base07;
-              };
-              urgencyNormal = {
-                background = base00;
-                foreground = base07;
-              };
-              urgencyCritical = {
-                background = base00;
-                foreground = base07;
-                frame_color = base09;
-              };
-              frameColor = base0B;
-              seperatorColor = base00;
-            };
+            dunst = mkMerge [
+              (mkIf (dunstLayout == "one") {
+                urgencyLow = {
+                  background = base00;
+                  foreground = base07;
+                };
+                urgencyNormal = {
+                  background = base00;
+                  foreground = base07;
+                };
+                urgencyCritical = {
+                  background = base00;
+                  foreground = base07;
+                  frame_color = base09;
+                };
+                frameColor = base0B;
+                seperatorColor = base00;
+              })
+              (mkIf (dunstLayout == "two") {
+                urgencyLow = {
+                  background = base00;
+                  foreground = base07;
+                };
+                urgencyNormal = {
+                  background = base00;
+                  foreground = base07;
+                };
+                urgencyCritical = {
+                  background = base00;
+                  foreground = base07;
+                  frame_color = base09;
+                };
+                frameColor = base0A;
+                seperatorColor = base02;
+              })
+            ];
           };
         };
         shell = {

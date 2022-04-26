@@ -18,31 +18,28 @@ in
 
     modules = {
       window-managers = {
-        herbstluftwm.settings = {
-          border_width = "1";
-          window_gap = "10";
-        };
+        herbstluftwm.layout = "one";
         picom = {
           inactiveDim = "0.08";
         };
       };
 
-      programs = {
-        gui = {
-          terminals = {
-            kitty = {
-              fontFamily = "Iosevka Nerd Font";
-              fontSize = 10;
-              windowPaddingWidth = "10";
-            };
-          };
-          misc = {
-            polybar.layout = "one";
-            rofi.layout = "one";
-            dunst.layout = "one";
-          };
-        };
-      };
+       programs = {
+         gui = {
+           terminals = {
+             kitty = {
+               fontFamily = "Iosevka Nerd Font";
+               fontSize = 10;
+               windowPaddingWidth = "10";
+             };
+           };
+           misc = {
+             polybar.layout = "one";
+             rofi.layout = "one";
+             dunst.layout = "one";
+           };
+         };
+       };
     };
   };
 }

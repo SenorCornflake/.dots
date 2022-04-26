@@ -34,6 +34,7 @@ LOAD_THEME = function(name)
 		end
 
 		cmd ("doautocmd User load_" .. colorscheme .. "_theme")
+		-- TODO: Use require instread
 		dofile(os.getenv("XDG_CONFIG_HOME") .. "/nvim/lua/neovim_configuration/themes/" .. colorscheme .. ".lua")
 	end
 

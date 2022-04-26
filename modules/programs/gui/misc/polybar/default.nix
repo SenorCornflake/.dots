@@ -5,6 +5,13 @@ let
   inherit (lib.my) mkBoolOpt mkOpt;
   inherit (builtins) any;
   cfg = config.modules.programs.gui.misc.polybar;
+
+  mkScript = name: deps: (pkgs.writeShellScriptBin
+    "polybar-${name}"
+    ''
+      PATH=${lib.makeBinPath deps}
+      ${builtins.readFile (config.dotsDir + "/config/polybar/scripts/${name}.sh")}
+    '');
 in
 
 {
@@ -12,6 +19,11 @@ in
     enable = mkBoolOpt false;
     layout = mkOpt types.str "one";
     scheme = mkOpt types.attrs {};
+    scripts = mkOpt types.attrs {
+      herbstluftwm-layout = mkScript "herbstluftwm-layout" (with pkgs; [ gnugrep herbstluftwm ]);
+      herbstluftwm-mode = mkScript "herbstluftwm-mode" (with pkgs; [ gnugrep herbstluftwm ]);
+      temp = mkScript "temp" (with pkgs; [ gnugrep gnused lm_sensors gawk ]);
+    };
   };
 
   config = mkIf (cfg.enable && (any (v: v.enable) (attrValues config.modules.window-managers))) {

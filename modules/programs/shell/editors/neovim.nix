@@ -23,6 +23,7 @@ let
       "substrata-nvim"
       "monochrome-nvim"
       "zenbones-nvim"
+      "alpha-nvim"
     ]
     (plugin-name: pkgs.vimUtils.buildVimPlugin {
       name = plugin-name;  
@@ -77,7 +78,7 @@ in
 
           # Language servers
           rnix-lsp
-          sumneko-lua-language-server
+          #sumneko-lua-language-server
           rust-analyzer
           nodePackages.typescript-language-server
           nodePackages.vscode-css-languageserver-bin

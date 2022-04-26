@@ -11,12 +11,76 @@
 		"name": "Generate base16 theme",
 		"action": [
 			{
-				"name": "Dark",
-				"action": "generate_base16_theme dark"
+				"name": "Flavours",
+				"action": [
+					{
+						"name": "Dark",
+						"action": "generate_base16_theme flavours dark"
+					},
+					{
+						"name": "Light",
+						"action": "generate_base16_theme flavours light"
+					}
+				]
 			},
 			{
-				"name": "Light",
-				"action": "generate_base16_theme light"
+				"name": "Schemer2",
+				"action": "generate_base16_theme schemer2"
+			},
+			{
+				"name": "Pywal",
+				"action": [
+					{
+						"name": "Dark",
+						"action": [
+							{
+								"name": "Wal",
+								"action": "generate_base16_theme pywal dark wal"
+							},
+							{
+								"name": "schemer2",
+								"action": "generate_base16_theme pywal dark schemer2"
+							},
+							{
+								"name": "Colorz",
+								"action": "generate_base16_theme pywal dark colorz"
+							},
+							{
+								"name": "haishoku",
+								"action": "generate_base16_theme pywal dark haishoku"
+							},
+							{
+								"name": "Colorthief",
+								"action": "generate_base16_theme pywal dark colorthief"
+							}
+						]
+					},
+					{
+						"name": "Light",
+						"action": [
+							{
+								"name": "Wal",
+								"action": "generate_base16_theme pywal light wal"
+							},
+							{
+								"name": "schemer2",
+								"action": "generate_base16_theme pywal light schemer2"
+							},
+							{
+								"name": "Colorz",
+								"action": "generate_base16_theme pywal light colorz"
+							},
+							{
+								"name": "haishoku",
+								"action": "generate_base16_theme pywal light haishoku"
+							},
+							{
+								"name": "Colorthief",
+								"action": "generate_base16_theme pywal light colorthief"
+							}
+						]
+					}
+				]
 			}
 		]
 	},

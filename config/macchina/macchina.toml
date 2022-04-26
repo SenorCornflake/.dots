@@ -41,4 +41,4 @@ theme = "Helium"
 #   - Memory
 #   - Battery
 # Example:
-show = ["Host", "Machine", "Kernel", "Distribution", "OperatingSystem", "DesktopEnvironment", "WindowManager", "Resolution", "Backlight", "Packages", "LocalIP", "Terminal", "Shell", "Uptime", "Processor", "ProcessorLoad", "Memory", "Battery"]
+show = ["Host", "Machine", "Kernel", "Distribution", "DesktopEnvironment", "WindowManager", "Packages", "LocalIP", "Uptime", "Processor"]

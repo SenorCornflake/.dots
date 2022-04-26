@@ -42,10 +42,6 @@ in
           r = "ranger";
           hc = "herbstclient";
           f = "lf";
-          ":u" = "sh $DOT_ROOT/update.sh";
-          ":h" = "sh $DOT_ROOT/install.sh home";
-          ":s" = "sh $DOT_ROOT/install.sh system";
-          ":a" = "sh $DOT_ROOT/install.sh all";
           X = "startx ~/.config/xinit/xinitrc";
           t = "todo.sh -c";
           chmod_server = "sudo chmod -R 777 /srv/http && sudo chown -R wwwrun:wwwrun /srv/http && sudo chmod 755 /srv/http/phpmyadmin/config.inc.php";
@@ -91,7 +87,7 @@ in
           BROWSER = "firefox";
           VIDEO = "mpv";
 
-          DOT_ROOT = "$HOME/.dots";
+          DOT_ROOT = config.dotsDir;
           WALL_ROOT = config.wallpaperDir;
           WIKI_ROOT = "$XDG_DATA_HOME/wikis";
           PATH = "~/.local/bin:$PATH";

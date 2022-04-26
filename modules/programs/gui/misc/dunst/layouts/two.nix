@@ -8,9 +8,13 @@ let
 in
 
 {
-  config = mkIf (cfg.layout == "one") {
+  config = mkIf (cfg.layout == "two") {
     fonts.fonts = with pkgs; [
-      terminus_font
+      (nerdfonts.override {
+        fonts = [
+          "Iosevka"
+        ];
+      })
     ];
 
     home-manager.users."${config.userName}" = {
@@ -18,17 +22,17 @@ in
         global = {
           height = 300;
           width = "(0, 400)";
-          origin = "bottom-right";
-          offset = "10x40";
-          frame_width = 1;
-          separator_height = 1;
-          font = "Terminus 8";
-          padding = 10;
-          horizontal_padding = 10;
+          origin = "top-right";
+          offset = "15x70";
+          frame_width = 3;
+          separator_height = 2;
+          font = "Iosevka Nerd Font 10";
+          padding = 15;
+          horizontal_padding = 15;
           alignment = "left";
           word_wrap = "yes";
           icon_position = "left";
-          format = "%a :: %s\\n\\n%b\\n\\n%p";
+          format = "<b>[%a] %s</b>\\n%b\\n\\n%p";
           line_height = 2;
         };
       };

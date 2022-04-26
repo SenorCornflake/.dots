@@ -5,7 +5,7 @@ let
   inherit (lib) mkIf mkMerge types;
   inherit (lib.my) mkBoolOpt mkOpt;
   cfg = config.modules.theme;
-  
+
   dataHome = config.home-manager.users."${config.userName}".xdg.dataHome;
   alternative_wallpaper = 
     (if (builtins.pathExists (dataHome + "/dotfiles/alternative_wallpaper"))
@@ -15,9 +15,10 @@ in
 
 {
   options.modules.theme = {
-    layout = mkOpt types.str "";
-    scheme = mkOpt types.str "";
+    layout = mkOpt types.str "one";
+    scheme = mkOpt types.str "base16";
     wallpaper = mkOpt types.str "";
+    background = mkOpt types.str "#000000";
   };
 
   config = mkMerge [
@@ -28,7 +29,7 @@ in
           then cfg.wallpaper
           else if (alternative_wallpaper != "")
           then alternative_wallpaper
-          else "${config.wallpaperDir}/solid.png";
+          else "${dataHome}/dotfiles/background.png";
         in {
           home-manager.users."${config.userName}" = {
             home.packages = with pkgs; [
@@ -41,20 +42,12 @@ in
               recursive = false;
               executable = true;
                text = ''
-                #!${pkgs.bash}/bin/bash
+                #!/usr/bin/env bash
                 feh --no-fehbg --bg-fill ${wallpaper}
+                convert -size 1920x1080 xc:${config.modules.theme.background} ${dataHome}/dotfiles/background.png
               '';
             };
           };
         }))
-
-    (mkIf (cfg.scheme == "") {
-      home-manager.users."${config.userName}" = {
-      };
-    })
-    (mkIf (cfg.layout == "") {
-      home-manager.users."${config.userName}" = {
-      };
-    })
   ];
 }

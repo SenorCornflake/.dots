@@ -13,6 +13,8 @@ let
       border_width = "1";
       title_height = "0";
       title_font = "Terminus:size=10:style=bold";
+      title_align = "center";
+      title_depth = "0";
       padding_top = "0";
       padding_bottom = "0";
       padding_right = "0";
@@ -23,12 +25,20 @@ let
 
       # Scheme related
       active_color = "#000000";
-      normal_color = "#000000";
-      urgent_color = "#000000";
-      outer_color = "#000000";
-      inner_color = "#000000";
+      active_inner_color = "#000000";
+      active_outer_color = "#000000";
       active_title_color = "#000000";
+      normal_color = "#000000";
+      normal_inner_color = "#000000";
+      normal_outer_color = "#000000";
       normal_title_color = "#000000";
+      urgent_color = "#000000";
+      urgent_inner_color = "#000000";
+      urgent_outer_color = "#000000";
+      normal_tab_color = "#000000";
+      normal_tab_inner_color = "#000000";
+      normal_tab_outer_color = "#000000";
+      normal_tab_title_color = "#000000";
     }
     cfg.settings;
 in
@@ -38,6 +48,7 @@ in
     modules.window-managers.herbstluftwm = {
       enable = mkBoolOpt false;
       settings = mkOpt types.attrs {};
+      layout = mkOpt types.str "one";
     };
   };
 

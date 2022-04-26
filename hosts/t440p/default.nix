@@ -18,13 +18,7 @@
 
       extract-xiso
       xinput-gui
-      neovim-command
     ];
-
-    theme = {
-      layout = "one";
-      scheme = "base16";
-    };
 
     kernel = {
       useLatestKernel = true;
@@ -32,6 +26,11 @@
 
     databases = {
       mysql.enable = true;
+    };
+
+    theme = {
+      scheme = "base16";
+      layout = "two";
     };
 
     misc = {
@@ -97,7 +96,7 @@
           zathura.enable = true;
         };
         games = {
-          dwarf-fortress.enable = true;
+          dwarf-fortress.enable = false;
         };
         graphics = {
           inkscape.enable = true;

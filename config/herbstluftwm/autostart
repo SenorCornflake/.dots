@@ -20,7 +20,6 @@ xkbset ma 1 5 70 6 0
 xkbset exp 60 =mousekeys
 
 # Enable nightmode if it was enabled prior to restarting
-#python $DOT_ROOT/scripts/night_mode.py
 restore_nightmode_state
 
 # Wallpaper
@@ -51,11 +50,11 @@ git remote update
 
 status=$(git status -uno)
 if [[ $(echo $status | grep -w "is up to date") ]]; then
-	notify-send "Configuration is up to date with remote" -a ""
+	notify-send "Local and remote are equal" -a "dots"
 elif [[ $(echo $status | grep -w "is ahead of") ]]; then
-	notify-send "Configuration is ahead of remote" -a ""
+	notify-send "Local is ahead of remote, please push commits" -a "dots"
 else
-	notify-send "Configuration is behind remote" -a ""
+	notify-send "Remote is ahead of local, please pull commits" -a "dots"
 fi
 popd
 
