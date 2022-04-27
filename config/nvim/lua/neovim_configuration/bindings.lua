@@ -76,7 +76,7 @@ util.map('n', '<leader>lR', ':lua vim.lsp.buf.references()<cr>')
 util.map('n', '<leader>le', ':lua vim.diagnostic.show()<cr>')
 
 -- File manager
-util.map("n", "<leader>e", ":FloatermNew lf<CR>")
+util.map("n", "<leader>e", ":FloatermNew lfimg<CR>")
 
 -- Hop
 util.map("n", "ss", ":HopChar1<CR>")

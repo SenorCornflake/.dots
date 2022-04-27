@@ -1,6 +1,6 @@
 
 
-{ inputs, config, lib, pkgs, ... }:
+{ inputs, config, lib, pkgs, pkgs-unstable, ... }:
 
 let 
   inherit (builtins) toString;
@@ -38,6 +38,10 @@ in
   };
 
   config = mkIf cfg.enable {
+    fonts.fonts = with pkgs; [
+      material-design-icons
+    ];
+
     home-manager.users."${config.userName}" = {
       xdg.configFile."lua" = {
         target = "nvim/lua";
@@ -90,7 +94,7 @@ in
           coreutils
         ];
 
-        plugins = with pkgs.vimPlugins; [
+        plugins = with pkgs-unstable.vimPlugins; [
           # Deps
           lush-nvim # zenbones dependancy
           nui-nvim # neo tree dependancy
@@ -99,7 +103,7 @@ in
 
           # Plugs
           symbols-outline-nvim
-          (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
+          (nvim-treesitter.withPlugins (plugins: pkgs-unstable.tree-sitter.allGrammars))
           nvim-treesitter-refactor
           nvim-treesitter-context
           nvim-treesitter-textobjects

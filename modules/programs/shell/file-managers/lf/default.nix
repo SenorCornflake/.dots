@@ -1,52 +1,82 @@
 { config, lib, pkgs, ... }:
 
+# TODO: Create a derivation for lfimg
 let 
   inherit (lib) mkIf types;
   inherit (lib.my) mkBoolOpt;
   cfg = config.modules.programs.shell.file-managers.lf;
-in
+  deps = with pkgs; [
+    trash-cli
+    xdragon
+    fzf
+    file
 
+    ueberzug
+    ffmpegthumbnailer
+    imagemagick
+    poppler
+    #epub-thumbnailer
+    wkhtmltopdf
+    bat
+    chafa
+    unzip
+    p7zip
+    unrar
+    catdoc
+    python3Packages.docx2txt
+    odt2txt
+    gnumeric
+    exiftool
+    #iso-info
+    transmission
+    mcomix3
+  ];
+in
 {
   options.modules.programs.shell.file-managers.lf = {
     enable = mkBoolOpt false;
   };
-  
+
   config = mkIf cfg.enable {
     home-manager.users."${config.userName}" = {
-      home.packages = with pkgs; [
-        trash-cli
-        bat
-        gnutar
-        unzip
-        unrar
-        python39Packages.pdftotext
-        p7zip
-        xdragon
-        fzf
-        file
+      home.packages = deps ++ [
+        (pkgs.writeScriptBin "lfimg" (builtins.readFile "${config.configDir}/lf/lfrun"))
       ];
+
+      xdg.configFile."lf/icons" = {
+        recursive = false;
+        source = "${config.configDir}/lf/icons";
+        target = "lf/icons";
+      };
+
+      xdg.configFile."lf/preview" = {
+        recursive = false;
+        source = "${config.configDir}/lf/preview";
+        target = "lf/preview";
+        executable = true;
+      };
+
+      xdg.configFile."lf/cleaner" = {
+        recursive = false;
+        source = "${config.configDir}/lf/cleaner";
+        target = "lf/cleaner";
+        executable = true;
+      };
 
       programs.lf = {
         enable = true;
+        extraConfig = ''
+          set previewer ~/.config/lf/preview
+          set cleaner ~/.config/lf/cleaner
+        '';
         settings = {
           ratios = "1:2:3";
           hidden = true;
           preview = true;
           drawbox = true;
-          icons = false;
+          icons = true;
           ignorecase = true;
         };
-        previewer.source = pkgs.writeShellScript "pv.sh" ''
-          #!${pkgs.bash}/bin/bash
-          case "$1" in
-              *.tar*) tar tf "$1";;
-              *.zip) unzip -l "$1";;
-              *.rar) unrar l "$1";;
-              *.7z) 7z l "$1";;
-              *.pdf) pdftotext "$1" -;;
-              *) bat --color always --style=numbers --theme=base16 "$1" ;;
-          esac
-        '';
         commands = {
           q = "quit";
           open = ''
@@ -84,26 +114,7 @@ in
               sudo mkdir $ans
             }}
           '';
-          dragon = "%dragon-drag-and-drop -a -x \"$fx\"";
-          dragon-stay = "%dragon-drag-and-drop -a \"$fx\"";
-          dragon-individual = "%dragon-drag-and-drop \"$fx\"";
-
-          unarchive = ''
-            ''${{
-              case "$f" in
-                  *.zip) unzip "$f" ;;
-                  *.tar.gz) tar -xzvf "$f" ;;
-                  *.tar.bz2) tar -xjvf "$f" ;;
-                  *.tar) tar -xvf "$f" ;;
-                  *) echo "Unsupported format" ;;
-              esac
-            }}
-          '';
-
-          zip = "%zip -r \"$f\" \"$f\"";
-          tar = "%tar cvf \"$f.tar\" \"$f\"";
-          targz = "%tar cvzf \"$f.tar.gz\" \"$f\"";
-          tarbz2 = "%tar cjvf \"$f.tar.bz2\" \"$f\"";
+          dragon = "%dragon -a -x \"$fx\"";
 
           trash = ''
             ''${{
@@ -127,31 +138,8 @@ in
           '';
 
           clear_trash = "%trash-empty";
-
           restore_trash = "\${{trash-restore}}";
-
           stripspace = "%stripspace \"$f\"";
-
-          # $ was %
-          link = ''
-            ''${{
-                set -- $(cat ~/.local/share/lf/files)
-                mode="$1"
-                shift
-                if [ "$#" -lt 1 ]; then
-                    lf -remote "send $id echo no files to link"
-                    exit 0
-                fi
-                case "$mode" in
-                    # symbolically copy mode is indicating a soft link
-                    copy) ln -sr -t . -- "$@";;
-                    # while a move mode is indicating a hard link
-                    move) ln -t . -- "$@";;
-                esac
-                rm ~/.local/share/lf/files
-                lf -remote "send clear"
-            }}
-          '';
 
           fzf_jump = ''
             ''${{
@@ -180,29 +168,14 @@ in
         keybindings = {
           "`h" = "cd ~";
           "`w" = "cd /srv/http";
-          "`W" = "cd ~/wallpapers";
+          "`W" = "cd $WALL_ROOT";
           "`d" = "cd ~/Downloads";
           "`S" = "cd ~/Desktop";
           "`c" = "cd ~/.config";
-          "`m" = "cd ~/MAIN";
+          "`D" = "cd $DOT_ROOT";
           "<a-q>" = "quit";
 
-          # Remove some defaults
-          #"m" = "";
-          #"o" = "";
-          #"n" = "";
-          #"'" = "";
-          #"\"" = "";
-          #"e" = "";
-
           ee = "$$EDITOR \"$f\"";
-
-          # Archive Mappings
-          az = "zip";
-          at = "tar";
-          ag = "targz";
-          ab = "targz";
-          au = "unarchive";
 
           # "Trash Mappings
           x = "trash";
@@ -210,9 +183,7 @@ in
           tr = "restore_trash";
 
           # "Dragon Mapping";
-          Dr = "dragon";
-          Ds = "dragon-stay";
-          Di = "dragon-individual";
+          D = "dragon";
 
           ss = "stripspace";
 
@@ -229,12 +200,10 @@ in
           "<c-a>" = "sudomkfile";
           ch = "chmod";
           r = "rename";
-          R = "$vimv $fx";
           H = "top";
           L = "bottom";
           c = "clear";
           u = "unselect";
-          P = ":link";
           F = ":fzf_jump";
           "<c-f>" = ":fzf_jump_nodepth";
         };

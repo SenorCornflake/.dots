@@ -2,7 +2,8 @@
   description = "A very basic flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url =          "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     home-manager = {
       url = "github:rycee/home-manager/master";
@@ -71,13 +72,13 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, ... }: 
+  outputs = inputs@{ nixpkgs, nixpkgs-unstable, ... }: 
 
   let
     inherit (lib.my) mapHosts mapModules mapModulesRec mapModulesRecList;
 
     system = "x86_64-linux";
-    pkgs = import nixpkgs {
+    pkgs-args = {
       inherit system;
       config = {
         allowUnfree = true;
@@ -100,6 +101,8 @@
         })
       ];
     };
+    pkgs = import nixpkgs pkgs-args;
+    pkgs-unstable = import nixpkgs-unstable pkgs-args;
 
     # Extend lib with my custom lib
     lib = nixpkgs.lib.extend
@@ -109,10 +112,11 @@
       (mapHosts {
         inherit system;
         directory = ./hosts;
-        extraModules = 
+        extraModules =
           [ ./hosts/default.nix ] ++
           [ inputs.home-manager.nixosModules.home-manager ] ++
           (mapModulesRecList ./modules import);
+        extraSpecialArgs = { inherit pkgs-unstable; };
       });
   };
 }

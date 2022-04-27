@@ -24,7 +24,7 @@ in
           title_height = "20";
           title_align = "center";
           title_depth = "10";
-          title_font = "Iosevka Nerd Font:size=10";
+          title_font = "Iosevka Nerd Font:size=10:weight=bold";
           outer_width = "3";
           inner_width = "3";
         };

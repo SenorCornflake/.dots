@@ -23,6 +23,7 @@ in
       herbstluftwm-layout = mkScript "herbstluftwm-layout" (with pkgs; [ gnugrep herbstluftwm ]);
       herbstluftwm-mode = mkScript "herbstluftwm-mode" (with pkgs; [ gnugrep herbstluftwm ]);
       temp = mkScript "temp" (with pkgs; [ gnugrep gnused lm_sensors gawk ]);
+      nightmode = mkScript "nightmode" (with pkgs; [ libnotify inotify-tools coreutils ]);
     };
   };
 

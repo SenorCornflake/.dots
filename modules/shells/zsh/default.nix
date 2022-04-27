@@ -39,9 +39,9 @@ in
         shellAliases = {
           v = "nvim";
           vs = "sudoedit";
-          r = "ranger";
           hc = "herbstclient";
-          f = "lf";
+          f = "lfimg";
+          lf = "lfimg";
           X = "startx ~/.config/xinit/xinitrc";
           t = "todo.sh -c";
           chmod_server = "sudo chmod -R 777 /srv/http && sudo chown -R wwwrun:wwwrun /srv/http && sudo chmod 755 /srv/http/phpmyadmin/config.inc.php";

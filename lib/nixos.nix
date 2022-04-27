@@ -5,9 +5,9 @@ let
   inherit (lib) nixosSystem removeSuffix filterAttrs mkDefault;
   inherit (builtins) elem;
 in rec {
-  mkHost = { hostPath, system, extraModules }: nixosSystem {
+  mkHost = { hostPath, system, extraModules, extraSpecialArgs ? {} }: nixosSystem {
     inherit system;
-    specialArgs = { inherit lib inputs pkgs; };
+    specialArgs = { inherit lib inputs pkgs; } // extraSpecialArgs;
     modules = extraModules ++ [
       {
         nixpkgs.pkgs = pkgs;
@@ -17,7 +17,7 @@ in rec {
     ];
   };
 
-  mapHosts = { directory, system, extraModules }:
+  mapHosts = { directory, system, extraModules, extraSpecialArgs ? {} }:
     mapModules directory
-      (hostPath: mkHost { inherit hostPath system extraModules; });
+      (hostPath: mkHost { inherit hostPath system extraModules extraSpecialArgs; });
 }

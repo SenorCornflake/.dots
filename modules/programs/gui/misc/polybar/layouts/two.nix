@@ -75,7 +75,7 @@ in
               monitor = "\${env:MONITOR:eDP-1}";
               enable-ipc = true;
               modules.left = 
-                "time sep"
+                "nightmode sep time sep"
                 + (optionalString hlwm_enabled " hlwm_mode sep hlwm_layout");
               modules.center = "desktops";
               modules.right = "sep vol brightness net bat";
@@ -87,7 +87,7 @@ in
 
             "bar/main-primary" = {
               "inherit" = "bar/main";
-              tray.position = "right";
+              tray.position = "left";
               tray.detached = false;
               tray.background = scheme.bg;
               tray.padding = 2;
@@ -268,17 +268,33 @@ in
                 padding = 2;
                 foreground = scheme.indicators;
               };
+              click-left = "${pkgs.herbstluftwm}/bin/herbstclient floating toggle";
             };
 
             "module/hlwm_layout" = {
               type = "custom/script";
               tail = true;
-              exec = "${cfg.scripts.herbstluftwm-layout}/bin/polybar-herbstluftwm-layout 󰕳 󰿯 󰕶 󰜩 "; # TODO: Get a better icon for max layout
+              exec = "${cfg.scripts.herbstluftwm-layout}/bin/polybar-herbstluftwm-layout 󰕳 󰿯 󰕶 󰜩 ";
               format = {
                 text = "<label>";
                 foreground = scheme.indicators;
                 padding = 2;
               };
+              click-left = "${pkgs.herbstluftwm}/bin/herbstclient cycle_layout +1";
+            };
+
+            # TODO: Make this script tailable
+            "module/nightmode" = {
+              type = "custom/script";
+              tail = false;
+              interval = 3;
+              exec = "${cfg.scripts.nightmode}/bin/polybar-nightmode 󱠩 󱁞 ";
+              format = {
+                text = "<label>";
+                foreground = scheme.indicators;
+                padding = 2;
+              };
+              click-left = "${config.scripts.toggle_nightmode}/bin/toggle_nightmode";
             };
           };
         };
