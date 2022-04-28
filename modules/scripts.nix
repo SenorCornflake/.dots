@@ -171,7 +171,7 @@ in
         wallpaper=""
 
         if [[ $filterer == "rofi" ]]; then
-          wallpaper=$(ls ${config.wallpaperDir} | rofi -sep \" \" -dmenu)
+          wallpaper=$(ls ${config.wallpaperDir} | rofi -dmenu)
         elif [[ $filterer == "fzf" ]]; then
           wallpaper=$(ls ${config.wallpaperDir} | sed "s/ /\n/g" | fzf)
         fi
@@ -320,6 +320,10 @@ in
             layout = layouts[index]
 
             os.system("setxkbmap -layout {} -variant {}".format(layout["layout"], layout["variant"]))
+      '');
+
+      comma = (writeScriptBin "," ''
+        nix shell nixpkgs#$1 -c "$(echo $1 | awk -F"." '{print $NF}')" "''${@:2}"
       '');
     };
   };
