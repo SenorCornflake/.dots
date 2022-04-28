@@ -22,7 +22,7 @@ in
   };
 
   config = mkMerge [
-    (mkIf true 
+    (mkIf true
       (let
         wallpaper =
           if (cfg.wallpaper != "")

@@ -7,10 +7,16 @@ fi
 
 function display() {
 	if [[ $1 == "enabled" ]]; then
-		echo -n "$2"
+		echo "$2"
 	else
-		echo -n "$3"
+		echo "$3"
 	fi
 }
 
 display $(cat $file) $1 $2
+
+while true
+do
+	sleep 3s
+	display $(cat $file) $1 $2
+done

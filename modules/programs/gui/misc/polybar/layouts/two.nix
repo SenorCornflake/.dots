@@ -286,8 +286,7 @@ in
             # TODO: Make this script tailable
             "module/nightmode" = {
               type = "custom/script";
-              tail = false;
-              interval = 3;
+              tail = true;
               exec = "${cfg.scripts.nightmode}/bin/polybar-nightmode 󱠩 󱁞 ";
               format = {
                 text = "<label>";

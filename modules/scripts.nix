@@ -167,19 +167,26 @@ in
       '');
 
       generate_base16_theme = (writeShellScriptBin "generate_base16_theme" ''
-        wallpaper=$(echo `ls ${config.wallpaperDir}` | rofi -sep " " -dmenu)
+        filterer=$1
+        wallpaper=""
+
+        if [[ $filterer == "rofi" ]]; then
+          wallpaper=$(ls ${config.wallpaperDir} | rofi -sep \" \" -dmenu)
+        elif [[ $filterer == "fzf" ]]; then
+          wallpaper=$(ls ${config.wallpaperDir} | sed "s/ /\n/g" | fzf)
+        fi
 
         if [[ $wallpaper == "" ]]; then
           exit
         fi
 
-        if [[ $1 == "flavours" ]]; then
+        if [[ $2 == "flavours" ]]; then
           if [[ $wallpaper != "" ]]; then
-            notify-send "Flavours" "Generating $2 base16 theme using $wallpaper"
-            flavours generate $2 ${config.wallpaperDir}/$wallpaper --stdout > $XDG_DATA_HOME/dotfiles/base16.yaml
-            flavours generate $2 ${config.wallpaperDir}/$wallpaper --stdout | yq > $XDG_DATA_HOME/dotfiles/base16.json
+            notify-send "Flavours" "Generating $3 base16 theme using $wallpaper"
+            flavours generate $3 ${config.wallpaperDir}/$wallpaper --stdout > $XDG_DATA_HOME/dotfiles/base16.yaml
+            flavours generate $3 ${config.wallpaperDir}/$wallpaper --stdout | yq > $XDG_DATA_HOME/dotfiles/base16.json
           fi
-        elif [[ $1 == "schemer2" ]]; then
+        elif [[ $2 == "schemer2" ]]; then
           template="scheme: \"Generated\"
         author: \"Schemer2\"
 
@@ -211,13 +218,13 @@ in
           auto-base16-theme --inputColorPaletteFile $XDG_DATA_HOME/dotfiles/colors.txt $XDG_DATA_HOME/dotfiles/auto-base16-template.el $XDG_DATA_HOME/dotfiles/base16.yaml
           # Create JSON version of base16 theme
           echo "$(cat $XDG_DATA_HOME/dotfiles/base16.yaml)" | yq > $XDG_DATA_HOME/dotfiles/base16.json
-        elif [[ $1 == "pywal" ]]; then
-          if [[ $2 == "light" ]]; then
-            notify-send "Pywal" "Generating light base16 theme using wal with $3 backend on $wallpaper"
-            wal -l -n -e -s -t --backend $3 -i ${config.wallpaperDir}/$wallpaper
+        elif [[ $2 == "pywal" ]]; then
+          if [[ $3 == "light" ]]; then
+            notify-send "Pywal" "Generating light base16 theme using wal with $4 backend on $wallpaper"
+            wal -l -n -e -s -t --backend $4 -i ${config.wallpaperDir}/$wallpaper
           else
-            notify-send "Pywal" "Generating dark base16 theme using wal with $3 backend on $wallpaper"
-            wal -n -e -s -t --backend $3 -i ${config.wallpaperDir}/$wallpaper
+            notify-send "Pywal" "Generating dark base16 theme using wal with $4 backend on $wallpaper"
+            wal -n -e -s -t --backend $4 -i ${config.wallpaperDir}/$wallpaper
           fi
 
           color0=$(cat $XDG_CACHE_HOME/wal/colors.json | jq -r ".colors.color0" | sed "s/#//g")

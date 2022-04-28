@@ -94,7 +94,7 @@ in
           TODOTXT_CFG_FILE = "$XDG_CONFIG_HOME/todo/todo.cfg";
           SSH_ASKPASS = "";
 
-          NPM_CONFIG_USERCONFIG = "$XDG_CONFIG_HOME/npm/npmrc";
+          BAT_THEME="base16";
 
           # Highlight man pages in less (keep this there even though i use neovim for man pages)
           LESS_TERMCAP_mb = "$(tput bold; tput setaf 2)";

@@ -128,6 +128,7 @@ in
           targets-vim
           telescope-nvim
           vim-floaterm
+          lf-vim
           vim-fugitive
           vim-hexokinase
           vim-startuptime

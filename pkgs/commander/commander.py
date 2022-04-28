@@ -19,10 +19,16 @@ if len(sys.argv) > 1:
 else:
     default_prompt = "Commands:"
 
-commands_file = None
 
 if len(sys.argv) > 2:
-    commands_file = sys.argv[2]
+    filterer = sys.argv[2]
+else:
+    filterer = "rofi"
+
+commands_file = None
+
+if len(sys.argv) > 3:
+    commands_file = sys.argv[3]
 else:
     commands_file = os.path.expandvars("$XDG_CONFIG_HOME/commander/commands.json")
 
@@ -45,17 +51,27 @@ def menu(commands, prompt = default_prompt):
             command_prompts.append(prompt)
 
 
-    c = 'echo "{}" | rofi -dmenu -format i -i -p "{}" -theme-str \'element-icon {{ enabled: false; }} \''.format("\n".join(command_names), prompt)
+    if filterer == "rofi":
+        c = 'echo "{}" | rofi -dmenu -format i -i -p "{}" -theme-str \'element-icon {{ enabled: false; }} \''.format("\n".join(command_names), prompt)
+    elif filterer == "fzf":
+        c = 'echo "{}" | cat -n | fzf --prompt="{}" --with-nth 2.. | awk \'{{print $1}}\''.format("\n".join(command_names), prompt)
+    else:
+        print("filterer " + filterer + " not supported")
+        sys.exit()
 
     index = e(c)
 
     if index != '':
         index = int(index)
+
+        if filterer == "fzf":
+            index = index - 1
+
         command = command_actions[index]
 
         if type(command) == list:
             menu(command, command_prompts[index])
         else:
-            os.system(command)
+            os.system(command.format(filterer))
 
 menu(commands)

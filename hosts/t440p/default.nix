@@ -44,6 +44,7 @@
 
     networking = {
       networkmanager.enable = true;
+      ssh.enable = true;
 
       servers = {
         apache.enable = true;
