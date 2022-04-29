@@ -1,60 +1,52 @@
 { config, lib, pkgs, ... }:
 
-let 
-  inherit (lib) mkIf recursiveUpdate types;
+let
+  inherit (lib) mkIf types escapeShellArg mapAttrsToList concatStringsSep isBool;
   inherit (lib.my) mkBoolOpt mkOpt;
-  inherit (pkgs) writeText;
-  inherit (builtins) toJSON;
   cfg = config.modules.window-managers.herbstluftwm;
-  
-  settings = recursiveUpdate
-    {
-      # Layout related
-      border_width = "1";
-      title_height = "0";
-      title_font = "Terminus:size=10:style=bold";
-      title_align = "center";
-      title_depth = "0";
-      padding_top = "0";
-      padding_bottom = "0";
-      padding_right = "0";
-      padding_left = "0";
-      outer_width = "0";
-      inner_width = "0";
-      window_gap = "15";
 
-      # Scheme related
-      active_color = "#000000";
-      active_inner_color = "#000000";
-      active_outer_color = "#000000";
-      active_title_color = "#000000";
-      normal_color = "#000000";
-      normal_inner_color = "#000000";
-      normal_outer_color = "#000000";
-      normal_title_color = "#000000";
-      urgent_color = "#000000";
-      urgent_inner_color = "#000000";
-      urgent_outer_color = "#000000";
-      normal_tab_color = "#000000";
-      normal_tab_inner_color = "#000000";
-      normal_tab_outer_color = "#000000";
-      normal_tab_title_color = "#000000";
-    }
-    cfg.settings;
+  renderValue = val:
+    if isBool val then
+      if val then "true" else "false"
+    else
+      escapeShellArg val;
+
+  renderAttributes = attributes:
+    concatStringsSep "\n" (mapAttrsToList
+      (name: value: "herbstclient attr ${name} ${renderValue value}") attributes);
+
+  renderSettings = settings:
+    concatStringsSep "\n" (mapAttrsToList
+      (name: value: "herbstclient set ${name} ${renderValue value}") settings);
+
+  renderKeybinds = keybinds:
+    concatStringsSep "\n"
+    (mapAttrsToList (key: cmd: "herbstclient keybind ${key} ${cmd}")
+      keybinds);
+
+  renderMousebinds = mousebinds:
+    concatStringsSep "\n"
+    (mapAttrsToList (btn: cmd: "herbstclient mousebind ${btn} ${cmd}")
+      mousebinds);
+
+  renderRules = rules:
+    concatStringsSep "\n" (map (rule: "herbstclient rule ${rule}") rules);
 in
 
 {
-  options = {
-    modules.window-managers.herbstluftwm = {
-      enable = mkBoolOpt false;
-      settings = mkOpt types.attrs {};
-      layout = mkOpt types.str "one";
-    };
+  options.modules.window-managers.herbstluftwm = {
+    enable = mkBoolOpt false;
+    layout = mkOpt types.str "one";
+
+    settings = mkOpt types.attrs {};
+    attributes = mkOpt types.attrs {};
+    keybinds = mkOpt types.attrs {};
+    mousebinds = mkOpt types.attrs {};
+    rules = mkOpt (types.listOf types.str) [];
+    extraConfig = mkOpt types.str "";
   };
 
   config = mkIf cfg.enable {
-    modules.programs.shell.misc.commander.enable = true;
-
     home-manager.users."${config.userName}" = {
       home.packages = with pkgs; [
         herbstluftwm
@@ -65,71 +57,44 @@ in
         xkbset
       ];
 
-      programs.autorandr = {
-        hooks = {
-          postswitch = {
-            restart-wm = ''
-              herbstclient reload
-            '';
-          };
-        };
-      };
-
-      home.file = {
-        "autostart" = {
-          text = builtins.readFile (config.configDir + "/herbstluftwm/autostart");
-          target = ".config/herbstluftwm/autostart";
-          executable = true;
-        };
-
-        "rules" = {
-          text = builtins.readFile (config.configDir + "/herbstluftwm/rules");
-          target = ".config/herbstluftwm/rules";
-          executable = true;
-        };
-
-        "keybindings" = {
-          text = builtins.readFile (config.configDir + "/herbstluftwm/keybindings");
-          target = ".config/herbstluftwm/keybindings";
-          executable = true;
-        };
-
-        "settings" = {
-          text = builtins.readFile (config.configDir + "/herbstluftwm/settings");
-          target = ".config/herbstluftwm/settings";
-          executable = true;
-        };
-      };
-
-      xdg.dataFile."herbstluftwm-settings" = {
-        target = "herbstluftwm/settings.json";
-        source = writeText "herbstluftwm_settings" (toJSON config.modules.window-managers.herbstluftwm.settings);
-        recursive = false;
-      };
-
       xdg.configFile."xinit/xinitrc" = {
         text = ''
           if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
               eval $(dbus-launch --exit-with-session --sh-syntax)
           fi
-          systemctl --user import-environment DISPLAY XAUTHORITY DOT_ROOT
+          systemctl --user import-environment DBUS_SESSION_BUS_ADDRESS DISPLAY SSH_AUTH_SOCK XAUTHORITY XDG_DATA_DIRS XDG_RUNTIME_DIR XDG_SESSION_ID DOT_ROOT 
 
           if command -v dbus-update-activation-environment >/dev/null 2>&1; then
-              dbus-update-activation-environment DISPLAY XAUTHORITY DOT_ROOT
+              dbus-update-activation-environment DBUS_SESSION_BUS_ADDRESS DISPLAY SSH_AUTH_SOCK XAUTHORITY XDG_DATA_DIRS XDG_RUNTIME_DIR XDG_SESSION_ID DOT_ROOT 
           fi
-
           touch "$XDG_DATA_HOME/herbstluftwm/first_start.txt"
-
           exec herbstluftwm --locked
         '';
         executable = true;
         target = "xinit/xinitrc";
       };
-    };
 
-    services.xserver = {
-      enable = true;
-      displayManager.startx.enable = true;
+      xdg.configFile."herbstluftwm/autostart" = {
+        target = "herbstluftwm/autostart";
+        executable = true;
+        text = ''
+          herbstclient unrule -F
+          ${renderRules cfg.rules}
+
+          herbstclient attr tiling.reset 1
+          herbstclient attr floating.reset 1
+          ${renderSettings cfg.settings}
+          ${renderAttributes cfg.attributes}
+
+          herbstclient keyunbind --all
+          ${renderKeybinds cfg.keybinds}
+
+          herbstclient mouseunbind --all
+          ${renderMousebinds cfg.mousebinds}
+
+          ${cfg.extraConfig}
+        '';
+      };
     };
   };
 }

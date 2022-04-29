@@ -6,7 +6,8 @@ let
   inherit (lib.my) mkBoolOpt mkOpt;
   cfg = config.modules.theme;
 
-  dataHome = config.home-manager.users."${config.userName}".xdg.dataHome;
+  #dataHome = config.home-manager.users."${config.userName}".xdg.dataHome;
+  dataHome = "/home/${config.userName}/.local/share/";
   alternative_wallpaper = 
     (if (builtins.pathExists (dataHome + "/dotfiles/alternative_wallpaper"))
       then builtins.readFile (dataHome + "/dotfiles/alternative_wallpaper")

@@ -30,7 +30,7 @@ in
 
   console = {
     font = "Lat2-Terminus16";
-    keyMap = "us";
+    useXkbConfig = true;
   };
 
   environment.systemPackages = with pkgs; [
@@ -39,6 +39,13 @@ in
     psmisc
     ntfs3g
   ];
+
+  services.xserver = {
+    xkbOptions = "keypad:pointerkeys,caps:backspace";
+    autoRepeatDelay = 250;
+    autoRepeatInterval = 30;
+  };
+
 
   home-manager.users."${config.userName}" = {
     xdg = {

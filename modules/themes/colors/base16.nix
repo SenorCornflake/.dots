@@ -6,7 +6,7 @@ let
   inherit (builtins) readFile pathExists fromJSON;
   cfg = config.modules.theme;
 
-  dataHome = config.home-manager.users."${config.userName}".xdg.dataHome;
+  dataHome = "/home/${config.userName}/.local/share/";
 
   polybarLayout = config.modules.programs.gui.misc.polybar.layout;
   rofiLayout = config.modules.programs.gui.misc.rofi.layout;
@@ -45,36 +45,40 @@ in
       theme.background = base00;
 
       window-managers = {
-        herbstluftwm.settings = (mkMerge [
+        herbstluftwm = (mkMerge [
           (mkIf (herbstluftwmLayout == "one") {
-            active_color = base02;
-            normal_color = base00;
-            urgent_color = base09;
+            attributes = {
+              "theme.active_color" = base02;
+              "theme.normal_color" = base00;
+              "theme.urgent_color" = base09;
+            };
           })
           (mkIf (herbstluftwmLayout == "two") {
-            urgent_color = base09;
-            urgent_inner_color = base09;
-            urgent_outer_color = base09;
+            attributes = {
+              "theme.urgent.color" = base09;
+              "theme.urgent.inner_color" = base09;
+              "theme.urgent.outer_color" = base09;
 
-            active_color = base02;
-            active_outer_color = base02;
-            active_title_color = base07;
-            active_inner_color = base02;
+              "theme.active.color" = base02;
+              "theme.active.outer_color" = base02;
+              "theme.active.title_color" = base07;
+              "theme.active.inner_color" = base02;
 
-            normal_color = base01;
-            normal_outer_color = base01;
-            normal_title_color = base05;
-            normal_inner_color = base01;
+              "theme.normal.color" = base01;
+              "theme.normal.outer_color" = base01;
+              "theme.normal.title_color" = base05;
+              "theme.normal.inner_color" = base01;
 
-            active_tab_color = base01;
-            active_tab_outer_color = base02;
-            active_tab_inner_color = base02;
-            active_tab_title_color = base05;
+              "theme.active.tab_color" = base01;
+              "theme.active.tab_outer_color" = base02;
+              "theme.active.tab_inner_color" = base02;
+              "theme.active.tab_title_color" = base05;
 
-            normal_tab_color = base00;
-            normal_tab_outer_color = base01;
-            normal_tab_inner_color = base01;
-            normal_tab_title_color = base05;
+              "theme.normal.tab_color" = base00;
+              "theme.normal.tab_outer_color" = base01;
+              "theme.normal.tab_inner_color" = base01;
+              "theme.normal.tab_title_color" = base05;
+            };
           })
         ]);
       };

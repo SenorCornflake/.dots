@@ -10,9 +10,13 @@ in
   config = mkIf (cfg.layout == "one") {
     modules = {
       window-managers = {
-        herbstluftwm.settings = {
-          border_width = "1";
-          window_gap = "10";
+        herbstluftwm = {
+          settings = {
+            window_gap = "10";
+          };
+          attributes = {
+            theme_border_width = "1";
+          };
         };
       };
     };

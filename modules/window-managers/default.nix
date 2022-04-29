@@ -13,6 +13,21 @@ in {
         home.packages = with pkgs; [
           redshift
         ];
+        programs.autorandr = {
+          hooks = {
+            postswitch = {
+              restart-wm = ''
+                reload_wm
+              '';
+            };
+          };
+        };
       };
+
+      services.xserver = {
+        displayManager.startx.enable = true;
+      };
+
+      modules.programs.shell.misc.commander.enable = true;
     };
 }
