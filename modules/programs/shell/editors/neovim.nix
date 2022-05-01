@@ -1,6 +1,6 @@
 
 
-{ inputs, config, lib, pkgs, pkgs-unstable, ... }:
+{ inputs, config, lib, pkgs, pkgs-unstable, pkgs-stable, ... }:
 
 let 
   inherit (builtins) toString;
@@ -24,6 +24,7 @@ let
       "monochrome-nvim"
       "zenbones-nvim"
       "alpha-nvim"
+      "kanagawa-nvim"
     ]
     (plugin-name: pkgs.vimUtils.buildVimPlugin {
       name = plugin-name;  
@@ -82,7 +83,7 @@ in
 
           # Language servers
           rnix-lsp
-          #sumneko-lua-language-server
+          pkgs-stable.sumneko-lua-language-server
           rust-analyzer
           nodePackages.typescript-language-server
           nodePackages.vscode-css-languageserver-bin

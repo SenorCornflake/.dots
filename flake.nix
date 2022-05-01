@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url =          "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-21.11";
 
     home-manager = {
       url = "github:rycee/home-manager/master";
@@ -70,9 +71,13 @@
       url = "github:goolord/alpha-nvim";
       flake = false;
     };
+    kanagawa-nvim = {
+      url = "github:rebelot/kanagawa.nvim";
+      flake = false;
+    };
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs-unstable, ... }: 
+  outputs = inputs@{ nixpkgs, nixpkgs-unstable, nixpkgs-stable, ... }: 
 
   let
     inherit (lib.my) mapHosts mapModules mapModulesRec mapModulesRecList;
@@ -103,6 +108,7 @@
     };
     pkgs = import nixpkgs pkgs-args;
     pkgs-unstable = import nixpkgs-unstable pkgs-args;
+    pkgs-stable = import nixpkgs-stable pkgs-args;
 
     # Extend lib with my custom lib
     lib = nixpkgs.lib.extend
@@ -116,7 +122,7 @@
           [ ./hosts/default.nix ] ++
           [ inputs.home-manager.nixosModules.home-manager ] ++
           (mapModulesRecList ./modules import);
-        extraSpecialArgs = { inherit pkgs-unstable; };
+        extraSpecialArgs = { inherit pkgs-unstable pkgs-stable; };
       });
   };
 }

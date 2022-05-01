@@ -141,9 +141,14 @@ in
       '');
 
       set_alternative_wallpaper = (writeShellScriptBin "set_alternative_wallpaper" ''
-        wallpaper=$(echo `ls ${config.wallpaperDir}` | rofi -sep " " -dmenu)
+        wallpaper=$(echo "$(ls ${config.wallpaperDir}) plain_background" | sed -z "s/\n/ /g" | rofi -sep " " -dmenu)
 
-        if [[ $wallpaper != "" ]]; then
+        if [[ $wallpaper == "" ]]; then
+          exit
+        elif [[ $wallpaper == "plain_background" ]]; then
+          echo -n "$XDG_DATA_HOME/dotfiles/background.png" > $XDG_DATA_HOME/dotfiles/alternative_wallpaper
+          feh --no-fehbg --bg-fill $XDG_DATA_HOME/dotfiles/background.png
+        else
           echo -n "${config.wallpaperDir}/$wallpaper" > $XDG_DATA_HOME/dotfiles/alternative_wallpaper
           feh --no-fehbg --bg-fill ${config.wallpaperDir}/$wallpaper
         fi
