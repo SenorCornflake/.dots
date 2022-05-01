@@ -1,10 +1,5 @@
 { inputs, lib, pkgs, config, ... }:
 
-let 
-  inherit (lib.my) mapModulesRec;
-  inherit (lib) mkDefault;
-  inherit (builtins) pathExists readFile;
-in
 {
   nix = {
     package = pkgs.nixUnstable;
@@ -38,6 +33,9 @@ in
     git
     psmisc
     ntfs3g
+    dosfstools
+    gnome.adwaita-icon-theme
+    gnome.gnome-themes-extra
   ];
 
   services.xserver = {
@@ -46,12 +44,15 @@ in
     autoRepeatInterval = 30;
   };
 
-
   home-manager.users."${config.userName}" = {
+    home.keyboard = null;
+
+    gtk.enable = true;
+
     xdg = {
       enable = true;
-      configHome = config.users.users."${config.userName}".home + "/.config/";
-      dataHome = config.users.users."${config.userName}".home + "/.local/share/";
+      configHome = config.configHome;
+      dataHome = config.dataHome;
       cacheHome = config.users.users."${config.userName}".home + "/.cache/";
     };
   };

@@ -47,6 +47,11 @@ in
   };
 
   config = mkIf cfg.enable {
+    services.xserver = {
+      enable = true;
+      displayManager.startx.enable = true;
+    };
+
     home-manager.users."${config.userName}" = {
       home.packages = with pkgs; [
         herbstluftwm
@@ -57,17 +62,28 @@ in
         xkbset
       ];
 
+      programs.autorandr = {
+        hooks = {
+          postswitch = {
+            restart-wm = ''
+              reload_wm
+            '';
+          };
+        };
+      };
+
       xdg.configFile."xinit/xinitrc" = {
         text = ''
           if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
               eval $(dbus-launch --exit-with-session --sh-syntax)
           fi
-          systemctl --user import-environment DBUS_SESSION_BUS_ADDRESS DISPLAY SSH_AUTH_SOCK XAUTHORITY XDG_DATA_DIRS XDG_RUNTIME_DIR XDG_SESSION_ID DOT_ROOT 
+          systemctl --user import-environment XAUTHORITY DISPLAY DOT_ROOT
 
           if command -v dbus-update-activation-environment >/dev/null 2>&1; then
-              dbus-update-activation-environment DBUS_SESSION_BUS_ADDRESS DISPLAY SSH_AUTH_SOCK XAUTHORITY XDG_DATA_DIRS XDG_RUNTIME_DIR XDG_SESSION_ID DOT_ROOT 
+              dbus-update-activation-environment XAUTHORITY DISPLAY DOT_ROOT
           fi
-          touch "$XDG_DATA_HOME/herbstluftwm/first_start.txt"
+
+          touch $HOME/first_start.txt
           exec herbstluftwm --locked
         '';
         executable = true;
@@ -78,21 +94,23 @@ in
         target = "herbstluftwm/autostart";
         executable = true;
         text = ''
+          #!/usr/bin/env bash
+
           herbstclient unrule -F
-          ${renderRules cfg.rules}
-
-          herbstclient attr tiling.reset 1
-          herbstclient attr floating.reset 1
-          ${renderSettings cfg.settings}
-          ${renderAttributes cfg.attributes}
-
+          herbstclient attr theme.tiling.reset 1
+          herbstclient attr theme.floating.reset 1
           herbstclient keyunbind --all
-          ${renderKeybinds cfg.keybinds}
-
           herbstclient mouseunbind --all
-          ${renderMousebinds cfg.mousebinds}
 
           ${cfg.extraConfig}
+
+          ${renderRules cfg.rules}
+          ${renderSettings cfg.settings}
+          ${renderAttributes cfg.attributes}
+          ${renderKeybinds cfg.keybinds}
+          ${renderMousebinds cfg.mousebinds}
+
+          herbstclient unlock
         '';
       };
     };

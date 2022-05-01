@@ -1,19 +1,20 @@
-{ config, pkgs, lib, ... }:
+{ config, lib, pkgs, ... }:
 
-let 
+let
   inherit (lib.my) mkOpt mkBoolOpt;
-  inherit (lib) mkIf types;
+  inherit (lib) types;
+
   cfg = config.modules.misc.gtk;
 in
-
 {
   options.modules.misc.gtk = {
-    enable = mkBoolOpt true;
-    theme = mkOpt types.str "adwaita";
+    theme = mkOpt types.str "Adwaita-dark";
+    iconTheme = mkOpt types.str "Adwaita";
+    cursorTheme = mkOpt types.str "Adwaita";
     font = mkOpt types.str "Noto Sans, 10";
   };
 
-  config = mkIf cfg.enable {
+  config = {
     fonts.fonts = with pkgs; [
       noto-fonts
     ];
@@ -22,10 +23,8 @@ in
       gtk = {
         enable = true;
         font.name = cfg.font;
-        gtk2.configLocation = "${config.home-manager.users."${config.userName}".xdg.configHome}/gtk-2.0/gtkrc";
+        gtk2.configLocation = "${config.configHome}/gtk-2.0/gtkrc";
       };
     };
-
-    programs.dconf.enable = true;
   };
 }

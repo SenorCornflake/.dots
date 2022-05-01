@@ -4,10 +4,14 @@
 let 
   inherit (lib) mkIf mkMerge types;
   inherit (lib.my) mkBoolOpt mkOpt;
-  cfg = config.modules.theme;
+  inherit (builtins) pathExists readFile;
 
-  #dataHome = config.home-manager.users."${config.userName}".xdg.dataHome;
-  dataHome = "/home/${config.userName}/.local/share/";
+  cfg = config.modules.theme;
+  dataHome = config.dataHome;
+
+  layoutFile = "${dataHome}/dotfiles/layout";
+  schemeFile = "${dataHome}/dotfiles/scheme";
+
   alternative_wallpaper = 
     (if (builtins.pathExists (dataHome + "/dotfiles/alternative_wallpaper"))
       then builtins.readFile (dataHome + "/dotfiles/alternative_wallpaper")
@@ -20,35 +24,61 @@ in
     scheme = mkOpt types.str "base16";
     wallpaper = mkOpt types.str "";
     background = mkOpt types.str "#000000";
+
+    iconTheme = mkOpt types.str "Adwaita";
+    cursorTheme = mkOpt types.str "Adwaita";
+    gtkTheme = mkOpt types.str "Adwaita-dark";
   };
 
-  config = mkMerge [
-    (mkIf true
-      (let
-        wallpaper =
-          if (cfg.wallpaper != "")
-          then cfg.wallpaper
-          else if (alternative_wallpaper != "")
-          then alternative_wallpaper
-          else "${dataHome}/dotfiles/background.png";
-        in {
-          home-manager.users."${config.userName}" = {
-            home.packages = with pkgs; [
-              feh
-              imagemagick
-            ];
+  config = let
+    wallpaper =
+      if (cfg.wallpaper != "")
+      then cfg.wallpaper
+      else if (alternative_wallpaper != "")
+      then alternative_wallpaper
+      else "${dataHome}/dotfiles/background.png";
+    in
+    {
+      modules = {
+        theme = {
+          layout = if pathExists layoutFile then readFile layoutFile else "one";
+          scheme = if pathExists schemeFile then readFile schemeFile else "base16";
+        };
 
-            xdg.dataFile."wallpaper" = {
-              target = "dotfiles/wallpaper";
-              recursive = false;
-              executable = true;
-               text = ''
-                #!/usr/bin/env bash
-                feh --no-fehbg --bg-fill ${wallpaper}
-                convert -size 1920x1080 xc:${config.modules.theme.background} ${dataHome}/dotfiles/background.png
-              '';
-            };
-          };
-        }))
-  ];
+        misc.gtk = {
+          inherit (cfg) iconTheme cursorTheme;
+          theme = cfg.gtkTheme;
+        };
+      };
+
+      programs.dconf.enable = true;
+
+      home-manager.users."${config.userName}" = {
+        home.packages = with pkgs; [
+          feh
+          imagemagick
+        ];
+
+        home.file.".icons/default/index.theme" = {
+          target = ".icons/default/index.theme";
+          text = ''
+            [icon theme]
+            Name=Default
+            Comment=Default Cursor Theme
+            Inherits=${cfg.cursorTheme}
+          '';
+        };
+
+        xdg.dataFile."wallpaper" = {
+          target = "dotfiles/wallpaper";
+          recursive = false;
+          executable = true;
+           text = ''
+            #!/usr/bin/env bash
+            feh --no-fehbg --bg-fill ${wallpaper}
+            convert -size 1920x1080 xc:${config.modules.theme.background} ${dataHome}/dotfiles/background.png
+          '';
+        };
+      };
+    };
 }

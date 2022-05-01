@@ -63,7 +63,7 @@ in
         "${Mod}-comma"  = "use_index -1 --skip-visible";
 
         # layouting
-        "${Mod}-q"         = "move";
+        "${Mod}-q"         = "remove";
         "${Mod}-s"         = "floating toggle";
         "${Mod}-f"         = "fullscreen toggle";
         "${Mod}-Shift-f"   = "set_attr clients.focus.floating toggle";

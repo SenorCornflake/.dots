@@ -15,7 +15,7 @@ in
             window_gap = "10";
           };
           attributes = {
-            theme_border_width = "1";
+            "theme.border_width" = "1";
           };
         };
       };

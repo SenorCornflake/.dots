@@ -7,7 +7,7 @@ let
 in
 
 {
-  config = mkIf (cfg.layout == "two") {
+  config = mkIf (cfg.layout == "two-compact") {
     fonts.fonts = with pkgs; [
       (nerdfonts.override {
         fonts = [
@@ -18,11 +18,11 @@ in
 
     modules = {
       window-managers = {
-        herbstluftwm.layout = "two";
+        herbstluftwm.layout = "two-compact";
         picom = {
           inactiveDim = "0.08";
-          shadowRadius = "10";
-          shadowOffsets = [ (-10) (-10) ];
+          shadowRadius = "5";
+          shadowOffsets = [ (-5) (-5) ];
           shadowOpacity = "1.0";
         };
       };
@@ -33,13 +33,13 @@ in
             kitty = {
               fontFamily = "Iosevka Nerd Font Mono";
               fontSize = 10;
-              windowPaddingWidth = "15";
+              windowPaddingWidth = "10";
             };
           };
           misc = {
-            polybar.layout = "two";
-            rofi.layout = "two";
-            dunst.layout = "two";
+            polybar.layout = "two-compact";
+            rofi.layout = "two-compact";
+            dunst.layout = "two-compact";
           };
         };
       };

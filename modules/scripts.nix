@@ -4,8 +4,9 @@
 let
   inherit (config.modules.window-managers) herbstluftwm;
   inherit (lib.my) mkOpt;
-  inherit (lib) attrValues types;
+  inherit (lib) attrValues types concatStringsSep attrNames;
   inherit (pkgs) writeScriptBin writeShellScriptBin makeDesktopItem;
+  inherit (builtins) readDir replaceStrings;
 in
 {
   options = {
@@ -272,6 +273,7 @@ in
         fi
 
         echo -n "${config.wallpaperDir}/$wallpaper" > $XDG_DATA_HOME/dotfiles/alternative_wallpaper
+        echo -n "base16" > $XDG_DATA_HOME/dotfiles/scheme
         setup_base16
       '');
 
@@ -325,6 +327,46 @@ in
       comma = (writeScriptBin "," ''
         nix shell nixpkgs#$1 -c "$(echo $1 | awk -F"." '{print $NF}')" "''${@:2}"
       '');
+
+      change_theme = let
+        layouts = concatStringsSep
+          "\n"
+          (map
+            (elem: replaceStrings [".nix"] [""] elem)
+            (attrNames (readDir ./themes/layouts)));
+        schemes = concatStringsSep
+          "\n"
+          (map
+            (elem: replaceStrings [".nix"] [""] elem)
+            (attrNames (readDir ./themes/schemes)));
+      in
+        (writeShellScriptBin "change_theme" ''
+          layouts="${layouts}"
+          schemes="${schemes}"
+
+          layout=""
+          scheme=""
+
+          if [[ $1 == "rofi" ]]; then
+            layout=$(echo "$layouts" | rofi -dmenu)
+            scheme=$(echo "$schemes" | rofi -dmenu)
+          elif [[ $1 == "fzf" ]]; then
+            layout=$(echo "$layouts" | fzf)
+            scheme=$(echo "$schemes" | fzf)
+          else
+            echo "Filterer $1 not supported"
+            exit
+          fi
+
+          if [[ $layout != "" && $scheme != "" ]]; then
+            echo -n $layout > $XDG_DATA_HOME/dotfiles/layout
+            echo -n $scheme > $XDG_DATA_HOME/dotfiles/scheme
+
+            notify-send "dots" "Switching to $layout layout and $scheme scheme"
+            switch
+            reload_wm
+          fi
+        '');
     };
   };
   # TODO: See if treesitter can enable syntax highlighting for bash in strings

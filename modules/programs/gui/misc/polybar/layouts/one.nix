@@ -56,8 +56,8 @@ lib.mkMerge [
              font."0" = "Terminus:size=10;2";
              monitor = "\${env:MONITOR:eDP-1}";
              enable-ipc = true;
-             modules.left = "time desktops title";
-             modules.center = (if hlwm_enabled then "hlwm_mode hlwm_layout" else "");
+             modules.left = "time " + (if hlwm_enabled then "hlwm_mode hlwm_layout " else "") +  "title";
+             modules.center = "desktops";
              modules.right = "vol disk ram cpu cpu_temp bat";
              border-top-color = scheme.border;
              border-top-size = 1;
@@ -103,7 +103,7 @@ lib.mkMerge [
              type = "internal/date";
              date = "%a, %d %b %Y";
              time = "%H:%M:%S";
-             label = "%time% %date%";
+             label = "%date% %time%";
              format = {
                text = "<label>";
                padding = 2;

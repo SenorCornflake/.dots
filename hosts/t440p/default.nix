@@ -28,11 +28,6 @@
       mysql.enable = true;
     };
 
-    theme = {
-      scheme = "base16";
-      layout = "two";
-    };
-
     misc = {
       grub.enable = true;
 
@@ -45,6 +40,13 @@
     networking = {
       networkmanager.enable = true;
       ssh.enable = true;
+
+      samba = {
+        enable = true;
+        openDirs = {
+          home = "/home/a";
+        };
+      };
 
       servers = {
         apache.enable = true;

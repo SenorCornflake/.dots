@@ -15,6 +15,9 @@ in
     wallpaperDir = mkOpt types.path ../wallpapers;
     dotsDir = mkOpt types.path (homeDir + "/.dots");
 
+    dataHome = mkOpt types.path (homeDir + "/.local/share");
+    configHome = mkOpt types.path (homeDir + "/.config");
+
     modules.homePackages = mkOpt (types.listOf types.attrs) [];
   };
 

@@ -15,7 +15,7 @@ LOAD_THEME = function(name)
 		colorscheme = io.open(os.getenv("XDG_DATA_HOME") .. "/dotfiles/colorscheme.txt", "r")
 
 		if colorscheme == nil then
-			colorscheme = "darkblue"
+			colorscheme = "default"
 		else
 			colorscheme = colorscheme:read()
 		end
@@ -42,3 +42,4 @@ LOAD_THEME = function(name)
 end
 
 cmd "autocmd VimEnter * lua LOAD_THEME()"
+

@@ -13,6 +13,7 @@ in {
         home.packages = with pkgs; [
           redshift
         ];
+
         programs.autorandr = {
           hooks = {
             postswitch = {
@@ -25,6 +26,7 @@ in {
       };
 
       services.xserver = {
+        enable = true;
         displayManager.startx.enable = true;
       };
 

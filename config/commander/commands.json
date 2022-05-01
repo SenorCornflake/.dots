@@ -8,6 +8,10 @@
 		"action": "set_alternative_wallpaper"
 	},
 	{
+		"name": "Change Theme",
+		"action": "change_theme {}"
+	},
+	{
 		"name": "Generate base16 theme",
 		"action": [
 			{

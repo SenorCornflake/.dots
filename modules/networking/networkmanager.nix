@@ -14,6 +14,7 @@ in
     networking = {
       networkmanager.enable = true;
       wireless.enable = false;
+      firewall.enable = false;
     };
   };
 }

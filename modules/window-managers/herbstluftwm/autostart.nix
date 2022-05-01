@@ -2,11 +2,13 @@
 
 
 let
-  inherit (lib) mkIf recursiveUpdate types;
+  inherit (lib) mkIf recursiveUpdate types escapeShellArg;
   inherit (lib.my) mkBoolOpt mkOpt;
   inherit (pkgs) writeText;
   inherit (builtins) toJSON;
   cfg = config.modules.window-managers.herbstluftwm;
+
+  Mod = "Mod4";
 in
 
 {
@@ -33,8 +35,8 @@ in
             hc add "''${tag_names[$i]}"
             key="''${tag_keys[$i]}"
             if ! [ -z "$key" ] ; then
-                hc keybind "$Mod-$key" use_index "$i"
-                hc keybind "$Mod-Shift-$key" move_index "$i"
+                hc keybind "${Mod}-$key" use_index "$i"
+                hc keybind "${Mod}-Shift-$key" move_index "$i"
             fi
         done
 
@@ -43,9 +45,11 @@ in
         killall dunst
 
         # X settings
+        setxkbmap # For some reason 
         xset r 66 # Enable repeat for capslock key
         xkbset ma 1 5 70 6 0
         xkbset exp 60 =mousekeys
+        xsetroot -xcf ${config.home-manager.users.${config.userName}.gtk.cursorTheme.package}/share/icons/${escapeShellArg config.modules.theme.cursorTheme}/cursors/left_ptr 16
 
         # Enable nightmode if it was enabled prior to restarting
         restore_nightmode_state
@@ -61,8 +65,8 @@ in
         systemctl --user restart polkit_gui
 
         # Setup monitors if it is the first time this config is running since starting X server
-        if [[ -f "$XDG_DATA_HOME/herbstluftwm/first_start.txt" ]]; then
-            rm "$XDG_DATA_HOME/herbstluftwm/first_start.txt"
+        if [[ -f "$HOME/first_start.txt" ]]; then
+            rm $HOME/first_start.txt
             autorandr --change
         fi
 

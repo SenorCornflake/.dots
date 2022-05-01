@@ -89,7 +89,6 @@ in
 
           DOT_ROOT = config.dotsDir;
           WALL_ROOT = config.wallpaperDir;
-          WIKI_ROOT = "$XDG_DATA_HOME/wikis";
           PATH = "~/.local/bin:$PATH";
           TODOTXT_CFG_FILE = "$XDG_CONFIG_HOME/todo/todo.cfg";
           SSH_ASKPASS = "";

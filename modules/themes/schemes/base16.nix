@@ -48,12 +48,12 @@ in
         herbstluftwm = (mkMerge [
           (mkIf (herbstluftwmLayout == "one") {
             attributes = {
-              "theme.active_color" = base02;
-              "theme.normal_color" = base00;
-              "theme.urgent_color" = base09;
+              "theme.active.color" = base02;
+              "theme.normal.color" = base01;
+              "theme.urgent.color" = base09;
             };
           })
-          (mkIf (herbstluftwmLayout == "two") {
+          (mkIf (herbstluftwmLayout == "two" || herbstluftwmLayout == "two-compact") {
             attributes = {
               "theme.urgent.color" = base09;
               "theme.urgent.inner_color" = base09;
@@ -105,7 +105,7 @@ in
                   border = base01;
                 };
               })
-              (mkIf (polybarLayout == "two") {
+              (mkIf (polybarLayout == "two" || polybarLayout == "two-compact") {
                 scheme = {
                   bg = base00;
                   fg = base05;
@@ -130,7 +130,7 @@ in
                   border = base01;
                 };
               })
-              (mkIf (rofiLayout == "two") {
+              (mkIf (rofiLayout == "two" || rofiLayout == "two-compact") {
                 scheme = {
                   bg = base00;
                   fg = base07;
@@ -159,7 +159,7 @@ in
                 frameColor = base0B;
                 seperatorColor = base00;
               })
-              (mkIf (dunstLayout == "two") {
+              (mkIf (dunstLayout == "two" || dunstLayout == "two-compact") {
                 urgencyLow = {
                   background = base00;
                   foreground = base07;

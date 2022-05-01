@@ -15,7 +15,7 @@ if util.file_exists(base16_path) then
 
 	if base16.author == "Neovim" then
 		print("Using original neovim scheme")
-		vim.cmd("colorscheme " .. base16.scheme)
+		LOAD_THEME(base16.scheme)
 	else
 		require('base16-colorscheme').with_config {
 			telescope = false,

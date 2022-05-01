@@ -37,7 +37,7 @@ in
 
 {
   config = mkMerge [
-    (mkIf (cfg.layout == "two") {
+    (mkIf (cfg.layout == "two-compact") {
       fonts.fonts = with pkgs; [
         (nerdfonts.override {
           fonts = [
@@ -64,13 +64,13 @@ in
           settings = {
             "bar/main" = {
               bottom = false;
-              height = 40;
-              width = "100%:-30";
-              offset-x = "15px";
-              offset-y = "15px";
+              height = 30;
+              width = "100%";
+              offset-x = "0px";
+              offset-y = "0px";
               background = scheme.bg;
               foreground = scheme.fg;
-              border-size = 3;
+              border-bottom-size = 2;
               border-color = scheme.decor;
               monitor = "\${env:MONITOR:eDP-1}";
               enable-ipc = true;
@@ -78,9 +78,9 @@ in
                 "nightmode sep time sep"
                 + (optionalString hlwm_enabled " hlwm_mode sep hlwm_layout");
               modules.center = "desktops";
-              modules.right = "vol brightness net bat";
+              modules.right = "vol sep brightness sep net sep bat";
               font = {
-                "0" = "Iosevka Nerd Font:size=10:weight=bold;3";
+                "0" = "Iosevka Nerd Font:size=10:weight=bold;2";
                 "1" = "Material Design Icons:size=12;2";
               };
             };
@@ -90,7 +90,7 @@ in
               tray.position = "left";
               tray.detached = false;
               tray.background = scheme.bg;
-              tray.padding = 2;
+              tray.padding = 1;
             };
 
             "module/time" = {
@@ -100,7 +100,7 @@ in
               label = "%date%";
               format = {
                 text = "<label>";
-                padding = 2;
+                padding = 1;
                 foreground = scheme.fg;
                 background = scheme.bg;
                 prefix = {
@@ -128,26 +128,26 @@ in
               };
               label = {
                 active = {
-                  text = "󰐾";
-                  padding = 1;
+                  text = " 󰐾 ";
+                  padding = 0;
                   foreground = scheme.other;
                   background = scheme.bg;
                 };
                 occupied = {
-                  text = "󰄯";
-                  padding = 1;
+                  text = " 󰄯 ";
+                  padding = 0;
                   foreground = scheme.other;
                   background = scheme.bg;
                 };
                 empty = {
-                  text = "󰄰";
-                  padding = 1;
+                  text = " 󰄰 ";
+                  padding = 0;
                   foreground = scheme.empty;
                   background = scheme.bg;
                 };
                 urgent = {
-                  text = "󰀨";
-                  padding = 1;
+                  text = " 󰀨 ";
+                  padding = 0;
                   foreground = scheme.urgent;
                   background = scheme.bg;
                 };
@@ -166,13 +166,13 @@ in
               ramp.volume = mkRamp ["󰕿" "󰖀" "󰕾"] scheme.icons;
               format = {
                 volume = {
-                  padding = 2;
+                  padding = 1;
                   background = scheme.bg;
                   foreground = scheme.fg;
                   text = "<ramp-volume> <label-volume>";
                 };
                 muted = {
-                  padding = 2;
+                  padding = 1;
                   background = scheme.bg;
                   foreground = scheme.fg;
                   text = "<label-muted>";
@@ -192,11 +192,11 @@ in
               format = {
                 connected = {
                   text = "<ramp-signal> <label-connected>";
-                  padding = 2;
+                  padding = 1;
                 };
                 disconnected = {
                   text = "<label-disconnected>";
-                  padding = 2;
+                  padding = 1;
                   prefix = {
                     text = "󰤭 ";
                     foreground = scheme.icons;
@@ -219,19 +219,19 @@ in
               format = {
                 charging = {
                   text = "<ramp-capacity> <label-charging>";
-                  padding = 2;
+                  padding = 1;
                   foreground = scheme.fg;
                   background = scheme.bg;
                 };
                 discharging = {
                   text = "<ramp-capacity> <label-discharging>";
-                  padding = 2;
+                  padding = 1;
                   foreground = scheme.fg;
                   background = scheme.bg;
                 };
                 full = {
                   text = "<label-full>";
-                  padding = 2;
+                  padding = 1;
                   foreground = scheme.fg;
                   background = scheme.bg;
                   prefix = {
@@ -254,7 +254,7 @@ in
               ramp = mkRamp ["󰃞" "󰃟" "󰃠"] scheme.icons;
               format = {
                 text = "<ramp> <label>";
-                padding = 2;
+                padding = 1;
               };
               label = "%percentage%%";
             };
@@ -265,7 +265,7 @@ in
               exec = "${cfg.scripts.herbstluftwm-mode}/bin/polybar-herbstluftwm-mode 󰄶 󰝘 ";
               format = {
                 text = "<label>";
-                padding = 2;
+                padding = 1;
                 foreground = scheme.indicators;
               };
               click-left = "${pkgs.herbstluftwm}/bin/herbstclient floating toggle";
@@ -278,7 +278,7 @@ in
               format = {
                 text = "<label>";
                 foreground = scheme.indicators;
-                padding = 2;
+                padding = 1;
               };
               click-left = "${pkgs.herbstluftwm}/bin/herbstclient cycle_layout +1";
             };
@@ -291,7 +291,7 @@ in
               format = {
                 text = "<label>";
                 foreground = scheme.indicators;
-                padding = 2;
+                padding = 1;
               };
               click-left = "${config.scripts.toggle_nightmode}/bin/toggle_nightmode";
             };

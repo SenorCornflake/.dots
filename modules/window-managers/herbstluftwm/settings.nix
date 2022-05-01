@@ -18,7 +18,6 @@ in
         mouse_recenter_gap = "0";
         smart_window_surroundings = "off";
         tree_style = "╾│ ├└╼─┐";
-        window_gap = "10";
 
         always_show_frame = "on";
         default_frame_layout = "grid";
@@ -32,7 +31,7 @@ in
         frame_padding = "0";
         frame_transparent_width = "0";
         smart_frame_surroundings = "off";
-      } // cfg.settings;
+      };
     };
   };
 }

@@ -11,7 +11,7 @@ in
 {
   options.modules.programs.gui.terminals.kitty = {
     enable = mkBoolOpt false;
-    fontFamily = mkOpt types.str "monospace";
+    fontFamily = mkOpt types.str "Iosevka";
     fontSize = mkOpt types.int 10;
     windowPaddingWidth = mkOpt types.str "0";
     backgroundOpacity = mkOpt types.float 1.0;
@@ -19,6 +19,10 @@ in
   };
 
   config = mkIf cfg.enable {
+    fonts.fonts = with pkgs; [
+      iosevka
+    ];
+
     home-manager.users."${config.userName}" = {
       programs.kitty = {
         enable = true;
@@ -33,7 +37,7 @@ in
           adjust_line_height 100%
           adjust_column_width 100%
           adjust_baseline 1
-          disable_ligatures yes
+          disable_ligatures always
 
           scrollback_lines 50000
           cursor_blink_interval 0

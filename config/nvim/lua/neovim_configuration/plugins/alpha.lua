@@ -62,7 +62,7 @@ arts[4] = {
 
 
 --dashboard.section.header.val = arts[math.random(1, #arts)]
-dashboard.section.header.val = arts[1]
+dashboard.section.header.val = arts[4]
 
  dashboard.section.buttons.val = {
 	 dashboard.button( "e", "󰈔  New file" , ":ene <BAR> startinsert <CR>"),

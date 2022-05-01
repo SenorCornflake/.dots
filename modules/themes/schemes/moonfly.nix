@@ -46,36 +46,40 @@ in
       };
 
       window-managers = {
-        herbstluftwm.settings = (mkMerge [
+        herbstluftwm = (mkMerge [
           (mkIf (herbstluftwmLayout == "one") {
-            active_color = nBlack;
-            normal_color = "#000000";
-            urgent_color = nRed;
+            attributes = {
+              "active_color" = nBlack;
+              "normal_color" = "#000000";
+              "urgent_color" = nRed;
+            };
           })
-          (mkIf (herbstluftwmLayout == "two") {
-            urgent_color = nRed;
-            urgent_inner_color = nRed;
-            urgent_outer_color = nRed;
+          (mkIf (herbstluftwmLayout == "two" || herbstluftwmLayout == "two-compact") {
+            attributes = {
+              "theme.urgent.color" = nRed;
+              "theme.urgent.inner_color" = nRed;
+              "theme.urgent.outer_color" = nRed;
 
-            active_color = "#282828";
-            active_outer_color = "#282828";
-            active_inner_color = "#282828";
-            active_title_color = foreground;
+              "theme.active.color" = "#282828";
+              "theme.active.outer_color" = "#282828";
+              "theme.active.inner_color" = "#282828";
+              "theme.active.title_color" = foreground;
 
-            normal_color = "#181818";
-            normal_outer_color = "#181818";
-            normal_inner_color = "#181818";
-            normal_title_color = bBlack;
+              "theme.normal.color" = "#181818";
+              "theme.normal.outer_color" = "#181818";
+              "theme.normal.inner_color" = "#181818";
+              "theme.normal.title_color" = bBlack;
 
-            active_tab_color = "#181818";
-            active_tab_outer_color = "#282828";
-            active_tab_inner_color = "#282828";
-            active_tab_title_color = bBlack;
+              "theme.active.tab_color" = "#181818";
+              "theme.active.tab_outer_color" = "#282828";
+              "theme.active.tab_inner_color" = "#282828";
+              "theme.active.tab_title_color" = bBlack;
 
-            normal_tab_color = background;
-            normal_tab_outer_color = "#181818";
-            normal_tab_inner_color = "#181818";
-            normal_tab_title_color = bBlack;
+              "theme.normal.tab_color" = background;
+              "theme.normal.tab_outer_color" = "#181818";
+              "theme.normal.tab_inner_color" = "#181818";
+              "theme.normal.tab_title_color" = bBlack;
+            };
           })
         ]);
       };
@@ -99,7 +103,7 @@ in
                   border = "#000000";
                 };
               })
-              (mkIf (polybarLayout == "two") {
+              (mkIf (polybarLayout == "two" || polybarLayout == "two-compact") {
                 scheme = {
                   bg = background;
                   fg = foreground;
@@ -124,7 +128,7 @@ in
                   border = "#000000";
                 };
               })
-              (mkIf (rofiLayout == "two") {
+              (mkIf (rofiLayout == "two" || rofiLayout == "two-compact") {
                 scheme = {
                   bg = background;
                   fg = foreground;
@@ -153,7 +157,7 @@ in
                 frameColor = nGreen;
                 seperatorColor = "#000000";
               })
-              (mkIf (dunstLayout == "two") {
+              (mkIf (dunstLayout == "two" || dunstLayout == "two-compact") {
                 urgencyLow = {
                   background = background;
                   foreground = foreground;
