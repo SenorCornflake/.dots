@@ -2,7 +2,7 @@
 
 let 
   inherit (lib.my) mkOpt mkBoolOpt;
-  inherit (lib) mkIf types;
+  inherit (lib) mkIf types any attrValues;
   cfg = config.modules.misc.autorandr;
 in
 
@@ -12,7 +12,7 @@ in
     profiles = mkOpt types.attrs {};
   };
 
-  config = mkIf cfg.enable {
+  config = mkIf (cfg.enable || (any (v: v.enable) (attrValues config.modules.window-managers))) {
     home-manager.users."${config.userName}" = {
       programs.autorandr = {
         enable = true;

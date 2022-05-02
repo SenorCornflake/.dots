@@ -23,7 +23,7 @@ in
           height = 300;
           width = "(0, 400)";
           origin = "top-right";
-          offset = "15x32";
+          offset = "15x40";
           frame_width = 2;
           separator_height = 2;
           font = "Iosevka Nerd Font 10";

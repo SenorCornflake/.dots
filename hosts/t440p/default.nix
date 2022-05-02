@@ -15,6 +15,7 @@
       winetricks
       libreoffice
       vlc
+      blueberry
 
       extract-xiso
       xinput-gui
@@ -32,7 +33,6 @@
       grub.enable = true;
 
       autorandr = {
-        enable = true;
         profiles = (import ./autorandr-profiles.nix);
       };
     };
@@ -56,7 +56,6 @@
     hardware = {
       bluetooth = {
         enable = true;
-        withGui = true;
       };
       audio = {
         pulseaudio = {
@@ -111,7 +110,6 @@
         };
         system = {
           bottom.enable = true;
-          btop.enable = true;
         };
         file-managers = {
           lf.enable = true;

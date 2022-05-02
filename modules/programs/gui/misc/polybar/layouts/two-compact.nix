@@ -64,7 +64,7 @@ in
           settings = {
             "bar/main" = {
               bottom = false;
-              height = 30;
+              height = 35;
               width = "100%";
               offset-x = "0px";
               offset-y = "0px";

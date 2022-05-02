@@ -22,7 +22,7 @@ in
     shadowOpacity = mkOpt types.str "0.75";
   };
 
-  config = mkIf (cfg.enable && (any (v: v.enable) (attrValues config.modules.window-managers))) {
+  config = mkIf cfg.enable {
     home-manager.users."${config.userName}" = {
       services.picom = {
         enable = true;

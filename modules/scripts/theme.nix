@@ -1,22 +1,14 @@
 { config, pkgs, lib, ... }:
 
-# TODO: Move these into seperate files
 let
-  inherit (config.modules.window-managers) herbstluftwm;
   inherit (lib.my) mkOpt;
-  inherit (lib) attrValues types concatStringsSep attrNames;
-  inherit (pkgs) writeScriptBin writeShellScriptBin makeDesktopItem;
+  inherit (lib) types concatStringsSep attrNames;
+  inherit (pkgs) writeScriptBin writeShellScriptBin;
   inherit (builtins) readDir replaceStrings;
 in
 {
-  options = {
-    scripts = mkOpt types.attrs {};
-  };
   config = {
     environment.systemPackages = with pkgs; [
-      git
-      redshift
-      neovim-command
       flavours
       yq
       pywal
@@ -25,121 +17,10 @@ in
       python3Packages.colorthief
       haishoku
       auto-base16-theme
-    ] ++ (attrValues config.scripts);
+      feh
+    ];
 
     scripts = {
-      writeiso = (writeShellScriptBin "writeiso" ''
-        sudo dd bs=4M if=$1 of=$2 conv=fdatasync status=progress
-      '');
-
-      restore_nightmode_state = (writeShellScriptBin "restore_nightmode_state" ''
-        file=$XDG_DATA_HOME/dotfiles/nightmode
-
-        if [[ ! -f $file ]]; then
-          echo -n "disabled" > $file
-        elif [[ $(cat $file) == "enabled" ]]; then
-          redshift -x
-          redshift -O 4500
-        else
-          redshift -x
-          redshift -O 6500
-        fi
-      '');
-
-      toggle_nightmode = (writeShellScriptBin "toggle_nightmode" ''
-        PATH=${lib.makeBinPath (with pkgs; [coreutils redshift])}
-
-        file=/home/a/.local/share/dotfiles/nightmode
-
-        if [[ ! -f $file ]]; then
-          echo -n "enabled" > $file
-          redshift -x
-          redshift -O 4500
-        elif [[ $(cat $file) == "enabled" ]]; then
-          redshift -x
-          redshift -O 6500
-          echo -n "disabled" > $file
-        else
-          redshift -x
-          redshift -O 4500
-          echo -n "enabled" > $file
-        fi
-      '');
-
-      switch = (writeShellScriptBin "switch" ''
-        pushd $HOME/.dots
-        git add .
-        nixos-rebuild switch --flake .# --impure --use-remote-sudo
-        popd
-      '');
-
-      clean = (writeShellScriptBin "clean" ''
-        echo "Collecting Garbage..."
-        sudo nix-collect-garbage --delete-old
-        nix-collect-garbage --delete-old
-        echo "Optimizing store..."
-        sudo nix-store --optimize
-        nix-store --optimize
-        echo "Done!"
-      '');
-
-      update = (writeShellScriptBin "update" ''
-        pushd $HOME/.dots
-        nix flake update
-        popd
-      '');
-
-      xm-mt5 = (makeDesktopItem {
-        name = "xm-mt5";
-        desktopName = "XM MetaTrader 5";
-        exec = "wine \"/home/a/.wine/drive_c/Program Files/XM Global MT5/terminal64.exe\"";
-        terminal = false;
-      });
-
-      # TODO: Create backup script that automatically places all files needed into a specified location
-      backup = (writeShellScriptBin "backup" ''
-        date=$(date)
-
-        echo "Backing dotfiles"
-        pushd ${config.dotsDir}
-        git add .
-        git commit -m "BACKUP $date"
-        git push
-        popd
-        echo "done."
-
-        echo "Backing websites"
-        pushd /srv/http
-        git add .
-        git commit -m "BACKUP $date"
-        git push
-        popd
-        echo "done."
-
-        echo "Backing databases"
-        pushd ~
-        if [[ ! -d ~/databases ]]; then
-          git clone https://github.com/SenorCornflake/databases
-        fi
-        popd
-
-        sudo find /var/lib/mysql -maxdepth 1 -mindepth 1 -type d | while read dir; do
-          if [[ $(echo $dir | grep "_dv") ]]; then
-            name=$(basename $dir)
-            mysqldump -u root --password=root $name > ~/databases/$name.sql
-          fi
-        done
-
-        sudo chmod -R 755 ~/databases
-
-        pushd ~/databases
-        git add .
-        git commit -m "BACKUP $date"
-        git push
-        popd
-        echo "done."
-      '');
-
       set_alternative_wallpaper = (writeShellScriptBin "set_alternative_wallpaper" ''
         wallpaper=$(echo "$(ls ${config.wallpaperDir}) plain_background" | sed -z "s/\n/ /g" | rofi -sep " " -dmenu)
 
@@ -161,15 +42,6 @@ in
         switch
         reload_wm
         reload_neovim
-      '');
-
-      reload_wm = (writeShellScriptBin "reload_wm"
-        (if herbstluftwm.enable
-          then "herbstclient reload"
-          else "echo \"Update this command to support the current window manager\""));
-
-      reload_neovim = (writeShellScriptBin "reload_neovim" ''
-        neovim-command "lua LOAD_THEME()"
       '');
 
       generate_base16_theme = (writeShellScriptBin "generate_base16_theme" ''
@@ -282,68 +154,17 @@ in
         setup_base16
       '');
 
-      keyboard_layout = (writeScriptBin "keyboard_layout" ''
-        #!/usr/bin/env python
-
-        import os
-
-        layouts = [
-            "us",
-            "ara",
-            "dvorak",
-            "dvp",
-        ]
-
-        layouts = [
-            { 
-                "name": "US QWERTY",
-                "layout": "us",
-                "variant": "\"\""
-            },
-            { 
-                "name": "US DVORAK Programmer",
-                "layout": "us",
-                "variant": "dvp"
-
-            },
-            { 
-                "name": "US DVORAK",
-                "layout": "us",
-                "variant": "dvorak"
-            },
-            { 
-                "name": "ARA QWERTY",
-                "layout": "ara",
-                "variant": "qwerty"
-            }
-        ]
-
-        cmd = 'echo "{}" | rofi -dmenu -format i -i -p "Layout:"'.format("\n".join([layout["name"] for layout in layouts]))
-
-        index = os.popen(cmd).read()[:-1]
-
-        if index != "":
-            index = int(index)
-            layout = layouts[index]
-
-            os.system("setxkbmap -layout {} -variant {}".format(layout["layout"], layout["variant"]))
-      '');
-
-      comma = (writeScriptBin "," ''
-        nix shell nixpkgs#$1 -c "$(echo $1 | awk -F"." '{print $NF}')" "''${@:2}"
-      '');
-
       change_theme = let
         layouts = concatStringsSep
           "\n"
           (map
             (elem: replaceStrings [".nix"] [""] elem)
-            (attrNames (readDir ./themes/layouts)));
+            (attrNames (readDir ../themes/layouts)));
         schemes = concatStringsSep
           "\n"
           (map
             (elem: replaceStrings [".nix"] [""] elem)
-            (attrNames (readDir ./themes/schemes)));
+            (attrNames (readDir ../themes/schemes)));
       in
         (writeShellScriptBin "change_theme" ''
           layouts="${layouts}"
@@ -374,5 +195,4 @@ in
         '');
     };
   };
-  # TODO: See if treesitter can enable syntax highlighting for bash in strings
 }

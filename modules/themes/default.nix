@@ -27,7 +27,6 @@ in
 
     iconTheme = mkOpt types.str "Adwaita";
     cursorTheme = mkOpt types.str "Adwaita";
-    gtkTheme = mkOpt types.str "Adwaita-dark";
   };
 
   config = let
@@ -43,11 +42,6 @@ in
         theme = {
           layout = if pathExists layoutFile then readFile layoutFile else "one";
           scheme = if pathExists schemeFile then readFile schemeFile else "base16";
-        };
-
-        misc.gtk = {
-          inherit (cfg) iconTheme cursorTheme;
-          theme = cfg.gtkTheme;
         };
       };
 
