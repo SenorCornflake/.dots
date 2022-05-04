@@ -4,13 +4,13 @@
 
 let 
   inherit (builtins) toString;
-  inherit (lib) mkIf types;
+  inherit (lib) mkIf types toBool;
   inherit (lib.my) mkBoolOpt mkOpt;
   cfg = config.modules.programs.shell.editors.neovim;
 in
 
 let
-  flake-plugins = (pkgs.lib.genAttrs 
+  flake-plugins = (pkgs.lib.genAttrs
     [
       "dial-nvim"
       "neo-tree-nvim"
@@ -36,6 +36,7 @@ in
   options.modules.programs.shell.editors.neovim = {
     enable = mkBoolOpt true;
     colorScheme = mkOpt types.str "default";
+    transparentBackground = mkOpt types.bool false;
   };
 
   config = mkIf cfg.enable {
@@ -56,9 +57,15 @@ in
         recursive = false;
       };
 
-      xdg.dataFile."colorscheme.txt" = {
-        target = "dotfiles/colorscheme.txt";
+      xdg.dataFile."neovim_colorscheme.txt" = {
+        target = "dotfiles/neovim_colorscheme.txt";
         text = cfg.colorScheme; 
+        recursive = false;
+      };
+
+      xdg.dataFile."neovim_transparent_background.txt" = {
+        target = "dotfiles/neovim_transparent_background.txt";
+        text = if cfg.transparentBackground then "true" else "false"; 
         recursive = false;
       };
 

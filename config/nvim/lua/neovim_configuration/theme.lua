@@ -1,6 +1,24 @@
 local util = require "neovim_configuration.util"
 local cmd = vim.cmd
 
+MANIPULATE_COLORSCHEME = function()
+	local transparent_background = io.open(os.getenv("XDG_DATA_HOME") .. "/dotfiles/neovim_transparent_background.txt", "r")
+
+	if transparent_background == nil then
+		transparent_background = "false"
+	else
+		transparent_background = transparent_background:read()
+	end
+
+	if transparent_background == "true" then
+		vim.cmd "hi Normal guibg=none ctermbg=none"
+		vim.cmd "hi NormalNC guibg=none ctermbg=none"
+		vim.cmd "hi NormalFloat guibg=none ctermbg=none"
+	end
+
+	vim.cmd "doautocmd User PostManipulation"
+end
+
 -- All the doautocmds here are from before I used nix, it was for lazy loading, I don't lazy load anymore because of some issues I had but I think I'll leave these doautocmds here for future reference
 LOAD_THEME = function(name)
 	-- Clear all highlights so that no remnants of the previous colorscheme remains ( We already do this for gitsigns and lsp diagnostics independantly in their respective config files,
@@ -12,7 +30,7 @@ LOAD_THEME = function(name)
 	if name then
 		colorscheme = name
 	else
-		colorscheme = io.open(os.getenv("XDG_DATA_HOME") .. "/dotfiles/colorscheme.txt", "r")
+		colorscheme = io.open(os.getenv("XDG_DATA_HOME") .. "/dotfiles/neovim_colorscheme.txt", "r")
 
 		if colorscheme == nil then
 			colorscheme = "default"
@@ -34,7 +52,6 @@ LOAD_THEME = function(name)
 		end
 
 		cmd ("doautocmd User load_" .. colorscheme .. "_theme")
-		-- TODO: Use require instread
 		dofile(os.getenv("XDG_CONFIG_HOME") .. "/nvim/lua/neovim_configuration/themes/" .. colorscheme .. ".lua")
 	end
 
@@ -42,4 +59,5 @@ LOAD_THEME = function(name)
 end
 
 cmd "autocmd VimEnter * lua LOAD_THEME()"
+cmd "autocmd ColorScheme * lua MANIPULATE_COLORSCHEME()"
 

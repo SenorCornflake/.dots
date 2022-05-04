@@ -38,7 +38,7 @@ in
       '');
 
       keyboard_layout = (writeScriptBin "keyboard_layout" ''
-        #!/usr/bin/env python
+        #!${pkgs.python}/bin/python
 
         import os
 

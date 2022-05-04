@@ -45,6 +45,10 @@ SetupStatusline = function()
 		alt_bg = util.get_color(
 			{
 				{ "Normal", "bg" },
+			},
+			{
+				cterm = "none",
+				gui = "none"
 			}
 		),
 		fg = util.get_color(
@@ -112,7 +116,11 @@ SetupStatusline = function()
 			str = " ",
 			hl = "StatuslineModuleAlt",
 		},
-		enabled = checkwidth
+		enabled = checkwidth,
+		icon = {
+			str = " ",
+			hl = "StatuslineModuleAlt",
+		}
 	}
 
 	al {
@@ -122,7 +130,10 @@ SetupStatusline = function()
 			str = " ",
 			hl = "StatuslineModuleAlt",
 		},
-		icon = "+",
+		icon = {
+			str = "+",
+			hl = "StatuslineModuleAlt",
+		},
 		enabled = checkwidth
 	}
 
@@ -133,7 +144,10 @@ SetupStatusline = function()
 			str = " ",
 			hl = "StatuslineModuleAlt",
 		},
-		icon = "~",
+		icon = {
+			str = "~",
+			hl = "StatuslineModuleAlt",
+		},
 		enabled = checkwidth
 	}
 
@@ -144,7 +158,10 @@ SetupStatusline = function()
 			str = " ",
 			hl = "StatuslineModuleAlt",
 		},
-		icon = "-",
+		icon = {
+			str = "-",
+			hl = "StatuslineModuleAlt",
+		},
 		enabled = checkwidth
 	}
 
@@ -176,7 +193,11 @@ SetupStatusline = function()
 			str = " ",
 			hl = "StatuslineModuleAlt",
 		},
-		enabled = checkwidth
+		enabled = checkwidth,
+		icon = {
+			str = " ",
+			hl = "StatuslineModuleAlt"
+		}
 	}
 
 	ar {
@@ -186,7 +207,10 @@ SetupStatusline = function()
 			str = " ",
 			hl = "StatuslineModuleAlt",
 		},
-		icon = " ",
+		icon = {
+			str = " ",
+			hl = "StatuslineModuleAlt",
+		},
 		enabled = function() return lsp.diagnostics_exist(lsp_severity.HINT) and checkwidth() end,
 	}
 
@@ -197,7 +221,10 @@ SetupStatusline = function()
 			str = " ",
 			hl = "StatuslineModuleAlt",
 		},
-		icon = " ",
+		icon = {
+			str = " ",
+			hl = "StatuslineModuleAlt",
+		},
 		enabled = function() return lsp.diagnostics_exist(lsp_severity.ERROR) and checkwidth() end,
 	}
 
@@ -208,7 +235,10 @@ SetupStatusline = function()
 			str = " ",
 			hl = "StatuslineModuleAlt",
 		},
-		icon = " ",
+		icon = {
+			str = " ",
+			hl = "StatuslineModuleAlt",
+		},
 		enabled = function() return lsp.diagnostics_exist(lsp_severity.WARN) and checkwidth() end,
 	}
 
@@ -219,7 +249,10 @@ SetupStatusline = function()
 			str = " ",
 			hl = "StatuslineModuleAlt",
 		},
-		icon = " ",
+		icon = {
+			str = " ",
+			hl = "StatuslineModuleAlt",
+		},
 		enabled = function() return lsp.diagnostics_exist(lsp_severity.INFO) and checkwidth() end,
 	}
 
@@ -286,6 +319,6 @@ SetupStatusline = function()
 
 end
 
-SetupStatusline()
 -- Sometimes, after reloading, the highlights just don't work, so reload the bar every few autocommands
-cmd "autocmd VimEnter,ColorScheme * lua SetupStatusline()"
+cmd "autocmd User ThemeLoaded lua SetupStatusline()"
+cmd "autocmd User PostManipulation lua SetupStatusline()"

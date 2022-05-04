@@ -283,7 +283,6 @@ in
               click-left = "${pkgs.herbstluftwm}/bin/herbstclient cycle_layout +1";
             };
 
-            # TODO: Make this script tailable
             "module/nightmode" = {
               type = "custom/script";
               tail = true;

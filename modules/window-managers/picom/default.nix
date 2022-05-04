@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 
 let
-  inherit (lib) mkIf types attrValues;
+  inherit (lib) mkIf types attrValues optionalString;
   inherit (lib.my) mkBoolOpt mkOpt;
-  inherit (builtins) any;
+  inherit (builtins) any toJSON  elemAt toString;
   cfg = config.modules.window-managers.picom;
 in
 
@@ -11,36 +11,19 @@ in
   options.modules.window-managers.picom = {
     enable = mkBoolOpt false;
     inactiveDim = mkOpt types.str "0";
-    shadowOffsets = mkOpt (types.listOf types.int) [
-      (-5)
-      (-5)
-    ];
-    shadowRadius = mkOpt types.str "5";
     blur = mkBoolOpt false;
+    blurStrength = mkOpt types.str "5";
+    blurSize = mkOpt types.str "5";
     noDockShadow = mkBoolOpt false;
+    fade = mkBoolOpt true;
     shadow = mkBoolOpt true;
     shadowOpacity = mkOpt types.str "0.75";
-  };
-
-  config = mkIf cfg.enable {
-    home-manager.users."${config.userName}" = {
-      services.picom = {
-        enable = true;
-        package = pkgs.picom-next;
-        experimentalBackends = true;
-        backend = "glx";
-        inactiveDim = cfg.inactiveDim;
-        fade = true;
-        fadeSteps = [
-          "0.1"
-          "0.1"
-        ];
-        vSync = true;
-        shadow = cfg.shadow;
-        blur = cfg.blur;
-        noDockShadow = cfg.noDockShadow;
-        shadowOffsets = cfg.shadowOffsets;
-        shadowExclude = [
+    shadowRadius = mkOpt types.str "5";
+    shadowOffsets = mkOpt (types.listOf types.str) [
+      "-5"
+      "-5"
+    ];
+    shadowExclude = mkOpt (types.listOf types.str) [
           "! name~=''"
           "name = 'Notification'"
           "name = 'Plank'"
@@ -59,18 +42,45 @@ in
           "class_g ?= 'Xfce4-power-manager'"
           "_GTK_FRAME_EXTENTS@:c"
           "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
-        ];
+        ]; 
+  };
+
+  config = mkIf cfg.enable {
+    home-manager.users."${config.userName}" = {
+      services.picom = {
+        enable = true;
+        package = pkgs.picom-next;
+        experimentalBackends = true;
+        backend = "glx";
+        inactiveDim = cfg.inactiveDim;
+        vSync = true;
+        noDockShadow = cfg.noDockShadow;
         extraOptions = ''
-          shadow-radius = ${cfg.shadowRadius};
-          shadow-opacity = ${cfg.shadowOpacity};
-          blur-method="dual_kawase";
-          blur-strengh=10;
-          blur-background-fixed=true;
           focus-exclude = [
             "class_g = 'Rofi'" # Fix inactive dim on rofi
           ];
-          corner-radius = 0;
-          round-borders = 0;
+
+        '' + optionalString cfg.blur ''
+          blur-background = true;
+          blur-method="dual_kawase";
+          blur-strength=${cfg.blurStrength};
+          blur-size=${cfg.blurSize};
+          blur-background-fixed=true;
+
+        '' + optionalString cfg.shadow ''
+          shadow = true;
+          shadow-offset-x = ${(elemAt cfg.shadowOffsets 0)};
+          shadow-offset-y = ${(elemAt cfg.shadowOffsets 1)};
+          shadow-opacity = ${cfg.shadowOpacity};
+          shadow-exclude = ${toJSON cfg.shadowExclude};
+          shadow-radius = ${cfg.shadowRadius}
+
+        '' + optionalString cfg.fade ''
+          fading = true;
+          fade-delta = 5;
+          fade-in-step = 0.028;
+          fade-out-step = 0.03;
+          fade-exclude = [];
         '';
       };
     };

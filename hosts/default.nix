@@ -47,8 +47,6 @@
   home-manager.users."${config.userName}" = {
     home.keyboard = null;
 
-    gtk.enable = true;
-
     xdg = {
       enable = true;
       configHome = config.configHome;
