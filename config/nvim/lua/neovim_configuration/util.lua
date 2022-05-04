@@ -108,7 +108,17 @@ util.capture = function(cmd, raw)
 	return s
 end
 
-util.adapt_system = function()
+util.adapt_system = function(colorscheme)
+
+	-- Load the colorscheme without manipulating the colors
+	if colorscheme then
+		vim.cmd "augroup! ColorSchemeManipulation"
+		LOAD_THEME(colorscheme)
+		vim.cmd "augroup ColorSchemeManipulation"
+		vim.cmd "autocmd ColorScheme * lua MANIPULATE_COLORSCHEME()"
+		vim.cmd "augroup END"
+	end
+
 	local base16 = util.base16ify()
 
 	local base16_json = json.encode(base16)
@@ -147,6 +157,11 @@ end
 
 -- Generate a base16 theme using highlights from the current theme
 util.base16ify = function()
+	vim.g.getting_colors = true;
+
+	-- Reload theme without it getting adjusted due to above variable
+	LOAD_THEME(vim.g.colors_name)
+
 	local theme = {
 		scheme = vim.g.colors_name,
 		author = "Neovim",
@@ -173,6 +188,10 @@ util.base16ify = function()
 			theme[k] = v.gui:gsub("#", "")
 		end
 	end
+
+	-- Re-adjust theme and apply it
+	vim.g.getting_colors = false
+	LOAD_THEME(vim.g.colors_name)
 
 	return theme
 end

@@ -10,7 +10,7 @@ MANIPULATE_COLORSCHEME = function()
 		transparent_background = transparent_background:read()
 	end
 
-	if transparent_background == "true" then
+	if transparent_background == "true" and not vim.g.getting_colors then
 		vim.cmd "hi Normal guibg=none ctermbg=none"
 		vim.cmd "hi NormalNC guibg=none ctermbg=none"
 		vim.cmd "hi NormalFloat guibg=none ctermbg=none"
@@ -55,9 +55,10 @@ LOAD_THEME = function(name)
 		dofile(os.getenv("XDG_CONFIG_HOME") .. "/nvim/lua/neovim_configuration/themes/" .. colorscheme .. ".lua")
 	end
 
+	MANIPULATE_COLORSCHEME()
+
 	cmd "doautocmd User ThemeLoaded"
 end
 
 cmd "autocmd VimEnter * lua LOAD_THEME()"
 cmd "autocmd ColorScheme * lua MANIPULATE_COLORSCHEME()"
-

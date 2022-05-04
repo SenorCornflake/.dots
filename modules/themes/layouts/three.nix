@@ -46,6 +46,13 @@ in
             dunst.layout = "three";
           };
         };
+        shell = {
+          editors = {
+            neovim = {
+              transparentBackground = true;
+            };
+          };
+        };
       };
     };
   };
