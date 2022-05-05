@@ -38,6 +38,7 @@ in
       setup_base16 = (writeShellScriptBin "setup_base16" ''
         # Generate kitty theme
         flavours build $XDG_DATA_HOME/dotfiles/base16.yaml $XDG_DATA_HOME/flavours/base16/templates/kitty/templates/default.mustache > $XDG_DATA_HOME/dotfiles/kitty.conf
+        flavours build $XDG_DATA_HOME/dotfiles/base16.yaml $XDG_DATA_HOME/flavours/base16/templates/xresources/templates/default.mustache > $XDG_DATA_HOME/dotfiles/Xresources
 
         switch
         reload_wm

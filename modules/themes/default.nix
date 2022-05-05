@@ -16,6 +16,8 @@ let
     (if (builtins.pathExists (dataHome + "/dotfiles/alternative_wallpaper"))
       then builtins.readFile (dataHome + "/dotfiles/alternative_wallpaper")
       else ""); # A wallpaper we can set with rofi that is used when no theme wallpaper is set
+
+  xresourcesData = (if pathExists "${config.dataHome}/dotfiles/Xresources" then readFile "${config.dataHome}/dotfiles/Xresources" else ""); 
 in
 
 {
@@ -27,6 +29,8 @@ in
 
     iconTheme = mkOpt types.str "Adwaita";
     cursorTheme = mkOpt types.str "Adwaita";
+    
+    xresources = mkOpt types.str xresourcesData;
   };
 
   config = let
@@ -73,6 +77,8 @@ in
             convert -size 1920x1080 xc:${config.modules.theme.background} ${dataHome}/dotfiles/background.png
           '';
         };
+
+        xresources.extraConfig = cfg.xresources;
       };
     };
 }

@@ -21,7 +21,7 @@ in
         "${Mod}-Shift-r" = "reload";
         "${Mod}-Shift-e" = "spawn autorandr --change";
         "${Mod}-w"       = "close";
-        "${Mod}-Return"  = "spawn sh -c \"WXINIT_X11_SCALE_FACTOR=1 \${TERMINAL:-xterm}\"";
+        "${Mod}-Return"  = "spawn sh -c \"WXINIT_X11_SCALE_FACTOR=1 ${config.modules.programs.gui.terminals.default}\"";
         # basic movement in tiling and floating mode
         # focusing clients
         "${Mod}-Left"  = "focus left";

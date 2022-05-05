@@ -2,7 +2,7 @@
 
 let 
   inherit (lib) optional types;
-  inherit (lib.my) mkOpt;
+  inherit (lib.my) mkBoolOpt mkOpt;
   cfg = config;
 
   userName = "a";
@@ -18,6 +18,7 @@ in
     dataHome = mkOpt types.path (homeDir + "/.local/share");
     configHome = mkOpt types.path (homeDir + "/.config");
 
+    modules.has_opengl = mkBoolOpt true;
     modules.homePackages = mkOpt (types.listOf types.attrs) [];
   };
 

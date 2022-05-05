@@ -50,7 +50,7 @@ in
       services.picom = {
         enable = true;
         package = pkgs.picom-next;
-        experimentalBackends = true;
+        experimentalBackends = if config.modules.has_opengl then true else false;
         backend = "glx";
         inactiveDim = cfg.inactiveDim;
         vSync = true;
