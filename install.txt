@@ -1,3 +1,4 @@
+# Instructions for installing from live media (these instructions might be outdated)
 nix-shell -p nixUnstable
 sudo mkdir -p /home/a
 cd /home/a

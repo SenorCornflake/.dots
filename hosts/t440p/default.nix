@@ -17,6 +17,7 @@
       vlc
       blueberry
       lutris
+      barrier
 
       extract-xiso
       xinput-gui

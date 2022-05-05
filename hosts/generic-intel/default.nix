@@ -9,6 +9,7 @@
       ark
       gparted
       blueberry
+      barrier
     ];
 
     kernel = {

@@ -10,6 +10,7 @@
       ark
       gparted
       blueberry
+      barrier
     ];
 
     has_opengl = false;
