@@ -49,9 +49,9 @@ in
         herbstluftwm = (mkMerge [
           (mkIf (herbstluftwmLayout == "one") {
             attributes = {
-              "active_color" = nBlack;
-              "normal_color" = "#000000";
-              "urgent_color" = nRed;
+              "theme.active.color" = nBlack;
+              "theme.normal.color" = "#000000";
+              "theme.urgent.color" = nRed;
             };
           })
           (mkIf (herbstluftwmLayout == "two" || herbstluftwmLayout == "two-compact") {
