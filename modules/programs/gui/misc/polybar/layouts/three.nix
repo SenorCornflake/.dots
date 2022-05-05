@@ -82,7 +82,7 @@ in
             "bar/bottom" = {
               "inherit" = "bar/top";
               bottom = true;
-              modules.left = "spacer nightmode sep hlwm_mode sep hlwm_layout spacer right";
+              modules.left = "spacer nightmode sep hlwm_mode sep hlwm_layout sep hlwm_monitor spacer right";
               modules.center = "";
               modules.right = "left spacer ram sep cpu sep netspeed sep disk spacer";
             };
@@ -425,6 +425,18 @@ in
                 padding = 0;
               };
               click-left = "${config.scripts.toggle_nightmode}/bin/toggle_nightmode";
+            };
+
+            "module/hlwm_monitor" = {
+              type = "custom/script";
+              tail = true;
+              exec = "${cfg.scripts.herbstluftwm-monitor}/bin/polybar-herbstluftwm-monitor";
+              format = {
+                text = "<label>";
+                padding = 0;
+                foreground = scheme.accent;
+                background = scheme.module-bg;
+              };
             };
           };
         };

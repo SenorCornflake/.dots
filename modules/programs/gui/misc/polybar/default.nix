@@ -22,6 +22,7 @@ in
     scripts = mkOpt types.attrs {
       herbstluftwm-layout = mkScript "herbstluftwm-layout" (with pkgs; [ gnugrep herbstluftwm ]);
       herbstluftwm-mode = mkScript "herbstluftwm-mode" (with pkgs; [ gnugrep herbstluftwm ]);
+      herbstluftwm-monitor = mkScript "herbstluftwm-monitor" (with pkgs; [xorg.xrandr gawk gnugrep herbstluftwm ]);
       temp = mkScript "temp" (with pkgs; [ gnugrep gnused lm_sensors gawk ]);
       nightmode = mkScript "nightmode" (with pkgs; [ libnotify inotify-tools coreutils ]);
     };

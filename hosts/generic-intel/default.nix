@@ -7,19 +7,8 @@
   modules = {
     homePackages = with pkgs; [
       ark
-      filezilla
       gparted
-      qbittorrent
-      whatsapp-for-linux
-      wineWowPackages.stagingFull
-      winetricks
-      libreoffice
-      vlc
       blueberry
-      lutris
-
-      extract-xiso
-      xinput-gui
     ];
 
     kernel = {
@@ -32,26 +21,11 @@
 
     misc = {
       grub.enable = true;
-
-      autorandr = {
-        profiles = (import ./autorandr-profiles.nix);
-      };
     };
 
     networking = {
       networkmanager.enable = true;
       ssh.enable = true;
-
-      samba = {
-        enable = true;
-        openDirs = {
-          home = "/home/a";
-        };
-      };
-
-      servers = {
-        apache.enable = true;
-      };
     };
 
     hardware = {
@@ -68,11 +42,6 @@
     window-managers = {
       herbstluftwm.enable = true;
       picom.enable = true;
-    };
-
-    desktop-environments = {
-      kde.enable = false;
-      gnome.enable = false;
     };
 
     shell = "zsh";
@@ -96,13 +65,6 @@
           rofi.enable = true;
           polybar.enable = true;
           dunst.enable = true;
-          zathura.enable = true;
-        };
-        games = {
-          dwarf-fortress.enable = false;
-        };
-        graphics = {
-          inkscape.enable = true;
         };
       };
       shell = {

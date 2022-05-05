@@ -18,6 +18,8 @@ in
         mouse_recenter_gap = "0";
         smart_window_surroundings = "off";
         tree_style = "╾│ ├└╼─┐";
+        snap_distance = "0";
+        swap_monitors_to_get_tag = "true";
 
         always_show_frame = "on";
         default_frame_layout = "grid";

@@ -84,8 +84,8 @@ in
             attributes = {
               "theme.urgent.color" = base09;
 
-              "theme.active.color" = base0C;
-              "theme.active.title_color" = base0C;
+              "theme.active.color" = base0E;
+              "theme.active.title_color" = base0E;
 
               "theme.normal.color" = base01;
               "theme.normal.title_color" = base01;
@@ -140,7 +140,7 @@ in
                   module-bg = base00;
                   fg = base05;
                   sep = base02;
-                  accent = base0E;
+                  accent = base0D;
                   empty = base03;
                 };
               })
@@ -171,7 +171,7 @@ in
                   bg = "#" + (replaceStrings ["#"] [""] base00) + "E6";
                   fg = base07;
                   alt-bg = "#" + (replaceStrings ["#"] [""] base00) + "E6";
-                  accent = base0E;
+                  accent = base0B;
                 };
               })
             ];
