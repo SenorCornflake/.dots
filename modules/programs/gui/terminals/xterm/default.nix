@@ -23,6 +23,11 @@ in
         "XTerm*faceSize" = cfg.font-size;
         "XTerm*utf8" = "1";
         "XTerm*termName" = "xterm-256color";
+        "XTerm*translations" = ''
+          #override \
+            Shift Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
+            Shift Ctrl <Key> V: insert-selection(CLIPBOARD)
+        '';
       };
     };
   };
