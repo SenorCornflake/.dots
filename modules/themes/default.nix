@@ -17,7 +17,7 @@ let
       then builtins.readFile (dataHome + "/dotfiles/alternative_wallpaper")
       else ""); # A wallpaper we can set with rofi that is used when no theme wallpaper is set
 
-  xresourcesData = (if pathExists "${config.dataHome}/dotfiles/Xresources" then readFile "${config.dataHome}/dotfiles/Xresources" else ""); 
+  xresourcesData = (if pathExists "${config.dataHome}/dotfiles/Xresources" then readFile "${config.dataHome}/dotfiles/Xresources" else null); 
 in
 
 {
@@ -29,8 +29,8 @@ in
 
     iconTheme = mkOpt types.str "Adwaita";
     cursorTheme = mkOpt types.str "Adwaita";
-    
-    xresources = mkOpt types.str xresourcesData;
+
+    xresources = mkOpt (types.nullOr types.str) null;
   };
 
   config = let
@@ -49,6 +49,7 @@ in
         };
       };
 
+
       programs.dconf.enable = true;
 
       home-manager.users."${config.userName}" = {
@@ -56,6 +57,7 @@ in
           feh
           imagemagick
         ];
+
 
         home.file.".icons/default/index.theme" = {
           target = ".icons/default/index.theme";
@@ -78,7 +80,7 @@ in
           '';
         };
 
-        xresources.extraConfig = cfg.xresources;
+        xresources.extraConfig = if cfg.xresources == null then xresourcesData else cfg.xresources;
       };
     };
 }
