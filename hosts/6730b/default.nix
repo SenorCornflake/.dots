@@ -5,6 +5,7 @@
   ];
 
   modules = {
+    network_interface = "wls1";
 
     homePackages = with pkgs; [
       ark

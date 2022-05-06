@@ -2,7 +2,6 @@
 { config, lib, pkgs, ... }:
 
 let 
-# TODO: Don't hardcode the system specific values, like in battery and pulseaudio
   inherit (lib) mkIf mkMerge types recursiveUpdate optionalString imap0;
   inherit (lib.my) mkBoolOpt mkOpt;
   inherit (builtins) listToAttrs;
@@ -33,6 +32,8 @@ let
         })
         icons
       );
+
+  interface = config.modules.network_interface;
 in
 
 {
@@ -186,7 +187,7 @@ in
 
             "module/net" = {
               type = "internal/network";
-              interface = "wlp3s0";
+              interface = interface;
               interval = 2;
               ramp.signal = mkRamp ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"] scheme.icons;
               format = {

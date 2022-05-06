@@ -17,7 +17,7 @@ let
       then builtins.readFile (dataHome + "/dotfiles/alternative_wallpaper")
       else ""); # A wallpaper we can set with rofi that is used when no theme wallpaper is set
 
-  xresourcesData = (if pathExists "${config.dataHome}/dotfiles/Xresources" then readFile "${config.dataHome}/dotfiles/Xresources" else null); 
+  xresourcesData = (if pathExists "${config.dataHome}/dotfiles/Xresources" then readFile "${config.dataHome}/dotfiles/Xresources" else ""); 
 in
 
 {

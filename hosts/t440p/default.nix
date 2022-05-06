@@ -5,6 +5,8 @@
   ];
 
   modules = {
+    network_interface = "wlp3s0";
+
     homePackages = with pkgs; [
       ark
       filezilla

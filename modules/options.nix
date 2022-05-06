@@ -19,6 +19,7 @@ in
     configHome = mkOpt types.path (homeDir + "/.config");
 
     modules.has_opengl = mkBoolOpt true;
+    modules.network_interface = mkOpt types.str "wlan0";
     modules.homePackages = mkOpt (types.listOf types.attrs) [];
   };
 
