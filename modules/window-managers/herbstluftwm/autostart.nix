@@ -51,6 +51,8 @@ in
         xkbset exp 60 =mousekeys
         xsetroot -xcf ${config.home-manager.users.${config.userName}.gtk.cursorTheme.package}/share/icons/${escapeShellArg config.modules.theme.cursorTheme}/cursors/left_ptr 16
 
+        xrdb ~/.Xresources
+
         # Enable nightmode if it was enabled prior to restarting
         restore_nightmode_state
 
