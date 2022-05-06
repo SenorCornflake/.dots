@@ -292,10 +292,11 @@ in
                 disconnected = {
                   text = "<label-disconnected>";
                   padding = 0;
+                  background = scheme.module-bg;
                   prefix = {
                     text = "󰤭 ";
                     foreground = scheme.accent;
-                  background = scheme.module-bg;
+                    background = scheme.module-bg;
                   };
                 };
               };
