@@ -91,9 +91,9 @@ in
         "${Alt}-a"      = "spawn rofi -modi window -show window";
 
         # Volume
-        "F86AudioLowerVolume" = "spawn pulseaudio-ctl down";
-        "F86AudioRaiseVolume" = "spawn pulseaudio-ctl up";
-        "F86AudioMute"        = "spawn pulseaudio-ctl mute";
+        "XF86AudioLowerVolume" = "spawn pulseaudio-ctl down";
+        "XF86AudioRaiseVolume" = "spawn pulseaudio-ctl up";
+        "XF86AudioMute"        = "spawn pulseaudio-ctl mute";
 
         # Scrots
         "${Mod}-F12" = "spawn -- flameshot full -p ~";
