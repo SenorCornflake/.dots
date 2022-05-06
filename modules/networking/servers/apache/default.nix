@@ -2,7 +2,7 @@
 
 let 
   inherit (lib.my) mkOpt mkBoolOpt;
-  inherit (lib) mkIf attrNames;
+  inherit (lib) mkIf attrNames filterAttrs;
   inherit (builtins) pathExists readDir mapAttrs;
 
   cfg = config.modules.networking.servers.apache;
@@ -19,7 +19,7 @@ let
   virtualHosts = if pathExists /srv/http then mapAttrs
       (n: v: 
         mkVhost n)
-      (readDir /srv/http)
+      (filterAttrs (n: v: n != ".git" && n != "phpmyadmin") (readDir /srv/http))
     else {};
 in
 {
