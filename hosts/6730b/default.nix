@@ -30,6 +30,13 @@
     networking = {
       networkmanager.enable = true;
       ssh.enable = true;
+
+      samba = {
+        enable = true;
+        openDirs = {
+          root = "/";
+        };
+      };
     };
 
     hardware = {

@@ -46,7 +46,7 @@
       samba = {
         enable = true;
         openDirs = {
-          home = "/home/a";
+          root = "/";
         };
       };
 

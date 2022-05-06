@@ -23,6 +23,7 @@ in
           ];
         })
         ntfs3g
+        gvfs
       ];
     };
 

@@ -21,13 +21,16 @@ in
             path = v;
             browseable = "yes";
             "read only" = "no";
-            "guest ok" = "yes";
+            "guest ok" = "no";
             "create mask" = "0644";
             "directory mask" = "0755";
+            "valid users" = "${config.userName}";
           })
         (cfg.openDirs));
       extraConfig = ''
         browseable = yes
+        workgroup = WORKGROUP
+        netbios name = ${config.networking.hostName}
       '';
     };
   };
