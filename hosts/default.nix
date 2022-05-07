@@ -36,6 +36,7 @@
     dosfstools
     gnome.adwaita-icon-theme
     gnome.gnome-themes-extra
+    vulkan-tools
   ];
 
   services.xserver = {
@@ -43,6 +44,9 @@
     autoRepeatDelay = 250;
     autoRepeatInterval = 30;
   };
+
+  hardware.opengl.driSupport32Bit = true;
+  hardware.opengl.enable = true;
 
   home-manager.users."${config.userName}" = {
     home.keyboard = null;

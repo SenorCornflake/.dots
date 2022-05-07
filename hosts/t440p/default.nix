@@ -20,6 +20,7 @@
       blueberry
       lutris
       barrier
+      mindustry
 
       extract-xiso
       xinput-gui
@@ -102,7 +103,7 @@
           zathura.enable = true;
         };
         games = {
-          dwarf-fortress.enable = false;
+          dwarf-fortress.enable = true;
         };
         graphics = {
           inkscape.enable = true;

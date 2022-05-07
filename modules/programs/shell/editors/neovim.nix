@@ -25,6 +25,7 @@ let
       "zenbones-nvim"
       "alpha-nvim"
       "kanagawa-nvim"
+      "nvim-treesitter-context"
     ]
     (plugin-name: pkgs.vimUtils.buildVimPlugin {
       name = plugin-name;  
@@ -113,7 +114,6 @@ in
           symbols-outline-nvim
           (nvim-treesitter.withPlugins (plugins: pkgs-unstable.tree-sitter.allGrammars))
           nvim-treesitter-refactor
-          nvim-treesitter-context
           nvim-treesitter-textobjects
           nvim-ts-autotag
           bufferline-nvim
