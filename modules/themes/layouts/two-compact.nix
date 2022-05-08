@@ -22,7 +22,7 @@ in
         picom = {
           inactiveDim = "0.08";
           shadowRadius = "5";
-          shadowOffsets = [ (-5) (-5) ];
+          shadowOffsets = [ "-5" "-5" ];
           shadowOpacity = "1.0";
         };
       };

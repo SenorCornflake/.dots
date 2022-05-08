@@ -2,7 +2,7 @@
 
 let 
   inherit (lib.my) mkOpt mkBoolOpt;
-  inherit (lib) mkIf attrNames filterAttrs;
+  inherit (lib) mkIf attrNames filterAttrs concatStringsSep attrValues;
   inherit (builtins) pathExists readDir mapAttrs;
 
   cfg = config.modules.networking.servers.apache;
@@ -14,13 +14,37 @@ let
     documentRoot = "/srv/http/${name}/public_html";
     hostName = name;
     serverAliases = [name];
+    extraConfig = ''
+      AllowOverride All
+    '';
   };
 
-  virtualHosts = if pathExists /srv/http then mapAttrs
-      (n: v: 
-        mkVhost n)
-      (filterAttrs (n: v: n != ".git" && n != "phpmyadmin") (readDir /srv/http))
-    else {};
+  virtualHostDirs = (filterAttrs (n: v: n != ".git" && n != "phpmyadmin") (readDir /srv/http));
+
+  virtualHosts = concatStringsSep
+    "\n"
+    (if pathExists /srv/http then
+      attrValues
+        (mapAttrs
+          (n: v:
+            ''
+              <VirtualHost *:80>
+                ServerName ${n}
+                ServerAlias ${n}
+                ServerAdmin admin@email.com
+                ErrorLog /var/log/httpd/error-${n}.log
+                CustomLog /var/log/httpd/access-${n}.log common
+                DocumentRoot "/srv/http/${n}/public_html"
+
+                <Directory "/srv/http/${n}/public_html">
+                    Options Indexes FollowSymLinks
+                    AllowOverride All
+                    Require all granted
+                </Directory>
+              </VirtualHost>
+            '')
+          virtualHostDirs)
+    else []);
 in
 {
   options.modules.networking.servers.apache = {
@@ -53,11 +77,11 @@ in
           Options FollowSymlinks
           Require all granted
          </Directory>
-      '';
 
-      virtualHosts = virtualHosts;
+         ${virtualHosts}
+      '';
     };
 
-    networking.hosts."127.0.0.1" = attrNames virtualHosts;
+    networking.hosts."127.0.0.1" = attrNames virtualHostDirs;
   };
 }

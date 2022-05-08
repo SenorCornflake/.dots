@@ -19,6 +19,8 @@
     };
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   time.timeZone = "Africa/Johannesburg";
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -50,6 +52,12 @@
 
   home-manager.users."${config.userName}" = {
     home.keyboard = null;
+
+    nixpkgs.config.allowUnfree = true;
+
+    xdg.configFile."nixpkgs/config.nix" = {
+      source = ../config/nixpkgs/config.nix;
+    };
 
     xdg = {
       enable = true;

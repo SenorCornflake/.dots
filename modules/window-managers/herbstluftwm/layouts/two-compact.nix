@@ -26,7 +26,7 @@ in
             "theme.border_width" = "2";
             "theme.title_height" = "18";
             "theme.title_align" = "center";
-            "theme.title_depth" = "9";
+            "theme.title_depth" = "6";
             "theme.title_font" = "Iosevka Nerd Font:size=10:weight=bold";
             "theme.outer_width" = "2";
             "theme.inner_width" = "2";

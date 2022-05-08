@@ -73,7 +73,7 @@ in
             }
         ]
 
-        cmd = 'echo "{}" | rofi -dmenu -format i -i -p "Layout:"'.format("\n".join([layout["name"] for layout in layouts]))
+        cmd = 'echo "{}" | ${pkgs.rofi}/bin/rofi -dmenu -format i -i -p "Layout:"'.format("\n".join([layout["name"] for layout in layouts]))
 
         index = os.popen(cmd).read()[:-1]
 
@@ -81,7 +81,7 @@ in
             index = int(index)
             layout = layouts[index]
 
-            os.system("setxkbmap -layout {} -variant {}".format(layout["layout"], layout["variant"]))
+            os.system("${pkgs.xorg.setxkbmap}/bin/setxkbmap -layout {} -variant {}".format(layout["layout"], layout["variant"]))
       '');
 
       comma = (writeScriptBin "," ''
