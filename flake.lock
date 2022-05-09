@@ -228,11 +228,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1651927509,
-        "narHash": "sha256-fGVGUdEsriuAL1vkUh29FlOQmEkPRnSfRGImWYaVjos=",
+        "lastModified": 1651981559,
+        "narHash": "sha256-vOcCFzuBbYsDyAahnd8PcxcRAAMeDL/fefvIRPyuOi0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2fdb6f2e08e7989b03a2a1aa8538d99e3eeea881",
+        "rev": "0f949eb7f11e0f7fbe5bb863a900104227969bf7",
         "type": "github"
       },
       "original": {
@@ -244,11 +244,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1652009915,
-        "narHash": "sha256-34INXwR19K2zvUTIJSnoyKoH2BRjycyIqxqhyfzLhaI=",
+        "lastModified": 1652034323,
+        "narHash": "sha256-gcdkE+h9Ib/CRV7PKj+GjiRBLskO+Cn61ldH4rD9/sg=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "e6486916a133c08364a1ae9eda70078244d8346d",
+        "rev": "8bbefa7e35a8685ef0a7d759ea7da47d6969b991",
         "type": "github"
       },
       "original": {
@@ -305,6 +305,26 @@
         "type": "github"
       }
     },
+    "remote-control-client": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1652094462,
+        "narHash": "sha256-I6WvWSzEYLN4qG8TexyQLVeMjb4cs8SXjVA+j1ZXpqw=",
+        "owner": "SenorCornflake",
+        "repo": "remote-control-client",
+        "rev": "761af79aeb799e1c3b0fcd45f01ba50ef7433a1e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "SenorCornflake",
+        "repo": "remote-control-client",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "alpha-nvim": "alpha-nvim",
@@ -322,6 +342,7 @@
         "nvim-base16": "nvim-base16",
         "nvim-scrollbar": "nvim-scrollbar",
         "nvim-treesitter-context": "nvim-treesitter-context",
+        "remote-control-client": "remote-control-client",
         "substrata-nvim": "substrata-nvim",
         "vim-enfocado": "vim-enfocado",
         "vim-moonfly-colors": "vim-moonfly-colors",

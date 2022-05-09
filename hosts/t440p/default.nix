@@ -21,9 +21,13 @@
       lutris
       barrier
       mindustry
+      blender
+      krita
+      gimp
 
       extract-xiso
       xinput-gui
+      remote-control-client
     ];
 
     kernel = {

@@ -21,6 +21,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    remote-control-client = {
+      url = "github:SenorCornflake/remote-control-client";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Neovim plugin inputs (for plugins not officially packages on nix)
     dial-nvim = {
       url = "github:monaqa/dial.nvim";
@@ -107,6 +112,7 @@
           pywal = final.callPackage ./pkgs/pywal {};
           picom-ibhagwan = final.callPackage ./pkgs/picom-ibhagwan {};
           picom-jonaburg-fix = final.callPackage ./pkgs/picom-jonaburg-fix {};
+          remote-control-client = inputs.remote-control-client.defaultPackage.${system};
         })
       ];
     };

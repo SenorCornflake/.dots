@@ -103,6 +103,12 @@ in
           coreutils
         ];
 
+        extraPython3Packages = (p: with p; [
+          pynvim
+          typer
+          requests
+        ]);
+
         plugins = with pkgs-unstable.vimPlugins; [
           # Deps
           lush-nvim # zenbones dependancy

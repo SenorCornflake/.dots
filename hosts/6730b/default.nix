@@ -12,6 +12,8 @@
       gparted
       blueberry
       barrier
+
+      remote-control-client
     ];
 
     has_opengl = false;

@@ -39,6 +39,7 @@
     gnome.adwaita-icon-theme
     gnome.gnome-themes-extra
     vulkan-tools
+    xorg.xkill
   ];
 
   services.xserver = {
