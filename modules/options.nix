@@ -18,8 +18,6 @@ in
     dataHome = mkOpt types.path (homeDir + "/.local/share");
     configHome = mkOpt types.path (homeDir + "/.config");
 
-    modules.has_opengl = mkBoolOpt true;
-    modules.network_interface = mkOpt types.str "wlan0";
     modules.homePackages = mkOpt (types.listOf types.attrs) [];
   };
 
@@ -35,9 +33,6 @@ in
         (optional 
           config.networking.networkmanager.enable
           "networkmanager"); #++
-        #(optional 
-        #  config.networking.networkmanager.enable
-        #  "nginx");
     };
 
     home-manager.users."${config.userName}".home.packages = cfg.modules.homePackages;

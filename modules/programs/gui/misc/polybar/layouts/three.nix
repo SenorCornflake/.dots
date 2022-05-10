@@ -30,7 +30,7 @@ let
         icons
       );
 
-    interface = config.modules.network_interface;
+    interface = config.modules.networking.interface;
 in
 
 {

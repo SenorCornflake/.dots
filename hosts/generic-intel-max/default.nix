@@ -26,9 +26,6 @@
       extract-xiso
       xinput-gui
       remote-control-client
-
-      nur.repos.makefu.bin2iso
-      mdf2iso
     ];
 
     kernel = {
@@ -48,8 +45,6 @@
     };
 
     networking = {
-      interface = "wlp3s0";
-
       networkmanager.enable = true;
       ssh.enable = true;
 
@@ -66,6 +61,8 @@
     };
 
     hardware = {
+      has_opengl = false;
+
       bluetooth = {
         enable = true;
       };
@@ -95,7 +92,8 @@
         };
         terminals = {
           kitty.enable = true;
-          default = "kitty";
+          xterm.enable = true;
+          default = "xterm";
         };
         media = {
           mpv.enable = true;
@@ -137,5 +135,5 @@
     };
   };
 
-  system.stateVersion = "21.11";
+  system.stateVersion = "22.05";
 }

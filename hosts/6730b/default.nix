@@ -5,8 +5,6 @@
   ];
 
   modules = {
-    network_interface = "wls1";
-
     homePackages = with pkgs; [
       ark
       gparted
@@ -15,8 +13,6 @@
 
       remote-control-client
     ];
-
-    has_opengl = false;
 
     kernel = {
       useLatestKernel = true;
@@ -31,6 +27,8 @@
     };
 
     networking = {
+      interface = "wls1";
+
       networkmanager.enable = true;
       ssh.enable = true;
 
@@ -43,6 +41,8 @@
     };
 
     hardware = {
+      has_opengl = false;
+
       bluetooth = {
         enable = false;
       };
