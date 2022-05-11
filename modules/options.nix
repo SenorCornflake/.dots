@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 
-let 
+let
   inherit (lib) optional types;
   inherit (lib.my) mkBoolOpt mkOpt;
   cfg = config;
@@ -11,6 +11,7 @@ in
 {
   options = {
     userName = mkOpt types.str userName;
+
     configDir = mkOpt types.path ../config;
     wallpaperDir = mkOpt types.path ../wallpapers;
     dotsDir = mkOpt types.path (homeDir + "/.dots");
@@ -28,7 +29,7 @@ in
       isNormalUser = true;
       createHome = true;
       home = homeDir;
-      extraGroups = 
+      extraGroups =
         [ "wheel" ] ++
         (optional 
           config.networking.networkmanager.enable
