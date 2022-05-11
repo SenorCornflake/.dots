@@ -28,7 +28,7 @@ in
       initialPassword = "a";
       isNormalUser = true;
       createHome = true;
-      home = homeDir;
+      home = "/home/${userName}";
       extraGroups =
         [ "wheel" ] ++
         (optional 
