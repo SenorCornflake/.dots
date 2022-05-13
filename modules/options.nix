@@ -33,7 +33,7 @@ in
         [ "wheel" ] ++
         (optional 
           config.networking.networkmanager.enable
-          "networkmanager"); #++
+          "networkmanager");
     };
 
     home-manager.users."${config.userName}".home.packages = cfg.modules.homePackages;

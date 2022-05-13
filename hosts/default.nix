@@ -40,6 +40,7 @@
     gnome.gnome-themes-extra
     vulkan-tools
     xorg.xkill
+    neovim-nightly
   ];
 
   services.xserver = {

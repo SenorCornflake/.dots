@@ -4,6 +4,12 @@
     ../default.nix
   ];
 
+  fonts.fonts = with pkgs; [
+    scheherazade
+    scheherazade-new
+    amiri
+  ];
+
   modules = {
     homePackages = with pkgs; [
       ark
@@ -22,6 +28,7 @@
       blender
       krita
       gimp
+      zeal
 
       extract-xiso
       xinput-gui

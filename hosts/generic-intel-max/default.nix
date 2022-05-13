@@ -4,6 +4,12 @@
     ../default.nix
   ];
 
+  fonts.fonts = with pkgs; [
+    scheherazade
+    scheherazade-new
+    amiri
+  ];
+
   modules = {
     homePackages = with pkgs; [
       ark
@@ -22,10 +28,14 @@
       blender
       krita
       gimp
+      zeal
 
       extract-xiso
       xinput-gui
       remote-control-client
+
+      nur.repos.makefu.bin2iso
+      mdf2iso
     ];
 
     kernel = {
@@ -45,6 +55,8 @@
     };
 
     networking = {
+      interface = "wlp3s0";
+
       networkmanager.enable = true;
       ssh.enable = true;
 
@@ -61,8 +73,6 @@
     };
 
     hardware = {
-      has_opengl = false;
-
       bluetooth = {
         enable = true;
       };
@@ -92,8 +102,7 @@
         };
         terminals = {
           kitty.enable = true;
-          xterm.enable = true;
-          default = "xterm";
+          default = "kitty";
         };
         media = {
           mpv.enable = true;
