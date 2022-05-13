@@ -48,10 +48,6 @@
 
     misc = {
       grub.enable = true;
-
-      autorandr = {
-        profiles = (import ./autorandr-profiles.nix);
-      };
     };
 
     networking = {
