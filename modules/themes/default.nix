@@ -1,7 +1,7 @@
 
 { config, lib, pkgs, ... }:
 
-let 
+let
   inherit (lib) mkIf mkMerge types;
   inherit (lib.my) mkBoolOpt mkOpt;
   inherit (builtins) pathExists readFile;
