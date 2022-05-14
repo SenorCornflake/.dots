@@ -64,7 +64,7 @@ in
         popd
 
         sudo find /var/lib/mysql -maxdepth 1 -mindepth 1 -type d | while read dir; do
-          if [[ $(echo $dir | grep "_dv") ]]; then
+          if [[ $(echo $dir | grep "dv") ]]; then
             name=$(basename $dir)
             mysqldump -u root --password=root $name > ~/databases/$name.sql
           fi
