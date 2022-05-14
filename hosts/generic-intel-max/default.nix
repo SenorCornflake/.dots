@@ -48,7 +48,6 @@
 
     misc = {
       grub.enable = true;
-      grub.devices = [ "/dev/sda" "/dev/sdb" ];
     };
 
     networking = {

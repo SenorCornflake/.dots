@@ -17,8 +17,10 @@
     };
 
     misc = {
-      grub.enable = true;
-      grub.devices = ["/dev/sda" "/dec/sdb" "/dev/sdd" "/dev/sdc"];
+      grub = {
+        useOSProber = false;
+        devices = [ "/dev/sdb" ];
+      };
     };
 
     networking = {
